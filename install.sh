@@ -18,35 +18,55 @@ chmod +x "$INSTALL_DIR/index.js"
 
 cd "$INSTALL_DIR"
 
+warn_path() {
+  BIN_DIR="$1"
+  case ":$PATH:" in
+    *":$BIN_DIR:"*) ;;
+    *)
+      echo ""
+      echo "⚠️  '$BIN_DIR' is not in your PATH."
+      echo "Add this line to your shell profile (~/.zshrc or ~/.bashrc):"
+      echo ""
+      echo "  export PATH=\"\$PATH:$BIN_DIR\""
+      echo ""
+      echo "Then run:  source ~/.zshrc  (or restart your terminal)"
+      ;;
+  esac
+}
+
 # Install dependencies and link globally
 if command -v bun > /dev/null 2>&1; then
   bun install
-  bun link
+  bun install --global .
+  warn_path "$HOME/.bun/bin"
 elif command -v pnpm > /dev/null 2>&1; then
   pnpm install
+  if [ -z "$PNPM_HOME" ]; then
+    pnpm setup 2>/dev/null || true
+    PNPM_HOME="$(grep 'export PNPM_HOME=' "$HOME/.zshrc" "$HOME/.bashrc" 2>/dev/null | head -1 | sed 's/.*export PNPM_HOME="//' | sed 's/".*//')"
+    export PNPM_HOME
+    export PATH="$PNPM_HOME:$PATH"
+  fi
   pnpm link --global
+  warn_path "$PNPM_HOME"
 elif command -v yarn > /dev/null 2>&1; then
+  YARN_MAJOR="$(yarn --version 2>/dev/null | cut -d. -f1)"
   yarn install
-  yarn link
+  if [ "$YARN_MAJOR" = "1" ]; then
+    yarn link
+    YARN_BIN="$(yarn global bin 2>/dev/null)"
+    warn_path "$YARN_BIN"
+  else
+    # Yarn Berry (v2+/v4) has no global link — fall back to npm link
+    npm link
+    NPM_BIN="$(npm prefix -g)/bin"
+    warn_path "$NPM_BIN"
+  fi
 elif command -v npm > /dev/null 2>&1; then
   npm install
   npm link
-
-  # Ensure npm global bin is on PATH
-  NPM_BIN="$(npm bin -g 2>/dev/null || npm prefix -g)/bin"
-  case ":$PATH:" in
-    *":$NPM_BIN:"*) ;;
-    *)
-      echo ""
-      echo "⚠️  '$NPM_BIN' is not in your PATH."
-      echo "Add the following line to your shell profile (~/.bashrc, ~/.zshrc, etc.):"
-      echo ""
-      echo "  export PATH=\"\$PATH:$NPM_BIN\""
-      echo ""
-      echo "Then run:  source ~/.zshrc  (or restart your terminal)"
-      echo ""
-      ;;
-  esac
+  NPM_BIN="$(npm prefix -g)/bin"
+  warn_path "$NPM_BIN"
 else
   echo "Error: no supported package manager found. Please install one of: bun, pnpm, yarn, npm" >&2
   exit 1
