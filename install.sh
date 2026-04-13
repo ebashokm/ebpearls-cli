@@ -1,7 +1,7 @@
 #!/bin/sh
 set -e
 
-REPO_URL="https://github.com/eb-pearls/cli.git"
+REPO_URL="https://github.com/ebashokm/ebpearls-cli.git"
 INSTALL_DIR="$HOME/.ebpearls-cli"
 
 # Clone or update the repo
