@@ -1,7 +1,7 @@
 #!/bin/sh
 set -e
 
-REPO_URL="https://github.com/ebashokm/ebpearls-cli.git"
+REPO_URL="https://github.com/eb-pearls/cli.git"
 INSTALL_DIR="$HOME/.ebpearls-cli"
 
 # Clone or update the repo
@@ -16,9 +16,9 @@ fi
 # Ensure the entry point is executable
 chmod +x "$INSTALL_DIR/index.js"
 
-# Install dependencies and link the ebp command globally
 cd "$INSTALL_DIR"
 
+# Install dependencies and link globally
 if command -v bun > /dev/null 2>&1; then
   bun install
   bun link
@@ -31,6 +31,22 @@ elif command -v yarn > /dev/null 2>&1; then
 elif command -v npm > /dev/null 2>&1; then
   npm install
   npm link
+
+  # Ensure npm global bin is on PATH
+  NPM_BIN="$(npm bin -g 2>/dev/null || npm prefix -g)/bin"
+  case ":$PATH:" in
+    *":$NPM_BIN:"*) ;;
+    *)
+      echo ""
+      echo "⚠️  '$NPM_BIN' is not in your PATH."
+      echo "Add the following line to your shell profile (~/.bashrc, ~/.zshrc, etc.):"
+      echo ""
+      echo "  export PATH=\"\$PATH:$NPM_BIN\""
+      echo ""
+      echo "Then run:  source ~/.zshrc  (or restart your terminal)"
+      echo ""
+      ;;
+  esac
 else
   echo "Error: no supported package manager found. Please install one of: bun, pnpm, yarn, npm" >&2
   exit 1
