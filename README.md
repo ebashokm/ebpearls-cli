@@ -29,7 +29,7 @@ yarn global add @ebpearls/cli
 Or use the one-liner shell script (no package manager selection needed):
 
 ```sh
-curl -fsSL https://raw.githubusercontent.com/eb-pearls/cli/main/install.sh | sh
+curl -fsSL https://raw.githubusercontent.com/ebashokm/ebpearls-cli/refs/heads/main/install.sh | sh
 ```
 
 ## Quick Start
