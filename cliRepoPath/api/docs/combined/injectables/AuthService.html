@@ -1,0 +1,4133 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>nest-ebtheme documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	   <link rel="stylesheet" href="../styles/style.css">
+        <link rel="stylesheet" href="../styles/dark.css">
+    </head>
+    <body>
+          <script>
+               // Blocking script to avoid flickering dark mode
+               // Dark mode toggle button
+               var useDark = window.matchMedia('(prefers-color-scheme: dark)');
+               var darkModeState = useDark.matches;
+               var $darkModeToggleSwitchers = document.querySelectorAll('.dark-mode-switch input');
+               var $darkModeToggles = document.querySelectorAll('.dark-mode-switch');
+               var darkModeStateLocal = localStorage.getItem('compodoc_darkmode-state');
+
+               function checkToggle(check) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].checked = check;
+                    }
+               }
+
+               function toggleDarkMode(state) {
+                    if (window.localStorage) {
+                         localStorage.setItem('compodoc_darkmode-state', state);
+                    }
+
+                    checkToggle(state);
+
+                    const hasClass = document.body.classList.contains('dark');
+
+                    if (state) {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.add('dark');
+                         }
+                         if (!hasClass) {
+                              document.body.classList.add('dark');
+                         }
+                    } else {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.remove('dark');
+                         }
+                         if (hasClass) {
+                              document.body.classList.remove('dark');
+                         }
+                    }
+               }
+
+               useDark.addEventListener('change', function (evt) {
+                    toggleDarkMode(evt.matches);
+               });
+               if (darkModeStateLocal) {
+                    darkModeState = darkModeStateLocal === 'true';
+               }
+               toggleDarkMode(darkModeState);
+          </script>
+
+        <div class="navbar navbar-default navbar-fixed-top d-md-none p-0">
+               <div class="d-flex">
+                    <a href="../" class="navbar-brand">nest-ebtheme documentation</a>
+                    <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+               </div>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="d-none d-md-block menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content injectable">
+                   <div class="content-data">
+
+
+
+
+
+
+
+
+<ol class="breadcrumb">
+  <li class="breadcrumb-item">Injectables</li>
+  <li class="breadcrumb-item" >AuthService</li>
+</ol>
+
+<ul class="nav nav-tabs" role="tablist">
+        <li class="nav-item">
+            <a href="#info" 
+                class="nav-link"
+                class="nav-link active"
+                role="tab" id="info-tab" data-bs-toggle="tab" data-link="info">Info</a>
+        </li>
+        <li class="nav-item">
+            <a href="#source" 
+                class="nav-link"
+                
+                role="tab" id="source-tab" data-bs-toggle="tab" data-link="source">Source</a>
+        </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="info">
+        <p class="comment">
+            <h3>File</h3>
+        </p>
+        <p class="comment">
+            <code>apps/api/src/modules/auth/services/auth.service.ts</code>
+        </p>
+
+
+            <p class="comment">
+                <h3>Description</h3>
+            </p>
+            <p class="comment">
+                <p>${1:Description placeholder}</p>
+
+            </p>
+
+
+
+            <section data-compodoc="block-index">
+    <h3 id="index">Index</h3>
+    <table class="table table-sm table-bordered index-table">
+        <tbody>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Methods</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                    <span class="modifier">Async</span>
+                                <a href="#enableBiometricAuth" >enableBiometricAuth</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Async</span>
+                                <a href="#forgotPassword" >forgotPassword</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Async</span>
+                                <a href="#getCometChatAuthTokenOfUser" >getCometChatAuthTokenOfUser</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Async</span>
+                                <a href="#loginWithApple" >loginWithApple</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Async</span>
+                                <a href="#loginWithBiometric" >loginWithBiometric</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Async</span>
+                                <a href="#loginWithEmail" >loginWithEmail</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Async</span>
+                                <a href="#loginWithFacebook" >loginWithFacebook</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Async</span>
+                                <a href="#loginWithGoogle" >loginWithGoogle</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Async</span>
+                                <a href="#loginWithOTP" >loginWithOTP</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Async</span>
+                                <a href="#loginWithTiktok" >loginWithTiktok</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Async</span>
+                                <a href="#logout" >logout</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Async</span>
+                                <a href="#logoutAll" >logoutAll</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Async</span>
+                                <a href="#refresh" >refresh</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Async</span>
+                                <a href="#registerUser" >registerUser</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Async</span>
+                                <a href="#registerWithEmail" >registerWithEmail</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Async</span>
+                                <a href="#resendVerifyEmailOtp" >resendVerifyEmailOtp</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Async</span>
+                                <a href="#resetPassword" >resetPassword</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Async</span>
+                                <a href="#saveDeviceInfo" >saveDeviceInfo</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Async</span>
+                                <a href="#sendEmailOTP" >sendEmailOTP</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Async</span>
+                                <a href="#setPasswordUpdateGrant" >setPasswordUpdateGrant</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Async</span>
+                                <a href="#updateGrant" >updateGrant</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Async</span>
+                                <a href="#updateUserPassword" >updateUserPassword</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Async</span>
+                                <a href="#updateUserPasswordAndDeleteOtp" >updateUserPasswordAndDeleteOtp</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Async</span>
+                                <a href="#updateUserPasswordById" >updateUserPasswordById</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Async</span>
+                                <a href="#verifyEmailAndLogin" >verifyEmailAndLogin</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Async</span>
+                                <a href="#verifyPassword" >verifyPassword</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Async</span>
+                                <a href="#verifyResetPasswordCode" >verifyResetPasswordCode</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+            <section data-compodoc="block-constructor">
+    <h3 id="constructor">Constructor</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+<code>constructor(jwtTokenService: <a href="../injectables/JwtTokenService.html" target="_self">JwtTokenService</a>, jwt: <a href="../injectables/JwtService.html" target="_self">JwtService</a>, socialAuthService: <a href="../injectables/SocialAuthService.html" target="_self">SocialAuthService</a>, userTokenMetaRepository: <a href="../injectables/UserTokenMetaRepository.html" target="_self">UserTokenMetaRepository</a>, deviceInfoRepository: <a href="../injectables/DeviceInfoRepository.html" target="_self">DeviceInfoRepository</a>, pushNotificationTokenRepository: <a href="../injectables/PushNotificationTokenRepository.html" target="_self">PushNotificationTokenRepository</a>, userRepository: <a href="../injectables/UsersRepository.html" target="_self">UsersRepository</a>, otpRequestRepository: <a href="../injectables/OTPRequestRepository.html" target="_self">OTPRequestRepository</a>, emailService: <a href="../injectables/EmailService.html" target="_self">EmailService</a>, cometChatHelperService: <a href="../injectables/CometChatHelperService.html" target="_self">CometChatHelperService</a>, agoraHelperService: <a href="../injectables/AgoraHelperService.html" target="_self">AgoraHelperService</a>, i18nService: I18nService)</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="72" class="link-to-prism">apps/api/src/modules/auth/services/auth.service.ts:72</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                            <div class="io-description"><p>Creates an instance of AuthService.</p>
+</div>
+                            <div>
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>jwtTokenService</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/JwtTokenService.html" target="_self" >JwtTokenService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>jwt</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/JwtService.html" target="_self" >JwtService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>socialAuthService</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/SocialAuthService.html" target="_self" >SocialAuthService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>userTokenMetaRepository</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/UserTokenMetaRepository.html" target="_self" >UserTokenMetaRepository</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>deviceInfoRepository</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/DeviceInfoRepository.html" target="_self" >DeviceInfoRepository</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>pushNotificationTokenRepository</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/PushNotificationTokenRepository.html" target="_self" >PushNotificationTokenRepository</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>userRepository</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/UsersRepository.html" target="_self" >UsersRepository</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>otpRequestRepository</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/OTPRequestRepository.html" target="_self" >OTPRequestRepository</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>emailService</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/EmailService.html" target="_self" >EmailService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>cometChatHelperService</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/CometChatHelperService.html" target="_self" >CometChatHelperService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>agoraHelperService</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/AgoraHelperService.html" target="_self" >AgoraHelperService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>i18nService</td>
+                                                  
+                                                        <td>
+                                                                    <code>I18nService</code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+</section>
+
+            <section data-compodoc="block-methods">
+    
+    <h3 id="methods">
+        Methods
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="enableBiometricAuth"></a>
+                    <span class="name">
+                            <span class="modifier">Async</span>
+                        <span ><b>enableBiometricAuth</b></span>
+                        <a href="#enableBiometricAuth"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>enableBiometricAuth(loginDetail: <a href="../undefineds/LoginDetailType.html" target="_self">LoginDetailType</a>, deviceId: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="1316"
+                                    class="link-to-prism">apps/api/src/modules/auth/services/auth.service.ts:1316</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                                <td>Description</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>loginDetail</td>
+                                            <td>
+                                                            <code><a href="../miscellaneous/typealiases.html#LoginDetailType" target="_self" >LoginDetailType</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                            <td>
+                                                    <p>data</p>
+
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                                <td>deviceId</td>
+                                            <td>
+                                                            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                            <td>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>    <code>unknown</code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="forgotPassword"></a>
+                    <span class="name">
+                            <span class="modifier">Async</span>
+                        <span ><b>forgotPassword</b></span>
+                        <a href="#forgotPassword"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>forgotPassword(data: <a href="../classes/ForgotPasswordInput.html" target="_self">ForgotPasswordInput</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="1066"
+                                    class="link-to-prism">apps/api/src/modules/auth/services/auth.service.ts:1066</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>${1:Description placeholder}</p>
+</div>
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>data</td>
+                                            <td>
+                                                            <code><a href="../classes/ForgotPasswordInput.html" target="_self" >ForgotPasswordInput</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>    <code>unknown</code>
+
+                        </div>
+                            <div class="io-description">
+                                <p>}</p>
+
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getCometChatAuthTokenOfUser"></a>
+                    <span class="name">
+                            <span class="modifier">Async</span>
+                        <span ><b>getCometChatAuthTokenOfUser</b></span>
+                        <a href="#getCometChatAuthTokenOfUser"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>getCometChatAuthTokenOfUser(userPayload: <a href="../undefineds/UserPayload.html" target="_self">UserPayload</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="180"
+                                    class="link-to-prism">apps/api/src/modules/auth/services/auth.service.ts:180</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>get comet chat auth token, if no user found, create a new one</p>
+</div>
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>userPayload</td>
+                                            <td>
+                                                            <code><a href="../miscellaneous/typealiases.html#UserPayload" target="_self" >UserPayload</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>    <code>unknown</code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="loginWithApple"></a>
+                    <span class="name">
+                            <span class="modifier">Async</span>
+                        <span ><b>loginWithApple</b></span>
+                        <a href="#loginWithApple"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>loginWithApple(appleLoginData: <a href="../classes/AppleLoginInput.html" target="_self">AppleLoginInput</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="204"
+                                    class="link-to-prism">apps/api/src/modules/auth/services/auth.service.ts:204</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                                <td>Description</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>appleLoginData</td>
+                                            <td>
+                                                            <code><a href="../classes/AppleLoginInput.html" target="_self" >AppleLoginInput</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                            <td>
+                                                    <p>apple login data</p>
+
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>    <code>unknown</code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="loginWithBiometric"></a>
+                    <span class="name">
+                            <span class="modifier">Async</span>
+                        <span ><b>loginWithBiometric</b></span>
+                        <a href="#loginWithBiometric"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>loginWithBiometric(biometricToken: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>, deviceId: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="1369"
+                                    class="link-to-prism">apps/api/src/modules/auth/services/auth.service.ts:1369</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>biometricToken</td>
+                                            <td>
+                                                            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                        <tr>
+                                                <td>deviceId</td>
+                                            <td>
+                                                            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>    <code>unknown</code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="loginWithEmail"></a>
+                    <span class="name">
+                            <span class="modifier">Async</span>
+                        <span ><b>loginWithEmail</b></span>
+                        <a href="#loginWithEmail"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>loginWithEmail(data: <a href="../classes/LoginEmailPasswordInput.html" target="_self">LoginEmailPasswordInput</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="935"
+                                    class="link-to-prism">apps/api/src/modules/auth/services/auth.service.ts:935</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>login with email password</p>
+</div>
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                                <td>Description</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>data</td>
+                                            <td>
+                                                            <code><a href="../classes/LoginEmailPasswordInput.html" target="_self" >LoginEmailPasswordInput</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                            <td>
+                                                    <p>login data</p>
+
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>    <code>unknown</code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="loginWithFacebook"></a>
+                    <span class="name">
+                            <span class="modifier">Async</span>
+                        <span ><b>loginWithFacebook</b></span>
+                        <a href="#loginWithFacebook"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>loginWithFacebook(facebookLoginData: <a href="../classes/FacebookLoginInput.html" target="_self">FacebookLoginInput</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="374"
+                                    class="link-to-prism">apps/api/src/modules/auth/services/auth.service.ts:374</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                                <td>Description</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>facebookLoginData</td>
+                                            <td>
+                                                            <code><a href="../classes/FacebookLoginInput.html" target="_self" >FacebookLoginInput</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                            <td>
+                                                    <p>google login data</p>
+
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>    <code>unknown</code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="loginWithGoogle"></a>
+                    <span class="name">
+                            <span class="modifier">Async</span>
+                        <span ><b>loginWithGoogle</b></span>
+                        <a href="#loginWithGoogle"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>loginWithGoogle(googleLoginData: <a href="../classes/GoogleLoginInput.html" target="_self">GoogleLoginInput</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="291"
+                                    class="link-to-prism">apps/api/src/modules/auth/services/auth.service.ts:291</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                                <td>Description</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>googleLoginData</td>
+                                            <td>
+                                                            <code><a href="../classes/GoogleLoginInput.html" target="_self" >GoogleLoginInput</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                            <td>
+                                                    <p>google login data</p>
+
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>    <code>unknown</code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="loginWithOTP"></a>
+                    <span class="name">
+                            <span class="modifier">Async</span>
+                        <span ><b>loginWithOTP</b></span>
+                        <a href="#loginWithOTP"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>loginWithOTP(data: <a href="../classes/LoginWithOTPInput.html" target="_self">LoginWithOTPInput</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="585"
+                                    class="link-to-prism">apps/api/src/modules/auth/services/auth.service.ts:585</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Method for sending otp for email login</p>
+</div>
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>data</td>
+                                            <td>
+                                                            <code><a href="../classes/LoginWithOTPInput.html" target="_self" >LoginWithOTPInput</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>    <code>unknown</code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="loginWithTiktok"></a>
+                    <span class="name">
+                            <span class="modifier">Async</span>
+                        <span ><b>loginWithTiktok</b></span>
+                        <a href="#loginWithTiktok"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>loginWithTiktok(tiktokLoginData: <a href="../classes/TiktokLoginInput.html" target="_self">TiktokLoginInput</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="1229"
+                                    class="link-to-prism">apps/api/src/modules/auth/services/auth.service.ts:1229</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                                <td>Description</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>tiktokLoginData</td>
+                                            <td>
+                                                            <code><a href="../classes/TiktokLoginInput.html" target="_self" >TiktokLoginInput</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                            <td>
+                                                    <p>login data</p>
+
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>    <code>unknown</code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="logout"></a>
+                    <span class="name">
+                            <span class="modifier">Async</span>
+                        <span ><b>logout</b></span>
+                        <a href="#logout"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>logout(jti: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="147"
+                                    class="link-to-prism">apps/api/src/modules/auth/services/auth.service.ts:147</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Logout from single device with current login session(jti)
+Remove access token and refresh token</p>
+</div>
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>jti</td>
+                                            <td>
+                                                            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="logoutAll"></a>
+                    <span class="name">
+                            <span class="modifier">Async</span>
+                        <span ><b>logoutAll</b></span>
+                        <a href="#logoutAll"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>logoutAll(userId: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="167"
+                                    class="link-to-prism">apps/api/src/modules/auth/services/auth.service.ts:167</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Logout from all device
+Remove access token and refresh token</p>
+</div>
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>userId</td>
+                                            <td>
+                                                            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="refresh"></a>
+                    <span class="name">
+                            <span class="modifier">Async</span>
+                        <span ><b>refresh</b></span>
+                        <a href="#refresh"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>refresh(refreshToken: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="1164"
+                                    class="link-to-prism">apps/api/src/modules/auth/services/auth.service.ts:1164</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Refresh token</p>
+</div>
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>refreshToken</td>
+                                            <td>
+                                                            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>    <code>unknown</code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="registerUser"></a>
+                    <span class="name">
+                            <span class="modifier">Async</span>
+                        <span ><b>registerUser</b></span>
+                        <a href="#registerUser"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>registerUser(registerUserData: <a href="../classes/SignupInput.html" target="_self">SignupInput</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="702"
+                                    class="link-to-prism">apps/api/src/modules/auth/services/auth.service.ts:702</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>register user with email/password</p>
+</div>
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                                <td>Description</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>registerUserData</td>
+                                            <td>
+                                                            <code><a href="../classes/SignupInput.html" target="_self" >SignupInput</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                            <td>
+                                                    <p>register user with provided data</p>
+
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>    <code>unknown</code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="registerWithEmail"></a>
+                    <span class="name">
+                            <span class="modifier">Async</span>
+                        <span ><b>registerWithEmail</b></span>
+                        <a href="#registerWithEmail"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>registerWithEmail(registerData: <a href="../classes/EmailSignupOTPInput.html" target="_self">EmailSignupOTPInput</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="675"
+                                    class="link-to-prism">apps/api/src/modules/auth/services/auth.service.ts:675</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>register with email provider</p>
+</div>
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                                <td>Description</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>registerData</td>
+                                            <td>
+                                                            <code><a href="../classes/EmailSignupOTPInput.html" target="_self" >EmailSignupOTPInput</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                            <td>
+                                                    <p>register with email data</p>
+
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>    <code>unknown</code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="resendVerifyEmailOtp"></a>
+                    <span class="name">
+                            <span class="modifier">Async</span>
+                        <span ><b>resendVerifyEmailOtp</b></span>
+                        <a href="#resendVerifyEmailOtp"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>resendVerifyEmailOtp(email: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>, deviceId: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="765"
+                                    class="link-to-prism">apps/api/src/modules/auth/services/auth.service.ts:765</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>resends the otp for verify email in valid case</p>
+</div>
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>email</td>
+                                            <td>
+                                                            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                        <tr>
+                                                <td>deviceId</td>
+                                            <td>
+                                                            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="../classes/OTPResponse.html" target="_self" >Promise&lt;OTPResponse&gt;</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="resetPassword"></a>
+                    <span class="name">
+                            <span class="modifier">Async</span>
+                        <span ><b>resetPassword</b></span>
+                        <a href="#resetPassword"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>resetPassword(email: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>, password: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>, verificationCode: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="1138"
+                                    class="link-to-prism">apps/api/src/modules/auth/services/auth.service.ts:1138</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>verify code and reset password</p>
+</div>
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>email</td>
+                                            <td>
+                                                            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                        <tr>
+                                                <td>password</td>
+                                            <td>
+                                                            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                        <tr>
+                                                <td>verificationCode</td>
+                                            <td>
+                                                            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="saveDeviceInfo"></a>
+                    <span class="name">
+                            <span class="modifier">Async</span>
+                        <span ><b>saveDeviceInfo</b></span>
+                        <a href="#saveDeviceInfo"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>saveDeviceInfo(saveDeviceInfo: <a href="../undefineds/SaveDeviceInfoType.html" target="_self">SaveDeviceInfoType</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="108"
+                                    class="link-to-prism">apps/api/src/modules/auth/services/auth.service.ts:108</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                                <td>Description</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>saveDeviceInfo</td>
+                                            <td>
+                                                            <code><a href="../miscellaneous/typealiases.html#SaveDeviceInfoType" target="_self" >SaveDeviceInfoType</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                            <td>
+                                                    <p>save device info data</p>
+
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="sendEmailOTP"></a>
+                    <span class="name">
+                            <span class="modifier">Async</span>
+                        <span ><b>sendEmailOTP</b></span>
+                        <a href="#sendEmailOTP"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>sendEmailOTP(data: <a href="../classes/RequestLoginOTPInput.html" target="_self">RequestLoginOTPInput</a>, requestedFor)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="482"
+                                    class="link-to-prism">apps/api/src/modules/auth/services/auth.service.ts:482</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>${1:Description placeholder}</p>
+</div>
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>data</td>
+                                            <td>
+                                                            <code><a href="../classes/RequestLoginOTPInput.html" target="_self" >RequestLoginOTPInput</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                        <tr>
+                                                <td>requestedFor</td>
+                                            <td>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>    <code>unknown</code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="setPasswordUpdateGrant"></a>
+                    <span class="name">
+                            <span class="modifier">Async</span>
+                        <span ><b>setPasswordUpdateGrant</b></span>
+                        <a href="#setPasswordUpdateGrant"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>setPasswordUpdateGrant(userId, password, jti)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="913"
+                                    class="link-to-prism">apps/api/src/modules/auth/services/auth.service.ts:913</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Set first time password and update grant to all</p>
+</div>
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>userId</td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                        <tr>
+                                                <td>password</td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                        <tr>
+                                                <td>jti</td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="updateGrant"></a>
+                    <span class="name">
+                            <span class="modifier">Async</span>
+                        <span ><b>updateGrant</b></span>
+                        <a href="#updateGrant"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>updateGrant(jti: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>, grant: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="892"
+                                    class="link-to-prism">apps/api/src/modules/auth/services/auth.service.ts:892</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Update grant of access_token</p>
+</div>
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                                <td>Description</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>jti</td>
+                                            <td>
+                                                            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                            <td>
+                                                    <p>jwt token id</p>
+
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                                <td>grant</td>
+                                            <td>
+                                                            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                            <td>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="updateUserPassword"></a>
+                    <span class="name">
+                            <span class="modifier">Async</span>
+                        <span ><b>updateUserPassword</b></span>
+                        <a href="#updateUserPassword"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>updateUserPassword(email: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>, password: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="901"
+                                    class="link-to-prism">apps/api/src/modules/auth/services/auth.service.ts:901</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>update user password</p>
+</div>
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>email</td>
+                                            <td>
+                                                            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                        <tr>
+                                                <td>password</td>
+                                            <td>
+                                                            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="updateUserPasswordAndDeleteOtp"></a>
+                    <span class="name">
+                            <span class="modifier">Async</span>
+                        <span ><b>updateUserPasswordAndDeleteOtp</b></span>
+                        <a href="#updateUserPasswordAndDeleteOtp"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>updateUserPasswordAndDeleteOtp(email: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>, password: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="1121"
+                                    class="link-to-prism">apps/api/src/modules/auth/services/auth.service.ts:1121</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>${1:Description placeholder}</p>
+</div>
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>email</td>
+                                            <td>
+                                                            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                        <tr>
+                                                <td>password</td>
+                                            <td>
+                                                            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="updateUserPasswordById"></a>
+                    <span class="name">
+                            <span class="modifier">Async</span>
+                        <span ><b>updateUserPasswordById</b></span>
+                        <a href="#updateUserPasswordById"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>updateUserPasswordById(userId: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>, password: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="1054"
+                                    class="link-to-prism">apps/api/src/modules/auth/services/auth.service.ts:1054</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>${1:Description placeholder}</p>
+</div>
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>userId</td>
+                                            <td>
+                                                            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                        <tr>
+                                                <td>password</td>
+                                            <td>
+                                                            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="verifyEmailAndLogin"></a>
+                    <span class="name">
+                            <span class="modifier">Async</span>
+                        <span ><b>verifyEmailAndLogin</b></span>
+                        <a href="#verifyEmailAndLogin"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>verifyEmailAndLogin(data: <a href="../classes/LoginWithOTPInput.html" target="_self">LoginWithOTPInput</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="795"
+                                    class="link-to-prism">apps/api/src/modules/auth/services/auth.service.ts:795</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>data</td>
+                                            <td>
+                                                            <code><a href="../classes/LoginWithOTPInput.html" target="_self" >LoginWithOTPInput</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>    <code>unknown</code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="verifyPassword"></a>
+                    <span class="name">
+                            <span class="modifier">Async</span>
+                        <span ><b>verifyPassword</b></span>
+                        <a href="#verifyPassword"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>verifyPassword(userId: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>, password: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="1037"
+                                    class="link-to-prism">apps/api/src/modules/auth/services/auth.service.ts:1037</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>userId</td>
+                                            <td>
+                                                            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                        <tr>
+                                                <td>password</td>
+                                            <td>
+                                                            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>    <code>Promise&lt;boolean&gt;</code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="verifyResetPasswordCode"></a>
+                    <span class="name">
+                            <span class="modifier">Async</span>
+                        <span ><b>verifyResetPasswordCode</b></span>
+                        <a href="#verifyResetPasswordCode"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>verifyResetPasswordCode(email: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>, verificationCode: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="1090"
+                                    class="link-to-prism">apps/api/src/modules/auth/services/auth.service.ts:1090</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>${1:Description placeholder}</p>
+</div>
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>email</td>
+                                            <td>
+                                                            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                        <tr>
+                                                <td>verificationCode</td>
+                                            <td>
+                                                            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>    <code>Promise&lt;any&gt;</code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+
+    </div>
+
+
+    <div class="tab-pane fade  tab-source-code" id="source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import {
+  BadRequestException,
+  ForbiddenException,
+  HttpException,
+  HttpStatus,
+  Injectable,
+  NotFoundException,
+  UnauthorizedException,
+} from &#x27;@nestjs/common&#x27;;
+import {
+  UserTokenMetaRepository,
+  DeviceInfoRepository,
+  PushNotificationTokenRepository,
+  UsersRepository,
+  UserTokenMeta,
+  OTPRequestRepository,
+  PhoneContactType,
+} from &#x27;@app/data-access&#x27;;
+
+import { v4 as uuidv4 } from &#x27;uuid&#x27;;
+import * as bcrypt from &#x27;bcrypt&#x27;;
+
+import { JwtTokenService } from &#x27;@app/authentication&#x27;;
+import { SocialAuthService } from &#x27;@app/social-auth&#x27;;
+import { SocialAuthProvider } from &#x27;@app/social-auth/interfaces/social-auth.types&#x27;;
+
+import { SaveDeviceInfoType } from &#x27;../types/save-device-info.type&#x27;;
+import { AppleLoginInput } from &#x27;../dto/input/apple-login.input&#x27;;
+import { UserStatus } from &#x27;@app/common/enum/user-status.enum&#x27;;
+import { GoogleLoginInput } from &#x27;../dto/input/google-login.input&#x27;;
+import { FacebookLoginInput } from &#x27;../dto/input/facebook-login.input&#x27;;
+import { RequestLoginOTPInput } from &#x27;../dto/input/reqest-login-otp.input&#x27;;
+import { generateSMSCode } from &#x27;@app/common/helpers/genericFunction&#x27;;
+import { LoginWithOTPInput } from &#x27;../dto/input/login-with-otp.input&#x27;;
+import { EmailSignupOTPInput } from &#x27;../dto/input/email-signup-otp.input&#x27;;
+import { SignupInput } from &#x27;../dto/input/signup.input&#x27;;
+import { LoginFlowType } from &#x27;@app/common/enum/login-flow-type.enum&#x27;;
+import { LoginEmailPasswordInput } from &#x27;../dto/input/login-email-password.input&#x27;;
+import { ForgotPasswordInput } from &#x27;../dto/input/forgot-password.input&#x27;;
+import { JwtService } from &#x27;@nestjs/jwt&#x27;;
+import { RequestedFor } from &#x27;@app/common/enum/otp-request.enum&#x27;;
+import { OTPResponse } from &#x27;../dto/response/otp.response&#x27;;
+import { AuthProviderType } from &#x27;../enum/auth-provider.enum&#x27;;
+import {
+  ConfigBiometricVariableService,
+  ConfigVariableService,
+} from &#x27;../../../common/helpers/config-helper&#x27;;
+import { TiktokLoginInput } from &#x27;../dto/input/tiktok-login-input&#x27;;
+import { LoginDetailType } from &#x27;../types/login-detail.type&#x27;;
+import { decodeJwtToken } from &#x27;@app/common/helpers/jwt-helper&#x27;;
+import {
+  MAX_ATTEMPTS_FROM_DEVICE,
+  MULTIPLY_BRFORE_MS,
+  SMS_CODE_EXPIRE_BY,
+  SMS_CODE_EXPIRE_MULTIPLIER,
+} from &#x27;@api/constants&#x27;;
+
+import { HashHelper, SALT_ROUNDS } from &#x27;@app/common/helpers/hash.helper&#x27;;
+import { CometChatHelperService, UserPayload } from &#x27;@app/common/helpers/comet-chat.helper&#x27;;
+import { EmailService } from &#x27;@app/email/email.service&#x27;;
+import { I18nService } from &#x27;nestjs-i18n&#x27;;
+import { AgoraHelperService } from &#x27;@app/common/services/voip/agora/agora.helper&#x27;;
+
+/**
+ * ${1:Description placeholder}
+ *
+ * @export
+ * @class AuthService
+ * @typedef {AuthService}
+ */
+@Injectable()
+export class AuthService {
+  /**
+   * Creates an instance of AuthService.
+   *
+   * @constructor
+   * @param {JwtTokenService} jwtTokenService
+   * @param {JwtService} jwt
+   * @param {SocialAuthService} socialAuthService
+   * @param {UserTokenMetaRepository} userTokenMetaRepository
+   * @param {DeviceInfoRepository} deviceInfoRepository
+   * @param {PushNotificationTokenRepository} pushNotificationTokenRepository
+   * @param {UsersRepository} userRepository
+   * @param {OTPRequestRepository} otpRequestRepository
+   * @param {EmailService} emailService
+   * @param {CometChatHelperService} cometChatHelperService
+   * @param {AgoraHelperService} agoraHelperService
+   */
+  constructor(
+    private readonly jwtTokenService: JwtTokenService,
+    private readonly jwt: JwtService,
+    private readonly socialAuthService: SocialAuthService,
+    private readonly userTokenMetaRepository: UserTokenMetaRepository,
+    private readonly deviceInfoRepository: DeviceInfoRepository,
+    private readonly pushNotificationTokenRepository: PushNotificationTokenRepository,
+    private readonly userRepository: UsersRepository,
+    private readonly otpRequestRepository: OTPRequestRepository,
+    private readonly emailService: EmailService,
+    private readonly cometChatHelperService: CometChatHelperService,
+    private readonly agoraHelperService: AgoraHelperService,
+    private readonly i18nService: I18nService,
+  ) {}
+
+  /**
+   * @description save device info
+   * @param {SaveDeviceInfoType} saveDeviceInfo save device info data
+   */
+  async saveDeviceInfo(saveDeviceInfo: SaveDeviceInfoType) {
+    const { deviceType, deviceName, pushNotificationToken, voipToken, userId, jti } &#x3D;
+      saveDeviceInfo;
+    try {
+      const getDeviceId &#x3D; await this.userTokenMetaRepository.findOne({
+        userId,
+        jti,
+      });
+      const deviceId &#x3D; getDeviceId?.deviceId;
+      await this.deviceInfoRepository.updateOne(
+        { userId, deviceId },
+        { userId, deviceId, deviceType, deviceName },
+        {
+          upsert: true,
+        },
+      );
+      if (pushNotificationToken || voipToken) {
+        await this.pushNotificationTokenRepository.updateOne(
+          { deviceId, userId },
+          {
+            userId,
+            deviceId,
+            deviceType,
+            ...(pushNotificationToken &amp;&amp; { pushToken: pushNotificationToken }),
+            ...(voipToken &amp;&amp; { voipToken }),
+          },
+          {
+            upsert: true,
+          },
+        );
+      }
+    } catch (error: any) {
+      throw error;
+    }
+  }
+  /**
+   * Logout from single device with current login session(jti)
+   * Remove access token and refresh token
+   */
+  async logout(jti: string) {
+    try {
+      const getTokenMeta &#x3D; await this.userTokenMetaRepository.findOne({ jti });
+      if (getTokenMeta) {
+        await this.pushNotificationTokenRepository.deleteMany({
+          deviceId: getTokenMeta.deviceId,
+        });
+      }
+      await this.userTokenMetaRepository.deleteMany({
+        $and: [{ jti }, { tokenType: { $ne: &#x27;biometric_token&#x27; } }],
+      });
+    } catch (error: any) {
+      throw error;
+    }
+  }
+
+  /**
+   * Logout from all device
+   * Remove access token and refresh token
+   */
+  async logoutAll(userId: string) {
+    try {
+      await this.userTokenMetaRepository.deleteMany({ userId });
+      await this.pushNotificationTokenRepository.deleteMany({ userId });
+    } catch (error: any) {
+      throw error;
+    }
+  }
+
+  /**
+   * get comet chat auth token, if no user found, create a new one
+   * @param uid comet chat user uid
+   */
+  async getCometChatAuthTokenOfUser(userPayload: UserPayload) {
+    try {
+      let cometUser &#x3D; await this.cometChatHelperService.getCometChatUser(userPayload.uid);
+
+      if (!cometUser) {
+        cometUser &#x3D; await this.cometChatHelperService.createCometChatUser({
+          uid: userPayload.uid,
+          name: userPayload.name,
+        });
+      }
+      const cometAuthToken &#x3D; await this.cometChatHelperService.getCometChatAuthToken({
+        uid: userPayload.uid,
+      });
+      return cometAuthToken?.authToken || null;
+    } catch (error) {
+      return null;
+    }
+  }
+
+  /**
+   * @description login with apple
+   * @param {AppleLoginInput} appleLoginData apple login data
+   * @returns
+   */
+  async loginWithApple(appleLoginData: AppleLoginInput) {
+    try {
+      const { idToken, deviceId } &#x3D; appleLoginData;
+      const { sub } &#x3D; await this.socialAuthService.verifyToken({
+        idToken,
+        socialAuthProvider: SocialAuthProvider.apple,
+      });
+      const lastLoggedInAt &#x3D; new Date();
+      const jti &#x3D; uuidv4();
+      const user: any &#x3D; await this.userRepository.findOneAndUpdate(
+        {
+          authProvider: &#x27;apple&#x27;,
+          authProviderId: sub,
+        },
+        { lastLoggedInAt, status: UserStatus.email_verified },
+        { upsert: true, new: true },
+      );
+      const payload &#x3D; {
+        username: sub,
+        sub: user._id,
+        jti,
+      };
+      const options &#x3D; ConfigVariableService.jwtTokenConfig();
+      const token &#x3D; this.jwtTokenService.generateTokenPair(payload, options);
+      /**
+       * Save user token meta
+       * Token has authorization for all api
+       */
+      /**
+       * Currently jti is used as device id later it will be updated once we get device id from user in login
+       */
+      const saveTokenMeta: Partial&lt;UserTokenMeta&gt;[] &#x3D; [
+        {
+          userId: user._id,
+          deviceId,
+          authType: &#x27;apple&#x27;,
+          jti,
+          grant: &#x27;all&#x27;,
+          tokenType: &#x27;access_token&#x27;,
+          expiresAt: token.accessTokenExpiresIn,
+        },
+        {
+          userId: user._id,
+          deviceId,
+          jti,
+          tokenType: &#x27;refresh_token&#x27;,
+          expiresAt: token.refreshTokenExpiresIn,
+        },
+      ];
+      await this.userTokenMetaRepository.createMany(saveTokenMeta);
+
+      // Note: uncomment this if comet chat needs to be implemented
+      // const cometAuthToken &#x3D; await this.getCometChatAuthTokenOfUser({
+      //   uid: user._id,
+      //   name: user.firstName ? &#x60;${user.firstName} ${user.lastName}&#x60; : sub,
+      // });
+      if (!user?.agoraUuid) {
+        const chatUserUuid &#x3D; await this.agoraHelperService.getChatUserUuid(
+          String(user._id),
+          user?.authProviderId,
+        );
+        if (chatUserUuid) {
+          await this.userRepository.updateById(user._id, {
+            agoraUuid: chatUserUuid,
+          });
+        }
+      }
+      return {
+        user: {
+          ...user.toObject(),
+          // cometAuthToken,
+        },
+        token,
+      };
+    } catch (error: any) {
+      throw new HttpException(
+        this.i18nService.t(&#x27;auth.fail_to_authorize_apple&#x27;),
+        HttpStatus.BAD_REQUEST,
+      );
+    }
+  }
+
+  /**
+   * @description login with google
+   * @param {GoogleLoginInput} googleLoginData google login data
+   * @returns
+   */
+  async loginWithGoogle(googleLoginData: GoogleLoginInput) {
+    const { deviceId, idToken } &#x3D; googleLoginData;
+    try {
+      const { sub } &#x3D; await this.socialAuthService.verifyToken({
+        idToken,
+        socialAuthProvider: SocialAuthProvider.google,
+      });
+      const lastLoggedInAt &#x3D; new Date();
+      const jti &#x3D; uuidv4();
+      const user: any &#x3D; await this.userRepository.findOneAndUpdate(
+        {
+          authProvider: &#x27;google&#x27;,
+          authProviderId: sub,
+        },
+        { lastLoggedInAt, status: UserStatus.email_verified },
+        { upsert: true, new: true },
+      );
+      const payload &#x3D; {
+        username: sub,
+        sub: user._id,
+        jti,
+      };
+      const options &#x3D; ConfigVariableService.jwtTokenConfig();
+      const token &#x3D; this.jwtTokenService.generateTokenPair(payload, options);
+      /**
+       * Save user token meta
+       * Token has authorization for all api
+       */
+      /**
+       * Currently jti is used as device id later it will be updated once we get device id from user in login
+       */
+      const saveTokenMeta: Partial&lt;UserTokenMeta&gt;[] &#x3D; [
+        {
+          userId: user._id,
+          deviceId,
+          authType: &#x27;google&#x27;,
+          jti,
+          grant: &#x27;all&#x27;,
+          expiresAt: token.accessTokenExpiresIn,
+        },
+        {
+          userId: user._id,
+          deviceId,
+          authType: &#x27;google&#x27;,
+          jti,
+          grant: &#x27;refresh_token&#x27;,
+          expiresAt: token.refreshTokenExpiresIn,
+        },
+      ];
+      await this.userTokenMetaRepository.createMany(saveTokenMeta);
+
+      // const cometAuthToken &#x3D; await this.getCometChatAuthTokenOfUser({
+      //   uid: user._id,
+      //   name: user.firstName ? &#x60;${user.firstName} ${user.lastName}&#x60; : sub,
+      // });
+      if (!user?.agoraUuid) {
+        const chatUserUuid &#x3D; await this.agoraHelperService.getChatUserUuid(
+          String(user._id),
+          user?.authProviderId,
+        );
+        if (chatUserUuid) {
+          await this.userRepository.updateById(user._id, {
+            agoraUuid: chatUserUuid,
+          });
+        }
+      }
+      return {
+        user: {
+          ...user.toObject(),
+          // cometAuthToken,
+        },
+        token,
+      };
+    } catch (error: any) {
+      throw new UnauthorizedException(this.i18nService.t(&#x27;auth.failed_to_authorize_google&#x27;));
+    }
+  }
+
+  /**
+   * @description login with facebook
+   * @param {FacebookLoginInput} facebookLoginData google login data
+   * @returns
+   */
+  async loginWithFacebook(facebookLoginData: FacebookLoginInput) {
+    const { accessToken, deviceId } &#x3D; facebookLoginData;
+    try {
+      const facebookDetails &#x3D; await this.socialAuthService.verifyToken({
+        idToken: accessToken,
+        socialAuthProvider: SocialAuthProvider.facebook,
+      });
+      const lastLoggedInAt &#x3D; new Date();
+      const jti &#x3D; uuidv4();
+      const user: any &#x3D; await this.userRepository.findOneAndUpdate(
+        {
+          authProvider: &#x27;facebook&#x27;,
+          authProviderId: facebookDetails.id,
+        },
+        { lastLoggedInAt, status: UserStatus.email_verified },
+        { upsert: true, new: true },
+      );
+      const payload &#x3D; {
+        username: facebookDetails.id,
+        sub: user._id,
+        jti,
+      };
+
+      const options &#x3D; ConfigVariableService.jwtTokenConfig();
+      const token &#x3D; this.jwtTokenService.generateTokenPair(payload, options);
+      /**
+       * Save user token meta
+       * Token has authorization for all api
+       */
+      /**
+       * Currently jti is used as device id later it will be updated once we get device id from user in login
+       */
+      const saveTokenMeta: Partial&lt;UserTokenMeta&gt;[] &#x3D; [
+        {
+          userId: user._id,
+          deviceId,
+          authType: &#x27;facebook&#x27;,
+          jti,
+          grant: &#x27;all&#x27;,
+          tokenType: &#x27;access_token&#x27;,
+          expiresAt: token.accessTokenExpiresIn,
+        },
+        {
+          userId: user._id,
+          deviceId,
+          jti,
+          tokenType: &#x27;refresh_token&#x27;,
+          expiresAt: token.refreshTokenExpiresIn,
+        },
+      ];
+      await this.userTokenMetaRepository.createMany(saveTokenMeta);
+      // const cometAuthToken &#x3D; await this.getCometChatAuthTokenOfUser({
+      //   uid: user._id,
+      //   name: user.firstName
+      //     ? &#x60;${user.firstName} ${user.lastName}&#x60;
+      //     : facebookDetails.id,
+      // });
+      if (!user?.agoraUuid) {
+        const chatUserUuid &#x3D; await this.agoraHelperService.getChatUserUuid(
+          String(user._id),
+          user?.authProviderId,
+        );
+        if (chatUserUuid) {
+          await this.userRepository.updateById(user._id, {
+            agoraUuid: chatUserUuid,
+          });
+        }
+      }
+      return {
+        user: {
+          ...user.toObject(),
+          // cometAuthToken,
+        },
+        token,
+      };
+    } catch (error) {
+      throw new HttpException(
+        this.i18nService.t(&#x27;auth.failed_to_authorize_facebook&#x27;),
+        HttpStatus.BAD_REQUEST,
+      );
+    }
+  }
+
+  /**
+   * Method for sending otp for email login
+   * @param {RequestLoginOTPInput} data
+   * @param {string} requestedFor
+   * @returns
+   */
+
+  // async emailSender(mailValues) {
+  //   const { requestedFor, values, email } &#x3D; mailValues;
+  //   if (requestedFor &#x3D;&#x3D; &#x27;forget_password&#x27;) {
+  //     await this.emailService.sendForgotPasswordOtp(email, values);
+  //   }
+  //   if (requestedFor &#x3D;&#x3D; &#x27;app-login&#x27;) {
+  //     await this.emailService.appUserCreateOtp(email, values);
+  //   }
+  // }
+
+  /**
+   * ${1:Description placeholder}
+   *
+   * @async
+   * @param {RequestLoginOTPInput} data
+   * @param {*} requestedFor
+   * @returns {Promise&lt;{ expiresBy: number; expiresAt: any; }&gt;\}
+   */
+  async sendEmailOTP(data: RequestLoginOTPInput, requestedFor) {
+    const { email, deviceId } &#x3D; data;
+
+    try {
+      // find number of attempt in last 24 hrs
+      const last24hrs &#x3D; new Date(new Date().getTime() - 24 * 60 * 60 * 1000);
+      const getAttemptFromThisDevice &#x3D; await this.otpRequestRepository.find({
+        deviceId,
+        expiresAt: { $gte: last24hrs },
+      });
+      if (getAttemptFromThisDevice?.length &gt; MAX_ATTEMPTS_FROM_DEVICE) {
+        throw new BadRequestException(this.i18nService.t(&#x27;auth.too_many_attempts&#x27;));
+      }
+      const currentTime &#x3D; new Date(new Date().getTime());
+      let expiresBy &#x3D; parseInt(String(SMS_CODE_EXPIRE_BY));
+      let expiresAt &#x3D; null;
+      const verificationCode &#x3D; generateSMSCode();
+
+      const attemptedFromEmail &#x3D; await this.otpRequestRepository.findOne({
+        email,
+        requestedFor,
+      });
+      const values &#x3D; {
+        name: email,
+        otp: verificationCode,
+        requestedFor,
+      };
+      // const mailValues &#x3D; {
+      //   values,
+      //   email,
+      //   requestedFor,
+      // };
+
+      if (!attemptedFromEmail) {
+        expiresAt &#x3D; new Date(new Date().getTime() + expiresBy);
+        await this.otpRequestRepository.create({
+          email,
+          deviceId,
+          expiresBy,
+          expiresAt,
+          verificationCode,
+          requestedFor,
+        });
+        this.emailService.sendEmail({
+          to: email,
+          values,
+          slug: requestedFor,
+        });
+
+        return {
+          message: this.i18nService.t(&#x27;auth.verification_code_sent_to_email&#x27;),
+          expiresBy,
+          expiresAt,
+        };
+      }
+
+      if (attemptedFromEmail?.expiresAt &gt; currentTime) {
+        expiresAt &#x3D; attemptedFromEmail?.expiresAt;
+        expiresBy &#x3D; new Date(expiresAt).getTime() - new Date().getTime();
+        return {
+          message: this.i18nService.t(&#x27;auth.verification_code_already_sent&#x27;),
+          expiresAt,
+          expiresBy,
+        };
+      }
+      //  multiply expiresBy if attempted after 2 mins and before 2 days
+      if (attemptedFromEmail.expiresBy &lt; MULTIPLY_BRFORE_MS) {
+        expiresBy &#x3D; attemptedFromEmail.expiresBy * parseInt(String(SMS_CODE_EXPIRE_MULTIPLIER));
+      }
+
+      expiresAt &#x3D; new Date(new Date().getTime() + expiresBy);
+      await this.otpRequestRepository.updateOne(
+        { email },
+        {
+          deviceId,
+          expiresBy,
+          expiresAt,
+          verificationCode,
+          requestedFor,
+        },
+      );
+      this.emailService.sendEmail({
+        to: email,
+        values: values,
+        slug: requestedFor,
+      });
+
+      return {
+        message: this.i18nService.t(&#x27;auth.verification_code_sent_to_email&#x27;),
+        expiresAt,
+        expiresBy,
+      };
+    } catch (error: any) {
+      throw error;
+    }
+  }
+
+  /**
+   * Method for sending otp for email login
+   * @param {RequestLoginOTPInput} data
+   * @param {string} requestedFor
+   * @returns
+   */
+  async loginWithOTP(data: LoginWithOTPInput) {
+    const { email, verificationCode } &#x3D; data;
+    try {
+      const otpVerification &#x3D; await this.otpRequestRepository.findOne({
+        verificationCode,
+        email,
+      });
+      if (!otpVerification) {
+        throw new BadRequestException(this.i18nService.t(&#x27;auth.invalid_verification_code&#x27;));
+      }
+      if (otpVerification.expiresAt &lt; new Date()) {
+        throw new BadRequestException(this.i18nService.t(&#x27;auth.invalid_verification_code&#x27;));
+      }
+      const lastLoggedInAt &#x3D; new Date();
+      const jti &#x3D; uuidv4();
+      /**
+       * Update users last logged in at
+       */
+      const user: any &#x3D; await this.userRepository.findOneAndUpdate(
+        {
+          authProvider: &#x27;email&#x27;,
+          authProviderId: email,
+        },
+        { lastLoggedInAt, status: UserStatus.email_verified },
+        { upsert: true, new: true },
+      );
+      const payload &#x3D; {
+        username: email,
+        sub: user._id,
+        jti,
+      };
+      const options &#x3D; ConfigVariableService.jwtTokenConfig();
+      const token &#x3D; this.jwtTokenService.generateTokenPair(payload, options);
+      await this.otpRequestRepository.deleteMany({ email });
+      /**
+       * Save user token meta
+       * Token has authorization for all api
+       */
+      const saveTokenMeta: Partial&lt;UserTokenMeta&gt;[] &#x3D; [
+        {
+          userId: user._id,
+          deviceId: otpVerification.deviceId,
+          authType: &#x27;email_otp&#x27;,
+          jti,
+          grant: &#x27;all&#x27;,
+          tokenType: &#x27;access_token&#x27;,
+          expiresAt: token.accessTokenExpiresIn,
+        },
+        {
+          userId: user._id,
+          deviceId: otpVerification.deviceId,
+          jti,
+          tokenType: &#x27;refresh_token&#x27;,
+          expiresAt: token.refreshTokenExpiresIn,
+        },
+      ];
+      await this.userTokenMetaRepository.createMany(saveTokenMeta);
+      // uncomment
+      // const cometAuthToken &#x3D; await this.getCometChatAuthTokenOfUser({
+      //   uid: user._id,
+      //   name: user.firstName ? &#x60;${user.firstName} ${user.lastName}&#x60; : email,
+      // });
+      if (!user?.agoraUuid) {
+        const chatUserUuid &#x3D; await this.agoraHelperService.getChatUserUuid(
+          String(user._id),
+          user?.authProviderId,
+        );
+        if (chatUserUuid) {
+          await this.userRepository.updateById(user._id, {
+            agoraUuid: chatUserUuid,
+          });
+        }
+      }
+      return {
+        user: {
+          ...user.toObject(),
+          // cometAuthToken,
+        },
+        token,
+      };
+    } catch (error: any) {
+      throw error;
+    }
+  }
+
+  /**
+   * register with email provider
+   * @param {EmailSignupOTPInput} registerData register with email data
+   */
+
+  async registerWithEmail(registerData: EmailSignupOTPInput) {
+    const { email, deviceId } &#x3D; registerData;
+    try {
+      const existingUser &#x3D; await this.userRepository.findOne({
+        authProvider: &#x27;email&#x27;,
+        authProviderId: email,
+      });
+
+      if (existingUser) {
+        throw new BadRequestException(this.i18nService.t(&#x27;auth.email_already_exists&#x27;));
+      }
+      return this.sendEmailOTP(
+        {
+          deviceId,
+          email,
+        },
+        RequestedFor.app_user_create_otp,
+      );
+    } catch (error: any) {
+      throw error;
+    }
+  }
+
+  /**
+   * register user with email/password
+   * @param {SignupInput} registerUserData register user with provided data
+   */
+  async registerUser(registerUserData: SignupInput) {
+    const { email, password, firstName, lastName, phoneNumber, loginFlowType, deviceId } &#x3D;
+      registerUserData;
+    try {
+      const existingUser &#x3D; await this.userRepository.findOne({
+        authProvider: &#x27;email&#x27;,
+        authProviderId: email,
+      });
+      if (existingUser) {
+        throw new BadRequestException(this.i18nService.t(&#x27;auth.email_already_exists&#x27;));
+      }
+      const hashPassword &#x3D; await bcrypt.hash(password, SALT_ROUNDS);
+      const lastLoggedInAt &#x3D; new Date();
+      const createData &#x3D; {
+        authProvider: AuthProviderType.email,
+        authProviderId: email,
+        password: hashPassword,
+        loginFlowType,
+        lastLoggedInAt,
+        ...(firstName &amp;&amp; { firstName }),
+        ...(lastName &amp;&amp; { lastName }),
+        ...(phoneNumber?.dialCode &amp;&amp;
+          phoneNumber?.number &amp;&amp; {
+            contacts: {
+              phone: {
+                type: PhoneContactType.mobile,
+                dialCode: phoneNumber.dialCode,
+                number: phoneNumber.number,
+                isVerified: false,
+              },
+            },
+          }),
+      };
+
+      const user &#x3D; await this.userRepository.create(createData);
+
+      if (loginFlowType &#x3D;&#x3D;&#x3D; LoginFlowType.link) {
+        // send email verificationLink
+      }
+
+      const otpResp &#x3D; await this.sendEmailOTP(
+        { email, deviceId },
+        RequestedFor.app_user_create_otp,
+      );
+      return {
+        message: &#x27;User registration successful&#x27;,
+        user: {
+          ...user.toObject(),
+          email: user?.authProviderId,
+        },
+        expiry: { ...otpResp },
+      };
+    } catch (error: any) {
+      throw error;
+    }
+  }
+
+  /**
+   * resends the otp for verify email in valid case
+   * @param {string} email
+   * @param {string} deviceId
+   * @returns
+   */
+  async resendVerifyEmailOtp(email: string, deviceId: string): Promise&lt;OTPResponse&gt; {
+    try {
+      const user &#x3D; await this.userRepository.findOne({
+        authProvider: &#x27;email&#x27;,
+        authProviderId: email,
+      });
+      if (!user) {
+        throw new BadRequestException(this.i18nService.t(&#x27;auth.email_does_not_exist&#x27;));
+      }
+      const otpResponse &#x3D; await this.sendEmailOTP(
+        {
+          deviceId,
+          email,
+        },
+        RequestedFor.app_login,
+      );
+      return {
+        message: &#x27;Verify email otp sent successfully&#x27;,
+        expiry: { ...otpResponse },
+      };
+    } catch (error: any) {
+      throw error;
+    }
+  }
+
+  /**
+   * @description verify email and login
+   * @param {LoginWithOTPInput} data
+   * @returns
+   */
+  async verifyEmailAndLogin(data: LoginWithOTPInput) {
+    const { email, verificationCode } &#x3D; data;
+    try {
+      const otpVerification &#x3D; await this.otpRequestRepository.findOne({
+        verificationCode,
+        email,
+      });
+
+      if (!otpVerification) {
+        throw new BadRequestException(this.i18nService.t(&#x27;auth.invalid_verification_code&#x27;));
+      }
+      if (otpVerification.expiresAt &lt; new Date()) {
+        throw new BadRequestException(this.i18nService.t(&#x27;auth.invalid_verification_code&#x27;));
+      }
+      const lastLoggedInAt &#x3D; new Date();
+      const jti &#x3D; uuidv4();
+      /**
+       * Update user
+       */
+      const user: any &#x3D; await this.userRepository.findOneAndUpdate(
+        {
+          authProvider: &#x27;email&#x27;,
+          authProviderId: email,
+        },
+        { lastLoggedInAt, status: UserStatus.email_verified },
+        { upsert: true, new: true },
+      );
+
+      const tokenPayload &#x3D; {
+        username: email,
+        sub: user._id,
+        jti,
+      };
+
+      const options &#x3D; ConfigVariableService.jwtTokenConfig();
+      const token &#x3D; this.jwtTokenService.generateTokenPair(tokenPayload, options);
+      await this.otpRequestRepository.deleteMany({ email });
+      /**
+       * Save user token meta
+       * Token has authorization for all api
+       */
+      const saveTokenMeta: Partial&lt;UserTokenMeta&gt;[] &#x3D; [
+        {
+          userId: user._id,
+          deviceId: otpVerification.deviceId,
+          authType: &#x27;email_password&#x27;,
+          jti,
+          grant: user?.password ? &#x27;all&#x27; : &#x27;set_password&#x27;, // grant &#x27;all&#x27; if user already set password
+          tokenType: &#x27;access_token&#x27;,
+          expiresAt: token.accessTokenExpiresIn,
+        },
+        {
+          userId: user._id,
+          deviceId: otpVerification.deviceId,
+          jti,
+          tokenType: &#x27;refresh_token&#x27;,
+          expiresAt: token.refreshTokenExpiresIn,
+        },
+      ];
+      await this.userTokenMetaRepository.createMany(saveTokenMeta);
+
+      // Note: uncomment if comet chat is to be implemented
+      // const cometAuthToken &#x3D; await this.getCometChatAuthTokenOfUser({
+      //   uid: user._id,
+      //   name: &#x60;${user.firstName} ${user.lastName}&#x60;,
+      // });
+      if (!user?.agoraUuid) {
+        const chatUserUuid &#x3D; await this.agoraHelperService.getChatUserUuid(
+          String(user._id),
+          user?.authProviderId,
+        );
+
+        if (chatUserUuid) {
+          await this.userRepository.updateById(user._id, {
+            agoraUuid: chatUserUuid,
+          });
+        }
+      }
+
+      return {
+        user: {
+          ...user.toObject(),
+          email: user?.authProviderId,
+          // cometAuthToken,
+        },
+        token,
+      };
+    } catch (error: any) {
+      throw error;
+    }
+  }
+
+  /**
+   * Update grant of access_token
+   * @param jti jwt token id
+   * @param grant
+   */
+  async updateGrant(jti: string, grant: string) {
+    await this.userTokenMetaRepository.updateOne({ jti, tokenType: &#x27;access_token&#x27; }, { grant });
+  }
+
+  /**
+   * update user password
+   * @param email
+   * @param password
+   */
+  async updateUserPassword(email: string, password: string) {
+    const hash &#x3D; await bcrypt.hash(password, SALT_ROUNDS);
+    await this.userRepository.updateOne({ authProviderId: email }, { password: hash });
+  }
+
+  /**
+   * Set first time password and update grant to all
+   * @param userId
+   * @param email
+   * @param password
+   * @param jti
+   */
+  async setPasswordUpdateGrant(userId, password, jti) {
+    try {
+      const user &#x3D; await this.userRepository.findById(userId);
+      if (user?.password) {
+        throw new HttpException(
+          this.i18nService.t(&#x27;auth.password_already_set&#x27;),
+          HttpStatus.FORBIDDEN,
+        );
+      }
+      const email &#x3D; user?.authProviderId;
+      await this.updateUserPassword(email, password);
+      await this.updateGrant(jti, &#x27;all&#x27;);
+    } catch (error: any) {
+      throw error;
+    }
+  }
+
+  /**
+   * login with email password
+   * @param {LoginEmailPasswordInput} data login data
+   * @returns
+   */
+  async loginWithEmail(data: LoginEmailPasswordInput) {
+    const { email, password, deviceId } &#x3D; data;
+    try {
+      const user: any &#x3D; await this.userRepository.findOne({
+        authProviderId: email,
+      });
+      if (!user || !user.password || user?.deletedAt) {
+        throw new BadRequestException(this.i18nService.t(&#x27;auth.invalid_credentials&#x27;));
+      }
+      const comparePassword &#x3D; await bcrypt.compare(password, user.password);
+      if (!comparePassword) {
+        throw new BadRequestException(this.i18nService.t(&#x27;auth.invalid_credentials&#x27;));
+      }
+      // check if user&#x27;s email verification is pending
+      if (user.status &#x3D;&#x3D;&#x3D; UserStatus.email_verification_pending) {
+        const otpRes &#x3D; await this.sendEmailOTP(
+          {
+            deviceId,
+            email,
+          },
+          RequestedFor.app_login,
+        );
+        return {
+          message: this.i18nService.t(&#x27;auth.verification_code_sent_to_email&#x27;),
+          user: { ...user.toObject(), email: user.authProviderId },
+          expiry: {
+            ...otpRes,
+          },
+        };
+      }
+      const lastLoggedInAt &#x3D; new Date();
+      const jti &#x3D; uuidv4();
+      const payload &#x3D; {
+        username: email,
+        sub: user._id,
+        jti,
+      };
+      const options &#x3D; ConfigVariableService.jwtTokenConfig();
+      const token &#x3D; this.jwtTokenService.generateTokenPair(payload, options);
+      /**
+       * Save user token meta
+       * Token has authorization for all api
+       */
+
+      /**
+       * Currently jti is used as device id later it will be updated once we get device id from user in login
+       */
+      const saveTokenMeta: Partial&lt;UserTokenMeta&gt;[] &#x3D; [
+        {
+          userId: user._id,
+          deviceId,
+          authType: &#x27;email_password&#x27;,
+          jti,
+          grant: &#x27;all&#x27;,
+          tokenType: &#x27;access_token&#x27;,
+          expiresAt: token.accessTokenExpiresIn,
+        },
+        {
+          userId: user._id,
+          deviceId,
+          jti,
+          tokenType: &#x27;refresh_token&#x27;,
+          expiresAt: token.refreshTokenExpiresIn,
+        },
+      ];
+      await this.userTokenMetaRepository.createMany(saveTokenMeta);
+      /**
+       * update last logged in at
+       */
+      const updatedUser: any &#x3D; await this.userRepository.findOneAndUpdate(
+        {
+          _id: user._id,
+        },
+        { lastLoggedInAt },
+        { new: true },
+      );
+
+      // Note: uncomment if comet chat has to be implemented
+      // const cometAuthToken &#x3D; await this.getCometChatAuthTokenOfUser({
+      //   uid: user._id,
+      //   name: &#x60;${user.firstName} ${user.lastName}&#x60;,
+      // });
+
+      return {
+        user: {
+          ...updatedUser?.toObject(),
+          email: updatedUser?.authProviderId,
+          // cometAuthToken,
+        },
+        token,
+      };
+    } catch (error: any) {
+      throw error;
+    }
+  }
+
+  /**
+   *
+   * @param email Verify password
+   * @param password
+   * @returns
+   */
+  async verifyPassword(userId: string, password: string): Promise&lt;boolean&gt; {
+    const user &#x3D; await this.userRepository.findById(userId);
+    const comparePassword &#x3D; await bcrypt.compare(password, user.password);
+    if (!comparePassword) {
+      throw new ForbiddenException(this.i18nService.t(&#x27;auth.passwod_change_password_not_matched&#x27;));
+    }
+    return true;
+  }
+
+  /**
+   * ${1:Description placeholder}
+   *
+   * @async
+   * @param {string} userId
+   * @param {string} password
+   * @returns {Promise&lt;void&gt;}
+   */
+  async updateUserPasswordById(userId: string, password: string) {
+    const hash &#x3D; await bcrypt.hash(password, SALT_ROUNDS);
+    await this.userRepository.updateById(userId, { password: hash });
+  }
+
+  /**
+   * ${1:Description placeholder}
+   *
+   * @async
+   * @param {ForgotPasswordInput} data
+   * @returns {Promise&lt;{ expiresBy: number; expiresAt: any; }&gt;\}
+   */
+  async forgotPassword(data: ForgotPasswordInput) {
+    const { email } &#x3D; data;
+
+    try {
+      const existingUser &#x3D; await this.userRepository.findOne({
+        authProvider: &#x27;email&#x27;,
+        authProviderId: email,
+      });
+      if (!existingUser || existingUser?.deletedAt) {
+        throw new BadRequestException(this.i18nService.t(&#x27;auth.email_does_not_exist&#x27;));
+      }
+      return this.sendEmailOTP(data, RequestedFor.forgot_password_otp);
+    } catch (error: any) {
+      throw error;
+    }
+  }
+  /**
+   * ${1:Description placeholder}
+   *
+   * @async
+   * @param {string} email
+   * @param {string} verificationCode
+   * @returns {Promise&lt;any&gt;}
+   */
+  async verifyResetPasswordCode(email: string, verificationCode: string): Promise&lt;any&gt; {
+    try {
+      const getCodeRequest &#x3D; await this.otpRequestRepository.findOne({
+        email,
+        verificationCode,
+        requestedFor: RequestedFor.forgot_password_otp,
+        expiresAt: { $gt: new Date() },
+      });
+      await this.userRepository.updateOne(
+        {
+          authProvider: &#x27;email&#x27;,
+          authProviderId: email,
+        },
+        {
+          status: UserStatus.email_verified,
+        },
+      );
+      return !!getCodeRequest;
+    } catch (error: any) {
+      throw error;
+    }
+  }
+
+  /**
+   * ${1:Description placeholder}
+   *
+   * @async
+   * @param {string} email
+   * @param {string} password
+   * @returns {Promise&lt;void&gt;}
+   */
+  async updateUserPasswordAndDeleteOtp(email: string, password: string) {
+    try {
+      await this.updateUserPassword(email, password);
+      await this.otpRequestRepository.deleteMany({
+        email: email,
+        requestedFor: RequestedFor.forgot_password,
+      });
+    } catch (e) {
+      throw new BadRequestException(e?.message);
+    }
+  }
+  /**
+   * verify code and reset password
+   * @param {string} email
+   * @param {string} password
+   * @param {string} verificationCode
+   */
+  async resetPassword(email: string, password: string, verificationCode: string) {
+    try {
+      const isValidVerificationCode &#x3D; await this.verifyResetPasswordCode(email, verificationCode);
+      if (!isValidVerificationCode) {
+        throw new BadRequestException(this.i18nService.t(&#x27;auth.invalid_verification_code&#x27;));
+      }
+      const user &#x3D; await this.userRepository.findOne({
+        authProviderId: email,
+        deletedAt: null,
+      });
+
+      if (!user) throw new NotFoundException(this.i18nService.t(&#x27;auth.email_does_not_exist&#x27;));
+
+      if (HashHelper.compare(password, user.password)) {
+        throw new BadRequestException(this.i18nService.t(&#x27;auth.cannot_update_same_password&#x27;));
+      }
+      await this.updateUserPasswordAndDeleteOtp(email, password);
+    } catch (error: any) {
+      throw error;
+    }
+  }
+
+  /**
+   * Refresh token
+   * @param {string} refreshToken
+   */
+  async refresh(refreshToken: string) {
+    try {
+      const options &#x3D; ConfigVariableService.jwtTokenConfig();
+      const secret &#x3D; options.refreshTokenSecret;
+      const decoded &#x3D; await decodeJwtToken(refreshToken, secret);
+      if (!decoded || !decoded.jti || !decoded.username) {
+        throw new ForbiddenException(this.i18nService.t(&#x27;auth.unauthorized&#x27;));
+      }
+      /**
+       * Remove access token and refresh token
+       */
+      const user &#x3D; await this.userRepository.findOne({
+        authProviderId: decoded.username,
+      });
+      if (!user || user?.deletedAt) {
+        throw new ForbiddenException(this.i18nService.t(&#x27;auth.unauthorized&#x27;));
+      }
+      const payload &#x3D; {
+        username: user.authProviderId,
+        sub: user._id,
+        jti: decoded.jti,
+      };
+      const token &#x3D; this.jwtTokenService.generateTokenPair(payload, options);
+      /**
+       * Update user token meta
+       * Token has authorization for all api
+       */
+
+      await this.userTokenMetaRepository.updateOne(
+        {
+          userId: user._id,
+          tokenType: &#x27;access_token&#x27;,
+          jti: decoded.jti,
+        },
+        {
+          expiresAt: token.accessTokenExpiresIn,
+          grant: &#x27;all&#x27;,
+          // jti: decoded.jti,
+        },
+        { upsert: true },
+      );
+      await this.userTokenMetaRepository.updateOne(
+        {
+          userId: user._id,
+          tokenType: &#x27;refresh_token&#x27;,
+          jti: decoded.jti,
+        },
+        {
+          expiresAt: token.refreshTokenExpiresIn,
+          // jti: decoded.jti
+        },
+        { upsert: true },
+      );
+
+      return token;
+    } catch (error: any) {
+      throw error;
+    }
+  }
+
+  /**
+   * @description login with tiktok
+   * @param {TiktokLoginInput} tiktokLoginData login data
+   * @returns
+   */
+  async loginWithTiktok(tiktokLoginData: TiktokLoginInput) {
+    const { code, deviceId } &#x3D; tiktokLoginData;
+    try {
+      const tiktokDetails &#x3D; await this.socialAuthService.verifyToken({
+        idToken: code,
+        socialAuthProvider: SocialAuthProvider.tiktok,
+      });
+      const lastLoggedInAt &#x3D; new Date();
+      const jti &#x3D; uuidv4();
+      const user: any &#x3D; await this.userRepository.findOneAndUpdate(
+        {
+          authProvider: &#x27;tiktok&#x27;,
+          authProviderId: tiktokDetails.union_id,
+        },
+        { lastLoggedInAt, status: UserStatus.email_verified },
+        { upsert: true, new: true },
+      );
+      const payload &#x3D; {
+        username: tiktokDetails.union_id,
+        sub: user._id,
+        jti,
+      };
+
+      const options &#x3D; ConfigVariableService.jwtTokenConfig();
+      const token &#x3D; this.jwtTokenService.generateTokenPair(payload, options);
+      /**
+       * Save user token meta
+       * Token has authorization for all api
+       */
+      /**
+       * Currently jti is used as device id later it will be updated once we get device id from user in login
+       */
+      const saveTokenMeta: Partial&lt;UserTokenMeta&gt;[] &#x3D; [
+        {
+          userId: user._id,
+          deviceId,
+          authType: &#x27;tiktok&#x27;,
+          jti,
+          grant: &#x27;all&#x27;,
+          tokenType: &#x27;access_token&#x27;,
+          expiresAt: token.accessTokenExpiresIn,
+        },
+        {
+          userId: user._id,
+          deviceId,
+          jti,
+          tokenType: &#x27;refresh_token&#x27;,
+          expiresAt: token.refreshTokenExpiresIn,
+        },
+      ];
+      await this.userTokenMetaRepository.createMany(saveTokenMeta);
+      // const cometAuthToken &#x3D; await this.getCometChatAuthTokenOfUser({
+      //   uid: user._id,
+      //   name: user.firstName
+      //     ? &#x60;${user.firstName} ${user.lastName}&#x60;
+      //     : tiktokDetails.union_id,
+      // });
+      if (!user?.agoraUuid) {
+        const chatUserUuid &#x3D; await this.agoraHelperService.getChatUserUuid(
+          String(user._id),
+          user?.authProviderId,
+        );
+        if (chatUserUuid) {
+          await this.userRepository.updateById(user._id, {
+            agoraUuid: chatUserUuid,
+          });
+        }
+      }
+      return {
+        user: {
+          ...user.toObject(),
+          // cometAuthToken,
+        },
+        token,
+      };
+    } catch (error) {
+      throw new HttpException(
+        this.i18nService.t(&#x27;auth.failed_to_authorize_tiktok&#x27;),
+        HttpStatus.BAD_REQUEST,
+      );
+    }
+  }
+  /**
+   * @description generate new token for biometric authentication
+   * @param {LoginDetailType}  loginDetail data
+   * @returns
+   */
+  async enableBiometricAuth(loginDetail: LoginDetailType, deviceId: string) {
+    const { userId } &#x3D; loginDetail;
+    try {
+      const user: any &#x3D; await this.userRepository.findById(userId, {
+        isBiometricEnabled: 1,
+        authProviderId: 1,
+      });
+      const jti &#x3D; uuidv4();
+      const payload &#x3D; {
+        username: user.authProviderId,
+        sub: user._id,
+        jti,
+      };
+      const options &#x3D; ConfigBiometricVariableService.jwtTokenConfig();
+      const token &#x3D; this.jwtTokenService.generateTokenForBiometric(payload, options);
+      /**
+       * Save user token meta
+       * Token has authorization for all api
+       */
+
+      const saveTokenMeta: Partial&lt;UserTokenMeta&gt; &#x3D; {
+        userId: user._id,
+        authType: &#x27;biometric&#x27;,
+        jti,
+        grant: &#x27;biometric_login&#x27;,
+        tokenType: &#x27;biometric_token&#x27;,
+        expiresAt: token.biometricTokenExpiresIn,
+      };
+
+      if (user?.isBiometricEnabled) {
+        await this.userTokenMetaRepository.updateOne({ deviceId }, saveTokenMeta);
+      } else {
+        saveTokenMeta.deviceId &#x3D; deviceId;
+        await this.userTokenMetaRepository.create(saveTokenMeta);
+        await this.userRepository.updateOne(
+          {
+            _id: user._id,
+          },
+          { isBiometricEnabled: true },
+        );
+      }
+      return {
+        token,
+      };
+    } catch (error: any) {
+      throw error;
+    }
+  }
+  /**
+   * @description generate new accesstoken, refreshToken and biometricToken for biometric authentication
+   * @param {LoginDetailType}  loginDetail data
+   * @returns
+   */
+  async loginWithBiometric(biometricToken: string, deviceId: string) {
+    try {
+      const biometricOptions &#x3D; ConfigBiometricVariableService.jwtTokenConfig();
+      const secret &#x3D; biometricOptions.biometricTokenSecret;
+      const decoded &#x3D; await decodeJwtToken(biometricToken, secret);
+      if (!decoded || !decoded.jti || !decoded.username) {
+        throw new ForbiddenException(this.i18nService.t(&#x27;auth.unauthorized&#x27;));
+      }
+      /**
+       * Remove access token and refresh token
+       */
+      const user: any &#x3D; await this.userRepository.findOne({
+        authProviderId: decoded.username,
+      });
+      if (!user || user?.deletedAt) {
+        throw new ForbiddenException(this.i18nService.t(&#x27;auth.unauthorized&#x27;));
+      }
+      const loginMeta &#x3D; await this.userTokenMetaRepository.findOne(
+        {
+          userId: decoded.sub,
+          jti: decoded.jti,
+          deviceId,
+          tokenType: &#x27;biometric_token&#x27;,
+          grant: &#x27;biometric_login&#x27;,
+        },
+        { jti: 1, userId: 1, tokenType: 1, grant: 1 },
+      );
+      if (!loginMeta) {
+        throw new HttpException(this.i18nService.t(&#x27;auth.unauthorized&#x27;), HttpStatus.UNAUTHORIZED);
+      }
+      const lastLoggedInAt &#x3D; new Date();
+      const jti &#x3D; uuidv4();
+      const options &#x3D; ConfigVariableService.jwtTokenConfig();
+      const payload &#x3D; {
+        username: user.authProviderId,
+        sub: user._id,
+        jti,
+      };
+      const tokens &#x3D; this.jwtTokenService.generateTokenPair(payload, options);
+      const biometricPayload &#x3D; {
+        username: user.authProviderId,
+        sub: user._id,
+        jti,
+      };
+      const biometricTokenDetails &#x3D; this.jwtTokenService.generateTokenForBiometric(
+        biometricPayload,
+        biometricOptions,
+      );
+      /**
+       * Save user token meta
+       * Token has authorization for all api
+       */
+      /**
+       * Currently jti is used as device id later it will be updated once we get device id from user in login
+       */
+      const saveTokenMeta: Partial&lt;UserTokenMeta&gt;[] &#x3D; [
+        {
+          userId: user._id,
+          deviceId,
+          authType: &#x27;biometric&#x27;,
+          jti,
+          grant: &#x27;all&#x27;,
+          tokenType: &#x27;access_token&#x27;,
+          expiresAt: tokens.accessTokenExpiresIn,
+        },
+        {
+          userId: user._id,
+          deviceId,
+          jti,
+          tokenType: &#x27;refresh_token&#x27;,
+          expiresAt: tokens.refreshTokenExpiresIn,
+        },
+        {
+          userId: user._id,
+          deviceId,
+          jti,
+          tokenType: &#x27;biometric_token&#x27;,
+          grant: &#x27;biometric_login&#x27;,
+          expiresAt: biometricTokenDetails.biometricTokenExpiresIn,
+        },
+      ];
+      await this.userTokenMetaRepository.createMany(saveTokenMeta);
+
+      // const cometAuthToken &#x3D; await this.getCometChatAuthTokenOfUser({
+      //   uid: user._id,
+      //   name: &#x60;${user.firstName} ${user.lastName}&#x60;,
+      // });
+
+      await this.userRepository.updateOne(
+        {
+          _id: user._id,
+        },
+        { lastLoggedInAt },
+        { new: true },
+      );
+
+      return {
+        ...tokens,
+        ...biometricTokenDetails,
+        // cometAuthToken
+      };
+    } catch (error: any) {
+      throw error;
+    }
+  }
+}
+</code></pre>
+    </div>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+          <label class="dark-mode-switch">
+               <input type="checkbox">
+               <span class="slider">
+                    <svg class="slider-icon" viewBox="0 0 24 24" fill="none" height="20" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" width="20" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"></path>
+                    </svg>
+               </span>
+          </label>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'injectable';
+            var COMPODOC_CURRENT_PAGE_URL = 'AuthService.html';
+            var MAX_SEARCH_RESULTS = 15;
+       </script>
+
+       <script>
+               $darkModeToggleSwitchers = document.querySelectorAll('.dark-mode-switch input');
+               checkToggle(darkModeState);
+               if ($darkModeToggleSwitchers.length > 0) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].addEventListener('change', function (event) {
+                              darkModeState = !darkModeState;
+                              toggleDarkMode(darkModeState);
+                         });
+                    }
+               }
+          </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+
+       <script src="../js/menu-wc.js" defer></script>
+       <script nomodule src="../js/menu-wc_es5.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>

@@ -1,0 +1,11 @@
+#!/bin/bash
+
+set -e
+
+aws ecr get-login-password --region ap-south-1 | docker login --username AWS --password-stdin 896720489482.dkr.ecr.ap-south-1.amazonaws.com
+
+cd /home/ebthemes/dev
+docker-compose pull ebt_cms_dev
+docker-compose rm -s -f ebt_cms_dev
+docker-compose up -d ebt_cms_dev
+

@@ -1,0 +1,1194 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>nest-ebtheme documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	   <link rel="stylesheet" href="../styles/style.css">
+        <link rel="stylesheet" href="../styles/dark.css">
+    </head>
+    <body>
+          <script>
+               // Blocking script to avoid flickering dark mode
+               // Dark mode toggle button
+               var useDark = window.matchMedia('(prefers-color-scheme: dark)');
+               var darkModeState = useDark.matches;
+               var $darkModeToggleSwitchers = document.querySelectorAll('.dark-mode-switch input');
+               var $darkModeToggles = document.querySelectorAll('.dark-mode-switch');
+               var darkModeStateLocal = localStorage.getItem('compodoc_darkmode-state');
+
+               function checkToggle(check) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].checked = check;
+                    }
+               }
+
+               function toggleDarkMode(state) {
+                    if (window.localStorage) {
+                         localStorage.setItem('compodoc_darkmode-state', state);
+                    }
+
+                    checkToggle(state);
+
+                    const hasClass = document.body.classList.contains('dark');
+
+                    if (state) {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.add('dark');
+                         }
+                         if (!hasClass) {
+                              document.body.classList.add('dark');
+                         }
+                    } else {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.remove('dark');
+                         }
+                         if (hasClass) {
+                              document.body.classList.remove('dark');
+                         }
+                    }
+               }
+
+               useDark.addEventListener('change', function (evt) {
+                    toggleDarkMode(evt.matches);
+               });
+               if (darkModeStateLocal) {
+                    darkModeState = darkModeStateLocal === 'true';
+               }
+               toggleDarkMode(darkModeState);
+          </script>
+
+        <div class="navbar navbar-default navbar-fixed-top d-md-none p-0">
+               <div class="d-flex">
+                    <a href="../" class="navbar-brand">nest-ebtheme documentation</a>
+                    <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+               </div>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="d-none d-md-block menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content injectable">
+                   <div class="content-data">
+
+
+
+
+
+
+
+
+<ol class="breadcrumb">
+  <li class="breadcrumb-item">Injectables</li>
+  <li class="breadcrumb-item" >PhoneOtpAuthService</li>
+</ol>
+
+<ul class="nav nav-tabs" role="tablist">
+        <li class="nav-item">
+            <a href="#info" 
+                class="nav-link"
+                class="nav-link active"
+                role="tab" id="info-tab" data-bs-toggle="tab" data-link="info">Info</a>
+        </li>
+        <li class="nav-item">
+            <a href="#source" 
+                class="nav-link"
+                
+                role="tab" id="source-tab" data-bs-toggle="tab" data-link="source">Source</a>
+        </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="info">
+        <p class="comment">
+            <h3>File</h3>
+        </p>
+        <p class="comment">
+            <code>apps/api/src/modules/auth/services/phone-otp-auth.service.ts</code>
+        </p>
+
+
+            <p class="comment">
+                <h3>Description</h3>
+            </p>
+            <p class="comment">
+                <p>${1:Description placeholder}</p>
+
+            </p>
+
+
+
+            <section data-compodoc="block-index">
+    <h3 id="index">Index</h3>
+    <table class="table table-sm table-bordered index-table">
+        <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Properties</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#generateSMSCode" >generateSMSCode</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Methods</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                    <span class="modifier">Async</span>
+                                <a href="#loginWithPhoneOTP" >loginWithPhoneOTP</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Async</span>
+                                <a href="#sendPhoneLoginOTP" >sendPhoneLoginOTP</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Async</span>
+                                <a href="#sendUpdatePhoneNumberOTP" >sendUpdatePhoneNumberOTP</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Async</span>
+                                <a href="#verifyUpdatePhone" >verifyUpdatePhone</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+            <section data-compodoc="block-constructor">
+    <h3 id="constructor">Constructor</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+<code>constructor(otpRequestRepository: <a href="../injectables/OTPRequestRepository.html" target="_self">OTPRequestRepository</a>, userTokenMetaRepository: <a href="../injectables/UserTokenMetaRepository.html" target="_self">UserTokenMetaRepository</a>, userRepository: <a href="../injectables/UsersRepository.html" target="_self">UsersRepository</a>, updatePhoneNumberRepository: <a href="../injectables/UpdatePhoneNumberRepository.html" target="_self">UpdatePhoneNumberRepository</a>, jwtTokenService: <a href="../injectables/JwtTokenService.html" target="_self">JwtTokenService</a>, awsSNSService: <a href="../injectables/AwsSNSService.html" target="_self">AwsSNSService</a>, agoraHelperService: <a href="../injectables/AgoraHelperService.html" target="_self">AgoraHelperService</a>, i18nService: I18nService)</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="32" class="link-to-prism">apps/api/src/modules/auth/services/phone-otp-auth.service.ts:32</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                            <div class="io-description"><p>Creates an instance of PhoneOtpAuthService.</p>
+</div>
+                            <div>
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>otpRequestRepository</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/OTPRequestRepository.html" target="_self" >OTPRequestRepository</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>userTokenMetaRepository</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/UserTokenMetaRepository.html" target="_self" >UserTokenMetaRepository</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>userRepository</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/UsersRepository.html" target="_self" >UsersRepository</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>updatePhoneNumberRepository</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/UpdatePhoneNumberRepository.html" target="_self" >UpdatePhoneNumberRepository</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>jwtTokenService</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/JwtTokenService.html" target="_self" >JwtTokenService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>awsSNSService</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/AwsSNSService.html" target="_self" >AwsSNSService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>agoraHelperService</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/AgoraHelperService.html" target="_self" >AgoraHelperService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>i18nService</td>
+                                                  
+                                                        <td>
+                                                                    <code>I18nService</code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+</section>
+
+            <section data-compodoc="block-methods">
+    
+    <h3 id="methods">
+        Methods
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="loginWithPhoneOTP"></a>
+                    <span class="name">
+                            <span class="modifier">Async</span>
+                        <span ><b>loginWithPhoneOTP</b></span>
+                        <a href="#loginWithPhoneOTP"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>loginWithPhoneOTP(data: <a href="../classes/PhoneLoginWithOTPInput.html" target="_self">PhoneLoginWithOTPInput</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="266"
+                                    class="link-to-prism">apps/api/src/modules/auth/services/phone-otp-auth.service.ts:266</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>${1:Description placeholder}</p>
+</div>
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>data</td>
+                                            <td>
+                                                            <code><a href="../classes/PhoneLoginWithOTPInput.html" target="_self" >PhoneLoginWithOTPInput</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>    <code>unknown</code>
+
+                        </div>
+                            <div class="io-description">
+                                <p>}</p>
+
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="sendPhoneLoginOTP"></a>
+                    <span class="name">
+                            <span class="modifier">Async</span>
+                        <span ><b>sendPhoneLoginOTP</b></span>
+                        <a href="#sendPhoneLoginOTP"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>sendPhoneLoginOTP(data: <a href="../classes/RequestPhoneLoginOTPInput.html" target="_self">RequestPhoneLoginOTPInput</a>, requestedFor: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="73"
+                                    class="link-to-prism">apps/api/src/modules/auth/services/phone-otp-auth.service.ts:73</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Method for sending opt for email login</p>
+</div>
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>data</td>
+                                            <td>
+                                                            <code><a href="../classes/RequestPhoneLoginOTPInput.html" target="_self" >RequestPhoneLoginOTPInput</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                        <tr>
+                                                <td>requestedFor</td>
+                                            <td>
+                                                            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>    <code>unknown</code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="sendUpdatePhoneNumberOTP"></a>
+                    <span class="name">
+                            <span class="modifier">Async</span>
+                        <span ><b>sendUpdatePhoneNumberOTP</b></span>
+                        <a href="#sendUpdatePhoneNumberOTP"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>sendUpdatePhoneNumberOTP(userId: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>, data: <a href="../classes/UpdatePhoneNumberInput.html" target="_self">UpdatePhoneNumberInput</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="171"
+                                    class="link-to-prism">apps/api/src/modules/auth/services/phone-otp-auth.service.ts:171</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Method for sending opt for email login</p>
+</div>
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>userId</td>
+                                            <td>
+                                                            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                        <tr>
+                                                <td>data</td>
+                                            <td>
+                                                            <code><a href="../classes/UpdatePhoneNumberInput.html" target="_self" >UpdatePhoneNumberInput</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>    <code>unknown</code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="verifyUpdatePhone"></a>
+                    <span class="name">
+                            <span class="modifier">Async</span>
+                        <span ><b>verifyUpdatePhone</b></span>
+                        <a href="#verifyUpdatePhone"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>verifyUpdatePhone(userId: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>, verificationCode: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="367"
+                                    class="link-to-prism">apps/api/src/modules/auth/services/phone-otp-auth.service.ts:367</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>userId</td>
+                                            <td>
+                                                            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                        <tr>
+                                                <td>verificationCode</td>
+                                            <td>
+                                                            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+            <section data-compodoc="block-properties">
+    
+    <h3 id="inputs">
+        Properties
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="generateSMSCode"></a>
+                    <span class="name">
+                        <span ><b>generateSMSCode</b></span>
+                        <a href="#generateSMSCode"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>() &#x3D;&gt; {...}</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="61" class="link-to-prism">apps/api/src/modules/auth/services/phone-otp-auth.service.ts:61</a></div>
+                        </td>
+                    </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>${1:Description placeholder}</p>
+</div>
+                </td>
+            </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description">
+                                <b>Parameters :</b>
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                            <tr>
+                                                    <td>isDemoCode</td>
+                                            </tr>
+                                    </tbody>
+                                </table>
+                        </div>
+                    </td>
+                </tr>
+        </tbody>
+    </table>
+</section>
+
+    </div>
+
+
+    <div class="tab-pane fade  tab-source-code" id="source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { BadRequestException, ForbiddenException, Injectable } from &#x27;@nestjs/common&#x27;;
+import { v4 as uuidv4 } from &#x27;uuid&#x27;;
+import { PhoneContactType, UsersRepository, UserTokenMeta } from &#x27;@app/data-access&#x27;;
+import { OTPRequestRepository } from &#x27;@app/data-access&#x27;;
+import { UserTokenMetaRepository } from &#x27;@app/data-access&#x27;;
+import { UpdatePhoneNumberRepository } from &#x27;@app/data-access&#x27;;
+import { JwtTokenService } from &#x27;@app/authentication&#x27;;
+import { RequestPhoneLoginOTPInput } from &#x27;../dto/input/request-phone-login-otp.input&#x27;;
+import { PhoneLoginWithOTPInput } from &#x27;../dto/input/phone-login-with-otp.input&#x27;;
+import { PartialType } from &#x27;../types/partial.type&#x27;;
+import { AwsSNSService } from &#x27;@app/otp/sns-otp.service&#x27;;
+import { UpdatePhoneNumberInput } from &#x27;../dto/input/update-phone-number.input&#x27;;
+import {
+  MAX_OTP_ATTEMPT,
+  MULTIPLY_BRFORE_MS,
+  SMS_CODE_EXPIRE_BY,
+  SMS_CODE_EXPIRE_MULTIPLIER,
+} from &#x27;@api/constants&#x27;;
+import { UserStatus } from &#x27;@app/common/enum/user-status.enum&#x27;;
+import { ConfigVariableService } from &#x27;@api/common/helpers/config-helper&#x27;;
+import { I18nService } from &#x27;nestjs-i18n&#x27;;
+import { AgoraHelperService } from &#x27;@app/common/services/voip/agora/agora.helper&#x27;;
+
+/**
+ * ${1:Description placeholder}
+ *
+ * @export
+ * @class PhoneOtpAuthService
+ * @typedef {PhoneOtpAuthService}
+ */
+@Injectable()
+export class PhoneOtpAuthService {
+  /**
+   * Creates an instance of PhoneOtpAuthService.
+   *
+   * @constructor
+   * @param {OTPRequestRepository} otpRequestRepository
+   * @param {UserTokenMetaRepository} userTokenMetaRepository
+   * @param {UsersRepository} userRepository
+   * @param {UpdatePhoneNumberRepository} updatePhoneNumberRepository
+   * @param {JwtTokenService} jwtTokenService
+   * @param {AwsSNSService} awsSNSService
+   * @param {AgoraHelperService} agoraHelperService
+   */
+  constructor(
+    private readonly otpRequestRepository: OTPRequestRepository,
+    private readonly userTokenMetaRepository: UserTokenMetaRepository,
+    private readonly userRepository: UsersRepository,
+    private readonly updatePhoneNumberRepository: UpdatePhoneNumberRepository,
+    private readonly jwtTokenService: JwtTokenService,
+    private readonly awsSNSService: AwsSNSService,
+    private readonly agoraHelperService: AgoraHelperService,
+    private readonly i18nService: I18nService,
+  ) {}
+  /**
+   * ${1:Description placeholder}
+   *
+   * @param {boolean} [isDemoCode&#x3D;true]
+   * @returns {number}
+   */
+  generateSMSCode &#x3D; (isDemoCode &#x3D; true) &#x3D;&gt; {
+    if (isDemoCode) {
+      return 123456;
+    } else {
+      return Math.floor(100000 + Math.random() * 9000);
+    }
+  };
+  /**
+   * Method for sending opt for email login
+   * @param data
+   * @returns
+   */
+  async sendPhoneLoginOTP(data: RequestPhoneLoginOTPInput, requestedFor: string) {
+    const { dialCode, number, deviceId } &#x3D; data;
+    try {
+      const phoneNumber &#x3D; &#x60;${dialCode}${number}&#x60;;
+      /**
+       * find number of attempt in last 24 hrs
+       */
+      const last24hrs &#x3D; new Date(new Date().getTime() - 24 * 60 * 60 * 1000);
+      const currentTime &#x3D; new Date(new Date().getTime());
+
+      const getAttemptFromThisDevice &#x3D; await this.otpRequestRepository.find({
+        deviceId,
+        expiresAt: { $gte: last24hrs },
+      });
+      /**
+       * if attempts are greater than 4 in last 24 hour from same device
+       */
+      if (getAttemptFromThisDevice.length &gt; parseInt(String(MAX_OTP_ATTEMPT))) {
+        //send error too many attempt
+        throw new ForbiddenException(this.i18nService.t(&#x27;auth.too_many_attempts&#x27;));
+      }
+      /**
+       * Get attempt from this number
+       * */
+      const getAttemptFromThisNumber &#x3D; await this.otpRequestRepository.findOne({
+        phoneNumber,
+        requestedFor,
+      });
+
+      /**
+       * has previous attempt from this number
+       */
+      if (getAttemptFromThisNumber &amp;&amp; getAttemptFromThisNumber.expiresAt &gt; currentTime) {
+        /**
+         * Verification code exists and not expired at
+         */
+        //throw new ForbiddenException(Lang.VERIFICATION_CODE_ALREADY_SENT);
+
+        const { expiresAt } &#x3D; getAttemptFromThisNumber;
+        const expiresBy &#x3D; new Date(expiresAt).getTime() - new Date().getTime();
+        return { expiresAt, expiresBy };
+      }
+      let verificationCode &#x3D; 0;
+      let expiresAt &#x3D; null;
+      let expiresBy &#x3D; 0;
+      /**
+       * If no attempt from this email yet
+       */
+      if (!getAttemptFromThisNumber) {
+        verificationCode &#x3D; this.generateSMSCode();
+        expiresBy &#x3D; parseInt(String(SMS_CODE_EXPIRE_BY));
+        expiresAt &#x3D; new Date(new Date().getTime() + expiresBy);
+        await this.otpRequestRepository.create({
+          phoneNumber,
+          deviceId,
+          expiresBy,
+          expiresAt,
+          verificationCode,
+          requestedFor,
+        });
+      } else {
+        verificationCode &#x3D; this.generateSMSCode();
+        /**
+         * If expire by is greater than 2 day reset expire by
+         * */
+        if (getAttemptFromThisNumber.expiresBy &lt; MULTIPLY_BRFORE_MS) {
+          expiresBy &#x3D;
+            getAttemptFromThisNumber.expiresBy * parseInt(String(SMS_CODE_EXPIRE_MULTIPLIER));
+        } else {
+          expiresBy &#x3D; parseInt(String(SMS_CODE_EXPIRE_BY));
+        }
+        expiresAt &#x3D; new Date(new Date().getTime() + expiresBy);
+        await this.otpRequestRepository.updateOne(
+          { phoneNumber },
+          {
+            deviceId,
+            expiresBy,
+            expiresAt,
+            verificationCode,
+          },
+        );
+      }
+      const message &#x3D; &#x60;${verificationCode} is your verification code.&#x60;;
+      await this.awsSNSService.publishMessage(message, phoneNumber);
+      /*TODO :: For calling twilio service
+       * await this.twilioSendSmsService.sendSms(phoneNumber, verificationCode);
+       */
+      return { expiresBy, expiresAt };
+    } catch (error: any) {
+      throw error;
+    }
+  }
+
+  /**
+   * Method for sending opt for email login
+   * @param data
+   * @returns
+   */
+  async sendUpdatePhoneNumberOTP(userId: string, data: UpdatePhoneNumberInput) {
+    const { dialCode, number: phoneNumber } &#x3D; data;
+    try {
+      /**
+       * find number of attempt in last 24 hrs
+       */
+      const last24hrs &#x3D; new Date(new Date().getTime() - 24 * 60 * 60 * 1000);
+      const currentTime &#x3D; new Date(new Date().getTime());
+
+      const getAttemptFromThisDevice &#x3D; await this.updatePhoneNumberRepository.find({
+        userId,
+        expiresAt: { $gte: last24hrs },
+      });
+      /**
+       * if attempts are greater than 4 in last 24 hour from same device
+       */
+      if (getAttemptFromThisDevice.length &gt; 20) {
+        //send error too many attempt
+        throw new ForbiddenException(this.i18nService.t(&#x27;auth.too_many_attempts&#x27;));
+      }
+      /**
+       * Get attempt from this number
+       * */
+      const attemptFromThisNumber &#x3D; await this.updatePhoneNumberRepository.findOne({
+        dialCode,
+        phoneNumber,
+        userId,
+      });
+
+      /**
+       * has previous attempt for this
+       * resend case
+       */
+      if (attemptFromThisNumber &amp;&amp; attemptFromThisNumber.expiresAt &gt; currentTime) {
+        /**
+         * Verification code exists and not expired at
+         */
+        //throw new ForbiddenException(Lang.VERIFICATION_CODE_ALREADY_SENT);
+
+        const { expiresAt } &#x3D; attemptFromThisNumber;
+        const expiresBy &#x3D; new Date(expiresAt).getTime() - new Date().getTime();
+        return { expiresAt, expiresBy };
+      }
+      let expiresAt &#x3D; null;
+      let expiresBy &#x3D; parseInt(String(SMS_CODE_EXPIRE_BY));
+      const verificationCode &#x3D; this.generateSMSCode();
+      /**
+       * If no attempt from this email yet
+       */
+      if (!attemptFromThisNumber) {
+        expiresAt &#x3D; new Date(new Date().getTime() + expiresBy);
+        await this.updatePhoneNumberRepository.create({
+          userId,
+          dialCode,
+          phoneNumber,
+          phoneType: PhoneContactType.mobile,
+          expiresBy,
+          expiresAt,
+          verificationCode,
+        });
+      } else {
+        /**
+         * If expire by is greater than 2 day reset expire by
+         * */
+        if (attemptFromThisNumber?.expiresBy !&#x3D;&#x3D; 0 &amp;&amp; attemptFromThisNumber.expiresBy &lt; 172800) {
+          expiresBy &#x3D;
+            attemptFromThisNumber.expiresBy * parseInt(String(SMS_CODE_EXPIRE_MULTIPLIER));
+        }
+        expiresAt &#x3D; new Date(new Date().getTime() + expiresBy);
+        await this.updatePhoneNumberRepository.updateOne(
+          { phoneNumber, userId },
+          {
+            dialCode,
+            phoneType: PhoneContactType.mobile,
+            expiresBy,
+            expiresAt,
+            verificationCode,
+          },
+        );
+      }
+      const message &#x3D; &#x60;${verificationCode} is your verification code.&#x60;;
+      this.awsSNSService.publishMessage(message, phoneNumber);
+      return { expiresBy, expiresAt };
+    } catch (error: any) {
+      throw error;
+    }
+  }
+
+  /**
+   * ${1:Description placeholder}
+   *
+   * @async
+   * @param {PhoneLoginWithOTPInput} data
+   * @returns {Promise&lt;{ user: any; token: any; }&gt;\}
+   */
+  async loginWithPhoneOTP(data: PhoneLoginWithOTPInput) {
+    const { dialCode, number, verificationCode, deviceId } &#x3D; data;
+    try {
+      const phoneNumber &#x3D; &#x60;${dialCode}${number}&#x60;;
+      const otpVerification &#x3D; await this.otpRequestRepository.findOne({
+        verificationCode,
+        phoneNumber,
+        deviceId,
+      });
+      if (!otpVerification) {
+        throw new BadRequestException(this.i18nService.t(&#x27;auth.invalid_verification_code&#x27;));
+      }
+      if (otpVerification.expiresAt &lt; new Date()) {
+        throw new BadRequestException(this.i18nService.t(&#x27;auth.invalid_verification_code&#x27;));
+      }
+      const lastLoggedInAt &#x3D; new Date();
+      const jti &#x3D; uuidv4();
+      /**
+       * Update users last logged in at
+       */
+      const user: any &#x3D; await this.userRepository.findOneAndUpdate(
+        {
+          authProvider: &#x27;phone&#x27;,
+          authProviderId: phoneNumber,
+        },
+        { lastLoggedInAt, status: UserStatus.email_verified },
+        { upsert: true, new: true },
+      );
+      const payload &#x3D; {
+        username: phoneNumber,
+        sub: user._id,
+        jti,
+      };
+      const options &#x3D; ConfigVariableService.jwtTokenConfig();
+      const token &#x3D; this.jwtTokenService.generateTokenPair(payload, options);
+      await this.otpRequestRepository.deleteMany({ phoneNumber });
+      /**
+       * Save user token meta
+       * Token has authorization for all api
+       */
+      const saveTokenMeta: PartialType&lt;UserTokenMeta&gt;[] &#x3D; [
+        {
+          userId: user._id,
+          deviceId: otpVerification.deviceId,
+          authType: &#x27;phone_otp&#x27;,
+          jti,
+          grant: &#x27;all&#x27;,
+          tokenType: &#x27;access_token&#x27;,
+          expiresAt: token.accessTokenExpiresIn,
+        },
+        {
+          userId: user._id,
+          deviceId: otpVerification.deviceId,
+          jti,
+          tokenType: &#x27;refresh_token&#x27;,
+          expiresAt: token.refreshTokenExpiresIn,
+        },
+      ];
+      await this.userTokenMetaRepository.createMany(saveTokenMeta);
+
+      // let cometUser &#x3D; await this.cometChatService.getCometChatUser(user._id);
+      // if (!cometUser) {
+      //   cometUser &#x3D; await this.cometChatService.createCometChatUser({
+      //     uid: user._id,
+      //     name: user.firstName
+      //       ? &#x60;${user.firstName} ${user.lastName}&#x60;
+      //       : user.authProviderId,
+      //   });
+      // }
+      // const cometAuthToken &#x3D; await this.cometChatService.getCometChatAuthToken({
+      //   uid: user._id,
+      // });
+      if (!user?.agoraUuid) {
+        const chatUserUuid &#x3D; await this.agoraHelperService.getChatUserUuid(
+          String(user._id),
+          user?.authProviderId,
+        );
+        if (chatUserUuid) {
+          await this.userRepository.updateById(user._id, {
+            agoraUuid: chatUserUuid,
+          });
+        }
+      }
+      return {
+        user: {
+          ...user.toObject(),
+          // cometAuthToken: cometAuthToken?.authToken,
+        },
+        token,
+      };
+    } catch (error: any) {
+      throw error;
+    }
+  }
+
+  /**
+   * @description verify update phone number
+   * @param {string} userId
+   * @param {string} verificationCode
+   * @returns
+   */
+  async verifyUpdatePhone(userId: string, verificationCode: string) {
+    try {
+      const updatePhoneRequest &#x3D; await this.updatePhoneNumberRepository.findOne({
+        userId,
+        verificationCode,
+        expiresAt: { $gte: new Date() },
+      });
+      if (!updatePhoneRequest) {
+        throw new BadRequestException(this.i18nService.t(&#x27;auth.invalid_verification_code&#x27;));
+      }
+
+      const userDetail: any &#x3D; await this.userRepository.findById(userId);
+      const userUpdateData &#x3D; {
+        contacts: {
+          phone: {
+            type: updatePhoneRequest.phoneType,
+            dialCode: updatePhoneRequest?.dialCode,
+            number: updatePhoneRequest?.phoneNumber,
+            isVerified: true,
+          },
+        },
+      };
+      if (userDetail?.authProvider &#x3D;&#x3D;&#x3D; &#x27;phone&#x27;) {
+        userUpdateData[&#x27;authProviderId&#x27;] &#x3D; updatePhoneRequest.phoneNumber;
+      }
+      await this.userRepository.updateById(userId, userUpdateData);
+      await this.updatePhoneNumberRepository.deleteMany({ userId });
+      return;
+    } catch (error: any) {
+      throw error;
+    }
+  }
+}
+</code></pre>
+    </div>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+          <label class="dark-mode-switch">
+               <input type="checkbox">
+               <span class="slider">
+                    <svg class="slider-icon" viewBox="0 0 24 24" fill="none" height="20" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" width="20" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"></path>
+                    </svg>
+               </span>
+          </label>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'injectable';
+            var COMPODOC_CURRENT_PAGE_URL = 'PhoneOtpAuthService.html';
+            var MAX_SEARCH_RESULTS = 15;
+       </script>
+
+       <script>
+               $darkModeToggleSwitchers = document.querySelectorAll('.dark-mode-switch input');
+               checkToggle(darkModeState);
+               if ($darkModeToggleSwitchers.length > 0) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].addEventListener('change', function (event) {
+                              darkModeState = !darkModeState;
+                              toggleDarkMode(darkModeState);
+                         });
+                    }
+               }
+          </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+
+       <script src="../js/menu-wc.js" defer></script>
+       <script nomodule src="../js/menu-wc_es5.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>

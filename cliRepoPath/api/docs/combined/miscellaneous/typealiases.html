@@ -1,0 +1,2074 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>nest-ebtheme documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	   <link rel="stylesheet" href="../styles/style.css">
+        <link rel="stylesheet" href="../styles/dark.css">
+    </head>
+    <body>
+          <script>
+               // Blocking script to avoid flickering dark mode
+               // Dark mode toggle button
+               var useDark = window.matchMedia('(prefers-color-scheme: dark)');
+               var darkModeState = useDark.matches;
+               var $darkModeToggleSwitchers = document.querySelectorAll('.dark-mode-switch input');
+               var $darkModeToggles = document.querySelectorAll('.dark-mode-switch');
+               var darkModeStateLocal = localStorage.getItem('compodoc_darkmode-state');
+
+               function checkToggle(check) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].checked = check;
+                    }
+               }
+
+               function toggleDarkMode(state) {
+                    if (window.localStorage) {
+                         localStorage.setItem('compodoc_darkmode-state', state);
+                    }
+
+                    checkToggle(state);
+
+                    const hasClass = document.body.classList.contains('dark');
+
+                    if (state) {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.add('dark');
+                         }
+                         if (!hasClass) {
+                              document.body.classList.add('dark');
+                         }
+                    } else {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.remove('dark');
+                         }
+                         if (hasClass) {
+                              document.body.classList.remove('dark');
+                         }
+                    }
+               }
+
+               useDark.addEventListener('change', function (evt) {
+                    toggleDarkMode(evt.matches);
+               });
+               if (darkModeStateLocal) {
+                    darkModeState = darkModeStateLocal === 'true';
+               }
+               toggleDarkMode(darkModeState);
+          </script>
+
+        <div class="navbar navbar-default navbar-fixed-top d-md-none p-0">
+               <div class="d-flex">
+                    <a href="../" class="navbar-brand">nest-ebtheme documentation</a>
+                    <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+               </div>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="d-none d-md-block menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content miscellaneous-typealiases">
+                   <div class="content-data">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<ol class="breadcrumb">
+  <li class="breadcrumb-item">Miscellaneous</li>
+  <li class="breadcrumb-item">Type aliases</li>
+</ol>
+
+<section data-compodoc="block-index">
+    <h3 id="index">Index</h3>
+    <table class="table table-sm table-bordered index-table">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <ul class="index-list">
+                        <li>
+                            <a href="#AdminDocument" title="libs/data-access/src/admin/admin.schema.ts" ><b>AdminDocument</b>&nbsp;&nbsp;&nbsp;(libs/.../admin.schema.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#AdvancePageDocument" title="libs/data-access/src/advance-page/advance-page.schema.ts" ><b>AdvancePageDocument</b>&nbsp;&nbsp;&nbsp;(libs/.../advance-page.schema.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#AllRole" title="apps/cms-api/src/modules/auth/decorator/auth.decorator.ts" ><b>AllRole</b>&nbsp;&nbsp;&nbsp;(apps/.../auth.decorator.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#AppleAuthConfig" title="libs/social-auth/src/config/config.options.ts" ><b>AppleAuthConfig</b>&nbsp;&nbsp;&nbsp;(libs/.../config.options.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#AuthTokenPayload" title="libs/common/helpers/comet-chat.helper.ts" ><b>AuthTokenPayload</b>&nbsp;&nbsp;&nbsp;(libs/.../comet-chat.helper.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#authType" title="libs/data-access/src/user/user-token-meta.schema.ts" ><b>authType</b>&nbsp;&nbsp;&nbsp;(libs/.../user-token-meta.schema.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#BusinessDocument" title="libs/data-access/src/business/business.schema.ts" ><b>BusinessDocument</b>&nbsp;&nbsp;&nbsp;(libs/.../business.schema.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#ChimeDocument" title="libs/data-access/src/chime/chime.schema.ts" ><b>ChimeDocument</b>&nbsp;&nbsp;&nbsp;(libs/.../chime.schema.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#CMSUserDocument" title="libs/data-access/src/cms-user/cms-user.schema.ts" ><b>CMSUserDocument</b>&nbsp;&nbsp;&nbsp;(libs/.../cms-user.schema.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#CoinPackageDocument" title="libs/data-access/src/coin/coin-package.schema.ts" ><b>CoinPackageDocument</b>&nbsp;&nbsp;&nbsp;(libs/.../coin-package.schema.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#CoinPurchaseDocument" title="libs/data-access/src/coin/coin-purchase.schema.ts" ><b>CoinPurchaseDocument</b>&nbsp;&nbsp;&nbsp;(libs/.../coin-purchase.schema.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#CometUserGroupDocument" title="libs/data-access/src/comet/comet-user-group.schema.ts" ><b>CometUserGroupDocument</b>&nbsp;&nbsp;&nbsp;(libs/.../comet-user-group.schema.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#ConfigOptions" title="libs/social-auth/src/config/config.options.ts" ><b>ConfigOptions</b>&nbsp;&nbsp;&nbsp;(libs/.../config.options.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#ContactsDocument" title="libs/data-access/src/contacts/contacts.schema.ts" ><b>ContactsDocument</b>&nbsp;&nbsp;&nbsp;(libs/.../contacts.schema.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#CreateCardOnStripe" title="apps/api/src/modules/stripe/stripe-payment/types/create-card-on-stripe.type.ts" ><b>CreateCardOnStripe</b>&nbsp;&nbsp;&nbsp;(apps/.../create-card-on-stripe.type.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#CreateCardType" title="apps/api/src/modules/stripe/stripe-payment/types/create-card.type.ts" ><b>CreateCardType</b>&nbsp;&nbsp;&nbsp;(apps/.../create-card.type.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#DeleteCard" title="apps/api/src/modules/stripe/stripe-payment/types/delete-card.type.ts" ><b>DeleteCard</b>&nbsp;&nbsp;&nbsp;(apps/.../delete-card.type.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#DeleteCardFromStripe" title="apps/api/src/modules/stripe/stripe-payment/types/delete-card.type.ts" ><b>DeleteCardFromStripe</b>&nbsp;&nbsp;&nbsp;(apps/.../delete-card.type.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#DeletePaymentMethod" title="apps/api/src/modules/stripe/stripe-payment/types/payment-method.stripe.type.ts" ><b>DeletePaymentMethod</b>&nbsp;&nbsp;&nbsp;(apps/.../payment-method.stripe.type.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#DeletePaymentMethodFromStripe" title="apps/api/src/modules/stripe/stripe-payment/types/payment-method.stripe.type.ts" ><b>DeletePaymentMethodFromStripe</b>&nbsp;&nbsp;&nbsp;(apps/.../payment-method.stripe.type.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#DeviceInfoDocument" title="libs/data-access/src/device-info/device-info.schema.ts" ><b>DeviceInfoDocument</b>&nbsp;&nbsp;&nbsp;(libs/.../device-info.schema.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#deviceType" title="apps/api/src/modules/auth/dto/input/device-info.input.ts" ><b>deviceType</b>&nbsp;&nbsp;&nbsp;(apps/.../device-info.input.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#DeviceType" title="libs/data-access/src/device-info/device-info.schema.ts" ><b>DeviceType</b>&nbsp;&nbsp;&nbsp;(libs/.../device-info.schema.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#DeviceType" title="libs/data-access/src/push-notification-token/push-notification-token.schema.ts" ><b>DeviceType</b>&nbsp;&nbsp;&nbsp;(libs/.../push-notification-token.schema.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#DisposableEmailDocument" title="libs/data-access/src/disposable-email/disposable-email.schema.ts" ><b>DisposableEmailDocument</b>&nbsp;&nbsp;&nbsp;(libs/.../disposable-email.schema.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#DriverLicenceVerificationInput" title="libs/rapidid/interfaces.ts" ><b>DriverLicenceVerificationInput</b>&nbsp;&nbsp;&nbsp;(libs/.../interfaces.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#EmailTemplateDocument" title="libs/data-access/src/email-template/email-template.schema.ts" ><b>EmailTemplateDocument</b>&nbsp;&nbsp;&nbsp;(libs/.../email-template.schema.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#EmailTokenDocument" title="libs/data-access/src/user/token.schema.ts" ><b>EmailTokenDocument</b>&nbsp;&nbsp;&nbsp;(libs/.../token.schema.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#FacebookAuthConfig" title="libs/social-auth/src/config/config.options.ts" ><b>FacebookAuthConfig</b>&nbsp;&nbsp;&nbsp;(libs/.../config.options.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#FacebookUserFields" title="libs/authentication/src/types/facebook.user.fields.types.ts" ><b>FacebookUserFields</b>&nbsp;&nbsp;&nbsp;(libs/.../facebook.user.fields.types.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#FacebookUserFields" title="libs/social-auth/src/interfaces/social-auth.types.ts" ><b>FacebookUserFields</b>&nbsp;&nbsp;&nbsp;(libs/.../social-auth.types.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#FacebookUserResponse" title="libs/social-auth/src/interfaces/social-auth.types.ts" ><b>FacebookUserResponse</b>&nbsp;&nbsp;&nbsp;(libs/.../social-auth.types.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#FAQDocument" title="libs/data-access/src/faq/faq.schema.ts" ><b>FAQDocument</b>&nbsp;&nbsp;&nbsp;(libs/.../faq.schema.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#FeedCommentDocument" title="libs/data-access/src/feed/feed-comment.schema.ts" ><b>FeedCommentDocument</b>&nbsp;&nbsp;&nbsp;(libs/.../feed-comment.schema.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#FeedDocument" title="libs/data-access/src/feed/feed.schema.ts" ><b>FeedDocument</b>&nbsp;&nbsp;&nbsp;(libs/.../feed.schema.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#FeedReplyDocument" title="libs/data-access/src/feed/feed-reply.schema.ts" ><b>FeedReplyDocument</b>&nbsp;&nbsp;&nbsp;(libs/.../feed-reply.schema.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#GoogleAuthConfig" title="libs/social-auth/src/config/config.options.ts" ><b>GoogleAuthConfig</b>&nbsp;&nbsp;&nbsp;(libs/.../config.options.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#Grant" title="libs/data-access/src/user/user-token-meta.schema.ts" ><b>Grant</b>&nbsp;&nbsp;&nbsp;(libs/.../user-token-meta.schema.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#GroupPayload" title="libs/common/helpers/comet-chat.helper.ts" ><b>GroupPayload</b>&nbsp;&nbsp;&nbsp;(libs/.../comet-chat.helper.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#HomePageTemplateDocument" title="libs/data-access/src/homePage-template/homePage-template.schema.ts" ><b>HomePageTemplateDocument</b>&nbsp;&nbsp;&nbsp;(libs/.../homePage-template.schema.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#LoginDetailType" title="apps/api/src/modules/auth/types/login-detail.type.ts" ><b>LoginDetailType</b>&nbsp;&nbsp;&nbsp;(apps/.../login-detail.type.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#MedicareVerificationInput" title="libs/rapidid/interfaces.ts" ><b>MedicareVerificationInput</b>&nbsp;&nbsp;&nbsp;(libs/.../interfaces.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#MenuDocument" title="libs/data-access/src/menu/menu.schema.ts" ><b>MenuDocument</b>&nbsp;&nbsp;&nbsp;(libs/.../menu.schema.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#NotificationDocument" title="libs/data-access/src/notification/notification.schema.ts" ><b>NotificationDocument</b>&nbsp;&nbsp;&nbsp;(libs/.../notification.schema.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#NzDriverLicenceVerificationInput" title="libs/rapidid/interfaces.ts" ><b>NzDriverLicenceVerificationInput</b>&nbsp;&nbsp;&nbsp;(libs/.../interfaces.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#NzPassportVerificationInput" title="libs/rapidid/interfaces.ts" ><b>NzPassportVerificationInput</b>&nbsp;&nbsp;&nbsp;(libs/.../interfaces.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#OTPRequestDocument" title="libs/data-access/src/otp-request/otp.request.schema.ts" ><b>OTPRequestDocument</b>&nbsp;&nbsp;&nbsp;(libs/.../otp.request.schema.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#PageDocument" title="libs/data-access/src/page/page.schema.ts" ><b>PageDocument</b>&nbsp;&nbsp;&nbsp;(libs/.../page.schema.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#PageMeta" title="libs/data-access/src/admin/admin.repository.ts" ><b>PageMeta</b>&nbsp;&nbsp;&nbsp;(libs/.../admin.repository.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#PageWithVersionDocument" title="libs/data-access/src/pageWithVersion/pageWithVersion.schema.ts" ><b>PageWithVersionDocument</b>&nbsp;&nbsp;&nbsp;(libs/.../pageWithVersion.schema.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#PaginateOptions" title="apps/cms-api/src/modules/admin/service/admin.service.ts" ><b>PaginateOptions</b>&nbsp;&nbsp;&nbsp;(apps/.../admin.service.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#PartialType" title="apps/api/src/modules/auth/types/partial.type.ts" ><b>PartialType</b>&nbsp;&nbsp;&nbsp;(apps/.../partial.type.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#PassportVerificationInput" title="libs/rapidid/interfaces.ts" ><b>PassportVerificationInput</b>&nbsp;&nbsp;&nbsp;(libs/.../interfaces.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#PaymentMethodDocument" title="libs/data-access/src/card/card.schema.ts" ><b>PaymentMethodDocument</b>&nbsp;&nbsp;&nbsp;(libs/.../card.schema.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#PermissionDocument" title="libs/data-access/src/permission/permission.schema.ts" ><b>PermissionDocument</b>&nbsp;&nbsp;&nbsp;(libs/.../permission.schema.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#PostLikeDocument" title="libs/data-access/src/feed/post-like.schema.ts" ><b>PostLikeDocument</b>&nbsp;&nbsp;&nbsp;(libs/.../post-like.schema.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#PostType" title="libs/data-access/src/feed/post-like.schema.ts" ><b>PostType</b>&nbsp;&nbsp;&nbsp;(libs/.../post-like.schema.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#ProjectionSelectionType" title="apps/api/src/modules/auth/types/projection.selection.type.ts" ><b>ProjectionSelectionType</b>&nbsp;&nbsp;&nbsp;(apps/.../projection.selection.type.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#PushNotificationTokenDocument" title="libs/data-access/src/push-notification-token/push-notification-token.schema.ts" ><b>PushNotificationTokenDocument</b>&nbsp;&nbsp;&nbsp;(libs/.../push-notification-token.schema.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#RoleDocument" title="libs/data-access/src/roles/role.schema.ts" ><b>RoleDocument</b>&nbsp;&nbsp;&nbsp;(libs/.../role.schema.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#SaveDeviceInfoType" title="apps/api/src/modules/auth/types/save-device-info.type.ts" ><b>SaveDeviceInfoType</b>&nbsp;&nbsp;&nbsp;(apps/.../save-device-info.type.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#SettingsDocument" title="libs/data-access/src/settings/settings.schema.ts" ><b>SettingsDocument</b>&nbsp;&nbsp;&nbsp;(libs/.../settings.schema.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#SiteSettingDocument" title="libs/data-access/src/site-settings/site-settings.schema.ts" ><b>SiteSettingDocument</b>&nbsp;&nbsp;&nbsp;(libs/.../site-settings.schema.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#Sort" title="libs/data-access/src/admin/admin.repository.ts" ><b>Sort</b>&nbsp;&nbsp;&nbsp;(libs/.../admin.repository.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#Sort" title="apps/cms-api/src/modules/admin/service/admin.service.ts" ><b>Sort</b>&nbsp;&nbsp;&nbsp;(apps/.../admin.service.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#Status" title="libs/data-access/src/card/card.schema.ts" ><b>Status</b>&nbsp;&nbsp;&nbsp;(libs/.../card.schema.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#StripeCustomerDocument" title="libs/data-access/src/stripe-customer/stripe-customer.schema.ts" ><b>StripeCustomerDocument</b>&nbsp;&nbsp;&nbsp;(libs/.../stripe-customer.schema.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#StripePaymentDocument" title="apps/api/src/modules/stripe/stripe-payment/model/stripe-payment.schema.ts" ><b>StripePaymentDocument</b>&nbsp;&nbsp;&nbsp;(apps/.../stripe-payment.schema.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#StripePaymentLogDocument" title="apps/api/src/modules/stripe/stripe-payment/model/stripe-payment-log.schema.ts" ><b>StripePaymentLogDocument</b>&nbsp;&nbsp;&nbsp;(apps/.../stripe-payment-log.schema.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#StripeSubscriptionDocument" title="libs/data-access/src/stripe-subscription/stripe-subscription.schema.ts" ><b>StripeSubscriptionDocument</b>&nbsp;&nbsp;&nbsp;(libs/.../stripe-subscription.schema.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#StripeSubscriptionDocument" title="apps/api/src/modules/stripe/stripe-subscriptions/model/stripe-subscription.schema.ts" ><b>StripeSubscriptionDocument</b>&nbsp;&nbsp;&nbsp;(apps/.../stripe-subscription.schema.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#SubscriptionDocument" title="libs/data-access/src/inapp-subscription/subscription.schema.ts" ><b>SubscriptionDocument</b>&nbsp;&nbsp;&nbsp;(libs/.../subscription.schema.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#SubscriptionLogDocument" title="libs/data-access/src/stripe-subscription/subscription-log.schema.ts" ><b>SubscriptionLogDocument</b>&nbsp;&nbsp;&nbsp;(libs/.../subscription-log.schema.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#SubscriptionProductDocument" title="libs/data-access/src/stripe-subscription/subscription-product.schema.ts" ><b>SubscriptionProductDocument</b>&nbsp;&nbsp;&nbsp;(libs/.../subscription-product.schema.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#TaxonomyDocument" title="libs/data-access/src/taxonomy/taxonomy.schema.ts" ><b>TaxonomyDocument</b>&nbsp;&nbsp;&nbsp;(libs/.../taxonomy.schema.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#TestimonialsDocument" title="libs/data-access/src/testimonials/testimonials.schema.ts" ><b>TestimonialsDocument</b>&nbsp;&nbsp;&nbsp;(libs/.../testimonials.schema.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#TiktokAuthConfig" title="libs/social-auth/src/config/config.options.ts" ><b>TiktokAuthConfig</b>&nbsp;&nbsp;&nbsp;(libs/.../config.options.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#tokenType" title="libs/data-access/src/user/user-token-meta.schema.ts" ><b>tokenType</b>&nbsp;&nbsp;&nbsp;(libs/.../user-token-meta.schema.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#UpdatePhoneNumberDocument" title="libs/data-access/src/user/update-phone.schema.ts" ><b>UpdatePhoneNumberDocument</b>&nbsp;&nbsp;&nbsp;(libs/.../update-phone.schema.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#UserDocument" title="libs/data-access/src/user/user.schema.ts" ><b>UserDocument</b>&nbsp;&nbsp;&nbsp;(libs/.../user.schema.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#UserMetadata" title="libs/common/helpers/comet-chat.helper.ts" ><b>UserMetadata</b>&nbsp;&nbsp;&nbsp;(libs/.../comet-chat.helper.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#UserPayload" title="libs/common/helpers/comet-chat.helper.ts" ><b>UserPayload</b>&nbsp;&nbsp;&nbsp;(libs/.../comet-chat.helper.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#UserTokenMetaDocument" title="libs/data-access/src/user/user-token-meta.schema.ts" ><b>UserTokenMetaDocument</b>&nbsp;&nbsp;&nbsp;(libs/.../user-token-meta.schema.ts)</a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+
+    <h3>libs/data-access/src/admin/admin.schema.ts</h3>
+    <section data-compodoc="block-typealias">
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="AdminDocument"></a>
+                    <span class="name "><b>AdminDocument</b><a href="#AdminDocument"><span class="icon ion-ios-link"></span></a></span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <code>    <code></code>
+</code>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>    <h3>libs/data-access/src/advance-page/advance-page.schema.ts</h3>
+    <section data-compodoc="block-typealias">
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="AdvancePageDocument"></a>
+                    <span class="name "><b>AdvancePageDocument</b><a href="#AdvancePageDocument"><span class="icon ion-ios-link"></span></a></span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <code>    <code></code>
+</code>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>    <h3>apps/cms-api/src/modules/auth/decorator/auth.decorator.ts</h3>
+    <section data-compodoc="block-typealias">
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="AllRole"></a>
+                    <span class="name "><b>AllRole</b><a href="#AllRole"><span class="icon ion-ios-link"></span></a></span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>${1:Description placeholder}</p>
+</div>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <code>    <code></code>
+</code>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>    <h3>libs/social-auth/src/config/config.options.ts</h3>
+    <section data-compodoc="block-typealias">
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="AppleAuthConfig"></a>
+                    <span class="name "><b>AppleAuthConfig</b><a href="#AppleAuthConfig"><span class="icon ion-ios-link"></span></a></span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <code>    <code>literal type</code>
+</code>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="ConfigOptions"></a>
+                    <span class="name "><b>ConfigOptions</b><a href="#ConfigOptions"><span class="icon ion-ios-link"></span></a></span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <code>    <code></code>
+</code>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="FacebookAuthConfig"></a>
+                    <span class="name "><b>FacebookAuthConfig</b><a href="#FacebookAuthConfig"><span class="icon ion-ios-link"></span></a></span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <code>    <code>literal type</code>
+</code>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="GoogleAuthConfig"></a>
+                    <span class="name "><b>GoogleAuthConfig</b><a href="#GoogleAuthConfig"><span class="icon ion-ios-link"></span></a></span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <code>    <code>literal type</code>
+</code>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="TiktokAuthConfig"></a>
+                    <span class="name "><b>TiktokAuthConfig</b><a href="#TiktokAuthConfig"><span class="icon ion-ios-link"></span></a></span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <code>    <code>literal type</code>
+</code>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>    <h3>libs/common/helpers/comet-chat.helper.ts</h3>
+    <section data-compodoc="block-typealias">
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="AuthTokenPayload"></a>
+                    <span class="name "><b>AuthTokenPayload</b><a href="#AuthTokenPayload"><span class="icon ion-ios-link"></span></a></span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <code>    <code>literal type</code>
+</code>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="GroupPayload"></a>
+                    <span class="name "><b>GroupPayload</b><a href="#GroupPayload"><span class="icon ion-ios-link"></span></a></span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <code>    <code>literal type</code>
+</code>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="UserMetadata"></a>
+                    <span class="name "><b>UserMetadata</b><a href="#UserMetadata"><span class="icon ion-ios-link"></span></a></span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <code>    <code>literal type</code>
+</code>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="UserPayload"></a>
+                    <span class="name "><b>UserPayload</b><a href="#UserPayload"><span class="icon ion-ios-link"></span></a></span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <code>    <code>literal type</code>
+</code>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>    <h3>libs/data-access/src/user/user-token-meta.schema.ts</h3>
+    <section data-compodoc="block-typealias">
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="authType"></a>
+                    <span class="name "><b>authType</b><a href="#authType"><span class="icon ion-ios-link"></span></a></span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Authentication types for login methods.
+These types indicate how the user authenticated, such as email, phone, or third-party providers.</p>
+</div>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <code>    <code>&quot;email_password&quot; | &quot;phone_otp&quot; | &quot;email_otp&quot; | &quot;facebook&quot; | &quot;google&quot; | &quot;apple&quot; | &quot;tiktok&quot; | &quot;biometric&quot;</code>
+</code>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="Grant"></a>
+                    <span class="name "><b>Grant</b><a href="#Grant"><span class="icon ion-ios-link"></span></a></span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Grant types available for tokens.</p>
+<ul>
+<li>&#39;all&#39;: Grants access to all APIs</li>
+<li>&#39;set_password&#39;: Token is valid only for setting passwords</li>
+<li>&#39;refresh_token&#39;: Token is used to refresh access tokens</li>
+<li>&#39;biometric_login&#39;: Token is used for biometric-based login</li>
+</ul>
+</div>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <code>    <code>&quot;all&quot; | &quot;set_password&quot; | &quot;refresh_token&quot; | &quot;biometric_login&quot;</code>
+</code>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="tokenType"></a>
+                    <span class="name "><b>tokenType</b><a href="#tokenType"><span class="icon ion-ios-link"></span></a></span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Token types available.
+Used to differentiate between access, refresh, and biometric tokens.</p>
+</div>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <code>    <code>&quot;access_token&quot; | &quot;refresh_token&quot; | &quot;biometric_token&quot;</code>
+</code>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="UserTokenMetaDocument"></a>
+                    <span class="name "><b>UserTokenMetaDocument</b><a href="#UserTokenMetaDocument"><span class="icon ion-ios-link"></span></a></span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Represents the document type for <code>UserTokenMeta</code></p>
+</div>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <code>    <code></code>
+</code>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>    <h3>libs/data-access/src/business/business.schema.ts</h3>
+    <section data-compodoc="block-typealias">
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="BusinessDocument"></a>
+                    <span class="name "><b>BusinessDocument</b><a href="#BusinessDocument"><span class="icon ion-ios-link"></span></a></span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <code>    <code></code>
+</code>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>    <h3>libs/data-access/src/chime/chime.schema.ts</h3>
+    <section data-compodoc="block-typealias">
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="ChimeDocument"></a>
+                    <span class="name "><b>ChimeDocument</b><a href="#ChimeDocument"><span class="icon ion-ios-link"></span></a></span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <code>    <code></code>
+</code>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>    <h3>libs/data-access/src/cms-user/cms-user.schema.ts</h3>
+    <section data-compodoc="block-typealias">
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="CMSUserDocument"></a>
+                    <span class="name "><b>CMSUserDocument</b><a href="#CMSUserDocument"><span class="icon ion-ios-link"></span></a></span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <code>    <code></code>
+</code>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>    <h3>libs/data-access/src/coin/coin-package.schema.ts</h3>
+    <section data-compodoc="block-typealias">
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="CoinPackageDocument"></a>
+                    <span class="name "><b>CoinPackageDocument</b><a href="#CoinPackageDocument"><span class="icon ion-ios-link"></span></a></span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <code>    <code></code>
+</code>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>    <h3>libs/data-access/src/coin/coin-purchase.schema.ts</h3>
+    <section data-compodoc="block-typealias">
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="CoinPurchaseDocument"></a>
+                    <span class="name "><b>CoinPurchaseDocument</b><a href="#CoinPurchaseDocument"><span class="icon ion-ios-link"></span></a></span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <code>    <code></code>
+</code>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>    <h3>libs/data-access/src/comet/comet-user-group.schema.ts</h3>
+    <section data-compodoc="block-typealias">
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="CometUserGroupDocument"></a>
+                    <span class="name "><b>CometUserGroupDocument</b><a href="#CometUserGroupDocument"><span class="icon ion-ios-link"></span></a></span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <code>    <code></code>
+</code>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>    <h3>libs/data-access/src/contacts/contacts.schema.ts</h3>
+    <section data-compodoc="block-typealias">
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="ContactsDocument"></a>
+                    <span class="name "><b>ContactsDocument</b><a href="#ContactsDocument"><span class="icon ion-ios-link"></span></a></span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <code>    <code></code>
+</code>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>    <h3>apps/api/src/modules/stripe/stripe-payment/types/create-card-on-stripe.type.ts</h3>
+    <section data-compodoc="block-typealias">
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="CreateCardOnStripe"></a>
+                    <span class="name "><b>CreateCardOnStripe</b><a href="#CreateCardOnStripe"><span class="icon ion-ios-link"></span></a></span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>${1:Description placeholder}</p>
+</div>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <code>    <code>literal type</code>
+</code>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>    <h3>apps/api/src/modules/stripe/stripe-payment/types/create-card.type.ts</h3>
+    <section data-compodoc="block-typealias">
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="CreateCardType"></a>
+                    <span class="name "><b>CreateCardType</b><a href="#CreateCardType"><span class="icon ion-ios-link"></span></a></span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>${1:Description placeholder}</p>
+</div>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <code>    <code>literal type</code>
+</code>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>    <h3>apps/api/src/modules/stripe/stripe-payment/types/delete-card.type.ts</h3>
+    <section data-compodoc="block-typealias">
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="DeleteCard"></a>
+                    <span class="name "><b>DeleteCard</b><a href="#DeleteCard"><span class="icon ion-ios-link"></span></a></span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Delete card local service call</p>
+</div>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <code>    <code>literal type</code>
+</code>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="DeleteCardFromStripe"></a>
+                    <span class="name "><b>DeleteCardFromStripe</b><a href="#DeleteCardFromStripe"><span class="icon ion-ios-link"></span></a></span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Delete card stipe api call</p>
+</div>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <code>    <code>literal type</code>
+</code>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>    <h3>apps/api/src/modules/stripe/stripe-payment/types/payment-method.stripe.type.ts</h3>
+    <section data-compodoc="block-typealias">
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="DeletePaymentMethod"></a>
+                    <span class="name "><b>DeletePaymentMethod</b><a href="#DeletePaymentMethod"><span class="icon ion-ios-link"></span></a></span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Delete card local service call</p>
+</div>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <code>    <code>literal type</code>
+</code>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="DeletePaymentMethodFromStripe"></a>
+                    <span class="name "><b>DeletePaymentMethodFromStripe</b><a href="#DeletePaymentMethodFromStripe"><span class="icon ion-ios-link"></span></a></span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Delete card stipe api call</p>
+</div>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <code>    <code>literal type</code>
+</code>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>    <h3>libs/data-access/src/device-info/device-info.schema.ts</h3>
+    <section data-compodoc="block-typealias">
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="DeviceInfoDocument"></a>
+                    <span class="name "><b>DeviceInfoDocument</b><a href="#DeviceInfoDocument"><span class="icon ion-ios-link"></span></a></span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Document type for DeviceInfo, extending Mongoose&#39;s Document interface.</p>
+</div>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <code>    <code></code>
+</code>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="DeviceType"></a>
+                    <span class="name "><b>DeviceType</b><a href="#DeviceType"><span class="icon ion-ios-link"></span></a></span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Enum for defining the type of device.</p>
+</div>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <code>    <code>&quot;android&quot; | &quot;ios&quot; | &quot;web&quot;</code>
+</code>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>    <h3>apps/api/src/modules/auth/dto/input/device-info.input.ts</h3>
+    <section data-compodoc="block-typealias">
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="deviceType"></a>
+                    <span class="name "><b>deviceType</b><a href="#deviceType"><span class="icon ion-ios-link"></span></a></span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>${1:Description placeholder}</p>
+</div>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <code>    <code>&quot;android&quot; | &quot;ios&quot;</code>
+</code>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>    <h3>libs/data-access/src/push-notification-token/push-notification-token.schema.ts</h3>
+    <section data-compodoc="block-typealias">
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="DeviceType"></a>
+                    <span class="name "><b>DeviceType</b><a href="#DeviceType"><span class="icon ion-ios-link"></span></a></span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Device types supported for push notifications.</p>
+<ul>
+<li>&#39;android&#39;: Push notification is sent to Android devices</li>
+<li>&#39;ios&#39;: Push notification is sent to iOS devices</li>
+</ul>
+</div>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <code>    <code>&quot;android&quot; | &quot;ios&quot;</code>
+</code>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="PushNotificationTokenDocument"></a>
+                    <span class="name "><b>PushNotificationTokenDocument</b><a href="#PushNotificationTokenDocument"><span class="icon ion-ios-link"></span></a></span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Represents the document type for <code>PushNotificationToken</code>.</p>
+</div>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <code>    <code></code>
+</code>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>    <h3>libs/data-access/src/disposable-email/disposable-email.schema.ts</h3>
+    <section data-compodoc="block-typealias">
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="DisposableEmailDocument"></a>
+                    <span class="name "><b>DisposableEmailDocument</b><a href="#DisposableEmailDocument"><span class="icon ion-ios-link"></span></a></span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <code>    <code></code>
+</code>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>    <h3>libs/rapidid/interfaces.ts</h3>
+    <section data-compodoc="block-typealias">
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="DriverLicenceVerificationInput"></a>
+                    <span class="name "><b>DriverLicenceVerificationInput</b><a href="#DriverLicenceVerificationInput"><span class="icon ion-ios-link"></span></a></span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <code>    <code>literal type</code>
+</code>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="MedicareVerificationInput"></a>
+                    <span class="name "><b>MedicareVerificationInput</b><a href="#MedicareVerificationInput"><span class="icon ion-ios-link"></span></a></span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <code>    <code>literal type</code>
+</code>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="NzDriverLicenceVerificationInput"></a>
+                    <span class="name "><b>NzDriverLicenceVerificationInput</b><a href="#NzDriverLicenceVerificationInput"><span class="icon ion-ios-link"></span></a></span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <code>    <code>literal type</code>
+</code>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="NzPassportVerificationInput"></a>
+                    <span class="name "><b>NzPassportVerificationInput</b><a href="#NzPassportVerificationInput"><span class="icon ion-ios-link"></span></a></span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <code>    <code>literal type</code>
+</code>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="PassportVerificationInput"></a>
+                    <span class="name "><b>PassportVerificationInput</b><a href="#PassportVerificationInput"><span class="icon ion-ios-link"></span></a></span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <code>    <code>literal type</code>
+</code>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>    <h3>libs/data-access/src/email-template/email-template.schema.ts</h3>
+    <section data-compodoc="block-typealias">
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="EmailTemplateDocument"></a>
+                    <span class="name "><b>EmailTemplateDocument</b><a href="#EmailTemplateDocument"><span class="icon ion-ios-link"></span></a></span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <code>    <code></code>
+</code>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>    <h3>libs/data-access/src/user/token.schema.ts</h3>
+    <section data-compodoc="block-typealias">
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="EmailTokenDocument"></a>
+                    <span class="name "><b>EmailTokenDocument</b><a href="#EmailTokenDocument"><span class="icon ion-ios-link"></span></a></span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <code>    <code></code>
+</code>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>    <h3>libs/authentication/src/types/facebook.user.fields.types.ts</h3>
+    <section data-compodoc="block-typealias">
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="FacebookUserFields"></a>
+                    <span class="name "><b>FacebookUserFields</b><a href="#FacebookUserFields"><span class="icon ion-ios-link"></span></a></span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <code>    <code></code>
+</code>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>    <h3>libs/social-auth/src/interfaces/social-auth.types.ts</h3>
+    <section data-compodoc="block-typealias">
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="FacebookUserFields"></a>
+                    <span class="name "><b>FacebookUserFields</b><a href="#FacebookUserFields"><span class="icon ion-ios-link"></span></a></span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <code>    <code></code>
+</code>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="FacebookUserResponse"></a>
+                    <span class="name "><b>FacebookUserResponse</b><a href="#FacebookUserResponse"><span class="icon ion-ios-link"></span></a></span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <code>    <code></code>
+</code>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>    <h3>libs/data-access/src/faq/faq.schema.ts</h3>
+    <section data-compodoc="block-typealias">
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="FAQDocument"></a>
+                    <span class="name "><b>FAQDocument</b><a href="#FAQDocument"><span class="icon ion-ios-link"></span></a></span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <code>    <code></code>
+</code>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>    <h3>libs/data-access/src/feed/feed-comment.schema.ts</h3>
+    <section data-compodoc="block-typealias">
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="FeedCommentDocument"></a>
+                    <span class="name "><b>FeedCommentDocument</b><a href="#FeedCommentDocument"><span class="icon ion-ios-link"></span></a></span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <code>    <code></code>
+</code>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>    <h3>libs/data-access/src/feed/feed.schema.ts</h3>
+    <section data-compodoc="block-typealias">
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="FeedDocument"></a>
+                    <span class="name "><b>FeedDocument</b><a href="#FeedDocument"><span class="icon ion-ios-link"></span></a></span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <code>    <code></code>
+</code>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>    <h3>libs/data-access/src/feed/feed-reply.schema.ts</h3>
+    <section data-compodoc="block-typealias">
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="FeedReplyDocument"></a>
+                    <span class="name "><b>FeedReplyDocument</b><a href="#FeedReplyDocument"><span class="icon ion-ios-link"></span></a></span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <code>    <code></code>
+</code>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>    <h3>libs/data-access/src/homePage-template/homePage-template.schema.ts</h3>
+    <section data-compodoc="block-typealias">
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="HomePageTemplateDocument"></a>
+                    <span class="name "><b>HomePageTemplateDocument</b><a href="#HomePageTemplateDocument"><span class="icon ion-ios-link"></span></a></span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <code>    <code></code>
+</code>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>    <h3>apps/api/src/modules/auth/types/login-detail.type.ts</h3>
+    <section data-compodoc="block-typealias">
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="LoginDetailType"></a>
+                    <span class="name "><b>LoginDetailType</b><a href="#LoginDetailType"><span class="icon ion-ios-link"></span></a></span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>${1:Description placeholder}</p>
+</div>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <code>    <code>literal type</code>
+</code>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>    <h3>libs/data-access/src/menu/menu.schema.ts</h3>
+    <section data-compodoc="block-typealias">
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="MenuDocument"></a>
+                    <span class="name "><b>MenuDocument</b><a href="#MenuDocument"><span class="icon ion-ios-link"></span></a></span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <code>    <code></code>
+</code>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>    <h3>libs/data-access/src/notification/notification.schema.ts</h3>
+    <section data-compodoc="block-typealias">
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="NotificationDocument"></a>
+                    <span class="name "><b>NotificationDocument</b><a href="#NotificationDocument"><span class="icon ion-ios-link"></span></a></span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <code>    <code></code>
+</code>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>    <h3>libs/data-access/src/otp-request/otp.request.schema.ts</h3>
+    <section data-compodoc="block-typealias">
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="OTPRequestDocument"></a>
+                    <span class="name "><b>OTPRequestDocument</b><a href="#OTPRequestDocument"><span class="icon ion-ios-link"></span></a></span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <code>    <code></code>
+</code>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>    <h3>libs/data-access/src/page/page.schema.ts</h3>
+    <section data-compodoc="block-typealias">
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="PageDocument"></a>
+                    <span class="name "><b>PageDocument</b><a href="#PageDocument"><span class="icon ion-ios-link"></span></a></span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>A type representing a document based on the Page class,
+extending it with additional properties from mongoose documents.</p>
+</div>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <code>    <code></code>
+</code>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>    <h3>libs/data-access/src/admin/admin.repository.ts</h3>
+    <section data-compodoc="block-typealias">
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="PageMeta"></a>
+                    <span class="name "><b>PageMeta</b><a href="#PageMeta"><span class="icon ion-ios-link"></span></a></span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <code>    <code>literal type</code>
+</code>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="Sort"></a>
+                    <span class="name "><b>Sort</b><a href="#Sort"><span class="icon ion-ios-link"></span></a></span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <code>    <code>literal type</code>
+</code>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>    <h3>libs/data-access/src/pageWithVersion/pageWithVersion.schema.ts</h3>
+    <section data-compodoc="block-typealias">
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="PageWithVersionDocument"></a>
+                    <span class="name "><b>PageWithVersionDocument</b><a href="#PageWithVersionDocument"><span class="icon ion-ios-link"></span></a></span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <code>    <code></code>
+</code>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>    <h3>apps/cms-api/src/modules/admin/service/admin.service.ts</h3>
+    <section data-compodoc="block-typealias">
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="PaginateOptions"></a>
+                    <span class="name "><b>PaginateOptions</b><a href="#PaginateOptions"><span class="icon ion-ios-link"></span></a></span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>${1:Description placeholder}</p>
+</div>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <code>    <code>literal type</code>
+</code>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="Sort"></a>
+                    <span class="name "><b>Sort</b><a href="#Sort"><span class="icon ion-ios-link"></span></a></span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>${1:Description placeholder}</p>
+</div>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <code>    <code>literal type</code>
+</code>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>    <h3>apps/api/src/modules/auth/types/partial.type.ts</h3>
+    <section data-compodoc="block-typealias">
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="PartialType"></a>
+                    <span class="name "><b>PartialType</b><a href="#PartialType"><span class="icon ion-ios-link"></span></a></span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>${1:Description placeholder}</p>
+</div>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <code>    <code></code>
+</code>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>    <h3>libs/data-access/src/card/card.schema.ts</h3>
+    <section data-compodoc="block-typealias">
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="PaymentMethodDocument"></a>
+                    <span class="name "><b>PaymentMethodDocument</b><a href="#PaymentMethodDocument"><span class="icon ion-ios-link"></span></a></span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>PaymentMethod document type that combines the Mongoose document with the PaymentMethod schema.
+This type is used to represent a MongoDB document in TypeScript.</p>
+</div>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <code>    <code></code>
+</code>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="Status"></a>
+                    <span class="name "><b>Status</b><a href="#Status"><span class="icon ion-ios-link"></span></a></span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Type definition for the <code>Status</code> field, representing the state of a payment method.
+Currently, the only valid Status is <code>&#39;ready_to_delete&#39;</code>, but this can be expanded in the future.</p>
+</div>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <code>    <code></code>
+</code>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>    <h3>libs/data-access/src/permission/permission.schema.ts</h3>
+    <section data-compodoc="block-typealias">
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="PermissionDocument"></a>
+                    <span class="name "><b>PermissionDocument</b><a href="#PermissionDocument"><span class="icon ion-ios-link"></span></a></span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <code>    <code></code>
+</code>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>    <h3>libs/data-access/src/feed/post-like.schema.ts</h3>
+    <section data-compodoc="block-typealias">
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="PostLikeDocument"></a>
+                    <span class="name "><b>PostLikeDocument</b><a href="#PostLikeDocument"><span class="icon ion-ios-link"></span></a></span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>PostLikeDocument extends the PostLike class and includes Mongoose Document properties.</p>
+</div>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <code>    <code></code>
+</code>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="PostType"></a>
+                    <span class="name "><b>PostType</b><a href="#PostType"><span class="icon ion-ios-link"></span></a></span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Defines the types of posts that can be liked.</p>
+</div>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <code>    <code>&quot;feed&quot; | &quot;comment&quot; | &quot;reply&quot;</code>
+</code>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>    <h3>apps/api/src/modules/auth/types/projection.selection.type.ts</h3>
+    <section data-compodoc="block-typealias">
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="ProjectionSelectionType"></a>
+                    <span class="name "><b>ProjectionSelectionType</b><a href="#ProjectionSelectionType"><span class="icon ion-ios-link"></span></a></span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>${1:Description placeholder}</p>
+</div>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <code>    <code>&quot;1&quot; | &quot;0&quot;</code>
+</code>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>    <h3>libs/data-access/src/roles/role.schema.ts</h3>
+    <section data-compodoc="block-typealias">
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="RoleDocument"></a>
+                    <span class="name "><b>RoleDocument</b><a href="#RoleDocument"><span class="icon ion-ios-link"></span></a></span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <code>    <code></code>
+</code>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>    <h3>apps/api/src/modules/auth/types/save-device-info.type.ts</h3>
+    <section data-compodoc="block-typealias">
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="SaveDeviceInfoType"></a>
+                    <span class="name "><b>SaveDeviceInfoType</b><a href="#SaveDeviceInfoType"><span class="icon ion-ios-link"></span></a></span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>${1:Description placeholder}</p>
+</div>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <code>    <code>literal type</code>
+</code>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>    <h3>libs/data-access/src/settings/settings.schema.ts</h3>
+    <section data-compodoc="block-typealias">
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="SettingsDocument"></a>
+                    <span class="name "><b>SettingsDocument</b><a href="#SettingsDocument"><span class="icon ion-ios-link"></span></a></span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <code>    <code></code>
+</code>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>    <h3>libs/data-access/src/site-settings/site-settings.schema.ts</h3>
+    <section data-compodoc="block-typealias">
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="SiteSettingDocument"></a>
+                    <span class="name "><b>SiteSettingDocument</b><a href="#SiteSettingDocument"><span class="icon ion-ios-link"></span></a></span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Description placeholder</p>
+</div>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <code>    <code></code>
+</code>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>    <h3>libs/data-access/src/stripe-customer/stripe-customer.schema.ts</h3>
+    <section data-compodoc="block-typealias">
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="StripeCustomerDocument"></a>
+                    <span class="name "><b>StripeCustomerDocument</b><a href="#StripeCustomerDocument"><span class="icon ion-ios-link"></span></a></span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <code>    <code></code>
+</code>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>    <h3>apps/api/src/modules/stripe/stripe-payment/model/stripe-payment.schema.ts</h3>
+    <section data-compodoc="block-typealias">
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="StripePaymentDocument"></a>
+                    <span class="name "><b>StripePaymentDocument</b><a href="#StripePaymentDocument"><span class="icon ion-ios-link"></span></a></span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <code>    <code></code>
+</code>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>    <h3>apps/api/src/modules/stripe/stripe-payment/model/stripe-payment-log.schema.ts</h3>
+    <section data-compodoc="block-typealias">
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="StripePaymentLogDocument"></a>
+                    <span class="name "><b>StripePaymentLogDocument</b><a href="#StripePaymentLogDocument"><span class="icon ion-ios-link"></span></a></span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <code>    <code></code>
+</code>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>    <h3>libs/data-access/src/stripe-subscription/stripe-subscription.schema.ts</h3>
+    <section data-compodoc="block-typealias">
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="StripeSubscriptionDocument"></a>
+                    <span class="name "><b>StripeSubscriptionDocument</b><a href="#StripeSubscriptionDocument"><span class="icon ion-ios-link"></span></a></span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <code>    <code></code>
+</code>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>    <h3>apps/api/src/modules/stripe/stripe-subscriptions/model/stripe-subscription.schema.ts</h3>
+    <section data-compodoc="block-typealias">
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="StripeSubscriptionDocument"></a>
+                    <span class="name "><b>StripeSubscriptionDocument</b><a href="#StripeSubscriptionDocument"><span class="icon ion-ios-link"></span></a></span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <code>    <code></code>
+</code>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>    <h3>libs/data-access/src/inapp-subscription/subscription.schema.ts</h3>
+    <section data-compodoc="block-typealias">
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="SubscriptionDocument"></a>
+                    <span class="name "><b>SubscriptionDocument</b><a href="#SubscriptionDocument"><span class="icon ion-ios-link"></span></a></span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <code>    <code></code>
+</code>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>    <h3>libs/data-access/src/stripe-subscription/subscription-log.schema.ts</h3>
+    <section data-compodoc="block-typealias">
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="SubscriptionLogDocument"></a>
+                    <span class="name "><b>SubscriptionLogDocument</b><a href="#SubscriptionLogDocument"><span class="icon ion-ios-link"></span></a></span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <code>    <code></code>
+</code>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>    <h3>libs/data-access/src/stripe-subscription/subscription-product.schema.ts</h3>
+    <section data-compodoc="block-typealias">
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="SubscriptionProductDocument"></a>
+                    <span class="name "><b>SubscriptionProductDocument</b><a href="#SubscriptionProductDocument"><span class="icon ion-ios-link"></span></a></span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <code>    <code></code>
+</code>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>    <h3>libs/data-access/src/taxonomy/taxonomy.schema.ts</h3>
+    <section data-compodoc="block-typealias">
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="TaxonomyDocument"></a>
+                    <span class="name "><b>TaxonomyDocument</b><a href="#TaxonomyDocument"><span class="icon ion-ios-link"></span></a></span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <code>    <code></code>
+</code>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>    <h3>libs/data-access/src/testimonials/testimonials.schema.ts</h3>
+    <section data-compodoc="block-typealias">
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="TestimonialsDocument"></a>
+                    <span class="name "><b>TestimonialsDocument</b><a href="#TestimonialsDocument"><span class="icon ion-ios-link"></span></a></span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <code>    <code></code>
+</code>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>    <h3>libs/data-access/src/user/update-phone.schema.ts</h3>
+    <section data-compodoc="block-typealias">
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="UpdatePhoneNumberDocument"></a>
+                    <span class="name "><b>UpdatePhoneNumberDocument</b><a href="#UpdatePhoneNumberDocument"><span class="icon ion-ios-link"></span></a></span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <code>    <code></code>
+</code>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>    <h3>libs/data-access/src/user/user.schema.ts</h3>
+    <section data-compodoc="block-typealias">
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="UserDocument"></a>
+                    <span class="name "><b>UserDocument</b><a href="#UserDocument"><span class="icon ion-ios-link"></span></a></span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <code>    <code></code>
+</code>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+          <label class="dark-mode-switch">
+               <input type="checkbox">
+               <span class="slider">
+                    <svg class="slider-icon" viewBox="0 0 24 24" fill="none" height="20" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" width="20" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"></path>
+                    </svg>
+               </span>
+          </label>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'miscellaneous-typealiases';
+            var COMPODOC_CURRENT_PAGE_URL = 'typealiases.html';
+            var MAX_SEARCH_RESULTS = 15;
+       </script>
+
+       <script>
+               $darkModeToggleSwitchers = document.querySelectorAll('.dark-mode-switch input');
+               checkToggle(darkModeState);
+               if ($darkModeToggleSwitchers.length > 0) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].addEventListener('change', function (event) {
+                              darkModeState = !darkModeState;
+                              toggleDarkMode(darkModeState);
+                         });
+                    }
+               }
+          </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+
+       <script src="../js/menu-wc.js" defer></script>
+       <script nomodule src="../js/menu-wc_es5.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>

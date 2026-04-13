@@ -1,0 +1,24 @@
+#!/bin/bash
+set -e
+
+export PATH="$PATH:/snap/bin"
+
+if [[ $CHANGE == "dev_api" ]]; then
+    echo "Running dev api cicd"
+
+    cd /home/ebthemes/dev/ebthemes-api
+    git checkout dev
+    git pull
+
+    source cicd/dev/api
+elif [[ $CHANGE == "dev_cms_api" ]]; then
+    echo "Running dev cms api cicd"
+
+    cd /home/ebthemes/dev/ebthemes-api
+    git checkout dev
+    git pull
+
+    source cicd/dev/cms_api
+fi
+
+docker image prune -f

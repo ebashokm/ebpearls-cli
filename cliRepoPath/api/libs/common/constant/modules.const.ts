@@ -1,0 +1,56 @@
+export const API_MODULES: string[] = [
+  'agora',
+  'appointments',
+  'auth',
+  'chime',
+  'cloud-recording',
+  'coin-management',
+  'comet-chat',
+  'contacts',
+  'cron',
+  'fake-api',
+  'faq',
+  'feed-comments',
+  'feed-replies',
+  'feeds',
+  'manual-subscription',
+  'notifications',
+  'pages',
+  'paypal',
+  'performance',
+  'permission',
+  'rapidid',
+  'site-settings',
+  'sqs',
+  'stripe',
+  'subscription',
+  'users'
+];
+
+export const CMS_MODULES: string[] = [
+  'admin',
+  'advance-page',
+  'app-user',
+  'audit-log',
+  'auth',
+  'business',
+  'email-template',
+  'fancy-email-template',
+  'faq',
+  'home-page-template',
+  'menu',
+  'page',
+  'page-with-version',
+  'permission',
+  'role',
+  'settings',
+  'site-settings',
+  'subscription-plan',
+  'subscription-products',
+  'surveyjs-page',
+  'taxonomy',
+  'testimonials'
+];
+
+export const ALL_MODULES = [...API_MODULES, ...CMS_MODULES];
+

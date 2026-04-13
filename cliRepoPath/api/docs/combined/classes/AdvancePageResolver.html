@@ -1,0 +1,1230 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>nest-ebtheme documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	   <link rel="stylesheet" href="../styles/style.css">
+        <link rel="stylesheet" href="../styles/dark.css">
+    </head>
+    <body>
+          <script>
+               // Blocking script to avoid flickering dark mode
+               // Dark mode toggle button
+               var useDark = window.matchMedia('(prefers-color-scheme: dark)');
+               var darkModeState = useDark.matches;
+               var $darkModeToggleSwitchers = document.querySelectorAll('.dark-mode-switch input');
+               var $darkModeToggles = document.querySelectorAll('.dark-mode-switch');
+               var darkModeStateLocal = localStorage.getItem('compodoc_darkmode-state');
+
+               function checkToggle(check) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].checked = check;
+                    }
+               }
+
+               function toggleDarkMode(state) {
+                    if (window.localStorage) {
+                         localStorage.setItem('compodoc_darkmode-state', state);
+                    }
+
+                    checkToggle(state);
+
+                    const hasClass = document.body.classList.contains('dark');
+
+                    if (state) {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.add('dark');
+                         }
+                         if (!hasClass) {
+                              document.body.classList.add('dark');
+                         }
+                    } else {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.remove('dark');
+                         }
+                         if (hasClass) {
+                              document.body.classList.remove('dark');
+                         }
+                    }
+               }
+
+               useDark.addEventListener('change', function (evt) {
+                    toggleDarkMode(evt.matches);
+               });
+               if (darkModeStateLocal) {
+                    darkModeState = darkModeStateLocal === 'true';
+               }
+               toggleDarkMode(darkModeState);
+          </script>
+
+        <div class="navbar navbar-default navbar-fixed-top d-md-none p-0">
+               <div class="d-flex">
+                    <a href="../" class="navbar-brand">nest-ebtheme documentation</a>
+                    <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+               </div>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="d-none d-md-block menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content class">
+                   <div class="content-data">
+
+
+
+
+
+
+
+
+
+
+
+
+<ol class="breadcrumb">
+  <li class="breadcrumb-item">Classes</li>
+  <li class="breadcrumb-item" >AdvancePageResolver</li>
+</ol>
+
+<ul class="nav nav-tabs" role="tablist">
+        <li class="nav-item">
+            <a href="#info" 
+                class="nav-link"
+                class="nav-link active"
+                role="tab" id="info-tab" data-bs-toggle="tab" data-link="info">Info</a>
+        </li>
+        <li class="nav-item">
+            <a href="#source" 
+                class="nav-link"
+                
+                role="tab" id="source-tab" data-bs-toggle="tab" data-link="source">Source</a>
+        </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="info">
+        <p class="comment">
+            <h3>File</h3>
+        </p>
+        <p class="comment">
+            <code>apps/cms-api/src/modules/advance-page/advance-page.resolver.ts</code>
+        </p>
+
+
+            <p class="comment">
+                <h3>Description</h3>
+            </p>
+            <p class="comment">
+                <p>${1:Description placeholder}</p>
+
+            </p>
+
+
+
+
+            <section data-compodoc="block-index">
+    <h3 id="index">Index</h3>
+    <table class="table table-sm table-bordered index-table">
+        <tbody>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Methods</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                    <span class="modifier"></span>
+                                    <span class="modifier"></span>
+                                    <span class="modifier">Async</span>
+                                <a href="#createAdvancePage" >createAdvancePage</a>
+                            </li>
+                            <li>
+                                    <span class="modifier"></span>
+                                    <span class="modifier"></span>
+                                    <span class="modifier">Async</span>
+                                <a href="#deleteAdvancePage" >deleteAdvancePage</a>
+                            </li>
+                            <li>
+                                    <span class="modifier"></span>
+                                    <span class="modifier"></span>
+                                    <span class="modifier">Async</span>
+                                <a href="#deleteAllAdvancePages" >deleteAllAdvancePages</a>
+                            </li>
+                            <li>
+                                    <span class="modifier"></span>
+                                    <span class="modifier"></span>
+                                    <span class="modifier">Async</span>
+                                <a href="#listAdvancePage" >listAdvancePage</a>
+                            </li>
+                            <li>
+                                    <span class="modifier"></span>
+                                    <span class="modifier"></span>
+                                    <span class="modifier">Async</span>
+                                <a href="#listAdvancePages" >listAdvancePages</a>
+                            </li>
+                            <li>
+                                    <span class="modifier"></span>
+                                    <span class="modifier"></span>
+                                    <span class="modifier">Async</span>
+                                <a href="#listAlladvancePages" >listAlladvancePages</a>
+                            </li>
+                            <li>
+                                    <span class="modifier"></span>
+                                    <span class="modifier"></span>
+                                    <span class="modifier">Async</span>
+                                <a href="#updateAdvancePage" >updateAdvancePage</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+            <section data-compodoc="block-constructor">
+    <h3 id="constructor">Constructor</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+<code>constructor(advancePageService: <a href="../injectables/AdvancePageService.html" target="_self">AdvancePageService</a>, s3service: <a href="../injectables/S3Service.html" target="_self">S3Service</a>)</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="21" class="link-to-prism">apps/cms-api/src/modules/advance-page/advance-page.resolver.ts:21</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                            <div class="io-description"><p>Creates an instance of PageResolver.</p>
+</div>
+                            <div>
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>advancePageService</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/AdvancePageService.html" target="_self" >AdvancePageService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>s3service</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/S3Service.html" target="_self" >S3Service</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+</section>
+
+
+            <section data-compodoc="block-methods">
+    
+    <h3 id="methods">
+        Methods
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="createAdvancePage"></a>
+                    <span class="name">
+                            <span class="modifier"></span>
+                            <span class="modifier"></span>
+                            <span class="modifier">Async</span>
+                        <span ><b>createAdvancePage</b></span>
+                        <a href="#createAdvancePage"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>createAdvancePage(input: <a href="../classes/CreateAdvancePageDTO.html" target="_self">CreateAdvancePageDTO</a>, user, i18n: I18nContext)</code>
+                </td>
+            </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <b>Decorators : </b>
+                    <br />
+                    <code>@Mutation(undefined)<br />@Auth(AdminRoles.SUPERADMIN, AdminRoles.ADMIN, AdminRoles.EDITOR)<br /></code>
+                </td>
+            </tr>
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="117"
+                                    class="link-to-prism">apps/cms-api/src/modules/advance-page/advance-page.resolver.ts:117</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>${1:Description placeholder}</p>
+</div>
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>input</td>
+                                            <td>
+                                                            <code><a href="../classes/CreateAdvancePageDTO.html" target="_self" >CreateAdvancePageDTO</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                        <tr>
+                                                <td>user</td>
+                                            <td>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                        <tr>
+                                                <td>i18n</td>
+                                            <td>
+                                                        <code>I18nContext</code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>    <code>unknown</code>
+
+                        </div>
+                            <div class="io-description">
+                                <p>}</p>
+
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="deleteAdvancePage"></a>
+                    <span class="name">
+                            <span class="modifier"></span>
+                            <span class="modifier"></span>
+                            <span class="modifier">Async</span>
+                        <span ><b>deleteAdvancePage</b></span>
+                        <a href="#deleteAdvancePage"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>deleteAdvancePage(id: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>, i18n: I18nContext)</code>
+                </td>
+            </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <b>Decorators : </b>
+                    <br />
+                    <code>@Mutation(undefined)<br />@Auth(AdminRoles.SUPERADMIN, AdminRoles.ADMIN, AdminRoles.EDITOR)<br /></code>
+                </td>
+            </tr>
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="168"
+                                    class="link-to-prism">apps/cms-api/src/modules/advance-page/advance-page.resolver.ts:168</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>${1:Description placeholder}</p>
+</div>
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>id</td>
+                                            <td>
+                                                            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                        <tr>
+                                                <td>i18n</td>
+                                            <td>
+                                                        <code>I18nContext</code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>    <code>unknown</code>
+
+                        </div>
+                            <div class="io-description">
+                                <p>}</p>
+
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="deleteAllAdvancePages"></a>
+                    <span class="name">
+                            <span class="modifier"></span>
+                            <span class="modifier"></span>
+                            <span class="modifier">Async</span>
+                        <span ><b>deleteAllAdvancePages</b></span>
+                        <a href="#deleteAllAdvancePages"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>deleteAllAdvancePages(i18n: I18nContext)</code>
+                </td>
+            </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <b>Decorators : </b>
+                    <br />
+                    <code>@Mutation(undefined)<br />@Auth(AdminRoles.SUPERADMIN, AdminRoles.ADMIN, AdminRoles.EDITOR)<br /></code>
+                </td>
+            </tr>
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="182"
+                                    class="link-to-prism">apps/cms-api/src/modules/advance-page/advance-page.resolver.ts:182</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>${1:Description placeholder}</p>
+</div>
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>i18n</td>
+                                            <td>
+                                                        <code>I18nContext</code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>    <code>unknown</code>
+
+                        </div>
+                            <div class="io-description">
+                                <p>}</p>
+
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="listAdvancePage"></a>
+                    <span class="name">
+                            <span class="modifier"></span>
+                            <span class="modifier"></span>
+                            <span class="modifier">Async</span>
+                        <span ><b>listAdvancePage</b></span>
+                        <a href="#listAdvancePage"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>listAdvancePage(id: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>, i18n: I18nContext)</code>
+                </td>
+            </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <b>Decorators : </b>
+                    <br />
+                    <code>@Query(undefined)<br />@Auth(AdminRoles.SUPERADMIN, AdminRoles.ADMIN, AdminRoles.EDITOR)<br /></code>
+                </td>
+            </tr>
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="83"
+                                    class="link-to-prism">apps/cms-api/src/modules/advance-page/advance-page.resolver.ts:83</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>${1:Description placeholder}</p>
+</div>
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>id</td>
+                                            <td>
+                                                            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                        <tr>
+                                                <td>i18n</td>
+                                            <td>
+                                                        <code>I18nContext</code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>    <code>unknown</code>
+
+                        </div>
+                            <div class="io-description">
+                                <p>}</p>
+
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="listAdvancePages"></a>
+                    <span class="name">
+                            <span class="modifier"></span>
+                            <span class="modifier"></span>
+                            <span class="modifier">Async</span>
+                        <span ><b>listAdvancePages</b></span>
+                        <a href="#listAdvancePages"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>listAdvancePages(input: <a href="../classes/GetAdvancePagesDTO.html" target="_self">GetAdvancePagesDTO</a>, i18n: I18nContext)</code>
+                </td>
+            </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <b>Decorators : </b>
+                    <br />
+                    <code>@Query(undefined)<br />@Auth(AdminRoles.SUPERADMIN, AdminRoles.ADMIN, AdminRoles.EDITOR)<br /></code>
+                </td>
+            </tr>
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="64"
+                                    class="link-to-prism">apps/cms-api/src/modules/advance-page/advance-page.resolver.ts:64</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>${1:Description placeholder}</p>
+</div>
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                                <td>Default value</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>input</td>
+                                            <td>
+                                                            <code><a href="../classes/GetAdvancePagesDTO.html" target="_self" >GetAdvancePagesDTO</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+                                            <td>
+                                                    <code>{}</code>
+                                            </td>
+
+                                        </tr>
+                                        <tr>
+                                                <td>i18n</td>
+                                            <td>
+                                                        <code>I18nContext</code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+                                            <td>
+                                            </td>
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>    <code>unknown</code>
+
+                        </div>
+                            <div class="io-description">
+                                <p>}&gt;}</p>
+
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="listAlladvancePages"></a>
+                    <span class="name">
+                            <span class="modifier"></span>
+                            <span class="modifier"></span>
+                            <span class="modifier">Async</span>
+                        <span ><b>listAlladvancePages</b></span>
+                        <a href="#listAlladvancePages"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>listAlladvancePages(input: <a href="../classes/GetAllAdvancePagesDTO.html" target="_self">GetAllAdvancePagesDTO</a>, i18n: I18nContext)</code>
+                </td>
+            </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <b>Decorators : </b>
+                    <br />
+                    <code>@Query(undefined)<br />@Auth(AdminRoles.SUPERADMIN, AdminRoles.ADMIN, AdminRoles.EDITOR)<br /></code>
+                </td>
+            </tr>
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="43"
+                                    class="link-to-prism">apps/cms-api/src/modules/advance-page/advance-page.resolver.ts:43</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>${1:Description placeholder}</p>
+</div>
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>input</td>
+                                            <td>
+                                                            <code><a href="../classes/GetAllAdvancePagesDTO.html" target="_self" >GetAllAdvancePagesDTO</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                        <tr>
+                                                <td>i18n</td>
+                                            <td>
+                                                        <code>I18nContext</code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>    <code>unknown</code>
+
+                        </div>
+                            <div class="io-description">
+                                <p>}</p>
+
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="updateAdvancePage"></a>
+                    <span class="name">
+                            <span class="modifier"></span>
+                            <span class="modifier"></span>
+                            <span class="modifier">Async</span>
+                        <span ><b>updateAdvancePage</b></span>
+                        <a href="#updateAdvancePage"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>updateAdvancePage(id: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>, input: <a href="../classes/UpdateAdvancePageDTO.html" target="_self">UpdateAdvancePageDTO</a>, user, i18n: I18nContext)</code>
+                </td>
+            </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <b>Decorators : </b>
+                    <br />
+                    <code>@Mutation(undefined)<br />@Auth(AdminRoles.SUPERADMIN, AdminRoles.ADMIN, AdminRoles.EDITOR)<br /></code>
+                </td>
+            </tr>
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="141"
+                                    class="link-to-prism">apps/cms-api/src/modules/advance-page/advance-page.resolver.ts:141</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>${1:Description placeholder}</p>
+</div>
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>id</td>
+                                            <td>
+                                                            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                        <tr>
+                                                <td>input</td>
+                                            <td>
+                                                            <code><a href="../classes/UpdateAdvancePageDTO.html" target="_self" >UpdateAdvancePageDTO</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                        <tr>
+                                                <td>user</td>
+                                            <td>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                        <tr>
+                                                <td>i18n</td>
+                                            <td>
+                                                        <code>I18nContext</code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>    <code>unknown</code>
+
+                        </div>
+                            <div class="io-description">
+                                <p>}</p>
+
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+
+
+
+
+
+    </div>
+
+
+    <div class="tab-pane fade  tab-source-code" id="source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Args, Mutation, Query, Resolver } from &#x27;@nestjs/graphql&#x27;;
+import { Auth } from &#x27;../auth/decorator/auth.decorator&#x27;;
+import { S3Service } from &#x27;@app/common/services/aws&#x27;;
+import { CurrentUser } from &#x27;../auth/decorator/get-user.decorator&#x27;;
+import { AdvancePageResponse, AllAdvancePagesResponse } from &#x27;./dto/response/advance-page.response&#x27;;
+import { GetAdvancePagesDTO, GetAllAdvancePagesDTO } from &#x27;./dto/input/get-advance-pages.dto&#x27;;
+import { CreateAdvancePageDTO } from &#x27;./dto/input/create-advance-page-dto&#x27;;
+import { UpdateAdvancePageDTO } from &#x27;./dto/input/update-advance-page.dto&#x27;;
+import { AdvancePageService } from &#x27;./advance-page.service&#x27;;
+import { I18n, I18nContext } from &#x27;nestjs-i18n&#x27;;
+import { AdminRoles } from &#x27;@app/data-access/admin/admin-roles.enum&#x27;;
+
+/**
+ * ${1:Description placeholder}
+ *
+ * @export
+ * @class PageResolver
+ * @typedef {PageResolver}
+ */
+@Resolver()
+export class AdvancePageResolver {
+  /**
+   * Creates an instance of PageResolver.
+   *
+   * @constructor
+   * @param {PageService} advancePageService
+   * @param {S3Service} s3service
+   */
+  constructor(
+    private readonly advancePageService: AdvancePageService,
+    private s3service: S3Service,
+  ) {}
+
+  /**
+   * ${1:Description placeholder}
+   *
+   * @async
+   * @param {GetAllPagesDTO} input
+   * @returns {Promise&lt;{ message: string; pages: any; }&gt;\}
+   */
+  @Query(() &#x3D;&gt; AllAdvancePagesResponse)
+  @Auth(AdminRoles.SUPERADMIN, AdminRoles.ADMIN, AdminRoles.EDITOR)
+  async listAlladvancePages(
+    @Args(&#x27;input&#x27;) input: GetAllAdvancePagesDTO,
+    @I18n() i18n: I18nContext,
+  ) {
+    const pages &#x3D; await this.advancePageService.listPages(input);
+
+    return {
+      message: i18n.t(&#x27;common.fetch_list_success&#x27;, { args: { entity: &#x27;Pages&#x27; } }),
+      pages,
+    };
+  }
+
+  /**
+   * ${1:Description placeholder}
+   *
+   * @async
+   * @param {GetPagesDTO} [input&#x3D;{}]
+   * @returns {Promise&lt;{ message: string; pages: any; pagination: any; \}&gt;\}
+   */
+  @Query(() &#x3D;&gt; AdvancePageResponse)
+  @Auth(AdminRoles.SUPERADMIN, AdminRoles.ADMIN, AdminRoles.EDITOR)
+  async listAdvancePages(@Args(&#x27;input&#x27;) input: GetAdvancePagesDTO &#x3D; {}, @I18n() i18n: I18nContext) {
+    const { data: pages, pagination } &#x3D; await this.advancePageService.getPages(input);
+
+    return {
+      message: i18n.t(&#x27;common.fetch_list_success&#x27;, { args: { entity: &#x27;Pages&#x27; } }),
+      pages,
+      pagination,
+    };
+  }
+
+  /**
+   * ${1:Description placeholder}
+   *
+   * @async
+   * @param {string} id
+   * @returns {Promise&lt;{ message: string; page: any; }&gt;\}
+   */
+  @Query(() &#x3D;&gt; AdvancePageResponse)
+  @Auth(AdminRoles.SUPERADMIN, AdminRoles.ADMIN, AdminRoles.EDITOR)
+  async listAdvancePage(@Args(&#x27;id&#x27;) id: string, @I18n() i18n: I18nContext) {
+    const page &#x3D; await this.advancePageService.listPage(id);
+    return { message: i18n.t(&#x27;common.fetch_detail_success&#x27;, { args: { entity: &#x27;Page&#x27; } }), page };
+  }
+
+  /**
+   * ${1:Description placeholder}
+   *
+   * @async
+   * @param {CreatePageDTO} input
+   * @param {*} user
+   * @returns {Promise&lt;{ message: string; page: any; }&gt;\}
+   */
+  // @Mutation(() &#x3D;&gt; AdvancePageResponse)
+  // @Auth(AdminRoles.SUPERADMIN, AdminRoles.ADMIN, AdminRoles.EDITOR)
+  // async createPage(@Args(&#x27;input&#x27;) input: CreateAdvancePageDTO, @CurrentUser() user) {
+  //   try {
+  //     const page &#x3D; await this.advancePageService.createPage(input, user);
+  //     return { message: &#x27;Page created successfully&#x27;, page };
+  //   } catch (error) {
+  //     throw error;
+  //   }
+  // }
+
+  /**
+   * ${1:Description placeholder}
+   *
+   * @async
+   * @param {CreateAdvPageDTO} input
+   * @param {*} user
+   * @returns {Promise&lt;{ message: string; page: any; }&gt;\}
+   */
+  @Mutation(() &#x3D;&gt; AdvancePageResponse)
+  @Auth(AdminRoles.SUPERADMIN, AdminRoles.ADMIN, AdminRoles.EDITOR)
+  async createAdvancePage(
+    @Args(&#x27;input&#x27;) input: CreateAdvancePageDTO,
+    @CurrentUser() user,
+    @I18n() i18n: I18nContext,
+  ) {
+    const page &#x3D; await this.advancePageService.createAdvPage(input, user);
+
+    return {
+      message: i18n.t(&#x27;common.create_success&#x27;, { args: { entity: &#x27;Page&#x27; } }),
+      page,
+    };
+  }
+
+  /**
+   * ${1:Description placeholder}
+   *
+   * @async
+   * @param {string} id
+   * @param {UpdatePageDTO} input
+   * @param {*} user
+   * @returns {Promise&lt;{ message: string; page: any; }&gt;\}
+   */
+  @Mutation(() &#x3D;&gt; AdvancePageResponse)
+  @Auth(AdminRoles.SUPERADMIN, AdminRoles.ADMIN, AdminRoles.EDITOR)
+  async updateAdvancePage(
+    @Args(&#x27;id&#x27;) id: string,
+    @Args(&#x27;input&#x27;) input: UpdateAdvancePageDTO,
+    @CurrentUser() user,
+    @I18n() i18n: I18nContext,
+  ) {
+    try {
+      const updatePage &#x3D; this.advancePageService.updatePage(id, input, user);
+
+      return {
+        message: i18n.t(&#x27;common.update_success&#x27;, { args: { entity: &#x27;page&#x27; } }),
+        page: updatePage,
+      };
+    } catch (e) {
+      throw new BadRequestException(e?.message);
+    }
+  }
+
+  /**
+   * ${1:Description placeholder}
+   *
+   * @async
+   * @param {string} id
+   * @returns {Promise&lt;{ message: string; }&gt;\}
+   */
+  @Mutation(() &#x3D;&gt; AdvancePageResponse)
+  @Auth(AdminRoles.SUPERADMIN, AdminRoles.ADMIN, AdminRoles.EDITOR)
+  async deleteAdvancePage(@Args(&#x27;id&#x27;) id: string, @I18n() i18n: I18nContext) {
+    await this.advancePageService.deletePage(id);
+
+    return { message: i18n.t(&#x27;common.delete_success&#x27;, { args: { entity: &#x27;page&#x27; } }) };
+  }
+
+  /**
+   * ${1:Description placeholder}
+   *
+   * @async
+   * @returns {Promise&lt;{ message: string; }&gt;\}
+   */
+  @Mutation(() &#x3D;&gt; AdvancePageResponse)
+  @Auth(AdminRoles.SUPERADMIN, AdminRoles.ADMIN, AdminRoles.EDITOR)
+  async deleteAllAdvancePages(@I18n() i18n: I18nContext) {
+    await this.advancePageService.deleteAllPages();
+    return { message: i18n.t(&#x27;common.delete_all_success&#x27;, { args: { entity: &#x27;pages&#x27; } }) };
+  }
+}
+</code></pre>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+          <label class="dark-mode-switch">
+               <input type="checkbox">
+               <span class="slider">
+                    <svg class="slider-icon" viewBox="0 0 24 24" fill="none" height="20" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" width="20" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"></path>
+                    </svg>
+               </span>
+          </label>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'class';
+            var COMPODOC_CURRENT_PAGE_URL = 'AdvancePageResolver.html';
+            var MAX_SEARCH_RESULTS = 15;
+       </script>
+
+       <script>
+               $darkModeToggleSwitchers = document.querySelectorAll('.dark-mode-switch input');
+               checkToggle(darkModeState);
+               if ($darkModeToggleSwitchers.length > 0) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].addEventListener('change', function (event) {
+                              darkModeState = !darkModeState;
+                              toggleDarkMode(darkModeState);
+                         });
+                    }
+               }
+          </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+
+       <script src="../js/menu-wc.js" defer></script>
+       <script nomodule src="../js/menu-wc_es5.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>

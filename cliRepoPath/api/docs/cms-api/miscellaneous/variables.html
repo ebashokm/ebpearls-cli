@@ -1,0 +1,1323 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>nest-ebtheme documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	   <link rel="stylesheet" href="../styles/style.css">
+        <link rel="stylesheet" href="../styles/dark.css">
+    </head>
+    <body>
+          <script>
+               // Blocking script to avoid flickering dark mode
+               // Dark mode toggle button
+               var useDark = window.matchMedia('(prefers-color-scheme: dark)');
+               var darkModeState = useDark.matches;
+               var $darkModeToggleSwitchers = document.querySelectorAll('.dark-mode-switch input');
+               var $darkModeToggles = document.querySelectorAll('.dark-mode-switch');
+               var darkModeStateLocal = localStorage.getItem('compodoc_darkmode-state');
+
+               function checkToggle(check) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].checked = check;
+                    }
+               }
+
+               function toggleDarkMode(state) {
+                    if (window.localStorage) {
+                         localStorage.setItem('compodoc_darkmode-state', state);
+                    }
+
+                    checkToggle(state);
+
+                    const hasClass = document.body.classList.contains('dark');
+
+                    if (state) {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.add('dark');
+                         }
+                         if (!hasClass) {
+                              document.body.classList.add('dark');
+                         }
+                    } else {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.remove('dark');
+                         }
+                         if (hasClass) {
+                              document.body.classList.remove('dark');
+                         }
+                    }
+               }
+
+               useDark.addEventListener('change', function (evt) {
+                    toggleDarkMode(evt.matches);
+               });
+               if (darkModeStateLocal) {
+                    darkModeState = darkModeStateLocal === 'true';
+               }
+               toggleDarkMode(darkModeState);
+          </script>
+
+        <div class="navbar navbar-default navbar-fixed-top d-md-none p-0">
+               <div class="d-flex">
+                    <a href="../" class="navbar-brand">nest-ebtheme documentation</a>
+                    <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+               </div>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="d-none d-md-block menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content miscellaneous-variables">
+                   <div class="content-data">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<ol class="breadcrumb">
+  <li class="breadcrumb-item">Miscellaneous</li>
+  <li class="breadcrumb-item">Variables</li>
+</ol>
+
+<section data-compodoc="block-index">
+    <h3 id="index">Index</h3>
+    <table class="table table-sm table-bordered index-table">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <ul class="index-list">
+                        <li>
+                            <a href="#cluster" title="apps/cms-api/src/cluster.service.ts" ><b>cluster</b>&nbsp;&nbsp;&nbsp;(apps/.../cluster.service.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#configValidationSchema" title="apps/cms-api/src/config/config.schema.ts" ><b>configValidationSchema</b>&nbsp;&nbsp;&nbsp;(apps/.../config.schema.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#CurrentUser" title="apps/cms-api/src/modules/auth/decorator/get-user.decorator.ts" ><b>CurrentUser</b>&nbsp;&nbsp;&nbsp;(apps/.../get-user.decorator.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#lang" title="apps/cms-api/src/constants/language.ts" ><b>lang</b>&nbsp;&nbsp;&nbsp;(apps/.../language.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#MAX_ATTEMPTS_FROM_DEVICE" title="apps/cms-api/src/constants/auth.ts" ><b>MAX_ATTEMPTS_FROM_DEVICE</b>&nbsp;&nbsp;&nbsp;(apps/.../auth.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#MAX_ATTEMPTS_FROM_DEVICE" title="apps/cms-api/src/modules/auth/constants/index.ts" ><b>MAX_ATTEMPTS_FROM_DEVICE</b>&nbsp;&nbsp;&nbsp;(apps/.../index.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#MAX_OTP_ATTEMPT" title="apps/cms-api/src/modules/auth/constants/index.ts" ><b>MAX_OTP_ATTEMPT</b>&nbsp;&nbsp;&nbsp;(apps/.../index.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#Messages" title="apps/cms-api/src/constants/language.ts" ><b>Messages</b>&nbsp;&nbsp;&nbsp;(apps/.../language.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#models" title="apps/cms-api/src/modules/app-user/mongooseModel.ts" ><b>models</b>&nbsp;&nbsp;&nbsp;(apps/.../mongooseModel.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#mongooseModels" title="apps/cms-api/src/modules/admin/mongooseModels.ts" ><b>mongooseModels</b>&nbsp;&nbsp;&nbsp;(apps/.../mongooseModels.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#mongooseModels" title="apps/cms-api/src/modules/auth/mongoose.models.ts" ><b>mongooseModels</b>&nbsp;&nbsp;&nbsp;(apps/.../mongoose.models.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#MULTIPLY_BRFORE_MS" title="apps/cms-api/src/constants/auth.ts" ><b>MULTIPLY_BRFORE_MS</b>&nbsp;&nbsp;&nbsp;(apps/.../auth.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#MULTIPLY_BRFORE_MS" title="apps/cms-api/src/modules/auth/constants/index.ts" ><b>MULTIPLY_BRFORE_MS</b>&nbsp;&nbsp;&nbsp;(apps/.../index.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#numCPUs" title="apps/cms-api/src/cluster.service.ts" ><b>numCPUs</b>&nbsp;&nbsp;&nbsp;(apps/.../cluster.service.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#providers" title="apps/cms-api/src/modules/admin/providers.ts" ><b>providers</b>&nbsp;&nbsp;&nbsp;(apps/.../providers.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#providers" title="apps/cms-api/src/modules/advance-page/providers.ts" ><b>providers</b>&nbsp;&nbsp;&nbsp;(apps/.../providers.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#providers" title="apps/cms-api/src/modules/app-user/provider.ts" ><b>providers</b>&nbsp;&nbsp;&nbsp;(apps/.../provider.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#providers" title="apps/cms-api/src/modules/auth/providers.ts" ><b>providers</b>&nbsp;&nbsp;&nbsp;(apps/.../providers.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#providers" title="apps/cms-api/src/modules/menu/providers.ts" ><b>providers</b>&nbsp;&nbsp;&nbsp;(apps/.../providers.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#providers" title="apps/cms-api/src/modules/settings/providers.ts" ><b>providers</b>&nbsp;&nbsp;&nbsp;(apps/.../providers.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#providers" title="apps/cms-api/src/modules/taxonomy/providers.ts" ><b>providers</b>&nbsp;&nbsp;&nbsp;(apps/.../providers.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#responseMessages" title="apps/cms-api/src/constants/language.ts" ><b>responseMessages</b>&nbsp;&nbsp;&nbsp;(apps/.../language.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#ROLES_KEY" title="apps/cms-api/src/modules/auth/decorator/set-role.decorator.ts" ><b>ROLES_KEY</b>&nbsp;&nbsp;&nbsp;(apps/.../set-role.decorator.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#SALT_ROUNDS" title="apps/cms-api/src/modules/auth/service/hash.service.ts" ><b>SALT_ROUNDS</b>&nbsp;&nbsp;&nbsp;(apps/.../hash.service.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#SMS_CODE_EXPIRE_BY" title="apps/cms-api/src/modules/auth/constants/index.ts" ><b>SMS_CODE_EXPIRE_BY</b>&nbsp;&nbsp;&nbsp;(apps/.../index.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#SMS_CODE_EXPIRE_MULTIPLIER" title="apps/cms-api/src/modules/auth/constants/index.ts" ><b>SMS_CODE_EXPIRE_MULTIPLIER</b>&nbsp;&nbsp;&nbsp;(apps/.../index.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#STRIPE_API_VERSION" title="apps/cms-api/src/constants/stripe.ts" ><b>STRIPE_API_VERSION</b>&nbsp;&nbsp;&nbsp;(apps/.../stripe.ts)</a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+
+    <h3>apps/cms-api/src/cluster.service.ts</h3>
+    <section data-compodoc="block-properties">
+    <h3></h3>    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="cluster"></a>
+                    <span class="name">
+                        <span ><b>cluster</b></span>
+                        <a href="#cluster"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>require(&#x27;cluster&#x27;)</code>
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="numCPUs"></a>
+                    <span class="name">
+                        <span ><b>numCPUs</b></span>
+                        <a href="#numCPUs"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>1</code>
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+</section>
+    <h3>apps/cms-api/src/config/config.schema.ts</h3>
+    <section data-compodoc="block-properties">
+    <h3></h3>    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="configValidationSchema"></a>
+                    <span class="name">
+                        <span ><b>configValidationSchema</b></span>
+                        <a href="#configValidationSchema"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>Joi.object({
+  PORT: Joi.number().default(3001),
+  APP_ENV: Joi.string()
+    .valid(&#x27;development&#x27;, &#x27;production&#x27;, &#x27;test&#x27;, &#x27;local&#x27;)
+    .default(&#x27;local&#x27;),
+  DB_CONNECTION_STRING: Joi.string().required(),
+  ACCESS_TOKEN_SECRET: Joi.string().required(),
+  ACCESS_TOKEN_EXPIRES_IN: Joi.string().required(),
+  REFRESH_TOKEN_SECRET: Joi.string().required(),
+  REFRESH_TOKEN_EXPIRES_IN: Joi.string().required(),
+  EMAIL_HOST: Joi.string().required(),
+  EMAIL_USER: Joi.string().required(),
+  EMAIL_USER_PASS: Joi.string().required(),
+  SALT_ROUNDS: Joi.number().default(10),
+  POSITION_STACK_API: Joi.string().required(),
+  BASE_URL: Joi.string().uri().required(),
+  CDN: Joi.string().uri().required(),
+  CMS_PORTAL_URI: Joi.string().uri().required(),
+  AWS_SES_ACCESS_KEY: Joi.string().required(),
+  AWS_SES_SECRET_KEY: Joi.string().required(),
+  AWS_SES_REGION: Joi.string().required(),
+  AWS_SES_API_VERSION: Joi.string().required(),
+  AWS_SES_FROM: Joi.string().email().required(),
+  S3_ACCESS_KEY_ID: Joi.string().required(),
+  S3_SECRET_ACCESS_KEY: Joi.string().required(),
+  S3_BUCKET_NAME: Joi.string().required(),
+  S3_REGION: Joi.string().required(),
+  STRIPE_SECRET: Joi.string().required(),
+  STRIPE_API_VERSION: Joi.string().required(),
+  STRIPE_WEBHOOK_SECRET: Joi.string().required(),
+  SMS_CODE_EXPIRE_BY: Joi.number().default(120000),
+  SMS_CODE_EXPIRE_MULTIPLIER: Joi.number().default(4),
+  &#x27;2FA_METHOD&#x27;: Joi.string()
+    .valid(&#x27;authenticator-based-otp&#x27;, &#x27;sms-based-otp&#x27;)
+    .default(&#x27;authenticator-based-otp&#x27;),
+  COMET_CHAT_APP_ID: Joi.string().required(),
+  COMET_CHAT_SECRET_KEY: Joi.string().required(),
+  COMET_CHAT_API_URL: Joi.string().uri().required(),
+})</code>
+                    </td>
+                </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>${1:Description placeholder}</p>
+</div>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+</section>
+    <h3>apps/cms-api/src/modules/auth/decorator/get-user.decorator.ts</h3>
+    <section data-compodoc="block-properties">
+    <h3></h3>    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="CurrentUser"></a>
+                    <span class="name">
+                        <span ><b>CurrentUser</b></span>
+                        <a href="#CurrentUser"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>createParamDecorator(
+  (data: string, context: ExecutionContext) &#x3D;&gt; {
+    const ctx &#x3D; GqlExecutionContext.create(context);
+    const user &#x3D; ctx.getContext().req.user;
+    return data ? user &amp;&amp; user[data] : user;
+  },
+)</code>
+                    </td>
+                </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>${1:Description placeholder}</p>
+</div>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+</section>
+    <h3>apps/cms-api/src/constants/language.ts</h3>
+    <section data-compodoc="block-properties">
+    <h3></h3>    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="lang"></a>
+                    <span class="name">
+                        <span ><b>lang</b></span>
+                        <a href="#lang"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="../miscellaneous/enumerations.html#LangList" target="_self" >LangList</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>LangList[process.env.SYSTEM_LANGUAGE || &#x27;EN&#x27;]</code>
+                    </td>
+                </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>${1:Description placeholder}</p>
+</div>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="Messages"></a>
+                    <span class="name">
+                        <span ><b>Messages</b></span>
+                        <a href="#Messages"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>responseMessages[lang]</code>
+                    </td>
+                </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>${1:Description placeholder}</p>
+</div>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="responseMessages"></a>
+                    <span class="name">
+                        <span ><b>responseMessages</b></span>
+                        <a href="#responseMessages"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/object" target="_blank" >object</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>{
+  EN: {
+    EMAIL_DOES_NOT_EXIST: &#x27;Email does not exists.&#x27;,
+    INVALID_TOKEN: &#x27;Invalid token&#x27;,
+    INVALID_USER_ID: &#x27;UserID does not exist&#x27;,
+    USER_NOT_FOUND: &#x27;User not found&#x27;,
+    INVALID_USER_INPUTS: &#x27;Invalid user inputs&#x27;,
+    INSUFFICIENT_PRIVILEGE: &#x27;Not authorized to perform action&#x27;,
+    PASSWORD_CHANGE_INVALID: &#x27;Enter a valid password and try again&#x27;,
+    PASSWORD_RESET_CODE_SENT: &#x27;Password reset code sent.&#x27;,
+    PASSWORD_CHANGED_SUCCESSFULLY: &#x27;Password changed succesfully&#x27;,
+    INVALID_PAGE_ID: &#x27;Page with given pageId not found&#x27;,
+    INVALID_PAGE_INPUTS: &#x27;Invalid page inputs&#x27;,
+    INVALID_MENU_ID: &#x27;Menu with given menuId not found&#x27;,
+    INVALID_MENU_INPUTS: &#x27;Invalid menu inputs&#x27;,
+    INVALID_TAXONOMY_ID: &#x27;Taxonomy with given taxonomyId not found&#x27;,
+    INVALID_TAXONOMY_INPUTS: &#x27;Invalid taxonomy inputs&#x27;,
+    DUPLICATE_EMAIL: &#x27;Email must be unique&#x27;,
+    DUPLICATE_SLUG: &#x27;Slug must be unique&#x27;,
+    DUPLICATE_KEY_ERROR: &#x27;Keys must be unique. Apply unique keys and try again&#x27;,
+    USER_CREATE: &#x27;User created successfully&#x27;,
+    USER_UPDATE: &#x27;User updated successfully&#x27;,
+    USER_DELETE: &#x27;User deleted successfully&#x27;,
+    USER_LISTING: &#x27;User listings&#x27;,
+    SOMETHING_WENT_WRONG: &#x27;Something went wrong&#x27;,
+    UNAUTHORIZED_USER: &#x27;Unauthorized user&#x27;,
+    DATABASE_ERROR: &#x27;Database error&#x27;,
+    BAD_LOCATION: &#x27;Invalid location. Please enter the valid location&#x27;,
+    DUPLICATE_AUTHPROVIDER_ID: &#x27;Auth Provider Id must be unique&#x27;,
+    INVALID_FAQ_ID: &#x27;FAQ with given faqId not found&#x27;,
+    INVALID_FAQ_INPUTS: &#x27;Invalid FAQ inputs&#x27;,
+    FAQ_CREATE: &#x27;FAQ created successfully&#x27;,
+    FAQ_UPDATE: &#x27;FAQ updated successfully&#x27;,
+    FAQ_DELETE: &#x27;FAQ deleted successfully&#x27;,
+    INVALID_EMAIL_TEMPLATE_INPUTS: &#x27;Invalid $property for email template inputs&#x27;,
+    FAQ_LISTING: &#x27;FAQ listings&#x27;,
+    EMAIL_TEMPLATE_LISTINGS: &#x27;Email Template listings&#x27;,
+    EMAIL_TEMPLATE_CREATE: &#x27;Email Template created successfully&#x27;,
+    EMAIL_TEMPLATE_UPDATE: &#x27;Email Template updated successfully&#x27;,
+    EMAIL_TEMPLATE_DELETE: &#x27;Email Template deleted successfully&#x27;,
+    EMAIL_TEMPLATE_NOT_FOUND: &#x27;Email Template with given templateId not found&#x27;,
+    INVALID_PROPERTY_LENGTH: &#x27;Invalid property length&#x27;,
+    HOME_TEMPLATE_LISTINGS: &#x27;Home Template listings&#x27;,
+    HOME_TEMPLATE_CREATE: &#x27;Home Template created successfully&#x27;,
+    HOME_TEMPLATE_UPDATE: &#x27;Home Template updated successfully&#x27;,
+    HOME_TEMPLATE_DELETE: &#x27;Home Template deleted successfully&#x27;,
+    TESTIMONIALS_LISTINGS: &#x27;Testimonials listings&#x27;,
+    TESTIMONIALS_CREATE: &#x27; Testimonials created successfully&#x27;,
+    TESTIMONIALS_UPDATE: &#x27;Testimonials updated successfully&#x27;,
+    TESTIMONIALS_DELETE: &#x27;Testimonials deleted successfully&#x27;,
+    INVALID_OTP_CODE: &#x27;Invalid otp code&#x27;,
+    TOO_MANY_ATTEMPTS: &#x27;You have exceeded the limit&#x27;,
+    VERIFICATION_CODE_ALREADY_SENT: &#x27;Code already exists. Please wait for a while.&#x27;,
+    VERIFICATION_CODE_MESSAGE: &#x27;Your OTP verification code is&#x27;,
+    SETTINGS_LISTING: &#x27;Settings fields listing&#x27;,
+    SETTINGS_UPDATE: &#x27;Settings updated successfully&#x27;,
+    TWO_FACTOR_AUTH_SUCCESS: &#x27;Two-Factor auth enabled successfully&#x27;,
+    INACTIVE_USER: (data) &#x3D;&gt; &#x60;${data} is not active&#x60;,
+    PAGE_ALREADY_EXISTS: &#x60;Cms page with same title and version of same page type already exists&#x60;,
+    PAGE_WITH_SAME_SLUG_EXISTS: &#x60;Cms page with same slug already exists&#x60;,
+    PAGE_WITH_SAME_TITLE: &#x60;Cms page with same title already exists&#x60;,
+    LISTING_SUCCESSFULL: (data) &#x3D;&gt; &#x60;${data} listed successfully&#x60;,
+  },
+}</code>
+                    </td>
+                </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>${1:Description placeholder}</p>
+</div>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+</section>
+    <h3>apps/cms-api/src/constants/auth.ts</h3>
+    <section data-compodoc="block-properties">
+    <h3></h3>    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="MAX_ATTEMPTS_FROM_DEVICE"></a>
+                    <span class="name">
+                        <span ><b>MAX_ATTEMPTS_FROM_DEVICE</b></span>
+                        <a href="#MAX_ATTEMPTS_FROM_DEVICE"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>20</code>
+                    </td>
+                </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>${1:Description placeholder}</p>
+</div>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="MULTIPLY_BRFORE_MS"></a>
+                    <span class="name">
+                        <span ><b>MULTIPLY_BRFORE_MS</b></span>
+                        <a href="#MULTIPLY_BRFORE_MS"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>172800000</code>
+                    </td>
+                </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>${1:Description placeholder}</p>
+</div>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+</section>
+    <h3>apps/cms-api/src/modules/auth/constants/index.ts</h3>
+    <section data-compodoc="block-properties">
+    <h3></h3>    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="MAX_ATTEMPTS_FROM_DEVICE"></a>
+                    <span class="name">
+                        <span ><b>MAX_ATTEMPTS_FROM_DEVICE</b></span>
+                        <a href="#MAX_ATTEMPTS_FROM_DEVICE"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>20</code>
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="MAX_OTP_ATTEMPT"></a>
+                    <span class="name">
+                        <span ><b>MAX_OTP_ATTEMPT</b></span>
+                        <a href="#MAX_OTP_ATTEMPT"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>20</code>
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="MULTIPLY_BRFORE_MS"></a>
+                    <span class="name">
+                        <span ><b>MULTIPLY_BRFORE_MS</b></span>
+                        <a href="#MULTIPLY_BRFORE_MS"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>172800000</code>
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="SMS_CODE_EXPIRE_BY"></a>
+                    <span class="name">
+                        <span ><b>SMS_CODE_EXPIRE_BY</b></span>
+                        <a href="#SMS_CODE_EXPIRE_BY"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>120000</code>
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="SMS_CODE_EXPIRE_MULTIPLIER"></a>
+                    <span class="name">
+                        <span ><b>SMS_CODE_EXPIRE_MULTIPLIER</b></span>
+                        <a href="#SMS_CODE_EXPIRE_MULTIPLIER"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>2</code>
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+</section>
+    <h3>apps/cms-api/src/modules/app-user/mongooseModel.ts</h3>
+    <section data-compodoc="block-properties">
+    <h3></h3>    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="models"></a>
+                    <span class="name">
+                        <span ><b>models</b></span>
+                        <a href="#models"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>[]</code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>[
+  { name: User.name, schema: UserSchema },
+  { name: EmailToken.name, schema: emailTokenSchema },
+  { name: EmailTemplate.name, schema: emailTemplateSchema },
+]</code>
+                    </td>
+                </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>${1:Description placeholder}</p>
+</div>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+</section>
+    <h3>apps/cms-api/src/modules/admin/mongooseModels.ts</h3>
+    <section data-compodoc="block-properties">
+    <h3></h3>    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="mongooseModels"></a>
+                    <span class="name">
+                        <span ><b>mongooseModels</b></span>
+                        <a href="#mongooseModels"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>[]</code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>[
+  { name: Admin.name, schema: adminSchema },
+  { name: EmailToken.name, schema: emailTokenSchema },
+]</code>
+                    </td>
+                </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>${1:Description placeholder}</p>
+</div>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+</section>
+    <h3>apps/cms-api/src/modules/auth/mongoose.models.ts</h3>
+    <section data-compodoc="block-properties">
+    <h3></h3>    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="mongooseModels"></a>
+                    <span class="name">
+                        <span ><b>mongooseModels</b></span>
+                        <a href="#mongooseModels"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>[]</code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>[
+  { name: Admin.name, schema: adminSchema },
+  { name: EmailToken.name, schema: emailTokenSchema },
+  { name: OTPRequest.name, schema: OTPRequestSchema },
+  { name: DeviceInfo.name, schema: DeviceInfoSchema },
+  { name: Settings.name, schema: SettingsSchema },
+  { name: EmailTemplate.name, schema: emailTemplateSchema },
+  { name: Business.name, schema: businessSchema },
+]</code>
+                    </td>
+                </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>${1:Description placeholder}</p>
+</div>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+</section>
+    <h3>apps/cms-api/src/modules/admin/providers.ts</h3>
+    <section data-compodoc="block-properties">
+    <h3></h3>    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="providers"></a>
+                    <span class="name">
+                        <span ><b>providers</b></span>
+                        <a href="#providers"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>[]</code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>[
+  /* resolvers */
+  AdminResolver,
+
+  /* services */
+  AdminService,
+  S3Service,
+
+  /* repos */
+  AdminRepository,
+  TokenRepository,
+  TokenService,
+]</code>
+                    </td>
+                </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>${1:Description placeholder}</p>
+</div>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+</section>
+    <h3>apps/cms-api/src/modules/advance-page/providers.ts</h3>
+    <section data-compodoc="block-properties">
+    <h3></h3>    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="providers"></a>
+                    <span class="name">
+                        <span ><b>providers</b></span>
+                        <a href="#providers"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>[]</code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>[
+  AdvancePageResolver,
+  AdvancePageService,
+  AdvancePageRepository,
+  S3Service,
+]</code>
+                    </td>
+                </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>${1:Description placeholder}</p>
+</div>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+</section>
+    <h3>apps/cms-api/src/modules/app-user/provider.ts</h3>
+    <section data-compodoc="block-properties">
+    <h3></h3>    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="providers"></a>
+                    <span class="name">
+                        <span ><b>providers</b></span>
+                        <a href="#providers"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>[]</code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>[
+  AppUserResolver,
+  AppUserService,
+  LocationService,
+  HashService,
+  EmailService,
+  //SesService,
+  TokenService,
+  // SesService,
+  // S3Service,
+  // NodeMailerService,
+  CometChatHelperService,
+  UsersRepository,
+  TokenRepository,
+  EmailTemplateRepository,
+  EventsController,
+  EventsService,
+  UserEventsService,
+]</code>
+                    </td>
+                </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>${1:Description placeholder}</p>
+</div>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+</section>
+    <h3>apps/cms-api/src/modules/auth/providers.ts</h3>
+    <section data-compodoc="block-properties">
+    <h3></h3>    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="providers"></a>
+                    <span class="name">
+                        <span ><b>providers</b></span>
+                        <a href="#providers"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>[]</code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>[
+  /* resolvers */
+  AuthResolver,
+
+  /* services */
+  AuthService,
+  JwtService,
+  ConfigService,
+  LocalStrategy,
+  JwtStrategy,
+  TokenService,
+  SesService,
+  S3Service,
+  EmailService,
+  HashService,
+  OtpService,
+  SettingService,
+  //CloudFrontService,
+  /* repositories */
+  AdminRepository,
+  TokenRepository,
+  OTPRequestRepository,
+  DeviceInfoRepository,
+  SettingsRepository,
+  EmailTemplateRepository,
+  BusinessRepository,
+]</code>
+                    </td>
+                </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>${1:Description placeholder}</p>
+</div>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+</section>
+    <h3>apps/cms-api/src/modules/menu/providers.ts</h3>
+    <section data-compodoc="block-properties">
+    <h3></h3>    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="providers"></a>
+                    <span class="name">
+                        <span ><b>providers</b></span>
+                        <a href="#providers"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>[]</code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>[MenuResolver, MenuService, MenuRepository, S3Service]</code>
+                    </td>
+                </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>${1:Description placeholder}</p>
+</div>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+</section>
+    <h3>apps/cms-api/src/modules/settings/providers.ts</h3>
+    <section data-compodoc="block-properties">
+    <h3></h3>    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="providers"></a>
+                    <span class="name">
+                        <span ><b>providers</b></span>
+                        <a href="#providers"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>[]</code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>[
+  SettingResolver,
+  SettingService,
+  SettingsRepository,
+  S3Service,
+]</code>
+                    </td>
+                </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>${1:Description placeholder}</p>
+</div>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+</section>
+    <h3>apps/cms-api/src/modules/taxonomy/providers.ts</h3>
+    <section data-compodoc="block-properties">
+    <h3></h3>    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="providers"></a>
+                    <span class="name">
+                        <span ><b>providers</b></span>
+                        <a href="#providers"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>[]</code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>[
+  TaxonomyResolver,
+  TaxonomyService,
+  TaxonomyRepository,
+  S3Service,
+]</code>
+                    </td>
+                </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>${1:Description placeholder}</p>
+</div>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+</section>
+    <h3>apps/cms-api/src/modules/auth/decorator/set-role.decorator.ts</h3>
+    <section data-compodoc="block-properties">
+    <h3></h3>    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="ROLES_KEY"></a>
+                    <span class="name">
+                        <span ><b>ROLES_KEY</b></span>
+                        <a href="#ROLES_KEY"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>&#x27;roles&#x27;</code>
+                    </td>
+                </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>${1:Description placeholder}</p>
+</div>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+</section>
+    <h3>apps/cms-api/src/modules/auth/service/hash.service.ts</h3>
+    <section data-compodoc="block-properties">
+    <h3></h3>    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="SALT_ROUNDS"></a>
+                    <span class="name">
+                        <span ><b>SALT_ROUNDS</b></span>
+                        <a href="#SALT_ROUNDS"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>10</code>
+                    </td>
+                </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>${1:Description placeholder}</p>
+</div>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+</section>
+    <h3>apps/cms-api/src/constants/stripe.ts</h3>
+    <section data-compodoc="block-properties">
+    <h3></h3>    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="STRIPE_API_VERSION"></a>
+                    <span class="name">
+                        <span ><b>STRIPE_API_VERSION</b></span>
+                        <a href="#STRIPE_API_VERSION"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>&#x27;2022-08-01&#x27;</code>
+                    </td>
+                </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>${1:Description placeholder}</p>
+</div>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+</section>
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+          <label class="dark-mode-switch">
+               <input type="checkbox">
+               <span class="slider">
+                    <svg class="slider-icon" viewBox="0 0 24 24" fill="none" height="20" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" width="20" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"></path>
+                    </svg>
+               </span>
+          </label>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'miscellaneous-variables';
+            var COMPODOC_CURRENT_PAGE_URL = 'variables.html';
+            var MAX_SEARCH_RESULTS = 15;
+       </script>
+
+       <script>
+               $darkModeToggleSwitchers = document.querySelectorAll('.dark-mode-switch input');
+               checkToggle(darkModeState);
+               if ($darkModeToggleSwitchers.length > 0) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].addEventListener('change', function (event) {
+                              darkModeState = !darkModeState;
+                              toggleDarkMode(darkModeState);
+                         });
+                    }
+               }
+          </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+
+       <script src="../js/menu-wc.js" defer></script>
+       <script nomodule src="../js/menu-wc_es5.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>

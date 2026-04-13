@@ -1,0 +1,1152 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>nest-ebtheme documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	   <link rel="stylesheet" href="../styles/style.css">
+        <link rel="stylesheet" href="../styles/dark.css">
+    </head>
+    <body>
+          <script>
+               // Blocking script to avoid flickering dark mode
+               // Dark mode toggle button
+               var useDark = window.matchMedia('(prefers-color-scheme: dark)');
+               var darkModeState = useDark.matches;
+               var $darkModeToggleSwitchers = document.querySelectorAll('.dark-mode-switch input');
+               var $darkModeToggles = document.querySelectorAll('.dark-mode-switch');
+               var darkModeStateLocal = localStorage.getItem('compodoc_darkmode-state');
+
+               function checkToggle(check) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].checked = check;
+                    }
+               }
+
+               function toggleDarkMode(state) {
+                    if (window.localStorage) {
+                         localStorage.setItem('compodoc_darkmode-state', state);
+                    }
+
+                    checkToggle(state);
+
+                    const hasClass = document.body.classList.contains('dark');
+
+                    if (state) {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.add('dark');
+                         }
+                         if (!hasClass) {
+                              document.body.classList.add('dark');
+                         }
+                    } else {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.remove('dark');
+                         }
+                         if (hasClass) {
+                              document.body.classList.remove('dark');
+                         }
+                    }
+               }
+
+               useDark.addEventListener('change', function (evt) {
+                    toggleDarkMode(evt.matches);
+               });
+               if (darkModeStateLocal) {
+                    darkModeState = darkModeStateLocal === 'true';
+               }
+               toggleDarkMode(darkModeState);
+          </script>
+
+        <div class="navbar navbar-default navbar-fixed-top d-md-none p-0">
+               <div class="d-flex">
+                    <a href="../" class="navbar-brand">nest-ebtheme documentation</a>
+                    <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+               </div>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="d-none d-md-block menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content injectable">
+                   <div class="content-data">
+
+
+
+
+
+
+
+
+<ol class="breadcrumb">
+  <li class="breadcrumb-item">Injectables</li>
+  <li class="breadcrumb-item" >StripeSubscriptionService</li>
+</ol>
+
+<ul class="nav nav-tabs" role="tablist">
+        <li class="nav-item">
+            <a href="#info" 
+                class="nav-link"
+                class="nav-link active"
+                role="tab" id="info-tab" data-bs-toggle="tab" data-link="info">Info</a>
+        </li>
+        <li class="nav-item">
+            <a href="#source" 
+                class="nav-link"
+                
+                role="tab" id="source-tab" data-bs-toggle="tab" data-link="source">Source</a>
+        </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="info">
+        <p class="comment">
+            <h3>File</h3>
+        </p>
+        <p class="comment">
+            <code>apps/api/src/modules/stripe/stripe-subscriptions/stripe-subscriptions.service.ts</code>
+        </p>
+
+
+            <p class="comment">
+                <h3>Description</h3>
+            </p>
+            <p class="comment">
+                <p>Description placeholder</p>
+
+            </p>
+
+
+
+            <section data-compodoc="block-index">
+    <h3 id="index">Index</h3>
+    <table class="table table-sm table-bordered index-table">
+        <tbody>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Methods</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                    <span class="modifier">Async</span>
+                                <a href="#cancelSubscription" >cancelSubscription</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Async</span>
+                                <a href="#create" >create</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Async</span>
+                                <a href="#endTrial" >endTrial</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Async</span>
+                                <a href="#findAllAvailableSubscriptionProducts" >findAllAvailableSubscriptionProducts</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Async</span>
+                                <a href="#getCurrentSubscription" >getCurrentSubscription</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Async</span>
+                                <a href="#update" >update</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+            <section data-compodoc="block-constructor">
+    <h3 id="constructor">Constructor</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+<code>constructor(usersRepository: <a href="../injectables/UsersRepository.html" target="_self">UsersRepository</a>, subscriptionProductRepo: <a href="../injectables/SubscriptionProductRepository.html" target="_self">SubscriptionProductRepository</a>, stripeSubscriptionRepo: <a href="../injectables/StripeSubscriptionRepository.html" target="_self">StripeSubscriptionRepository</a>, stripeService: <a href="../injectables/StripeService.html" target="_self">StripeService</a>, stripeCustomerRepo: <a href="../injectables/StripeCustomerRepository.html" target="_self">StripeCustomerRepository</a>, i18nService: I18nService)</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="30" class="link-to-prism">apps/api/src/modules/stripe/stripe-subscriptions/stripe-subscriptions.service.ts:30</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                            <div class="io-description"><p>Creates an instance of StripeSubscriptionService.</p>
+</div>
+                            <div>
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>usersRepository</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/UsersRepository.html" target="_self" >UsersRepository</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>subscriptionProductRepo</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/SubscriptionProductRepository.html" target="_self" >SubscriptionProductRepository</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>stripeSubscriptionRepo</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/StripeSubscriptionRepository.html" target="_self" >StripeSubscriptionRepository</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>stripeService</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/StripeService.html" target="_self" >StripeService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>stripeCustomerRepo</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/StripeCustomerRepository.html" target="_self" >StripeCustomerRepository</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>i18nService</td>
+                                                  
+                                                        <td>
+                                                                    <code>I18nService</code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+</section>
+
+            <section data-compodoc="block-methods">
+    
+    <h3 id="methods">
+        Methods
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="cancelSubscription"></a>
+                    <span class="name">
+                            <span class="modifier">Async</span>
+                        <span ><b>cancelSubscription</b></span>
+                        <a href="#cancelSubscription"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>cancelSubscription(userId: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="270"
+                                    class="link-to-prism">apps/api/src/modules/stripe/stripe-subscriptions/stripe-subscriptions.service.ts:270</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>userId</td>
+                                            <td>
+                                                            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="../classes/MessageResponse.html" target="_self" >Promise&lt;MessageResponse&gt;</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="create"></a>
+                    <span class="name">
+                            <span class="modifier">Async</span>
+                        <span ><b>create</b></span>
+                        <a href="#create"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>create(userId: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>, createData: <a href="../classes/CreateStripeSubscriptionInput.html" target="_self">CreateStripeSubscriptionInput</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="80"
+                                    class="link-to-prism">apps/api/src/modules/stripe/stripe-subscriptions/stripe-subscriptions.service.ts:80</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>userId</td>
+                                            <td>
+                                                            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                        <tr>
+                                                <td>createData</td>
+                                            <td>
+                                                            <code><a href="../classes/CreateStripeSubscriptionInput.html" target="_self" >CreateStripeSubscriptionInput</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="../classes/MessageResponse.html" target="_self" >Promise&lt;MessageResponse&gt;</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="endTrial"></a>
+                    <span class="name">
+                            <span class="modifier">Async</span>
+                        <span ><b>endTrial</b></span>
+                        <a href="#endTrial"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>endTrial(userId: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="303"
+                                    class="link-to-prism">apps/api/src/modules/stripe/stripe-subscriptions/stripe-subscriptions.service.ts:303</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>userId</td>
+                                            <td>
+                                                            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="../classes/MessageResponse.html" target="_self" >Promise&lt;MessageResponse&gt;</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="findAllAvailableSubscriptionProducts"></a>
+                    <span class="name">
+                            <span class="modifier">Async</span>
+                        <span ><b>findAllAvailableSubscriptionProducts</b></span>
+                        <a href="#findAllAvailableSubscriptionProducts"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>findAllAvailableSubscriptionProducts()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="54"
+                                    class="link-to-prism">apps/api/src/modules/stripe/stripe-subscriptions/stripe-subscriptions.service.ts:54</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                        <div class="io-description">
+                            <b>Returns : </b>    <code>Promise&lt;SubscriptionProductResponse[]&gt;</code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getCurrentSubscription"></a>
+                    <span class="name">
+                            <span class="modifier">Async</span>
+                        <span ><b>getCurrentSubscription</b></span>
+                        <a href="#getCurrentSubscription"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>getCurrentSubscription(userId: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="183"
+                                    class="link-to-prism">apps/api/src/modules/stripe/stripe-subscriptions/stripe-subscriptions.service.ts:183</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                                <td>Description</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>userId</td>
+                                            <td>
+                                                            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                            <td>
+                                                    <p>user id</p>
+
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>    <code>Promise&lt;StripeSubscriptionResponse&gt;</code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="update"></a>
+                    <span class="name">
+                            <span class="modifier">Async</span>
+                        <span ><b>update</b></span>
+                        <a href="#update"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>update(userId: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>, updateData: <a href="../classes/UpdateStripeSubscriptionInput.html" target="_self">UpdateStripeSubscriptionInput</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="218"
+                                    class="link-to-prism">apps/api/src/modules/stripe/stripe-subscriptions/stripe-subscriptions.service.ts:218</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                                <td>Description</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>userId</td>
+                                            <td>
+                                                            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                            <td>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                                <td>updateData</td>
+                                            <td>
+                                                            <code><a href="../classes/UpdateStripeSubscriptionInput.html" target="_self" >UpdateStripeSubscriptionInput</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                            <td>
+                                                    <p>udpate subscription data</p>
+
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="../classes/MessageResponse.html" target="_self" >Promise&lt;MessageResponse&gt;</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+
+    </div>
+
+
+    <div class="tab-pane fade  tab-source-code" id="source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { BadRequestException, HttpException, HttpStatus, Injectable } from &#x27;@nestjs/common&#x27;;
+import { CreateStripeSubscriptionInput } from &#x27;./dto/input/create-stripe-subscription.input&#x27;;
+import { UpdateStripeSubscriptionInput } from &#x27;./dto/input/update-stripe-subscription.input&#x27;;
+import {
+  StripeSubscriptionRepository,
+  StripeCustomerRepository,
+  UsersRepository,
+} from &#x27;@app/data-access&#x27;;
+import { StripeService } from &#x27;@app/stripe&#x27;;
+import { MessageResponse } from &#x27;@app/common/dto/response/message.response&#x27;;
+import { SubscriptionProductRepository } from &#x27;@app/data-access&#x27;;
+import { SubscriptionProductResponse } from &#x27;./dto/response/subscription-product.response&#x27;;
+import { StripeSubscriptionResponse } from &#x27;./dto/response/stripe-subscription.dto&#x27;;
+import { STRIPE_CURRENCY } from &#x27;@api/constants&#x27;;
+import {
+  StripeSubscriptionStatus,
+  StripeSubscriptionStatusMap,
+} from &#x27;@app/common/enum/stripe-subscription.enum&#x27;;
+import { I18nService } from &#x27;nestjs-i18n&#x27;;
+import { REJECT_STATUS, STRIPE_CUSTOMER_PREFIX, SUBSCRIPTION_STATUS } from &#x27;./constants&#x27;;
+
+/**
+ * Description placeholder
+ *
+ * @export
+ * @class StripeSubscriptionService
+ * @typedef {StripeSubscriptionService}
+ */
+@Injectable()
+export class StripeSubscriptionService {
+  /**
+   * Creates an instance of StripeSubscriptionService.
+   *
+   * @constructor
+   * @param {UsersRepository} usersRepository
+   * @param {SubscriptionProductRepository} subscriptionProductRepo
+   * @param {StripeSubscriptionRepository} stripeSubscriptionRepo
+   * @param {StripeService} stripeService
+   * @param {StripeCustomerRepository} stripeCustomerRepo
+   * @param {I18nService} i18nService
+   */
+  constructor(
+    private readonly usersRepository: UsersRepository,
+    private readonly subscriptionProductRepo: SubscriptionProductRepository,
+    private readonly stripeSubscriptionRepo: StripeSubscriptionRepository,
+    private readonly stripeService: StripeService,
+    private readonly stripeCustomerRepo: StripeCustomerRepository,
+    private readonly i18nService: I18nService,
+  ) {}
+
+  /**
+   * @description finds all available Stripe subscription products
+   */
+  async findAllAvailableSubscriptionProducts(): Promise&lt;SubscriptionProductResponse[]&gt; {
+    try {
+      const products &#x3D; await this.subscriptionProductRepo.find({
+        isActive: true,
+      });
+      for (const product of products) {
+        const activePrices &#x3D; [];
+        product?.prices?.forEach((price) &#x3D;&gt; {
+          if (price.isActive &amp;&amp; price.currency &#x3D;&#x3D;&#x3D; STRIPE_CURRENCY) {
+            activePrices.push(price);
+          }
+        });
+        product.prices &#x3D; activePrices;
+      }
+      return products;
+    } catch (error) {
+      throw new HttpException(error.message, HttpStatus.BAD_REQUEST);
+    }
+  }
+
+  /**
+   * @desc create a stripe subscription
+   * @param userId
+   * @param createData
+   * @returns
+   */
+  async create(
+    userId: string,
+    createData: CreateStripeSubscriptionInput,
+  ): Promise&lt;MessageResponse&gt; {
+    const { productId, priceId, cardId, couponCode } &#x3D; createData;
+    try {
+      const subscription &#x3D; await this.stripeSubscriptionRepo.findOne({
+        userId,
+      });
+
+      if (
+        subscription?.status !&#x3D;&#x3D; StripeSubscriptionStatus.CANCELED &amp;&amp;
+        subscription?.status !&#x3D;&#x3D; StripeSubscriptionStatus.REJECTED &amp;&amp;
+        subscription?.priceId &#x3D;&#x3D;&#x3D; priceId
+      ) {
+        throw new BadRequestException(
+          this.i18nService.t(&#x27;stripe_subscriptions.already_subscribed&#x27;),
+        );
+      }
+      let stripeCustomer &#x3D; await this.stripeCustomerRepo.findOne({ userId });
+      if (!stripeCustomer || !stripeCustomer.customerId) {
+        // create a new customer
+        const customer &#x3D; await this.stripeService.createCustomer({
+          description: &#x60;${STRIPE_CUSTOMER_PREFIX}-${userId}&#x60;,
+        });
+        stripeCustomer &#x3D; await this.stripeCustomerRepo.create({
+          userId,
+          customerId: customer.id,
+        });
+      }
+      await this.stripeService.attachPaymentMethod(stripeCustomer.customerId, cardId);
+      await this.stripeService.makeSourceDefaultOnStripe(stripeCustomer.customerId, cardId);
+      const stripeSubscription: any &#x3D; await this.stripeService.createSubscription(
+        stripeCustomer.customerId,
+        priceId,
+        couponCode,
+        subscription?.status &#x3D;&#x3D;&#x3D; StripeSubscriptionStatus.CANCELED,
+      );
+      if (!stripeSubscription) {
+        throw new BadRequestException(this.i18nService.t(&#x27;stripe_subscriptions.create_error&#x27;));
+      }
+
+      let isRenewing &#x3D; false;
+
+      let subscriptionStatus &#x3D; StripeSubscriptionStatus.PENDING;
+      if (stripeSubscription?.status &#x3D;&#x3D;&#x3D; SUBSCRIPTION_STATUS.ACTIVE) {
+        subscriptionStatus &#x3D; StripeSubscriptionStatus.ACTIVE;
+      } else if (stripeSubscription?.status &#x3D;&#x3D;&#x3D; SUBSCRIPTION_STATUS.TRIALING) {
+        subscriptionStatus &#x3D; StripeSubscriptionStatus.TRIALING;
+      } else if (stripeSubscription?.status &#x3D;&#x3D;&#x3D; SUBSCRIPTION_STATUS.CANCELED) {
+        subscriptionStatus &#x3D; StripeSubscriptionStatus.CANCELED;
+      } else if (REJECT_STATUS.includes(stripeSubscription?.status)) {
+        subscriptionStatus &#x3D; StripeSubscriptionStatus.REJECTED;
+      }
+      if (subscription?.status &#x3D;&#x3D;&#x3D; StripeSubscriptionStatus.CANCELED) {
+        // case for renew subscription. i.e. current status is CANCELED
+        isRenewing &#x3D; true;
+        await this.stripeSubscriptionRepo.updateById(subscription._id, {
+          userId,
+          productId,
+          priceId,
+          status: subscriptionStatus,
+          subscriptionObject: stripeSubscription,
+        });
+      } else {
+        await this.stripeSubscriptionRepo.create({
+          userId,
+          productId,
+          priceId,
+          status: subscriptionStatus,
+          subscriptionObject: stripeSubscription,
+        });
+      }
+      if (
+        subscriptionStatus &#x3D;&#x3D;&#x3D; StripeSubscriptionStatus.ACTIVE ||
+        subscriptionStatus &#x3D;&#x3D;&#x3D; StripeSubscriptionStatus.TRIALING
+      ) {
+        let stripeSubscriptionEndsAt &#x3D; new Date(stripeSubscription.current_period_end * 1000);
+        if (subscriptionStatus &#x3D;&#x3D;&#x3D; StripeSubscriptionStatus.ACTIVE &amp;&amp; isRenewing) {
+          const remainingPeriodInMs &#x3D;
+            (subscription.subscriptionObject as any)?.current_period_end * 1000 - Date.now();
+          stripeSubscriptionEndsAt &#x3D;
+            remainingPeriodInMs &gt; 0
+              ? new Date(stripeSubscription.current_period_end * 1000 + remainingPeriodInMs)
+              : stripeSubscriptionEndsAt;
+        }
+        await this.usersRepository.updateById(userId, {
+          stripeSubscriptionEndsAt,
+        });
+      }
+      return {
+        message: this.i18nService.t(&#x27;stripe_subscriptions.create_successfully&#x27;),
+      };
+    } catch (error: any) {
+      throw new HttpException(error.message, HttpStatus.BAD_REQUEST);
+    }
+  }
+
+  /**
+   * @description get current subscription of the user
+   * @param {string} userId  user id
+   * @returns {Promise&lt;StripeSubscriptionResponse&gt;}
+   */
+  async getCurrentSubscription(userId: string): Promise&lt;StripeSubscriptionResponse&gt; {
+    try {
+      const subscription: any &#x3D; await this.stripeSubscriptionRepo.findOne({
+        userId,
+      });
+      if (subscription?.subscriptionObject) {
+        subscription.subscriptionObject &#x3D; {
+          subscriptionId: subscription.subscriptionObject.id,
+          subscriptionStart: new Date(subscription.subscriptionObject?.current_period_start * 1000),
+          subscriptionEnd: new Date(subscription.subscriptionObject?.current_period_end * 1000),
+          latestInvoice: subscription.subscriptionObject?.latest_invoice?.id,
+
+          subscriptionAmount:
+            (subscription.subscriptionObject?.latest_invoice?.amount_paid || 0) / 100,
+
+          subscriptionCurrency: subscription.subscriptionObject?.latest_invoice?.currency,
+
+          isTrial:
+            subscription.subscriptionObject?.trial_end &amp;&amp;
+            subscription.subscriptionObject?.current_period_end &#x3D;&#x3D;&#x3D;
+              subscription.subscriptionObject?.trial_end,
+        };
+      }
+      return subscription;
+    } catch (error: any) {
+      throw new HttpException(error.message, HttpStatus.BAD_REQUEST);
+    }
+  }
+
+  /**
+   * @description update stripe subscription
+   * @param {string} userId
+   * @param {UpdateStripeSubscriptionInput} updateData udpate subscription data
+   * @returns {Promise&lt;MessageResponse&gt;}
+   */
+  async update(
+    userId: string,
+    updateData: UpdateStripeSubscriptionInput,
+  ): Promise&lt;MessageResponse&gt; {
+    const { productId, priceId, isUpgrade } &#x3D; updateData;
+    try {
+      const subscription: any &#x3D; await this.stripeSubscriptionRepo.findOne({
+        userId,
+      });
+      if (!isUpgrade &amp;&amp; subscription?.status !&#x3D;&#x3D; StripeSubscriptionStatus.ACTIVE) {
+        throw new BadRequestException(
+          this.i18nService.t(&#x27;stripe_subscriptions.update_not_allowed&#x27;),
+        );
+      }
+      const subscriptionId &#x3D; subscription?.subscriptionObject?.id;
+      if (subscriptionId) {
+        const subscriptionItemId &#x3D; subscription?.subscriptionObject?.items?.data[0]?.id;
+        const updatedSubscription &#x3D; await this.stripeService.updateSubscription(
+          subscriptionId,
+          priceId,
+          subscriptionItemId,
+        );
+        await this.stripeSubscriptionRepo.updateOne(
+          { userId },
+          {
+            productId,
+            priceId,
+            status: StripeSubscriptionStatusMap[updatedSubscription.status],
+            subscriptionObject: updatedSubscription,
+          },
+        );
+
+        if (updatedSubscription.status &#x3D;&#x3D;&#x3D; SUBSCRIPTION_STATUS.ACTIVE) {
+          await this.usersRepository.updateById(userId, {
+            stripeSubscriptionEndsAt: new Date(updatedSubscription.current_period_end * 1000),
+          });
+        }
+
+        return {
+          message: this.i18nService.t(&#x27;stripe_subscriptions.update_successfully&#x27;),
+        };
+      }
+    } catch (error: any) {
+      throw new HttpException(error.message, HttpStatus.BAD_REQUEST);
+    }
+  }
+
+  /**
+   * @description cancel stripe subscription
+   * @param {string} userId
+   * @returns {Promise&lt;MessageResponse&gt;}
+   */
+  async cancelSubscription(userId: string): Promise&lt;MessageResponse&gt; {
+    try {
+      const subscription: any &#x3D; await this.stripeSubscriptionRepo.findOne({
+        userId,
+      });
+      if (!subscription || subscription.status !&#x3D;&#x3D; StripeSubscriptionStatus.ACTIVE) {
+        throw new BadRequestException(
+          this.i18nService.t(&#x27;stripe_subscriptions.no_sunscription_to_cancel&#x27;),
+        );
+      }
+      const subscriptionId &#x3D; subscription?.subscriptionObject?.id;
+      if (subscriptionId &amp;&amp; subscription.status !&#x3D;&#x3D; StripeSubscriptionStatus.CANCELED) {
+        const canceledSubscription &#x3D; await this.stripeService.cancelSubscription(subscriptionId);
+        if (canceledSubscription &amp;&amp; canceledSubscription.status &#x3D;&#x3D;&#x3D; SUBSCRIPTION_STATUS.CANCELED) {
+          subscription.subscriptionObject &#x3D; canceledSubscription;
+          subscription.status &#x3D; StripeSubscriptionStatus.CANCELED;
+          await subscription.save();
+        }
+      }
+
+      return {
+        message: this.i18nService.t(&#x27;stripe_subscriptions.canceled_successfully&#x27;),
+      };
+    } catch (error: any) {
+      throw new HttpException(error.message, HttpStatus.BAD_REQUEST);
+    }
+  }
+
+  /**
+   * @description manually end trial period
+   * @param {string} userId
+   * @returns {Promise&lt;MessageResponse&gt;}
+   */
+  async endTrial(userId: string): Promise&lt;MessageResponse&gt; {
+    try {
+      const subscription: any &#x3D; await this.stripeSubscriptionRepo.findOne({
+        userId,
+      });
+      if (
+        !subscription ||
+        subscription.status !&#x3D;&#x3D; StripeSubscriptionStatus.TRIALING ||
+        !subscription.subscriptionObject?.trial_start
+      ) {
+        throw new BadRequestException(
+          this.i18nService.t(&#x27;stripe_subscriptions.no_subscription_trial_end&#x27;),
+        );
+      }
+
+      if (
+        subscription.subscriptionObject?.canceled_at ||
+        (subscription.subscriptionObject?.trial_end &amp;&amp;
+          Number(subscription.subscriptionObject.trial_end) * 1000 &lt; Date.now())
+      ) {
+        throw new BadRequestException(
+          this.i18nService.t(&#x27;stripe_subscriptions.subscription_trial_already_canceled&#x27;),
+        );
+      }
+
+      const subscriptionId &#x3D; subscription?.subscriptionObject?.id;
+      const canceledTrialSubscription &#x3D; await this.stripeService.cancelSubscription(subscriptionId);
+      if (canceledTrialSubscription?.canceled_at) {
+        subscription.subscriptionObject &#x3D; canceledTrialSubscription;
+        subscription.status &#x3D; StripeSubscriptionStatus.CANCELED;
+        await subscription.save();
+      }
+      return {
+        message: this.i18nService.t(&#x27;stripe_subscriptions.trial_ended_successfully&#x27;),
+      };
+    } catch (error) {
+      throw new HttpException(error.message, HttpStatus.BAD_REQUEST);
+    }
+  }
+}
+</code></pre>
+    </div>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+          <label class="dark-mode-switch">
+               <input type="checkbox">
+               <span class="slider">
+                    <svg class="slider-icon" viewBox="0 0 24 24" fill="none" height="20" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" width="20" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"></path>
+                    </svg>
+               </span>
+          </label>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'injectable';
+            var COMPODOC_CURRENT_PAGE_URL = 'StripeSubscriptionService.html';
+            var MAX_SEARCH_RESULTS = 15;
+       </script>
+
+       <script>
+               $darkModeToggleSwitchers = document.querySelectorAll('.dark-mode-switch input');
+               checkToggle(darkModeState);
+               if ($darkModeToggleSwitchers.length > 0) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].addEventListener('change', function (event) {
+                              darkModeState = !darkModeState;
+                              toggleDarkMode(darkModeState);
+                         });
+                    }
+               }
+          </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+
+       <script src="../js/menu-wc.js" defer></script>
+       <script nomodule src="../js/menu-wc_es5.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>

@@ -1,0 +1,2124 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>nest-ebtheme documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	   <link rel="stylesheet" href="../styles/style.css">
+        <link rel="stylesheet" href="../styles/dark.css">
+    </head>
+    <body>
+          <script>
+               // Blocking script to avoid flickering dark mode
+               // Dark mode toggle button
+               var useDark = window.matchMedia('(prefers-color-scheme: dark)');
+               var darkModeState = useDark.matches;
+               var $darkModeToggleSwitchers = document.querySelectorAll('.dark-mode-switch input');
+               var $darkModeToggles = document.querySelectorAll('.dark-mode-switch');
+               var darkModeStateLocal = localStorage.getItem('compodoc_darkmode-state');
+
+               function checkToggle(check) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].checked = check;
+                    }
+               }
+
+               function toggleDarkMode(state) {
+                    if (window.localStorage) {
+                         localStorage.setItem('compodoc_darkmode-state', state);
+                    }
+
+                    checkToggle(state);
+
+                    const hasClass = document.body.classList.contains('dark');
+
+                    if (state) {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.add('dark');
+                         }
+                         if (!hasClass) {
+                              document.body.classList.add('dark');
+                         }
+                    } else {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.remove('dark');
+                         }
+                         if (hasClass) {
+                              document.body.classList.remove('dark');
+                         }
+                    }
+               }
+
+               useDark.addEventListener('change', function (evt) {
+                    toggleDarkMode(evt.matches);
+               });
+               if (darkModeStateLocal) {
+                    darkModeState = darkModeStateLocal === 'true';
+               }
+               toggleDarkMode(darkModeState);
+          </script>
+
+        <div class="navbar navbar-default navbar-fixed-top d-md-none p-0">
+               <div class="d-flex">
+                    <a href="../" class="navbar-brand">nest-ebtheme documentation</a>
+                    <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+               </div>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="d-none d-md-block menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content miscellaneous-variables">
+                   <div class="content-data">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<ol class="breadcrumb">
+  <li class="breadcrumb-item">Miscellaneous</li>
+  <li class="breadcrumb-item">Variables</li>
+</ol>
+
+<section data-compodoc="block-index">
+    <h3 id="index">Index</h3>
+    <table class="table table-sm table-bordered index-table">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <ul class="index-list">
+                        <li>
+                            <a href="#AGORA_APP_TOKEN_EXPIRY" title="apps/api/src/constants/agora.ts" ><b>AGORA_APP_TOKEN_EXPIRY</b>&nbsp;&nbsp;&nbsp;(apps/.../agora.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#AGORA_SERVICE_EXPIRY" title="apps/api/src/constants/agora.ts" ><b>AGORA_SERVICE_EXPIRY</b>&nbsp;&nbsp;&nbsp;(apps/.../agora.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#AGORA_USER_TOKEN_EXPIRY" title="apps/api/src/constants/agora.ts" ><b>AGORA_USER_TOKEN_EXPIRY</b>&nbsp;&nbsp;&nbsp;(apps/.../agora.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#CHANNEL_NAME" title="apps/api/src/modules/agora/constants/index.ts" ><b>CHANNEL_NAME</b>&nbsp;&nbsp;&nbsp;(apps/.../index.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#CHAT_TYPE" title="apps/api/src/modules/agora/constants/index.ts" ><b>CHAT_TYPE</b>&nbsp;&nbsp;&nbsp;(apps/.../index.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#cluster" title="apps/api/src/cluster.service.ts" ><b>cluster</b>&nbsp;&nbsp;&nbsp;(apps/.../cluster.service.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#configValidationSchema" title="apps/api/src/config/config.schema.ts" ><b>configValidationSchema</b>&nbsp;&nbsp;&nbsp;(apps/.../config.schema.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#controllers" title="apps/api/src/modules/auth/controllers.ts" ><b>controllers</b>&nbsp;&nbsp;&nbsp;(apps/.../controllers.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#defaultCurrency" title="apps/api/src/modules/stripe/stripe-payment/services/stripe-payment.service.ts" ><b>defaultCurrency</b>&nbsp;&nbsp;&nbsp;(apps/.../stripe-payment.service.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#DEVICE_TYPE" title="apps/api/src/modules/agora/constants/index.ts" ><b>DEVICE_TYPE</b>&nbsp;&nbsp;&nbsp;(apps/.../index.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#ENVIRONMENT" title="apps/api/src/modules/coin-management/constants/index.ts" ><b>ENVIRONMENT</b>&nbsp;&nbsp;&nbsp;(apps/.../index.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#ENVIRONMENT" title="apps/api/src/modules/subscription/constants/index.ts" ><b>ENVIRONMENT</b>&nbsp;&nbsp;&nbsp;(apps/.../index.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#IAP_SUBSCRIPTION" title="apps/api/src/constants/subscription.ts" ><b>IAP_SUBSCRIPTION</b>&nbsp;&nbsp;&nbsp;(apps/.../subscription.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#lang" title="apps/api/src/constants/language.ts" ><b>lang</b>&nbsp;&nbsp;&nbsp;(apps/.../language.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#LoginDetail" title="apps/api/src/modules/auth/decorator/login.decorator.ts" ><b>LoginDetail</b>&nbsp;&nbsp;&nbsp;(apps/.../login.decorator.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#MAX_ATTEMPTS_FROM_DEVICE" title="apps/api/src/constants/auth.ts" ><b>MAX_ATTEMPTS_FROM_DEVICE</b>&nbsp;&nbsp;&nbsp;(apps/.../auth.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#MAX_OTP_ATTEMPT" title="apps/api/src/constants/auth.ts" ><b>MAX_OTP_ATTEMPT</b>&nbsp;&nbsp;&nbsp;(apps/.../auth.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#Messages" title="apps/api/src/constants/language.ts" ><b>Messages</b>&nbsp;&nbsp;&nbsp;(apps/.../language.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#mongooseModels" title="apps/api/src/modules/auth/mongoose.models.ts" ><b>mongooseModels</b>&nbsp;&nbsp;&nbsp;(apps/.../mongoose.models.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#mongooseModels" title="apps/api/src/modules/rapidid/mongooseModels.ts" ><b>mongooseModels</b>&nbsp;&nbsp;&nbsp;(apps/.../mongooseModels.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#mongooseModels" title="apps/api/src/modules/subscription/mongoose-models.ts" ><b>mongooseModels</b>&nbsp;&nbsp;&nbsp;(apps/.../mongoose-models.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#mongooseModels" title="apps/api/src/modules/users/mongoose-models.ts" ><b>mongooseModels</b>&nbsp;&nbsp;&nbsp;(apps/.../mongoose-models.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#mongooseModels" title="apps/api/src/modules/stripe/stripe-payment/mongoose.models.ts" ><b>mongooseModels</b>&nbsp;&nbsp;&nbsp;(apps/.../mongoose.models.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#MULTIPLY_BRFORE_MS" title="apps/api/src/constants/auth.ts" ><b>MULTIPLY_BRFORE_MS</b>&nbsp;&nbsp;&nbsp;(apps/.../auth.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#NOTIFICATION_TYPE" title="apps/api/src/modules/subscription/constants/index.ts" ><b>NOTIFICATION_TYPE</b>&nbsp;&nbsp;&nbsp;(apps/.../index.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#numCPUs" title="apps/api/src/cluster.service.ts" ><b>numCPUs</b>&nbsp;&nbsp;&nbsp;(apps/.../cluster.service.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#PASSWORD_REGEX_CHOICE_1" title="apps/api/src/constants/regex.ts" ><b>PASSWORD_REGEX_CHOICE_1</b>&nbsp;&nbsp;&nbsp;(apps/.../regex.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#PORTAL_URI" title="apps/api/src/modules/stripe/stripe-connect/constant/stripe-connect.ts" ><b>PORTAL_URI</b>&nbsp;&nbsp;&nbsp;(apps/.../stripe-connect.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#PREMIUM_SUBSCRIPTION_ID" title="apps/api/src/constants/subscription.ts" ><b>PREMIUM_SUBSCRIPTION_ID</b>&nbsp;&nbsp;&nbsp;(apps/.../subscription.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#PRO_SUBSCRIPTION_ID" title="apps/api/src/constants/subscription.ts" ><b>PRO_SUBSCRIPTION_ID</b>&nbsp;&nbsp;&nbsp;(apps/.../subscription.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#PROCESS_CONTACT_SYNC" title="apps/api/src/modules/contacts/constants/index.ts" ><b>PROCESS_CONTACT_SYNC</b>&nbsp;&nbsp;&nbsp;(apps/.../index.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#PROCESS_CONTACT_SYNC_OPTIMIZED" title="apps/api/src/modules/contacts/constants/index.ts" ><b>PROCESS_CONTACT_SYNC_OPTIMIZED</b>&nbsp;&nbsp;&nbsp;(apps/.../index.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#PROCESS_ELASTIC_SEARCH_SYNC" title="apps/api/src/modules/contacts/constants/index.ts" ><b>PROCESS_ELASTIC_SEARCH_SYNC</b>&nbsp;&nbsp;&nbsp;(apps/.../index.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#PROCESS_UPDATE_REGISTER_FLAG" title="apps/api/src/modules/contacts/constants/index.ts" ><b>PROCESS_UPDATE_REGISTER_FLAG</b>&nbsp;&nbsp;&nbsp;(apps/.../index.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#providers" title="apps/api/src/modules/auth/providers.ts" ><b>providers</b>&nbsp;&nbsp;&nbsp;(apps/.../providers.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#providers" title="apps/api/src/modules/rapidid/providers.ts" ><b>providers</b>&nbsp;&nbsp;&nbsp;(apps/.../providers.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#providers" title="apps/api/src/modules/users/providers.ts" ><b>providers</b>&nbsp;&nbsp;&nbsp;(apps/.../providers.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#providers" title="apps/api/src/modules/stripe/stripe-payment/providers.ts" ><b>providers</b>&nbsp;&nbsp;&nbsp;(apps/.../providers.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#QUEUE_NAME" title="apps/api/src/modules/contacts/constants/index.ts" ><b>QUEUE_NAME</b>&nbsp;&nbsp;&nbsp;(apps/.../index.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#REJECT_STATUS" title="apps/api/src/modules/stripe/stripe-subscriptions/constants/index.ts" ><b>REJECT_STATUS</b>&nbsp;&nbsp;&nbsp;(apps/.../index.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#responseMessages" title="apps/api/src/constants/language.ts" ><b>responseMessages</b>&nbsp;&nbsp;&nbsp;(apps/.../language.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#SkipTermsAcceptanceCheck" title="apps/api/src/modules/auth/decorator/terms.decorator.ts" ><b>SkipTermsAcceptanceCheck</b>&nbsp;&nbsp;&nbsp;(apps/.../terms.decorator.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#SMS_CODE_EXPIRE_BY" title="apps/api/src/constants/auth.ts" ><b>SMS_CODE_EXPIRE_BY</b>&nbsp;&nbsp;&nbsp;(apps/.../auth.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#SMS_CODE_EXPIRE_MULTIPLIER" title="apps/api/src/constants/auth.ts" ><b>SMS_CODE_EXPIRE_MULTIPLIER</b>&nbsp;&nbsp;&nbsp;(apps/.../auth.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#STRIPE_API_VERSION" title="apps/api/src/constants/stripe.ts" ><b>STRIPE_API_VERSION</b>&nbsp;&nbsp;&nbsp;(apps/.../stripe.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#STRIPE_CURRENCY" title="apps/api/src/constants/stripe.ts" ><b>STRIPE_CURRENCY</b>&nbsp;&nbsp;&nbsp;(apps/.../stripe.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#STRIPE_CUSTOMER_PREFIX" title="apps/api/src/modules/stripe/stripe-subscriptions/constants/index.ts" ><b>STRIPE_CUSTOMER_PREFIX</b>&nbsp;&nbsp;&nbsp;(apps/.../index.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#STRIPE_HAS_TRIAL_PERIOD" title="apps/api/src/constants/stripe.ts" ><b>STRIPE_HAS_TRIAL_PERIOD</b>&nbsp;&nbsp;&nbsp;(apps/.../stripe.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#STRIPE_PAYOUT_INTERVAL" title="apps/api/src/constants/stripe.ts" ><b>STRIPE_PAYOUT_INTERVAL</b>&nbsp;&nbsp;&nbsp;(apps/.../stripe.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#STRIPE_TRIAL_PERIOD_DAYS" title="apps/api/src/constants/stripe.ts" ><b>STRIPE_TRIAL_PERIOD_DAYS</b>&nbsp;&nbsp;&nbsp;(apps/.../stripe.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#stripePaymentLogSchema" title="apps/api/src/modules/stripe/stripe-payment/model/stripe-payment-log.schema.ts" ><b>stripePaymentLogSchema</b>&nbsp;&nbsp;&nbsp;(apps/.../stripe-payment-log.schema.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#stripePaymentSchema" title="apps/api/src/modules/stripe/stripe-payment/model/stripe-payment.schema.ts" ><b>stripePaymentSchema</b>&nbsp;&nbsp;&nbsp;(apps/.../stripe-payment.schema.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#stripeSubscriptionSchema" title="apps/api/src/modules/stripe/stripe-subscriptions/model/stripe-subscription.schema.ts" ><b>stripeSubscriptionSchema</b>&nbsp;&nbsp;&nbsp;(apps/.../stripe-subscription.schema.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#SUBSCRIPTION_STATUS" title="apps/api/src/modules/stripe/stripe-subscriptions/constants/index.ts" ><b>SUBSCRIPTION_STATUS</b>&nbsp;&nbsp;&nbsp;(apps/.../index.ts)</a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+
+    <h3>apps/api/src/constants/agora.ts</h3>
+    <section data-compodoc="block-properties">
+    <h3></h3>    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="AGORA_APP_TOKEN_EXPIRY"></a>
+                    <span class="name">
+                        <span ><b>AGORA_APP_TOKEN_EXPIRY</b></span>
+                        <a href="#AGORA_APP_TOKEN_EXPIRY"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>24 * 60 * 60</code>
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="AGORA_SERVICE_EXPIRY"></a>
+                    <span class="name">
+                        <span ><b>AGORA_SERVICE_EXPIRY</b></span>
+                        <a href="#AGORA_SERVICE_EXPIRY"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>24 * 60 * 60</code>
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="AGORA_USER_TOKEN_EXPIRY"></a>
+                    <span class="name">
+                        <span ><b>AGORA_USER_TOKEN_EXPIRY</b></span>
+                        <a href="#AGORA_USER_TOKEN_EXPIRY"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>24 * 60 * 60</code>
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+</section>
+    <h3>apps/api/src/modules/agora/constants/index.ts</h3>
+    <section data-compodoc="block-properties">
+    <h3></h3>    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="CHANNEL_NAME"></a>
+                    <span class="name">
+                        <span ><b>CHANNEL_NAME</b></span>
+                        <a href="#CHANNEL_NAME"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>&#x27;test-channel&#x27;</code>
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="CHAT_TYPE"></a>
+                    <span class="name">
+                        <span ><b>CHAT_TYPE</b></span>
+                        <a href="#CHAT_TYPE"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>&#x27;agora&#x27;</code>
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="DEVICE_TYPE"></a>
+                    <span class="name">
+                        <span ><b>DEVICE_TYPE</b></span>
+                        <a href="#DEVICE_TYPE"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/object" target="_blank" >object</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>{
+  IOS: &#x27;ios&#x27;,
+  ANDROID: &#x27;android&#x27;,
+}</code>
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+</section>
+    <h3>apps/api/src/cluster.service.ts</h3>
+    <section data-compodoc="block-properties">
+    <h3></h3>    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="cluster"></a>
+                    <span class="name">
+                        <span ><b>cluster</b></span>
+                        <a href="#cluster"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>require(&#x27;cluster&#x27;)</code>
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="numCPUs"></a>
+                    <span class="name">
+                        <span ><b>numCPUs</b></span>
+                        <a href="#numCPUs"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>1</code>
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+</section>
+    <h3>apps/api/src/config/config.schema.ts</h3>
+    <section data-compodoc="block-properties">
+    <h3></h3>    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="configValidationSchema"></a>
+                    <span class="name">
+                        <span ><b>configValidationSchema</b></span>
+                        <a href="#configValidationSchema"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>Joi.object({
+  PORT: Joi.number().default(3000),
+  APP_ENV: Joi.string().valid(&#x27;development&#x27;, &#x27;production&#x27;, &#x27;test&#x27;, &#x27;local&#x27;).default(&#x27;test&#x27;),
+  DB_CONNECTION_STRING: Joi.string().required(),
+  JWT_ACCESS_TOKEN_SECRET: Joi.string().required(),
+  JWT_ACCESS_TOKEN_EXPIRE_IN: Joi.string().required(),
+  JWT_REFRESH_TOKEN_SECRET: Joi.string().required(),
+  JWT_REFRESH_TOKEN_EXPIRE_IN: Joi.string().required(),
+  FACEBOOK_APP_SECRET: Joi.string().required(),
+  GOOGLE_CLIENT_ID: Joi.string().required(),
+  APPLE_CLIENT_ID: Joi.string().required(),
+  ANDROID_SCHEME: Joi.string().required(),
+  S3_BUCKET_NAME: Joi.string().required(),
+  S3_REGION: Joi.string().required(),
+  STRIPE_SECRET: Joi.string().required(),
+  STRIPE_API_VERSION: Joi.string().required(),
+  STRIPE_WEBHOOK_SECRET: Joi.string().required(),
+  STRIPE_CONNECT_WEBHOOK_SECRET: Joi.string().required(),
+  ANDROID_IAP_CLIENT_EMAIL: Joi.string().required(),
+  ANDROID_IAP_PRIVATE_KEY: Joi.string().required(),
+  IN_APP_IOS_SECRET: Joi.string().required(),
+  IAP_MODE: Joi.string().required(),
+  OTP_AWS_SNS_ACCESS_KEY: Joi.string().required(),
+  OTP_AWS_SNS_SECRET_KEY: Joi.string().required(),
+  OTP_AWS_SNS_REGION: Joi.string().required(),
+  OTP_AWS_SNS_API_VERSION: Joi.string().required(),
+  OTP_TWILIO_ACCOUNT_SID: Joi.string().required(),
+  OTP_TWILIO_AUTH_TOKEN: Joi.string().required(),
+  OTP_TWILIO_PHONE_NUMBER: Joi.string().required(),
+  AWS_SES_ACCESS_KEY: Joi.string().required(),
+  AWS_SES_SECRET_KEY: Joi.string().required(),
+  AWS_SES_REGION: Joi.string().required(),
+  AWS_SES_API_VERSION: Joi.string().required(),
+  AWS_SES_FROM: Joi.string().required(),
+  TIKTOK_CLIENT_KEY: Joi.string().required(),
+  TIKTOK_CLIENT_SECRET: Joi.string().required(),
+  JWT_BIOMETRIC_TOKEN_SECRET: Joi.string().required(),
+  JWT_BIOMETRIC_TOKEN_EXPIRE_IN: Joi.string().required(),
+  FIREBASE_PROJECT_ID: Joi.string().required(),
+  FIREBASE_PRIVATE_KEY: Joi.string().required(),
+  FIREBASE_CLIENT_EMAIL: Joi.string().required(),
+  COMET_CHAT_APP_ID: Joi.string().required(),
+  COMET_CHAT_SECRET_KEY: Joi.string().required(),
+  COMET_CHAT_API_URL: Joi.string().required(),
+  AGORA_APP_ID: Joi.string().required(),
+  AGORA_APP_CERTIFICATE: Joi.string().required(),
+  AGORA_CHAT_HOST: Joi.string().required(),
+  AGORA_CHAT_ORG_NAME: Joi.string().required(),
+  AGORA_CHAT_APP_NAME: Joi.string().required(),
+})</code>
+                    </td>
+                </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>${1:Description placeholder}</p>
+</div>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+</section>
+    <h3>apps/api/src/modules/auth/controllers.ts</h3>
+    <section data-compodoc="block-properties">
+    <h3></h3>    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="controllers"></a>
+                    <span class="name">
+                        <span ><b>controllers</b></span>
+                        <a href="#controllers"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>[]</code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>[AppleSingInController]</code>
+                    </td>
+                </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>${1:Description placeholder}</p>
+</div>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+</section>
+    <h3>apps/api/src/modules/stripe/stripe-payment/services/stripe-payment.service.ts</h3>
+    <section data-compodoc="block-properties">
+    <h3></h3>    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="defaultCurrency"></a>
+                    <span class="name">
+                        <span ><b>defaultCurrency</b></span>
+                        <a href="#defaultCurrency"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>&#x27;AUD&#x27;</code>
+                    </td>
+                </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Description placeholder</p>
+</div>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+</section>
+    <h3>apps/api/src/modules/coin-management/constants/index.ts</h3>
+    <section data-compodoc="block-properties">
+    <h3></h3>    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="ENVIRONMENT"></a>
+                    <span class="name">
+                        <span ><b>ENVIRONMENT</b></span>
+                        <a href="#ENVIRONMENT"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/object" target="_blank" >object</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>{
+  SANDBOX: &#x27;sandbox&#x27;,
+  PRODUCTION: &#x27;production&#x27;,
+}</code>
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+</section>
+    <h3>apps/api/src/modules/subscription/constants/index.ts</h3>
+    <section data-compodoc="block-properties">
+    <h3></h3>    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="ENVIRONMENT"></a>
+                    <span class="name">
+                        <span ><b>ENVIRONMENT</b></span>
+                        <a href="#ENVIRONMENT"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/object" target="_blank" >object</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>{
+  SANDBOX: &#x27;sandbox&#x27;,
+  PRODUCTION: &#x27;production&#x27;,
+}</code>
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="NOTIFICATION_TYPE"></a>
+                    <span class="name">
+                        <span ><b>NOTIFICATION_TYPE</b></span>
+                        <a href="#NOTIFICATION_TYPE"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/object" target="_blank" >object</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>{
+  CANCEL: &#x27;CANCEL&#x27;,
+}</code>
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+</section>
+    <h3>apps/api/src/constants/subscription.ts</h3>
+    <section data-compodoc="block-properties">
+    <h3></h3>    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="IAP_SUBSCRIPTION"></a>
+                    <span class="name">
+                        <span ><b>IAP_SUBSCRIPTION</b></span>
+                        <a href="#IAP_SUBSCRIPTION"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>[]</code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>[
+  {
+    name: &#x27;Pro&#x27;,
+    productId: PRO_SUBSCRIPTION_ID,
+    price: {
+      amount: 10.0,
+      currency: &#x27;aud&#x27;,
+    },
+  },
+  {
+    name: &#x27;Premium&#x27;,
+    productId: PREMIUM_SUBSCRIPTION_ID,
+    price: {
+      amount: 20.0,
+      currency: &#x27;aud&#x27;,
+    },
+  },
+]</code>
+                    </td>
+                </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>${1:Description placeholder}</p>
+</div>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="PREMIUM_SUBSCRIPTION_ID"></a>
+                    <span class="name">
+                        <span ><b>PREMIUM_SUBSCRIPTION_ID</b></span>
+                        <a href="#PREMIUM_SUBSCRIPTION_ID"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>process.env.PREMIUM || &#x27;ebtheme_premium&#x27;</code>
+                    </td>
+                </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>${1:Description placeholder}</p>
+</div>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="PRO_SUBSCRIPTION_ID"></a>
+                    <span class="name">
+                        <span ><b>PRO_SUBSCRIPTION_ID</b></span>
+                        <a href="#PRO_SUBSCRIPTION_ID"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>process.env.PRO || &#x27;ebtheme_pro&#x27;</code>
+                    </td>
+                </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>${1:Description placeholder}</p>
+</div>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+</section>
+    <h3>apps/api/src/constants/language.ts</h3>
+    <section data-compodoc="block-properties">
+    <h3></h3>    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="lang"></a>
+                    <span class="name">
+                        <span ><b>lang</b></span>
+                        <a href="#lang"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>process.env.SYSTEM_LANGUAGE || &#x27;EN&#x27;</code>
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="Messages"></a>
+                    <span class="name">
+                        <span ><b>Messages</b></span>
+                        <a href="#Messages"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="responseMessages"></a>
+                    <span class="name">
+                        <span ><b>responseMessages</b></span>
+                        <a href="#responseMessages"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/object" target="_blank" >object</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>{
+  EN: {
+    CANNOT_UPDATE_SAME_PASSWORD: &#x27;New password can not be old password&#x27;,
+    PASSWORD_ALREADY_SET: &#x27;Password already added&#x27;,
+    PASSWORD_SET_SUCCESSFULLY: &#x27;Password added successfully.&#x27;,
+    UNAUTHORIZED_USER: &#x27;Unauthorized.&#x27;,
+    EMAIL_ALREADY_EXISTS: &#x27;Email not available.&#x27;,
+    EMAIL_DOES_NOT_EXIST: &#x27;Email does not exists.&#x27;,
+    VERIFICATION_CODE_SENT_TO_EMAIL:
+      &#x27;Verification code sent to your email please use that code to verify your email&#x27;,
+    VERIFICATION_CODE_SENT_TO_PHONE:
+      &#x27;Verification code sent to your phone number please use that code to verify your phone number.&#x27;,
+    VERIFICATION_CODE_VALID_SET_PASSWORD: &#x27;Code verified successfully. Please reset your password.&#x27;,
+    PHONE_UPDATED: &#x27;Phone number updated&#x27;,
+    LOGIN_SUCCESS: &#x27;Login success&#x27;,
+    FAILED_TO_AUTHORIZE_FACEBOOK: &#x27;Failed to authorize facebook account.&#x27;,
+    FAILED_TO_AUTHORIZE_APPLE: &#x27;Failed to authorize apple account.&#x27;,
+    FAILED_TO_AUTHORIZE_GOOGLE: &#x27;Failed to authorize google account.&#x27;,
+    VERIFICATION_CODE_ALREADY_SENT: &#x27;Verification code already sent&#x27;,
+    TOO_MANY_ATTEMPTS: &#x27;Too many attempts. Please try again.&#x27;,
+    INVALID_VERIFICATION_CODE: &#x27;Invalid verification code&#x27;,
+    INVALID_CREDENTIALS: &#x27;Invalid login credentials.&#x27;,
+    PASSWOD_CHANGE_PASSWORD_NOT_MATCHED:
+      &#x27;Password you have provided does not match with your existing password.&#x27;,
+    PASSWORD_RESET_CODE_SENT: &#x27;Password reset code sent.&#x27;,
+    PASSWORD_CHANGED_SUCCESSFULLY: &#x27;Password changed succesfully&#x27;,
+    PROFILE_UPDATED_SUCCESSFULLY: &#x27;Profile updated successfully.&#x27;,
+    LOGGED_OUT_SUCCESSFULLY: &#x27;Logged out successfully.&#x27;,
+    TOKEN_REFRESH_SUCCESS: &#x27;Token refreshed successfully.&#x27;,
+    CANNOT_UPDATE_SAME_EMAIL: &#x27;Can not update the same email address&#x27;,
+    EMAIL_UPDATED: &#x27;Email verified and updated successfully&#x27;,
+    PROFILE: {
+      INVALID_EXTENSION: &#x27;Invalid profile image extension.&#x27;,
+    },
+    FAILED_TO_AUTHORIZE_TIKTOK: &#x27;Failed to authorize tiktok account.&#x27;,
+    BIOMETRIC_ENABLE_SUCCESS: &#x27;Biometric enabled successfully&#x27;,
+    BIOMETRIC_ALREADY_ENABLE: &#x27;Biometric already set as enabled.&#x27;,
+
+    COIN_ADDED_SUCCESSFULLY: &#x27;Coin added successfully&#x27;,
+    COIN_LISTED_SUCCESSFULLY: &#x27;Coin listed successfully&#x27;,
+    COIN_PACK_NOT_FOUND: &#x27;Coin package not found&#x27;,
+    RECEIPT_ALREADY_VERIFIED: &#x27;Receipt already verified&#x27;,
+    DISPOSABLE_EMAIL_NOT_ALLOWED: &#x27;Email with this domain is not allowed&#x27;,
+    NON_EMPTY_FIELD: (field) &#x3D;&gt; {
+      &#x60;${field} can not be empty&#x60;;
+    },
+
+    FAQ_LISTING: &#x27;FAQs listed successfully&#x27;,
+  },
+}</code>
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+</section>
+    <h3>apps/api/src/modules/auth/decorator/login.decorator.ts</h3>
+    <section data-compodoc="block-properties">
+    <h3></h3>    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="LoginDetail"></a>
+                    <span class="name">
+                        <span ><b>LoginDetail</b></span>
+                        <a href="#LoginDetail"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>createParamDecorator((data, ctx) &#x3D;&gt; {
+  const loginMeta &#x3D; GqlExecutionContext.create(ctx).getContext().req.user;
+  return loginMeta;
+})</code>
+                    </td>
+                </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>${1:Description placeholder}</p>
+</div>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+</section>
+    <h3>apps/api/src/constants/auth.ts</h3>
+    <section data-compodoc="block-properties">
+    <h3></h3>    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="MAX_ATTEMPTS_FROM_DEVICE"></a>
+                    <span class="name">
+                        <span ><b>MAX_ATTEMPTS_FROM_DEVICE</b></span>
+                        <a href="#MAX_ATTEMPTS_FROM_DEVICE"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>20</code>
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="MAX_OTP_ATTEMPT"></a>
+                    <span class="name">
+                        <span ><b>MAX_OTP_ATTEMPT</b></span>
+                        <a href="#MAX_OTP_ATTEMPT"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>20</code>
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="MULTIPLY_BRFORE_MS"></a>
+                    <span class="name">
+                        <span ><b>MULTIPLY_BRFORE_MS</b></span>
+                        <a href="#MULTIPLY_BRFORE_MS"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>172800000</code>
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="SMS_CODE_EXPIRE_BY"></a>
+                    <span class="name">
+                        <span ><b>SMS_CODE_EXPIRE_BY</b></span>
+                        <a href="#SMS_CODE_EXPIRE_BY"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>120000</code>
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="SMS_CODE_EXPIRE_MULTIPLIER"></a>
+                    <span class="name">
+                        <span ><b>SMS_CODE_EXPIRE_MULTIPLIER</b></span>
+                        <a href="#SMS_CODE_EXPIRE_MULTIPLIER"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>2</code>
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+</section>
+    <h3>apps/api/src/modules/auth/mongoose.models.ts</h3>
+    <section data-compodoc="block-properties">
+    <h3></h3>    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="mongooseModels"></a>
+                    <span class="name">
+                        <span ><b>mongooseModels</b></span>
+                        <a href="#mongooseModels"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>[]</code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>[
+  { name: DeviceInfo.name, schema: DeviceInfoSchema },
+  { name: PushNotificationToken.name, schema: PushNotificationTokenSchema },
+  { name: User.name, schema: UserSchema },
+  { name: OTPRequest.name, schema: OTPRequestSchema },
+  { name: UserTokenMeta.name, schema: UserTokenMetaSchema },
+  { name: UpdatePhoneNumber.name, schema: UpdatePhoneNumberSchema },
+  { name: EmailTemplate.name, schema: emailTemplateSchema },
+  { name: DisposableEmail.name, schema: disposableEmailSchema },
+]</code>
+                    </td>
+                </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>${1:Description placeholder}</p>
+</div>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+</section>
+    <h3>apps/api/src/modules/rapidid/mongooseModels.ts</h3>
+    <section data-compodoc="block-properties">
+    <h3></h3>    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="mongooseModels"></a>
+                    <span class="name">
+                        <span ><b>mongooseModels</b></span>
+                        <a href="#mongooseModels"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>[]</code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>[
+  {
+    name: User.name,
+    schema: UserSchema,
+  },
+]</code>
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+</section>
+    <h3>apps/api/src/modules/subscription/mongoose-models.ts</h3>
+    <section data-compodoc="block-properties">
+    <h3></h3>    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="mongooseModels"></a>
+                    <span class="name">
+                        <span ><b>mongooseModels</b></span>
+                        <a href="#mongooseModels"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>[]</code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>[
+  { name: User.name, schema: UserSchema },
+  { name: Subscription.name, schema: SubscriptionSchema },
+  { name: SubscriptionLog.name, schema: SubscriptionLogSchema },
+]</code>
+                    </td>
+                </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>${1:Description placeholder}</p>
+</div>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+</section>
+    <h3>apps/api/src/modules/users/mongoose-models.ts</h3>
+    <section data-compodoc="block-properties">
+    <h3></h3>    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="mongooseModels"></a>
+                    <span class="name">
+                        <span ><b>mongooseModels</b></span>
+                        <a href="#mongooseModels"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>[]</code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>[
+  { name: User.name, schema: UserSchema },
+  {
+    name: EmailToken.name,
+    schema: emailTokenSchema,
+  },
+  {
+    name: DeviceInfo.name,
+    schema: DeviceInfoSchema,
+  },
+  {
+    name: OTPRequest.name,
+    schema: OTPRequestSchema,
+  },
+  {
+    name: UserTokenMeta.name,
+    schema: UserTokenMetaSchema,
+  },
+  {
+    name: PushNotificationToken.name,
+    schema: PushNotificationTokenSchema,
+  },
+  {
+    name: Page.name,
+    schema: PageSchema,
+  },
+]</code>
+                    </td>
+                </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>${1:Description placeholder}</p>
+</div>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+</section>
+    <h3>apps/api/src/modules/stripe/stripe-payment/mongoose.models.ts</h3>
+    <section data-compodoc="block-properties">
+    <h3></h3>    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="mongooseModels"></a>
+                    <span class="name">
+                        <span ><b>mongooseModels</b></span>
+                        <a href="#mongooseModels"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>[]</code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>[
+  { name: User.name, schema: UserSchema },
+  { name: StripeCustomer.name, schema: StripeCustomerSchema },
+  { name: PaymentMethod.name, schema: PaymentMethodSchema },
+  { name: StripePayment.name, schema: stripePaymentSchema },
+  { name: StripePaymentLog.name, schema: stripePaymentLogSchema },
+  { name: UpdatePhoneNumber.name, schema: UpdatePhoneNumberSchema },
+]</code>
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+</section>
+    <h3>apps/api/src/constants/regex.ts</h3>
+    <section data-compodoc="block-properties">
+    <h3></h3>    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="PASSWORD_REGEX_CHOICE_1"></a>
+                    <span class="name">
+                        <span ><b>PASSWORD_REGEX_CHOICE_1</b></span>
+                        <a href="#PASSWORD_REGEX_CHOICE_1"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/object" target="_blank" >object</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>{
+  regex: /^(?&#x3D;.*[A-Za-z])(?&#x3D;.*\d)[A-Za-z\d\[\]&#x60;!@#$%\^&amp;*()&#x3D;{}:;&lt;&gt;+&#x27;-]{8,30}$/,
+  message:
+    &#x27;Password must be eight character long, at least one letter and one number&#x27;,
+}</code>
+                    </td>
+                </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Minimum eight characters, max 20 at least one letter and one number:</p>
+</div>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+</section>
+    <h3>apps/api/src/modules/stripe/stripe-connect/constant/stripe-connect.ts</h3>
+    <section data-compodoc="block-properties">
+    <h3></h3>    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="PORTAL_URI"></a>
+                    <span class="name">
+                        <span ><b>PORTAL_URI</b></span>
+                        <a href="#PORTAL_URI"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>&#x27;https://dev-et-web.draftserver.com/&#x27;</code>
+                    </td>
+                </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>${1:Description placeholder}</p>
+</div>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+</section>
+    <h3>apps/api/src/modules/contacts/constants/index.ts</h3>
+    <section data-compodoc="block-properties">
+    <h3></h3>    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="PROCESS_CONTACT_SYNC"></a>
+                    <span class="name">
+                        <span ><b>PROCESS_CONTACT_SYNC</b></span>
+                        <a href="#PROCESS_CONTACT_SYNC"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>&#x27;add-contact-sync-process&#x27;</code>
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="PROCESS_CONTACT_SYNC_OPTIMIZED"></a>
+                    <span class="name">
+                        <span ><b>PROCESS_CONTACT_SYNC_OPTIMIZED</b></span>
+                        <a href="#PROCESS_CONTACT_SYNC_OPTIMIZED"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>&#x27;contact-sync-process-opt&#x27;</code>
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="PROCESS_ELASTIC_SEARCH_SYNC"></a>
+                    <span class="name">
+                        <span ><b>PROCESS_ELASTIC_SEARCH_SYNC</b></span>
+                        <a href="#PROCESS_ELASTIC_SEARCH_SYNC"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>&#x27;contact-sync-elastic-proces&#x27;</code>
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="PROCESS_UPDATE_REGISTER_FLAG"></a>
+                    <span class="name">
+                        <span ><b>PROCESS_UPDATE_REGISTER_FLAG</b></span>
+                        <a href="#PROCESS_UPDATE_REGISTER_FLAG"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>&#x27;update-contact-register-flag&#x27;</code>
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="QUEUE_NAME"></a>
+                    <span class="name">
+                        <span ><b>QUEUE_NAME</b></span>
+                        <a href="#QUEUE_NAME"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>&#x27;contact-sync-queue&#x27;</code>
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+</section>
+    <h3>apps/api/src/modules/auth/providers.ts</h3>
+    <section data-compodoc="block-properties">
+    <h3></h3>    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="providers"></a>
+                    <span class="name">
+                        <span ><b>providers</b></span>
+                        <a href="#providers"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>[]</code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>[
+  /**
+   * Import resolvers
+   */
+  AuthResolver,
+
+  /***
+   * Import services
+   */
+  AuthService,
+  AwsSNSService,
+  JwtTokenService,
+  PhoneOtpAuthService,
+  JwtStrategy,
+  S3Service,
+  ConfigService,
+  EmailService,
+  // SesService,
+  // SesService,
+  // NodeMailerService,
+  IsValidEmailConstraint,
+  CometChatHelperService,
+  AgoraHelperService,
+  /**
+   * Import repo
+   */
+  DeviceInfoRepository,
+  PushNotificationTokenRepository,
+  OTPRequestRepository,
+  UsersRepository,
+  UserTokenMetaRepository,
+  UpdatePhoneNumberRepository,
+  EmailTemplateRepository,
+  DisposableEmailRepository,
+]</code>
+                    </td>
+                </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>${1:Description placeholder}</p>
+</div>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+</section>
+    <h3>apps/api/src/modules/rapidid/providers.ts</h3>
+    <section data-compodoc="block-properties">
+    <h3></h3>    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="providers"></a>
+                    <span class="name">
+                        <span ><b>providers</b></span>
+                        <a href="#providers"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>[]</code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>[
+  RapidIdService,
+  RapidIdVerificationService,
+  UsersRepository,
+  RapidIdResolver,
+]</code>
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+</section>
+    <h3>apps/api/src/modules/users/providers.ts</h3>
+    <section data-compodoc="block-properties">
+    <h3></h3>    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="providers"></a>
+                    <span class="name">
+                        <span ><b>providers</b></span>
+                        <a href="#providers"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>[]</code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>[
+  UsersResolver,
+  UsersService,
+  S3Service,
+  AgoraHelperService,
+  FcmService,
+  ConfigService,
+  UsersRepository,
+  TokenRepository,
+  OTPRequestRepository,
+  UserTokenMetaRepository,
+  DeviceInfoRepository,
+  PushNotificationTokenRepository,
+  PageRepository,
+]</code>
+                    </td>
+                </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>${1:Description placeholder}</p>
+</div>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+</section>
+    <h3>apps/api/src/modules/stripe/stripe-payment/providers.ts</h3>
+    <section data-compodoc="block-properties">
+    <h3></h3>    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="providers"></a>
+                    <span class="name">
+                        <span ><b>providers</b></span>
+                        <a href="#providers"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>[]</code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>[
+  StripePaymentResolver,
+  StripePaymentService,
+  StripeWebhookService,
+  StripeService,
+  ConfigService,
+  StripeCustomerRepository,
+  PaymentMethodRepository,
+  StripePaymentRepository,
+  StripePaymentLogRepository,
+  UpdatePhoneNumberRepository,
+  PaymentMethodService,
+  S3Service,
+]</code>
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+</section>
+    <h3>apps/api/src/modules/stripe/stripe-subscriptions/constants/index.ts</h3>
+    <section data-compodoc="block-properties">
+    <h3></h3>    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="REJECT_STATUS"></a>
+                    <span class="name">
+                        <span ><b>REJECT_STATUS</b></span>
+                        <a href="#REJECT_STATUS"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>[]</code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>[&#x27;unpaid&#x27;, &#x27;incomplete&#x27;, &#x27;incomplete_expired&#x27;, &#x27;past_due&#x27;]</code>
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="STRIPE_CUSTOMER_PREFIX"></a>
+                    <span class="name">
+                        <span ><b>STRIPE_CUSTOMER_PREFIX</b></span>
+                        <a href="#STRIPE_CUSTOMER_PREFIX"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>&#x27;cus&#x27;</code>
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="SUBSCRIPTION_STATUS"></a>
+                    <span class="name">
+                        <span ><b>SUBSCRIPTION_STATUS</b></span>
+                        <a href="#SUBSCRIPTION_STATUS"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/object" target="_blank" >object</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>{
+  ACTIVE: &#x27;active&#x27;,
+  TRIALING: &#x27;trialing&#x27;,
+  CANCELED: &#x27;canceled&#x27;,
+}</code>
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+</section>
+    <h3>apps/api/src/modules/auth/decorator/terms.decorator.ts</h3>
+    <section data-compodoc="block-properties">
+    <h3></h3>    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="SkipTermsAcceptanceCheck"></a>
+                    <span class="name">
+                        <span ><b>SkipTermsAcceptanceCheck</b></span>
+                        <a href="#SkipTermsAcceptanceCheck"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>() &#x3D;&gt;
+  SetMetadata(&#x27;skipTermsAcceptanceCheck&#x27;, true)</code>
+                    </td>
+                </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>${1:Description placeholder}</p>
+</div>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+</section>
+    <h3>apps/api/src/constants/stripe.ts</h3>
+    <section data-compodoc="block-properties">
+    <h3></h3>    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="STRIPE_API_VERSION"></a>
+                    <span class="name">
+                        <span ><b>STRIPE_API_VERSION</b></span>
+                        <a href="#STRIPE_API_VERSION"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>&#x27;2024-06-20&#x27;</code>
+                    </td>
+                </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>${1:Description placeholder}</p>
+</div>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="STRIPE_CURRENCY"></a>
+                    <span class="name">
+                        <span ><b>STRIPE_CURRENCY</b></span>
+                        <a href="#STRIPE_CURRENCY"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>process.env.STRIPE_CURRENCY || &#x27;aud&#x27;</code>
+                    </td>
+                </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>${1:Description placeholder}</p>
+</div>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="STRIPE_HAS_TRIAL_PERIOD"></a>
+                    <span class="name">
+                        <span ><b>STRIPE_HAS_TRIAL_PERIOD</b></span>
+                        <a href="#STRIPE_HAS_TRIAL_PERIOD"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>true</code>
+                    </td>
+                </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>${1:Description placeholder}</p>
+</div>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="STRIPE_PAYOUT_INTERVAL"></a>
+                    <span class="name">
+                        <span ><b>STRIPE_PAYOUT_INTERVAL</b></span>
+                        <a href="#STRIPE_PAYOUT_INTERVAL"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>7</code>
+                    </td>
+                </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>${1:Description placeholder}</p>
+</div>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="STRIPE_TRIAL_PERIOD_DAYS"></a>
+                    <span class="name">
+                        <span ><b>STRIPE_TRIAL_PERIOD_DAYS</b></span>
+                        <a href="#STRIPE_TRIAL_PERIOD_DAYS"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>7</code>
+                    </td>
+                </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>${1:Description placeholder}</p>
+</div>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+</section>
+    <h3>apps/api/src/modules/stripe/stripe-payment/model/stripe-payment-log.schema.ts</h3>
+    <section data-compodoc="block-properties">
+    <h3></h3>    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="stripePaymentLogSchema"></a>
+                    <span class="name">
+                        <span ><b>stripePaymentLogSchema</b></span>
+                        <a href="#stripePaymentLogSchema"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>SchemaFactory.createForClass(StripePaymentLog)</code>
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+</section>
+    <h3>apps/api/src/modules/stripe/stripe-payment/model/stripe-payment.schema.ts</h3>
+    <section data-compodoc="block-properties">
+    <h3></h3>    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="stripePaymentSchema"></a>
+                    <span class="name">
+                        <span ><b>stripePaymentSchema</b></span>
+                        <a href="#stripePaymentSchema"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>SchemaFactory.createForClass(StripePayment)</code>
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+</section>
+    <h3>apps/api/src/modules/stripe/stripe-subscriptions/model/stripe-subscription.schema.ts</h3>
+    <section data-compodoc="block-properties">
+    <h3></h3>    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="stripeSubscriptionSchema"></a>
+                    <span class="name">
+                        <span ><b>stripeSubscriptionSchema</b></span>
+                        <a href="#stripeSubscriptionSchema"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>SchemaFactory.createForClass(StripeSubscription)</code>
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+</section>
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+          <label class="dark-mode-switch">
+               <input type="checkbox">
+               <span class="slider">
+                    <svg class="slider-icon" viewBox="0 0 24 24" fill="none" height="20" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" width="20" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"></path>
+                    </svg>
+               </span>
+          </label>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'miscellaneous-variables';
+            var COMPODOC_CURRENT_PAGE_URL = 'variables.html';
+            var MAX_SEARCH_RESULTS = 15;
+       </script>
+
+       <script>
+               $darkModeToggleSwitchers = document.querySelectorAll('.dark-mode-switch input');
+               checkToggle(darkModeState);
+               if ($darkModeToggleSwitchers.length > 0) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].addEventListener('change', function (event) {
+                              darkModeState = !darkModeState;
+                              toggleDarkMode(darkModeState);
+                         });
+                    }
+               }
+          </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+
+       <script src="../js/menu-wc.js" defer></script>
+       <script nomodule src="../js/menu-wc_es5.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>

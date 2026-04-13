@@ -1,0 +1,4508 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>nest-ebtheme documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="./images/favicon.ico">
+	   <link rel="stylesheet" href="./styles/style.css">
+        <link rel="stylesheet" href="./styles/dark.css">
+    </head>
+    <body>
+          <script>
+               // Blocking script to avoid flickering dark mode
+               // Dark mode toggle button
+               var useDark = window.matchMedia('(prefers-color-scheme: dark)');
+               var darkModeState = useDark.matches;
+               var $darkModeToggleSwitchers = document.querySelectorAll('.dark-mode-switch input');
+               var $darkModeToggles = document.querySelectorAll('.dark-mode-switch');
+               var darkModeStateLocal = localStorage.getItem('compodoc_darkmode-state');
+
+               function checkToggle(check) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].checked = check;
+                    }
+               }
+
+               function toggleDarkMode(state) {
+                    if (window.localStorage) {
+                         localStorage.setItem('compodoc_darkmode-state', state);
+                    }
+
+                    checkToggle(state);
+
+                    const hasClass = document.body.classList.contains('dark');
+
+                    if (state) {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.add('dark');
+                         }
+                         if (!hasClass) {
+                              document.body.classList.add('dark');
+                         }
+                    } else {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.remove('dark');
+                         }
+                         if (hasClass) {
+                              document.body.classList.remove('dark');
+                         }
+                    }
+               }
+
+               useDark.addEventListener('change', function (evt) {
+                    toggleDarkMode(evt.matches);
+               });
+               if (darkModeStateLocal) {
+                    darkModeState = darkModeStateLocal === 'true';
+               }
+               toggleDarkMode(darkModeState);
+          </script>
+
+        <div class="navbar navbar-default navbar-fixed-top d-md-none p-0">
+               <div class="d-flex">
+                    <a href="./" class="navbar-brand">nest-ebtheme documentation</a>
+                    <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+               </div>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="d-none d-md-block menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content coverage">
+                   <div class="content-data">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<ol class="breadcrumb">
+    <li class="breadcrumb-item">Documentation coverage</li>
+</ol>
+
+<div>
+    <img src="./images/coverage-badge-documentation.svg">
+</div>
+
+<table class="table table-bordered coverage" id="coverage-table">
+    <thead class="coverage-header">
+        <tr>
+            <th>File</th>
+            <th>Type</th>
+            <th>Identifier</th>
+            <th style="text-align:right" class="statements" data-sort-default>Statements</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr class="low">
+            <td>
+                <!-- miscellaneous -->
+                <a href="./injectables/ClusterService.html">apps/api/src/cluster.service.ts</a>
+            </td>
+            <td>injectable</td>
+            <td>ClusterService</td>
+            <td align="right" data-sort="0">
+                <span class="coverage-percent">0 %</span>
+                <span class="coverage-count">(0/2)</span>
+            </td>
+        </tr>
+        <tr class="low">
+            <td>
+                <!-- miscellaneous -->
+                        <a href="./miscellaneous/variables.html#cluster">apps/api/src/cluster.service.ts</a>
+            </td>
+            <td>variable</td>
+            <td>cluster</td>
+            <td align="right" data-sort="0">
+                <span class="coverage-percent">0 %</span>
+                <span class="coverage-count">(0/1)</span>
+            </td>
+        </tr>
+        <tr class="low">
+            <td>
+                <!-- miscellaneous -->
+                        <a href="./miscellaneous/variables.html#numCPUs">apps/api/src/cluster.service.ts</a>
+            </td>
+            <td>variable</td>
+            <td>numCPUs</td>
+            <td align="right" data-sort="0">
+                <span class="coverage-percent">0 %</span>
+                <span class="coverage-count">(0/1)</span>
+            </td>
+        </tr>
+        <tr class="very-good">
+            <td>
+                <!-- miscellaneous -->
+                <a href="./classes/BasePaginationParams.html">apps/api/src/common/dto/base-pagination.dto.ts</a>
+            </td>
+            <td>class</td>
+            <td>BasePaginationParams</td>
+            <td align="right" data-sort="100">
+                <span class="coverage-percent">100 %</span>
+                <span class="coverage-count">(6/6)</span>
+            </td>
+        </tr>
+        <tr class="very-good">
+            <td>
+                <!-- miscellaneous -->
+                <a href="./classes/Token.html">apps/api/src/common/dto/token.ts</a>
+            </td>
+            <td>class</td>
+            <td>Token</td>
+            <td align="right" data-sort="100">
+                <span class="coverage-percent">100 %</span>
+                <span class="coverage-count">(5/5)</span>
+            </td>
+        </tr>
+        <tr class="very-good">
+            <td>
+                <!-- miscellaneous -->
+                <a href="./classes/UserProfileResponse.html">apps/api/src/common/dto/user.response.ts</a>
+            </td>
+            <td>class</td>
+            <td>UserProfileResponse</td>
+            <td align="right" data-sort="100">
+                <span class="coverage-percent">100 %</span>
+                <span class="coverage-count">(5/5)</span>
+            </td>
+        </tr>
+        <tr class="very-good">
+            <td>
+                <!-- miscellaneous -->
+                <a href="./classes/UserResponse.html">apps/api/src/common/dto/user.response.ts</a>
+            </td>
+            <td>class</td>
+            <td>UserResponse</td>
+            <td align="right" data-sort="100">
+                <span class="coverage-percent">100 %</span>
+                <span class="coverage-count">(11/11)</span>
+            </td>
+        </tr>
+        <tr class="very-good">
+            <td>
+                <!-- miscellaneous -->
+                <a href="./classes/ConfigBiometricVariableService.html">apps/api/src/common/helpers/config-helper.ts</a>
+            </td>
+            <td>class</td>
+            <td>ConfigBiometricVariableService</td>
+            <td align="right" data-sort="100">
+                <span class="coverage-percent">100 %</span>
+                <span class="coverage-count">(2/2)</span>
+            </td>
+        </tr>
+        <tr class="very-good">
+            <td>
+                <!-- miscellaneous -->
+                <a href="./classes/ConfigVariableService.html">apps/api/src/common/helpers/config-helper.ts</a>
+            </td>
+            <td>class</td>
+            <td>ConfigVariableService</td>
+            <td align="right" data-sort="100">
+                <span class="coverage-percent">100 %</span>
+                <span class="coverage-count">(2/2)</span>
+            </td>
+        </tr>
+        <tr class="very-good">
+            <td>
+                <!-- miscellaneous -->
+                        <a href="./miscellaneous/variables.html#configValidationSchema">apps/api/src/config/config.schema.ts</a>
+            </td>
+            <td>variable</td>
+            <td>configValidationSchema</td>
+            <td align="right" data-sort="100">
+                <span class="coverage-percent">100 %</span>
+                <span class="coverage-count">(1/1)</span>
+            </td>
+        </tr>
+        <tr class="low">
+            <td>
+                <!-- miscellaneous -->
+                        <a href="./miscellaneous/variables.html#AGORA_APP_TOKEN_EXPIRY">apps/api/src/constants/agora.ts</a>
+            </td>
+            <td>variable</td>
+            <td>AGORA_APP_TOKEN_EXPIRY</td>
+            <td align="right" data-sort="0">
+                <span class="coverage-percent">0 %</span>
+                <span class="coverage-count">(0/1)</span>
+            </td>
+        </tr>
+        <tr class="low">
+            <td>
+                <!-- miscellaneous -->
+                        <a href="./miscellaneous/variables.html#AGORA_SERVICE_EXPIRY">apps/api/src/constants/agora.ts</a>
+            </td>
+            <td>variable</td>
+            <td>AGORA_SERVICE_EXPIRY</td>
+            <td align="right" data-sort="0">
+                <span class="coverage-percent">0 %</span>
+                <span class="coverage-count">(0/1)</span>
+            </td>
+        </tr>
+        <tr class="low">
+            <td>
+                <!-- miscellaneous -->
+                        <a href="./miscellaneous/variables.html#AGORA_USER_TOKEN_EXPIRY">apps/api/src/constants/agora.ts</a>
+            </td>
+            <td>variable</td>
+            <td>AGORA_USER_TOKEN_EXPIRY</td>
+            <td align="right" data-sort="0">
+                <span class="coverage-percent">0 %</span>
+                <span class="coverage-count">(0/1)</span>
+            </td>
+        </tr>
+        <tr class="low">
+            <td>
+                <!-- miscellaneous -->
+                        <a href="./miscellaneous/variables.html#MAX_ATTEMPTS_FROM_DEVICE">apps/api/src/constants/auth.ts</a>
+            </td>
+            <td>variable</td>
+            <td>MAX_ATTEMPTS_FROM_DEVICE</td>
+            <td align="right" data-sort="0">
+                <span class="coverage-percent">0 %</span>
+                <span class="coverage-count">(0/1)</span>
+            </td>
+        </tr>
+        <tr class="low">
+            <td>
+                <!-- miscellaneous -->
+                        <a href="./miscellaneous/variables.html#MAX_OTP_ATTEMPT">apps/api/src/constants/auth.ts</a>
+            </td>
+            <td>variable</td>
+            <td>MAX_OTP_ATTEMPT</td>
+            <td align="right" data-sort="0">
+                <span class="coverage-percent">0 %</span>
+                <span class="coverage-count">(0/1)</span>
+            </td>
+        </tr>
+        <tr class="low">
+            <td>
+                <!-- miscellaneous -->
+                        <a href="./miscellaneous/variables.html#MULTIPLY_BRFORE_MS">apps/api/src/constants/auth.ts</a>
+            </td>
+            <td>variable</td>
+            <td>MULTIPLY_BRFORE_MS</td>
+            <td align="right" data-sort="0">
+                <span class="coverage-percent">0 %</span>
+                <span class="coverage-count">(0/1)</span>
+            </td>
+        </tr>
+        <tr class="low">
+            <td>
+                <!-- miscellaneous -->
+                        <a href="./miscellaneous/variables.html#SMS_CODE_EXPIRE_BY">apps/api/src/constants/auth.ts</a>
+            </td>
+            <td>variable</td>
+            <td>SMS_CODE_EXPIRE_BY</td>
+            <td align="right" data-sort="0">
+                <span class="coverage-percent">0 %</span>
+                <span class="coverage-count">(0/1)</span>
+            </td>
+        </tr>
+        <tr class="low">
+            <td>
+                <!-- miscellaneous -->
+                        <a href="./miscellaneous/variables.html#SMS_CODE_EXPIRE_MULTIPLIER">apps/api/src/constants/auth.ts</a>
+            </td>
+            <td>variable</td>
+            <td>SMS_CODE_EXPIRE_MULTIPLIER</td>
+            <td align="right" data-sort="0">
+                <span class="coverage-percent">0 %</span>
+                <span class="coverage-count">(0/1)</span>
+            </td>
+        </tr>
+        <tr class="low">
+            <td>
+                <!-- miscellaneous -->
+                        <a href="./miscellaneous/variables.html#lang">apps/api/src/constants/language.ts</a>
+            </td>
+            <td>variable</td>
+            <td>lang</td>
+            <td align="right" data-sort="0">
+                <span class="coverage-percent">0 %</span>
+                <span class="coverage-count">(0/1)</span>
+            </td>
+        </tr>
+        <tr class="low">
+            <td>
+                <!-- miscellaneous -->
+                        <a href="./miscellaneous/variables.html#Messages">apps/api/src/constants/language.ts</a>
+            </td>
+            <td>variable</td>
+            <td>Messages</td>
+            <td align="right" data-sort="0">
+                <span class="coverage-percent">0 %</span>
+                <span class="coverage-count">(0/1)</span>
+            </td>
+        </tr>
+        <tr class="low">
+            <td>
+                <!-- miscellaneous -->
+                        <a href="./miscellaneous/variables.html#responseMessages">apps/api/src/constants/language.ts</a>
+            </td>
+            <td>variable</td>
+            <td>responseMessages</td>
+            <td align="right" data-sort="0">
+                <span class="coverage-percent">0 %</span>
+                <span class="coverage-count">(0/1)</span>
+            </td>
+        </tr>
+        <tr class="very-good">
+            <td>
+                <!-- miscellaneous -->
+                        <a href="./miscellaneous/variables.html#PASSWORD_REGEX_CHOICE_1">apps/api/src/constants/regex.ts</a>
+            </td>
+            <td>variable</td>
+            <td>PASSWORD_REGEX_CHOICE_1</td>
+            <td align="right" data-sort="100">
+                <span class="coverage-percent">100 %</span>
+                <span class="coverage-count">(1/1)</span>
+            </td>
+        </tr>
+        <tr class="very-good">
+            <td>
+                <!-- miscellaneous -->
+                        <a href="./miscellaneous/variables.html#STRIPE_API_VERSION">apps/api/src/constants/stripe.ts</a>
+            </td>
+            <td>variable</td>
+            <td>STRIPE_API_VERSION</td>
+            <td align="right" data-sort="100">
+                <span class="coverage-percent">100 %</span>
+                <span class="coverage-count">(1/1)</span>
+            </td>
+        </tr>
+        <tr class="very-good">
+            <td>
+                <!-- miscellaneous -->
+                        <a href="./miscellaneous/variables.html#STRIPE_CURRENCY">apps/api/src/constants/stripe.ts</a>
+            </td>
+            <td>variable</td>
+            <td>STRIPE_CURRENCY</td>
+            <td align="right" data-sort="100">
+                <span class="coverage-percent">100 %</span>
+                <span class="coverage-count">(1/1)</span>
+            </td>
+        </tr>
+        <tr class="very-good">
+            <td>
+                <!-- miscellaneous -->
+                        <a href="./miscellaneous/variables.html#STRIPE_HAS_TRIAL_PERIOD">apps/api/src/constants/stripe.ts</a>
+            </td>
+            <td>variable</td>
+            <td>STRIPE_HAS_TRIAL_PERIOD</td>
+            <td align="right" data-sort="100">
+                <span class="coverage-percent">100 %</span>
+                <span class="coverage-count">(1/1)</span>
+            </td>
+        </tr>
+        <tr class="very-good">
+            <td>
+                <!-- miscellaneous -->
+                        <a href="./miscellaneous/variables.html#STRIPE_PAYOUT_INTERVAL">apps/api/src/constants/stripe.ts</a>
+            </td>
+            <td>variable</td>
+            <td>STRIPE_PAYOUT_INTERVAL</td>
+            <td align="right" data-sort="100">
+                <span class="coverage-percent">100 %</span>
+                <span class="coverage-count">(1/1)</span>
+            </td>
+        </tr>
+        <tr class="very-good">
+            <td>
+                <!-- miscellaneous -->
+                        <a href="./miscellaneous/variables.html#STRIPE_TRIAL_PERIOD_DAYS">apps/api/src/constants/stripe.ts</a>
+            </td>
+            <td>variable</td>
+            <td>STRIPE_TRIAL_PERIOD_DAYS</td>
+            <td align="right" data-sort="100">
+                <span class="coverage-percent">100 %</span>
+                <span class="coverage-count">(1/1)</span>
+            </td>
+        </tr>
+        <tr class="very-good">
+            <td>
+                <!-- miscellaneous -->
+                        <a href="./miscellaneous/variables.html#IAP_SUBSCRIPTION">apps/api/src/constants/subscription.ts</a>
+            </td>
+            <td>variable</td>
+            <td>IAP_SUBSCRIPTION</td>
+            <td align="right" data-sort="100">
+                <span class="coverage-percent">100 %</span>
+                <span class="coverage-count">(1/1)</span>
+            </td>
+        </tr>
+        <tr class="very-good">
+            <td>
+                <!-- miscellaneous -->
+                        <a href="./miscellaneous/variables.html#PREMIUM_SUBSCRIPTION_ID">apps/api/src/constants/subscription.ts</a>
+            </td>
+            <td>variable</td>
+            <td>PREMIUM_SUBSCRIPTION_ID</td>
+            <td align="right" data-sort="100">
+                <span class="coverage-percent">100 %</span>
+                <span class="coverage-count">(1/1)</span>
+            </td>
+        </tr>
+        <tr class="very-good">
+            <td>
+                <!-- miscellaneous -->
+                        <a href="./miscellaneous/variables.html#PRO_SUBSCRIPTION_ID">apps/api/src/constants/subscription.ts</a>
+            </td>
+            <td>variable</td>
+            <td>PRO_SUBSCRIPTION_ID</td>
+            <td align="right" data-sort="100">
+                <span class="coverage-percent">100 %</span>
+                <span class="coverage-count">(1/1)</span>
+            </td>
+        </tr>
+        <tr class="low">
+            <td>
+                <!-- miscellaneous -->
+                <a href="./classes/HttpExceptionFilter.html">apps/api/src/exception/http.exception.filter.ts</a>
+            </td>
+            <td>class</td>
+            <td>HttpExceptionFilter</td>
+            <td align="right" data-sort="0">
+                <span class="coverage-percent">0 %</span>
+                <span class="coverage-count">(0/2)</span>
+            </td>
+        </tr>
+        <tr class="very-good">
+            <td>
+                <!-- miscellaneous -->
+                <a href="./injectables/JwtRefreshGuard.html">apps/api/src/guards/auth.jwt-refresh.guard.ts</a>
+            </td>
+            <td>injectable</td>
+            <td>JwtRefreshGuard</td>
+            <td align="right" data-sort="100">
+                <span class="coverage-percent">100 %</span>
+                <span class="coverage-count">(1/1)</span>
+            </td>
+        </tr>
+        <tr class="low">
+            <td>
+                <!-- miscellaneous -->
+                <a href="./injectables/AuthUserGuard.html">apps/api/src/guards/auth.user.guard.ts</a>
+            </td>
+            <td>injectable</td>
+            <td>AuthUserGuard</td>
+            <td align="right" data-sort="0">
+                <span class="coverage-percent">0 %</span>
+                <span class="coverage-count">(0/4)</span>
+            </td>
+        </tr>
+        <tr class="low">
+            <td>
+                <!-- miscellaneous -->
+                <a href="./injectables/SetPasswordGuard.html">apps/api/src/guards/set.password.guard.ts</a>
+            </td>
+            <td>injectable</td>
+            <td>SetPasswordGuard</td>
+            <td align="right" data-sort="0">
+                <span class="coverage-percent">0 %</span>
+                <span class="coverage-count">(0/4)</span>
+            </td>
+        </tr>
+        <tr class="very-good">
+            <td>
+                <!-- miscellaneous -->
+                <a href="./guards/StripeConnectWebhookGuard.html">apps/api/src/guards/stripe-connect-webhook.guard.ts</a>
+            </td>
+            <td>guard</td>
+            <td>StripeConnectWebhookGuard</td>
+            <td align="right" data-sort="100">
+                <span class="coverage-percent">100 %</span>
+                <span class="coverage-count">(2/2)</span>
+            </td>
+        </tr>
+        <tr class="low">
+            <td>
+                <!-- miscellaneous -->
+                <a href="./guards/StripeWebhookGuard.html">apps/api/src/guards/stripe-webhook.guard.ts</a>
+            </td>
+            <td>guard</td>
+            <td>StripeWebhookGuard</td>
+            <td align="right" data-sort="0">
+                <span class="coverage-percent">0 %</span>
+                <span class="coverage-count">(0/2)</span>
+            </td>
+        </tr>
+        <tr class="low">
+            <td>
+                <!-- miscellaneous -->
+                <a href="./guards/TermsGuard.html">apps/api/src/guards/terms.guard.ts</a>
+            </td>
+            <td>guard</td>
+            <td>TermsGuard</td>
+            <td align="right" data-sort="0">
+                <span class="coverage-percent">0 %</span>
+                <span class="coverage-count">(0/3)</span>
+            </td>
+        </tr>
+        <tr class="very-good">
+            <td>
+                <!-- miscellaneous -->
+                        <a href="./miscellaneous/functions.html#bootstrap">apps/api/src/main.ts</a>
+            </td>
+            <td>function</td>
+            <td>bootstrap</td>
+            <td align="right" data-sort="100">
+                <span class="coverage-percent">100 %</span>
+                <span class="coverage-count">(1/1)</span>
+            </td>
+        </tr>
+        <tr class="very-good">
+            <td>
+                <!-- miscellaneous -->
+                <a href="./classes/AgoraResolver.html">apps/api/src/modules/agora/agora.resolver.ts</a>
+            </td>
+            <td>class</td>
+            <td>AgoraResolver</td>
+            <td align="right" data-sort="100">
+                <span class="coverage-percent">100 %</span>
+                <span class="coverage-count">(5/5)</span>
+            </td>
+        </tr>
+        <tr class="very-good">
+            <td>
+                <!-- miscellaneous -->
+                <a href="./injectables/AgoraService.html">apps/api/src/modules/agora/agora.service.ts</a>
+            </td>
+            <td>injectable</td>
+            <td>AgoraService</td>
+            <td align="right" data-sort="83">
+                <span class="coverage-percent">83 %</span>
+                <span class="coverage-count">(5/6)</span>
+            </td>
+        </tr>
+        <tr class="low">
+            <td>
+                <!-- miscellaneous -->
+                        <a href="./miscellaneous/variables.html#CHANNEL_NAME">apps/api/src/modules/agora/constants/index.ts</a>
+            </td>
+            <td>variable</td>
+            <td>CHANNEL_NAME</td>
+            <td align="right" data-sort="0">
+                <span class="coverage-percent">0 %</span>
+                <span class="coverage-count">(0/1)</span>
+            </td>
+        </tr>
+        <tr class="low">
+            <td>
+                <!-- miscellaneous -->
+                        <a href="./miscellaneous/variables.html#CHAT_TYPE">apps/api/src/modules/agora/constants/index.ts</a>
+            </td>
+            <td>variable</td>
+            <td>CHAT_TYPE</td>
+            <td align="right" data-sort="0">
+                <span class="coverage-percent">0 %</span>
+                <span class="coverage-count">(0/1)</span>
+            </td>
+        </tr>
+        <tr class="low">
+            <td>
+                <!-- miscellaneous -->
+                        <a href="./miscellaneous/variables.html#DEVICE_TYPE">apps/api/src/modules/agora/constants/index.ts</a>
+            </td>
+            <td>variable</td>
+            <td>DEVICE_TYPE</td>
+            <td align="right" data-sort="0">
+                <span class="coverage-percent">0 %</span>
+                <span class="coverage-count">(0/1)</span>
+            </td>
+        </tr>
+        <tr class="very-good">
+            <td>
+                <!-- miscellaneous -->
+                <a href="./classes/InitiateAgoraCallInput.html">apps/api/src/modules/agora/dto/input/agora-call.input.ts</a>
+            </td>
+            <td>class</td>
+            <td>InitiateAgoraCallInput</td>
+            <td align="right" data-sort="100">
+                <span class="coverage-percent">100 %</span>
+                <span class="coverage-count">(3/3)</span>
+            </td>
+        </tr>
+        <tr class="very-good">
+            <td>
+                <!-- miscellaneous -->
+                <a href="./classes/CreateAgoraInput.html">apps/api/src/modules/agora/dto/input/create-agora.input.ts</a>
+            </td>
+            <td>class</td>
+            <td>CreateAgoraInput</td>
+            <td align="right" data-sort="100">
+                <span class="coverage-percent">100 %</span>
+                <span class="coverage-count">(2/2)</span>
+            </td>
+        </tr>
+        <tr class="very-good">
+            <td>
+                <!-- miscellaneous -->
+                <a href="./classes/AgoraCallTokenResponse.html">apps/api/src/modules/agora/dto/response/agora-token.response.ts</a>
+            </td>
+            <td>class</td>
+            <td>AgoraCallTokenResponse</td>
+            <td align="right" data-sort="100">
+                <span class="coverage-percent">100 %</span>
+                <span class="coverage-count">(5/5)</span>
+            </td>
+        </tr>
+        <tr class="very-good">
+            <td>
+                <!-- miscellaneous -->
+                <a href="./classes/AgoraChatUserTokenResponse.html">apps/api/src/modules/agora/dto/response/agora-token.response.ts</a>
+            </td>
+            <td>class</td>
+            <td>AgoraChatUserTokenResponse</td>
+            <td align="right" data-sort="100">
+                <span class="coverage-percent">100 %</span>
+                <span class="coverage-count">(4/4)</span>
+            </td>
+        </tr>
+        <tr class="very-good">
+            <td>
+                <!-- miscellaneous -->
+                <a href="./classes/AgoraTokenResponse.html">apps/api/src/modules/agora/dto/response/agora-token.response.ts</a>
+            </td>
+            <td>class</td>
+            <td>AgoraTokenResponse</td>
+            <td align="right" data-sort="100">
+                <span class="coverage-percent">100 %</span>
+                <span class="coverage-count">(4/4)</span>
+            </td>
+        </tr>
+        <tr class="very-good">
+            <td>
+                <!-- miscellaneous -->
+                <a href="./classes/AuthResolver.html">apps/api/src/modules/auth/auth.resolver.ts</a>
+            </td>
+            <td>class</td>
+            <td>AuthResolver</td>
+            <td align="right" data-sort="100">
+                <span class="coverage-percent">100 %</span>
+                <span class="coverage-count">(28/28)</span>
+            </td>
+        </tr>
+        <tr class="very-good">
+            <td>
+                <!-- miscellaneous -->
+                        <a href="./miscellaneous/variables.html#controllers">apps/api/src/modules/auth/controllers.ts</a>
+            </td>
+            <td>variable</td>
+            <td>controllers</td>
+            <td align="right" data-sort="100">
+                <span class="coverage-percent">100 %</span>
+                <span class="coverage-count">(1/1)</span>
+            </td>
+        </tr>
+        <tr class="very-good">
+            <td>
+                <!-- miscellaneous -->
+                <a href="./controllers/AppleSingInController.html">apps/api/src/modules/auth/controllers/apple.signin.controller.ts</a>
+            </td>
+            <td>controller</td>
+            <td>AppleSingInController</td>
+            <td align="right" data-sort="100">
+                <span class="coverage-percent">100 %</span>
+                <span class="coverage-count">(3/3)</span>
+            </td>
+        </tr>
+        <tr class="very-good">
+            <td>
+                <!-- miscellaneous -->
+                        <a href="./miscellaneous/variables.html#LoginDetail">apps/api/src/modules/auth/decorator/login.decorator.ts</a>
+            </td>
+            <td>variable</td>
+            <td>LoginDetail</td>
+            <td align="right" data-sort="100">
+                <span class="coverage-percent">100 %</span>
+                <span class="coverage-count">(1/1)</span>
+            </td>
+        </tr>
+        <tr class="low">
+            <td>
+                <!-- miscellaneous -->
+                        <a href="./miscellaneous/functions.html#Permissions">apps/api/src/modules/auth/decorator/permissions.decorator.ts</a>
+            </td>
+            <td>function</td>
+            <td>Permissions</td>
+            <td align="right" data-sort="0">
+                <span class="coverage-percent">0 %</span>
+                <span class="coverage-count">(0/1)</span>
+            </td>
+        </tr>
+        <tr class="very-good">
+            <td>
+                <!-- miscellaneous -->
+                        <a href="./miscellaneous/variables.html#SkipTermsAcceptanceCheck">apps/api/src/modules/auth/decorator/terms.decorator.ts</a>
+            </td>
+            <td>variable</td>
+            <td>SkipTermsAcceptanceCheck</td>
+            <td align="right" data-sort="100">
+                <span class="coverage-percent">100 %</span>
+                <span class="coverage-count">(1/1)</span>
+            </td>
+        </tr>
+        <tr class="very-good">
+            <td>
+                <!-- miscellaneous -->
+                <a href="./interfaces/UpdateProfilInterface.html">apps/api/src/modules/auth/dto/Interface/update.user.interface.ts</a>
+            </td>
+            <td>interface</td>
+            <td>UpdateProfilInterface</td>
+            <td align="right" data-sort="100">
+                <span class="coverage-percent">100 %</span>
+                <span class="coverage-count">(7/7)</span>
+            </td>
+        </tr>
+        <tr class="very-good">
+            <td>
+                <!-- miscellaneous -->
+                <a href="./classes/AppleLoginInput.html">apps/api/src/modules/auth/dto/input/apple-login.input.ts</a>
+            </td>
+            <td>class</td>
+            <td>AppleLoginInput</td>
+            <td align="right" data-sort="100">
+                <span class="coverage-percent">100 %</span>
+                <span class="coverage-count">(3/3)</span>
+            </td>
+        </tr>
+        <tr class="very-good">
+            <td>
+                <!-- miscellaneous -->
+                <a href="./classes/BiometricEnableInput.html">apps/api/src/modules/auth/dto/input/biometric.enable.input.ts</a>
+            </td>
+            <td>class</td>
+            <td>BiometricEnableInput</td>
+            <td align="right" data-sort="100">
+                <span class="coverage-percent">100 %</span>
+                <span class="coverage-count">(2/2)</span>
+            </td>
+        </tr>
+        <tr class="very-good">
+            <td>
+                <!-- miscellaneous -->
+                <a href="./classes/BiometricLoginInput.html">apps/api/src/modules/auth/dto/input/biometric.login.input.ts</a>
+            </td>
+            <td>class</td>
+            <td>BiometricLoginInput</td>
+            <td align="right" data-sort="100">
+                <span class="coverage-percent">100 %</span>
+                <span class="coverage-count">(3/3)</span>
+            </td>
+        </tr>
+        <tr class="very-good">
+            <td>
+                <!-- miscellaneous -->
+                <a href="./classes/ChangePasswordInput.html">apps/api/src/modules/auth/dto/input/change-password.input.ts</a>
+            </td>
+            <td>class</td>
+            <td>ChangePasswordInput</td>
+            <td align="right" data-sort="100">
+                <span class="coverage-percent">100 %</span>
+                <span class="coverage-count">(3/3)</span>
+            </td>
+        </tr>
+        <tr class="low">
+            <td>
+                <!-- miscellaneous -->
+                <a href="./classes/AddressInput.html">apps/api/src/modules/auth/dto/input/common/address.input.ts</a>
+            </td>
+            <td>class</td>
+            <td>AddressInput</td>
+            <td align="right" data-sort="0">
+                <span class="coverage-percent">0 %</span>
+                <span class="coverage-count">(0/9)</span>
+            </td>
+        </tr>
+        <tr class="low">
+            <td>
+                <!-- miscellaneous -->
+                <a href="./classes/CoordinatesInput.html">apps/api/src/modules/auth/dto/input/common/address.input.ts</a>
+            </td>
+            <td>class</td>
+            <td>CoordinatesInput</td>
+            <td align="right" data-sort="0">
+                <span class="coverage-percent">0 %</span>
+                <span class="coverage-count">(0/3)</span>
+            </td>
+        </tr>
+        <tr class="very-good">
+            <td>
+                <!-- miscellaneous -->
+                <a href="./classes/DeviceInfoInput.html">apps/api/src/modules/auth/dto/input/device-info.input.ts</a>
+            </td>
+            <td>class</td>
+            <td>DeviceInfoInput</td>
+            <td align="right" data-sort="100">
+                <span class="coverage-percent">100 %</span>
+                <span class="coverage-count">(5/5)</span>
+            </td>
+        </tr>
+        <tr class="very-good">
+            <td>
+                <!-- miscellaneous -->
+                        <a href="./miscellaneous/typealiases.html#deviceType">apps/api/src/modules/auth/dto/input/device-info.input.ts</a>
+            </td>
+            <td>type alias</td>
+            <td>deviceType</td>
+            <td align="right" data-sort="100">
+                <span class="coverage-percent">100 %</span>
+                <span class="coverage-count">(1/1)</span>
+            </td>
+        </tr>
+        <tr class="very-good">
+            <td>
+                <!-- miscellaneous -->
+                <a href="./classes/EmailSignupOTPInput.html">apps/api/src/modules/auth/dto/input/email-signup-otp.input.ts</a>
+            </td>
+            <td>class</td>
+            <td>EmailSignupOTPInput</td>
+            <td align="right" data-sort="100">
+                <span class="coverage-percent">100 %</span>
+                <span class="coverage-count">(3/3)</span>
+            </td>
+        </tr>
+        <tr class="very-good">
+            <td>
+                <!-- miscellaneous -->
+                <a href="./classes/FacebookLoginInput.html">apps/api/src/modules/auth/dto/input/facebook-login.input.ts</a>
+            </td>
+            <td>class</td>
+            <td>FacebookLoginInput</td>
+            <td align="right" data-sort="100">
+                <span class="coverage-percent">100 %</span>
+                <span class="coverage-count">(3/3)</span>
+            </td>
+        </tr>
+        <tr class="very-good">
+            <td>
+                <!-- miscellaneous -->
+                <a href="./classes/ForgotPasswordInput.html">apps/api/src/modules/auth/dto/input/forgot-password.input.ts</a>
+            </td>
+            <td>class</td>
+            <td>ForgotPasswordInput</td>
+            <td align="right" data-sort="100">
+                <span class="coverage-percent">100 %</span>
+                <span class="coverage-count">(1/1)</span>
+            </td>
+        </tr>
+        <tr class="very-good">
+            <td>
+                <!-- miscellaneous -->
+                <a href="./classes/GoogleLoginInput.html">apps/api/src/modules/auth/dto/input/google-login.input.ts</a>
+            </td>
+            <td>class</td>
+            <td>GoogleLoginInput</td>
+            <td align="right" data-sort="100">
+                <span class="coverage-percent">100 %</span>
+                <span class="coverage-count">(3/3)</span>
+            </td>
+        </tr>
+        <tr class="very-good">
+            <td>
+                <!-- miscellaneous -->
+                <a href="./classes/LoginEmailPasswordInput.html">apps/api/src/modules/auth/dto/input/login-email-password.input.ts</a>
+            </td>
+            <td>class</td>
+            <td>LoginEmailPasswordInput</td>
+            <td align="right" data-sort="100">
+                <span class="coverage-percent">100 %</span>
+                <span class="coverage-count">(2/2)</span>
+            </td>
+        </tr>
+        <tr class="very-good">
+            <td>
+                <!-- miscellaneous -->
+                <a href="./classes/LoginWithOTPInput.html">apps/api/src/modules/auth/dto/input/login-with-otp.input.ts</a>
+            </td>
+            <td>class</td>
+            <td>LoginWithOTPInput</td>
+            <td align="right" data-sort="100">
+                <span class="coverage-percent">100 %</span>
+                <span class="coverage-count">(3/3)</span>
+            </td>
+        </tr>
+        <tr class="very-good">
+            <td>
+                <!-- miscellaneous -->
+                <a href="./classes/LogoutInput.html">apps/api/src/modules/auth/dto/input/logout.input.ts</a>
+            </td>
+            <td>class</td>
+            <td>LogoutInput</td>
+            <td align="right" data-sort="100">
+                <span class="coverage-percent">100 %</span>
+                <span class="coverage-count">(2/2)</span>
+            </td>
+        </tr>
+        <tr class="very-good">
+            <td>
+                <!-- miscellaneous -->
+                <a href="./classes/PhoneLoginWithOTPInput.html">apps/api/src/modules/auth/dto/input/phone-login-with-otp.input.ts</a>
+            </td>
+            <td>class</td>
+            <td>PhoneLoginWithOTPInput</td>
+            <td align="right" data-sort="100">
+                <span class="coverage-percent">100 %</span>
+                <span class="coverage-count">(3/3)</span>
+            </td>
+        </tr>
+        <tr class="very-good">
+            <td>
+                <!-- miscellaneous -->
+                <a href="./classes/RequestLoginOTPInput.html">apps/api/src/modules/auth/dto/input/reqest-login-otp.input.ts</a>
+            </td>
+            <td>class</td>
+            <td>RequestLoginOTPInput</td>
+            <td align="right" data-sort="100">
+                <span class="coverage-percent">100 %</span>
+                <span class="coverage-count">(3/3)</span>
+            </td>
+        </tr>
+        <tr class="very-good">
+            <td>
+                <!-- miscellaneous -->
+                <a href="./classes/RequestPhoneLoginOTPInput.html">apps/api/src/modules/auth/dto/input/request-phone-login-otp.input.ts</a>
+            </td>
+            <td>class</td>
+            <td>RequestPhoneLoginOTPInput</td>
+            <td align="right" data-sort="100">
+                <span class="coverage-percent">100 %</span>
+                <span class="coverage-count">(4/4)</span>
+            </td>
+        </tr>
+        <tr class="very-good">
+            <td>
+                <!-- miscellaneous -->
+                <a href="./classes/ResetPasswordInput.html">apps/api/src/modules/auth/dto/input/reset-password.input.ts</a>
+            </td>
+            <td>class</td>
+            <td>ResetPasswordInput</td>
+            <td align="right" data-sort="100">
+                <span class="coverage-percent">100 %</span>
+                <span class="coverage-count">(4/4)</span>
+            </td>
+        </tr>
+        <tr class="very-good">
+            <td>
+                <!-- miscellaneous -->
+                <a href="./classes/SetPasswordInput.html">apps/api/src/modules/auth/dto/input/set-pawwrod.input.ts</a>
+            </td>
+            <td>class</td>
+            <td>SetPasswordInput</td>
+            <td align="right" data-sort="100">
+                <span class="coverage-percent">100 %</span>
+                <span class="coverage-count">(2/2)</span>
+            </td>
+        </tr>
+        <tr class="very-good">
+            <td>
+                <!-- miscellaneous -->
+                <a href="./classes/SignupInput.html">apps/api/src/modules/auth/dto/input/signup.input.ts</a>
+            </td>
+            <td>class</td>
+            <td>SignupInput</td>
+            <td align="right" data-sort="100">
+                <span class="coverage-percent">100 %</span>
+                <span class="coverage-count">(6/6)</span>
+            </td>
+        </tr>
+        <tr class="very-good">
+            <td>
+                <!-- miscellaneous -->
+                <a href="./classes/TiktokLoginInput.html">apps/api/src/modules/auth/dto/input/tiktok-login-input.ts</a>
+            </td>
+            <td>class</td>
+            <td>TiktokLoginInput</td>
+            <td align="right" data-sort="100">
+                <span class="coverage-percent">100 %</span>
+                <span class="coverage-count">(3/3)</span>
+            </td>
+        </tr>
+        <tr class="very-good">
+            <td>
+                <!-- miscellaneous -->
+                <a href="./classes/UpdatePhoneNumberInput.html">apps/api/src/modules/auth/dto/input/update-phone-number.input.ts</a>
+            </td>
+            <td>class</td>
+            <td>UpdatePhoneNumberInput</td>
+            <td align="right" data-sort="100">
+                <span class="coverage-percent">100 %</span>
+                <span class="coverage-count">(3/3)</span>
+            </td>
+        </tr>
+        <tr class="very-good">
+            <td>
+                <!-- miscellaneous -->
+                <a href="./classes/UpdateUserProfile.html">apps/api/src/modules/auth/dto/input/update-user-profile.ts</a>
+            </td>
+            <td>class</td>
+            <td>UpdateUserProfile</td>
+            <td align="right" data-sort="100">
+                <span class="coverage-percent">100 %</span>
+                <span class="coverage-count">(6/6)</span>
+            </td>
+        </tr>
+        <tr class="very-good">
+            <td>
+                <!-- miscellaneous -->
+                <a href="./classes/VerifyEmailInput.html">apps/api/src/modules/auth/dto/input/verify-email.input.ts</a>
+            </td>
+            <td>class</td>
+            <td>VerifyEmailInput</td>
+            <td align="right" data-sort="100">
+                <span class="coverage-percent">100 %</span>
+                <span class="coverage-count">(3/3)</span>
+            </td>
+        </tr>
+        <tr class="very-good">
+            <td>
+                <!-- miscellaneous -->
+                <a href="./classes/VerifyResetPasswordOtpInput.html">apps/api/src/modules/auth/dto/input/verify-reset-password-otp.input.ts</a>
+            </td>
+            <td>class</td>
+            <td>VerifyResetPasswordOtpInput</td>
+            <td align="right" data-sort="100">
+                <span class="coverage-percent">100 %</span>
+                <span class="coverage-count">(3/3)</span>
+            </td>
+        </tr>
+        <tr class="very-good">
+            <td>
+                <!-- miscellaneous -->
+                <a href="./classes/VerifyUpdatedPhoneNumberInput.html">apps/api/src/modules/auth/dto/input/verify-update-phone-no.input.ts</a>
+            </td>
+            <td>class</td>
+            <td>VerifyUpdatedPhoneNumberInput</td>
+            <td align="right" data-sort="100">
+                <span class="coverage-percent">100 %</span>
+                <span class="coverage-count">(2/2)</span>
+            </td>
+        </tr>
+        <tr class="very-good">
+            <td>
+                <!-- miscellaneous -->
+                <a href="./classes/BiometricEnableResponse.html">apps/api/src/modules/auth/dto/response/biometric.enable.response.ts</a>
+            </td>
+            <td>class</td>
+            <td>BiometricEnableResponse</td>
+            <td align="right" data-sort="100">
+                <span class="coverage-percent">100 %</span>
+                <span class="coverage-count">(4/4)</span>
+            </td>
+        </tr>
+        <tr class="very-good">
+            <td>
+                <!-- miscellaneous -->
+                <a href="./classes/ForgotPasswordResponse.html">apps/api/src/modules/auth/dto/response/forgot.password.response.ts</a>
+            </td>
+            <td>class</td>
+            <td>ForgotPasswordResponse</td>
+            <td align="right" data-sort="100">
+                <span class="coverage-percent">100 %</span>
+                <span class="coverage-count">(3/3)</span>
+            </td>
+        </tr>
+        <tr class="very-good">
+            <td>
+                <!-- miscellaneous -->
+                <a href="./classes/ForgotPasswordVerificationExpiry.html">apps/api/src/modules/auth/dto/response/forgot.password.response.ts</a>
+            </td>
+            <td>class</td>
+            <td>ForgotPasswordVerificationExpiry</td>
+            <td align="right" data-sort="100">
+                <span class="coverage-percent">100 %</span>
+                <span class="coverage-count">(3/3)</span>
+            </td>
+        </tr>
+        <tr class="very-good">
+            <td>
+                <!-- miscellaneous -->
+                <a href="./classes/LoginResponse.html">apps/api/src/modules/auth/dto/response/login.response.ts</a>
+            </td>
+            <td>class</td>
+            <td>LoginResponse</td>
+            <td align="right" data-sort="100">
+                <span class="coverage-percent">100 %</span>
+                <span class="coverage-count">(4/4)</span>
+            </td>
+        </tr>
+        <tr class="very-good">
+            <td>
+                <!-- miscellaneous -->
+                <a href="./classes/UserRespInLogin.html">apps/api/src/modules/auth/dto/response/login.response.ts</a>
+            </td>
+            <td>class</td>
+            <td>UserRespInLogin</td>
+            <td align="right" data-sort="100">
+                <span class="coverage-percent">100 %</span>
+                <span class="coverage-count">(3/3)</span>
+            </td>
+        </tr>
+        <tr class="very-good">
+            <td>
+                <!-- miscellaneous -->
+                <a href="./classes/LoginWithAppleResponse.html">apps/api/src/modules/auth/dto/response/login.with.apple.response.ts</a>
+            </td>
+            <td>class</td>
+            <td>LoginWithAppleResponse</td>
+            <td align="right" data-sort="100">
+                <span class="coverage-percent">100 %</span>
+                <span class="coverage-count">(4/4)</span>
+            </td>
+        </tr>
+        <tr class="very-good">
+            <td>
+                <!-- miscellaneous -->
+                <a href="./classes/UserRespInAppleLogin.html">apps/api/src/modules/auth/dto/response/login.with.apple.response.ts</a>
+            </td>
+            <td>class</td>
+            <td>UserRespInAppleLogin</td>
+            <td align="right" data-sort="100">
+                <span class="coverage-percent">100 %</span>
+                <span class="coverage-count">(3/3)</span>
+            </td>
+        </tr>
+        <tr class="very-good">
+            <td>
+                <!-- miscellaneous -->
+                <a href="./classes/BiometricLoginResponse.html">apps/api/src/modules/auth/dto/response/login.with.biometric.response.ts</a>
+            </td>
+            <td>class</td>
+            <td>BiometricLoginResponse</td>
+            <td align="right" data-sort="100">
+                <span class="coverage-percent">100 %</span>
+                <span class="coverage-count">(5/5)</span>
+            </td>
+        </tr>
+        <tr class="very-good">
+            <td>
+                <!-- miscellaneous -->
+                <a href="./classes/LoginWithEmailResponse.html">apps/api/src/modules/auth/dto/response/login.with.email.response.ts</a>
+            </td>
+            <td>class</td>
+            <td>LoginWithEmailResponse</td>
+            <td align="right" data-sort="100">
+                <span class="coverage-percent">100 %</span>
+                <span class="coverage-count">(5/5)</span>
+            </td>
+        </tr>
+        <tr class="very-good">
+            <td>
+                <!-- miscellaneous -->
+                <a href="./classes/UserRespInEmailLogin.html">apps/api/src/modules/auth/dto/response/login.with.email.response.ts</a>
+            </td>
+            <td>class</td>
+            <td>UserRespInEmailLogin</td>
+            <td align="right" data-sort="100">
+                <span class="coverage-percent">100 %</span>
+                <span class="coverage-count">(5/5)</span>
+            </td>
+        </tr>
+        <tr class="very-good">
+            <td>
+                <!-- miscellaneous -->
+                <a href="./classes/LoginWithFacebookResponse.html">apps/api/src/modules/auth/dto/response/login.with.facebook.response.ts</a>
+            </td>
+            <td>class</td>
+            <td>LoginWithFacebookResponse</td>
+            <td align="right" data-sort="100">
+                <span class="coverage-percent">100 %</span>
+                <span class="coverage-count">(4/4)</span>
+            </td>
+        </tr>
+        <tr class="very-good">
+            <td>
+                <!-- miscellaneous -->
+                <a href="./classes/UserRespInFacebookLogin.html">apps/api/src/modules/auth/dto/response/login.with.facebook.response.ts</a>
+            </td>
+            <td>class</td>
+            <td>UserRespInFacebookLogin</td>
+            <td align="right" data-sort="100">
+                <span class="coverage-percent">100 %</span>
+                <span class="coverage-count">(3/3)</span>
+            </td>
+        </tr>
+        <tr class="very-good">
+            <td>
+                <!-- miscellaneous -->
+                <a href="./classes/LoginWithGoogleResponse.html">apps/api/src/modules/auth/dto/response/login.with.google.response.ts</a>
+            </td>
+            <td>class</td>
+            <td>LoginWithGoogleResponse</td>
+            <td align="right" data-sort="100">
+                <span class="coverage-percent">100 %</span>
+                <span class="coverage-count">(4/4)</span>
+            </td>
+        </tr>
+        <tr class="very-good">
+            <td>
+                <!-- miscellaneous -->
+                <a href="./classes/UserRespInGoogleLogin.html">apps/api/src/modules/auth/dto/response/login.with.google.response.ts</a>
+            </td>
+            <td>class</td>
+            <td>UserRespInGoogleLogin</td>
+            <td align="right" data-sort="100">
+                <span class="coverage-percent">100 %</span>
+                <span class="coverage-count">(3/3)</span>
+            </td>
+        </tr>
+        <tr class="very-good">
+            <td>
+                <!-- miscellaneous -->
+                <a href="./classes/SocialLoginResponse.html">apps/api/src/modules/auth/dto/response/login.with.social.response.ts</a>
+            </td>
+            <td>class</td>
+            <td>SocialLoginResponse</td>
+            <td align="right" data-sort="100">
+                <span class="coverage-percent">100 %</span>
+                <span class="coverage-count">(4/4)</span>
+            </td>
+        </tr>
+        <tr class="very-good">
+            <td>
+                <!-- miscellaneous -->
+                <a href="./classes/UserRespInSocialLogin.html">apps/api/src/modules/auth/dto/response/login.with.social.response.ts</a>
+            </td>
+            <td>class</td>
+            <td>UserRespInSocialLogin</td>
+            <td align="right" data-sort="100">
+                <span class="coverage-percent">100 %</span>
+                <span class="coverage-count">(3/3)</span>
+            </td>
+        </tr>
+        <tr class="very-good">
+            <td>
+                <!-- miscellaneous -->
+                <a href="./classes/OTPResponse.html">apps/api/src/modules/auth/dto/response/otp.response.ts</a>
+            </td>
+            <td>class</td>
+            <td>OTPResponse</td>
+            <td align="right" data-sort="100">
+                <span class="coverage-percent">100 %</span>
+                <span class="coverage-count">(3/3)</span>
+            </td>
+        </tr>
+        <tr class="very-good">
+            <td>
+                <!-- miscellaneous -->
+                <a href="./classes/RegisterResponse.html">apps/api/src/modules/auth/dto/response/register.response.ts</a>
+            </td>
+            <td>class</td>
+            <td>RegisterResponse</td>
+            <td align="right" data-sort="100">
+                <span class="coverage-percent">100 %</span>
+                <span class="coverage-count">(2/2)</span>
+            </td>
+        </tr>
+        <tr class="very-good">
+            <td>
+                <!-- miscellaneous -->
+                <a href="./classes/User.html">apps/api/src/modules/auth/dto/response/user.response.ts</a>
+            </td>
+            <td>class</td>
+            <td>User</td>
+            <td align="right" data-sort="100">
+                <span class="coverage-percent">100 %</span>
+                <span class="coverage-count">(3/3)</span>
+            </td>
+        </tr>
+        <tr class="very-good">
+            <td>
+                <!-- miscellaneous -->
+                <a href="./classes/UserWithToken.html">apps/api/src/modules/auth/dto/response/userWithToken.response.ts</a>
+            </td>
+            <td>class</td>
+            <td>UserWithToken</td>
+            <td align="right" data-sort="100">
+                <span class="coverage-percent">100 %</span>
+                <span class="coverage-count">(3/3)</span>
+            </td>
+        </tr>
+        <tr class="very-good">
+            <td>
+                <!-- miscellaneous -->
+                <a href="./classes/VerificationCodeExpiry.html">apps/api/src/modules/auth/dto/response/verification.code.expiry.ts</a>
+            </td>
+            <td>class</td>
+            <td>VerificationCodeExpiry</td>
+            <td align="right" data-sort="100">
+                <span class="coverage-percent">100 %</span>
+                <span class="coverage-count">(3/3)</span>
+            </td>
+        </tr>
+        <tr class="very-good">
+            <td>
+                <!-- miscellaneous -->
+                <a href="./classes/VerifyEmailResponse.html">apps/api/src/modules/auth/dto/response/verify.email.response.ts</a>
+            </td>
+            <td>class</td>
+            <td>VerifyEmailResponse</td>
+            <td align="right" data-sort="100">
+                <span class="coverage-percent">100 %</span>
+                <span class="coverage-count">(1/1)</span>
+            </td>
+        </tr>
+        <tr class="very-good">
+            <td>
+                <!-- miscellaneous -->
+                        <a href="./miscellaneous/variables.html#mongooseModels">apps/api/src/modules/auth/mongoose.models.ts</a>
+            </td>
+            <td>variable</td>
+            <td>mongooseModels</td>
+            <td align="right" data-sort="100">
+                <span class="coverage-percent">100 %</span>
+                <span class="coverage-count">(1/1)</span>
+            </td>
+        </tr>
+        <tr class="very-good">
+            <td>
+                <!-- miscellaneous -->
+                        <a href="./miscellaneous/variables.html#providers">apps/api/src/modules/auth/providers.ts</a>
+            </td>
+            <td>variable</td>
+            <td>providers</td>
+            <td align="right" data-sort="100">
+                <span class="coverage-percent">100 %</span>
+                <span class="coverage-count">(1/1)</span>
+            </td>
+        </tr>
+        <tr class="good">
+            <td>
+                <!-- miscellaneous -->
+                <a href="./injectables/AuthService.html">apps/api/src/modules/auth/services/auth.service.ts</a>
+            </td>
+            <td>injectable</td>
+            <td>AuthService</td>
+            <td align="right" data-sort="68">
+                <span class="coverage-percent">68 %</span>
+                <span class="coverage-count">(20/29)</span>
+            </td>
+        </tr>
+        <tr class="very-good">
+            <td>
+                <!-- miscellaneous -->
+                <a href="./injectables/PhoneOtpAuthService.html">apps/api/src/modules/auth/services/phone-otp-auth.service.ts</a>
+            </td>
+            <td>injectable</td>
+            <td>PhoneOtpAuthService</td>
+            <td align="right" data-sort="85">
+                <span class="coverage-percent">85 %</span>
+                <span class="coverage-count">(6/7)</span>
+            </td>
+        </tr>
+        <tr class="very-good">
+            <td>
+                <!-- miscellaneous -->
+                <a href="./injectables/JwtRefreshTokenStrategy.html">apps/api/src/modules/auth/strategy/jwt-refresh-token.strategy.ts</a>
+            </td>
+            <td>injectable</td>
+            <td>JwtRefreshTokenStrategy</td>
+            <td align="right" data-sort="100">
+                <span class="coverage-percent">100 %</span>
+                <span class="coverage-count">(3/3)</span>
+            </td>
+        </tr>
+        <tr class="very-good">
+            <td>
+                <!-- miscellaneous -->
+                <a href="./injectables/JwtStrategy.html">apps/api/src/modules/auth/strategy/jwt.strategy.ts</a>
+            </td>
+            <td>injectable</td>
+            <td>JwtStrategy</td>
+            <td align="right" data-sort="100">
+                <span class="coverage-percent">100 %</span>
+                <span class="coverage-count">(3/3)</span>
+            </td>
+        </tr>
+        <tr class="very-good">
+            <td>
+                <!-- miscellaneous -->
+                        <a href="./miscellaneous/typealiases.html#LoginDetailType">apps/api/src/modules/auth/types/login-detail.type.ts</a>
+            </td>
+            <td>type alias</td>
+            <td>LoginDetailType</td>
+            <td align="right" data-sort="100">
+                <span class="coverage-percent">100 %</span>
+                <span class="coverage-count">(1/1)</span>
+            </td>
+        </tr>
+        <tr class="very-good">
+            <td>
+                <!-- miscellaneous -->
+                        <a href="./miscellaneous/typealiases.html#PartialType">apps/api/src/modules/auth/types/partial.type.ts</a>
+            </td>
+            <td>type alias</td>
+            <td>PartialType</td>
+            <td align="right" data-sort="100">
+                <span class="coverage-percent">100 %</span>
+                <span class="coverage-count">(1/1)</span>
+            </td>
+        </tr>
+        <tr class="very-good">
+            <td>
+                <!-- miscellaneous -->
+                        <a href="./miscellaneous/typealiases.html#ProjectionSelectionType">apps/api/src/modules/auth/types/projection.selection.type.ts</a>
+            </td>
+            <td>type alias</td>
+            <td>ProjectionSelectionType</td>
+            <td align="right" data-sort="100">
+                <span class="coverage-percent">100 %</span>
+                <span class="coverage-count">(1/1)</span>
+            </td>
+        </tr>
+        <tr class="very-good">
+            <td>
+                <!-- miscellaneous -->
+                        <a href="./miscellaneous/typealiases.html#SaveDeviceInfoType">apps/api/src/modules/auth/types/save-device-info.type.ts</a>
+            </td>
+            <td>type alias</td>
+            <td>SaveDeviceInfoType</td>
+            <td align="right" data-sort="100">
+                <span class="coverage-percent">100 %</span>
+                <span class="coverage-count">(1/1)</span>
+            </td>
+        </tr>
+        <tr class="very-good">
+            <td>
+                <!-- miscellaneous -->
+                <a href="./classes/ChimeResolver.html">apps/api/src/modules/chime/chime.resolver.ts</a>
+            </td>
+            <td>class</td>
+            <td>ChimeResolver</td>
+            <td align="right" data-sort="100">
+                <span class="coverage-percent">100 %</span>
+                <span class="coverage-count">(5/5)</span>
+            </td>
+        </tr>
+        <tr class="low">
+            <td>
+                <!-- miscellaneous -->
+                <a href="./injectables/ChimeService.html">apps/api/src/modules/chime/chime.service.ts</a>
+            </td>
+            <td>injectable</td>
+            <td>ChimeService</td>
+            <td align="right" data-sort="0">
+                <span class="coverage-percent">0 %</span>
+                <span class="coverage-count">(0/8)</span>
+            </td>
+        </tr>
+        <tr class="very-good">
+            <td>
+                <!-- miscellaneous -->
+                <a href="./classes/InitiateMeetingInput.html">apps/api/src/modules/chime/dto/input/create-chime.input.ts</a>
+            </td>
+            <td>class</td>
+            <td>InitiateMeetingInput</td>
+            <td align="right" data-sort="100">
+                <span class="coverage-percent">100 %</span>
+                <span class="coverage-count">(4/4)</span>
+            </td>
+        </tr>
+        <tr class="very-good">
+            <td>
+                <!-- miscellaneous -->
+                <a href="./classes/MeetingInput.html">apps/api/src/modules/chime/dto/input/create-chime.input.ts</a>
+            </td>
+            <td>class</td>
+            <td>MeetingInput</td>
+            <td align="right" data-sort="100">
+                <span class="coverage-percent">100 %</span>
+                <span class="coverage-count">(2/2)</span>
+            </td>
+        </tr>
+        <tr class="very-good">
+            <td>
+                <!-- miscellaneous -->
+                <a href="./classes/UpdateChimeInput.html">apps/api/src/modules/chime/dto/input/update-chime.input.ts</a>
+            </td>
+            <td>class</td>
+            <td>UpdateChimeInput</td>
+            <td align="right" data-sort="100">
+                <span class="coverage-percent">100 %</span>
+                <span class="coverage-count">(2/2)</span>
+            </td>
+        </tr>
+        <tr class="very-good">
+            <td>
+                <!-- miscellaneous -->
+                <a href="./classes/AttendeeResponse.html">apps/api/src/modules/chime/dto/response/chime-response.ts</a>
+            </td>
+            <td>class</td>
+            <td>AttendeeResponse</td>
+            <td align="right" data-sort="100">
+                <span class="coverage-percent">100 %</span>
+                <span class="coverage-count">(5/5)</span>
+            </td>
+        </tr>
+        <tr class="very-good">
+            <td>
+                <!-- miscellaneous -->
+                <a href="./classes/Capabilities.html">apps/api/src/modules/chime/dto/response/chime-response.ts</a>
+            </td>
+            <td>class</td>
+            <td>Capabilities</td>
+            <td align="right" data-sort="100">
+                <span class="coverage-percent">100 %</span>
+                <span class="coverage-count">(4/4)</span>
+            </td>
+        </tr>
+        <tr class="very-good">
+            <td>
+                <!-- miscellaneous -->
+                <a href="./classes/InitiateMeetingResponse.html">apps/api/src/modules/chime/dto/response/chime-response.ts</a>
+            </td>
+            <td>class</td>
+            <td>InitiateMeetingResponse</td>
+            <td align="right" data-sort="100">
+                <span class="coverage-percent">100 %</span>
+                <span class="coverage-count">(3/3)</span>
+            </td>
+        </tr>
+        <tr class="very-good">
+            <td>
+                <!-- miscellaneous -->
+                <a href="./classes/MediaPlacement.html">apps/api/src/modules/chime/dto/response/chime-response.ts</a>
+            </td>
+            <td>class</td>
+            <td>MediaPlacement</td>
+            <td align="right" data-sort="100">
+                <span class="coverage-percent">100 %</span>
+                <span class="coverage-count">(9/9)</span>
+            </td>
+        </tr>
+        <tr class="very-good">
+            <td>
+                <!-- miscellaneous -->
+                <a href="./classes/MeetingResponse.html">apps/api/src/modules/chime/dto/response/chime-response.ts</a>
+            </td>
+            <td>class</td>
+            <td>MeetingResponse</td>
+            <td align="right" data-sort="100">
+                <span class="coverage-percent">100 %</span>
+                <span class="coverage-count">(6/6)</span>
+            </td>
+        </tr>
+        <tr class="very-good">
+            <td>
+                <!-- miscellaneous -->
+                <a href="./classes/CoinManagementResolver.html">apps/api/src/modules/coin-management/coin-management.resolver.ts</a>
+            </td>
+            <td>class</td>
+            <td>CoinManagementResolver</td>
+            <td align="right" data-sort="100">
+                <span class="coverage-percent">100 %</span>
+                <span class="coverage-count">(6/6)</span>
+            </td>
+        </tr>
+        <tr class="very-good">
+            <td>
+                <!-- miscellaneous -->
+                <a href="./injectables/CoinManagementService.html">apps/api/src/modules/coin-management/coin-management.service.ts</a>
+            </td>
+            <td>injectable</td>
+            <td>CoinManagementService</td>
+            <td align="right" data-sort="100">
+                <span class="coverage-percent">100 %</span>
+                <span class="coverage-count">(8/8)</span>
+            </td>
+        </tr>
+        <tr class="low">
+            <td>
+                <!-- miscellaneous -->
+                        <a href="./miscellaneous/variables.html#ENVIRONMENT">apps/api/src/modules/coin-management/constants/index.ts</a>
+            </td>
+            <td>variable</td>
+            <td>ENVIRONMENT</td>
+            <td align="right" data-sort="0">
+                <span class="coverage-percent">0 %</span>
+                <span class="coverage-count">(0/1)</span>
+            </td>
+        </tr>
+        <tr class="very-good">
+            <td>
+                <!-- miscellaneous -->
+                <a href="./classes/AddCoinPackageInput.html">apps/api/src/modules/coin-management/dto/input/add-coin-package.input.ts</a>
+            </td>
+            <td>class</td>
+            <td>AddCoinPackageInput</td>
+            <td align="right" data-sort="100">
+                <span class="coverage-percent">100 %</span>
+                <span class="coverage-count">(5/5)</span>
+            </td>
+        </tr>
+        <tr class="very-good">
+            <td>
+                <!-- miscellaneous -->
+                <a href="./classes/AndroidReceiptConsumable.html">apps/api/src/modules/coin-management/dto/input/android-consumable.input.ts</a>
+            </td>
+            <td>class</td>
+            <td>AndroidReceiptConsumable</td>
+            <td align="right" data-sort="100">
+                <span class="coverage-percent">100 %</span>
+                <span class="coverage-count">(2/2)</span>
+            </td>
+        </tr>
+        <tr class="very-good">
+            <td>
+                <!-- miscellaneous -->
+                <a href="./classes/GetCoinPackageInput.html">apps/api/src/modules/coin-management/dto/input/get-coin-package.input.ts</a>
+            </td>
+            <td>class</td>
+            <td>GetCoinPackageInput</td>
+            <td align="right" data-sort="100">
+                <span class="coverage-percent">100 %</span>
+                <span class="coverage-count">(2/2)</span>
+            </td>
+        </tr>
+        <tr class="very-good">
+            <td>
+                <!-- miscellaneous -->
+                <a href="./classes/IosReceiptConsumable.html">apps/api/src/modules/coin-management/dto/input/ios-consumable.input.ts</a>
+            </td>
+            <td>class</td>
+            <td>IosReceiptConsumable</td>
+            <td align="right" data-sort="100">
+                <span class="coverage-percent">100 %</span>
+                <span class="coverage-count">(2/2)</span>
+            </td>
+        </tr>
+        <tr class="very-good">
+            <td>
+                <!-- miscellaneous -->
+                <a href="./classes/CoinPackageResponse.html">apps/api/src/modules/coin-management/dto/response/coin-package.response.ts</a>
+            </td>
+            <td>class</td>
+            <td>CoinPackageResponse</td>
+            <td align="right" data-sort="100">
+                <span class="coverage-percent">100 %</span>
+                <span class="coverage-count">(5/5)</span>
+            </td>
+        </tr>
+        <tr class="low">
+            <td>
+                <!-- miscellaneous -->
+                <a href="./classes/ListCoinPackageResponse.html">apps/api/src/modules/coin-management/dto/response/list-coin-package.response.ts</a>
+            </td>
+            <td>class</td>
+            <td>ListCoinPackageResponse</td>
+            <td align="right" data-sort="0">
+                <span class="coverage-percent">0 %</span>
+                <span class="coverage-count">(0/3)</span>
+            </td>
+        </tr>
+        <tr class="very-good">
+            <td>
+                <!-- miscellaneous -->
+                <a href="./classes/CometChatResolver.html">apps/api/src/modules/comet-chat/comet-chat.resolver.ts</a>
+            </td>
+            <td>class</td>
+            <td>CometChatResolver</td>
+            <td align="right" data-sort="100">
+                <span class="coverage-percent">100 %</span>
+                <span class="coverage-count">(4/4)</span>
+            </td>
+        </tr>
+        <tr class="good">
+            <td>
+                <!-- miscellaneous -->
+                <a href="./injectables/CometChatService.html">apps/api/src/modules/comet-chat/comet-chat.service.ts</a>
+            </td>
+            <td>injectable</td>
+            <td>CometChatService</td>
+            <td align="right" data-sort="75">
+                <span class="coverage-percent">75 %</span>
+                <span class="coverage-count">(3/4)</span>
+            </td>
+        </tr>
+        <tr class="very-good">
+            <td>
+                <!-- miscellaneous -->
+                <a href="./controllers/CometChatController.html">apps/api/src/modules/comet-chat/controllers/comet-chat.controller.ts</a>
+            </td>
+            <td>controller</td>
+            <td>CometChatController</td>
+            <td align="right" data-sort="100">
+                <span class="coverage-percent">100 %</span>
+                <span class="coverage-count">(2/2)</span>
+            </td>
+        </tr>
+        <tr class="very-good">
+            <td>
+                <!-- miscellaneous -->
+                <a href="./classes/CreateCometChatGroupInput.html">apps/api/src/modules/comet-chat/dto/input/create-comet-chat.input.ts</a>
+            </td>
+            <td>class</td>
+            <td>CreateCometChatGroupInput</td>
+            <td align="right" data-sort="100">
+                <span class="coverage-percent">100 %</span>
+                <span class="coverage-count">(4/4)</span>
+            </td>
+        </tr>
+        <tr class="very-good">
+            <td>
+                <!-- miscellaneous -->
+                <a href="./classes/UpdateCometChatGroupInput.html">apps/api/src/modules/comet-chat/dto/input/create-comet-chat.input.ts</a>
+            </td>
+            <td>class</td>
+            <td>UpdateCometChatGroupInput</td>
+            <td align="right" data-sort="100">
+                <span class="coverage-percent">100 %</span>
+                <span class="coverage-count">(2/2)</span>
+            </td>
+        </tr>
+        <tr class="very-good">
+            <td>
+                <!-- miscellaneous -->
+                <a href="./classes/CometChatGroupResponse.html">apps/api/src/modules/comet-chat/dto/response/comet-chat-group.response.ts</a>
+            </td>
+            <td>class</td>
+            <td>CometChatGroupResponse</td>
+            <td align="right" data-sort="100">
+                <span class="coverage-percent">100 %</span>
+                <span class="coverage-count">(5/5)</span>
+            </td>
+        </tr>
+        <tr class="very-good">
+            <td>
+                <!-- miscellaneous -->
+                <a href="./interfaces/CometChatPushPayload.html">apps/api/src/modules/comet-chat/interface/notification.interface.ts</a>
+            </td>
+            <td>interface</td>
+            <td>CometChatPushPayload</td>
+            <td align="right" data-sort="100">
+                <span class="coverage-percent">100 %</span>
+                <span class="coverage-count">(2/2)</span>
+            </td>
+        </tr>
+        <tr class="low">
+            <td>
+                <!-- miscellaneous -->
+                        <a href="./miscellaneous/variables.html#PROCESS_CONTACT_SYNC">apps/api/src/modules/contacts/constants/index.ts</a>
+            </td>
+            <td>variable</td>
+            <td>PROCESS_CONTACT_SYNC</td>
+            <td align="right" data-sort="0">
+                <span class="coverage-percent">0 %</span>
+                <span class="coverage-count">(0/1)</span>
+            </td>
+        </tr>
+        <tr class="low">
+            <td>
+                <!-- miscellaneous -->
+                        <a href="./miscellaneous/variables.html#PROCESS_CONTACT_SYNC_OPTIMIZED">apps/api/src/modules/contacts/constants/index.ts</a>
+            </td>
+            <td>variable</td>
+            <td>PROCESS_CONTACT_SYNC_OPTIMIZED</td>
+            <td align="right" data-sort="0">
+                <span class="coverage-percent">0 %</span>
+                <span class="coverage-count">(0/1)</span>
+            </td>
+        </tr>
+        <tr class="low">
+            <td>
+                <!-- miscellaneous -->
+                        <a href="./miscellaneous/variables.html#PROCESS_ELASTIC_SEARCH_SYNC">apps/api/src/modules/contacts/constants/index.ts</a>
+            </td>
+            <td>variable</td>
+            <td>PROCESS_ELASTIC_SEARCH_SYNC</td>
+            <td align="right" data-sort="0">
+                <span class="coverage-percent">0 %</span>
+                <span class="coverage-count">(0/1)</span>
+            </td>
+        </tr>
+        <tr class="low">
+            <td>
+                <!-- miscellaneous -->
+                        <a href="./miscellaneous/variables.html#PROCESS_UPDATE_REGISTER_FLAG">apps/api/src/modules/contacts/constants/index.ts</a>
+            </td>
+            <td>variable</td>
+            <td>PROCESS_UPDATE_REGISTER_FLAG</td>
+            <td align="right" data-sort="0">
+                <span class="coverage-percent">0 %</span>
+                <span class="coverage-count">(0/1)</span>
+            </td>
+        </tr>
+        <tr class="low">
+            <td>
+                <!-- miscellaneous -->
+                        <a href="./miscellaneous/variables.html#QUEUE_NAME">apps/api/src/modules/contacts/constants/index.ts</a>
+            </td>
+            <td>variable</td>
+            <td>QUEUE_NAME</td>
+            <td align="right" data-sort="0">
+                <span class="coverage-percent">0 %</span>
+                <span class="coverage-count">(0/1)</span>
+            </td>
+        </tr>
+        <tr class="good">
+            <td>
+                <!-- miscellaneous -->
+                <a href="./controllers/ContactsController.html">apps/api/src/modules/contacts/contacts.controller.ts</a>
+            </td>
+            <td>controller</td>
+            <td>ContactsController</td>
+            <td align="right" data-sort="66">
+                <span class="coverage-percent">66 %</span>
+                <span class="coverage-count">(2/3)</span>
+            </td>
+        </tr>
+        <tr class="low">
+            <td>
+                <!-- miscellaneous -->
+                <a href="./interfaces/MessageEvent.html">apps/api/src/modules/contacts/contacts.controller.ts</a>
+            </td>
+            <td>interface</td>
+            <td>MessageEvent</td>
+            <td align="right" data-sort="0">
+                <span class="coverage-percent">0 %</span>
+                <span class="coverage-count">(0/5)</span>
+            </td>
+        </tr>
+        <tr class="very-good">
+            <td>
+                <!-- miscellaneous -->
+                <a href="./classes/ContactsResolver.html">apps/api/src/modules/contacts/contacts.resolver.ts</a>
+            </td>
+            <td>class</td>
+            <td>ContactsResolver</td>
+            <td align="right" data-sort="100">
+                <span class="coverage-percent">100 %</span>
+                <span class="coverage-count">(7/7)</span>
+            </td>
+        </tr>
+        <tr class="very-good">
+            <td>
+                <!-- miscellaneous -->
+                <a href="./injectables/ContactsService.html">apps/api/src/modules/contacts/contacts.service.ts</a>
+            </td>
+            <td>injectable</td>
+            <td>ContactsService</td>
+            <td align="right" data-sort="100">
+                <span class="coverage-percent">100 %</span>
+                <span class="coverage-count">(7/7)</span>
+            </td>
+        </tr>
+        <tr class="low">
+            <td>
+                <!-- miscellaneous -->
+                <a href="./classes/FileResponse.html">apps/api/src/modules/contacts/dto/create-contact.input.ts</a>
+            </td>
+            <td>class</td>
+            <td>FileResponse</td>
+            <td align="right" data-sort="0">
+                <span class="coverage-percent">0 %</span>
+                <span class="coverage-count">(0/4)</span>
+            </td>
+        </tr>
+        <tr class="low">
+            <td>
+                <!-- miscellaneous -->
+                <a href="./classes/UploadFileInput.html">apps/api/src/modules/contacts/dto/create-contact.input.ts</a>
+            </td>
+            <td>class</td>
+            <td>UploadFileInput</td>
+            <td align="right" data-sort="0">
+                <span class="coverage-percent">0 %</span>
+                <span class="coverage-count">(0/2)</span>
+            </td>
+        </tr>
+        <tr class="very-good">
+            <td>
+                <!-- miscellaneous -->
+                <a href="./classes/ListContactsDTO.html">apps/api/src/modules/contacts/dto/list-contact.dto.ts</a>
+            </td>
+            <td>class</td>
+            <td>ListContactsDTO</td>
+            <td align="right" data-sort="100">
+                <span class="coverage-percent">100 %</span>
+                <span class="coverage-count">(2/2)</span>
+            </td>
+        </tr>
+        <tr class="low">
+            <td>
+                <!-- miscellaneous -->
+                <a href="./classes/UpdateContactInput.html">apps/api/src/modules/contacts/dto/update-contact.input.ts</a>
+            </td>
+            <td>class</td>
+            <td>UpdateContactInput</td>
+            <td align="right" data-sort="0">
+                <span class="coverage-percent">0 %</span>
+                <span class="coverage-count">(0/2)</span>
+            </td>
+        </tr>
+        <tr class="low">
+            <td>
+                <!-- miscellaneous -->
+                <a href="./interfaces/ContactData.html">apps/api/src/modules/contacts/interface/contact.interface.ts</a>
+            </td>
+            <td>interface</td>
+            <td>ContactData</td>
+            <td align="right" data-sort="0">
+                <span class="coverage-percent">0 %</span>
+                <span class="coverage-count">(0/4)</span>
+            </td>
+        </tr>
+        <tr class="low">
+            <td>
+                <!-- miscellaneous -->
+                <a href="./interfaces/InsertContactData.html">apps/api/src/modules/contacts/interface/contact.interface.ts</a>
+            </td>
+            <td>interface</td>
+            <td>InsertContactData</td>
+            <td align="right" data-sort="0">
+                <span class="coverage-percent">0 %</span>
+                <span class="coverage-count">(0/3)</span>
+            </td>
+        </tr>
+        <tr class="low">
+            <td>
+                <!-- miscellaneous -->
+                <a href="./interfaces/PhoneNumbers.html">apps/api/src/modules/contacts/interface/contact.interface.ts</a>
+            </td>
+            <td>interface</td>
+            <td>PhoneNumbers</td>
+            <td align="right" data-sort="0">
+                <span class="coverage-percent">0 %</span>
+                <span class="coverage-count">(0/5)</span>
+            </td>
+        </tr>
+        <tr class="low">
+            <td>
+                <!-- miscellaneous -->
+                <a href="./injectables/ContactsQueueProcessor.html">apps/api/src/modules/contacts/processors/contacts-queue.processor.ts</a>
+            </td>
+            <td>injectable</td>
+            <td>ContactsQueueProcessor</td>
+            <td align="right" data-sort="0">
+                <span class="coverage-percent">0 %</span>
+                <span class="coverage-count">(0/7)</span>
+            </td>
+        </tr>
+        <tr class="medium">
+            <td>
+                <!-- miscellaneous -->
+                <a href="./classes/ContactDetailResponse.html">apps/api/src/modules/contacts/response/contact-list.response.ts</a>
+            </td>
+            <td>class</td>
+            <td>ContactDetailResponse</td>
+            <td align="right" data-sort="50">
+                <span class="coverage-percent">50 %</span>
+                <span class="coverage-count">(1/2)</span>
+            </td>
+        </tr>
+        <tr class="very-good">
+            <td>
+                <!-- miscellaneous -->
+                <a href="./classes/ContactDetailsResponse.html">apps/api/src/modules/contacts/response/contact-list.response.ts</a>
+            </td>
+            <td>class</td>
+            <td>ContactDetailsResponse</td>
+            <td align="right" data-sort="80">
+                <span class="coverage-percent">80 %</span>
+                <span class="coverage-count">(4/5)</span>
+            </td>
+        </tr>
+        <tr class="very-good">
+            <td>
+                <!-- miscellaneous -->
+                <a href="./classes/ContactResponse.html">apps/api/src/modules/contacts/response/contact-list.response.ts</a>
+            </td>
+            <td>class</td>
+            <td>ContactResponse</td>
+            <td align="right" data-sort="85">
+                <span class="coverage-percent">85 %</span>
+                <span class="coverage-count">(6/7)</span>
+            </td>
+        </tr>
+        <tr class="low">
+            <td>
+                <!-- miscellaneous -->
+                <a href="./classes/ContactsListResponse.html">apps/api/src/modules/contacts/response/contact-list.response.ts</a>
+            </td>
+            <td>class</td>
+            <td>ContactsListResponse</td>
+            <td align="right" data-sort="0">
+                <span class="coverage-percent">0 %</span>
+                <span class="coverage-count">(0/2)</span>
+            </td>
+        </tr>
+        <tr class="very-good">
+            <td>
+                <!-- miscellaneous -->
+                <a href="./classes/PhoneNumberResponse.html">apps/api/src/modules/contacts/response/contact-list.response.ts</a>
+            </td>
+            <td>class</td>
+            <td>PhoneNumberResponse</td>
+            <td align="right" data-sort="80">
+                <span class="coverage-percent">80 %</span>
+                <span class="coverage-count">(4/5)</span>
+            </td>
+        </tr>
+        <tr class="very-good">
+            <td>
+                <!-- miscellaneous -->
+                <a href="./classes/CronResolver.html">apps/api/src/modules/cron/cron.resolver.ts</a>
+            </td>
+            <td>class</td>
+            <td>CronResolver</td>
+            <td align="right" data-sort="100">
+                <span class="coverage-percent">100 %</span>
+                <span class="coverage-count">(2/2)</span>
+            </td>
+        </tr>
+        <tr class="very-good">
+            <td>
+                <!-- miscellaneous -->
+                <a href="./injectables/CronService.html">apps/api/src/modules/cron/services/cron.service.ts</a>
+            </td>
+            <td>injectable</td>
+            <td>CronService</td>
+            <td align="right" data-sort="100">
+                <span class="coverage-percent">100 %</span>
+                <span class="coverage-count">(5/5)</span>
+            </td>
+        </tr>
+        <tr class="very-good">
+            <td>
+                <!-- miscellaneous -->
+                <a href="./injectables/DisposableEmailService.html">apps/api/src/modules/cron/services/disposable-email.service.ts</a>
+            </td>
+            <td>injectable</td>
+            <td>DisposableEmailService</td>
+            <td align="right" data-sort="100">
+                <span class="coverage-percent">100 %</span>
+                <span class="coverage-count">(3/3)</span>
+            </td>
+        </tr>
+        <tr class="very-good">
+            <td>
+                <!-- miscellaneous -->
+                <a href="./classes/GetListDTO.html">apps/api/src/modules/fake-api/dto/input/get-list.input.ts</a>
+            </td>
+            <td>class</td>
+            <td>GetListDTO</td>
+            <td align="right" data-sort="100">
+                <span class="coverage-percent">100 %</span>
+                <span class="coverage-count">(2/2)</span>
+            </td>
+        </tr>
+        <tr class="very-good">
+            <td>
+                <!-- miscellaneous -->
+                <a href="./classes/AnimalsListResponse.html">apps/api/src/modules/fake-api/dto/response/list.response.ts</a>
+            </td>
+            <td>class</td>
+            <td>AnimalsListResponse</td>
+            <td align="right" data-sort="100">
+                <span class="coverage-percent">100 %</span>
+                <span class="coverage-count">(2/2)</span>
+            </td>
+        </tr>
+        <tr class="very-good">
+            <td>
+                <!-- miscellaneous -->
+                <a href="./classes/Breed.html">apps/api/src/modules/fake-api/dto/response/list.response.ts</a>
+            </td>
+            <td>class</td>
+            <td>Breed</td>
+            <td align="right" data-sort="100">
+                <span class="coverage-percent">100 %</span>
+                <span class="coverage-count">(3/3)</span>
+            </td>
+        </tr>
+        <tr class="very-good">
+            <td>
+                <!-- miscellaneous -->
+                <a href="./classes/BreedListResponse.html">apps/api/src/modules/fake-api/dto/response/list.response.ts</a>
+            </td>
+            <td>class</td>
+            <td>BreedListResponse</td>
+            <td align="right" data-sort="100">
+                <span class="coverage-percent">100 %</span>
+                <span class="coverage-count">(2/2)</span>
+            </td>
+        </tr>
+        <tr class="very-good">
+            <td>
+                <!-- miscellaneous -->
+                <a href="./classes/ListObject.html">apps/api/src/modules/fake-api/dto/response/list.response.ts</a>
+            </td>
+            <td>class</td>
+            <td>ListObject</td>
+            <td align="right" data-sort="100">
+                <span class="coverage-percent">100 %</span>
+                <span class="coverage-count">(3/3)</span>
+            </td>
+        </tr>
+        <tr class="very-good">
+            <td>
+                <!-- miscellaneous -->
+                <a href="./classes/LocationRangeResponse.html">apps/api/src/modules/fake-api/dto/response/list.response.ts</a>
+            </td>
+            <td>class</td>
+            <td>LocationRangeResponse</td>
+            <td align="right" data-sort="100">
+                <span class="coverage-percent">100 %</span>
+                <span class="coverage-count">(2/2)</span>
+            </td>
+        </tr>
+        <tr class="very-good">
+            <td>
+                <!-- miscellaneous -->
+                <a href="./classes/SectionType.html">apps/api/src/modules/fake-api/dto/response/list.response.ts</a>
+            </td>
+            <td>class</td>
+            <td>SectionType</td>
+            <td align="right" data-sort="100">
+                <span class="coverage-percent">100 %</span>
+                <span class="coverage-count">(4/4)</span>
+            </td>
+        </tr>
+        <tr class="very-good">
+            <td>
+                <!-- miscellaneous -->
+                <a href="./classes/FakeApiResolver.html">apps/api/src/modules/fake-api/fake-api.resolver.ts</a>
+            </td>
+            <td>class</td>
+            <td>FakeApiResolver</td>
+            <td align="right" data-sort="100">
+                <span class="coverage-percent">100 %</span>
+                <span class="coverage-count">(5/5)</span>
+            </td>
+        </tr>
+        <tr class="very-good">
+            <td>
+                <!-- miscellaneous -->
+                <a href="./classes/Content.html">apps/api/src/modules/faq/dto/inputs/create-faq.dto.ts</a>
+            </td>
+            <td>class</td>
+            <td>Content</td>
+            <td align="right" data-sort="100">
+                <span class="coverage-percent">100 %</span>
+                <span class="coverage-count">(4/4)</span>
+            </td>
+        </tr>
+        <tr class="very-good">
+            <td>
+                <!-- miscellaneous -->
+                <a href="./classes/CreateFAQDto.html">apps/api/src/modules/faq/dto/inputs/create-faq.dto.ts</a>
+            </td>
+            <td>class</td>
+            <td>CreateFAQDto</td>
+            <td align="right" data-sort="100">
+                <span class="coverage-percent">100 %</span>
+                <span class="coverage-count">(4/4)</span>
+            </td>
+        </tr>
+        <tr class="very-good">
+            <td>
+                <!-- miscellaneous -->
+                <a href="./classes/GetFAQDto.html">apps/api/src/modules/faq/dto/inputs/get-faqs.dto.ts</a>
+            </td>
+            <td>class</td>
+            <td>GetFAQDto</td>
+            <td align="right" data-sort="100">
+                <span class="coverage-percent">100 %</span>
+                <span class="coverage-count">(1/1)</span>
+            </td>
+        </tr>
+        <tr class="very-good">
+            <td>
+                <!-- miscellaneous -->
+                <a href="./classes/UpdateFAQDto.html">apps/api/src/modules/faq/dto/inputs/update-faq.dto.ts</a>
+            </td>
+            <td>class</td>
+            <td>UpdateFAQDto</td>
+            <td align="right" data-sort="100">
+                <span class="coverage-percent">100 %</span>
+                <span class="coverage-count">(1/1)</span>
+            </td>
+        </tr>
+        <tr class="very-good">
+            <td>
+                <!-- miscellaneous -->
+                <a href="./classes/ContentType.html">apps/api/src/modules/faq/dto/response/faq.response.ts</a>
+            </td>
+            <td>class</td>
+            <td>ContentType</td>
+            <td align="right" data-sort="100">
+                <span class="coverage-percent">100 %</span>
+                <span class="coverage-count">(4/4)</span>
+            </td>
+        </tr>
+        <tr class="very-good">
+            <td>
+                <!-- miscellaneous -->
+                <a href="./classes/FAQ.html">apps/api/src/modules/faq/dto/response/faq.response.ts</a>
+            </td>
+            <td>class</td>
+            <td>FAQ</td>
+            <td align="right" data-sort="100">
+                <span class="coverage-percent">100 %</span>
+                <span class="coverage-count">(7/7)</span>
+            </td>
+        </tr>
+        <tr class="very-good">
+            <td>
+                <!-- miscellaneous -->
+                <a href="./classes/FAQResponse.html">apps/api/src/modules/faq/dto/response/faq.response.ts</a>
+            </td>
+            <td>class</td>
+            <td>FAQResponse</td>
+            <td align="right" data-sort="100">
+                <span class="coverage-percent">100 %</span>
+                <span class="coverage-count">(3/3)</span>
+            </td>
+        </tr>
+        <tr class="medium">
+            <td>
+                <!-- miscellaneous -->
+                <a href="./classes/FAQsResponse.html">apps/api/src/modules/faq/dto/response/faq.response.ts</a>
+            </td>
+            <td>class</td>
+            <td>FAQsResponse</td>
+            <td align="right" data-sort="33">
+                <span class="coverage-percent">33 %</span>
+                <span class="coverage-count">(1/3)</span>
+            </td>
+        </tr>
+        <tr class="medium">
+            <td>
+                <!-- miscellaneous -->
+                <a href="./classes/FaqResolver.html">apps/api/src/modules/faq/faq.resolver.ts</a>
+            </td>
+            <td>class</td>
+            <td>FaqResolver</td>
+            <td align="right" data-sort="50">
+                <span class="coverage-percent">50 %</span>
+                <span class="coverage-count">(2/4)</span>
+            </td>
+        </tr>
+        <tr class="very-good">
+            <td>
+                <!-- miscellaneous -->
+                <a href="./injectables/FAQService.html">apps/api/src/modules/faq/faq.service.ts</a>
+            </td>
+            <td>injectable</td>
+            <td>FAQService</td>
+            <td align="right" data-sort="100">
+                <span class="coverage-percent">100 %</span>
+                <span class="coverage-count">(4/4)</span>
+            </td>
+        </tr>
+        <tr class="very-good">
+            <td>
+                <!-- miscellaneous -->
+                <a href="./classes/CommentAssetInput.html">apps/api/src/modules/feed-comments/dto/input/create-feed-comment.input.ts</a>
+            </td>
+            <td>class</td>
+            <td>CommentAssetInput</td>
+            <td align="right" data-sort="100">
+                <span class="coverage-percent">100 %</span>
+                <span class="coverage-count">(3/3)</span>
+            </td>
+        </tr>
+        <tr class="very-good">
+            <td>
+                <!-- miscellaneous -->
+                <a href="./classes/CreateFeedCommentInput.html">apps/api/src/modules/feed-comments/dto/input/create-feed-comment.input.ts</a>
+            </td>
+            <td>class</td>
+            <td>CreateFeedCommentInput</td>
+            <td align="right" data-sort="100">
+                <span class="coverage-percent">100 %</span>
+                <span class="coverage-count">(3/3)</span>
+            </td>
+        </tr>
+        <tr class="very-good">
+            <td>
+                <!-- miscellaneous -->
+                <a href="./classes/UpdateFeedCommentInput.html">apps/api/src/modules/feed-comments/dto/input/update-feed-comment.input.ts</a>
+            </td>
+            <td>class</td>
+            <td>UpdateFeedCommentInput</td>
+            <td align="right" data-sort="100">
+                <span class="coverage-percent">100 %</span>
+                <span class="coverage-count">(1/1)</span>
+            </td>
+        </tr>
+        <tr class="very-good">
+            <td>
+                <!-- miscellaneous -->
+                <a href="./classes/CommentAssets.html">apps/api/src/modules/feed-comments/dto/response/feed-comment.response.ts</a>
+            </td>
+            <td>class</td>
+            <td>CommentAssets</td>
+            <td align="right" data-sort="100">
+                <span class="coverage-percent">100 %</span>
+                <span class="coverage-count">(3/3)</span>
+            </td>
+        </tr>
+        <tr class="very-good">
+            <td>
+                <!-- miscellaneous -->
+                <a href="./classes/FeedCommentEntity.html">apps/api/src/modules/feed-comments/dto/response/feed-comment.response.ts</a>
+            </td>
+            <td>class</td>
+            <td>FeedCommentEntity</td>
+            <td align="right" data-sort="100">
+                <span class="coverage-percent">100 %</span>
+                <span class="coverage-count">(9/9)</span>
+            </td>
+        </tr>
+        <tr class="very-good">
+            <td>
+                <!-- miscellaneous -->
+                <a href="./classes/FeedCommentResponse.html">apps/api/src/modules/feed-comments/dto/response/feed-comment.response.ts</a>
+            </td>
+            <td>class</td>
+            <td>FeedCommentResponse</td>
+            <td align="right" data-sort="100">
+                <span class="coverage-percent">100 %</span>
+                <span class="coverage-count">(5/5)</span>
+            </td>
+        </tr>
+        <tr class="very-good">
+            <td>
+                <!-- miscellaneous -->
+                <a href="./classes/FeedCommentsResolver.html">apps/api/src/modules/feed-comments/feed-comments.resolver.ts</a>
+            </td>
+            <td>class</td>
+            <td>FeedCommentsResolver</td>
+            <td align="right" data-sort="100">
+                <span class="coverage-percent">100 %</span>
+                <span class="coverage-count">(10/10)</span>
+            </td>
+        </tr>
+        <tr class="medium">
+            <td>
+                <!-- miscellaneous -->
+                <a href="./injectables/FeedCommentsService.html">apps/api/src/modules/feed-comments/feed-comments.service.ts</a>
+            </td>
+            <td>injectable</td>
+            <td>FeedCommentsService</td>
+            <td align="right" data-sort="30">
+                <span class="coverage-percent">30 %</span>
+                <span class="coverage-count">(3/10)</span>
+            </td>
+        </tr>
+        <tr class="good">
+            <td>
+                <!-- miscellaneous -->
+                <a href="./injectables/FeedCommentNotificationHandler.html">apps/api/src/modules/feed-comments/handler/notification.handler.ts</a>
+            </td>
+            <td>injectable</td>
+            <td>FeedCommentNotificationHandler</td>
+            <td align="right" data-sort="75">
+                <span class="coverage-percent">75 %</span>
+                <span class="coverage-count">(3/4)</span>
+            </td>
+        </tr>
+        <tr class="very-good">
+            <td>
+                <!-- miscellaneous -->
+                <a href="./interfaces/AddCommentAttributes.html">apps/api/src/modules/feed-comments/interface/notification.interface.ts</a>
+            </td>
+            <td>interface</td>
+            <td>AddCommentAttributes</td>
+            <td align="right" data-sort="100">
+                <span class="coverage-percent">100 %</span>
+                <span class="coverage-count">(3/3)</span>
+            </td>
+        </tr>
+        <tr class="very-good">
+            <td>
+                <!-- miscellaneous -->
+                <a href="./interfaces/FeedCommentNotificationThemeAttributes.html">apps/api/src/modules/feed-comments/interface/notification.interface.ts</a>
+            </td>
+            <td>interface</td>
+            <td>FeedCommentNotificationThemeAttributes</td>
+            <td align="right" data-sort="100">
+                <span class="coverage-percent">100 %</span>
+                <span class="coverage-count">(2/2)</span>
+            </td>
+        </tr>
+        <tr class="very-good">
+            <td>
+                <!-- miscellaneous -->
+                <a href="./interfaces/FeedCommentPushPayload.html">apps/api/src/modules/feed-comments/interface/notification.interface.ts</a>
+            </td>
+            <td>interface</td>
+            <td>FeedCommentPushPayload</td>
+            <td align="right" data-sort="100">
+                <span class="coverage-percent">100 %</span>
+                <span class="coverage-count">(2/2)</span>
+            </td>
+        </tr>
+        <tr class="very-good">
+            <td>
+                <!-- miscellaneous -->
+                <a href="./classes/CreateFeedReplyInput.html">apps/api/src/modules/feed-replies/dto/input/create-feed-reply.input.ts</a>
+            </td>
+            <td>class</td>
+            <td>CreateFeedReplyInput</td>
+            <td align="right" data-sort="100">
+                <span class="coverage-percent">100 %</span>
+                <span class="coverage-count">(3/3)</span>
+            </td>
+        </tr>
+        <tr class="very-good">
+            <td>
+                <!-- miscellaneous -->
+                <a href="./classes/ReplyAssetInput.html">apps/api/src/modules/feed-replies/dto/input/create-feed-reply.input.ts</a>
+            </td>
+            <td>class</td>
+            <td>ReplyAssetInput</td>
+            <td align="right" data-sort="100">
+                <span class="coverage-percent">100 %</span>
+                <span class="coverage-count">(3/3)</span>
+            </td>
+        </tr>
+        <tr class="very-good">
+            <td>
+                <!-- miscellaneous -->
+                <a href="./classes/UpdateFeedReplyInput.html">apps/api/src/modules/feed-replies/dto/input/update-feed-reply.input.ts</a>
+            </td>
+            <td>class</td>
+            <td>UpdateFeedReplyInput</td>
+            <td align="right" data-sort="100">
+                <span class="coverage-percent">100 %</span>
+                <span class="coverage-count">(1/1)</span>
+            </td>
+        </tr>
+        <tr class="very-good">
+            <td>
+                <!-- miscellaneous -->
+                <a href="./classes/FeedReplyEntity.html">apps/api/src/modules/feed-replies/dto/response/feed-reply.response.ts</a>
+            </td>
+            <td>class</td>
+            <td>FeedReplyEntity</td>
+            <td align="right" data-sort="100">
+                <span class="coverage-percent">100 %</span>
+                <span class="coverage-count">(8/8)</span>
+            </td>
+        </tr>
+        <tr class="very-good">
+            <td>
+                <!-- miscellaneous -->
+                <a href="./classes/FeedReplyResponse.html">apps/api/src/modules/feed-replies/dto/response/feed-reply.response.ts</a>
+            </td>
+            <td>class</td>
+            <td>FeedReplyResponse</td>
+            <td align="right" data-sort="100">
+                <span class="coverage-percent">100 %</span>
+                <span class="coverage-count">(5/5)</span>
+            </td>
+        </tr>
+        <tr class="very-good">
+            <td>
+                <!-- miscellaneous -->
+                <a href="./classes/ReplyAssets.html">apps/api/src/modules/feed-replies/dto/response/feed-reply.response.ts</a>
+            </td>
+            <td>class</td>
+            <td>ReplyAssets</td>
+            <td align="right" data-sort="100">
+                <span class="coverage-percent">100 %</span>
+                <span class="coverage-count">(3/3)</span>
+            </td>
+        </tr>
+        <tr class="very-good">
+            <td>
+                <!-- miscellaneous -->
+                <a href="./classes/FeedRepliesResolver.html">apps/api/src/modules/feed-replies/feed-replies.resolver.ts</a>
+            </td>
+            <td>class</td>
+            <td>FeedRepliesResolver</td>
+            <td align="right" data-sort="100">
+                <span class="coverage-percent">100 %</span>
+                <span class="coverage-count">(10/10)</span>
+            </td>
+        </tr>
+        <tr class="medium">
+            <td>
+                <!-- miscellaneous -->
+                <a href="./injectables/FeedRepliesService.html">apps/api/src/modules/feed-replies/feed-replies.service.ts</a>
+            </td>
+            <td>injectable</td>
+            <td>FeedRepliesService</td>
+            <td align="right" data-sort="30">
+                <span class="coverage-percent">30 %</span>
+                <span class="coverage-count">(3/10)</span>
+            </td>
+        </tr>
+        <tr class="very-good">
+            <td>
+                <!-- miscellaneous -->
+                <a href="./classes/CreateFeedInput.html">apps/api/src/modules/feeds/dto/input/create-feed.input.ts</a>
+            </td>
+            <td>class</td>
+            <td>CreateFeedInput</td>
+            <td align="right" data-sort="100">
+                <span class="coverage-percent">100 %</span>
+                <span class="coverage-count">(6/6)</span>
+            </td>
+        </tr>
+        <tr class="very-good">
+            <td>
+                <!-- miscellaneous -->
+                <a href="./classes/FeedAssetInput.html">apps/api/src/modules/feeds/dto/input/create-feed.input.ts</a>
+            </td>
+            <td>class</td>
+            <td>FeedAssetInput</td>
+            <td align="right" data-sort="100">
+                <span class="coverage-percent">100 %</span>
+                <span class="coverage-count">(3/3)</span>
+            </td>
+        </tr>
+        <tr class="very-good">
+            <td>
+                <!-- miscellaneous -->
+                <a href="./classes/LocationInput.html">apps/api/src/modules/feeds/dto/input/create-feed.input.ts</a>
+            </td>
+            <td>class</td>
+            <td>LocationInput</td>
+            <td align="right" data-sort="100">
+                <span class="coverage-percent">100 %</span>
+                <span class="coverage-count">(9/9)</span>
+            </td>
+        </tr>
+        <tr class="very-good">
+            <td>
+                <!-- miscellaneous -->
+                <a href="./classes/ListCommentsInFeedInput.html">apps/api/src/modules/feeds/dto/input/list-feeds.input.ts</a>
+            </td>
+            <td>class</td>
+            <td>ListCommentsInFeedInput</td>
+            <td align="right" data-sort="100">
+                <span class="coverage-percent">100 %</span>
+                <span class="coverage-count">(5/5)</span>
+            </td>
+        </tr>
+        <tr class="very-good">
+            <td>
+                <!-- miscellaneous -->
+                <a href="./classes/ListFeedsInput.html">apps/api/src/modules/feeds/dto/input/list-feeds.input.ts</a>
+            </td>
+            <td>class</td>
+            <td>ListFeedsInput</td>
+            <td align="right" data-sort="100">
+                <span class="coverage-percent">100 %</span>
+                <span class="coverage-count">(6/6)</span>
+            </td>
+        </tr>
+        <tr class="very-good">
+            <td>
+                <!-- miscellaneous -->
+                <a href="./classes/ListRepliesInFeedInput.html">apps/api/src/modules/feeds/dto/input/list-feeds.input.ts</a>
+            </td>
+            <td>class</td>
+            <td>ListRepliesInFeedInput</td>
+            <td align="right" data-sort="100">
+                <span class="coverage-percent">100 %</span>
+                <span class="coverage-count">(2/2)</span>
+            </td>
+        </tr>
+        <tr class="very-good">
+            <td>
+                <!-- miscellaneous -->
+                <a href="./classes/UpdateFeedInput.html">apps/api/src/modules/feeds/dto/input/update-feed.input.ts</a>
+            </td>
+            <td>class</td>
+            <td>UpdateFeedInput</td>
+            <td align="right" data-sort="100">
+                <span class="coverage-percent">100 %</span>
+                <span class="coverage-count">(1/1)</span>
+            </td>
+        </tr>
+        <tr class="very-good">
+            <td>
+                <!-- miscellaneous -->
+                <a href="./classes/FeedAsset.html">apps/api/src/modules/feeds/dto/response/feed.response.ts</a>
+            </td>
+            <td>class</td>
+            <td>FeedAsset</td>
+            <td align="right" data-sort="100">
+                <span class="coverage-percent">100 %</span>
+                <span class="coverage-count">(3/3)</span>
+            </td>
+        </tr>
+        <tr class="very-good">
+            <td>
+                <!-- miscellaneous -->
+                <a href="./classes/FeedEntity.html">apps/api/src/modules/feeds/dto/response/feed.response.ts</a>
+            </td>
+            <td>class</td>
+            <td>FeedEntity</td>
+            <td align="right" data-sort="100">
+                <span class="coverage-percent">100 %</span>
+                <span class="coverage-count">(13/13)</span>
+            </td>
+        </tr>
+        <tr class="very-good">
+            <td>
+                <!-- miscellaneous -->
+                <a href="./classes/FeedResponse.html">apps/api/src/modules/feeds/dto/response/feed.response.ts</a>
+            </td>
+            <td>class</td>
+            <td>FeedResponse</td>
+            <td align="right" data-sort="100">
+                <span class="coverage-percent">100 %</span>
+                <span class="coverage-count">(5/5)</span>
+            </td>
+        </tr>
+        <tr class="very-good">
+            <td>
+                <!-- miscellaneous -->
+                <a href="./classes/FeedsResolver.html">apps/api/src/modules/feeds/feeds.resolver.ts</a>
+            </td>
+            <td>class</td>
+            <td>FeedsResolver</td>
+            <td align="right" data-sort="100">
+                <span class="coverage-percent">100 %</span>
+                <span class="coverage-count">(11/11)</span>
+            </td>
+        </tr>
+        <tr class="low">
+            <td>
+                <!-- miscellaneous -->
+                <a href="./injectables/FeedsService.html">apps/api/src/modules/feeds/feeds.service.ts</a>
+            </td>
+            <td>injectable</td>
+            <td>FeedsService</td>
+            <td align="right" data-sort="20">
+                <span class="coverage-percent">20 %</span>
+                <span class="coverage-count">(2/10)</span>
+            </td>
+        </tr>
+        <tr class="very-good">
+            <td>
+                <!-- miscellaneous -->
+                <a href="./classes/CreateNotificationInput.html">apps/api/src/modules/notifications/dto/input/create-notification.input.ts</a>
+            </td>
+            <td>class</td>
+            <td>CreateNotificationInput</td>
+            <td align="right" data-sort="100">
+                <span class="coverage-percent">100 %</span>
+                <span class="coverage-count">(2/2)</span>
+            </td>
+        </tr>
+        <tr class="very-good">
+            <td>
+                <!-- miscellaneous -->
+                <a href="./classes/ListNotificationsInput.html">apps/api/src/modules/notifications/dto/input/list-notifications.input.ts</a>
+            </td>
+            <td>class</td>
+            <td>ListNotificationsInput</td>
+            <td align="right" data-sort="100">
+                <span class="coverage-percent">100 %</span>
+                <span class="coverage-count">(2/2)</span>
+            </td>
+        </tr>
+        <tr class="very-good">
+            <td>
+                <!-- miscellaneous -->
+                <a href="./classes/UpdateNotificationInput.html">apps/api/src/modules/notifications/dto/input/update-notification.input.ts</a>
+            </td>
+            <td>class</td>
+            <td>UpdateNotificationInput</td>
+            <td align="right" data-sort="100">
+                <span class="coverage-percent">100 %</span>
+                <span class="coverage-count">(2/2)</span>
+            </td>
+        </tr>
+        <tr class="very-good">
+            <td>
+                <!-- miscellaneous -->
+                <a href="./classes/NotificationResponse.html">apps/api/src/modules/notifications/dto/response/notification.response.ts</a>
+            </td>
+            <td>class</td>
+            <td>NotificationResponse</td>
+            <td align="right" data-sort="100">
+                <span class="coverage-percent">100 %</span>
+                <span class="coverage-count">(7/7)</span>
+            </td>
+        </tr>
+        <tr class="very-good">
+            <td>
+                <!-- miscellaneous -->
+                <a href="./classes/PaginatedNotifications.html">apps/api/src/modules/notifications/dto/response/notification.response.ts</a>
+            </td>
+            <td>class</td>
+            <td>PaginatedNotifications</td>
+            <td align="right" data-sort="100">
+                <span class="coverage-percent">100 %</span>
+                <span class="coverage-count">(5/5)</span>
+            </td>
+        </tr>
+        <tr class="very-good">
+            <td>
+                <!-- miscellaneous -->
+                <a href="./classes/ThemeAttributesEntity.html">apps/api/src/modules/notifications/dto/response/notification.response.ts</a>
+            </td>
+            <td>class</td>
+            <td>ThemeAttributesEntity</td>
+            <td align="right" data-sort="100">
+                <span class="coverage-percent">100 %</span>
+                <span class="coverage-count">(2/2)</span>
+            </td>
+        </tr>
+        <tr class="very-good">
+            <td>
+                <!-- miscellaneous -->
+                <a href="./interfaces/NotificationInput.html">apps/api/src/modules/notifications/interface/notification.interface.ts</a>
+            </td>
+            <td>interface</td>
+            <td>NotificationInput</td>
+            <td align="right" data-sort="100">
+                <span class="coverage-percent">100 %</span>
+                <span class="coverage-count">(4/4)</span>
+            </td>
+        </tr>
+        <tr class="very-good">
+            <td>
+                <!-- miscellaneous -->
+                <a href="./classes/NotificationsResolver.html">apps/api/src/modules/notifications/notifications.resolver.ts</a>
+            </td>
+            <td>class</td>
+            <td>NotificationsResolver</td>
+            <td align="right" data-sort="100">
+                <span class="coverage-percent">100 %</span>
+                <span class="coverage-count">(3/3)</span>
+            </td>
+        </tr>
+        <tr class="very-good">
+            <td>
+                <!-- miscellaneous -->
+                <a href="./injectables/NotificationsService.html">apps/api/src/modules/notifications/notifications.service.ts</a>
+            </td>
+            <td>injectable</td>
+            <td>NotificationsService</td>
+            <td align="right" data-sort="100">
+                <span class="coverage-percent">100 %</span>
+                <span class="coverage-count">(4/4)</span>
+            </td>
+        </tr>
+        <tr class="very-good">
+            <td>
+                <!-- miscellaneous -->
+                <a href="./classes/Banner.html">apps/api/src/modules/pages/dto/get-advance-page.dto.ts</a>
+            </td>
+            <td>class</td>
+            <td>Banner</td>
+            <td align="right" data-sort="100">
+                <span class="coverage-percent">100 %</span>
+                <span class="coverage-count">(9/9)</span>
+            </td>
+        </tr>
+        <tr class="very-good">
+            <td>
+                <!-- miscellaneous -->
+                <a href="./classes/BannerButton.html">apps/api/src/modules/pages/dto/get-advance-page.dto.ts</a>
+            </td>
+            <td>class</td>
+            <td>BannerButton</td>
+            <td align="right" data-sort="100">
+                <span class="coverage-percent">100 %</span>
+                <span class="coverage-count">(3/3)</span>
+            </td>
+        </tr>
+        <tr class="very-good">
+            <td>
+                <!-- miscellaneous -->
+                <a href="./classes/Faq.html">apps/api/src/modules/pages/dto/get-advance-page.dto.ts</a>
+            </td>
+            <td>class</td>
+            <td>Faq</td>
+            <td align="right" data-sort="100">
+                <span class="coverage-percent">100 %</span>
+                <span class="coverage-count">(6/6)</span>
+            </td>
+        </tr>
+        <tr class="very-good">
+            <td>
+                <!-- miscellaneous -->
+                <a href="./classes/HowItWorksPage.html">apps/api/src/modules/pages/dto/get-advance-page.dto.ts</a>
+            </td>
+            <td>class</td>
+            <td>HowItWorksPage</td>
+            <td align="right" data-sort="100">
+                <span class="coverage-percent">100 %</span>
+                <span class="coverage-count">(6/6)</span>
+            </td>
+        </tr>
+        <tr class="very-good">
+            <td>
+                <!-- miscellaneous -->
+                <a href="./classes/HowItWorksSection.html">apps/api/src/modules/pages/dto/get-advance-page.dto.ts</a>
+            </td>
+            <td>class</td>
+            <td>HowItWorksSection</td>
+            <td align="right" data-sort="100">
+                <span class="coverage-percent">100 %</span>
+                <span class="coverage-count">(5/5)</span>
+            </td>
+        </tr>
+        <tr class="very-good">
+            <td>
+                <!-- miscellaneous -->
+                <a href="./classes/ImageColumnPage.html">apps/api/src/modules/pages/dto/get-advance-page.dto.ts</a>
+            </td>
+            <td>class</td>
+            <td>ImageColumnPage</td>
+            <td align="right" data-sort="100">
+                <span class="coverage-percent">100 %</span>
+                <span class="coverage-count">(7/7)</span>
+            </td>
+        </tr>
+        <tr class="very-good">
+            <td>
+                <!-- miscellaneous -->
+                <a href="./classes/ImageColumnSection.html">apps/api/src/modules/pages/dto/get-advance-page.dto.ts</a>
+            </td>
+            <td>class</td>
+            <td>ImageColumnSection</td>
+            <td align="right" data-sort="100">
+                <span class="coverage-percent">100 %</span>
+                <span class="coverage-count">(7/7)</span>
+            </td>
+        </tr>
+        <tr class="very-good">
+            <td>
+                <!-- miscellaneous -->
+                <a href="./classes/Page.html">apps/api/src/modules/pages/dto/get-advance-page.dto.ts</a>
+            </td>
+            <td>class</td>
+            <td>Page</td>
+            <td align="right" data-sort="100">
+                <span class="coverage-percent">100 %</span>
+                <span class="coverage-count">(14/14)</span>
+            </td>
+        </tr>
+        <tr class="very-good">
+            <td>
+                <!-- miscellaneous -->
+                <a href="./classes/PageResponse.html">apps/api/src/modules/pages/dto/get-advance-page.dto.ts</a>
+            </td>
+            <td>class</td>
+            <td>PageResponse</td>
+            <td align="right" data-sort="100">
+                <span class="coverage-percent">100 %</span>
+                <span class="coverage-count">(3/3)</span>
+            </td>
+        </tr>
+        <tr class="very-good">
+            <td>
+                <!-- miscellaneous -->
+                <a href="./classes/SeoTag.html">apps/api/src/modules/pages/dto/get-advance-page.dto.ts</a>
+            </td>
+            <td>class</td>
+            <td>SeoTag</td>
+            <td align="right" data-sort="100">
+                <span class="coverage-percent">100 %</span>
+                <span class="coverage-count">(4/4)</span>
+            </td>
+        </tr>
+        <tr class="very-good">
+            <td>
+                <!-- miscellaneous -->
+                <a href="./classes/Page.html">apps/api/src/modules/pages/dto/get-page.dto.ts</a>
+            </td>
+            <td>class</td>
+            <td>Page</td>
+            <td align="right" data-sort="100">
+                <span class="coverage-percent">100 %</span>
+                <span class="coverage-count">(9/9)</span>
+            </td>
+        </tr>
+        <tr class="very-good">
+            <td>
+                <!-- miscellaneous -->
+                <a href="./classes/PageResponse.html">apps/api/src/modules/pages/dto/get-page.dto.ts</a>
+            </td>
+            <td>class</td>
+            <td>PageResponse</td>
+            <td align="right" data-sort="100">
+                <span class="coverage-percent">100 %</span>
+                <span class="coverage-count">(3/3)</span>
+            </td>
+        </tr>
+        <tr class="very-good">
+            <td>
+                <!-- miscellaneous -->
+                <a href="./classes/SeoTag.html">apps/api/src/modules/pages/dto/get-page.dto.ts</a>
+            </td>
+            <td>class</td>
+            <td>SeoTag</td>
+            <td align="right" data-sort="100">
+                <span class="coverage-percent">100 %</span>
+                <span class="coverage-count">(4/4)</span>
+            </td>
+        </tr>
+        <tr class="very-good">
+            <td>
+                <!-- miscellaneous -->
+                <a href="./classes/PagesResolver.html">apps/api/src/modules/pages/pages.resolver.ts</a>
+            </td>
+            <td>class</td>
+            <td>PagesResolver</td>
+            <td align="right" data-sort="100">
+                <span class="coverage-percent">100 %</span>
+                <span class="coverage-count">(3/3)</span>
+            </td>
+        </tr>
+        <tr class="good">
+            <td>
+                <!-- miscellaneous -->
+                <a href="./injectables/PagesService.html">apps/api/src/modules/pages/pages.service.ts</a>
+            </td>
+            <td>injectable</td>
+            <td>PagesService</td>
+            <td align="right" data-sort="66">
+                <span class="coverage-percent">66 %</span>
+                <span class="coverage-count">(2/3)</span>
+            </td>
+        </tr>
+        <tr class="low">
+            <td>
+                <!-- miscellaneous -->
+                <a href="./classes/DriverLicenceVerificationInput.html">apps/api/src/modules/rapidid/dtos/input/driver-licence.input.ts</a>
+            </td>
+            <td>class</td>
+            <td>DriverLicenceVerificationInput</td>
+            <td align="right" data-sort="0">
+                <span class="coverage-percent">0 %</span>
+                <span class="coverage-count">(0/8)</span>
+            </td>
+        </tr>
+        <tr class="low">
+            <td>
+                <!-- miscellaneous -->
+                <a href="./classes/MedicareVerificationInput.html">apps/api/src/modules/rapidid/dtos/input/medicare.input.ts</a>
+            </td>
+            <td>class</td>
+            <td>MedicareVerificationInput</td>
+            <td align="right" data-sort="0">
+                <span class="coverage-percent">0 %</span>
+                <span class="coverage-count">(0/10)</span>
+            </td>
+        </tr>
+        <tr class="low">
+            <td>
+                <!-- miscellaneous -->
+                <a href="./classes/NzDriverLicenceVerificationInput.html">apps/api/src/modules/rapidid/dtos/input/nz-driver-licence.input.ts</a>
+            </td>
+            <td>class</td>
+            <td>NzDriverLicenceVerificationInput</td>
+            <td align="right" data-sort="0">
+                <span class="coverage-percent">0 %</span>
+                <span class="coverage-count">(0/7)</span>
+            </td>
+        </tr>
+        <tr class="low">
+            <td>
+                <!-- miscellaneous -->
+                <a href="./classes/NzPassportVerificationInput.html">apps/api/src/modules/rapidid/dtos/input/nz-passport.input.ts</a>
+            </td>
+            <td>class</td>
+            <td>NzPassportVerificationInput</td>
+            <td align="right" data-sort="0">
+                <span class="coverage-percent">0 %</span>
+                <span class="coverage-count">(0/6)</span>
+            </td>
+        </tr>
+        <tr class="low">
+            <td>
+                <!-- miscellaneous -->
+                <a href="./classes/PassportVerificationInput.html">apps/api/src/modules/rapidid/dtos/input/passport.input.ts</a>
+            </td>
+            <td>class</td>
+            <td>PassportVerificationInput</td>
+            <td align="right" data-sort="0">
+                <span class="coverage-percent">0 %</span>
+                <span class="coverage-count">(0/7)</span>
+            </td>
+        </tr>
+        <tr class="low">
+            <td>
+                <!-- miscellaneous -->
+                <a href="./classes/DocsVerificationResponse.html">apps/api/src/modules/rapidid/dtos/response/docs-verifiaction.response.ts</a>
+            </td>
+            <td>class</td>
+            <td>DocsVerificationResponse</td>
+            <td align="right" data-sort="0">
+                <span class="coverage-percent">0 %</span>
+                <span class="coverage-count">(0/3)</span>
+            </td>
+        </tr>
+        <tr class="low">
+            <td>
+                <!-- miscellaneous -->
+                <a href="./classes/CardExpiryFormatConstraint.html">apps/api/src/modules/rapidid/interface/expiry-date-formate.interface.ts</a>
+            </td>
+            <td>class</td>
+            <td>CardExpiryFormatConstraint</td>
+            <td align="right" data-sort="0">
+                <span class="coverage-percent">0 %</span>
+                <span class="coverage-count">(0/3)</span>
+            </td>
+        </tr>
+        <tr class="low">
+            <td>
+                <!-- miscellaneous -->
+                <a href="./interfaces/MedicareVerificationInput.html">apps/api/src/modules/rapidid/interface/expiry-date-formate.interface.ts</a>
+            </td>
+            <td>interface</td>
+            <td>MedicareVerificationInput</td>
+            <td align="right" data-sort="0">
+                <span class="coverage-percent">0 %</span>
+                <span class="coverage-count">(0/2)</span>
+            </td>
+        </tr>
+        <tr class="low">
+            <td>
+                <!-- miscellaneous -->
+                        <a href="./miscellaneous/functions.html#CardExpiryFormat">apps/api/src/modules/rapidid/interface/expiry-date-formate.interface.ts</a>
+            </td>
+            <td>function</td>
+            <td>CardExpiryFormat</td>
+            <td align="right" data-sort="0">
+                <span class="coverage-percent">0 %</span>
+                <span class="coverage-count">(0/1)</span>
+            </td>
+        </tr>
+        <tr class="low">
+            <td>
+                <!-- miscellaneous -->
+                        <a href="./miscellaneous/functions.html#medicareCardFormat">apps/api/src/modules/rapidid/interface/medicare-card-format.interface.ts</a>
+            </td>
+            <td>function</td>
+            <td>medicareCardFormat</td>
+            <td align="right" data-sort="0">
+                <span class="coverage-percent">0 %</span>
+                <span class="coverage-count">(0/1)</span>
+            </td>
+        </tr>
+        <tr class="low">
+            <td>
+                <!-- miscellaneous -->
+                        <a href="./miscellaneous/variables.html#mongooseModels">apps/api/src/modules/rapidid/mongooseModels.ts</a>
+            </td>
+            <td>variable</td>
+            <td>mongooseModels</td>
+            <td align="right" data-sort="0">
+                <span class="coverage-percent">0 %</span>
+                <span class="coverage-count">(0/1)</span>
+            </td>
+        </tr>
+        <tr class="low">
+            <td>
+                <!-- miscellaneous -->
+                        <a href="./miscellaneous/variables.html#providers">apps/api/src/modules/rapidid/providers.ts</a>
+            </td>
+            <td>variable</td>
+            <td>providers</td>
+            <td align="right" data-sort="0">
+                <span class="coverage-percent">0 %</span>
+                <span class="coverage-count">(0/1)</span>
+            </td>
+        </tr>
+        <tr class="very-good">
+            <td>
+                <!-- miscellaneous -->
+                <a href="./classes/RapidIdResolver.html">apps/api/src/modules/rapidid/rapidid.resolver.ts</a>
+            </td>
+            <td>class</td>
+            <td>RapidIdResolver</td>
+            <td align="right" data-sort="100">
+                <span class="coverage-percent">100 %</span>
+                <span class="coverage-count">(7/7)</span>
+            </td>
+        </tr>
+        <tr class="very-good">
+            <td>
+                <!-- miscellaneous -->
+                <a href="./injectables/RapidIdVerificationService.html">apps/api/src/modules/rapidid/rapidid.service.ts</a>
+            </td>
+            <td>injectable</td>
+            <td>RapidIdVerificationService</td>
+            <td align="right" data-sort="100">
+                <span class="coverage-percent">100 %</span>
+                <span class="coverage-count">(7/7)</span>
+            </td>
+        </tr>
+        <tr class="very-good">
+            <td>
+                <!-- miscellaneous -->
+                <a href="./classes/UpdateSettingInput.html">apps/api/src/modules/site-settings/dto/input/update-settings.input.ts</a>
+            </td>
+            <td>class</td>
+            <td>UpdateSettingInput</td>
+            <td align="right" data-sort="100">
+                <span class="coverage-percent">100 %</span>
+                <span class="coverage-count">(3/3)</span>
+            </td>
+        </tr>
+        <tr class="very-good">
+            <td>
+                <!-- miscellaneous -->
+                <a href="./classes/OptionsResponse.html">apps/api/src/modules/site-settings/dto/response/site-settings.response.ts</a>
+            </td>
+            <td>class</td>
+            <td>OptionsResponse</td>
+            <td align="right" data-sort="100">
+                <span class="coverage-percent">100 %</span>
+                <span class="coverage-count">(3/3)</span>
+            </td>
+        </tr>
+        <tr class="very-good">
+            <td>
+                <!-- miscellaneous -->
+                <a href="./classes/SiteSettingsResponse.html">apps/api/src/modules/site-settings/dto/response/site-settings.response.ts</a>
+            </td>
+            <td>class</td>
+            <td>SiteSettingsResponse</td>
+            <td align="right" data-sort="100">
+                <span class="coverage-percent">100 %</span>
+                <span class="coverage-count">(9/9)</span>
+            </td>
+        </tr>
+        <tr class="very-good">
+            <td>
+                <!-- miscellaneous -->
+                <a href="./classes/SiteSettingsResolver.html">apps/api/src/modules/site-settings/site-settings.resolver.ts</a>
+            </td>
+            <td>class</td>
+            <td>SiteSettingsResolver</td>
+            <td align="right" data-sort="100">
+                <span class="coverage-percent">100 %</span>
+                <span class="coverage-count">(6/6)</span>
+            </td>
+        </tr>
+        <tr class="very-good">
+            <td>
+                <!-- miscellaneous -->
+                <a href="./injectables/SiteSettingsService.html">apps/api/src/modules/site-settings/site-settings.service.ts</a>
+            </td>
+            <td>injectable</td>
+            <td>SiteSettingsService</td>
+            <td align="right" data-sort="100">
+                <span class="coverage-percent">100 %</span>
+                <span class="coverage-count">(6/6)</span>
+            </td>
+        </tr>
+        <tr class="very-good">
+            <td>
+                <!-- miscellaneous -->
+                        <a href="./miscellaneous/variables.html#PORTAL_URI">apps/api/src/modules/stripe/stripe-connect/constant/stripe-connect.ts</a>
+            </td>
+            <td>variable</td>
+            <td>PORTAL_URI</td>
+            <td align="right" data-sort="100">
+                <span class="coverage-percent">100 %</span>
+                <span class="coverage-count">(1/1)</span>
+            </td>
+        </tr>
+        <tr class="low">
+            <td>
+                <!-- miscellaneous -->
+                <a href="./controllers/StripePaymentWebhookController.html">apps/api/src/modules/stripe/stripe-connect/controller/stripe-webhook.controller.ts</a>
+            </td>
+            <td>controller</td>
+            <td>StripePaymentWebhookController</td>
+            <td align="right" data-sort="0">
+                <span class="coverage-percent">0 %</span>
+                <span class="coverage-count">(0/2)</span>
+            </td>
+        </tr>
+        <tr class="very-good">
+            <td>
+                <!-- miscellaneous -->
+                <a href="./classes/CreateBankAccountInput.html">apps/api/src/modules/stripe/stripe-connect/dto/input/create-bank-detail.input.ts</a>
+            </td>
+            <td>class</td>
+            <td>CreateBankAccountInput</td>
+            <td align="right" data-sort="100">
+                <span class="coverage-percent">100 %</span>
+                <span class="coverage-count">(2/2)</span>
+            </td>
+        </tr>
+        <tr class="very-good">
+            <td>
+                <!-- miscellaneous -->
+                <a href="./classes/CreateBankAccountLinkInput.html">apps/api/src/modules/stripe/stripe-connect/dto/input/create-bank-detail.input.ts</a>
+            </td>
+            <td>class</td>
+            <td>CreateBankAccountLinkInput</td>
+            <td align="right" data-sort="100">
+                <span class="coverage-percent">100 %</span>
+                <span class="coverage-count">(3/3)</span>
+            </td>
+        </tr>
+        <tr class="very-good">
+            <td>
+                <!-- miscellaneous -->
+                <a href="./classes/CreateConnectAccountInput.html">apps/api/src/modules/stripe/stripe-connect/dto/input/create-bank-detail.input.ts</a>
+            </td>
+            <td>class</td>
+            <td>CreateConnectAccountInput</td>
+            <td align="right" data-sort="100">
+                <span class="coverage-percent">100 %</span>
+                <span class="coverage-count">(3/3)</span>
+            </td>
+        </tr>
+        <tr class="very-good">
+            <td>
+                <!-- miscellaneous -->
+                <a href="./classes/CreateBankDetailInput.html">apps/api/src/modules/stripe/stripe-connect/dto/input/create-bank.input.ts</a>
+            </td>
+            <td>class</td>
+            <td>CreateBankDetailInput</td>
+            <td align="right" data-sort="100">
+                <span class="coverage-percent">100 %</span>
+                <span class="coverage-count">(3/3)</span>
+            </td>
+        </tr>
+        <tr class="very-good">
+            <td>
+                <!-- miscellaneous -->
+                <a href="./classes/CreateBankTokenInput.html">apps/api/src/modules/stripe/stripe-connect/dto/input/create-bank.input.ts</a>
+            </td>
+            <td>class</td>
+            <td>CreateBankTokenInput</td>
+            <td align="right" data-sort="100">
+                <span class="coverage-percent">100 %</span>
+                <span class="coverage-count">(6/6)</span>
+            </td>
+        </tr>
+        <tr class="very-good">
+            <td>
+                <!-- miscellaneous -->
+                <a href="./classes/CreateConnectAccountResponse.html">apps/api/src/modules/stripe/stripe-connect/dto/response/connect-account.response.ts</a>
+            </td>
+            <td>class</td>
+            <td>CreateConnectAccountResponse</td>
+            <td align="right" data-sort="100">
+                <span class="coverage-percent">100 %</span>
+                <span class="coverage-count">(2/2)</span>
+            </td>
+        </tr>
+        <tr class="low">
+            <td>
+                <!-- miscellaneous -->
+                <a href="./classes/ExternalAccounts.html">apps/api/src/modules/stripe/stripe-connect/dto/response/connect-account.response.ts</a>
+            </td>
+            <td>class</td>
+            <td>ExternalAccounts</td>
+            <td align="right" data-sort="0">
+                <span class="coverage-percent">0 %</span>
+                <span class="coverage-count">(0/13)</span>
+            </td>
+        </tr>
+        <tr class="low">
+            <td>
+                <!-- miscellaneous -->
+                <a href="./classes/StripeConnectAccountReponse.html">apps/api/src/modules/stripe/stripe-connect/dto/response/connect-account.response.ts</a>
+            </td>
+            <td>class</td>
+            <td>StripeConnectAccountReponse</td>
+            <td align="right" data-sort="0">
+                <span class="coverage-percent">0 %</span>
+                <span class="coverage-count">(0/6)</span>
+            </td>
+        </tr>
+        <tr class="very-good">
+            <td>
+                <!-- miscellaneous -->
+                <a href="./classes/LinkBankAccountResponse.html">apps/api/src/modules/stripe/stripe-connect/dto/response/link-bank-account.response.ts</a>
+            </td>
+            <td>class</td>
+            <td>LinkBankAccountResponse</td>
+            <td align="right" data-sort="100">
+                <span class="coverage-percent">100 %</span>
+                <span class="coverage-count">(5/5)</span>
+            </td>
+        </tr>
+        <tr class="very-good">
+            <td>
+                <!-- miscellaneous -->
+                <a href="./classes/StripeConnectResolver.html">apps/api/src/modules/stripe/stripe-connect/stripe-connect.resolver.ts</a>
+            </td>
+            <td>class</td>
+            <td>StripeConnectResolver</td>
+            <td align="right" data-sort="100">
+                <span class="coverage-percent">100 %</span>
+                <span class="coverage-count">(11/11)</span>
+            </td>
+        </tr>
+        <tr class="very-good">
+            <td>
+                <!-- miscellaneous -->
+                <a href="./injectables/StripeConnectService.html">apps/api/src/modules/stripe/stripe-connect/stripe-connect.service.ts</a>
+            </td>
+            <td>injectable</td>
+            <td>StripeConnectService</td>
+            <td align="right" data-sort="91">
+                <span class="coverage-percent">91 %</span>
+                <span class="coverage-count">(11/12)</span>
+            </td>
+        </tr>
+        <tr class="low">
+            <td>
+                <!-- miscellaneous -->
+                <a href="./injectables/StripeWebhookService.html">apps/api/src/modules/stripe/stripe-connect/stripe-webhook.service.ts</a>
+            </td>
+            <td>injectable</td>
+            <td>StripeWebhookService</td>
+            <td align="right" data-sort="0">
+                <span class="coverage-percent">0 %</span>
+                <span class="coverage-count">(0/9)</span>
+            </td>
+        </tr>
+        <tr class="low">
+            <td>
+                <!-- miscellaneous -->
+                <a href="./controllers/StripePaymentWebhookController.html">apps/api/src/modules/stripe/stripe-payment/controller/stripe-webhook.controller.ts</a>
+            </td>
+            <td>controller</td>
+            <td>StripePaymentWebhookController</td>
+            <td align="right" data-sort="0">
+                <span class="coverage-percent">0 %</span>
+                <span class="coverage-count">(0/2)</span>
+            </td>
+        </tr>
+        <tr class="very-good">
+            <td>
+                <!-- miscellaneous -->
+                <a href="./classes/CreateBankAccountInput.html">apps/api/src/modules/stripe/stripe-payment/dto/input/create-bank.input.ts</a>
+            </td>
+            <td>class</td>
+            <td>CreateBankAccountInput</td>
+            <td align="right" data-sort="100">
+                <span class="coverage-percent">100 %</span>
+                <span class="coverage-count">(2/2)</span>
+            </td>
+        </tr>
+        <tr class="very-good">
+            <td>
+                <!-- miscellaneous -->
+                <a href="./classes/CreateBankAccountLinkInput.html">apps/api/src/modules/stripe/stripe-payment/dto/input/create-bank.input.ts</a>
+            </td>
+            <td>class</td>
+            <td>CreateBankAccountLinkInput</td>
+            <td align="right" data-sort="100">
+                <span class="coverage-percent">100 %</span>
+                <span class="coverage-count">(2/2)</span>
+            </td>
+        </tr>
+        <tr class="very-good">
+            <td>
+                <!-- miscellaneous -->
+                <a href="./classes/CreateBankDetailInput.html">apps/api/src/modules/stripe/stripe-payment/dto/input/create-bank.input.ts</a>
+            </td>
+            <td>class</td>
+            <td>CreateBankDetailInput</td>
+            <td align="right" data-sort="100">
+                <span class="coverage-percent">100 %</span>
+                <span class="coverage-count">(3/3)</span>
+            </td>
+        </tr>
+        <tr class="very-good">
+            <td>
+                <!-- miscellaneous -->
+                <a href="./classes/CreateBankTokenInput.html">apps/api/src/modules/stripe/stripe-payment/dto/input/create-bank.input.ts</a>
+            </td>
+            <td>class</td>
+            <td>CreateBankTokenInput</td>
+            <td align="right" data-sort="100">
+                <span class="coverage-percent">100 %</span>
+                <span class="coverage-count">(6/6)</span>
+            </td>
+        </tr>
+        <tr class="very-good">
+            <td>
+                <!-- miscellaneous -->
+                <a href="./classes/CreateConnectAccountInput.html">apps/api/src/modules/stripe/stripe-payment/dto/input/create-bank.input.ts</a>
+            </td>
+            <td>class</td>
+            <td>CreateConnectAccountInput</td>
+            <td align="right" data-sort="100">
+                <span class="coverage-percent">100 %</span>
+                <span class="coverage-count">(3/3)</span>
+            </td>
+        </tr>
+        <tr class="very-good">
+            <td>
+                <!-- miscellaneous -->
+                <a href="./classes/CreateCardInput.html">apps/api/src/modules/stripe/stripe-payment/dto/input/create-card.input.ts</a>
+            </td>
+            <td>class</td>
+            <td>CreateCardInput</td>
+            <td align="right" data-sort="100">
+                <span class="coverage-percent">100 %</span>
+                <span class="coverage-count">(2/2)</span>
+            </td>
+        </tr>
+        <tr class="very-good">
+            <td>
+                <!-- miscellaneous -->
+                <a href="./classes/CreatePaymentInput.html">apps/api/src/modules/stripe/stripe-payment/dto/input/create-payment.input.ts</a>
+            </td>
+            <td>class</td>
+            <td>CreatePaymentInput</td>
+            <td align="right" data-sort="100">
+                <span class="coverage-percent">100 %</span>
+                <span class="coverage-count">(3/3)</span>
+            </td>
+        </tr>
+        <tr class="very-good">
+            <td>
+                <!-- miscellaneous -->
+                <a href="./classes/DeleteCardInput.html">apps/api/src/modules/stripe/stripe-payment/dto/input/delete-card.input.ts</a>
+            </td>
+            <td>class</td>
+            <td>DeleteCardInput</td>
+            <td align="right" data-sort="100">
+                <span class="coverage-percent">100 %</span>
+                <span class="coverage-count">(2/2)</span>
+            </td>
+        </tr>
+        <tr class="very-good">
+            <td>
+                <!-- miscellaneous -->
+                <a href="./classes/DeletePaymentMethodInput.html">apps/api/src/modules/stripe/stripe-payment/dto/input/delete-paymentMethod.input.ts</a>
+            </td>
+            <td>class</td>
+            <td>DeletePaymentMethodInput</td>
+            <td align="right" data-sort="100">
+                <span class="coverage-percent">100 %</span>
+                <span class="coverage-count">(2/2)</span>
+            </td>
+        </tr>
+        <tr class="very-good">
+            <td>
+                <!-- miscellaneous -->
+                <a href="./classes/GetEphemeralKeyInput.html">apps/api/src/modules/stripe/stripe-payment/dto/input/get-ephemeral-key.input.ts</a>
+            </td>
+            <td>class</td>
+            <td>GetEphemeralKeyInput</td>
+            <td align="right" data-sort="100">
+                <span class="coverage-percent">100 %</span>
+                <span class="coverage-count">(2/2)</span>
+            </td>
+        </tr>
+        <tr class="very-good">
+            <td>
+                <!-- miscellaneous -->
+                <a href="./classes/MakePaymentMethodDefaultInput.html">apps/api/src/modules/stripe/stripe-payment/dto/input/make-card-default.input.ts</a>
+            </td>
+            <td>class</td>
+            <td>MakePaymentMethodDefaultInput</td>
+            <td align="right" data-sort="100">
+                <span class="coverage-percent">100 %</span>
+                <span class="coverage-count">(2/2)</span>
+            </td>
+        </tr>
+        <tr class="very-good">
+            <td>
+                <!-- miscellaneous -->
+                <a href="./classes/PaymentHistoryInput.html">apps/api/src/modules/stripe/stripe-payment/dto/input/payment-history.input.ts</a>
+            </td>
+            <td>class</td>
+            <td>PaymentHistoryInput</td>
+            <td align="right" data-sort="100">
+                <span class="coverage-percent">100 %</span>
+                <span class="coverage-count">(3/3)</span>
+            </td>
+        </tr>
+        <tr class="very-good">
+            <td>
+                <!-- miscellaneous -->
+                <a href="./classes/UpdateBankDetailInput.html">apps/api/src/modules/stripe/stripe-payment/dto/input/update-bank-input.ts</a>
+            </td>
+            <td>class</td>
+            <td>UpdateBankDetailInput</td>
+            <td align="right" data-sort="100">
+                <span class="coverage-percent">100 %</span>
+                <span class="coverage-count">(1/1)</span>
+            </td>
+        </tr>
+        <tr class="very-good">
+            <td>
+                <!-- miscellaneous -->
+                <a href="./classes/CardListReponse.html">apps/api/src/modules/stripe/stripe-payment/dto/response/card-list.response.ts</a>
+            </td>
+            <td>class</td>
+            <td>CardListReponse</td>
+            <td align="right" data-sort="100">
+                <span class="coverage-percent">100 %</span>
+                <span class="coverage-count">(12/12)</span>
+            </td>
+        </tr>
+        <tr class="very-good">
+            <td>
+                <!-- miscellaneous -->
+                <a href="./classes/EphemeralKey.html">apps/api/src/modules/stripe/stripe-payment/dto/response/get-ephemeral-key.response.ts</a>
+            </td>
+            <td>class</td>
+            <td>EphemeralKey</td>
+            <td align="right" data-sort="100">
+                <span class="coverage-percent">100 %</span>
+                <span class="coverage-count">(5/5)</span>
+            </td>
+        </tr>
+        <tr class="very-good">
+            <td>
+                <!-- miscellaneous -->
+                <a href="./classes/EphemeralKeyResponse.html">apps/api/src/modules/stripe/stripe-payment/dto/response/get-ephemeral-key.response.ts</a>
+            </td>
+            <td>class</td>
+            <td>EphemeralKeyResponse</td>
+            <td align="right" data-sort="100">
+                <span class="coverage-percent">100 %</span>
+                <span class="coverage-count">(2/2)</span>
+            </td>
+        </tr>
+        <tr class="very-good">
+            <td>
+                <!-- miscellaneous -->
+                <a href="./classes/BankDetail.html">apps/api/src/modules/stripe/stripe-payment/dto/response/payment-detail.response.ts</a>
+            </td>
+            <td>class</td>
+            <td>BankDetail</td>
+            <td align="right" data-sort="100">
+                <span class="coverage-percent">100 %</span>
+                <span class="coverage-count">(4/4)</span>
+            </td>
+        </tr>
+        <tr class="very-good">
+            <td>
+                <!-- miscellaneous -->
+                <a href="./classes/IdentityDocument.html">apps/api/src/modules/stripe/stripe-payment/dto/response/payment-detail.response.ts</a>
+            </td>
+            <td>class</td>
+            <td>IdentityDocument</td>
+            <td align="right" data-sort="100">
+                <span class="coverage-percent">100 %</span>
+                <span class="coverage-count">(3/3)</span>
+            </td>
+        </tr>
+        <tr class="very-good">
+            <td>
+                <!-- miscellaneous -->
+                <a href="./classes/StripePaymentDetail.html">apps/api/src/modules/stripe/stripe-payment/dto/response/payment-detail.response.ts</a>
+            </td>
+            <td>class</td>
+            <td>StripePaymentDetail</td>
+            <td align="right" data-sort="100">
+                <span class="coverage-percent">100 %</span>
+                <span class="coverage-count">(7/7)</span>
+            </td>
+        </tr>
+        <tr class="very-good">
+            <td>
+                <!-- miscellaneous -->
+                <a href="./classes/PaginatedPaymentHistoryResponse.html">apps/api/src/modules/stripe/stripe-payment/dto/response/payment-history.response.ts</a>
+            </td>
+            <td>class</td>
+            <td>PaginatedPaymentHistoryResponse</td>
+            <td align="right" data-sort="100">
+                <span class="coverage-percent">100 %</span>
+                <span class="coverage-count">(4/4)</span>
+            </td>
+        </tr>
+        <tr class="very-good">
+            <td>
+                <!-- miscellaneous -->
+                <a href="./classes/PaymentHistoryResponse.html">apps/api/src/modules/stripe/stripe-payment/dto/response/payment-history.response.ts</a>
+            </td>
+            <td>class</td>
+            <td>PaymentHistoryResponse</td>
+            <td align="right" data-sort="100">
+                <span class="coverage-percent">100 %</span>
+                <span class="coverage-count">(4/4)</span>
+            </td>
+        </tr>
+        <tr class="low">
+            <td>
+                <!-- miscellaneous -->
+                <a href="./classes/SetupIntentResponse.html">apps/api/src/modules/stripe/stripe-payment/dto/response/setup-intent.response.ts</a>
+            </td>
+            <td>class</td>
+            <td>SetupIntentResponse</td>
+            <td align="right" data-sort="0">
+                <span class="coverage-percent">0 %</span>
+                <span class="coverage-count">(0/2)</span>
+            </td>
+        </tr>
+        <tr class="very-good">
+            <td>
+                <!-- miscellaneous -->
+                <a href="./classes/BankDetailData.html">apps/api/src/modules/stripe/stripe-payment/dto/response/stripe-customer.response.ts</a>
+            </td>
+            <td>class</td>
+            <td>BankDetailData</td>
+            <td align="right" data-sort="100">
+                <span class="coverage-percent">100 %</span>
+                <span class="coverage-count">(4/4)</span>
+            </td>
+        </tr>
+        <tr class="very-good">
+            <td>
+                <!-- miscellaneous -->
+                <a href="./classes/IdentityDocumentData.html">apps/api/src/modules/stripe/stripe-payment/dto/response/stripe-customer.response.ts</a>
+            </td>
+            <td>class</td>
+            <td>IdentityDocumentData</td>
+            <td align="right" data-sort="100">
+                <span class="coverage-percent">100 %</span>
+                <span class="coverage-count">(3/3)</span>
+            </td>
+        </tr>
+        <tr class="very-good">
+            <td>
+                <!-- miscellaneous -->
+                <a href="./classes/StripeCustomerReponseData.html">apps/api/src/modules/stripe/stripe-payment/dto/response/stripe-customer.response.ts</a>
+            </td>
+            <td>class</td>
+            <td>StripeCustomerReponseData</td>
+            <td align="right" data-sort="80">
+                <span class="coverage-percent">80 %</span>
+                <span class="coverage-count">(4/5)</span>
+            </td>
+        </tr>
+        <tr class="very-good">
+            <td>
+                <!-- miscellaneous -->
+                <a href="./classes/StripePaymentDetailData.html">apps/api/src/modules/stripe/stripe-payment/dto/response/stripe-customer.response.ts</a>
+            </td>
+            <td>class</td>
+            <td>StripePaymentDetailData</td>
+            <td align="right" data-sort="100">
+                <span class="coverage-percent">100 %</span>
+                <span class="coverage-count">(7/7)</span>
+            </td>
+        </tr>
+        <tr class="low">
+            <td>
+                <!-- miscellaneous -->
+                <a href="./classes/StripePaymentLog.html">apps/api/src/modules/stripe/stripe-payment/model/stripe-payment-log.schema.ts</a>
+            </td>
+            <td>class</td>
+            <td>StripePaymentLog</td>
+            <td align="right" data-sort="0">
+                <span class="coverage-percent">0 %</span>
+                <span class="coverage-count">(0/11)</span>
+            </td>
+        </tr>
+        <tr class="low">
+            <td>
+                <!-- miscellaneous -->
+                        <a href="./miscellaneous/variables.html#stripePaymentLogSchema">apps/api/src/modules/stripe/stripe-payment/model/stripe-payment-log.schema.ts</a>
+            </td>
+            <td>variable</td>
+            <td>stripePaymentLogSchema</td>
+            <td align="right" data-sort="0">
+                <span class="coverage-percent">0 %</span>
+                <span class="coverage-count">(0/1)</span>
+            </td>
+        </tr>
+        <tr class="low">
+            <td>
+                <!-- miscellaneous -->
+                        <a href="./miscellaneous/typealiases.html#StripePaymentLogDocument">apps/api/src/modules/stripe/stripe-payment/model/stripe-payment-log.schema.ts</a>
+            </td>
+            <td>type alias</td>
+            <td>StripePaymentLogDocument</td>
+            <td align="right" data-sort="0">
+                <span class="coverage-percent">0 %</span>
+                <span class="coverage-count">(0/1)</span>
+            </td>
+        </tr>
+        <tr class="low">
+            <td>
+                <!-- miscellaneous -->
+                <a href="./classes/StripePayment.html">apps/api/src/modules/stripe/stripe-payment/model/stripe-payment.schema.ts</a>
+            </td>
+            <td>class</td>
+            <td>StripePayment</td>
+            <td align="right" data-sort="0">
+                <span class="coverage-percent">0 %</span>
+                <span class="coverage-count">(0/3)</span>
+            </td>
+        </tr>
+        <tr class="low">
+            <td>
+                <!-- miscellaneous -->
+                        <a href="./miscellaneous/variables.html#stripePaymentSchema">apps/api/src/modules/stripe/stripe-payment/model/stripe-payment.schema.ts</a>
+            </td>
+            <td>variable</td>
+            <td>stripePaymentSchema</td>
+            <td align="right" data-sort="0">
+                <span class="coverage-percent">0 %</span>
+                <span class="coverage-count">(0/1)</span>
+            </td>
+        </tr>
+        <tr class="low">
+            <td>
+                <!-- miscellaneous -->
+                        <a href="./miscellaneous/typealiases.html#StripePaymentDocument">apps/api/src/modules/stripe/stripe-payment/model/stripe-payment.schema.ts</a>
+            </td>
+            <td>type alias</td>
+            <td>StripePaymentDocument</td>
+            <td align="right" data-sort="0">
+                <span class="coverage-percent">0 %</span>
+                <span class="coverage-count">(0/1)</span>
+            </td>
+        </tr>
+        <tr class="low">
+            <td>
+                <!-- miscellaneous -->
+                        <a href="./miscellaneous/variables.html#mongooseModels">apps/api/src/modules/stripe/stripe-payment/mongoose.models.ts</a>
+            </td>
+            <td>variable</td>
+            <td>mongooseModels</td>
+            <td align="right" data-sort="0">
+                <span class="coverage-percent">0 %</span>
+                <span class="coverage-count">(0/1)</span>
+            </td>
+        </tr>
+        <tr class="low">
+            <td>
+                <!-- miscellaneous -->
+                        <a href="./miscellaneous/variables.html#providers">apps/api/src/modules/stripe/stripe-payment/providers.ts</a>
+            </td>
+            <td>variable</td>
+            <td>providers</td>
+            <td align="right" data-sort="0">
+                <span class="coverage-percent">0 %</span>
+                <span class="coverage-count">(0/1)</span>
+            </td>
+        </tr>
+        <tr class="low">
+            <td>
+                <!-- miscellaneous -->
+                <a href="./injectables/StripePaymentLogRepository.html">apps/api/src/modules/stripe/stripe-payment/repository/stripe-payment-log.repository.ts</a>
+            </td>
+            <td>injectable</td>
+            <td>StripePaymentLogRepository</td>
+            <td align="right" data-sort="0">
+                <span class="coverage-percent">0 %</span>
+                <span class="coverage-count">(0/3)</span>
+            </td>
+        </tr>
+        <tr class="low">
+            <td>
+                <!-- miscellaneous -->
+                <a href="./injectables/StripePaymentRepository.html">apps/api/src/modules/stripe/stripe-payment/repository/stripe-payment.repository.ts</a>
+            </td>
+            <td>injectable</td>
+            <td>StripePaymentRepository</td>
+            <td align="right" data-sort="0">
+                <span class="coverage-percent">0 %</span>
+                <span class="coverage-count">(0/2)</span>
+            </td>
+        </tr>
+        <tr class="very-good">
+            <td>
+                <!-- miscellaneous -->
+                <a href="./injectables/StripePaymentService.html">apps/api/src/modules/stripe/stripe-payment/services/stripe-payment.service.ts</a>
+            </td>
+            <td>injectable</td>
+            <td>StripePaymentService</td>
+            <td align="right" data-sort="80">
+                <span class="coverage-percent">80 %</span>
+                <span class="coverage-count">(16/20)</span>
+            </td>
+        </tr>
+        <tr class="very-good">
+            <td>
+                <!-- miscellaneous -->
+                        <a href="./miscellaneous/variables.html#defaultCurrency">apps/api/src/modules/stripe/stripe-payment/services/stripe-payment.service.ts</a>
+            </td>
+            <td>variable</td>
+            <td>defaultCurrency</td>
+            <td align="right" data-sort="100">
+                <span class="coverage-percent">100 %</span>
+                <span class="coverage-count">(1/1)</span>
+            </td>
+        </tr>
+        <tr class="very-good">
+            <td>
+                <!-- miscellaneous -->
+                <a href="./injectables/StripeWebhookService.html">apps/api/src/modules/stripe/stripe-payment/services/stripe-webhook.service.ts</a>
+            </td>
+            <td>injectable</td>
+            <td>StripeWebhookService</td>
+            <td align="right" data-sort="100">
+                <span class="coverage-percent">100 %</span>
+                <span class="coverage-count">(4/4)</span>
+            </td>
+        </tr>
+        <tr class="very-good">
+            <td>
+                <!-- miscellaneous -->
+                <a href="./classes/StripePaymentResolver.html">apps/api/src/modules/stripe/stripe-payment/stripe-payment.resolver.ts</a>
+            </td>
+            <td>class</td>
+            <td>StripePaymentResolver</td>
+            <td align="right" data-sort="100">
+                <span class="coverage-percent">100 %</span>
+                <span class="coverage-count">(13/13)</span>
+            </td>
+        </tr>
+        <tr class="very-good">
+            <td>
+                <!-- miscellaneous -->
+                        <a href="./miscellaneous/typealiases.html#CreateCardOnStripe">apps/api/src/modules/stripe/stripe-payment/types/create-card-on-stripe.type.ts</a>
+            </td>
+            <td>type alias</td>
+            <td>CreateCardOnStripe</td>
+            <td align="right" data-sort="100">
+                <span class="coverage-percent">100 %</span>
+                <span class="coverage-count">(1/1)</span>
+            </td>
+        </tr>
+        <tr class="very-good">
+            <td>
+                <!-- miscellaneous -->
+                        <a href="./miscellaneous/typealiases.html#CreateCardType">apps/api/src/modules/stripe/stripe-payment/types/create-card.type.ts</a>
+            </td>
+            <td>type alias</td>
+            <td>CreateCardType</td>
+            <td align="right" data-sort="100">
+                <span class="coverage-percent">100 %</span>
+                <span class="coverage-count">(1/1)</span>
+            </td>
+        </tr>
+        <tr class="very-good">
+            <td>
+                <!-- miscellaneous -->
+                        <a href="./miscellaneous/typealiases.html#DeleteCard">apps/api/src/modules/stripe/stripe-payment/types/delete-card.type.ts</a>
+            </td>
+            <td>type alias</td>
+            <td>DeleteCard</td>
+            <td align="right" data-sort="100">
+                <span class="coverage-percent">100 %</span>
+                <span class="coverage-count">(1/1)</span>
+            </td>
+        </tr>
+        <tr class="very-good">
+            <td>
+                <!-- miscellaneous -->
+                        <a href="./miscellaneous/typealiases.html#DeleteCardFromStripe">apps/api/src/modules/stripe/stripe-payment/types/delete-card.type.ts</a>
+            </td>
+            <td>type alias</td>
+            <td>DeleteCardFromStripe</td>
+            <td align="right" data-sort="100">
+                <span class="coverage-percent">100 %</span>
+                <span class="coverage-count">(1/1)</span>
+            </td>
+        </tr>
+        <tr class="very-good">
+            <td>
+                <!-- miscellaneous -->
+                <a href="./interfaces/IPaymentIntentData.html">apps/api/src/modules/stripe/stripe-payment/types/payment-intent.type.ts</a>
+            </td>
+            <td>interface</td>
+            <td>IPaymentIntentData</td>
+            <td align="right" data-sort="100">
+                <span class="coverage-percent">100 %</span>
+                <span class="coverage-count">(8/8)</span>
+            </td>
+        </tr>
+        <tr class="very-good">
+            <td>
+                <!-- miscellaneous -->
+                        <a href="./miscellaneous/typealiases.html#DeletePaymentMethod">apps/api/src/modules/stripe/stripe-payment/types/payment-method.stripe.type.ts</a>
+            </td>
+            <td>type alias</td>
+            <td>DeletePaymentMethod</td>
+            <td align="right" data-sort="100">
+                <span class="coverage-percent">100 %</span>
+                <span class="coverage-count">(1/1)</span>
+            </td>
+        </tr>
+        <tr class="very-good">
+            <td>
+                <!-- miscellaneous -->
+                        <a href="./miscellaneous/typealiases.html#DeletePaymentMethodFromStripe">apps/api/src/modules/stripe/stripe-payment/types/payment-method.stripe.type.ts</a>
+            </td>
+            <td>type alias</td>
+            <td>DeletePaymentMethodFromStripe</td>
+            <td align="right" data-sort="100">
+                <span class="coverage-percent">100 %</span>
+                <span class="coverage-count">(1/1)</span>
+            </td>
+        </tr>
+        <tr class="low">
+            <td>
+                <!-- miscellaneous -->
+                        <a href="./miscellaneous/variables.html#REJECT_STATUS">apps/api/src/modules/stripe/stripe-subscriptions/constants/index.ts</a>
+            </td>
+            <td>variable</td>
+            <td>REJECT_STATUS</td>
+            <td align="right" data-sort="0">
+                <span class="coverage-percent">0 %</span>
+                <span class="coverage-count">(0/1)</span>
+            </td>
+        </tr>
+        <tr class="low">
+            <td>
+                <!-- miscellaneous -->
+                        <a href="./miscellaneous/variables.html#STRIPE_CUSTOMER_PREFIX">apps/api/src/modules/stripe/stripe-subscriptions/constants/index.ts</a>
+            </td>
+            <td>variable</td>
+            <td>STRIPE_CUSTOMER_PREFIX</td>
+            <td align="right" data-sort="0">
+                <span class="coverage-percent">0 %</span>
+                <span class="coverage-count">(0/1)</span>
+            </td>
+        </tr>
+        <tr class="low">
+            <td>
+                <!-- miscellaneous -->
+                        <a href="./miscellaneous/variables.html#SUBSCRIPTION_STATUS">apps/api/src/modules/stripe/stripe-subscriptions/constants/index.ts</a>
+            </td>
+            <td>variable</td>
+            <td>SUBSCRIPTION_STATUS</td>
+            <td align="right" data-sort="0">
+                <span class="coverage-percent">0 %</span>
+                <span class="coverage-count">(0/1)</span>
+            </td>
+        </tr>
+        <tr class="low">
+            <td>
+                <!-- miscellaneous -->
+                <a href="./controllers/StripeSubscriptionWebhookController.html">apps/api/src/modules/stripe/stripe-subscriptions/controller/stripe-subscription-webhook.controller.ts</a>
+            </td>
+            <td>controller</td>
+            <td>StripeSubscriptionWebhookController</td>
+            <td align="right" data-sort="0">
+                <span class="coverage-percent">0 %</span>
+                <span class="coverage-count">(0/2)</span>
+            </td>
+        </tr>
+        <tr class="very-good">
+            <td>
+                <!-- miscellaneous -->
+                <a href="./classes/CreateStripeSubscriptionInput.html">apps/api/src/modules/stripe/stripe-subscriptions/dto/input/create-stripe-subscription.input.ts</a>
+            </td>
+            <td>class</td>
+            <td>CreateStripeSubscriptionInput</td>
+            <td align="right" data-sort="100">
+                <span class="coverage-percent">100 %</span>
+                <span class="coverage-count">(5/5)</span>
+            </td>
+        </tr>
+        <tr class="very-good">
+            <td>
+                <!-- miscellaneous -->
+                <a href="./classes/UpdateStripeSubscriptionInput.html">apps/api/src/modules/stripe/stripe-subscriptions/dto/input/update-stripe-subscription.input.ts</a>
+            </td>
+            <td>class</td>
+            <td>UpdateStripeSubscriptionInput</td>
+            <td align="right" data-sort="100">
+                <span class="coverage-percent">100 %</span>
+                <span class="coverage-count">(2/2)</span>
+            </td>
+        </tr>
+        <tr class="very-good">
+            <td>
+                <!-- miscellaneous -->
+                <a href="./classes/StripeSubscriptionResponse.html">apps/api/src/modules/stripe/stripe-subscriptions/dto/response/stripe-subscription.dto.ts</a>
+            </td>
+            <td>class</td>
+            <td>StripeSubscriptionResponse</td>
+            <td align="right" data-sort="100">
+                <span class="coverage-percent">100 %</span>
+                <span class="coverage-count">(5/5)</span>
+            </td>
+        </tr>
+        <tr class="very-good">
+            <td>
+                <!-- miscellaneous -->
+                <a href="./classes/SubscriptionObjectDto.html">apps/api/src/modules/stripe/stripe-subscriptions/dto/response/stripe-subscription.dto.ts</a>
+            </td>
+            <td>class</td>
+            <td>SubscriptionObjectDto</td>
+            <td align="right" data-sort="100">
+                <span class="coverage-percent">100 %</span>
+                <span class="coverage-count">(8/8)</span>
+            </td>
+        </tr>
+        <tr class="very-good">
+            <td>
+                <!-- miscellaneous -->
+                <a href="./classes/PriceResponse.html">apps/api/src/modules/stripe/stripe-subscriptions/dto/response/subscription-product.response.ts</a>
+            </td>
+            <td>class</td>
+            <td>PriceResponse</td>
+            <td align="right" data-sort="100">
+                <span class="coverage-percent">100 %</span>
+                <span class="coverage-count">(4/4)</span>
+            </td>
+        </tr>
+        <tr class="very-good">
+            <td>
+                <!-- miscellaneous -->
+                <a href="./classes/SubscriptionProductResponse.html">apps/api/src/modules/stripe/stripe-subscriptions/dto/response/subscription-product.response.ts</a>
+            </td>
+            <td>class</td>
+            <td>SubscriptionProductResponse</td>
+            <td align="right" data-sort="100">
+                <span class="coverage-percent">100 %</span>
+                <span class="coverage-count">(4/4)</span>
+            </td>
+        </tr>
+        <tr class="low">
+            <td>
+                <!-- miscellaneous -->
+                <a href="./classes/StripeSubscription.html">apps/api/src/modules/stripe/stripe-subscriptions/model/stripe-subscription.schema.ts</a>
+            </td>
+            <td>class</td>
+            <td>StripeSubscription</td>
+            <td align="right" data-sort="0">
+                <span class="coverage-percent">0 %</span>
+                <span class="coverage-count">(0/8)</span>
+            </td>
+        </tr>
+        <tr class="low">
+            <td>
+                <!-- miscellaneous -->
+                        <a href="./miscellaneous/variables.html#stripeSubscriptionSchema">apps/api/src/modules/stripe/stripe-subscriptions/model/stripe-subscription.schema.ts</a>
+            </td>
+            <td>variable</td>
+            <td>stripeSubscriptionSchema</td>
+            <td align="right" data-sort="0">
+                <span class="coverage-percent">0 %</span>
+                <span class="coverage-count">(0/1)</span>
+            </td>
+        </tr>
+        <tr class="low">
+            <td>
+                <!-- miscellaneous -->
+                        <a href="./miscellaneous/typealiases.html#StripeSubscriptionDocument">apps/api/src/modules/stripe/stripe-subscriptions/model/stripe-subscription.schema.ts</a>
+            </td>
+            <td>type alias</td>
+            <td>StripeSubscriptionDocument</td>
+            <td align="right" data-sort="0">
+                <span class="coverage-percent">0 %</span>
+                <span class="coverage-count">(0/1)</span>
+            </td>
+        </tr>
+        <tr class="low">
+            <td>
+                <!-- miscellaneous -->
+                <a href="./injectables/StripeSubscriptionWebhookService.html">apps/api/src/modules/stripe/stripe-subscriptions/stripe-subscriptions-webhook.service.ts</a>
+            </td>
+            <td>injectable</td>
+            <td>StripeSubscriptionWebhookService</td>
+            <td align="right" data-sort="0">
+                <span class="coverage-percent">0 %</span>
+                <span class="coverage-count">(0/3)</span>
+            </td>
+        </tr>
+        <tr class="very-good">
+            <td>
+                <!-- miscellaneous -->
+                <a href="./classes/StripeSubscriptionResolver.html">apps/api/src/modules/stripe/stripe-subscriptions/stripe-subscriptions.resolver.ts</a>
+            </td>
+            <td>class</td>
+            <td>StripeSubscriptionResolver</td>
+            <td align="right" data-sort="100">
+                <span class="coverage-percent">100 %</span>
+                <span class="coverage-count">(8/8)</span>
+            </td>
+        </tr>
+        <tr class="low">
+            <td>
+                <!-- miscellaneous -->
+                <a href="./injectables/StripeSubscriptionService.html">apps/api/src/modules/stripe/stripe-subscriptions/stripe-subscriptions.service.ts</a>
+            </td>
+            <td>injectable</td>
+            <td>StripeSubscriptionService</td>
+            <td align="right" data-sort="25">
+                <span class="coverage-percent">25 %</span>
+                <span class="coverage-count">(2/8)</span>
+            </td>
+        </tr>
+        <tr class="low">
+            <td>
+                <!-- miscellaneous -->
+                        <a href="./miscellaneous/variables.html#ENVIRONMENT">apps/api/src/modules/subscription/constants/index.ts</a>
+            </td>
+            <td>variable</td>
+            <td>ENVIRONMENT</td>
+            <td align="right" data-sort="0">
+                <span class="coverage-percent">0 %</span>
+                <span class="coverage-count">(0/1)</span>
+            </td>
+        </tr>
+        <tr class="low">
+            <td>
+                <!-- miscellaneous -->
+                        <a href="./miscellaneous/variables.html#NOTIFICATION_TYPE">apps/api/src/modules/subscription/constants/index.ts</a>
+            </td>
+            <td>variable</td>
+            <td>NOTIFICATION_TYPE</td>
+            <td align="right" data-sort="0">
+                <span class="coverage-percent">0 %</span>
+                <span class="coverage-count">(0/1)</span>
+            </td>
+        </tr>
+        <tr class="low">
+            <td>
+                <!-- miscellaneous -->
+                <a href="./controllers/SubscriptionWebhookController.html">apps/api/src/modules/subscription/controller/subscription-webhook.controller.ts</a>
+            </td>
+            <td>controller</td>
+            <td>SubscriptionWebhookController</td>
+            <td align="right" data-sort="0">
+                <span class="coverage-percent">0 %</span>
+                <span class="coverage-count">(0/3)</span>
+            </td>
+        </tr>
+        <tr class="very-good">
+            <td>
+                <!-- miscellaneous -->
+                <a href="./classes/AndroidReceipt.html">apps/api/src/modules/subscription/dto/input/validate-receipt.input.ts</a>
+            </td>
+            <td>class</td>
+            <td>AndroidReceipt</td>
+            <td align="right" data-sort="100">
+                <span class="coverage-percent">100 %</span>
+                <span class="coverage-count">(5/5)</span>
+            </td>
+        </tr>
+        <tr class="very-good">
+            <td>
+                <!-- miscellaneous -->
+                <a href="./classes/IosReceipt.html">apps/api/src/modules/subscription/dto/input/validate-receipt.input.ts</a>
+            </td>
+            <td>class</td>
+            <td>IosReceipt</td>
+            <td align="right" data-sort="100">
+                <span class="coverage-percent">100 %</span>
+                <span class="coverage-count">(2/2)</span>
+            </td>
+        </tr>
+        <tr class="low">
+            <td>
+                <!-- miscellaneous -->
+                <a href="./classes/CurrentSubscription.html">apps/api/src/modules/subscription/entities/current-subscription.entity.ts</a>
+            </td>
+            <td>class</td>
+            <td>CurrentSubscription</td>
+            <td align="right" data-sort="0">
+                <span class="coverage-percent">0 %</span>
+                <span class="coverage-count">(0/10)</span>
+            </td>
+        </tr>
+        <tr class="very-good">
+            <td>
+                <!-- miscellaneous -->
+                <a href="./interfaces/IAndroidSubscriptionWebhook.html">apps/api/src/modules/subscription/interfaces/subscription-webhook.interface.ts</a>
+            </td>
+            <td>interface</td>
+            <td>IAndroidSubscriptionWebhook</td>
+            <td align="right" data-sort="100">
+                <span class="coverage-percent">100 %</span>
+                <span class="coverage-count">(4/4)</span>
+            </td>
+        </tr>
+        <tr class="very-good">
+            <td>
+                <!-- miscellaneous -->
+                <a href="./interfaces/IosSubscriptionWebhookInterface.html">apps/api/src/modules/subscription/interfaces/subscription-webhook.interface.ts</a>
+            </td>
+            <td>interface</td>
+            <td>IosSubscriptionWebhookInterface</td>
+            <td align="right" data-sort="100">
+                <span class="coverage-percent">100 %</span>
+                <span class="coverage-count">(3/3)</span>
+            </td>
+        </tr>
+        <tr class="very-good">
+            <td>
+                <!-- miscellaneous -->
+                        <a href="./miscellaneous/variables.html#mongooseModels">apps/api/src/modules/subscription/mongoose-models.ts</a>
+            </td>
+            <td>variable</td>
+            <td>mongooseModels</td>
+            <td align="right" data-sort="100">
+                <span class="coverage-percent">100 %</span>
+                <span class="coverage-count">(1/1)</span>
+            </td>
+        </tr>
+        <tr class="very-good">
+            <td>
+                <!-- miscellaneous -->
+                <a href="./classes/SubscriptionResolver.html">apps/api/src/modules/subscription/subscription.resolver.ts</a>
+            </td>
+            <td>class</td>
+            <td>SubscriptionResolver</td>
+            <td align="right" data-sort="100">
+                <span class="coverage-percent">100 %</span>
+                <span class="coverage-count">(4/4)</span>
+            </td>
+        </tr>
+        <tr class="very-good">
+            <td>
+                <!-- miscellaneous -->
+                <a href="./injectables/SubscriptionService.html">apps/api/src/modules/subscription/subscription.service.ts</a>
+            </td>
+            <td>injectable</td>
+            <td>SubscriptionService</td>
+            <td align="right" data-sort="83">
+                <span class="coverage-percent">83 %</span>
+                <span class="coverage-count">(5/6)</span>
+            </td>
+        </tr>
+        <tr class="very-good">
+            <td>
+                <!-- miscellaneous -->
+                <a href="./classes/CreateUserInput.html">apps/api/src/modules/users/dto/input/create-user.input.ts</a>
+            </td>
+            <td>class</td>
+            <td>CreateUserInput</td>
+            <td align="right" data-sort="100">
+                <span class="coverage-percent">100 %</span>
+                <span class="coverage-count">(2/2)</span>
+            </td>
+        </tr>
+        <tr class="very-good">
+            <td>
+                <!-- miscellaneous -->
+                <a href="./classes/UpdateUserInput.html">apps/api/src/modules/users/dto/input/create-user.input.ts</a>
+            </td>
+            <td>class</td>
+            <td>UpdateUserInput</td>
+            <td align="right" data-sort="100">
+                <span class="coverage-percent">100 %</span>
+                <span class="coverage-count">(2/2)</span>
+            </td>
+        </tr>
+        <tr class="very-good">
+            <td>
+                <!-- miscellaneous -->
+                <a href="./classes/ListUseProfilesDTO.html">apps/api/src/modules/users/dto/input/list-user.dto.ts</a>
+            </td>
+            <td>class</td>
+            <td>ListUseProfilesDTO</td>
+            <td align="right" data-sort="100">
+                <span class="coverage-percent">100 %</span>
+                <span class="coverage-count">(1/1)</span>
+            </td>
+        </tr>
+        <tr class="very-good">
+            <td>
+                <!-- miscellaneous -->
+                <a href="./classes/UpdateUserEmailDto.html">apps/api/src/modules/users/dto/input/update-email.input.ts</a>
+            </td>
+            <td>class</td>
+            <td>UpdateUserEmailDto</td>
+            <td align="right" data-sort="100">
+                <span class="coverage-percent">100 %</span>
+                <span class="coverage-count">(3/3)</span>
+            </td>
+        </tr>
+        <tr class="very-good">
+            <td>
+                <!-- miscellaneous -->
+                <a href="./classes/ProfileUpdateResponse.html">apps/api/src/modules/users/dto/response/profile-update.response.ts</a>
+            </td>
+            <td>class</td>
+            <td>ProfileUpdateResponse</td>
+            <td align="right" data-sort="100">
+                <span class="coverage-percent">100 %</span>
+                <span class="coverage-count">(3/3)</span>
+            </td>
+        </tr>
+        <tr class="very-good">
+            <td>
+                <!-- miscellaneous -->
+                <a href="./classes/TermsAndConditionResponse.html">apps/api/src/modules/users/dto/response/terms.response.ts</a>
+            </td>
+            <td>class</td>
+            <td>TermsAndConditionResponse</td>
+            <td align="right" data-sort="100">
+                <span class="coverage-percent">100 %</span>
+                <span class="coverage-count">(5/5)</span>
+            </td>
+        </tr>
+        <tr class="very-good">
+            <td>
+                <!-- miscellaneous -->
+                <a href="./classes/UserDetailsResponse.html">apps/api/src/modules/users/dto/response/user-list.response.ts</a>
+            </td>
+            <td>class</td>
+            <td>UserDetailsResponse</td>
+            <td align="right" data-sort="100">
+                <span class="coverage-percent">100 %</span>
+                <span class="coverage-count">(3/3)</span>
+            </td>
+        </tr>
+        <tr class="very-good">
+            <td>
+                <!-- miscellaneous -->
+                <a href="./classes/UserProfilesListResponse.html">apps/api/src/modules/users/dto/response/user-list.response.ts</a>
+            </td>
+            <td>class</td>
+            <td>UserProfilesListResponse</td>
+            <td align="right" data-sort="100">
+                <span class="coverage-percent">100 %</span>
+                <span class="coverage-count">(2/2)</span>
+            </td>
+        </tr>
+        <tr class="very-good">
+            <td>
+                <!-- miscellaneous -->
+                        <a href="./miscellaneous/variables.html#mongooseModels">apps/api/src/modules/users/mongoose-models.ts</a>
+            </td>
+            <td>variable</td>
+            <td>mongooseModels</td>
+            <td align="right" data-sort="100">
+                <span class="coverage-percent">100 %</span>
+                <span class="coverage-count">(1/1)</span>
+            </td>
+        </tr>
+        <tr class="very-good">
+            <td>
+                <!-- miscellaneous -->
+                        <a href="./miscellaneous/variables.html#providers">apps/api/src/modules/users/providers.ts</a>
+            </td>
+            <td>variable</td>
+            <td>providers</td>
+            <td align="right" data-sort="100">
+                <span class="coverage-percent">100 %</span>
+                <span class="coverage-count">(1/1)</span>
+            </td>
+        </tr>
+        <tr class="very-good">
+            <td>
+                <!-- miscellaneous -->
+                <a href="./classes/UsersResolver.html">apps/api/src/modules/users/users.resolver.ts</a>
+            </td>
+            <td>class</td>
+            <td>UsersResolver</td>
+            <td align="right" data-sort="100">
+                <span class="coverage-percent">100 %</span>
+                <span class="coverage-count">(10/10)</span>
+            </td>
+        </tr>
+        <tr class="low">
+            <td>
+                <!-- miscellaneous -->
+                <a href="./injectables/UsersService.html">apps/api/src/modules/users/users.service.ts</a>
+            </td>
+            <td>injectable</td>
+            <td>UsersService</td>
+            <td align="right" data-sort="15">
+                <span class="coverage-percent">15 %</span>
+                <span class="coverage-count">(2/13)</span>
+            </td>
+        </tr>
+    </tbody>
+</table>
+
+<script src="js/libs/tablesort.min.js"></script>
+<script src="js/libs/tablesort.number.min.js"></script>
+<script>
+    new Tablesort(document.getElementById('coverage-table'));
+</script>
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+          <label class="dark-mode-switch">
+               <input type="checkbox">
+               <span class="slider">
+                    <svg class="slider-icon" viewBox="0 0 24 24" fill="none" height="20" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" width="20" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"></path>
+                    </svg>
+               </span>
+          </label>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 0;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'coverage';
+            var COMPODOC_CURRENT_PAGE_URL = 'coverage.html';
+            var MAX_SEARCH_RESULTS = 15;
+       </script>
+
+       <script>
+               $darkModeToggleSwitchers = document.querySelectorAll('.dark-mode-switch input');
+               checkToggle(darkModeState);
+               if ($darkModeToggleSwitchers.length > 0) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].addEventListener('change', function (event) {
+                              darkModeState = !darkModeState;
+                              toggleDarkMode(darkModeState);
+                         });
+                    }
+               }
+          </script>
+
+       <script src="./js/libs/custom-elements.min.js"></script>
+       <script src="./js/libs/lit-html.js"></script>
+
+       <script src="./js/menu-wc.js" defer></script>
+       <script nomodule src="./js/menu-wc_es5.js" defer></script>
+
+       <script src="./js/libs/bootstrap-native.js"></script>
+
+       <script src="./js/libs/es6-shim.min.js"></script>
+       <script src="./js/libs/EventDispatcher.js"></script>
+       <script src="./js/libs/promise.min.js"></script>
+
+       <script src="./js/compodoc.js"></script>
+
+       <script src="./js/tabs.js"></script>
+       <script src="./js/menu.js"></script>
+       <script src="./js/libs/clipboard.min.js"></script>
+       <script src="./js/libs/prism.js"></script>
+       <script src="./js/sourceCode.js"></script>
+          <script src="./js/search/search.js"></script>
+          <script src="./js/search/lunr.min.js"></script>
+          <script src="./js/search/search-lunr.js"></script>
+          <script src="./js/search/search_index.js"></script>
+       <script src="./js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>

@@ -1,0 +1,1797 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>nest-ebtheme documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	   <link rel="stylesheet" href="../styles/style.css">
+        <link rel="stylesheet" href="../styles/dark.css">
+    </head>
+    <body>
+          <script>
+               // Blocking script to avoid flickering dark mode
+               // Dark mode toggle button
+               var useDark = window.matchMedia('(prefers-color-scheme: dark)');
+               var darkModeState = useDark.matches;
+               var $darkModeToggleSwitchers = document.querySelectorAll('.dark-mode-switch input');
+               var $darkModeToggles = document.querySelectorAll('.dark-mode-switch');
+               var darkModeStateLocal = localStorage.getItem('compodoc_darkmode-state');
+
+               function checkToggle(check) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].checked = check;
+                    }
+               }
+
+               function toggleDarkMode(state) {
+                    if (window.localStorage) {
+                         localStorage.setItem('compodoc_darkmode-state', state);
+                    }
+
+                    checkToggle(state);
+
+                    const hasClass = document.body.classList.contains('dark');
+
+                    if (state) {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.add('dark');
+                         }
+                         if (!hasClass) {
+                              document.body.classList.add('dark');
+                         }
+                    } else {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.remove('dark');
+                         }
+                         if (hasClass) {
+                              document.body.classList.remove('dark');
+                         }
+                    }
+               }
+
+               useDark.addEventListener('change', function (evt) {
+                    toggleDarkMode(evt.matches);
+               });
+               if (darkModeStateLocal) {
+                    darkModeState = darkModeStateLocal === 'true';
+               }
+               toggleDarkMode(darkModeState);
+          </script>
+
+        <div class="navbar navbar-default navbar-fixed-top d-md-none p-0">
+               <div class="d-flex">
+                    <a href="../" class="navbar-brand">nest-ebtheme documentation</a>
+                    <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+               </div>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="d-none d-md-block menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content injectable">
+                   <div class="content-data">
+
+
+
+
+
+
+
+
+<ol class="breadcrumb">
+  <li class="breadcrumb-item">Injectables</li>
+  <li class="breadcrumb-item" >StripeConnectService</li>
+</ol>
+
+<ul class="nav nav-tabs" role="tablist">
+        <li class="nav-item">
+            <a href="#info" 
+                class="nav-link"
+                class="nav-link active"
+                role="tab" id="info-tab" data-bs-toggle="tab" data-link="info">Info</a>
+        </li>
+        <li class="nav-item">
+            <a href="#source" 
+                class="nav-link"
+                
+                role="tab" id="source-tab" data-bs-toggle="tab" data-link="source">Source</a>
+        </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="info">
+        <p class="comment">
+            <h3>File</h3>
+        </p>
+        <p class="comment">
+            <code>apps/api/src/modules/stripe/stripe-connect/stripe-connect.service.ts</code>
+        </p>
+
+
+            <p class="comment">
+                <h3>Description</h3>
+            </p>
+            <p class="comment">
+                <p>Description placeholder</p>
+
+            </p>
+
+
+
+            <section data-compodoc="block-index">
+    <h3 id="index">Index</h3>
+    <table class="table table-sm table-bordered index-table">
+        <tbody>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Methods</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                    <span class="modifier">Async</span>
+                                <a href="#addUserBankAccountFromDetail" >addUserBankAccountFromDetail</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Async</span>
+                                <a href="#addUserBankAccountFromToken" >addUserBankAccountFromToken</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Async</span>
+                                <a href="#createCustomStripeAccount" >createCustomStripeAccount</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Async</span>
+                                <a href="#deleteStripeConnectAccount" >deleteStripeConnectAccount</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Async</span>
+                                <a href="#deleteUserBankAccount" >deleteUserBankAccount</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Async</span>
+                                <a href="#generateAccountOnboardingLink" >generateAccountOnboardingLink</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Async</span>
+                                <a href="#generateCustomAccountOnboardingLink" >generateCustomAccountOnboardingLink</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Private</span>
+                                    <span class="modifier">Async</span>
+                                <a href="#getBusiness" >getBusiness</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Async</span>
+                                <a href="#getUserStripeAccountDetails" >getUserStripeAccountDetails</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Async</span>
+                                <a href="#updateDefaultBankAccount" >updateDefaultBankAccount</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+            <section data-compodoc="block-constructor">
+    <h3 id="constructor">Constructor</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+<code>constructor(stripeService: StripeService, businessRepo: BusinessRepository, i18nService: I18nService, usersRepository: <a href="../classes/User.html" target="_self">UsersRepository</a>, s3Service: S3Service, phoneNumberRepo: UpdatePhoneNumberRepository)</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="24" class="link-to-prism">apps/api/src/modules/stripe/stripe-connect/stripe-connect.service.ts:24</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                            <div class="io-description"><p>Creates an instance of StripeConnectService.</p>
+</div>
+                            <div>
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>stripeService</td>
+                                                  
+                                                        <td>
+                                                                    <code>StripeService</code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>businessRepo</td>
+                                                  
+                                                        <td>
+                                                                    <code>BusinessRepository</code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>i18nService</td>
+                                                  
+                                                        <td>
+                                                                    <code>I18nService</code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>usersRepository</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../classes/User.html" target="_self" >UsersRepository</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>s3Service</td>
+                                                  
+                                                        <td>
+                                                                    <code>S3Service</code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>phoneNumberRepo</td>
+                                                  
+                                                        <td>
+                                                                    <code>UpdatePhoneNumberRepository</code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+</section>
+
+            <section data-compodoc="block-methods">
+    
+    <h3 id="methods">
+        Methods
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="addUserBankAccountFromDetail"></a>
+                    <span class="name">
+                            <span class="modifier">Async</span>
+                        <span ><b>addUserBankAccountFromDetail</b></span>
+                        <a href="#addUserBankAccountFromDetail"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>addUserBankAccountFromDetail(userId: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>, body: <a href="../classes/CreateBankTokenInput.html" target="_self">CreateBankTokenInput</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="107"
+                                    class="link-to-prism">apps/api/src/modules/stripe/stripe-connect/stripe-connect.service.ts:107</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Description placeholder</p>
+</div>
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>userId</td>
+                                            <td>
+                                                            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                        <tr>
+                                                <td>body</td>
+                                            <td>
+                                                            <code><a href="../classes/CreateBankTokenInput.html" target="_self" >CreateBankTokenInput</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>    <code>Promise&lt;Stripe.Response&lt;Stripe.ExternalAccount&gt;&gt;</code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="addUserBankAccountFromToken"></a>
+                    <span class="name">
+                            <span class="modifier">Async</span>
+                        <span ><b>addUserBankAccountFromToken</b></span>
+                        <a href="#addUserBankAccountFromToken"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>addUserBankAccountFromToken(userId: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>, body: <a href="../classes/CreateBankAccountInput.html" target="_self">CreateBankAccountInput</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="53"
+                                    class="link-to-prism">apps/api/src/modules/stripe/stripe-connect/stripe-connect.service.ts:53</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Description placeholder</p>
+</div>
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>userId</td>
+                                            <td>
+                                                            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                        <tr>
+                                                <td>body</td>
+                                            <td>
+                                                            <code><a href="../classes/CreateBankAccountInput.html" target="_self" >CreateBankAccountInput</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>    <code>Promise&lt;Stripe.Response&lt;Stripe.ExternalAccount&gt;&gt;</code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="createCustomStripeAccount"></a>
+                    <span class="name">
+                            <span class="modifier">Async</span>
+                        <span ><b>createCustomStripeAccount</b></span>
+                        <a href="#createCustomStripeAccount"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>createCustomStripeAccount(data: <a href="../classes/CreateBankDetailInput.html" target="_self">CreateBankDetailInput</a>, userId: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="396"
+                                    class="link-to-prism">apps/api/src/modules/stripe/stripe-connect/stripe-connect.service.ts:396</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                                <td>Description</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>data</td>
+                                            <td>
+                                                            <code><a href="../classes/CreateBankDetailInput.html" target="_self" >CreateBankDetailInput</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                            <td>
+                                                    <p>data to create the connected account from</p>
+
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                                <td>userId</td>
+                                            <td>
+                                                            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                            <td>
+                                                    <p>user id</p>
+
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>    <code>Promise&lt;MessageResponse&gt;</code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="deleteStripeConnectAccount"></a>
+                    <span class="name">
+                            <span class="modifier">Async</span>
+                        <span ><b>deleteStripeConnectAccount</b></span>
+                        <a href="#deleteStripeConnectAccount"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>deleteStripeConnectAccount(userId: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>, connectAccountId: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="233"
+                                    class="link-to-prism">apps/api/src/modules/stripe/stripe-connect/stripe-connect.service.ts:233</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Description placeholder</p>
+</div>
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>userId</td>
+                                            <td>
+                                                            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                        <tr>
+                                                <td>connectAccountId</td>
+                                            <td>
+                                                            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>    <code>Promise&lt;boolean&gt;</code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="deleteUserBankAccount"></a>
+                    <span class="name">
+                            <span class="modifier">Async</span>
+                        <span ><b>deleteUserBankAccount</b></span>
+                        <a href="#deleteUserBankAccount"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>deleteUserBankAccount(userId: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>, bankId: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="196"
+                                    class="link-to-prism">apps/api/src/modules/stripe/stripe-connect/stripe-connect.service.ts:196</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Description placeholder</p>
+</div>
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>userId</td>
+                                            <td>
+                                                            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                        <tr>
+                                                <td>bankId</td>
+                                            <td>
+                                                            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>    <code>Promise&lt;boolean&gt;</code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="generateAccountOnboardingLink"></a>
+                    <span class="name">
+                            <span class="modifier">Async</span>
+                        <span ><b>generateAccountOnboardingLink</b></span>
+                        <a href="#generateAccountOnboardingLink"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>generateAccountOnboardingLink(userId: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>, body: <a href="../classes/CreateBankAccountLinkInput.html" target="_self">CreateBankAccountLinkInput</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="310"
+                                    class="link-to-prism">apps/api/src/modules/stripe/stripe-connect/stripe-connect.service.ts:310</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Description placeholder</p>
+</div>
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>userId</td>
+                                            <td>
+                                                            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                        <tr>
+                                                <td>body</td>
+                                            <td>
+                                                            <code><a href="../classes/CreateBankAccountLinkInput.html" target="_self" >CreateBankAccountLinkInput</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>    <code>Promise&lt;Stripe.Response&lt;Stripe.AccountLink&gt;&gt;</code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="generateCustomAccountOnboardingLink"></a>
+                    <span class="name">
+                            <span class="modifier">Async</span>
+                        <span ><b>generateCustomAccountOnboardingLink</b></span>
+                        <a href="#generateCustomAccountOnboardingLink"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>generateCustomAccountOnboardingLink(userId: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="256"
+                                    class="link-to-prism">apps/api/src/modules/stripe/stripe-connect/stripe-connect.service.ts:256</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Description placeholder</p>
+</div>
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>userId</td>
+                                            <td>
+                                                            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>    <code>Promise&lt;Stripe.Response&lt;Stripe.Account&gt;&gt;</code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getBusiness"></a>
+                    <span class="name">
+                            <span class="modifier">Private</span>
+                            <span class="modifier">Async</span>
+                        <span ><b>getBusiness</b></span>
+                        <a href="#getBusiness"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>getBusiness(userId: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="289"
+                                    class="link-to-prism">apps/api/src/modules/stripe/stripe-connect/stripe-connect.service.ts:289</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Description placeholder</p>
+</div>
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>userId</td>
+                                            <td>
+                                                            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>    <code>Promise&lt;literal type&gt;</code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getUserStripeAccountDetails"></a>
+                    <span class="name">
+                            <span class="modifier">Async</span>
+                        <span ><b>getUserStripeAccountDetails</b></span>
+                        <a href="#getUserStripeAccountDetails"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>getUserStripeAccountDetails(userId: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="565"
+                                    class="link-to-prism">apps/api/src/modules/stripe/stripe-connect/stripe-connect.service.ts:565</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Description placeholder</p>
+</div>
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>userId</td>
+                                            <td>
+                                                            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>    <code>unknown</code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="updateDefaultBankAccount"></a>
+                    <span class="name">
+                            <span class="modifier">Async</span>
+                        <span ><b>updateDefaultBankAccount</b></span>
+                        <a href="#updateDefaultBankAccount"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>updateDefaultBankAccount(userId: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>, bankId: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="162"
+                                    class="link-to-prism">apps/api/src/modules/stripe/stripe-connect/stripe-connect.service.ts:162</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Description placeholder</p>
+</div>
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>userId</td>
+                                            <td>
+                                                            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                        <tr>
+                                                <td>bankId</td>
+                                            <td>
+                                                            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>    <code>Promise&lt;boolean&gt;</code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+
+    </div>
+
+
+    <div class="tab-pane fade  tab-source-code" id="source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { BadRequestException, Injectable, NotFoundException } from &#x27;@nestjs/common&#x27;;
+import {
+  CreateBankAccountInput,
+  CreateBankAccountLinkInput,
+} from &#x27;./dto/input/create-bank-detail.input&#x27;;
+import { StripeService } from &#x27;@app/stripe&#x27;;
+import { LinkBankAccountType } from &#x27;./enum/link-connect-account.enum&#x27;;
+import { BusinessRepository, UpdatePhoneNumberRepository, UsersRepository } from &#x27;@app/data-access&#x27;;
+import { I18nService } from &#x27;nestjs-i18n&#x27;;
+import { PORTAL_URI } from &#x27;./constant/stripe-connect&#x27;;
+import { CreateBankDetailInput, CreateBankTokenInput } from &#x27;./dto/input/create-bank.input&#x27;;
+import { MessageResponse } from &#x27;@app/common/dto/response/message.response&#x27;;
+import { S3Service } from &#x27;@app/common/services/aws&#x27;;
+import Stripe from &#x27;stripe&#x27;;
+
+/**
+ * Description placeholder
+ *
+ * @export
+ * @class StripeConnectService
+ * @typedef {StripeConnectService}
+ */
+@Injectable()
+export class StripeConnectService {
+  /**
+   * Creates an instance of StripeConnectService.
+   *
+   * @constructor
+   * @param {StripeService} stripeService
+   * @param {BusinessRepository} businessRepo
+   * @param {I18nService} i18nService
+   * @param {UsersRepository} usersRepository
+   * @param {S3Service} s3Service
+   * @param {UpdatePhoneNumberRepository} phoneNumberRepo
+   */
+  constructor(
+    private readonly stripeService: StripeService,
+    private readonly businessRepo: BusinessRepository,
+    private readonly i18nService: I18nService,
+    private readonly usersRepository: UsersRepository,
+    private readonly s3Service: S3Service,
+    private readonly phoneNumberRepo: UpdatePhoneNumberRepository,
+  ) {}
+
+  /**
+   * Description placeholder
+   *
+   * @async
+   * @param {string} userId
+   * @param {CreateBankAccountInput} body
+   * @returns {unknown}
+   */
+  async addUserBankAccountFromToken(
+    userId: string,
+    body: CreateBankAccountInput,
+  ): Promise&lt;Stripe.Response&lt;Stripe.ExternalAccount&gt;&gt; {
+    try {
+      const { business, user } &#x3D; await this.getBusiness(userId);
+
+      if (!business?.bankDetail?.accountId) {
+        throw new BadRequestException(this.i18nService.t(&#x27;Stripe connect not found&#x27;));
+      }
+
+      const res &#x3D; await this.stripeService.createExternalAccount(
+        business?.bankDetail?.accountId,
+        body.bankToken,
+      );
+
+      const externalAccount: any &#x3D; {
+        id: res.id,
+        object: res.object, // Corrected to match the original key
+        account: res.account,
+        country: res.country,
+        currency: res.currency,
+        last4: res.last4, // Removed the incorrect quote
+        status: res.status,
+      };
+
+      await this.businessRepo.updateOne(
+        { _id: user.businessId },
+        { $push: { &#x27;bankDetail.externalAccounts&#x27;: externalAccount } },
+      );
+
+      // business.bankDetail &#x3D; {
+      //   accountId: business?.bankDetail?.accountId,
+      //   externalAccounts: [...business.bankDetail.externalAccounts, externalAccount],
+      //   accountType: &#x27;custom&#x27;,
+      //   accountStatus: &#x27;completed&#x27;,
+      //   verificationStatus: &#x27;verified&#x27;,
+      // };
+
+      // await business.save();
+      return res;
+    } catch (e) {
+      throw new BadRequestException(e?.message);
+    }
+  }
+
+  /**
+   * Description placeholder
+   *
+   * @async
+   * @param {string} userId
+   * @param {CreateBankTokenInput} body
+   * @returns {Promise&lt;Stripe.Response&lt;Stripe.ExternalAccount&gt;&gt;}
+   */
+  async addUserBankAccountFromDetail(
+    userId: string,
+    body: CreateBankTokenInput,
+  ): Promise&lt;Stripe.Response&lt;Stripe.ExternalAccount&gt;&gt; {
+    try {
+      const { accountName, accountNumber, routingNumber, accountHolderType, accountType } &#x3D; body;
+
+      const { business, user } &#x3D; await this.getBusiness(userId);
+
+      if (!business?.bankDetail?.accountId) {
+        throw new BadRequestException(this.i18nService.t(&#x27;Stripe connect not found&#x27;));
+      }
+
+      const bankToken &#x3D; await this.stripeService.createBankToken({
+        accountName,
+        accountNumber,
+        routingNumber,
+        accountHolderType,
+        accountType,
+      });
+
+      const res &#x3D; await this.stripeService.createExternalAccount(
+        business?.bankDetail?.accountId,
+        bankToken.id,
+      );
+
+      const externalAccount: any &#x3D; {
+        id: res.id,
+        object: res.object, // Corrected to match the original key
+        account: res.account,
+        country: res.country,
+        currency: res.currency,
+        last4: res.last4, // Removed the incorrect quote
+        status: res.status,
+      };
+
+      await this.businessRepo.updateOne(
+        { _id: user.businessId },
+        { $push: { &#x27;bankDetail.externalAccounts&#x27;: externalAccount } },
+      );
+
+      return res;
+    } catch (e) {
+      throw new BadRequestException(e?.message);
+    }
+  }
+
+  /**
+   * Description placeholder
+   *
+   * @async
+   * @param {string} userId
+   * @param {string} bankId
+   * @returns {unknown}
+   */
+  async updateDefaultBankAccount(userId: string, bankId: string): Promise&lt;boolean&gt; {
+    try {
+      const { business, user } &#x3D; await this.getBusiness(userId);
+
+      if (!business?.bankDetail?.accountId) {
+        throw new BadRequestException(this.i18nService.t(&#x27;Account not found&#x27;));
+      }
+
+      await this.stripeService.updateExternalAccount(business?.bankDetail?.accountId, bankId);
+
+      await this.businessRepo.updateOne(
+        { _id: user.businessId },
+        { $set: { &#x27;bankDetail.externalAccounts.$[].default_for_currency&#x27;: false } },
+      );
+
+      await this.businessRepo.updateOne(
+        { _id: user.businessId, &#x27;bankDetail.externalAccounts.id&#x27;: bankId },
+        { $set: { &#x27;bankDetail.externalAccounts.$.default_for_currency&#x27;: true } },
+      );
+
+      return true;
+    } catch (e) {
+      throw new BadRequestException(e?.message);
+    }
+  }
+
+  /**
+   * Description placeholder
+   *
+   * @async
+   * @param {string} userId
+   * @param {string} bankId
+   * @returns {unknown}
+   */
+  async deleteUserBankAccount(userId: string, bankId: string): Promise&lt;boolean&gt; {
+    try {
+      const { business, user } &#x3D; await this.getBusiness(userId);
+
+      if (!business?.bankDetail?.accountId) {
+        throw new BadRequestException(this.i18nService.t(&#x27;Account not found&#x27;));
+      }
+
+      const existingPayment &#x3D; business?.bankDetail?.externalAccounts?.find(
+        (payment) &#x3D;&gt; payment.id &#x3D;&#x3D; bankId,
+      );
+
+      if (!business?.bankDetail?.accountId || !existingPayment) {
+        throw new NotFoundException(this.i18nService.t(&#x27;stripe_connect.bank_account_not_found&#x27;));
+      }
+
+      await this.stripeService.deleteUserBankAccount(business?.bankDetail?.accountId, bankId);
+
+      await this.businessRepo.updateOne(
+        { _id: user.businessId },
+        { $pull: { &#x27;bankDetail.externalAccounts&#x27;: { id: bankId } } },
+      );
+
+      return true;
+    } catch (e) {
+      throw new BadRequestException(e?.message);
+    }
+  }
+
+  /**
+   * Description placeholder
+   *
+   * @async
+   * @param {string} userId
+   * @param {string} connectAccountId
+   * @returns {unknown}
+   */
+  async deleteStripeConnectAccount(userId: string, connectAccountId: string): Promise&lt;boolean&gt; {
+    try {
+      const { business } &#x3D; await this.getBusiness(userId);
+
+      if (business?.bankDetail?.accountId !&#x3D;&#x3D; connectAccountId) {
+        throw new NotFoundException(this.i18nService.t(&#x27;stripe_connect.account_not_found&#x27;));
+      }
+      await this.stripeService.deleteConnectedAccount(connectAccountId);
+      business.bankDetail &#x3D; null;
+      await business.save();
+      return true;
+    } catch (e) {
+      throw new BadRequestException(e?.message);
+    }
+  }
+
+  /**
+   * Description placeholder
+   *
+   * @async
+   * @param {string} userId
+   * @returns {unknown}
+   */
+  async generateCustomAccountOnboardingLink(
+    userId: string,
+  ): Promise&lt;Stripe.Response&lt;Stripe.Account&gt;&gt; {
+    try {
+      await this.getBusiness(userId);
+
+      const res &#x3D; await this.stripeService.createConnectedAccount({
+        type: &#x27;custom&#x27;,
+        business_type: &#x27;individual&#x27;,
+        country: &#x27;AU&#x27;,
+        capabilities: {
+          card_payments: {
+            requested: true,
+          },
+          transfers: {
+            requested: true,
+          },
+        },
+      });
+      return res;
+    } catch (e) {
+      throw new BadRequestException(e?.message);
+    }
+  }
+
+  /**
+   * Description placeholder
+   *
+   * @private
+   * @async
+   * @param {string} userId
+   * @returns {Promise&lt;{ user: any; business: any }&gt;}
+   */
+  private async getBusiness(userId: string): Promise&lt;{ user: any; business: any }&gt; {
+    const user &#x3D; await this.usersRepository.findOne({ _id: userId });
+    if (!user?.businessId) {
+      throw new BadRequestException(this.i18nService.t(&#x27;stripe_connect.business_user_fetch_error&#x27;));
+    }
+
+    const business &#x3D; await this.businessRepo.findOne({ _id: user.businessId });
+    if (!business) {
+      throw new BadRequestException(this.i18nService.t(&#x27;stripe_connect.business_user_fetch_error&#x27;));
+    }
+
+    return { user, business };
+  }
+  /**
+   * Description placeholder
+   *
+   * @async
+   * @param {string} userId
+   * @param {CreateBankAccountLinkInput} body
+   * @returns {unknown}
+   */
+  async generateAccountOnboardingLink(
+    userId: string,
+    body: CreateBankAccountLinkInput,
+  ): Promise&lt;Stripe.Response&lt;Stripe.AccountLink&gt;&gt; {
+    const { bankAccountType, connectAccountId } &#x3D; body;
+    try {
+      const { business, user } &#x3D; await this.getBusiness(userId);
+
+      if (!user?.stripeCustomerId) {
+        const customer &#x3D; await this.stripeService.createCustomer({
+          description: &#x60;cus-${userId}&#x60;,
+        });
+        user.stripeCustomerId &#x3D; customer.id;
+        await user.save();
+      }
+
+      if (business?.bankDetail?.accountStatus &#x3D;&#x3D;&#x3D; &#x27;completed&#x27;) {
+        throw new BadRequestException(
+          this.i18nService.t(&#x27;stripe_connect.account_already_connected&#x27;),
+        );
+      }
+
+      let connectedAccountId &#x3D; connectAccountId;
+
+      if (
+        bankAccountType &#x3D;&#x3D;&#x3D; LinkBankAccountType.STANDARD ||
+        bankAccountType &#x3D;&#x3D;&#x3D; LinkBankAccountType.EXPRESS
+      ) {
+        let connectAccountPayload: any &#x3D; {
+          type: bankAccountType,
+          email: business.email,
+        }; // for standard account
+
+        if (bankAccountType &#x3D;&#x3D;&#x3D; LinkBankAccountType.EXPRESS) {
+          connectAccountPayload &#x3D; {
+            ...connectAccountPayload,
+            country: &#x27;AU&#x27;,
+            business_type: &#x27;individual&#x27;,
+            capabilities: {
+              card_payments: {
+                requested: true,
+              },
+              transfers: {
+                requested: true,
+              },
+            },
+          };
+        }
+
+        const connectedAccount &#x3D;
+          await this.stripeService.createConnectedAccount(connectAccountPayload);
+
+        connectedAccountId &#x3D; connectedAccount.id;
+      }
+
+      business.bankDetail &#x3D; {
+        accountType: bankAccountType,
+        accountId: connectedAccountId,
+        accountStatus: &#x27;not_created&#x27;,
+        verificationStatus: &#x27;pending&#x27;,
+      };
+
+      const accountLink &#x3D; await this.stripeService.linkConnectedAccount({
+        account: connectedAccountId,
+        refresh_url: &#x60;${PORTAL_URI}/profile-setting&#x60;,
+        return_url: &#x60;${PORTAL_URI}/profile-setting&#x60;,
+        type: &#x27;account_onboarding&#x27;,
+        ...(bankAccountType &#x3D;&#x3D;&#x3D; LinkBankAccountType.CUSTOM &amp;&amp; {
+          collection_options: {
+            fields: &#x27;eventually_due&#x27;, // currently_due
+          },
+        }),
+      });
+
+      return accountLink;
+    } catch (e) {
+      throw new BadRequestException(e?.message);
+    }
+  }
+
+  /**
+   * @description create the connected account from bank details
+   * @param {CreateBankDetailInput} data data to create the connected account from
+   * @param {string} userId user id
+   * @returns {Promise&lt;MessageResponse&gt;}
+   */
+  async createCustomStripeAccount(
+    data: CreateBankDetailInput,
+    userId: string,
+  ): Promise&lt;MessageResponse&gt; {
+    const {
+      accountName,
+      accountNumber,
+      routingNumber,
+      accountHolderType,
+      accountType,
+      identityDocumentFront,
+      identityDocumentBack,
+    } &#x3D; data;
+    try {
+      const { business, user } &#x3D; await this.getBusiness(userId);
+
+      if (!user?.stripeCustomerId) {
+        const customer &#x3D; await this.stripeService.createCustomer({
+          description: &#x60;cus-${userId}&#x60;,
+        });
+        user.stripeCustomerId &#x3D; customer.id;
+        await user.save();
+      }
+
+      if (business?.bankDetail?.accountId) {
+        throw new BadRequestException(this.i18nService.t(&#x27;stripe_connect.bank_already_connected&#x27;));
+      }
+
+      // create external account from bank details input
+      const bankToken &#x3D; await this.stripeService.createBankToken({
+        accountName,
+        accountNumber,
+        routingNumber,
+        accountHolderType,
+        accountType,
+      });
+
+      let frontDocId, backDocId;
+      if (identityDocumentFront &amp;&amp; identityDocumentBack) {
+        const FrontUrl &#x3D; await this.s3Service.getSignedUrl(identityDocumentFront);
+        const BackUrl &#x3D; await this.s3Service.getSignedUrl(identityDocumentBack);
+
+        const uploadFront &#x3D; await this.stripeService.uploadIdentityFile(
+          identityDocumentFront,
+          FrontUrl,
+        );
+        const uploadBack &#x3D; await this.stripeService.uploadIdentityFile(
+          identityDocumentBack,
+          BackUrl,
+        );
+
+        frontDocId &#x3D; uploadFront.id;
+        backDocId &#x3D; uploadBack.id;
+      }
+
+      const userPhoneNumber &#x3D; await this.phoneNumberRepo.findOne(
+        {
+          userId: user._id,
+        },
+        {
+          dialCode: 1,
+          phoneNumner: 1,
+        },
+      );
+
+      const connectedAccountParams &#x3D; {
+        type: &#x27;custom&#x27;,
+        country: &#x27;AU&#x27;,
+        email: user?.authProviderId,
+        requested_capabilities: [&#x27;card_payments&#x27;, &#x27;transfers&#x27;],
+        default_currency: &#x27;AUD&#x27;,
+        external_account: bankToken.id,
+        business_type: &#x27;individual&#x27;,
+        individual: {
+          address: {
+            line1:
+              user?.address?.location?.street ||
+              user?.address?.displayAddress ||
+              &#x27;address_full_match&#x27;,
+            city: user?.address?.location?.city || &#x27;new south wales&#x27;,
+            country: &#x27;AU&#x27;,
+            postal_code: user?.address?.location?.postalCode || &#x27;1215&#x27;,
+            state: user?.address?.location?.state || &#x27;NSW&#x27;,
+          },
+          dob: {
+            day: 1,
+            month: 1,
+            year: 1901,
+          },
+          first_name: user?.firstName || &#x27;firstname&#x27;,
+          last_name: user?.lastName || &#x27;lastname&#x27;,
+          phone: userPhoneNumber
+            ? &#x60;+${userPhoneNumber?.dialCode}${userPhoneNumber?.phoneNumber}&#x60;
+            : &#x27;000 000 0000&#x27;, // test phone number
+          email: user?.authProviderId,
+          ...(frontDocId &amp;&amp;
+            backDocId &amp;&amp; {
+              verification: {
+                document: {
+                  front: frontDocId,
+                  back: backDocId,
+                },
+                additional_document: {
+                  front: frontDocId,
+                  back: backDocId,
+                },
+              },
+            }),
+        },
+        business_profile: {
+          mcc: &#x27;8299&#x27;, // change mcc to client&#x27;s
+          url: &#x27;https://dev.evtheme/&#x27;, // change business profile url
+        },
+
+        tos_acceptance: {
+          date: Math.floor(Date.now() / 1000),
+          ip: &#x27;202.166.198.75&#x27;, // Assumes you&#x27;re not using a proxy (use ip)
+        },
+        settings: {
+          payouts: {
+            schedule: {
+              interval: &#x27;manual&#x27;,
+            },
+          },
+        },
+      };
+
+      const connectedAccountResult: any &#x3D;
+        await this.stripeService.createConnectedAccount(connectedAccountParams);
+
+      const externalAccounts &#x3D; connectedAccountResult.external_accounts.data.map((payment) &#x3D;&gt; ({
+        id: payment.id,
+        object: payment.object, // Corrected to match the original key
+        account: payment.account,
+        account_holder_name: payment.account_holder_name,
+        account_holder_type: payment.account_holder_type,
+        bank_name: payment.bank_name,
+        default_for_currency: payment.default_for_currency,
+        country: payment.country,
+        currency: payment.currency,
+        last4: payment.last4, // Removed the incorrect quote
+        routing_number: payment.routing_number,
+        status: payment.status,
+      }));
+
+      business.bankDetail &#x3D; {
+        accountId: connectedAccountResult.id,
+        externalAccounts: externalAccounts,
+        accountType: &#x27;custom&#x27;,
+        accountStatus: &#x27;pending&#x27;,
+        verificationStatus: &#x27;pending&#x27;,
+      };
+      await business.save();
+
+      return {
+        message: this.i18nService.t(&#x27;stripe_payment.bank_detail_added_successfully&#x27;),
+      };
+    } catch (error: any) {
+      throw error;
+    }
+  }
+
+  /**
+   * Description placeholder
+   *
+   * @async
+   * @param {string} userId
+   * @returns {unknown}
+   */
+  async getUserStripeAccountDetails(userId: string) {
+    try {
+      const { business, user } &#x3D; await this.getBusiness(userId);
+
+      if (!user?.stripeCustomerId) {
+        const customer &#x3D; await this.stripeService.createCustomer({
+          description: &#x60;cus-${userId}&#x60;,
+        });
+        user.stripeCustomerId &#x3D; customer.id;
+        await user.save();
+      }
+
+      if (!business) {
+        throw new BadRequestException(
+          this.i18nService.t(&#x27;stripe_connect.business_user_fetch_error&#x27;),
+        );
+      }
+
+      return business.bankDetail;
+    } catch (error: any) {
+      throw error;
+    }
+  }
+}
+</code></pre>
+    </div>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+          <label class="dark-mode-switch">
+               <input type="checkbox">
+               <span class="slider">
+                    <svg class="slider-icon" viewBox="0 0 24 24" fill="none" height="20" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" width="20" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"></path>
+                    </svg>
+               </span>
+          </label>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'injectable';
+            var COMPODOC_CURRENT_PAGE_URL = 'StripeConnectService.html';
+            var MAX_SEARCH_RESULTS = 15;
+       </script>
+
+       <script>
+               $darkModeToggleSwitchers = document.querySelectorAll('.dark-mode-switch input');
+               checkToggle(darkModeState);
+               if ($darkModeToggleSwitchers.length > 0) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].addEventListener('change', function (event) {
+                              darkModeState = !darkModeState;
+                              toggleDarkMode(darkModeState);
+                         });
+                    }
+               }
+          </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+
+       <script src="../js/menu-wc.js" defer></script>
+       <script nomodule src="../js/menu-wc_es5.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>

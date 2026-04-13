@@ -1,0 +1,2731 @@
+# ------------------------------------------------------
+# THIS FILE WAS AUTOMATICALLY GENERATED (DO NOT MODIFY)
+# ------------------------------------------------------
+
+enum AccountHolderType {
+  COMPANY
+  INDIVIDUAL
+}
+
+enum AccountType {
+  CHECKING
+  FUTSU
+  SAVING
+  TOZA
+}
+
+input ActivateManualSubscriptionInput {
+  amount: Float!
+  billingCycle: BillingCycle!
+  paymentProvider: PaymentProvider!
+  planId: String!
+  providerCustomerId: String
+  providerPaymentId: String!
+  userId: String!
+}
+
+input AddCoinPackageInput {
+  androidProductId: String
+  appleProductId: String
+  icon: String
+  numberOfCoins: Int!
+}
+
+input AddressInput {
+  city: String
+  coordinates: CoordinatesInput
+  country: String
+  displayAddress: String!
+  postalCode: String
+  state: String
+  street: String
+  type: LocationType
+}
+
+type AddressResponse {
+  displayAddress: String!
+  location: LocationResponse!
+}
+
+type AddressType {
+  city: String
+  coordinates: [Float!]
+  country: String
+  displayLocation: String
+  postalCode: String
+  state: String
+  street: String
+  type: String
+}
+
+type AdminBlockListResponse {
+  data: [AdminBlockResponse!]!
+  pagination: PaginationResponse!
+}
+
+type AdminBlockResponse {
+  _id: String!
+  businessId: String!
+  color: String!
+  createdAt: DateTime!
+  description: String
+  duration: Float!
+  isActive: Boolean!
+  name: String!
+  reducesUtilisation: Boolean!
+  updatedAt: DateTime!
+}
+
+type AgoraCallTokenResponse {
+  calleeId: String
+  callerId: String
+  channelName: String
+  message: String
+  token: String
+}
+
+type AgoraChatUserTokenResponse {
+  chatUsername: String
+
+  """Token's expiration time in seconds"""
+  expirationTime: Float
+  message: String
+  userToken: String
+}
+
+type AgoraTokenResponse {
+  channelName: String
+  message: String
+  token: String
+  userAccount: String
+}
+
+input AllThumbnailInput {
+  key: String!
+  type: String
+}
+
+input AndroidReceipt {
+  packageName: String!
+  signature: String
+  subscriptionId: String!
+  token: String!
+}
+
+input AndroidReceiptConsumable {
+  purchaseToken: String!
+}
+
+input AnimalAddressInput {
+  city: String!
+  state: String!
+  street: String!
+  zip: String!
+}
+
+type AnimalAddressResponse {
+  city: String!
+  state: String!
+  street: String!
+  zip: String!
+}
+
+type AnimalResponse {
+  _id: String!
+  address: AnimalAddressResponse
+  age: Int!
+  color: String
+  createdAt: DateTime
+  foods: [String!]
+  gender: String
+  height: Float
+  isNeutered: Boolean
+  isVaccinated: Boolean
+  name: String!
+  species: String!
+  updatedAt: DateTime
+  weight: Float
+}
+
+type AnimalsListResponse {
+  items: [AnimalResponse!]!
+  pagination: BasePaginationResponse!
+}
+
+type AppointmentCategoryTypeDetail {
+  _id: ID!
+  title: String
+}
+
+input AppointmentClient {
+  """addClient"""
+  addClient: Boolean!
+
+  """Date Of Birth"""
+  clientDateOfBirth: DateTime!
+
+  """Email"""
+  clientEmail: String!
+
+  """Client First Name"""
+  clientFirstName: String!
+
+  """Client Last Name"""
+  clientLastName: String!
+
+  """Client Phone number"""
+  clientPhone: String
+
+  """Client Salutation"""
+  clientSalutation: String!
+}
+
+type AppointmentClientResponse {
+  _id: ID
+  dateOfBirth: DateTime
+  firstName: String
+  fullName: String
+  lastName: String
+}
+
+type AppointmentInfo {
+  addressId: String
+  isRecurring: Boolean
+  recurrencePattern: RecurrencePatternResponse
+}
+
+input AppointmentInstanceDetailDTO {
+  instanceId: String!
+}
+
+type AppointmentInstanceDetailResponse {
+  _id: String
+  addressId: String
+  adminBlock: AppointmentTypeResponseDetail
+  appointmentId: String
+  appointmentInfo: AppointmentInfo
+  appointmentName: String
+  appointmentType: AppointmentTypeResponseDetail
+  businessId: String
+  cancelNote: String
+  cancelReason: String
+  client: ClientType
+  clientMembership: String
+  clientMembershipId: String
+  confirmationStatus: String
+  coveredBy: String
+  endDate: DateTime
+  endTime: DateTime
+  fullyPaid: Boolean
+  hasEarly: Boolean
+  instanceDate: DateTime
+  invoiceId: String
+  isInvoiceCreated: Boolean
+  isInvoicePaid: Boolean
+  isInvoicePaidPartially: Boolean
+  isRecurring: Boolean
+  isUnavailableBlock: Boolean
+  location: LocationResponseType
+  locationTimezoneInfo: TimezoneInfo
+  note: String
+  practitioners: [PractitionerResponse!]
+  startDate: DateTime
+  startTime: DateTime
+  status: String
+  unavailableBlockNote: String
+}
+
+type AppointmentSettingsPractitionersDetail {
+  _id: ID!
+  archiveDate: DateTime
+  fullName: String
+  profilePicture: String
+}
+
+type AppointmentSettingsTeamMembersDetail {
+  _id: ID!
+  fullName: String
+  profilePicture: String
+}
+
+input AppointmentTypeListingDto {
+  accessibleLocations: [String!]
+  categoryIds: [String!]
+
+  """Status"""
+  isActive: Boolean = false
+  pageMeta: PagMetaDTO!
+  practitioner: [String!]
+  searchText: String
+}
+
+type AppointmentTypeObject {
+  appointmentCategoryId: String
+  appointmentCategoryTitle: String
+  appointmentTypeId: String
+  color: String
+  title: String
+}
+
+type AppointmentTypeResponseDetail {
+  _id: String
+  automaticallyChargeForCancellation: Boolean
+  cancellationAmount: Float
+  color: String
+  duration: Float
+  minimumOnlinePayment: Float
+  multiPractitioner: Boolean
+  title: String
+  treatmentNoteTemplateId: String
+}
+
+type AppointmentTypesDataResponse {
+  _id: String
+  categoryName: String
+  description: String
+  displayName: String
+  title: String
+}
+
+type AppointmentTypesResponse {
+  _id: ID
+  businessId: String
+  categoryName: String
+  color: String
+  createdAt: DateTime
+  description: String
+  duration: String
+  multiPatient: Boolean
+  multiPractitioner: Boolean
+  practitioner: [ID!]!
+  status: String
+  title: String
+  trackTreatmentNotes: Boolean
+}
+
+type AttendeeResponse {
+  AttendeeId: String!
+  Capabilities: Capabilities
+  ExternalUserId: String!
+  JoinToken: String!
+}
+
+type BankDetail {
+  accountName: String
+  accountNumber: String
+  routingNumber: String
+}
+
+type BasePaginationResponse {
+  hasNextPage: Boolean!
+  total: Float!
+}
+
+"""The billing cycles available in the system"""
+enum BillingCycle {
+  MONTHLY
+  QUARTERLY
+  WEEKLY
+  YEARLY
+}
+
+type BillingDetail {
+  """Name of the customer."""
+  name: String
+}
+
+type BiometricEnableResponse {
+  biometricToken: String
+  biometricTokenExpiresIn: DateTime
+  message: String
+}
+
+input BiometricLoginInput {
+  biometricToken: String!
+  deviceId: String!
+}
+
+type BiometricLoginResponse {
+  accessToken: String
+  accessTokenExpiresIn: DateTime
+  biometricToken: String
+  biometricTokenExpiresIn: DateTime
+  cometAuthToken: String
+  message: String
+  refreshToken: String
+  refreshTokenExpiresIn: DateTime
+}
+
+enum BusinessType {
+  company
+  governmentEntity
+  individual
+  nonProfit
+}
+
+type CalendarAppointmentUserResponse {
+  """ID of user."""
+  _id: String
+
+  """Full name of user."""
+  fullName: String
+
+  """S3 key of profile picture."""
+  profilePicture: String
+}
+
+type CalendarClassOccupancyResponse {
+  """Total bookings count for the class."""
+  occupied: Float!
+
+  """Total class capacity of the class."""
+  total: Float!
+}
+
+input CalendarListClassAppointmentDTO {
+  """Valid location id(mongoId) of business"""
+  addressId: [String!]
+  addressIds: [String!]
+  appointmentTypeIds: [String!]
+
+  """Valid class type id(mongoId) of business"""
+  classTypeId: [String!]
+  clientIds: [String!]
+  coachIds: [String!]
+
+  """End date in UTC."""
+  endDate: DateTime!
+  fromPage: String = "class"
+  pageMeta: PagMetaDTO!
+
+  """Start date in UTC."""
+  startDate: DateTime!
+  timeOffsetInMinute: Float!
+}
+
+type CalendarListClassAppointmentResponse {
+  """Class instance id."""
+  _id: ID!
+
+  """Address"""
+  address: String
+  appointmentNotes: [String!]
+  bookedFrom: String
+  client: AppointmentClientResponse
+
+  """Class color displayed in event calendar"""
+  color: String
+  confirmationStatus: String
+
+  """Appointment count calendar"""
+  count: Float
+
+  """Appointment count calendar"""
+  currentCount: Float
+
+  """Class instance date."""
+  date: DateTime
+
+  """Class end time (only consider time from date value)."""
+  endTime: DateTime
+  fullyPaid: Boolean
+  isFirstAppointment: Boolean
+
+  """Unavailable block event calendar"""
+  isUnavailableBlock: Boolean
+
+  """Location timezone"""
+  locationTimezone: String
+  note: String
+
+  """Class occupancy information"""
+  occupancy: CalendarClassOccupancyResponse
+
+  """Class start time (only consider time from date value)."""
+  startTime: DateTime
+  status: String
+
+  """Class title."""
+  title: String
+
+  """Class or Appointment"""
+  type: String
+  unavailableBlockNote: String
+
+  """Assigned practionar information"""
+  user: CalendarAppointmentUserResponse
+}
+
+type CalenderSavedFilterResponse {
+  activeCalendarTab: String
+
+  """appointmentDays"""
+  appointmentDays: Float
+
+  """appointmentLocations"""
+  appointmentLocations: [String!]
+  appointmentLocationsData: [LocationDataResponse!]
+
+  """appointmentPractitioners"""
+  appointmentPractitioners: [String!]
+  appointmentPractitionersData: [UserDataResponse!]
+
+  """appointmentSavedAt"""
+  appointmentSavedAt: DateTime
+
+  """appointmentTypes"""
+  appointmentTypes: [String!]
+  appointmentTypesData: [AppointmentTypesDataResponse!]
+
+  """Business Id"""
+  businessId: String
+}
+
+input CancelAppointmentInstanceDTO {
+  cancelNote: String = "false"
+  cancelReason: String = "false"
+  deductCancellationcharge: Boolean!
+  instanceId: String!
+  notifyAll: Boolean
+  option: String
+}
+
+input CancelSubscriptionInput {
+  cancelAtPeriodEnd: Boolean
+  cancellationReason: String
+  subscriptionId: String!
+}
+
+type Capabilities {
+  Audio: String!
+  Content: String!
+  Video: String!
+}
+
+input CapturePaypalOrderInput {
+  orderId: String!
+}
+
+type CapturePaypalOrderResponse {
+  id: String!
+  status: String!
+}
+
+type CardListReponse {
+  brand: String
+  cardId: String
+  country: String
+  exp_month: Float
+  exp_year: Float
+  fingerprint: String
+  funding: String
+  is_default_source: Boolean
+  last4: String
+  name: String
+  userId: String
+}
+
+input ChangePasswordInput {
+  new_password: String!
+  password: String!
+}
+
+input CheckAvailableDateDTO {
+  """Apointment date in UTC"""
+  appointmentDate: DateTime
+
+  """appointmentInstanceId"""
+  appointmentInstanceId: String
+
+  """End time in UTC"""
+  endTime: DateTime
+
+  """Location id (Mongo id)"""
+  locationId: String
+
+  """Practitioners"""
+  practitionerIds: [String!]
+
+  """Start time in UTC"""
+  startTime: DateTime
+
+  """Time zone offset"""
+  timeZoneOffset: Float!
+}
+
+type CheckAvailableDateResponse {
+  message: String
+  success: Boolean!
+}
+
+type CheckAvailableLocationResponse {
+  location: String
+  success: Boolean!
+}
+
+input CheckLocationDTO {
+  """Apointment date in UTC"""
+  appointmentDate: DateTime
+
+  """appointmentInstanceId"""
+  appointmentInstanceId: String
+
+  """End time in UTC"""
+  endTime: DateTime
+
+  """Practitioners"""
+  practitionerIds: [String!]
+
+  """Start time in UTC"""
+  startTime: DateTime
+}
+
+type ClientContactResponse {
+  _id: String
+  address: AddressType
+  businessEmail: String
+  businessName: String
+  businessPhone: String
+  contactNumber: String
+  email: String
+  firstName: String
+  fullName: String
+  isAlternateBiller: Boolean
+  isBillTo: Boolean
+  lastName: String
+  notes: String
+  profession: String
+  relationship: String
+}
+
+type ClientType {
+  _id: ID
+  acquisitionChannel: String
+  additionalInformation: String
+  address: AddressType
+  appointmentTypeInfo: String
+  business: String
+  clientContacts: [ClientContactResponse!]
+  clientId: String
+  concessionId: String
+  createdAt: DateTime
+  customAcquisitionChannel: String
+  dateOfBirth: DateTime
+  email: String!
+  emailMarketing: Boolean
+  filesDocuments: [FileResponseType!]
+  firstName: String
+  fullName: String
+  gender: String
+  genderIdentity: String
+  genderIdentitySlug: String
+  genderSlug: String
+  isArchived: Boolean
+  isDependent: Boolean
+  lastAppointment: DateTime
+  lastName: String!
+  medicalAlerts: String
+  nextAppointment: DateTime
+  phone: String
+  physitrackAccountLastSyncedAt: DateTime
+  physitrackProfileId: String
+  physitrackSyncId: String
+  practitionerInfo: [PractitionerInfoType!]
+  preferredName: String
+  profilePicture: String
+  salutation: String
+  status: String
+  valdAccountLastSyncedAt: DateTime
+  valdProfileId: String
+  valdSyncId: String
+}
+
+type CoinPackageResponse {
+  _id: ID!
+  androidProductId: String
+  appleProductId: String
+  createdAt: DateTime!
+  icon: String
+  numberOfCoins: String!
+  updatedAt: DateTime!
+}
+
+type CometChatGroupResponse {
+  guid: String!
+  propertyId: String!
+  propertyOwnerId: String!
+  requesterId: String!
+}
+
+input CommentAssetInput {
+  type: CommentAssetType
+  url: String
+}
+
+enum CommentAssetType {
+  IMAGE
+  VIDEO
+}
+
+type CommentAssets {
+  type: CommentAssetType
+  url: String
+}
+
+type ContactDetailResponse {
+  _id: String
+  contactId: String
+  deviceId: String
+  isUserRegistered: Boolean
+  name: String
+  phoneNumbers: [PhoneNumberResponse!]
+  userId: String
+}
+
+type ContactDetailsResponse {
+  _id: String
+  contactId: String
+  countryCode: String
+  deviceId: String
+  isPhoneRegistered: Boolean
+  isUserRegistered: Boolean
+  name: String
+  phoneNumber: String
+  phoneNumberId: String
+  userId: String
+}
+
+type ContactsListResponse {
+  contacts: [ContactDetailsResponse!]
+  message: String
+  pagination: BasePaginationResponse
+}
+
+type ContentType {
+  _id: String!
+  answer: String!
+  question: String!
+}
+
+input CoordinatesInput {
+  lat: Float!
+  long: Float!
+}
+
+type CoordinatesResponse {
+  lat: Float
+  long: Float
+}
+
+input CreateAnimalInput {
+  address: AnimalAddressInput
+  age: Int!
+  color: String
+  createdAt: DateTime
+  foods: [String!]
+  gender: String
+  height: Int
+  isNeutered: Boolean
+  isVaccinated: Boolean
+  name: String!
+  species: String!
+  updatedAt: DateTime
+  weight: Int
+}
+
+input CreateAppointmentDTO {
+  """Address id"""
+  addressId: String
+
+  """Admin block id"""
+  adminBlockId: String
+
+  """Appointment type id"""
+  appointmentTypeId: String
+
+  """Case type id"""
+  caseId: String
+
+  """client"""
+  client: AppointmentClient
+
+  """Client id(mongo id)"""
+  clientId: String
+
+  """Early appointment details"""
+  earlyAppointmentDetails: [DaysAndShiftsType!]
+
+  """End time in UTC"""
+  endTime: DateTime
+
+  """Flag to define if the booking has an early appointment request or not"""
+  hasEarly: Boolean
+
+  """Boolean to set is recurring"""
+  isRecurring: Boolean!
+
+  """isUnavailableBlock"""
+  isUnavailableBlock: Boolean!
+
+  """Recurrence pattern. required if isRecurring is set to true"""
+  newCase: NewCaseDTO
+
+  """Treatment note"""
+  note: String
+
+  """Array of id of practitioners"""
+  practitionerIds: [String!]!
+
+  """Recurrence pattern. required if isRecurring is set to true"""
+  recurrencePattern: RecurrencePatternDTO
+
+  """Start date in UTC"""
+  startDate: DateTime
+
+  """Start time in UTC"""
+  startTime: DateTime
+  timezoneRegion: String!
+
+  """Unavailable Block Note"""
+  unavailableBlockNote: String
+}
+
+type CreateAppointmentResponse {
+  appointmentType: AppointmentTypeObject!
+  createdBy: ID!
+  endTime: DateTime!
+  note: String
+  practitioner: PractitionerType!
+  startTime: DateTime!
+}
+
+input CreateBankAccountInput {
+  bankToken: String!
+}
+
+input CreateBankAccountLinkInput {
+  accountHolderType: AccountHolderType! = INDIVIDUAL
+  bankAccountType: LinkBankAccountType! = STANDARD
+  connectAccountId: String
+}
+
+input CreateBankDetailInput {
+  accountHolderType: AccountHolderType
+  accountName: String!
+
+  """
+  Test account numbers: https://stripe.com/docs/connect/testing#account-numbers
+  """
+  accountNumber: String!
+  accountType: AccountType
+  identityDocumentBack: String
+  identityDocumentFront: String
+
+  """BSB number in australian account case:- 000000, 110000"""
+  routingNumber: String!
+}
+
+input CreateBankTokenInput {
+  accountHolderType: AccountHolderType
+  accountName: String!
+
+  """
+  Test account numbers: https://stripe.com/docs/connect/testing#account-numbers
+  """
+  accountNumber: String!
+  accountType: AccountType
+
+  """BSB number in australian account case:- 000000, 110000"""
+  routingNumber: String!
+}
+
+input CreateCometChatGroupInput {
+  guid: String!
+  propertyId: String!
+  propertyOwnerId: String!
+}
+
+type CreateCompanyBankAccountLinkResponse {
+  created: Float!
+  expiresAt: Float!
+  url: String!
+}
+
+type CreateConnectAccountResponse {
+  connectAccountId: String!
+  message: String
+}
+
+input CreateFakeProductInput {
+  category: FakeProductCategoryInput
+  description: String
+  dimensions: FakeProductDimensionsInput
+  image: String
+  isActive: Boolean
+  manufacturedAt: FakeManufacturerAddressInput
+  name: String!
+  price: Float!
+  sku: String!
+  stock: Int!
+  tags: [String!]
+}
+
+input CreateFeedCommentInput {
+  assets: CommentAssetInput
+  commentText: String
+}
+
+input CreateFeedInput {
+  assets: [FeedAssetInput!]
+  caption: String
+  location: LocationInput
+  status: FeedStatus = DRAFT
+  visibilityType: VisibilityType = PUBLIC
+}
+
+input CreateFeedReplyInput {
+  assets: ReplyAssetInput
+  replyText: String
+}
+
+input CreateManualSubscriptionInput {
+  billingCycle: BillingCycle!
+  paymentMethodId: String
+  paymentProvider: PaymentProvider!
+  planId: String!
+}
+
+type CreateManualSubscriptionResponse {
+  approvalUrl: String
+  clientSecret: String
+  message: String!
+  orderId: String
+  paymentIntentId: String
+  requiresAction: Boolean
+  success: Boolean!
+}
+
+input CreateOnboardingAccountLinkInput {
+  businessType: BusinessType!
+}
+
+input CreatePaymentInput {
+  amount: Float!
+  paymentMethodId: String!
+}
+
+input CreatePaypalInput {
+  """Example field (placeholder)"""
+  exampleField: Int!
+}
+
+input CreatePaypalOrderInput {
+  amount: Float!
+  currency: String = "USD"
+  itemName: String
+  quantity: Float = 1
+}
+
+type CreatePaypalOrderResponse {
+  link: String!
+}
+
+input CreateStripeSubscriptionInput {
+  cardId: String!
+  couponCode: String
+  priceId: String!
+  productId: String!
+}
+
+type CurrentSubscription {
+  cancellationDate: DateTime
+  environment: String
+  expirationDate: DateTime!
+  isAutoRenewing: Boolean
+  isCancelled: Boolean
+  isTrailPeriod: Boolean
+  originalTransactionId: String
+  packageName: String!
+  purchaseDate: DateTime!
+  purchasePlatform: PurchasePlatform!
+}
+
+"""
+A date-time string at UTC, such as 2019-12-03T09:54:33Z, compliant with the date-time format.
+"""
+scalar DateTime
+
+input DaysAndShiftsType {
+  dayOfWeek: Float
+  note: String
+
+  """Early appointment shifts"""
+  shifts: [String!]!
+}
+
+input DeletePaymentMethodInput {
+  paymentMethodId: String!
+}
+
+type DeviceDto {
+  createdAt: DateTime
+  deviceId: String!
+  deviceName: String
+  deviceType: String
+  lastActive: DateTime
+  tokenTypes: [String!]
+  updatedAt: DateTime
+  userId: String!
+}
+
+input DeviceInfoInput {
+  deviceName: String!
+  deviceType: String!
+  pushNotificationToken: String
+  voipToken: String
+}
+
+enum DocsVerificationGenderType {
+  Female
+  Gender_X
+  Male
+}
+
+type DocsVerificationResponse {
+  message: String!
+  success: Boolean!
+}
+
+enum DriverLicenceStateOfIssue {
+  ACT
+  NSW
+  NT
+  QLD
+  SA
+  TAS
+  VIC
+  WA
+}
+
+input DriverLicenceVerificationInput {
+  BirthDate: String!
+  CardNumber: String!
+  FamilyName: String!
+  GivenName: String!
+  LicenceNumber: String!
+  MiddleName: String!
+  StateOfIssue: DriverLicenceStateOfIssue!
+}
+
+input EditAppointmentDTO {
+  """update appointment action"""
+  action: String = null
+
+  """Address id"""
+  addressId: String
+
+  """Admin block id"""
+  adminBlockId: String
+
+  """Appointment type id"""
+  appointmentTypeId: String
+
+  """Case type id"""
+  caseId: String
+
+  """client"""
+  client: AppointmentClient
+
+  """Client id(mongo id)"""
+  clientId: String
+
+  """Early appointment details"""
+  earlyAppointmentDetails: [DaysAndShiftsType!]
+
+  """End time in UTC"""
+  endTime: DateTime
+
+  """Flag to define if the booking has an early appointment request or not"""
+  hasEarly: Boolean
+
+  """appointment id"""
+  instanceId: String!
+
+  """Boolean to set is recurring"""
+  isRecurring: Boolean!
+
+  """isUnavailableBlock"""
+  isUnavailableBlock: Boolean!
+
+  """Recurrence pattern. required if isRecurring is set to true"""
+  newCase: NewCaseDTO
+
+  """Treatment note"""
+  note: String
+
+  """Array of id of practitioners"""
+  practitionerIds: [String!]!
+
+  """Recurrence pattern. required if isRecurring is set to true"""
+  recurrencePattern: RecurrencePatternDTO
+
+  """Start date in UTC"""
+  startDate: DateTime
+
+  """Start time in UTC"""
+  startTime: DateTime
+  timezoneRegion: String!
+
+  """Unavailable Block Note"""
+  unavailableBlockNote: String
+
+  """appointment id"""
+  updateAll: Boolean! = false
+  updateOption: String!
+}
+
+input EmailSignupOTPInput {
+  deviceId: String!
+  email: String!
+}
+
+type EphemeralKey {
+  createdAt: Float!
+  expiresAt: Float!
+  keyId: String!
+  keySecret: String!
+}
+
+type EphemeralKeyResponse {
+  data: EphemeralKey!
+  message: String
+}
+
+type ExternalAccount {
+  account: String!
+  account_holder_name: String
+  account_holder_type: String
+  bank_name: String
+  country: String
+  currency: String
+  default_for_currency: Boolean
+  id: String!
+  last4: String
+  object: String!
+  routing_number: String
+  status: String
+}
+
+type FAQ {
+  _id: String!
+  content: [ContentType!]!
+  createdAt: DateTime
+  description: String!
+  section: String!
+  updatedAt: DateTime
+}
+
+type FAQResponse {
+  faq: FAQ
+  faqs: [FAQ!]!
+  message: String
+  pagination: BasePaginationResponse
+}
+
+type FAQsResponse {
+  faqs: [FAQ!]!
+  message: String
+  total: Float!
+}
+
+input FakeManufacturerAddressInput {
+  city: String!
+  state: String!
+  street: String!
+  zip: String!
+}
+
+type FakeManufacturerAddressResponse {
+  city: String!
+  state: String!
+  street: String!
+  zip: String!
+}
+
+input FakeProductCategoryInput {
+  _id: String
+  name: String!
+  slug: String!
+}
+
+type FakeProductCategoryResponse {
+  _id: String!
+  name: String!
+  slug: String!
+}
+
+input FakeProductDimensionsInput {
+  depth: Int!
+  height: Int!
+  unit: String!
+  width: Int!
+}
+
+type FakeProductDimensionsResponse {
+  depth: Int!
+  height: Int!
+  unit: String!
+  width: Int!
+}
+
+type FakeProductResponse {
+  _id: String!
+  category: FakeProductCategoryResponse
+  createdAt: DateTime
+  description: String
+  dimensions: FakeProductDimensionsResponse
+  image: String
+  imageUrl: String
+  isActive: Boolean
+  manufacturedAt: FakeManufacturerAddressResponse
+  name: String!
+  price: Float!
+  sku: String!
+  stock: Int!
+  tags: [String!]
+  updatedAt: DateTime
+}
+
+type FakeProductTagsResponse {
+  tags: [FakeTags!]!
+}
+
+type FakeProductsListResponse {
+  items: [FakeProductResponse!]!
+  pagination: BasePaginationResponse!
+}
+
+type FakeTags {
+  _id: String!
+  name: String!
+}
+
+type FeedAsset {
+  thumbnails: [String!]
+  type: FeedAssetType
+  url: String
+}
+
+input FeedAssetInput {
+  type: FeedAssetType
+  url: String
+}
+
+enum FeedAssetType {
+  IMAGE
+  VIDEO
+}
+
+type FeedCommentEntity {
+  _id: ID!
+  assets: CommentAssets
+  commentText: String
+  createdAt: DateTime!
+  feedId: String!
+  isLiked: Boolean
+  likeCount: Float
+  postedBy: String
+  replyCount: Float
+  updatedAt: DateTime!
+  userDetail: UserProfileResponse
+}
+
+type FeedCommentResponse {
+  feedComment: FeedCommentEntity
+  feedComments: [FeedCommentEntity!]
+  message: String
+  pagination: BasePaginationResponse
+}
+
+type FeedEntity {
+  _id: ID!
+  assets: [FeedAsset!]
+  caption: String
+  commentCount: Float
+  createdAt: DateTime!
+  isLiked: Boolean
+  likeCount: Float
+  location: LocationResponse
+  publishedDate: DateTime
+  shareCount: Float
+  status: FeedStatus
+  updatedAt: DateTime!
+  userDetail: UserProfileResponse
+  userId: String
+  visibilityType: VisibilityType
+}
+
+type FeedReplyEntity {
+  _id: ID!
+  assets: ReplyAssets
+  commentId: String!
+  createdAt: DateTime!
+  isLiked: Boolean
+  likeCount: Float
+  postedBy: String
+  replyText: String
+  updatedAt: DateTime!
+  userDetail: UserProfileResponse
+}
+
+type FeedReplyResponse {
+  feedReplies: [FeedReplyEntity!]
+  feedReply: FeedReplyEntity
+  message: String
+  pagination: BasePaginationResponse
+}
+
+type FeedResponse {
+  feed: FeedEntity
+  feeds: [FeedEntity!]
+  message: String
+  pagination: BasePaginationResponse
+}
+
+enum FeedStatus {
+  DRAFT
+  PUBLISHED
+}
+
+type FileResponseType {
+  createdBy: String
+  key: String!
+  size: String!
+}
+
+input ForgotPasswordInput {
+  deviceId: String!
+  email: String!
+}
+
+type ForgotPasswordResponse {
+  expiry: ForgotPasswordVerificationExpiry
+  message: String!
+}
+
+type ForgotPasswordVerificationExpiry {
+  expiresAt: DateTime!
+  expiresBy: Float!
+}
+
+input GetAllClientFutureBookingsForAnAppointmentDTO {
+  appointmentId: String!
+  appointmentStartDate: DateTime!
+  businessId: String!
+  clientId: String
+}
+
+type GetAllClientFutureBookingsForAnAppointmentResponse {
+  data: [GetAllClientFutureBookingsForAnAppointmentType!]
+}
+
+type GetAllClientFutureBookingsForAnAppointmentType {
+  """Appointment booking id."""
+  _id: ID!
+
+  """Is an unavailable block record."""
+  isUnavailableBlock: Boolean!
+
+  """Appointment start time (only consider time from date value)."""
+  startTime: DateTime!
+}
+
+input GetAnimalsInput {
+  limit: Float! = 5
+  order: String = "desc"
+  orderBy: String = "_id"
+  searchText: String = ""
+  skip: Float! = 0
+}
+
+input GetAppointmentSettingDTO {
+  getArchiveDate: Boolean!
+}
+
+type GetAppointmentSettingsDetailResponse {
+  appointmentCategoryOrder: [AppointmentCategoryTypeDetail!]
+  appointmentTypeOrder: [AppointmentCategoryTypeDetail!]
+  automaticallyChargeForCancellation: Boolean!
+  cancelOwnAppointments: Boolean!
+  cancellationAmount: Float!
+  dailyClientLimit: Float!
+  displayTimeIncrements: Float!
+  farAheadForOnlineBookingsEndDate: DateTime
+  farAheadForOnlineBookingsNumber: Float!
+  farAheadForOnlineBookingsUnit: String!
+  hoursOfOperationEndTime: DateTime!
+  hoursOfOperationStartTime: DateTime!
+  leadTimeForBookingsNumber: Float
+  leadTimeForBookingsUnit: String
+  leaveGap: Boolean!
+  maxAppointments: Float!
+  notesDisplayed: String
+  numberOf: Float!
+  onlineBookingInProcessReservationLength: Float!
+  onlinePractitioners: [AppointmentSettingsPractitionersDetail!]
+  practitioners: [AppointmentSettingsPractitionersDetail!]
+  setCustomPractitionerOrder: Boolean!
+  showAppointmentDuration: Boolean!
+  showCurrentTimeIndicator: Boolean!
+  showPrices: Boolean
+  teamMembersOrder: [AppointmentSettingsTeamMembersDetail!]!
+
+  """
+  Time slot increments for online/app bookings (in minutes). -1 represents appointment duration (no downtime between appointments).
+  """
+  timeSlotIncrements: [Float!]
+  timezoneRegion: String
+  unitOfTime: String!
+}
+
+input GetCoinPackageInput {
+  id: String!
+}
+
+input GetFAQDto {
+  limit: Float! = 5
+  order: String = "desc"
+  orderBy: String = "_id"
+  searchText: String = ""
+  skip: Float! = 0
+}
+
+input GetFakeProductsInput {
+  isActive: Boolean
+  limit: Float! = 5
+
+  """Price must be less than this value (non-inclusive)"""
+  maxPrice: Float
+
+  """Price must be greater than this value (non-inclusive)"""
+  minPrice: Float
+  order: String = "desc"
+  orderBy: String = "_id"
+  searchText: String = ""
+  skip: Float! = 0
+
+  """Filter by one or more tag IDs"""
+  tags: [String!]
+}
+
+input GetPractitionerByLocationDTO {
+  dayRange: String
+
+  """End date in UTC."""
+  endDate: DateTime!
+
+  """staff ids"""
+  locationIds: [String!]!
+
+  """Start date in UTC."""
+  startDate: DateTime!
+}
+
+input GetStaffsScheduleDTO {
+  """End date in UTC."""
+  endDate: DateTime
+
+  """staff ids"""
+  staffIds: [String!]
+
+  """Start date in UTC."""
+  startDate: DateTime
+
+  """Timezone region of browser"""
+  timezoneRegion: String!
+}
+
+type GetStaffsScheduleResponse {
+  friday: [ScheduleResponse!]
+  monday: [ScheduleResponse!]
+  saturday: [ScheduleResponse!]
+  sunday: [ScheduleResponse!]
+  thursday: [ScheduleResponse!]
+  tuesday: [ScheduleResponse!]
+  userId: String
+  wednesday: [ScheduleResponse!]
+}
+
+input GetUploadUrlDTO {
+  contentType: String
+  key: String!
+  sizeInBytes: Float
+}
+
+type GetUploadUrlFromKeyResponse {
+  url: String!
+}
+
+input InitiateAgoraCallInput {
+  callType: String
+  calleeId: String
+}
+
+input InitiateMeetingInput {
+  callType: String
+  calleeId: String
+  deviceType: String
+}
+
+type InitiateMeetingResponse {
+  attendeeResponse: AttendeeResponse
+  meetingResponse: MeetingResponse
+}
+
+input InputValueForUsers {
+  hasPhone: Boolean
+  isClient: Boolean!
+  isDependent: Boolean
+  isSupervisor: Boolean
+  pageMeta: PagMetaDTO!
+  practitionerOrder: Boolean = false
+  role: String
+  roleArray: [String!]
+
+  """Search user."""
+  searchValue: String
+  showConcessionName: Boolean
+}
+
+input IosReceipt {
+  receipt: String!
+}
+
+input IosReceiptConsumable {
+  receipt: String!
+}
+
+"""
+The `JSON` scalar type represents JSON values as specified by [ECMA-404](http://www.ecma-international.org/publications/files/ECMA-ST/ECMA-404.pdf).
+"""
+scalar JSON
+
+"""
+The `JSONObject` scalar type represents JSON objects as specified by [ECMA-404](http://www.ecma-international.org/publications/files/ECMA-ST/ECMA-404.pdf).
+"""
+scalar JSONObject
+
+type LinkBankAccountResponse {
+  """
+  Time at which the object was created. Measured in seconds since the Unix epoch.
+  """
+  created: Float!
+
+  """The timestamp at which this account link will expire."""
+  expires_at: Float!
+
+  """Gives idea what are we doing with stripe connect."""
+  object: String!
+
+  """The URL for the account link."""
+  url: String!
+}
+
+enum LinkBankAccountType {
+  CUSTOM
+  EXPRESS
+  STANDARD
+}
+
+input ListAdminBlocksInput {
+  pageMeta: PagMetaDTO!
+  searchText: String
+  showOnlyActive: Boolean
+}
+
+type ListAppointmentTypeResponse {
+  data: [AppointmentTypesResponse!]!
+  pagination: PaginationResponse!
+}
+
+type ListBusinessLocationResponse {
+  locations: [LocationObjectType!]
+}
+
+type ListCoinPackageResponse {
+  data: [CoinPackageResponse!]!
+  message: String
+  pagination: BasePaginationResponse
+}
+
+input ListCommentsInFeedInput {
+  limit: Float! = 2
+  order: String = "desc"
+  orderBy: String = "_id"
+  skip: Float! = 0
+}
+
+input ListContactsDTO {
+  deviceId: String!
+  limit: Float! = 5
+  order: String = "desc"
+  orderBy: String = "_id"
+  searchText: String = ""
+  skip: Float! = 0
+}
+
+input ListFeedsInput {
+  isArchived: Boolean = false
+  limit: Float! = 5
+  order: String = "desc"
+  orderBy: String = "publishedDate"
+  ownerId: String
+  searchText: String = ""
+  skip: Float! = 0
+  status: FeedStatus
+}
+
+input ListNotificationsInput {
+  limit: Float! = 5
+  skip: Float! = 0
+  timestamp: DateTime
+}
+
+type ListPaymentMethodResponse {
+  defaultMethod: String
+  message: String
+  paymentMethods: [PaymentMethod!]
+}
+
+input ListRepliesInFeedInput {
+  limit: Float! = 1
+  order: String = "desc"
+  orderBy: String = "_id"
+  skip: Float! = 0
+}
+
+input ListUseProfilesDTO {
+  limit: Float! = 5
+  order: String = "desc"
+  orderBy: String = "_id"
+  searchText: String = ""
+  skip: Float! = 0
+}
+
+type LocationDataResponse {
+  _id: String
+  displayName: String
+  locationTimezone: String
+  name: String
+}
+
+input LocationInput {
+  city: String
+  coordinates: CoordinatesInput
+  country: String
+  displayAddress: String
+  postalCode: String
+  state: String
+  street: String
+  type: LocationType!
+}
+
+type LocationObjectType {
+  _id: ID
+  isPrimary: Boolean
+  locationAddress: AddressType
+  locationTimezone: String
+  locationTimezoneInfo: TimezoneType
+  name: String
+  types: [String!]
+}
+
+type LocationResponse {
+  city: String
+  coordinates: CoordinatesResponse
+  country: String
+  postalCode: String
+  state: String
+  street: String
+  type: LocationType
+}
+
+type LocationResponseType {
+  _id: ID
+  email: String
+  isUsed: Boolean
+  locationAddress: AddressType
+  name: String
+  phone: String
+  timezoneId: String
+}
+
+enum LocationType {
+  Address
+  Geohash
+  Point
+}
+
+input LoginEmailPasswordInput {
+  agent: String
+  deviceId: String!
+  email: String!
+  ip: String
+  password: String!
+}
+
+enum LoginFlowType {
+  link
+  otp
+}
+
+type LoginResponse {
+  message: String
+  token: Token!
+  user: UserRespInLogin
+}
+
+type LoginWithAppleResponse {
+  message: String
+  token: Token!
+  user: UserRespInAppleLogin
+}
+
+type LoginWithEmailResponse {
+  expiry: VerificationCodeExpiry
+  message: String
+  token: Token
+  user: UserRespInEmailLogin
+}
+
+type LoginWithFacebookResponse {
+  message: String
+  token: Token!
+  user: UserRespInFacebookLogin
+}
+
+type LoginWithGoogleResponse {
+  message: String
+  token: Token!
+  user: UserRespInGoogleLogin
+}
+
+input LoginWithOTPInput {
+  email: String!
+  verificationCode: String!
+}
+
+input MakePaymentMethodDefaultInput {
+  paymentMethodId: String!
+}
+
+type ManualSubscriptionResponse {
+  _id: ID!
+  amount: Float!
+  billingCycle: BillingCycle!
+  cancelAtPeriodEnd: Boolean
+  cancelledAt: DateTime
+  createdAt: DateTime!
+  currency: String!
+  currentPeriodEnd: DateTime
+  currentPeriodStart: DateTime
+  lastPaymentDate: DateTime
+  nextPaymentDate: DateTime
+  pausedAt: DateTime
+  paymentProvider: PaymentProvider!
+  planId: String!
+  planName: String!
+  providerCustomerId: String
+  resumeAt: DateTime
+  status: SubscriptionStatus!
+  updatedAt: DateTime!
+  userId: String!
+}
+
+type MediaPlacement {
+  AudioFallbackUrl: String
+  AudioHostUrl: String
+  EventIngestionUrl: String
+  ScreenDataUrl: String
+  ScreenSharingUrl: String
+  ScreenViewingUrl: String
+  SignalingUrl: String
+  TurnControlUrl: String
+}
+
+enum MedicareCardType {
+  Blue
+  Green
+  Yellow
+}
+
+input MedicareVerificationInput {
+  BirthDate: String!
+  CardExpiry: String!
+  CardNumber: String!
+  CardType: MedicareCardType!
+  FullName1: String!
+  FullName2: String!
+  FullName3: String!
+  FullName4: String!
+  IndividualReferenceNumber: Float!
+}
+
+input MeetingInput {
+  meetingId: String
+}
+
+type MeetingResponse {
+  ExternalMeetingId: String!
+  MediaPlacement: MediaPlacement
+  MediaRegion: String!
+  MeetingArn: String!
+  MeetingId: String!
+}
+
+type MessageResponse {
+  message: String
+}
+
+type Mutation {
+  LoginWithTiktok(code: String!, deviceId: String!): SocialLoginResponse!
+  acceptTermsAndConditions: MessageResponse!
+  activateManualSubscription(input: ActivateManualSubscriptionInput!): ManualSubscriptionResponse!
+  addCoinPackage(body: AddCoinPackageInput!): MessageResponse!
+  addUserBankAccountFromDetail(body: CreateBankTokenInput!): MessageResponse!
+  addUserBankAccountFromToken(body: CreateBankAccountInput!): MessageResponse!
+  cancelAppointmentInstance(input: CancelAppointmentInstanceDTO!): MessageResponse!
+  cancelManualSubscription(input: CancelSubscriptionInput!): MessageResponse!
+  cancelStripeSubscription: MessageResponse!
+  captureManualPaypalOrder(orderId: String!): MessageResponse!
+
+  """Capture a PayPal order by ID"""
+  capturePaypalOrder(input: CapturePaypalOrderInput!): CapturePaypalOrderResponse!
+  changePassword(body: ChangePasswordInput!): MessageResponse!
+  createAgoraChatUserToken: AgoraChatUserTokenResponse
+  createAnimal(input: CreateAnimalInput!): AnimalResponse!
+  createAppointment(input: CreateAppointmentDTO!): CreateAppointmentResponse!
+  createCustomStripeAccount(body: CreateBankDetailInput!): MessageResponse!
+  createFakeProduct(input: CreateFakeProductInput!): FakeProductResponse!
+  createFeed(body: CreateFeedInput!): FeedResponse!
+  createFeedComment(body: CreateFeedCommentInput!, feedId: String!): FeedCommentResponse!
+  createFeedReply(body: CreateFeedReplyInput!, commentId: String!): FeedReplyResponse!
+
+  """Setup intent for adding payment method."""
+  createIntentForCustomer(kind: String): SetupIntentResponse!
+  createManualSubscription(input: CreateManualSubscriptionInput!): CreateManualSubscriptionResponse!
+  createOfferSignature(appBundleId: String!, applicationUsernameHash: String!, offerIdentifier: String!, productIdentifier: String!): OfferSignatureResponse!
+  createPayment(body: CreatePaymentInput!): MessageResponse!
+
+  """Create a PayPal order and return approval URL"""
+  createPaypalOrder(input: CreatePaypalOrderInput!): CreatePaypalOrderResponse!
+  createPaypalSubscription(createPaypalInput: CreatePaypalInput!): PaypalSubscriptionResponse!
+  createStripeSubscription(body: CreateStripeSubscriptionInput!): MessageResponse!
+  deleteAccount: MessageResponse!
+  deleteAnimal(id: String!): Boolean!
+  deleteCard(body: DeletePaymentMethodInput!): MessageResponse!
+  deleteFakeProduct(id: String!): Boolean!
+  deleteFeed(id: String!): FeedResponse!
+  deleteFeedComment(id: String!): FeedCommentResponse!
+  deleteFeedReply(id: String!): MessageResponse!
+  deleteStripeConnectAccount(connectAccountId: String!): MessageResponse!
+  deleteUserBankAccount(bankId: String!): MessageResponse!
+  enableBiometricAuth(deviceId: String!): BiometricEnableResponse!
+  endChimeMeeting(body: MeetingInput!): MessageResponse!
+  endTrial: MessageResponse!
+  forgotPassword(body: ForgotPasswordInput!): ForgotPasswordResponse!
+
+  """Links business owner to the stripe as connected standard account."""
+  generateAccountOnboardingLink(body: CreateBankAccountLinkInput!): LinkBankAccountResponse!
+  generateCustomAccountOnboardingLink(body: CreateBankAccountLinkInput!): CreateConnectAccountResponse!
+  getAgoraToken: AgoraTokenResponse!
+  getMyPaymentHistory(input: PaymentHistoryInput!): PaginatedPaymentHistoryResponse!
+  getPaymentDetail(id: String!): PaymentHistoryResponse
+  getPublicUploadUrl(input: GetUploadUrlDTO!): GetUploadUrlFromKeyResponse!
+  initMyDefaultSettings: MessageResponse
+  initiateAgoraCall(body: InitiateAgoraCallInput!): AgoraCallTokenResponse!
+  initiateChimeMeeting(body: InitiateMeetingInput!): InitiateMeetingResponse!
+  invalidateCloudFrontCache(keys: [String!]!): MessageResponse!
+  likeComment(commentId: String!): FeedCommentResponse!
+  likeFeed(feedId: String!): FeedResponse!
+  likeReply(replyId: String!): MessageResponse!
+  loginWithApple(deviceId: String!, idToken: String!): LoginWithAppleResponse!
+  loginWithBiometric(body: BiometricLoginInput!): BiometricLoginResponse!
+  loginWithEmailPassword(body: LoginEmailPasswordInput!): LoginWithEmailResponse!
+  loginWithFacebook(accessToken: String!, deviceId: String!): LoginWithFacebookResponse!
+  loginWithGoogle(deviceId: String!, idToken: String!): LoginWithGoogleResponse!
+  loginWithOTP(body: LoginWithOTPInput!): LoginResponse!
+  logout: MessageResponse!
+  logoutAll: MessageResponse!
+  makeCardDefault(body: MakePaymentMethodDefaultInput!): MessageResponse!
+  pauseManualSubscription(input: PauseManualSubscriptionInput!): ManualSubscriptionResponse!
+  phoneLoginWithOTP(body: PhoneLoginWithOTPInput!): LoginResponse!
+  refresh(refreshToken: String!): Token!
+  registerUser(body: SignupInput!): RegisterResponse!
+  registerWithEmail(body: EmailSignupOTPInput!): OTPResponse!
+  removeContacts(contactIds: [String!]!, deviceId: String!): MessageResponse!
+  removeDevice(input: RemoveDeviceInput!): MessageResponse!
+  requestLoginOTP(body: RequestLoginOTPInput!): OTPResponse!
+  requestPayout: MessageResponse!
+  requestPhoneLoginOTP(body: RequestPhoneLoginOTPInput!): OTPResponse!
+  resendVerifyEmailOtp(body: EmailSignupOTPInput!): OTPResponse!
+  resetAnimals(count: Int! = 25, seed: Int! = 1234): Boolean!
+  resetFakeProducts(count: Int! = 25, seed: Int! = 1234): Boolean!
+  resetPassword(body: ResetPasswordInput!): MessageResponse!
+  resumeManualSubscription(input: ResumeManualSubscriptionInput!): ManualSubscriptionResponse!
+  saveClassAppointmentFilter(input: SaveClassAppointmentFilterDTO!): MessageResponse!
+  saveDeviceInfo(body: DeviceInfoInput!): MessageResponse!
+
+  """Save payment method."""
+  savePaymentMethod(input: SavePaymentMethodDto!): String!
+  sendToQueue(payload: SendToQueueInput!): String!
+  sendToQueueError(payload: SendToQueueInput!): String!
+  setPassword(password: String!): MessageResponse!
+  startRecord(input: StartRecordingInput!): RecordingResponse!
+  stopRecord(input: StartRecordingInput!): RecordingResponse!
+  unlikeComment(commentId: String!): FeedCommentResponse!
+  unlikeFeed(feedId: String!): FeedResponse!
+  unlikeReply(replyId: String!): MessageResponse!
+  updateAnimal(input: UpdateAnimalInput!): AnimalResponse!
+  updateAppointment(input: EditAppointmentDTO!): MessageResponse!
+  updateDefaultBankAccount(bankId: String!): MessageResponse!
+  updateEmail(body: UpdateUserEmailDto!): OTPResponse!
+  updateFakeProduct(input: UpdateFakeProductInput!): FakeProductResponse!
+  updateFeed(body: UpdateFeedInput!, id: String!): FeedResponse!
+  updateFeedComment(body: UpdateFeedCommentInput!, id: String!): FeedCommentResponse!
+  updateFeedReply(body: UpdateFeedReplyInput!, id: String!): MessageResponse!
+  updateMySettings(settings: [UpdateSettingInput!]!): MessageResponse
+  updatePhoneNumber(body: UpdatePhoneNumberInput!): OTPResponse!
+  updateProfile(body: UpdateUserProfile!): ProfileUpdateResponse!
+  updateStripeSubscription(body: UpdateStripeSubscriptionInput!): MessageResponse!
+  verifyAndroidSubscription(body: AndroidReceipt!): Boolean!
+  verifyDriverLicence(body: DriverLicenceVerificationInput!): DocsVerificationResponse!
+  verifyEmail(body: VerifyEmailInput!): VerifyEmailResponse!
+  verifyIosSubscription(receiptData: IosReceipt!): Boolean!
+  verifyMedicare(body: MedicareVerificationInput!): DocsVerificationResponse!
+  verifyNzDriverLicence(body: NzDriverLicenceVerificationInput!): DocsVerificationResponse!
+  verifyNzPassport(body: NzPassportVerificationInput!): DocsVerificationResponse!
+  verifyPassport(body: PassportVerificationInput!): DocsVerificationResponse!
+  verifyPurchaseCoinPackages(androidPayload: AndroidReceiptConsumable, iosPayload: IosReceiptConsumable): Boolean!
+  verifyResetPasswordOTP(body: VerifyResetPasswordOtpInput!): MessageResponse!
+  verifyUpdateEmail(body: VerifyEmailInput!): MessageResponse!
+  verifyUpdatedPhoneNumber(body: VerifyUpdatedPhoneNumberInput!): MessageResponse!
+}
+
+input NewCaseDTO {
+  """Case limit"""
+  caseLimit: Float
+
+  """Case monitoring"""
+  caseMonitoring: String
+
+  """Case expiry date"""
+  expiryDate: String
+
+  """Case include"""
+  include: [String!]
+
+  """Case issued date"""
+  issuedDate: String
+
+  """Case name"""
+  name: String
+
+  """Case note"""
+  note: String
+
+  """Case referral"""
+  referral: String
+
+  """Case referral type"""
+  referralType: String
+}
+
+type NotificationResponse {
+  _id: ID!
+  createdAt: DateTime!
+  description: String
+  readAt: DateTime
+  theme: String!
+  themeAttributes: ThemeAttributesEntity
+  updatedAt: DateTime!
+  userId: String!
+  viewedAt: DateTime
+}
+
+input NzDriverLicenceVerificationInput {
+  BirthDate: String!
+  FirstName: String!
+  LastName: String!
+  LicenseNumber: String!
+  LicenseVersion: String!
+  MiddleName: String!
+}
+
+input NzPassportVerificationInput {
+  DateOfBirth: String!
+  FamilyName: String!
+  GivenName: String!
+  TravelDocumentExpiryDate: String!
+  TravelDocumentNumber: String!
+}
+
+type OTPResponse {
+  expiry: VerificationCodeExpiry
+  message: String!
+}
+
+type OfferSignatureResponse {
+  keyIdentifier: String!
+  nonce: String!
+  signature: String!
+  timestamp: Float!
+}
+
+type OptionsResponse {
+  key: String
+  value: String
+}
+
+input PagMetaDTO {
+  limit: Float!
+  skip: Float!
+}
+
+type Page {
+  _id: String!
+  content: String
+  createdAt: DateTime
+  seoTags: SeoTag
+  slug: String!
+  status: String!
+  title: String!
+  updatedAt: DateTime
+}
+
+type PageResponse {
+  page: Page
+  pages: [Page!]
+}
+
+type PaginatedNotifications {
+  message: String
+  notification: NotificationResponse
+  notifications: [NotificationResponse!]
+  pagination: BasePaginationResponse
+}
+
+type PaginatedPaymentHistoryResponse {
+  data: [PaymentHistoryResponse!]!
+  message: String
+  pagination: BasePaginationResponse!
+}
+
+type PaginationResponse {
+  hasNextPage: Boolean!
+  total: Float!
+}
+
+input PassportVerificationInput {
+  BirthDate: String!
+  ExpiryDate: String!
+  FamilyName: String!
+  Gender: DocsVerificationGenderType!
+  GivenName: String!
+  TravelDocumentNumber: String!
+}
+
+input PauseManualSubscriptionInput {
+  resumeAt: String
+  subscriptionId: String!
+}
+
+type PayPalOAuthTokenResponse {
+  accessToken: String!
+  expiresIn: Int!
+  idToken: String!
+  scope: String!
+  tokenType: String!
+}
+
+input PaymentHistoryInput {
+  limit: Float! = 5
+  order: String = "desc"
+  orderBy: String = "_id"
+  searchText: String = ""
+  skip: Float! = 0
+  status: PaymentStatus
+}
+
+type PaymentHistoryResponse {
+  _id: ID!
+  amount: Float
+  createdAt: DateTime!
+  paymentStatus: PaymentStatus
+  updatedAt: DateTime!
+  username: String
+}
+
+type PaymentMethod {
+  billing_details: BillingDetail
+  id: String
+  method: PaymentMethodDetails
+}
+
+type PaymentMethodDetails {
+  """Different brands representating card like visa, master, etc."""
+  exp_month: Float
+
+  """Different brands representating card like visa, master, etc."""
+  exp_year: Float
+
+  """Different brands representating card like visa, master, etc."""
+  last4: Float
+
+  """Different brands representating card like visa, master, etc."""
+  paymentMethod: String
+}
+
+"""The payment providers available in the system"""
+enum PaymentProvider {
+  PAYPAL
+  STRIPE
+}
+
+enum PaymentStatus {
+  COMPLETED
+  FAILED
+  PENDING
+}
+
+type PaypalSubscriptionResponse {
+  id: String!
+  planId: String
+  status: String!
+}
+
+input PhoneLoginWithOTPInput {
+  deviceId: String!
+  dialCode: String!
+  number: String!
+  verificationCode: String!
+}
+
+type PhoneNumberResponse {
+  countryCode: String
+  isPhoneRegistered: Boolean
+  phoneNumber: String
+  phoneNumberId: String
+}
+
+type PractitionerInfoType {
+  firstName: String
+  fullName: String
+  lastName: String
+}
+
+type PractitionerResponse {
+  _id: String
+  firstName: String
+  fullName: String
+  lastName: String
+  profilePicture: String
+  role: String
+}
+
+type PractitionerType {
+  firstName: String
+  fullName: String
+  lastName: String
+  profilePicture: String
+  profilePictureUrls: ProfilePictureType
+  scheduleLocations: [String!]
+  userId: String
+}
+
+input PreSignedUrlInput {
+  contentType: String
+  method: SignedUrlMethod!
+  path: String
+}
+
+type PreSignedUrlResponse {
+  message: String
+  url: String
+  urls: [String!]
+}
+
+type PriceResponse {
+  name: String
+  price: Float!
+  priceId: String!
+}
+
+type ProfilePictureType {
+  medium: String
+  original: String
+  small: String
+}
+
+type ProfileUpdateResponse {
+  message: String
+  user: UserResponse
+}
+
+enum PurchasePlatform {
+  ANDROID
+  IOS
+}
+
+type Query {
+  ListAppointmentType(ListAppointmentType: AppointmentTypeListingDto!): ListAppointmentTypeResponse!
+  calendarAppointmentInstanceDetail(input: AppointmentInstanceDetailDTO!): AppointmentInstanceDetailResponse
+  calendarListClassAppointment(input: CalendarListClassAppointmentDTO!): [CalendarListClassAppointmentResponse!]!
+  checkCalenderDateTimeAvailable(input: CheckAvailableDateDTO!): CheckAvailableDateResponse
+  checkLocationAvailable(input: CheckLocationDTO!): CheckAvailableLocationResponse
+  contact(id: String!): ContactDetailResponse
+  contactFromContactIdAndPhoneNumberId(contactId: String!, deviceId: String!, phoneNumber: String!): ContactDetailsResponse
+  contacts(input: ListContactsDTO!): ContactsListResponse
+  createCometChatGroup(body: CreateCometChatGroupInput!): CometChatGroupResponse!
+  createOnboardingAccountLink(body: CreateOnboardingAccountLinkInput!): CreateCompanyBankAccountLinkResponse!
+  currentStripeSubscription: StripeSubscriptionResponse
+  deleteCometChatGroup(guid: String!): MessageResponse!
+  feedList(input: ListFeedsInput!): FeedResponse!
+  findAllFAQ: FAQsResponse!
+  findFeed(id: String!): FeedResponse!
+  getAllClientFutureBookingsForAnAppointment(input: GetAllClientFutureBookingsForAnAppointmentDTO!): GetAllClientFutureBookingsForAnAppointmentResponse!
+  getAllCoinPackages: ListCoinPackageResponse
+  getAllFAQ(input: GetFAQDto!): FAQResponse!
+  getAllThumbnail(input: AllThumbnailInput!): PreSignedUrlResponse!
+  getAnimal(id: String!): AnimalResponse
+  getAnimals(input: GetAnimalsInput!): AnimalsListResponse!
+  getAppUserProfile(userId: String!): UserProfileResponse!
+  getAppointmentSettingsDetail(input: GetAppointmentSettingDTO!): GetAppointmentSettingsDetailResponse!
+  getBusinessLocations: ListBusinessLocationResponse!
+  getCards: [CardListReponse!]!
+  getClassAppointmentFilter: CalenderSavedFilterResponse
+  getCloudFrontSignUrl(key: String!): String!
+  getCloudFrontUrl(key: String!): String!
+  getCoinPackage(body: GetCoinPackageInput!): CoinPackageResponse!
+  getCsrfToken: String!
+  getCustomThumbnail(input: ThumbnailInput!): PreSignedUrlResponse!
+  getDefaultBusinessTimezone: TimezoneType!
+  getEphemeralKey: EphemeralKeyResponse!
+  getFakeProduct(id: String!): FakeProductResponse
+  getFakeProductTags: FakeProductTagsResponse!
+  getFakeProducts(input: GetFakeProductsInput!): FakeProductsListResponse!
+  getMeetingInfo(body: MeetingInput!): MeetingResponse!
+
+  """List available payment methods of the user."""
+  getMyPaymentMethods: ListPaymentMethodResponse!
+  getMySetting(key: String!): SiteSettingsResponse
+  getMySettings: [SiteSettingsResponse!]
+  getPageBySlug(slug: String!): PageResponse!
+  getPractitionersByLocation(input: GetPractitionerByLocationDTO!): [String!]
+  getPreSignedUrl(input: PreSignedUrlInput!): PreSignedUrlResponse!
+  getStaffsSchedules(input: GetStaffsScheduleDTO!): [GetStaffsScheduleResponse!]
+  getUploadAndFetchUrl(contentType: String!, key: String!): UploadUrlResponse!
+  getUserManualSubscriptions: [ManualSubscriptionResponse!]!
+  getUserStripeAccountDetails: StripeConnectAccountReponse
+  listAdminBlocks(input: ListAdminBlocksInput!): AdminBlockListResponse!
+  listAvailableSubscriptions: [SubscriptionProductResponse!]!
+  listDevicesForUser: [DeviceDto!]!
+  listFeedComments(feedId: String!, input: ListCommentsInFeedInput!): FeedCommentResponse!
+  listFeedReplies(commentId: String!, input: ListRepliesInFeedInput!): FeedReplyResponse!
+  listUserNotifications(input: ListNotificationsInput!): PaginatedNotifications!
+  listUserProfiles(input: ListUseProfilesDTO!): UserProfilesListResponse!
+  me: UserResponse!
+  paypalGetOauthToken: PayPalOAuthTokenResponse!
+  searchValueForUsers(input: InputValueForUsers!): SearchValueForUsersResponse!
+}
+
+type RecordingResponse {
+  data: RecordingResponseField
+  message: String
+}
+
+type RecordingResponseField {
+  cname: String!
+  message: String!
+  sid: String!
+  uid: String!
+}
+
+input RecurrencePatternDTO {
+  dayOfMonth: Float
+  dayOfWeek: Float
+  daysOfWeek: [Float!]
+  endAfterOccurrence: Float
+  endDate: DateTime
+  endType: String!
+  frequency: String!
+  interval: Float!
+  monthOfYear: Float
+  weekOfMonth: Float
+}
+
+type RecurrencePatternResponse {
+  dayOfMonth: Float
+  dayOfWeek: Float
+  daysOfWeek: [Float!]
+  endAfterOccurrence: Float
+  endDate: DateTime
+  endType: String
+  frequency: String
+  interval: Float
+  monthOfYear: Float
+  startDate: DateTime
+  weekOfMonth: Float
+}
+
+type RegisterResponse {
+  expiry: VerificationCodeExpiry
+  message: String!
+  user: UserRespInEmailLogin
+}
+
+input RemoveDeviceInput {
+  deviceId: String!
+  userId: String
+}
+
+input ReplyAssetInput {
+  type: CommentAssetType
+  url: String
+}
+
+type ReplyAssets {
+  type: CommentAssetType
+  url: String
+}
+
+input RequestLoginOTPInput {
+  deviceId: String!
+  email: String!
+}
+
+input RequestPhoneLoginOTPInput {
+  deviceId: String!
+  dialCode: String!
+  number: String!
+}
+
+input ResetPasswordInput {
+  email: String!
+  password: String!
+  verificationCode: String!
+}
+
+input ResumeManualSubscriptionInput {
+  subscriptionId: String!
+}
+
+input SaveClassAppointmentFilterDTO {
+  activeCalendarTab: String
+  appointmentDays: Float
+  appointmentLocations: [String!]
+  appointmentPractitioners: [String!]
+  appointmentTypes: [String!]
+  classCoaches: [String!]
+  classLocations: [String!]
+  classTypes: [String!]
+
+  """Filter type"""
+  filterType: String!
+}
+
+input SavePaymentMethodDto {
+  """Your payment method id to save."""
+  paymentMethod: String!
+}
+
+type ScheduleResponse {
+  endTime: String
+  isOnceOff: String
+  locationId: String!
+  startTime: String!
+  timezoneRegion: String
+}
+
+type SearchValueForUsersResponse {
+  pagination: PaginationResponse!
+  users: [SearchValueUserType!]!
+}
+
+type SearchValueUserType {
+  _id: ID!
+  additionalInformation: String
+  bio: String
+  classTypeIds: [String!]
+  concessionId: String
+  concessionName: String
+  email: String
+  firstName: String
+  fullNameWithDateOfBirth: String
+  isDependent: Boolean
+  lastName: String
+  locationIds: [String!]
+  preferredName: String
+  profilePicture: String
+  role: String
+  teamMemberTitle: String
+}
+
+input SendToQueueInput {
+  data: JSONObject
+}
+
+type SeoTag {
+  description: String!
+  tags: String!
+  title: String!
+}
+
+type SetupIntentResponse {
+  clientSecret: String!
+}
+
+enum SignedUrlMethod {
+  GET
+  PUT
+}
+
+input SignupInput {
+  deviceId: String!
+  email: String!
+  firstName: String
+  lastName: String
+  loginFlowType: LoginFlowType = otp
+  password: String
+  phoneNumber: UpdatePhoneNumberInput
+}
+
+type SiteSettingsResponse {
+  _id: String
+  description: String
+  fieldType: String
+  key: String
+  options: [OptionsResponse!]
+  title: String
+  userId: String
+  value: [String!]
+}
+
+type SocialLoginResponse {
+  message: String
+  token: Token!
+  user: UserRespInSocialLogin
+}
+
+input StartRecordingInput {
+  autoRecording: Boolean
+  channelName: String!
+  token: String
+}
+
+type StripeConnectAccountReponse {
+  accountId: String!
+  accountStatus: String!
+  accountType: String!
+  businessType: String!
+  externalAccounts: [ExternalAccount!]
+  verificationStatus: String!
+}
+
+type StripeSubscriptionResponse {
+  _id: ID!
+  createdAt: DateTime!
+  priceId: String!
+  productId: String!
+  status: StripeSubscriptionStatus!
+  subscriptionObject: SubscriptionObjectDto
+  updatedAt: DateTime!
+}
+
+enum StripeSubscriptionStatus {
+  ACTIVE
+  CANCELED
+  PENDING
+  REJECTED
+  TRIALING
+}
+
+type SubscriptionObjectDto {
+  isTrial: Boolean
+  latestInvoice: String
+  subscriptionAmount: Float
+  subscriptionCurrency: String
+  subscriptionEnd: DateTime
+  subscriptionId: String!
+  subscriptionStart: DateTime
+}
+
+type SubscriptionProductResponse {
+  _id: ID!
+  createdAt: DateTime!
+  name: String!
+  prices: [PriceResponse!]!
+  productId: String!
+  updatedAt: DateTime!
+}
+
+"""The subscription status available in the system"""
+enum SubscriptionStatus {
+  ACTIVE
+  CANCELLED
+  EXPIRED
+  PAST_DUE
+  PAUSED
+  TRIALLING
+}
+
+type ThemeAttributesEntity {
+  attributes: JSON
+}
+
+input ThumbnailInput {
+  height: Float
+  key: String!
+  width: Float
+}
+
+type TimezoneInfo {
+  _id: String
+  default: Boolean
+  name: String
+  offsetInMinutes: Float
+}
+
+type TimezoneType {
+  _id: String
+  default: Boolean
+  name: String
+  offsetHours: Float
+  offsetInMinutes: Float
+  offsetMinutes: Float
+}
+
+type Token {
+  accessToken: String
+  accessTokenExpiresIn: DateTime
+  refreshToken: String
+  refreshTokenExpiresIn: DateTime
+}
+
+input UpdateAnimalInput {
+  _id: String!
+  address: AnimalAddressInput
+  age: Int!
+  color: String
+  createdAt: DateTime
+  foods: [String!]
+  gender: String
+  height: Int
+  isNeutered: Boolean
+  isVaccinated: Boolean
+  name: String!
+  species: String!
+  updatedAt: DateTime
+  weight: Int
+}
+
+input UpdateFakeProductInput {
+  _id: String!
+  category: FakeProductCategoryInput
+  description: String
+  dimensions: FakeProductDimensionsInput
+  image: String
+  isActive: Boolean
+  manufacturedAt: FakeManufacturerAddressInput
+  name: String
+  price: Float
+  sku: String
+  stock: Int
+  tags: [String!]
+}
+
+input UpdateFeedCommentInput {
+  assets: CommentAssetInput
+  commentText: String
+}
+
+input UpdateFeedInput {
+  assets: [FeedAssetInput!]
+  caption: String
+  location: LocationInput
+  status: FeedStatus = DRAFT
+  visibilityType: VisibilityType = PUBLIC
+}
+
+input UpdateFeedReplyInput {
+  assets: ReplyAssetInput
+  replyText: String
+}
+
+input UpdatePhoneNumberInput {
+  dialCode: String!
+  number: String!
+}
+
+input UpdateSettingInput {
+  key: String!
+  value: String!
+}
+
+input UpdateStripeSubscriptionInput {
+  couponCode: String
+  isUpgrade: Boolean = false
+  priceId: String
+  productId: String
+}
+
+input UpdateUserEmailDto {
+  deviceId: String!
+  email: String!
+}
+
+input UpdateUserProfile {
+  address: AddressInput
+  bio: String
+  firstName: String
+  lastName: String
+  profileImage: String
+}
+
+type UploadUrlResponse {
+  fetchUrl: String!
+  key: String!
+  uploadUrl: String!
+}
+
+type UserDataResponse {
+  _id: String
+  fullName: String
+  profilePicture: String
+  userId: String
+}
+
+type UserDetailsResponse {
+  _id: String!
+  authProvider: String
+  authProviderId: String
+  firstName: String
+  lastName: String
+  profileImage: String
+  profileImageThumbnails: [String!]
+}
+
+type UserProfileResponse {
+  _id: String!
+  firstName: String
+  lastName: String
+  profileImage: String
+  profileImageThumbnails: [String!]
+}
+
+type UserProfilesListResponse {
+  message: String
+  pagination: BasePaginationResponse
+  users: [UserDetailsResponse!]
+}
+
+type UserRespInAppleLogin {
+  _id: String
+  cometAuthToken: String
+  email: String
+  loginType: String
+}
+
+type UserRespInEmailLogin {
+  _id: String
+  cometAuthToken: String
+  email: String
+  loginFlowType: LoginFlowType
+  loginType: String
+  status: UserStatus
+}
+
+type UserRespInFacebookLogin {
+  _id: String
+  cometAuthToken: String
+  email: String
+  loginType: String
+}
+
+type UserRespInGoogleLogin {
+  _id: String
+  cometAuthToken: String
+  email: String
+  loginType: String
+}
+
+type UserRespInLogin {
+  _id: String
+  cometAuthToken: String
+  email: String
+  loginType: String
+}
+
+type UserRespInSocialLogin {
+  _id: String
+  cometAuthToken: String
+  email: String
+  loginType: String
+}
+
+type UserResponse {
+  _id: String!
+  acceptedTermsVersion: String
+  address: AddressResponse
+  authProvider: String
+  authProviderId: String
+  bio: String
+  currentSubscription: CurrentSubscription
+  firstName: String
+  isBiometricEnabled: Boolean
+  isTermsVersionSynced: Boolean
+  lastName: String
+  loginFlowType: LoginFlowType
+  profileImage: String
+  profileImageThumbnails: [String!]
+  status: UserStatus
+}
+
+enum UserStatus {
+  email_verification_pending
+  email_verified
+  password_set
+  password_set_pending
+}
+
+type VerificationCodeExpiry {
+  expiresAt: DateTime!
+  expiresBy: Float
+}
+
+input VerifyEmailInput {
+  email: String!
+  verificationCode: String!
+}
+
+type VerifyEmailResponse {
+  expiry: VerificationCodeExpiry
+  message: String
+  token: Token
+  user: UserRespInEmailLogin
+}
+
+input VerifyResetPasswordOtpInput {
+  email: String!
+  verificationCode: String!
+}
+
+input VerifyUpdatedPhoneNumberInput {
+  verificationCode: String!
+}
+
+enum VisibilityType {
+  FRIEND
+  ONLY_ME
+  PUBLIC
+}

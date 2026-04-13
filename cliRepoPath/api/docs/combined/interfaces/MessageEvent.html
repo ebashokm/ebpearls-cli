@@ -1,0 +1,636 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>nest-ebtheme documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	   <link rel="stylesheet" href="../styles/style.css">
+        <link rel="stylesheet" href="../styles/dark.css">
+    </head>
+    <body>
+          <script>
+               // Blocking script to avoid flickering dark mode
+               // Dark mode toggle button
+               var useDark = window.matchMedia('(prefers-color-scheme: dark)');
+               var darkModeState = useDark.matches;
+               var $darkModeToggleSwitchers = document.querySelectorAll('.dark-mode-switch input');
+               var $darkModeToggles = document.querySelectorAll('.dark-mode-switch');
+               var darkModeStateLocal = localStorage.getItem('compodoc_darkmode-state');
+
+               function checkToggle(check) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].checked = check;
+                    }
+               }
+
+               function toggleDarkMode(state) {
+                    if (window.localStorage) {
+                         localStorage.setItem('compodoc_darkmode-state', state);
+                    }
+
+                    checkToggle(state);
+
+                    const hasClass = document.body.classList.contains('dark');
+
+                    if (state) {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.add('dark');
+                         }
+                         if (!hasClass) {
+                              document.body.classList.add('dark');
+                         }
+                    } else {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.remove('dark');
+                         }
+                         if (hasClass) {
+                              document.body.classList.remove('dark');
+                         }
+                    }
+               }
+
+               useDark.addEventListener('change', function (evt) {
+                    toggleDarkMode(evt.matches);
+               });
+               if (darkModeStateLocal) {
+                    darkModeState = darkModeStateLocal === 'true';
+               }
+               toggleDarkMode(darkModeState);
+          </script>
+
+        <div class="navbar navbar-default navbar-fixed-top d-md-none p-0">
+               <div class="d-flex">
+                    <a href="../" class="navbar-brand">nest-ebtheme documentation</a>
+                    <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+               </div>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="d-none d-md-block menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content interface">
+                   <div class="content-data">
+
+
+
+
+
+
+
+
+
+
+
+
+
+<ol class="breadcrumb">
+  <li class="breadcrumb-item">Interfaces</li>
+  <li class="breadcrumb-item"
+  >
+  MessageEvent</li>
+</ol>
+
+<ul class="nav nav-tabs" role="tablist">
+        <li class="nav-item">
+            <a href="#info" 
+                class="nav-link"
+                class="nav-link active"
+                role="tab" id="info-tab" data-bs-toggle="tab" data-link="info">Info</a>
+        </li>
+        <li class="nav-item">
+            <a href="#source" 
+                class="nav-link"
+                
+                role="tab" id="source-tab" data-bs-toggle="tab" data-link="source">Source</a>
+        </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="info">
+        <p class="comment">
+            <h3>File</h3>
+        </p>
+        <p class="comment">
+            <code>libs/common/services/sse/events.controller.ts</code>
+        </p>
+
+
+
+
+        <section data-compodoc="block-index">
+            <h3 id="index">Index</h3>
+            <table class="table table-sm table-bordered index-table">
+                <tbody>
+                    <tr>
+                        <td class="col-md-4">
+                            <h6><b>Properties</b></h6>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <ul class="index-list">
+                                <li>
+                                        <a href="#data" 
+>
+                                            data
+                                        </a>
+                                </li>
+                                <li>
+                                            <span class="modifier">Optional</span>
+                                        <a href="#id" 
+>
+                                            id
+                                        </a>
+                                </li>
+                                <li>
+                                            <span class="modifier">Optional</span>
+                                        <a href="#retry" 
+>
+                                            retry
+                                        </a>
+                                </li>
+                                <li>
+                                            <span class="modifier">Optional</span>
+                                        <a href="#type" 
+>
+                                            type
+                                        </a>
+                                </li>
+                            </ul>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+
+
+            <section data-compodoc="block-properties">
+                <h3 id="inputs">Properties</h3>
+                    <table class="table table-sm table-bordered">
+                        <tbody>
+                                <tr>
+                                    <td class="col-md-4">
+                                        <a name="data"></a>
+                                        <span class="name "><b>data</b>
+                                            <a href="#data">
+                                                <span class="icon ion-ios-link"></span>
+                                            </a>
+                                        </span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="col-md-4">
+                                        <code>data:     <code>string | object</code>
+</code>
+                                    </td>
+                                </tr>
+
+
+                                    <tr>
+                                        <td class="col-md-4">
+                                            <i>Type : </i>    <code>string | object</code>
+
+                                        </td>
+                                    </tr>
+
+
+
+
+
+                        </tbody>
+                    </table>
+                    <table class="table table-sm table-bordered">
+                        <tbody>
+                                <tr>
+                                    <td class="col-md-4">
+                                        <a name="id"></a>
+                                        <span class="name "><b>id</b>
+                                            <a href="#id">
+                                                <span class="icon ion-ios-link"></span>
+                                            </a>
+                                        </span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="col-md-4">
+                                        <code>id:         <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+</code>
+                                    </td>
+                                </tr>
+
+
+                                    <tr>
+                                        <td class="col-md-4">
+                                            <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                                        </td>
+                                    </tr>
+
+                                    <tr>
+                                        <td class="col-md-4">
+                                            <i>Optional</i>
+                                        </td>
+                                    </tr>
+
+
+
+
+                        </tbody>
+                    </table>
+                    <table class="table table-sm table-bordered">
+                        <tbody>
+                                <tr>
+                                    <td class="col-md-4">
+                                        <a name="retry"></a>
+                                        <span class="name "><b>retry</b>
+                                            <a href="#retry">
+                                                <span class="icon ion-ios-link"></span>
+                                            </a>
+                                        </span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="col-md-4">
+                                        <code>retry:         <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+</code>
+                                    </td>
+                                </tr>
+
+
+                                    <tr>
+                                        <td class="col-md-4">
+                                            <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+
+                                        </td>
+                                    </tr>
+
+                                    <tr>
+                                        <td class="col-md-4">
+                                            <i>Optional</i>
+                                        </td>
+                                    </tr>
+
+
+
+
+                        </tbody>
+                    </table>
+                    <table class="table table-sm table-bordered">
+                        <tbody>
+                                <tr>
+                                    <td class="col-md-4">
+                                        <a name="type"></a>
+                                        <span class="name "><b>type</b>
+                                            <a href="#type">
+                                                <span class="icon ion-ios-link"></span>
+                                            </a>
+                                        </span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="col-md-4">
+                                        <code>type:         <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+</code>
+                                    </td>
+                                </tr>
+
+
+                                    <tr>
+                                        <td class="col-md-4">
+                                            <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                                        </td>
+                                    </tr>
+
+                                    <tr>
+                                        <td class="col-md-4">
+                                            <i>Optional</i>
+                                        </td>
+                                    </tr>
+
+
+
+
+                        </tbody>
+                    </table>
+            </section>
+    </div>
+
+
+    <div class="tab-pane fade  tab-source-code" id="source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Controller, Sse, Res, Get, Param, LoggerService, Inject } from &#x27;@nestjs/common&#x27;;
+import { Observable, interval, map, Subject, merge } from &#x27;rxjs&#x27;;
+import { EventsService } from &#x27;./events.service&#x27;;
+import { UserEventsService } from &#x27;./user.events.service&#x27;;
+import { WINSTON_MODULE_NEST_PROVIDER } from &#x27;nest-winston&#x27;;
+
+export interface MessageEvent {
+  data: string | object;
+  id?: string;
+  type?: string;
+  retry?: number;
+}
+
+@Controller(&#x27;events&#x27;)
+export class EventsController {
+  private successCount &#x3D; 0;
+  private errorCount &#x3D; 0;
+  constructor(
+    private readonly eventsService: EventsService,
+    private readonly userEventsService: UserEventsService,
+    @Inject(WINSTON_MODULE_NEST_PROVIDER) private readonly logger: LoggerService,
+  ) {}
+
+  // @Sse(&#x27;sse&#x27;)
+  // sendEvents(): Observable&lt;MessageEvent&gt; {
+  //   return this.eventsService.eventsSubject.asObservable().pipe(
+  //     map((data) &#x3D;&gt; ({
+  //       data: data.data,
+  //       type: data.type,
+  //     })),
+  //   );
+  // }
+
+  // @Get(&#x27;/test-sse&#x27;)
+  // testEvents() {
+  //   console.log(&#x27;From test-sse&#x27;);
+  //   this.eventsService.sendEvent({
+  //     type: &#x27;terms-and-condition-version-updated&#x27;,
+  //     data: { version: &#x27;v1&#x27; },
+  //   });
+  // }
+
+  //-----for individual users
+  // @Sse(&#x27;sse-delete-user/:userId&#x27;)
+  // deleteUserEvents(@Param(&#x27;userId&#x27;) userId: string): Observable&lt;MessageEvent&gt; {
+  //   const userSubject &#x3D; this.userEventsService.createUserEventSubject(userId);
+  //   return userSubject.asObservable().pipe(
+  //     map((data) &#x3D;&gt; ({
+  //       data: data.data,
+  //       type: data.Types,
+  //     })),
+  //   );
+  // }
+
+  // @Get(&#x27;/test-sse-delete-user&#x27;)
+  // testDeleteUserEvents() {
+  //   console.log(&#x27;From test-sse-delete-user&#x27;);
+  //   this.userEventsService.sendEventToUser(&#x27;65c9a200cb6d9f857cf3b8cb&#x27;, {
+  //     type: &#x27;delete-user&#x27;,
+  //     data: { userId: &#x27;65c9a200cb6d9f857cf3b8cb&#x27; },
+  //   });
+  // }
+  //-----for individual users
+
+  //-----for individual users
+  @Sse(&#x27;sse/:userId&#x27;)
+  sseEvents(@Param(&#x27;userId&#x27;) userId: string): Observable&lt;MessageEvent&gt; {
+    const userSubject &#x3D; this.userEventsService.createUserEventSubject(userId);
+
+    return merge(
+      this.eventsService.eventsSubject.asObservable().pipe(
+        map((data) &#x3D;&gt; ({
+          data: data.data,
+          type: data.type,
+        })),
+      ),
+      userSubject.asObservable().pipe(
+        map((data) &#x3D;&gt; ({
+          data: data.data,
+          type: data.Types,
+        })),
+      ),
+    );
+  }
+
+  //testing single.........................
+
+  @Get(&#x27;/test-sse&#x27;)
+  testSseEvents() {
+    this.eventsService.sendEvent({
+      type: &#x27;term-and-condition-version-changed&#x27;,
+      data: { version: &#x60;V1&#x60; },
+    });
+
+    this.userEventsService.sendEventToUser(&#x27;1&#x27;, {
+      type: &#x27;delete-user-from-user-event&#x27;,
+      data: { userId: 1 },
+    });
+  }
+
+  @Get(&#x27;/test-sse-listen&#x27;)
+  testSseListen() {
+    const url &#x3D; &#x27;http://localhost:3001/events/sse/1&#x27;;
+    //var eventSourceInitDict &#x3D; {headers: {&#x27;Cookie&#x27;: &#x27;test&#x3D;test&#x27;}};
+    const EventSource &#x3D; require(&#x27;eventsource&#x27;);
+
+    // Initialize EventSource
+    const eventSource &#x3D; new EventSource(url);
+
+    // Listen for the &#x27;message&#x27; event
+    eventSource.onmessage &#x3D; (event) &#x3D;&gt; {
+      this.successCount +&#x3D; this.successCount;
+      this.logger.log(&#x27;This is log message&#x27;);
+
+      console.log(&#x27;New message:&#x27;, event.data);
+    };
+
+    // Listen for custom events if the server sends them
+    eventSource.addEventListener(&#x27;customEvent&#x27;, (event) &#x3D;&gt; {
+      console.log(&#x27;Custom Event:&#x27;, event.data);
+    });
+
+    // Handle connection errors
+    eventSource.onerror &#x3D; (error) &#x3D;&gt; {
+      this.logger.error(&#x27;Winstone This is an success message&#x27;);
+
+      console.error(&#x27;EventSource failed:&#x27;, error);
+      this.errorCount +&#x3D; this.errorCount;
+      eventSource.close(); // Optional: Close connection on error
+    };
+  }
+
+  // testing multiple
+
+  @Get(&#x27;/test-sse-multiple&#x27;)
+  testSseMultipleEvents() {
+    this.logger.log(&#x27;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;Trigger..  test-sse-multiple&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x27;);
+    this.eventsService.sendEvent({
+      type: &#x27;term-and-condition-version-changed&#x27;,
+      data: { version: &#x60;V1&#x60; },
+    });
+
+    for (let j &#x3D; 1; j &lt;&#x3D; 40000; j++) {
+      this.userEventsService.sendEventToUser(&#x60;${j}&#x60;, {
+        type: &#x27;delete-user-from-user-event&#x27;,
+        data: { userId: j },
+      });
+    }
+
+    setTimeout(
+      () &#x3D;&gt;
+        this.logger.log(
+          &#x60;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;Listner after event Count :: successCount: ${this.successCount}, failCount : ${this.errorCount}&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x60;,
+        ),
+      10000,
+    );
+  }
+
+  @Get(&#x27;/test-sse-multiple-listen&#x27;)
+  async testSseMultipleListen() {
+    this.logger.log(&#x27;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;Setting up SSE listeners: test-sse-multiple-listen&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x27;);
+
+    const EventSource &#x3D; require(&#x27;eventsource&#x27;);
+    const eventSourceInstances &#x3D; [];
+    const totalConnections &#x3D; 40000;
+    const batchSize &#x3D; 100; // Number of connections per batch
+    const delayBetweenBatches &#x3D; 2000; // Delay between batches in ms
+
+    // Helper function to open a batch of EventSource connections
+    const openBatch &#x3D; async (startIndex: number, endIndex: number) &#x3D;&gt; {
+      for (let i &#x3D; startIndex; i &lt;&#x3D; endIndex; i++) {
+        const url &#x3D; &#x60;http://localhost:3001/events/sse/${i}&#x60;;
+        const eventSource &#x3D; new EventSource(url);
+        eventSourceInstances.push(eventSource); // Store the instance for future reference
+
+        this.logger.log(&#x60;Listening to instance ${i}&#x60;);
+
+        // Handle incoming &#x27;message&#x27; events
+        eventSource.onmessage &#x3D; (event) &#x3D;&gt; {
+          this.successCount++;
+          this.logger.log(&#x60;Instance ${i} - New message: ${JSON.stringify(event.data)}&#x60;);
+        };
+
+        // Handle custom events if the server sends them
+        eventSource.addEventListener(&#x27;customEvent&#x27;, (event) &#x3D;&gt; {
+          this.logger.log(&#x60;Instance ${i} - Custom Event: ${JSON.stringify(event.data)}&#x60;);
+        });
+
+        // Handle connection errors
+        eventSource.onerror &#x3D; (error) &#x3D;&gt; {
+          this.errorCount++;
+          this.logger.error(&#x60;Instance ${i} - EventSource failed: ${JSON.stringify(error)}&#x60;);
+          eventSource.close(); // Close connection on error
+        };
+      }
+    };
+
+    // Open connections in batches to avoid overloading server and client
+    for (let i &#x3D; 1; i &lt;&#x3D; totalConnections; i +&#x3D; batchSize) {
+      const endIndex &#x3D; Math.min(i + batchSize - 1, totalConnections);
+      await openBatch(i, endIndex);
+      await this.delay(delayBetweenBatches); // Delay before the next batch
+    }
+
+    this.logger.log(&#x27;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;Finished setting up all SSE connections&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x27;);
+    this.logger.log(
+      &#x60;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;Listner setup Count :: Error: ${this.errorCount} Success: ${this.successCount}&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x60;,
+    );
+  }
+
+  // closeAllConnections() {
+  //   eventSourceInstances.forEach((es, index) &#x3D;&gt; {
+  //     this.logger.log(&#x60;Closing connection for instance ${index + 1}&#x60;);
+  //     es.close();
+  //   });
+  // }
+
+  // Helper function to introduce a delay
+  private delay(ms: number) {
+    return new Promise((resolve) &#x3D;&gt; setTimeout(resolve, ms));
+  }
+}
+</code></pre>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+          <label class="dark-mode-switch">
+               <input type="checkbox">
+               <span class="slider">
+                    <svg class="slider-icon" viewBox="0 0 24 24" fill="none" height="20" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" width="20" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"></path>
+                    </svg>
+               </span>
+          </label>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'interface';
+            var COMPODOC_CURRENT_PAGE_URL = 'MessageEvent.html';
+            var MAX_SEARCH_RESULTS = 15;
+       </script>
+
+       <script>
+               $darkModeToggleSwitchers = document.querySelectorAll('.dark-mode-switch input');
+               checkToggle(darkModeState);
+               if ($darkModeToggleSwitchers.length > 0) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].addEventListener('change', function (event) {
+                              darkModeState = !darkModeState;
+                              toggleDarkMode(darkModeState);
+                         });
+                    }
+               }
+          </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+
+       <script src="../js/menu-wc.js" defer></script>
+       <script nomodule src="../js/menu-wc_es5.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>

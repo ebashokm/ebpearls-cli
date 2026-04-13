@@ -1,0 +1,3424 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>nest-ebtheme documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	   <link rel="stylesheet" href="../styles/style.css">
+        <link rel="stylesheet" href="../styles/dark.css">
+    </head>
+    <body>
+          <script>
+               // Blocking script to avoid flickering dark mode
+               // Dark mode toggle button
+               var useDark = window.matchMedia('(prefers-color-scheme: dark)');
+               var darkModeState = useDark.matches;
+               var $darkModeToggleSwitchers = document.querySelectorAll('.dark-mode-switch input');
+               var $darkModeToggles = document.querySelectorAll('.dark-mode-switch');
+               var darkModeStateLocal = localStorage.getItem('compodoc_darkmode-state');
+
+               function checkToggle(check) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].checked = check;
+                    }
+               }
+
+               function toggleDarkMode(state) {
+                    if (window.localStorage) {
+                         localStorage.setItem('compodoc_darkmode-state', state);
+                    }
+
+                    checkToggle(state);
+
+                    const hasClass = document.body.classList.contains('dark');
+
+                    if (state) {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.add('dark');
+                         }
+                         if (!hasClass) {
+                              document.body.classList.add('dark');
+                         }
+                    } else {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.remove('dark');
+                         }
+                         if (hasClass) {
+                              document.body.classList.remove('dark');
+                         }
+                    }
+               }
+
+               useDark.addEventListener('change', function (evt) {
+                    toggleDarkMode(evt.matches);
+               });
+               if (darkModeStateLocal) {
+                    darkModeState = darkModeStateLocal === 'true';
+               }
+               toggleDarkMode(darkModeState);
+          </script>
+
+        <div class="navbar navbar-default navbar-fixed-top d-md-none p-0">
+               <div class="d-flex">
+                    <a href="../" class="navbar-brand">nest-ebtheme documentation</a>
+                    <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+               </div>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="d-none d-md-block menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content class">
+                   <div class="content-data">
+
+
+
+
+
+
+
+
+
+
+
+
+<ol class="breadcrumb">
+  <li class="breadcrumb-item">Classes</li>
+  <li class="breadcrumb-item" >AuthResolver</li>
+</ol>
+
+<ul class="nav nav-tabs" role="tablist">
+        <li class="nav-item">
+            <a href="#info" 
+                class="nav-link"
+                class="nav-link active"
+                role="tab" id="info-tab" data-bs-toggle="tab" data-link="info">Info</a>
+        </li>
+        <li class="nav-item">
+            <a href="#source" 
+                class="nav-link"
+                
+                role="tab" id="source-tab" data-bs-toggle="tab" data-link="source">Source</a>
+        </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="info">
+        <p class="comment">
+            <h3>File</h3>
+        </p>
+        <p class="comment">
+            <code>apps/api/src/modules/auth/auth.resolver.ts</code>
+        </p>
+
+
+            <p class="comment">
+                <h3>Description</h3>
+            </p>
+            <p class="comment">
+                <p>${1:Description placeholder}</p>
+
+            </p>
+
+
+
+
+            <section data-compodoc="block-index">
+    <h3 id="index">Index</h3>
+    <table class="table table-sm table-bordered index-table">
+        <tbody>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Methods</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                    <span class="modifier"></span>
+                                    <span class="modifier"></span>
+                                    <span class="modifier">Async</span>
+                                <a href="#changePassword" >changePassword</a>
+                            </li>
+                            <li>
+                                    <span class="modifier"></span>
+                                    <span class="modifier"></span>
+                                    <span class="modifier">Async</span>
+                                <a href="#enableBiometricAuth" >enableBiometricAuth</a>
+                            </li>
+                            <li>
+                                    <span class="modifier"></span>
+                                    <span class="modifier">Async</span>
+                                <a href="#forgotPassword" >forgotPassword</a>
+                            </li>
+                            <li>
+                                    <span class="modifier"></span>
+                                    <span class="modifier">Async</span>
+                                <a href="#loginWithApple" >loginWithApple</a>
+                            </li>
+                            <li>
+                                    <span class="modifier"></span>
+                                    <span class="modifier">Async</span>
+                                <a href="#loginWithBiometric" >loginWithBiometric</a>
+                            </li>
+                            <li>
+                                    <span class="modifier"></span>
+                                    <span class="modifier">Async</span>
+                                <a href="#loginWithEmailPassword" >loginWithEmailPassword</a>
+                            </li>
+                            <li>
+                                    <span class="modifier"></span>
+                                    <span class="modifier">Async</span>
+                                <a href="#loginWithFacebook" >loginWithFacebook</a>
+                            </li>
+                            <li>
+                                    <span class="modifier"></span>
+                                    <span class="modifier">Async</span>
+                                <a href="#loginWithGoogle" >loginWithGoogle</a>
+                            </li>
+                            <li>
+                                    <span class="modifier"></span>
+                                    <span class="modifier">Async</span>
+                                <a href="#loginWithOTP" >loginWithOTP</a>
+                            </li>
+                            <li>
+                                    <span class="modifier"></span>
+                                    <span class="modifier">Async</span>
+                                <a href="#LoginWithTiktok" >LoginWithTiktok</a>
+                            </li>
+                            <li>
+                                    <span class="modifier"></span>
+                                    <span class="modifier"></span>
+                                    <span class="modifier">Async</span>
+                                <a href="#logout" >logout</a>
+                            </li>
+                            <li>
+                                    <span class="modifier"></span>
+                                    <span class="modifier"></span>
+                                    <span class="modifier">Async</span>
+                                <a href="#logoutAll" >logoutAll</a>
+                            </li>
+                            <li>
+                                    <span class="modifier"></span>
+                                    <span class="modifier">Async</span>
+                                <a href="#phoneLoginWithOTP" >phoneLoginWithOTP</a>
+                            </li>
+                            <li>
+                                    <span class="modifier"></span>
+                                    <span class="modifier">Async</span>
+                                <a href="#refresh" >refresh</a>
+                            </li>
+                            <li>
+                                    <span class="modifier"></span>
+                                    <span class="modifier">Async</span>
+                                <a href="#registerUser" >registerUser</a>
+                            </li>
+                            <li>
+                                    <span class="modifier"></span>
+                                    <span class="modifier">Async</span>
+                                <a href="#registerWithEmail" >registerWithEmail</a>
+                            </li>
+                            <li>
+                                    <span class="modifier"></span>
+                                    <span class="modifier">Async</span>
+                                <a href="#requestLoginOTP" >requestLoginOTP</a>
+                            </li>
+                            <li>
+                                    <span class="modifier"></span>
+                                    <span class="modifier">Async</span>
+                                <a href="#requestPhoneLoginOTP" >requestPhoneLoginOTP</a>
+                            </li>
+                            <li>
+                                    <span class="modifier"></span>
+                                    <span class="modifier">Async</span>
+                                <a href="#resendVerifyEmailOtp" >resendVerifyEmailOtp</a>
+                            </li>
+                            <li>
+                                    <span class="modifier"></span>
+                                    <span class="modifier">Async</span>
+                                <a href="#resetPassword" >resetPassword</a>
+                            </li>
+                            <li>
+                                    <span class="modifier"></span>
+                                    <span class="modifier"></span>
+                                    <span class="modifier">Async</span>
+                                <a href="#saveDeviceInfo" >saveDeviceInfo</a>
+                            </li>
+                            <li>
+                                    <span class="modifier"></span>
+                                    <span class="modifier"></span>
+                                    <span class="modifier">Async</span>
+                                <a href="#setPassword" >setPassword</a>
+                            </li>
+                            <li>
+                                    <span class="modifier"></span>
+                                    <span class="modifier"></span>
+                                    <span class="modifier">Async</span>
+                                <a href="#updatePhoneNumber" >updatePhoneNumber</a>
+                            </li>
+                            <li>
+                                    <span class="modifier"></span>
+                                    <span class="modifier">Async</span>
+                                <a href="#verifyEmail" >verifyEmail</a>
+                            </li>
+                            <li>
+                                    <span class="modifier"></span>
+                                    <span class="modifier">Async</span>
+                                <a href="#verifyResetPasswordOTP" >verifyResetPasswordOTP</a>
+                            </li>
+                            <li>
+                                    <span class="modifier"></span>
+                                    <span class="modifier"></span>
+                                    <span class="modifier">Async</span>
+                                <a href="#verifyUpdatedPhoneNumber" >verifyUpdatedPhoneNumber</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+            <section data-compodoc="block-constructor">
+    <h3 id="constructor">Constructor</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+<code>constructor(authService: <a href="../injectables/AuthService.html" target="_self">AuthService</a>, phoneOtpAuthService: <a href="../injectables/PhoneOtpAuthService.html" target="_self">PhoneOtpAuthService</a>)</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="66" class="link-to-prism">apps/api/src/modules/auth/auth.resolver.ts:66</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                            <div class="io-description"><p>Creates an instance of AuthResolver.</p>
+</div>
+                            <div>
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>authService</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/AuthService.html" target="_self" >AuthService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>phoneOtpAuthService</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/PhoneOtpAuthService.html" target="_self" >PhoneOtpAuthService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+</section>
+
+
+            <section data-compodoc="block-methods">
+    
+    <h3 id="methods">
+        Methods
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="changePassword"></a>
+                    <span class="name">
+                            <span class="modifier"></span>
+                            <span class="modifier"></span>
+                            <span class="modifier">Async</span>
+                        <span ><b>changePassword</b></span>
+                        <a href="#changePassword"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>changePassword(loginDetail, body: <a href="../classes/ChangePasswordInput.html" target="_self">ChangePasswordInput</a>, i18n: I18nContext)</code>
+                </td>
+            </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <b>Decorators : </b>
+                    <br />
+                    <code>@UseGuards(AuthUserGuard)<br />@Mutation(undefined)<br /></code>
+                </td>
+            </tr>
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="394"
+                                    class="link-to-prism">apps/api/src/modules/auth/auth.resolver.ts:394</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Change password api</p>
+</div>
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>loginDetail</td>
+                                            <td>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                        <tr>
+                                                <td>body</td>
+                                            <td>
+                                                            <code><a href="../classes/ChangePasswordInput.html" target="_self" >ChangePasswordInput</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                        <tr>
+                                                <td>i18n</td>
+                                            <td>
+                                                        <code>I18nContext</code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>    <code>unknown</code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="enableBiometricAuth"></a>
+                    <span class="name">
+                            <span class="modifier"></span>
+                            <span class="modifier"></span>
+                            <span class="modifier">Async</span>
+                        <span ><b>enableBiometricAuth</b></span>
+                        <a href="#enableBiometricAuth"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>enableBiometricAuth(loginDetail: <a href="../undefineds/LoginDetailType.html" target="_self">LoginDetailType</a>, body: <a href="../classes/BiometricEnableInput.html" target="_self">BiometricEnableInput</a>, i18n: I18nContext)</code>
+                </td>
+            </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <b>Decorators : </b>
+                    <br />
+                    <code>@UseGuards(AuthUserGuard)<br />@Mutation(undefined)<br /></code>
+                </td>
+            </tr>
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="498"
+                                    class="link-to-prism">apps/api/src/modules/auth/auth.resolver.ts:498</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Mutation to enable biometric authentication</p>
+</div>
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>loginDetail</td>
+                                            <td>
+                                                            <code><a href="../miscellaneous/typealiases.html#LoginDetailType" target="_self" >LoginDetailType</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                        <tr>
+                                                <td>body</td>
+                                            <td>
+                                                            <code><a href="../classes/BiometricEnableInput.html" target="_self" >BiometricEnableInput</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                        <tr>
+                                                <td>i18n</td>
+                                            <td>
+                                                        <code>I18nContext</code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>    <code>unknown</code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="forgotPassword"></a>
+                    <span class="name">
+                            <span class="modifier"></span>
+                            <span class="modifier">Async</span>
+                        <span ><b>forgotPassword</b></span>
+                        <a href="#forgotPassword"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>forgotPassword(body: <a href="../classes/ForgotPasswordInput.html" target="_self">ForgotPasswordInput</a>, i18n: I18nContext)</code>
+                </td>
+            </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <b>Decorators : </b>
+                    <br />
+                    <code>@Mutation(undefined)<br /></code>
+                </td>
+            </tr>
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="419"
+                                    class="link-to-prism">apps/api/src/modules/auth/auth.resolver.ts:419</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>An email with otp will be sent to the users email</p>
+</div>
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                                <td>Description</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>body</td>
+                                            <td>
+                                                            <code><a href="../classes/ForgotPasswordInput.html" target="_self" >ForgotPasswordInput</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                            <td>
+                                                    <p>Forget password api
+An email with otp will be sent to the users email</p>
+
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                                <td>i18n</td>
+                                            <td>
+                                                        <code>I18nContext</code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                            <td>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>    <code>unknown</code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="loginWithApple"></a>
+                    <span class="name">
+                            <span class="modifier"></span>
+                            <span class="modifier">Async</span>
+                        <span ><b>loginWithApple</b></span>
+                        <a href="#loginWithApple"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>loginWithApple(args: <a href="../classes/AppleLoginInput.html" target="_self">AppleLoginInput</a>, i18n: I18nContext)</code>
+                </td>
+            </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <b>Decorators : </b>
+                    <br />
+                    <code>@Mutation(undefined)<br /></code>
+                </td>
+            </tr>
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="130"
+                                    class="link-to-prism">apps/api/src/modules/auth/auth.resolver.ts:130</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Login with Apple</p>
+</div>
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                                <td>Description</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>args</td>
+                                            <td>
+                                                            <code><a href="../classes/AppleLoginInput.html" target="_self" >AppleLoginInput</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                            <td>
+                                                    <p>apple login input</p>
+
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                                <td>i18n</td>
+                                            <td>
+                                                        <code>I18nContext</code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                            <td>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="../classes/LoginWithAppleResponse.html" target="_self" >Promise&lt;LoginWithAppleResponse&gt;</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="loginWithBiometric"></a>
+                    <span class="name">
+                            <span class="modifier"></span>
+                            <span class="modifier">Async</span>
+                        <span ><b>loginWithBiometric</b></span>
+                        <a href="#loginWithBiometric"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>loginWithBiometric(body: <a href="../classes/BiometricLoginInput.html" target="_self">BiometricLoginInput</a>)</code>
+                </td>
+            </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <b>Decorators : </b>
+                    <br />
+                    <code>@Mutation(undefined)<br /></code>
+                </td>
+            </tr>
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="519"
+                                    class="link-to-prism">apps/api/src/modules/auth/auth.resolver.ts:519</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Login with biometric</p>
+</div>
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>body</td>
+                                            <td>
+                                                            <code><a href="../classes/BiometricLoginInput.html" target="_self" >BiometricLoginInput</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>    <code>Promise&lt;literal type&gt;</code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="loginWithEmailPassword"></a>
+                    <span class="name">
+                            <span class="modifier"></span>
+                            <span class="modifier">Async</span>
+                        <span ><b>loginWithEmailPassword</b></span>
+                        <a href="#loginWithEmailPassword"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>loginWithEmailPassword(body: <a href="../classes/LoginEmailPasswordInput.html" target="_self">LoginEmailPasswordInput</a>, i18n: I18nContext)</code>
+                </td>
+            </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <b>Decorators : </b>
+                    <br />
+                    <code>@Mutation(undefined)<br /></code>
+                </td>
+            </tr>
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="378"
+                                    class="link-to-prism">apps/api/src/modules/auth/auth.resolver.ts:378</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Login with email and password</p>
+</div>
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>body</td>
+                                            <td>
+                                                            <code><a href="../classes/LoginEmailPasswordInput.html" target="_self" >LoginEmailPasswordInput</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                        <tr>
+                                                <td>i18n</td>
+                                            <td>
+                                                        <code>I18nContext</code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>    <code>unknown</code>
+
+                        </div>
+                            <div class="io-description">
+                                <p>} | { user: any; token: any; message: any; expiry?: undefined; }&gt;}</p>
+
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="loginWithFacebook"></a>
+                    <span class="name">
+                            <span class="modifier"></span>
+                            <span class="modifier">Async</span>
+                        <span ><b>loginWithFacebook</b></span>
+                        <a href="#loginWithFacebook"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>loginWithFacebook(args: <a href="../classes/FacebookLoginInput.html" target="_self">FacebookLoginInput</a>, i18n: I18nContext)</code>
+                </td>
+            </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <b>Decorators : </b>
+                    <br />
+                    <code>@Mutation(undefined)<br /></code>
+                </td>
+            </tr>
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="164"
+                                    class="link-to-prism">apps/api/src/modules/auth/auth.resolver.ts:164</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Login via facebook access token</p>
+</div>
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>args</td>
+                                            <td>
+                                                            <code><a href="../classes/FacebookLoginInput.html" target="_self" >FacebookLoginInput</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                        <tr>
+                                                <td>i18n</td>
+                                            <td>
+                                                        <code>I18nContext</code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="../classes/LoginWithFacebookResponse.html" target="_self" >Promise&lt;LoginWithFacebookResponse&gt;</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="loginWithGoogle"></a>
+                    <span class="name">
+                            <span class="modifier"></span>
+                            <span class="modifier">Async</span>
+                        <span ><b>loginWithGoogle</b></span>
+                        <a href="#loginWithGoogle"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>loginWithGoogle(args: <a href="../classes/GoogleLoginInput.html" target="_self">GoogleLoginInput</a>, i18n: I18nContext)</code>
+                </td>
+            </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <b>Decorators : </b>
+                    <br />
+                    <code>@Mutation(undefined)<br /></code>
+                </td>
+            </tr>
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="150"
+                                    class="link-to-prism">apps/api/src/modules/auth/auth.resolver.ts:150</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Login with Google</p>
+</div>
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>args</td>
+                                            <td>
+                                                            <code><a href="../classes/GoogleLoginInput.html" target="_self" >GoogleLoginInput</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                        <tr>
+                                                <td>i18n</td>
+                                            <td>
+                                                        <code>I18nContext</code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="../classes/LoginWithGoogleResponse.html" target="_self" >Promise&lt;LoginWithGoogleResponse&gt;</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="loginWithOTP"></a>
+                    <span class="name">
+                            <span class="modifier"></span>
+                            <span class="modifier">Async</span>
+                        <span ><b>loginWithOTP</b></span>
+                        <a href="#loginWithOTP"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>loginWithOTP(body: <a href="../classes/LoginWithOTPInput.html" target="_self">LoginWithOTPInput</a>, i18n: I18nContext)</code>
+                </td>
+            </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <b>Decorators : </b>
+                    <br />
+                    <code>@Mutation(undefined)<br /></code>
+                </td>
+            </tr>
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="274"
+                                    class="link-to-prism">apps/api/src/modules/auth/auth.resolver.ts:274</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Mutation to login via OTP</p>
+</div>
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>body</td>
+                                            <td>
+                                                            <code><a href="../classes/LoginWithOTPInput.html" target="_self" >LoginWithOTPInput</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                        <tr>
+                                                <td>i18n</td>
+                                            <td>
+                                                        <code>I18nContext</code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="../classes/LoginResponse.html" target="_self" >Promise&lt;LoginResponse&gt;</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="LoginWithTiktok"></a>
+                    <span class="name">
+                            <span class="modifier"></span>
+                            <span class="modifier">Async</span>
+                        <span ><b>LoginWithTiktok</b></span>
+                        <a href="#LoginWithTiktok"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>LoginWithTiktok(args: <a href="../classes/TiktokLoginInput.html" target="_self">TiktokLoginInput</a>, i18n: I18nContext)</code>
+                </td>
+            </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <b>Decorators : </b>
+                    <br />
+                    <code>@Mutation(undefined)<br /></code>
+                </td>
+            </tr>
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="479"
+                                    class="link-to-prism">apps/api/src/modules/auth/auth.resolver.ts:479</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Mutation to login via tiktok access token</p>
+</div>
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>args</td>
+                                            <td>
+                                                            <code><a href="../classes/TiktokLoginInput.html" target="_self" >TiktokLoginInput</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                        <tr>
+                                                <td>i18n</td>
+                                            <td>
+                                                        <code>I18nContext</code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>    <code>Promise&lt;SocialLoginResponse&gt;</code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="logout"></a>
+                    <span class="name">
+                            <span class="modifier"></span>
+                            <span class="modifier"></span>
+                            <span class="modifier">Async</span>
+                        <span ><b>logout</b></span>
+                        <a href="#logout"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>logout(loginDetail: <a href="../undefineds/LoginDetailType.html" target="_self">LoginDetailType</a>, i18n: I18nContext)</code>
+                </td>
+            </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <b>Decorators : </b>
+                    <br />
+                    <code>@Mutation(undefined)<br />@UseGuards(AuthUserGuard)<br /></code>
+                </td>
+            </tr>
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="107"
+                                    class="link-to-prism">apps/api/src/modules/auth/auth.resolver.ts:107</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Logout from current device</p>
+</div>
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>loginDetail</td>
+                                            <td>
+                                                            <code><a href="../miscellaneous/typealiases.html#LoginDetailType" target="_self" >LoginDetailType</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                        <tr>
+                                                <td>i18n</td>
+                                            <td>
+                                                        <code>I18nContext</code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>    <code>unknown</code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="logoutAll"></a>
+                    <span class="name">
+                            <span class="modifier"></span>
+                            <span class="modifier"></span>
+                            <span class="modifier">Async</span>
+                        <span ><b>logoutAll</b></span>
+                        <a href="#logoutAll"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>logoutAll(loginDetail: <a href="../undefineds/LoginDetailType.html" target="_self">LoginDetailType</a>, i18n: I18nContext)</code>
+                </td>
+            </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <b>Decorators : </b>
+                    <br />
+                    <code>@Mutation(undefined)<br />@UseGuards(AuthUserGuard)<br /></code>
+                </td>
+            </tr>
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="119"
+                                    class="link-to-prism">apps/api/src/modules/auth/auth.resolver.ts:119</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Logout from all device</p>
+</div>
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>loginDetail</td>
+                                            <td>
+                                                            <code><a href="../miscellaneous/typealiases.html#LoginDetailType" target="_self" >LoginDetailType</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                        <tr>
+                                                <td>i18n</td>
+                                            <td>
+                                                        <code>I18nContext</code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>    <code>unknown</code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="phoneLoginWithOTP"></a>
+                    <span class="name">
+                            <span class="modifier"></span>
+                            <span class="modifier">Async</span>
+                        <span ><b>phoneLoginWithOTP</b></span>
+                        <a href="#phoneLoginWithOTP"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>phoneLoginWithOTP(body: <a href="../classes/PhoneLoginWithOTPInput.html" target="_self">PhoneLoginWithOTPInput</a>, i18n: I18nContext)</code>
+                </td>
+            </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <b>Decorators : </b>
+                    <br />
+                    <code>@Mutation(undefined)<br /></code>
+                </td>
+            </tr>
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="200"
+                                    class="link-to-prism">apps/api/src/modules/auth/auth.resolver.ts:200</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Mutation to login via OTP</p>
+</div>
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>body</td>
+                                            <td>
+                                                            <code><a href="../classes/PhoneLoginWithOTPInput.html" target="_self" >PhoneLoginWithOTPInput</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                        <tr>
+                                                <td>i18n</td>
+                                            <td>
+                                                        <code>I18nContext</code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="../classes/LoginResponse.html" target="_self" >Promise&lt;LoginResponse&gt;</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="refresh"></a>
+                    <span class="name">
+                            <span class="modifier"></span>
+                            <span class="modifier">Async</span>
+                        <span ><b>refresh</b></span>
+                        <a href="#refresh"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>refresh(refreshToken: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
+                </td>
+            </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <b>Decorators : </b>
+                    <br />
+                    <code>@Mutation(undefined)<br /></code>
+                </td>
+            </tr>
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="468"
+                                    class="link-to-prism">apps/api/src/modules/auth/auth.resolver.ts:468</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Get new tokens</p>
+</div>
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>refreshToken</td>
+                                            <td>
+                                                            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="../classes/Token.html" target="_self" >Promise&lt;Token&gt;</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="registerUser"></a>
+                    <span class="name">
+                            <span class="modifier"></span>
+                            <span class="modifier">Async</span>
+                        <span ><b>registerUser</b></span>
+                        <a href="#registerUser"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>registerUser(body: <a href="../classes/SignupInput.html" target="_self">SignupInput</a>)</code>
+                </td>
+            </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <b>Decorators : </b>
+                    <br />
+                    <code>@Mutation(undefined)<br /></code>
+                </td>
+            </tr>
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="312"
+                                    class="link-to-prism">apps/api/src/modules/auth/auth.resolver.ts:312</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>User registration</p>
+</div>
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>body</td>
+                                            <td>
+                                                            <code><a href="../classes/SignupInput.html" target="_self" >SignupInput</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="../classes/RegisterResponse.html" target="_self" >Promise&lt;RegisterResponse&gt;</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="registerWithEmail"></a>
+                    <span class="name">
+                            <span class="modifier"></span>
+                            <span class="modifier">Async</span>
+                        <span ><b>registerWithEmail</b></span>
+                        <a href="#registerWithEmail"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>registerWithEmail(body: <a href="../classes/EmailSignupOTPInput.html" target="_self">EmailSignupOTPInput</a>, i18n: I18nContext)</code>
+                </td>
+            </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <b>Decorators : </b>
+                    <br />
+                    <code>@Mutation(undefined)<br /></code>
+                </td>
+            </tr>
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="288"
+                                    class="link-to-prism">apps/api/src/modules/auth/auth.resolver.ts:288</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Send otp for email login</p>
+</div>
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>body</td>
+                                            <td>
+                                                            <code><a href="../classes/EmailSignupOTPInput.html" target="_self" >EmailSignupOTPInput</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                        <tr>
+                                                <td>i18n</td>
+                                            <td>
+                                                        <code>I18nContext</code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="../classes/OTPResponse.html" target="_self" >Promise&lt;OTPResponse&gt;</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="requestLoginOTP"></a>
+                    <span class="name">
+                            <span class="modifier"></span>
+                            <span class="modifier">Async</span>
+                        <span ><b>requestLoginOTP</b></span>
+                        <a href="#requestLoginOTP"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>requestLoginOTP(body: <a href="../classes/RequestLoginOTPInput.html" target="_self">RequestLoginOTPInput</a>, i18n: I18nContext)</code>
+                </td>
+            </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <b>Decorators : </b>
+                    <br />
+                    <code>@Mutation(undefined)<br /></code>
+                </td>
+            </tr>
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="256"
+                                    class="link-to-prism">apps/api/src/modules/auth/auth.resolver.ts:256</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Mutation to send opt for email login</p>
+</div>
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>body</td>
+                                            <td>
+                                                            <code><a href="../classes/RequestLoginOTPInput.html" target="_self" >RequestLoginOTPInput</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                        <tr>
+                                                <td>i18n</td>
+                                            <td>
+                                                        <code>I18nContext</code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="../classes/OTPResponse.html" target="_self" >Promise&lt;OTPResponse&gt;</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="requestPhoneLoginOTP"></a>
+                    <span class="name">
+                            <span class="modifier"></span>
+                            <span class="modifier">Async</span>
+                        <span ><b>requestPhoneLoginOTP</b></span>
+                        <a href="#requestPhoneLoginOTP"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>requestPhoneLoginOTP(body: <a href="../classes/RequestPhoneLoginOTPInput.html" target="_self">RequestPhoneLoginOTPInput</a>, i18n: I18nContext)</code>
+                </td>
+            </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <b>Decorators : </b>
+                    <br />
+                    <code>@Mutation(undefined)<br /></code>
+                </td>
+            </tr>
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="182"
+                                    class="link-to-prism">apps/api/src/modules/auth/auth.resolver.ts:182</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Mutation to send opt for email login</p>
+</div>
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>body</td>
+                                            <td>
+                                                            <code><a href="../classes/RequestPhoneLoginOTPInput.html" target="_self" >RequestPhoneLoginOTPInput</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                        <tr>
+                                                <td>i18n</td>
+                                            <td>
+                                                        <code>I18nContext</code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="../classes/OTPResponse.html" target="_self" >Promise&lt;OTPResponse&gt;</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="resendVerifyEmailOtp"></a>
+                    <span class="name">
+                            <span class="modifier"></span>
+                            <span class="modifier">Async</span>
+                        <span ><b>resendVerifyEmailOtp</b></span>
+                        <a href="#resendVerifyEmailOtp"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>resendVerifyEmailOtp(body: <a href="../classes/EmailSignupOTPInput.html" target="_self">EmailSignupOTPInput</a>)</code>
+                </td>
+            </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <b>Decorators : </b>
+                    <br />
+                    <code>@Mutation(undefined)<br /></code>
+                </td>
+            </tr>
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="326"
+                                    class="link-to-prism">apps/api/src/modules/auth/auth.resolver.ts:326</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>resending Otp via email</p>
+</div>
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>body</td>
+                                            <td>
+                                                            <code><a href="../classes/EmailSignupOTPInput.html" target="_self" >EmailSignupOTPInput</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="../classes/OTPResponse.html" target="_self" >Promise&lt;OTPResponse&gt;</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="resetPassword"></a>
+                    <span class="name">
+                            <span class="modifier"></span>
+                            <span class="modifier">Async</span>
+                        <span ><b>resetPassword</b></span>
+                        <a href="#resetPassword"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>resetPassword(body: <a href="../classes/ResetPasswordInput.html" target="_self">ResetPasswordInput</a>, i18n: I18nContext)</code>
+                </td>
+            </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <b>Decorators : </b>
+                    <br />
+                    <code>@Mutation(undefined)<br /></code>
+                </td>
+            </tr>
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="456"
+                                    class="link-to-prism">apps/api/src/modules/auth/auth.resolver.ts:456</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>User can reset their password with otp code</p>
+</div>
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                                <td>Description</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>body</td>
+                                            <td>
+                                                            <code><a href="../classes/ResetPasswordInput.html" target="_self" >ResetPasswordInput</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                            <td>
+                                                    <p>Reset password api
+User can reset their password with otp code</p>
+
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                                <td>i18n</td>
+                                            <td>
+                                                        <code>I18nContext</code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                            <td>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>    <code>unknown</code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="saveDeviceInfo"></a>
+                    <span class="name">
+                            <span class="modifier"></span>
+                            <span class="modifier"></span>
+                            <span class="modifier">Async</span>
+                        <span ><b>saveDeviceInfo</b></span>
+                        <a href="#saveDeviceInfo"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>saveDeviceInfo(loginDetail: <a href="../undefineds/LoginDetailType.html" target="_self">LoginDetailType</a>, body: <a href="../classes/DeviceInfoInput.html" target="_self">DeviceInfoInput</a>, i18n: I18nContext)</code>
+                </td>
+            </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <b>Decorators : </b>
+                    <br />
+                    <code>@Mutation(undefined)<br />@UseGuards(AuthUserGuard)<br /></code>
+                </td>
+            </tr>
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="87"
+                                    class="link-to-prism">apps/api/src/modules/auth/auth.resolver.ts:87</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Save device information such as device name</p>
+</div>
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>loginDetail</td>
+                                            <td>
+                                                            <code><a href="../miscellaneous/typealiases.html#LoginDetailType" target="_self" >LoginDetailType</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                        <tr>
+                                                <td>body</td>
+                                            <td>
+                                                            <code><a href="../classes/DeviceInfoInput.html" target="_self" >DeviceInfoInput</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                        <tr>
+                                                <td>i18n</td>
+                                            <td>
+                                                        <code>I18nContext</code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>    <code>unknown</code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="setPassword"></a>
+                    <span class="name">
+                            <span class="modifier"></span>
+                            <span class="modifier"></span>
+                            <span class="modifier">Async</span>
+                        <span ><b>setPassword</b></span>
+                        <a href="#setPassword"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>setPassword(loginDetail: <a href="../undefineds/LoginDetailType.html" target="_self">LoginDetailType</a>, args: <a href="../classes/SetPasswordInput.html" target="_self">SetPasswordInput</a>, i18n: I18nContext)</code>
+                </td>
+            </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <b>Decorators : </b>
+                    <br />
+                    <code>@Mutation(undefined)<br />@UseGuards(SetPasswordGuard)<br /></code>
+                </td>
+            </tr>
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="357"
+                                    class="link-to-prism">apps/api/src/modules/auth/auth.resolver.ts:357</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Set password</p>
+</div>
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>loginDetail</td>
+                                            <td>
+                                                            <code><a href="../miscellaneous/typealiases.html#LoginDetailType" target="_self" >LoginDetailType</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                        <tr>
+                                                <td>args</td>
+                                            <td>
+                                                            <code><a href="../classes/SetPasswordInput.html" target="_self" >SetPasswordInput</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                        <tr>
+                                                <td>i18n</td>
+                                            <td>
+                                                        <code>I18nContext</code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>    <code>unknown</code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="updatePhoneNumber"></a>
+                    <span class="name">
+                            <span class="modifier"></span>
+                            <span class="modifier"></span>
+                            <span class="modifier">Async</span>
+                        <span ><b>updatePhoneNumber</b></span>
+                        <a href="#updatePhoneNumber"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>updatePhoneNumber(loginDetail, body: <a href="../classes/UpdatePhoneNumberInput.html" target="_self">UpdatePhoneNumberInput</a>, i18n: I18nContext)</code>
+                </td>
+            </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <b>Decorators : </b>
+                    <br />
+                    <code>@UseGuards(AuthUserGuard)<br />@Mutation(undefined)<br /></code>
+                </td>
+            </tr>
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="216"
+                                    class="link-to-prism">apps/api/src/modules/auth/auth.resolver.ts:216</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Mutation to update phone number</p>
+</div>
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>loginDetail</td>
+                                            <td>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                        <tr>
+                                                <td>body</td>
+                                            <td>
+                                                            <code><a href="../classes/UpdatePhoneNumberInput.html" target="_self" >UpdatePhoneNumberInput</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                        <tr>
+                                                <td>i18n</td>
+                                            <td>
+                                                        <code>I18nContext</code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="../classes/OTPResponse.html" target="_self" >Promise&lt;OTPResponse&gt;</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="verifyEmail"></a>
+                    <span class="name">
+                            <span class="modifier"></span>
+                            <span class="modifier">Async</span>
+                        <span ><b>verifyEmail</b></span>
+                        <a href="#verifyEmail"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>verifyEmail(body: <a href="../classes/VerifyEmailInput.html" target="_self">VerifyEmailInput</a>, i18n: I18nContext)</code>
+                </td>
+            </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <b>Decorators : </b>
+                    <br />
+                    <code>@Mutation(undefined)<br /></code>
+                </td>
+            </tr>
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="337"
+                                    class="link-to-prism">apps/api/src/modules/auth/auth.resolver.ts:337</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Mutation to verify email</p>
+</div>
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>body</td>
+                                            <td>
+                                                            <code><a href="../classes/VerifyEmailInput.html" target="_self" >VerifyEmailInput</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                        <tr>
+                                                <td>i18n</td>
+                                            <td>
+                                                        <code>I18nContext</code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="../classes/VerifyEmailResponse.html" target="_self" >Promise&lt;VerifyEmailResponse&gt;</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="verifyResetPasswordOTP"></a>
+                    <span class="name">
+                            <span class="modifier"></span>
+                            <span class="modifier">Async</span>
+                        <span ><b>verifyResetPasswordOTP</b></span>
+                        <a href="#verifyResetPasswordOTP"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>verifyResetPasswordOTP(body: <a href="../classes/VerifyResetPasswordOtpInput.html" target="_self">VerifyResetPasswordOtpInput</a>, i18n: I18nContext)</code>
+                </td>
+            </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <b>Decorators : </b>
+                    <br />
+                    <code>@Mutation(undefined)<br /></code>
+                </td>
+            </tr>
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="434"
+                                    class="link-to-prism">apps/api/src/modules/auth/auth.resolver.ts:434</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>User can reset their password with otp code</p>
+</div>
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                                <td>Description</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>body</td>
+                                            <td>
+                                                            <code><a href="../classes/VerifyResetPasswordOtpInput.html" target="_self" >VerifyResetPasswordOtpInput</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                            <td>
+                                                    <p>Reset password api
+User can reset their password with otp code</p>
+
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                                <td>i18n</td>
+                                            <td>
+                                                        <code>I18nContext</code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                            <td>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>    <code>unknown</code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="verifyUpdatedPhoneNumber"></a>
+                    <span class="name">
+                            <span class="modifier"></span>
+                            <span class="modifier"></span>
+                            <span class="modifier">Async</span>
+                        <span ><b>verifyUpdatedPhoneNumber</b></span>
+                        <a href="#verifyUpdatedPhoneNumber"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>verifyUpdatedPhoneNumber(loginDetail, body: <a href="../classes/VerifyUpdatedPhoneNumberInput.html" target="_self">VerifyUpdatedPhoneNumberInput</a>, i18n: I18nContext)</code>
+                </td>
+            </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <b>Decorators : </b>
+                    <br />
+                    <code>@UseGuards(AuthUserGuard)<br />@Mutation(undefined)<br /></code>
+                </td>
+            </tr>
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="238"
+                                    class="link-to-prism">apps/api/src/modules/auth/auth.resolver.ts:238</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Mutation to verify updated phone number</p>
+</div>
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>loginDetail</td>
+                                            <td>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                        <tr>
+                                                <td>body</td>
+                                            <td>
+                                                            <code><a href="../classes/VerifyUpdatedPhoneNumberInput.html" target="_self" >VerifyUpdatedPhoneNumberInput</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                        <tr>
+                                                <td>i18n</td>
+                                            <td>
+                                                        <code>I18nContext</code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>    <code>Promise&lt;MessageResponse&gt;</code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+
+
+
+
+
+    </div>
+
+
+    <div class="tab-pane fade  tab-source-code" id="source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Resolver, Mutation, Args } from &#x27;@nestjs/graphql&#x27;;
+import { BadRequestException, HttpException, HttpStatus, UseGuards } from &#x27;@nestjs/common&#x27;;
+import { AuthUserGuard } from &#x27;../../guards/auth.user.guard&#x27;;
+/**
+ * Import services
+ */
+import { AuthService } from &#x27;./services/auth.service&#x27;;
+
+//import Lang from &#x27;../../constants/language&#x27;;
+
+/**
+ * DTO imports
+ */
+import { DeviceInfoInput } from &#x27;./dto/input/device-info.input&#x27;;
+
+import { LoginDetail } from &#x27;./decorator/login.decorator&#x27;;
+import { LoginDetailType } from &#x27;./types/login-detail.type&#x27;;
+import { LoginWithAppleResponse } from &#x27;./dto/response/login.with.apple.response&#x27;;
+import { AppleLoginInput } from &#x27;./dto/input/apple-login.input&#x27;;
+import { OTPResponse } from &#x27;./dto/response/otp.response&#x27;;
+import { RequestPhoneLoginOTPInput } from &#x27;./dto/input/request-phone-login-otp.input&#x27;;
+import { PhoneOtpAuthService } from &#x27;./services/phone-otp-auth.service&#x27;;
+import { LoginResponse } from &#x27;./dto/response/login.response&#x27;;
+import { PhoneLoginWithOTPInput } from &#x27;./dto/input/phone-login-with-otp.input&#x27;;
+import { UpdatePhoneNumberInput } from &#x27;./dto/input/update-phone-number.input&#x27;;
+import { VerifyUpdatedPhoneNumberInput } from &#x27;./dto/input/verify-update-phone-no.input&#x27;;
+import { LoginWithGoogleResponse } from &#x27;./dto/response/login.with.google.response&#x27;;
+import { GoogleLoginInput } from &#x27;./dto/input/google-login.input&#x27;;
+import { LoginWithFacebookResponse } from &#x27;./dto/response/login.with.facebook.response&#x27;;
+import { FacebookLoginInput } from &#x27;./dto/input/facebook-login.input&#x27;;
+import { RequestLoginOTPInput } from &#x27;./dto/input/reqest-login-otp.input&#x27;;
+import { LoginWithOTPInput } from &#x27;./dto/input/login-with-otp.input&#x27;;
+import { EmailSignupOTPInput } from &#x27;./dto/input/email-signup-otp.input&#x27;;
+import { LoginWithEmailResponse } from &#x27;./dto/response/login.with.email.response&#x27;;
+import { SignupInput } from &#x27;./dto/input/signup.input&#x27;;
+import { VerifyEmailResponse } from &#x27;./dto/response/verify.email.response&#x27;;
+import { VerifyEmailInput } from &#x27;./dto/input/verify-email.input&#x27;;
+import { SetPasswordGuard } from &#x27;@api/guards/set.password.guard&#x27;;
+import { SetPasswordInput } from &#x27;./dto/input/set-pawwrod.input&#x27;;
+import { LoginEmailPasswordInput } from &#x27;./dto/input/login-email-password.input&#x27;;
+import { ChangePasswordInput } from &#x27;./dto/input/change-password.input&#x27;;
+import { ForgotPasswordResponse } from &#x27;./dto/response/forgot.password.response&#x27;;
+import { ForgotPasswordInput } from &#x27;./dto/input/forgot-password.input&#x27;;
+import { VerifyResetPasswordOtpInput } from &#x27;./dto/input/verify-reset-password-otp.input&#x27;;
+import { ResetPasswordInput } from &#x27;./dto/input/reset-password.input&#x27;;
+import { Token } from &#x27;../../common/dto/token&#x27;;
+import { RegisterResponse } from &#x27;./dto/response/register.response&#x27;;
+import { RequestedFor } from &#x27;@app/common/enum/otp-request.enum&#x27;;
+import { SocialLoginResponse } from &#x27;./dto/response/login.with.social.response&#x27;;
+import { TiktokLoginInput } from &#x27;./dto/input/tiktok-login-input&#x27;;
+import { BiometricEnableInput } from &#x27;./dto/input/biometric.enable.input&#x27;;
+import { BiometricEnableResponse } from &#x27;./dto/response/biometric.enable.response&#x27;;
+import { BiometricLoginResponse } from &#x27;./dto/response/login.with.biometric.response&#x27;;
+import { MessageResponse } from &#x27;@app/common/dto/response/message.response&#x27;;
+import { BiometricLoginInput } from &#x27;./dto/input/biometric.login.input&#x27;;
+import { I18n, I18nContext } from &#x27;nestjs-i18n&#x27;;
+
+/**
+ * ${1:Description placeholder}
+ *
+ * @export
+ * @class AuthResolver
+ * @typedef {AuthResolver}
+ */
+@Resolver()
+export class AuthResolver {
+  /**
+   * Creates an instance of AuthResolver.
+   *
+   * @constructor
+   * @param {AuthService} authService
+   * @param {PhoneOtpAuthService} phoneOtpAuthService
+   */
+  constructor(
+    private readonly authService: AuthService,
+    private readonly phoneOtpAuthService: PhoneOtpAuthService,
+  ) {}
+
+  /**
+   * Save device information such as device name
+   * @param loginDetail
+   * @param args
+   * @returns
+   */
+  @Mutation(() &#x3D;&gt; MessageResponse)
+  @UseGuards(AuthUserGuard)
+  async saveDeviceInfo(
+    @LoginDetail() loginDetail: LoginDetailType,
+    @Args(&#x27;body&#x27;) body: DeviceInfoInput,
+    @I18n() i18n: I18nContext,
+  ) {
+    await this.authService.saveDeviceInfo({
+      ...body,
+      userId: loginDetail.userId,
+      jti: loginDetail.jti,
+    });
+    return { message: i18n.t(&#x27;auth.device_info_added&#x27;) };
+  }
+
+  /**
+   * Logout from current device
+   * @param loginDetail
+   * @returns
+   */
+  @Mutation(() &#x3D;&gt; MessageResponse)
+  @UseGuards(AuthUserGuard)
+  async logout(@LoginDetail() loginDetail: LoginDetailType, @I18n() i18n: I18nContext) {
+    await this.authService.logout(loginDetail.jti);
+    return { message: i18n.t(&#x27;auth.log_out_successfully&#x27;) };
+  }
+
+  /**
+   * Logout from all device
+   * @param loginDetail
+   * @returns
+   */
+  @Mutation(() &#x3D;&gt; MessageResponse)
+  @UseGuards(AuthUserGuard)
+  async logoutAll(@LoginDetail() loginDetail: LoginDetailType, @I18n() i18n: I18nContext) {
+    await this.authService.logoutAll(loginDetail.userId);
+    return { message: i18n.t(&#x27;auth.log_out_successfully&#x27;) };
+  }
+
+  /**
+   * Login with Apple
+   * @param {AppleLoginInput} args apple login input
+   * @returns
+   */
+  @Mutation(() &#x3D;&gt; LoginWithAppleResponse)
+  async loginWithApple(
+    @Args() args: AppleLoginInput,
+    @I18n() i18n: I18nContext,
+  ): Promise&lt;LoginWithAppleResponse&gt; {
+    try {
+      const loginDetail &#x3D; await this.authService.loginWithApple(args);
+      return { message: i18n.t(&#x27;auth.login_successfully&#x27;), ...loginDetail };
+    } catch (e) {
+      throw new HttpException(i18n.t(&#x27;auth.fail_to_authorize_apple&#x27;), HttpStatus.BAD_REQUEST);
+    }
+  }
+
+  /**
+   * Login with Google
+   *
+   * @async
+   * @param {GoogleLoginInput} args
+   * @returns {Promise&lt;LoginWithGoogleResponse&gt;}
+   */
+  @Mutation(() &#x3D;&gt; LoginWithGoogleResponse)
+  async loginWithGoogle(
+    @Args() args: GoogleLoginInput,
+    @I18n() i18n: I18nContext,
+  ): Promise&lt;LoginWithGoogleResponse&gt; {
+    const loginDetail &#x3D; await this.authService.loginWithGoogle(args);
+    return { message: i18n.t(&#x27;auth.login_successfully&#x27;), ...loginDetail };
+  }
+
+  /**
+   * Login via facebook access token
+   * @param body
+   * @returns
+   */
+  @Mutation(() &#x3D;&gt; LoginWithFacebookResponse)
+  async loginWithFacebook(
+    @Args() args: FacebookLoginInput,
+    @I18n() i18n: I18nContext,
+  ): Promise&lt;LoginWithFacebookResponse&gt; {
+    try {
+      const loginDetail &#x3D; await this.authService.loginWithFacebook(args);
+      return { message: i18n.t(&#x27;auth.login_successfully&#x27;), ...loginDetail };
+    } catch (e) {
+      throw new HttpException(i18n.t(&#x27;auth.failed_to_authorize_facebook&#x27;), HttpStatus.BAD_REQUEST);
+    }
+  }
+
+  /**
+   * Mutation to send opt for email login
+   * @param body
+   * @returns
+   */
+  @Mutation(() &#x3D;&gt; OTPResponse)
+  async requestPhoneLoginOTP(
+    @Args(&#x27;body&#x27;) body: RequestPhoneLoginOTPInput,
+    @I18n() i18n: I18nContext,
+  ): Promise&lt;OTPResponse&gt; {
+    const otpInput &#x3D; { ...body };
+    const otpResp &#x3D; await this.phoneOtpAuthService.sendPhoneLoginOTP(otpInput, &#x27;app-login&#x27;);
+    return {
+      message: i18n.t(&#x27;auth.verification_code_sent_to_phone&#x27;),
+      expiry: { ...otpResp },
+    };
+  }
+
+  /**
+   * Mutation to login via OTP
+   * @param body
+   * @returns
+   */
+  @Mutation(() &#x3D;&gt; LoginResponse)
+  async phoneLoginWithOTP(
+    @Args(&#x27;body&#x27;) body: PhoneLoginWithOTPInput,
+    @I18n() i18n: I18nContext,
+  ): Promise&lt;LoginResponse&gt; {
+    const loginInput &#x3D; { ...body };
+    const loginDetail &#x3D; await this.phoneOtpAuthService.loginWithPhoneOTP(loginInput);
+    return { message: i18n.t(&#x27;auth.login_successfully&#x27;), ...loginDetail };
+  }
+
+  /**
+   * Mutation to update phone number
+   * @param body
+   * @returns
+   */
+  @UseGuards(AuthUserGuard)
+  @Mutation(() &#x3D;&gt; OTPResponse)
+  async updatePhoneNumber(
+    @LoginDetail() loginDetail,
+    @Args(&#x27;body&#x27;) body: UpdatePhoneNumberInput,
+    @I18n() i18n: I18nContext,
+  ): Promise&lt;OTPResponse&gt; {
+    const otpResp &#x3D; await this.phoneOtpAuthService.sendUpdatePhoneNumberOTP(
+      loginDetail.userId,
+      body,
+    );
+    return {
+      message: i18n.t(&#x27;auth.verification_code_sent_to_phone&#x27;),
+      expiry: { ...otpResp },
+    };
+  }
+
+  /**
+   * Mutation to verify updated phone number
+   * @param body
+   * @returns
+   */
+  @UseGuards(AuthUserGuard)
+  @Mutation(() &#x3D;&gt; MessageResponse)
+  async verifyUpdatedPhoneNumber(
+    @LoginDetail() loginDetail,
+    @Args(&#x27;body&#x27;) body: VerifyUpdatedPhoneNumberInput,
+    @I18n() i18n: I18nContext,
+  ): Promise&lt;MessageResponse&gt; {
+    const { verificationCode } &#x3D; body;
+    await this.phoneOtpAuthService.verifyUpdatePhone(loginDetail.userId, verificationCode);
+    return {
+      message: i18n.t(&#x27;auth.phone_updated&#x27;),
+    };
+  }
+
+  /**
+   * Mutation to send opt for email login
+   * @param body
+   * @returns
+   */
+  @Mutation(() &#x3D;&gt; OTPResponse)
+  async requestLoginOTP(
+    @Args(&#x27;body&#x27;) body: RequestLoginOTPInput,
+    @I18n() i18n: I18nContext,
+  ): Promise&lt;OTPResponse&gt; {
+    const otpResp &#x3D; await this.authService.sendEmailOTP(body, RequestedFor.app_login);
+    const { message, ...expiry } &#x3D; otpResp;
+    return {
+      message: otpResp.message || i18n.t(&#x27;auth.verification_code_sent_to_email&#x27;),
+      expiry: { ...expiry },
+    };
+  }
+
+  /**
+   * Mutation to login via OTP
+   * @param body
+   * @returns
+   */
+  @Mutation(() &#x3D;&gt; LoginResponse)
+  async loginWithOTP(
+    @Args(&#x27;body&#x27;) body: LoginWithOTPInput,
+    @I18n() i18n: I18nContext,
+  ): Promise&lt;LoginResponse&gt; {
+    const loginDetail &#x3D; await this.authService.loginWithOTP(body);
+    return { message: i18n.t(&#x27;auth.login_successfully&#x27;), ...loginDetail };
+  }
+
+  /**
+   * Send otp for email login
+   * @param body
+   * @returns
+   */
+  @Mutation(() &#x3D;&gt; OTPResponse)
+  async registerWithEmail(
+    @Args(&#x27;body&#x27;) body: EmailSignupOTPInput,
+    @I18n() i18n: I18nContext,
+  ): Promise&lt;OTPResponse&gt; {
+    try {
+      const registerInput: EmailSignupOTPInput &#x3D; body;
+      const otpResp &#x3D; await this.authService.registerWithEmail(registerInput);
+      return {
+        message: i18n.t(&#x27;auth.verification_code_sent_to_email&#x27;),
+        expiry: { ...otpResp },
+      };
+    } catch (e) {
+      throw new BadRequestException(e?.message);
+    }
+  }
+
+  /**
+   * User registration
+   *
+   * @async
+   * @param {SignupInput} body
+   * @returns {Promise&lt;RegisterResponse&gt;}
+   */
+  @Mutation(() &#x3D;&gt; RegisterResponse)
+  async registerUser(@Args(&#x27;body&#x27;) body: SignupInput): Promise&lt;RegisterResponse&gt; {
+    return this.authService.registerUser({
+      ...body,
+    });
+  }
+
+  /**
+   * resending Otp via email
+   *
+   * @async
+   * @param {EmailSignupOTPInput} body
+   * @returns {Promise&lt;OTPResponse&gt;}
+   */
+  @Mutation(() &#x3D;&gt; OTPResponse)
+  async resendVerifyEmailOtp(@Args(&#x27;body&#x27;) body: EmailSignupOTPInput): Promise&lt;OTPResponse&gt; {
+    const { deviceId, email } &#x3D; body;
+    return this.authService.resendVerifyEmailOtp(email, deviceId);
+  }
+
+  /**
+   * Mutation to verify email
+   * @param body
+   * @returns
+   */
+  @Mutation(() &#x3D;&gt; VerifyEmailResponse)
+  async verifyEmail(
+    @Args(&#x27;body&#x27;) body: VerifyEmailInput,
+    @I18n() i18n: I18nContext,
+  ): Promise&lt;VerifyEmailResponse&gt; {
+    const verifyInput &#x3D; body;
+    const loginDetail &#x3D; await this.authService.verifyEmailAndLogin(verifyInput);
+    return { message: i18n.t(&#x27;auth.login_successfully&#x27;), ...loginDetail };
+  }
+
+  /**
+   * Set password
+   *
+   * @async
+   * @param {LoginDetailType} loginDetail
+   * @param {SetPasswordInput} args
+   * @param {I18nContext} i18n
+   * @returns {unknown}
+   */
+  @Mutation(() &#x3D;&gt; MessageResponse)
+  @UseGuards(SetPasswordGuard)
+  async setPassword(
+    @LoginDetail() loginDetail: LoginDetailType,
+    @Args() args: SetPasswordInput,
+    @I18n() i18n: I18nContext,
+  ) {
+    await this.authService.setPasswordUpdateGrant(
+      loginDetail.userId,
+      args?.password,
+      loginDetail.jti,
+    );
+    return { message: i18n.t(&#x27;auth.password_set_successfully&#x27;) };
+  }
+
+  /**
+   * Login with email and password
+   *
+   * @async
+   * @param {LoginEmailPasswordInput} body
+   * @returns {Promise&lt;{ message: any; user: any; expiry: { expiresBy: number; expiresAt: any; }; token?: undefined; \} | { user: any; token: any; message: any; expiry?: undefined; \}&gt;\}
+   */
+  @Mutation(() &#x3D;&gt; LoginWithEmailResponse)
+  async loginWithEmailPassword(
+    @Args(&#x27;body&#x27;) body: LoginEmailPasswordInput,
+    @I18n() i18n: I18nContext,
+  ) {
+    const loginDetail &#x3D; await this.authService.loginWithEmail(body);
+    return { message: i18n.t(&#x27;auth.login_successfully&#x27;), ...loginDetail };
+  }
+
+  /**
+   * Change password api
+   * @param user
+   * @param body
+   * @returns
+   */
+  @UseGuards(AuthUserGuard)
+  @Mutation(() &#x3D;&gt; MessageResponse)
+  async changePassword(
+    @LoginDetail() loginDetail,
+    @Args(&#x27;body&#x27;) body: ChangePasswordInput,
+    @I18n() i18n: I18nContext,
+  ) {
+    const { password, new_password } &#x3D; body;
+    try {
+      if (password.toLocaleLowerCase() &#x3D;&#x3D;&#x3D; new_password.toLocaleLowerCase()) {
+        throw new BadRequestException(i18n.t(&#x27;auth.cannot_update_same_password&#x27;));
+      }
+      await this.authService.verifyPassword(loginDetail.userId, password);
+      await this.authService.updateUserPasswordById(loginDetail.userId, new_password);
+      return { message: i18n.t(&#x27;auth.password_changed_successfully&#x27;) };
+    } catch (error: any) {
+      throw error;
+    }
+  }
+
+  /**
+   *
+   * @param body Forget password api
+   * An email with otp will be sent to the users email
+   * @returns
+   */
+  @Mutation(() &#x3D;&gt; ForgotPasswordResponse)
+  async forgotPassword(@Args(&#x27;body&#x27;) body: ForgotPasswordInput, @I18n() i18n: I18nContext) {
+    const otpResp &#x3D; await this.authService.forgotPassword(body);
+    return {
+      message: i18n.t(&#x27;auth.password_reset_code_sent&#x27;),
+      expiry: { ...otpResp },
+    };
+  }
+
+  /**
+   *
+   * @param body Reset password api
+   * User can reset their password with otp code
+   * @returns
+   */
+  @Mutation(() &#x3D;&gt; MessageResponse)
+  async verifyResetPasswordOTP(
+    @Args(&#x27;body&#x27;) body: VerifyResetPasswordOtpInput,
+    @I18n() i18n: I18nContext,
+  ) {
+    const { email, verificationCode } &#x3D; body;
+    const isValidVerificationCode &#x3D; await this.authService.verifyResetPasswordCode(
+      email,
+      verificationCode,
+    );
+    if (!isValidVerificationCode) {
+      throw new BadRequestException(i18n.t(&#x27;auth.invalid_verification_code&#x27;));
+    }
+
+    return { message: i18n.t(&#x27;auth.verification_code_valid_set_password&#x27;) };
+  }
+  /**
+   *
+   * @param body Reset password api
+   * User can reset their password with otp code
+   * @returns
+   */
+  @Mutation(() &#x3D;&gt; MessageResponse)
+  async resetPassword(@Args(&#x27;body&#x27;) body: ResetPasswordInput, @I18n() i18n: I18nContext) {
+    const { email, password, verificationCode } &#x3D; body;
+    await this.authService.resetPassword(email, password, verificationCode);
+    return { message: i18n.t(&#x27;auth.password_set_successfully&#x27;) };
+  }
+
+  /**
+   * Get new tokens
+   * @param refreshToken
+   * @returns
+   */
+  @Mutation(() &#x3D;&gt; Token)
+  async refresh(@Args(&#x27;refreshToken&#x27;) refreshToken: string): Promise&lt;Token&gt; {
+    const tokenDetail &#x3D; await this.authService.refresh(refreshToken);
+    return tokenDetail;
+  }
+
+  /**
+   * Mutation to login via tiktok access token
+   * @param args
+   * @returns
+   */
+  @Mutation(() &#x3D;&gt; SocialLoginResponse)
+  async LoginWithTiktok(
+    @Args() args: TiktokLoginInput,
+    @I18n() i18n: I18nContext,
+  ): Promise&lt;SocialLoginResponse&gt; {
+    try {
+      const loginDetail &#x3D; await this.authService.loginWithTiktok(args);
+      return { message: i18n.t(&#x27;auth.login_successfully&#x27;), ...loginDetail };
+    } catch (e) {
+      throw new HttpException(i18n.t(&#x27;auth.failed_to_authorize_tiktok&#x27;), HttpStatus.BAD_REQUEST);
+    }
+  }
+
+  /**
+   * Mutation to enable biometric authentication
+   * @param body
+   * @returns
+   */
+  @UseGuards(AuthUserGuard)
+  @Mutation(() &#x3D;&gt; BiometricEnableResponse)
+  async enableBiometricAuth(
+    @LoginDetail() loginDetail: LoginDetailType,
+    @Args() body: BiometricEnableInput,
+    @I18n() i18n: I18nContext,
+  ) {
+    const { deviceId } &#x3D; body;
+    const biometricTokenDetails &#x3D; await this.authService.enableBiometricAuth(loginDetail, deviceId);
+    return {
+      ...biometricTokenDetails.token,
+      message: i18n.t(&#x27;auth.biometric_enable_success&#x27;),
+    };
+  }
+
+  /**
+   * Login with biometric
+   *
+   * @async
+   * @param {BiometricLoginInput} body
+   * @returns {Promise&lt;any&gt;}
+   */
+  @Mutation(() &#x3D;&gt; BiometricLoginResponse)
+  async loginWithBiometric(@Args(&#x27;body&#x27;) body: BiometricLoginInput): Promise&lt;{
+    biometricToken: string;
+    biometricTokenExpiresIn: Date;
+    accessToken: string;
+    accessTokenExpiresIn: Date;
+    refreshToken: string;
+    refreshTokenExpiresIn: Date;
+  }&gt; {
+    const { deviceId, biometricToken } &#x3D; body;
+    const biometricLoginDetail &#x3D; await this.authService.loginWithBiometric(
+      biometricToken,
+      deviceId,
+    );
+    return {
+      ...biometricLoginDetail,
+    };
+  }
+}
+</code></pre>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+          <label class="dark-mode-switch">
+               <input type="checkbox">
+               <span class="slider">
+                    <svg class="slider-icon" viewBox="0 0 24 24" fill="none" height="20" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" width="20" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"></path>
+                    </svg>
+               </span>
+          </label>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'class';
+            var COMPODOC_CURRENT_PAGE_URL = 'AuthResolver.html';
+            var MAX_SEARCH_RESULTS = 15;
+       </script>
+
+       <script>
+               $darkModeToggleSwitchers = document.querySelectorAll('.dark-mode-switch input');
+               checkToggle(darkModeState);
+               if ($darkModeToggleSwitchers.length > 0) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].addEventListener('change', function (event) {
+                              darkModeState = !darkModeState;
+                              toggleDarkMode(darkModeState);
+                         });
+                    }
+               }
+          </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+
+       <script src="../js/menu-wc.js" defer></script>
+       <script nomodule src="../js/menu-wc_es5.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>

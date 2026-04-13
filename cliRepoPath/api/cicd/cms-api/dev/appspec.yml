@@ -1,0 +1,11 @@
+version: 0.0
+os: linux
+hooks:
+  AfterInstall:
+    - location: cicd/cms-api/dev/deploy
+      timeout: 1000
+      runas: ebthemes
+ ValidateService:
+    - location: cicd/post-comment-in-jira.sh
+      timeout: 1000
+      runas: root

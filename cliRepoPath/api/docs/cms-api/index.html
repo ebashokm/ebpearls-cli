@@ -1,0 +1,296 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>nest-ebtheme documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="./images/favicon.ico">
+	   <link rel="stylesheet" href="./styles/style.css">
+        <link rel="stylesheet" href="./styles/dark.css">
+    </head>
+    <body>
+          <script>
+               // Blocking script to avoid flickering dark mode
+               // Dark mode toggle button
+               var useDark = window.matchMedia('(prefers-color-scheme: dark)');
+               var darkModeState = useDark.matches;
+               var $darkModeToggleSwitchers = document.querySelectorAll('.dark-mode-switch input');
+               var $darkModeToggles = document.querySelectorAll('.dark-mode-switch');
+               var darkModeStateLocal = localStorage.getItem('compodoc_darkmode-state');
+
+               function checkToggle(check) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].checked = check;
+                    }
+               }
+
+               function toggleDarkMode(state) {
+                    if (window.localStorage) {
+                         localStorage.setItem('compodoc_darkmode-state', state);
+                    }
+
+                    checkToggle(state);
+
+                    const hasClass = document.body.classList.contains('dark');
+
+                    if (state) {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.add('dark');
+                         }
+                         if (!hasClass) {
+                              document.body.classList.add('dark');
+                         }
+                    } else {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.remove('dark');
+                         }
+                         if (hasClass) {
+                              document.body.classList.remove('dark');
+                         }
+                    }
+               }
+
+               useDark.addEventListener('change', function (evt) {
+                    toggleDarkMode(evt.matches);
+               });
+               if (darkModeStateLocal) {
+                    darkModeState = darkModeStateLocal === 'true';
+               }
+               toggleDarkMode(darkModeState);
+          </script>
+
+        <div class="navbar navbar-default navbar-fixed-top d-md-none p-0">
+               <div class="d-flex">
+                    <a href="./" class="navbar-brand">nest-ebtheme documentation</a>
+                    <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+               </div>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="d-none d-md-block menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content getting-started">
+                   <div class="content-data">
+
+<h2>Description</h2>
+<p><a href="https://github.com/nestjs/nest">Nest</a> framework TypeScript starter repository.</p>
+<h2>Installation</h2>
+<b>Example :</b><div><pre class="line-numbers"><code class="language-bash">$ npm install</code></pre></div><h1>Nestjs Application</h1>
+<p>We have 2 application in this monorepo setup. One is CMS API another is API.</p>
+<h2>Applications</h2>
+<h4>1. <a href="https://awesomeopensource.com/project/elangosundar/awesome-README-templates">API</a></h4>
+<p>API mainly provide endpoint for Frontend and mobile APP.</p>
+<h4>Features</h4>
+<p><a href="https://bitbucket.org/ebpearls28/ebthemes-api/src/dev/apps/api/src/modules/agora/">Agora</a></p>
+<p>API for agora chat.</p>
+<p><a href="https://bitbucket.org/ebpearls28/ebthemes-api/src/dev/apps/api/src/modules/auth/">Auth</a></p>
+<p>Authentication module</p>
+<p><a href="https://bitbucket.org/ebpearls28/ebthemes-api/src/dev/apps/api/src/modules/stripe/stripe-connect/">Stripe connect</a></p>
+<p>Stripe Connect Account module</p>
+<p><a href="https://bitbucket.org/ebpearls28/ebthemes-api/src/dev/apps/api/src/modules/chime/">Chime</a></p>
+<p>Chime module</p>
+<p><a href="https://bitbucket.org/ebpearls28/ebthemes-api/src/dev/apps/api/src/modules/coin-management/">Coin Management</a></p>
+<p>Coin management</p>
+<p><a href="https://bitbucket.org/ebpearls28/ebthemes-api/src/dev/apps/api/src/modules/comet-chat/">Comet Chat</a></p>
+<p>Comet Chat</p>
+<p><a href="https://bitbucket.org/ebpearls28/ebthemes-api/src/dev/apps/api/src/modules/contacts/">Contacts Management</a></p>
+<p>Contact sync module</p>
+<p><a href="https://bitbucket.org/ebpearls28/ebthemes-api/src/dev/apps/api/src/modules/cron/">Cron</a></p>
+<p>Cron example</p>
+<p><a href="https://bitbucket.org/ebpearls28/ebthemes-api/src/dev/apps/api/src/modules/fake-api/">Fake Api</a></p>
+<p>Example of fake api</p>
+<p><a href="https://bitbucket.org/ebpearls28/ebthemes-api/src/dev/apps/api/src/modules/faq/">Faq</a></p>
+<p>Faq module</p>
+<p><a href="https://bitbucket.org/ebpearls28/ebthemes-api/src/dev/apps/api/src/modules/feeds/">Feeds</a></p>
+<p>Feeds module</p>
+<p><a href="https://bitbucket.org/ebpearls28/ebthemes-api/src/dev/apps/api/src/modules/feed-comments/">Feed Comment</a></p>
+<p>Feeds comment</p>
+<p><a href="https://bitbucket.org/ebpearls28/ebthemes-api/src/dev/apps/api/src/modules/feed-replies/">Feed Replies</a></p>
+<p>Feeds Replies</p>
+<p><a href="https://bitbucket.org/ebpearls28/ebthemes-api/src/dev/apps/api/src/modules/notifications/">Notification</a></p>
+<p>Notification</p>
+<p><a href="https://bitbucket.org/ebpearls28/ebthemes-api/src/dev/apps/api/src/modules/pages/">Pages</a></p>
+<p>Pages</p>
+<p><a href="https://bitbucket.org/ebpearls28/ebthemes-api/src/dev/apps/api/src/modules/rapidid/">Rapid Id</a></p>
+<p>Rapid Id</p>
+<p><a href="https://bitbucket.org/ebpearls28/ebthemes-api/src/dev/apps/api/src/modules/site-settings/">Site Setting</a></p>
+<p>Site Setting</p>
+<p><a href="https://bitbucket.org/ebpearls28/ebthemes-api/src/dev/apps/api/src/modules/stripe/stripe-payment/">Stripe Payment</a></p>
+<p>Stripe card and bank payment management</p>
+<p><a href="https://bitbucket.org/ebpearls28/ebthemes-api/src/dev/apps/api/src/modules/stripe/stripe-subscriptions">Stripe Subscription</a></p>
+<p>Stripe Subscription</p>
+<p><a href="https://bitbucket.org/ebpearls28/ebthemes-api/src/dev/apps/api/src/modules/subscription/">Inapp Subscription</a></p>
+<p>Inapp Subscription</p>
+<p><a href="https://bitbucket.org/ebpearls28/ebthemes-api/src/dev/apps/api/src/modules/users/">Users</a></p>
+<p>Users</p>
+<h4>2. <a href="https://bitbucket.org/ebpearls28/ebthemes-api/src/dev/apps/cms-api/src/modules/">CMS API</a></h4>
+<p>CMS API mainly provide endpoint for Admin CMS. All admin related API are provided from here.</p>
+<h4>Features</h4>
+<p><a href="https://bitbucket.org/ebpearls28/ebthemes-api/src/dev/apps/cms-api/src/modules/admin/">Admin</a></p>
+<p>Admin user management</p>
+<p><a href="https://bitbucket.org/ebpearls28/ebthemes-api/src/dev/apps/cms-api/src/modules/app-user/">App User</a></p>
+<p>App user management</p>
+<p><a href="https://bitbucket.org/ebpearls28/ebthemes-api/src/dev/apps/cms-api/src/modules/auth/">Auth</a></p>
+<p>Admin authunication</p>
+<p><a href="https://bitbucket.org/ebpearls28/ebthemes-api/src/dev/apps/cms-api/src/modules/business/">Business</a></p>
+<p>Business management</p>
+<p><a href="https://bitbucket.org/ebpearls28/ebthemes-api/src/dev/apps/cms-api/src/modules/email-template/">Email Template</a></p>
+<p>Email template management</p>
+<p><a href="https://bitbucket.org/ebpearls28/ebthemes-api/src/dev/apps/cms-api/src/modules/faq/">Faq</a></p>
+<p>Faq management</p>
+<p><a href="https://bitbucket.org/ebpearls28/ebthemes-api/src/dev/apps/cms-api/src/modules/home-page-template/">Home Page Template</a></p>
+<p>Home page template management</p>
+<p><a href="https://bitbucket.org/ebpearls28/ebthemes-api/src/dev/apps/cms-api/src/modules/menu/">Menu</a></p>
+<p>Menu management</p>
+<p><a href="https://bitbucket.org/ebpearls28/ebthemes-api/src/dev/apps/cms-api/src/modules/page/">Page</a></p>
+<p>Page management</p>
+<p><a href="https://bitbucket.org/ebpearls28/ebthemes-api/src/dev/apps/cms-api/src/modules/page-with-version/">Page With Version</a></p>
+<p>Page with version management</p>
+<p><a href="https://bitbucket.org/ebpearls28/ebthemes-api/src/dev/apps/cms-api/src/modules/settings/">Setting</a></p>
+<p>Setting management</p>
+<p><a href="https://bitbucket.org/ebpearls28/ebthemes-api/src/dev/apps/cms-api/src/modules/subscription-products/">Subscription Products</a></p>
+<p>Subscription product management</p>
+<p><a href="https://bitbucket.org/ebpearls28/ebthemes-api/src/dev/apps/cms-api/src/modules/taxonomy">Taxonomy</a></p>
+<p>Taxonomy management</p>
+<p><a href="https://bitbucket.org/ebpearls28/ebthemes-api/src/dev/apps/cms-api/src/modules/testimonials">Testimonials</a></p>
+<p>Testimonials management</p>
+<h2>Running the app - api(default)</h2>
+<b>Example :</b><div><pre class="line-numbers"><code class="language-bash"># development
+$ npm run start
+
+# watch mode
+$ npm run start:dev
+
+# production mode
+$ npm run start:prod</code></pre></div><h2>Running the app - cms-api</h2>
+<b>Example :</b><div><pre class="line-numbers"><code class="language-bash"># development
+$ npm run start cms-api
+
+# watch mode
+$ npm run start:dev cms-api
+
+# production mode
+$ npm run start:prod cms-api</code></pre></div><h2>Test</h2>
+<b>Example :</b><div><pre class="line-numbers"><code class="language-bash"># unit tests
+$ npm run test
+
+# e2e tests
+$ npm run test:e2e
+
+# test coverage
+$ npm run test:cov</code></pre></div><h2>Inapp subscription private package installation</h2>
+<p>add this package to your project dependencies</p>
+<b>Example :</b><div><pre class="line-numbers"><code class="language-bash">&quot;subscription-package-node&quot;: &quot;git+https://[bitbucket-username]:[bitbucket-password]&#64;bitbucket.org/ebpearls28/subscription-package-node.git&quot;</code></pre></div><h2>Creating a new resource</h2>
+<b>Example :</b><div><pre class="line-numbers"><code class="language-bash">$ npx nest g resource [NewModule] [--no-spec]
+# --no-spec avoids creating spec files</code></pre></div><h2>Creating new files in existing modules</h2>
+<b>Example :</b><div><pre class="line-numbers"><code class="language-bash"># resolver eg:
+$ npx nest generate resolver some-resolver modules/users/resolvers [--flat] [--no-spec]
+# --flat avoids creating a new folder if it exists
+# replace **modules/users/resolvers** with the path you want to create resolver at. same for controllers and services
+
+# controller eg:
+$ npx nest g co some-controller modules/users/controllers [--flat] [--no-spec]
+
+# service eg:
+$ npx nest g service some-service modules/users/services [--flat] [--no-spec]</code></pre></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+          <label class="dark-mode-switch">
+               <input type="checkbox">
+               <span class="slider">
+                    <svg class="slider-icon" viewBox="0 0 24 24" fill="none" height="20" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" width="20" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"></path>
+                    </svg>
+               </span>
+          </label>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 0;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'getting-started';
+            var COMPODOC_CURRENT_PAGE_URL = 'index.html';
+            var MAX_SEARCH_RESULTS = 15;
+       </script>
+
+       <script>
+               $darkModeToggleSwitchers = document.querySelectorAll('.dark-mode-switch input');
+               checkToggle(darkModeState);
+               if ($darkModeToggleSwitchers.length > 0) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].addEventListener('change', function (event) {
+                              darkModeState = !darkModeState;
+                              toggleDarkMode(darkModeState);
+                         });
+                    }
+               }
+          </script>
+
+       <script src="./js/libs/custom-elements.min.js"></script>
+       <script src="./js/libs/lit-html.js"></script>
+
+       <script src="./js/menu-wc.js" defer></script>
+       <script nomodule src="./js/menu-wc_es5.js" defer></script>
+
+       <script src="./js/libs/bootstrap-native.js"></script>
+
+       <script src="./js/libs/es6-shim.min.js"></script>
+       <script src="./js/libs/EventDispatcher.js"></script>
+       <script src="./js/libs/promise.min.js"></script>
+
+       <script src="./js/compodoc.js"></script>
+
+       <script src="./js/tabs.js"></script>
+       <script src="./js/menu.js"></script>
+       <script src="./js/libs/clipboard.min.js"></script>
+       <script src="./js/libs/prism.js"></script>
+       <script src="./js/sourceCode.js"></script>
+          <script src="./js/search/search.js"></script>
+          <script src="./js/search/lunr.min.js"></script>
+          <script src="./js/search/search-lunr.js"></script>
+          <script src="./js/search/search_index.js"></script>
+       <script src="./js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>

@@ -1,0 +1,28 @@
+version: 0.2
+
+env:
+  variables:
+    IMAGE: 896720489482.dkr.ecr.ap-south-1.amazonaws.com/ebthemes-stage-cms-api:latest
+
+phases:
+  pre_build:
+    commands:
+      - aws ecr get-login-password --region ap-south-1 | docker login --username AWS --password-stdin 896720489482.dkr.ecr.ap-south-1.amazonaws.com
+      - aws ssm get-parameter --with-decryption --output text --query 'Parameter.Value' --name BITBUCKET_SSH_KEY | base64 -d > id_rsa
+      - aws ssm get-parameter --with-decryption --output text --query 'Parameter.Value' --name /ebthemes/stage/cms-api/env | base64 -d > apps/cms-api/.env
+      - docker pull $IMAGE || true
+
+  build:
+    commands:
+      - docker build --cache-from $IMAGE -f apps/cms-api/Dockerfile -t $IMAGE .
+
+  post_build:
+    commands:
+      - docker push $IMAGE
+      - mv cicd/cms-api/stage/appspec.yml .
+
+artifacts:
+  files:
+    - 'cicd/**/*'
+    - appspec.yml
+

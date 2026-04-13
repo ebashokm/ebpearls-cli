@@ -1,0 +1,9 @@
+{
+  "token_generated": "Token generated successfully",
+  "call_initiated": "Call initiated successfully",
+  "recording_started": "Recording started successfully",
+  "recording_stopped": "Recording stopped successfully",
+  "failed_to_start_recording": "Failed to start recording",
+  "failed_to_acquire_recording_resource": "Failed to acquire recording resource",
+  "unauthorized_recording": "Unauthorized: You do not own this recording"
+}

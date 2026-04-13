@@ -1,0 +1,1444 @@
+# ------------------------------------------------------
+# THIS FILE WAS AUTOMATICALLY GENERATED (DO NOT MODIFY)
+# ------------------------------------------------------
+
+enum AccountHolderType {
+  COMPANY
+  INDIVIDUAL
+}
+
+enum AccountType {
+  CHECKING
+  FUTSU
+  SAVING
+  TOZA
+}
+
+input AddCoinPackageInput {
+  androidProductId: String
+  appleProductId: String
+  icon: String
+  numberOfCoins: Int!
+}
+
+input AddressInput {
+  city: String
+  coordinates: CoordinatesInput
+  country: String
+  displayAddress: String!
+  postalCode: Float
+  state: String
+  street: String
+  type: LocationType
+}
+
+type AddressResponse {
+  displayAddress: String!
+  location: LocationResponse!
+}
+
+type AgoraCallTokenResponse {
+  calleeId: String
+  callerId: String
+  channelName: String
+  message: String
+  token: String
+}
+
+type AgoraChatUserTokenResponse {
+  chatUsername: String
+
+  """Token's expiration time in seconds"""
+  expirationTime: Float
+  message: String
+  userToken: String
+}
+
+type AgoraTokenResponse {
+  channelName: String
+  message: String
+  token: String
+  userAccount: String
+}
+
+input AllThumbnailInput {
+  key: String!
+  type: String
+}
+
+input AndroidReceipt {
+  packageName: String!
+  signature: String
+  subscriptionId: String!
+  token: String!
+}
+
+input AndroidReceiptConsumable {
+  purchaseToken: String!
+}
+
+type AnimalsListResponse {
+  animals: [ListObject!]
+}
+
+type AttendeeResponse {
+  AttendeeId: String!
+  Capabilities: Capabilities
+  ExternalUserId: String!
+  JoinToken: String!
+}
+
+type BankDetail {
+  accountName: String
+  accountNumber: String
+  routingNumber: String
+}
+
+type BasePaginationResponse {
+  hasNextPage: Boolean!
+  total: Float!
+}
+
+type BillingDetail {
+  """Name of the customer."""
+  name: String
+}
+
+type BiometricEnableResponse {
+  biometricToken: String
+  biometricTokenExpiresIn: DateTime
+  message: String
+}
+
+input BiometricLoginInput {
+  biometricToken: String!
+  deviceId: String!
+}
+
+type BiometricLoginResponse {
+  accessToken: String
+  accessTokenExpiresIn: DateTime
+  biometricToken: String
+  biometricTokenExpiresIn: DateTime
+  cometAuthToken: String
+  message: String
+  refreshToken: String
+  refreshTokenExpiresIn: DateTime
+}
+
+type Breed {
+  id: String
+  value: String
+}
+
+type BreedListResponse {
+  sections: [SectionType!]
+}
+
+enum BusinessType {
+  company
+  governmentEntity
+  individual
+  nonProfit
+}
+
+type Capabilities {
+  Audio: String!
+  Content: String!
+  Video: String!
+}
+
+type CardListReponse {
+  brand: String
+  cardId: String
+  country: String
+  exp_month: Float
+  exp_year: Float
+  fingerprint: String
+  funding: String
+  is_default_source: Boolean
+  last4: String
+  name: String
+  userId: String
+}
+
+input ChangePasswordInput {
+  new_password: String!
+  password: String!
+}
+
+type CoinPackageResponse {
+  _id: ID!
+  androidProductId: String
+  appleProductId: String
+  createdAt: DateTime!
+  icon: String
+  numberOfCoins: String!
+  updatedAt: DateTime!
+}
+
+type CometChatGroupResponse {
+  guid: String!
+  propertyId: String!
+  propertyOwnerId: String!
+  requesterId: String!
+}
+
+input CommentAssetInput {
+  type: CommentAssetType
+  url: String
+}
+
+enum CommentAssetType {
+  IMAGE
+  VIDEO
+}
+
+type CommentAssets {
+  type: CommentAssetType
+  url: String
+}
+
+type ContactDetailResponse {
+  _id: String
+  contactId: String
+  deviceId: String
+  isUserRegistered: Boolean
+  name: String
+  phoneNumbers: [PhoneNumberResponse!]
+  userId: String
+}
+
+type ContactDetailsResponse {
+  _id: String
+  contactId: String
+  countryCode: String
+  deviceId: String
+  isPhoneRegistered: Boolean
+  isUserRegistered: Boolean
+  name: String
+  phoneNumber: String
+  phoneNumberId: String
+  userId: String
+}
+
+type ContactsListResponse {
+  contacts: [ContactDetailsResponse!]
+  message: String
+  pagination: BasePaginationResponse
+}
+
+type ContentType {
+  _id: String!
+  answer: String!
+  question: String!
+}
+
+input CoordinatesInput {
+  lat: Float!
+  long: Float!
+}
+
+type CoordinatesResponse {
+  lat: Float
+  long: Float
+}
+
+input CreateBankAccountInput {
+  bankToken: String!
+}
+
+input CreateBankAccountLinkInput {
+  accountHolderType: AccountHolderType! = INDIVIDUAL
+  bankAccountType: LinkBankAccountType! = STANDARD
+  connectAccountId: String
+}
+
+input CreateBankDetailInput {
+  accountHolderType: AccountHolderType
+  accountName: String!
+
+  """
+  Test account numbers: https://stripe.com/docs/connect/testing#account-numbers
+  """
+  accountNumber: String!
+  accountType: AccountType
+  identityDocumentBack: String
+  identityDocumentFront: String
+
+  """BSB number in australian account case:- 000000, 110000"""
+  routingNumber: String!
+}
+
+input CreateBankTokenInput {
+  accountHolderType: AccountHolderType
+  accountName: String!
+
+  """
+  Test account numbers: https://stripe.com/docs/connect/testing#account-numbers
+  """
+  accountNumber: String!
+  accountType: AccountType
+
+  """BSB number in australian account case:- 000000, 110000"""
+  routingNumber: String!
+}
+
+input CreateCometChatGroupInput {
+  guid: String!
+  propertyId: String!
+  propertyOwnerId: String!
+}
+
+type CreateCompanyBankAccountLinkResponse {
+  created: Float!
+  expiresAt: Float!
+  url: String!
+}
+
+type CreateConnectAccountResponse {
+  connectAccountId: String!
+  message: String
+}
+
+input CreateFeedCommentInput {
+  assets: CommentAssetInput
+  commentText: String
+}
+
+input CreateFeedInput {
+  assets: [FeedAssetInput!]
+  caption: String
+  location: LocationInput
+  status: FeedStatus = DRAFT
+  visibilityType: VisibilityType = PUBLIC
+}
+
+input CreateFeedReplyInput {
+  assets: ReplyAssetInput
+  replyText: String
+}
+
+input CreateOnboardingAccountLinkInput {
+  businessType: BusinessType!
+}
+
+input CreatePaymentInput {
+  amount: Float!
+  paymentMethodId: String!
+}
+
+input CreateStripeSubscriptionInput {
+  cardId: String!
+  couponCode: String
+  priceId: String!
+  productId: String!
+}
+
+type CurrentSubscription {
+  cancellationDate: DateTime
+  environment: String
+  expirationDate: DateTime!
+  isAutoRenewing: Boolean
+  isCancelled: Boolean
+  isTrailPeriod: Boolean
+  originalTransactionId: String
+  packageName: String!
+  purchaseDate: DateTime!
+  purchasePlatform: PurchasePlatform!
+}
+
+"""
+A date-time string at UTC, such as 2019-12-03T09:54:33Z, compliant with the date-time format.
+"""
+scalar DateTime
+
+input DeletePaymentMethodInput {
+  paymentMethodId: String!
+}
+
+input DeviceInfoInput {
+  deviceName: String!
+  deviceType: String!
+  pushNotificationToken: String
+  voipToken: String
+}
+
+enum DocsVerificationGenderType {
+  Female
+  Gender_X
+  Male
+}
+
+type DocsVerificationResponse {
+  message: String!
+  success: Boolean!
+}
+
+enum DriverLicenceStateOfIssue {
+  ACT
+  NSW
+  NT
+  QLD
+  SA
+  TAS
+  VIC
+  WA
+}
+
+input DriverLicenceVerificationInput {
+  BirthDate: String!
+  CardNumber: String!
+  FamilyName: String!
+  GivenName: String!
+  LicenceNumber: String!
+  MiddleName: String!
+  StateOfIssue: DriverLicenceStateOfIssue!
+}
+
+input EmailSignupOTPInput {
+  deviceId: String!
+  email: String!
+}
+
+type EphemeralKey {
+  createdAt: Float!
+  expiresAt: Float!
+  keyId: String!
+  keySecret: String!
+}
+
+type EphemeralKeyResponse {
+  data: EphemeralKey!
+  message: String
+}
+
+type ExternalAccount {
+  account: String!
+  account_holder_name: String
+  account_holder_type: String
+  bank_name: String
+  country: String
+  currency: String
+  default_for_currency: Boolean
+  id: String!
+  last4: String
+  object: String!
+  routing_number: String
+  status: String
+}
+
+type FAQ {
+  _id: String!
+  content: [ContentType!]!
+  createdAt: DateTime
+  description: String!
+  section: String!
+  updatedAt: DateTime
+}
+
+type FAQResponse {
+  faq: FAQ
+  faqs: [FAQ!]!
+  message: String
+  pagination: BasePaginationResponse
+}
+
+type FAQsResponse {
+  faqs: [FAQ!]!
+  message: String
+  total: Float!
+}
+
+type FeedAsset {
+  thumbnails: [String!]
+  type: FeedAssetType
+  url: String
+}
+
+input FeedAssetInput {
+  type: FeedAssetType
+  url: String
+}
+
+enum FeedAssetType {
+  IMAGE
+  VIDEO
+}
+
+type FeedCommentEntity {
+  _id: ID!
+  assets: CommentAssets
+  commentText: String
+  createdAt: DateTime!
+  feedId: String!
+  isLiked: Boolean
+  likeCount: Float
+  postedBy: String
+  replyCount: Float
+  updatedAt: DateTime!
+  userDetail: UserProfileResponse
+}
+
+type FeedCommentResponse {
+  feedComment: FeedCommentEntity
+  feedComments: [FeedCommentEntity!]
+  message: String
+  pagination: BasePaginationResponse
+}
+
+type FeedEntity {
+  _id: ID!
+  assets: [FeedAsset!]
+  caption: String
+  commentCount: Float
+  createdAt: DateTime!
+  isLiked: Boolean
+  likeCount: Float
+  location: LocationResponse
+  publishedDate: DateTime
+  shareCount: Float
+  status: FeedStatus
+  updatedAt: DateTime!
+  userDetail: UserProfileResponse
+  userId: String
+  visibilityType: VisibilityType
+}
+
+type FeedReplyEntity {
+  _id: ID!
+  assets: ReplyAssets
+  commentId: String!
+  createdAt: DateTime!
+  isLiked: Boolean
+  likeCount: Float
+  postedBy: String
+  replyText: String
+  updatedAt: DateTime!
+  userDetail: UserProfileResponse
+}
+
+type FeedReplyResponse {
+  feedReplies: [FeedReplyEntity!]
+  feedReply: FeedReplyEntity
+  message: String
+  pagination: BasePaginationResponse
+}
+
+type FeedResponse {
+  feed: FeedEntity
+  feeds: [FeedEntity!]
+  message: String
+  pagination: BasePaginationResponse
+}
+
+enum FeedStatus {
+  DRAFT
+  PUBLISHED
+}
+
+input ForgotPasswordInput {
+  deviceId: String!
+  email: String!
+}
+
+type ForgotPasswordResponse {
+  expiry: ForgotPasswordVerificationExpiry
+  message: String!
+}
+
+type ForgotPasswordVerificationExpiry {
+  expiresAt: DateTime!
+  expiresBy: Float!
+}
+
+input GetCoinPackageInput {
+  id: String!
+}
+
+input GetFAQDto {
+  limit: Float! = 5
+  order: String = "desc"
+  orderBy: String = "_id"
+  searchText: String = ""
+  skip: Float! = 0
+}
+
+input GetListDTO {
+  limit: Float! = 10
+}
+
+input InitiateAgoraCallInput {
+  callType: String
+  calleeId: String
+}
+
+input InitiateMeetingInput {
+  callType: String
+  calleeId: String
+  deviceType: String
+}
+
+type InitiateMeetingResponse {
+  attendeeResponse: AttendeeResponse
+  meetingResponse: MeetingResponse
+}
+
+input IosReceipt {
+  receipt: String!
+}
+
+input IosReceiptConsumable {
+  receipt: String!
+}
+
+"""
+The `JSON` scalar type represents JSON values as specified by [ECMA-404](http://www.ecma-international.org/publications/files/ECMA-ST/ECMA-404.pdf).
+"""
+scalar JSON
+
+type LinkBankAccountResponse {
+  """
+  Time at which the object was created. Measured in seconds since the Unix epoch.
+  """
+  created: Float!
+
+  """The timestamp at which this account link will expire."""
+  expires_at: Float!
+
+  """Gives idea what are we doing with stripe connect."""
+  object: String!
+
+  """The URL for the account link."""
+  url: String!
+}
+
+enum LinkBankAccountType {
+  CUSTOM
+  EXPRESS
+  STANDARD
+}
+
+type ListCoinPackageResponse {
+  data: [CoinPackageResponse!]!
+  message: String
+  pagination: BasePaginationResponse
+}
+
+input ListCommentsInFeedInput {
+  limit: Float! = 2
+  order: String = "desc"
+  orderBy: String = "_id"
+  skip: Float! = 0
+}
+
+input ListContactsDTO {
+  deviceId: String!
+  limit: Float! = 5
+  order: String = "desc"
+  orderBy: String = "_id"
+  searchText: String = ""
+  skip: Float! = 0
+}
+
+input ListFeedsInput {
+  isArchived: Boolean = false
+  limit: Float! = 5
+  order: String = "desc"
+  orderBy: String = "publishedDate"
+  ownerId: String
+  searchText: String = ""
+  skip: Float! = 0
+  status: FeedStatus
+}
+
+input ListNotificationsInput {
+  limit: Float! = 5
+  skip: Float! = 0
+  timestamp: DateTime
+}
+
+type ListObject {
+  id: String
+  value: String
+}
+
+type ListPaymentMethodResponse {
+  defaultMethod: String
+  message: String
+  paymentMethods: [PaymentMethod!]
+}
+
+input ListRepliesInFeedInput {
+  limit: Float! = 1
+  order: String = "desc"
+  orderBy: String = "_id"
+  skip: Float! = 0
+}
+
+input ListUseProfilesDTO {
+  limit: Float! = 5
+  order: String = "desc"
+  orderBy: String = "_id"
+  searchText: String = ""
+  skip: Float! = 0
+}
+
+input LocationInput {
+  city: String
+  coordinates: CoordinatesInput
+  country: String
+  displayAddress: String
+  postalCode: Float
+  state: String
+  street: String
+  type: LocationType!
+}
+
+type LocationRangeResponse {
+  locationRanges: [ListObject!]
+}
+
+type LocationResponse {
+  city: String
+  coordinates: CoordinatesResponse
+  country: String
+  displayAddress: String
+  postalCode: Float
+  state: String
+  street: String
+  type: LocationType
+}
+
+enum LocationType {
+  Address
+  Geohash
+  Point
+}
+
+input LoginEmailPasswordInput {
+  agent: String
+  deviceId: String!
+  email: String!
+  ip: String
+  password: String!
+}
+
+enum LoginFlowType {
+  link
+  otp
+}
+
+type LoginResponse {
+  message: String
+  token: Token!
+  user: UserRespInLogin
+}
+
+type LoginWithAppleResponse {
+  message: String
+  token: Token!
+  user: UserRespInAppleLogin
+}
+
+type LoginWithEmailResponse {
+  expiry: VerificationCodeExpiry
+  message: String
+  token: Token
+  user: UserRespInEmailLogin
+}
+
+type LoginWithFacebookResponse {
+  message: String
+  token: Token!
+  user: UserRespInFacebookLogin
+}
+
+type LoginWithGoogleResponse {
+  message: String
+  token: Token!
+  user: UserRespInGoogleLogin
+}
+
+input LoginWithOTPInput {
+  email: String!
+  verificationCode: String!
+}
+
+input MakePaymentMethodDefaultInput {
+  paymentMethodId: String!
+}
+
+type MediaPlacement {
+  AudioFallbackUrl: String
+  AudioHostUrl: String
+  EventIngestionUrl: String
+  ScreenDataUrl: String
+  ScreenSharingUrl: String
+  ScreenViewingUrl: String
+  SignalingUrl: String
+  TurnControlUrl: String
+}
+
+enum MedicareCardType {
+  Blue
+  Green
+  Yellow
+}
+
+input MedicareVerificationInput {
+  BirthDate: String!
+  CardExpiry: String!
+  CardNumber: String!
+  CardType: MedicareCardType!
+  FullName1: String!
+  FullName2: String!
+  FullName3: String!
+  FullName4: String!
+  IndividualReferenceNumber: Float!
+}
+
+input MeetingInput {
+  meetingId: String
+}
+
+type MeetingResponse {
+  ExternalMeetingId: String!
+  MediaPlacement: MediaPlacement
+  MediaRegion: String!
+  MeetingArn: String!
+  MeetingId: String!
+}
+
+type MessageResponse {
+  message: String
+}
+
+type Mutation {
+  LoginWithTiktok(code: String!, deviceId: String!): SocialLoginResponse!
+  acceptTermsAndConditions: MessageResponse!
+  addCoinPackage(body: AddCoinPackageInput!): MessageResponse!
+  addUserBankAccountFromDetail(body: CreateBankTokenInput!): MessageResponse!
+  addUserBankAccountFromToken(body: CreateBankAccountInput!): MessageResponse!
+  cancelStripeSubscription: MessageResponse!
+  changePassword(body: ChangePasswordInput!): MessageResponse!
+  createAgoraChatUserToken: AgoraChatUserTokenResponse
+  createCustomStripeAccount(body: CreateBankDetailInput!): MessageResponse!
+  createFeed(body: CreateFeedInput!): FeedResponse!
+  createFeedComment(body: CreateFeedCommentInput!, feedId: String!): FeedCommentResponse!
+  createFeedReply(body: CreateFeedReplyInput!, commentId: String!): FeedReplyResponse!
+
+  """Setup intent for adding payment method."""
+  createIntentForCustomer(kind: String): SetupIntentResponse!
+  createOfferSignature(appBundleId: String!, applicationUsernameHash: String!, offerIdentifier: String!, productIdentifier: String!): OfferSignatureResponse!
+  createPayment(body: CreatePaymentInput!): MessageResponse!
+  createStripeSubscription(body: CreateStripeSubscriptionInput!): MessageResponse!
+  deleteAccount: MessageResponse!
+  deleteCard(body: DeletePaymentMethodInput!): MessageResponse!
+  deleteFeed(id: String!): FeedResponse!
+  deleteFeedComment(id: String!): FeedCommentResponse!
+  deleteFeedReply(id: String!): MessageResponse!
+  deleteStripeConnectAccount(connectAccountId: String!): MessageResponse!
+  deleteUserBankAccount(bankId: String!): MessageResponse!
+  enableBiometricAuth(deviceId: String!): BiometricEnableResponse!
+  endChimeMeeting(body: MeetingInput!): MessageResponse!
+  endTrial: MessageResponse!
+  forgotPassword(body: ForgotPasswordInput!): ForgotPasswordResponse!
+
+  """Links business owner to the stripe as connected standard account."""
+  generateAccountOnboardingLink(body: CreateBankAccountLinkInput!): LinkBankAccountResponse!
+  generateCustomAccountOnboardingLink(body: CreateBankAccountLinkInput!): CreateConnectAccountResponse!
+  getAgoraToken: AgoraTokenResponse!
+  getMyPaymentHistory(input: PaymentHistoryInput!): PaginatedPaymentHistoryResponse!
+  getPaymentDetail(id: String!): PaymentHistoryResponse
+  initMyDefaultSettings: MessageResponse
+  initiateAgoraCall(body: InitiateAgoraCallInput!): AgoraCallTokenResponse!
+  initiateChimeMeeting(body: InitiateMeetingInput!): InitiateMeetingResponse!
+  invalidateCloudFrontCache(keys: [String!]!): MessageResponse!
+  likeComment(commentId: String!): FeedCommentResponse!
+  likeFeed(feedId: String!): FeedResponse!
+  likeReply(replyId: String!): MessageResponse!
+  loginWithApple(deviceId: String!, idToken: String!): LoginWithAppleResponse!
+  loginWithBiometric(body: BiometricLoginInput!): BiometricLoginResponse!
+  loginWithEmailPassword(body: LoginEmailPasswordInput!): LoginWithEmailResponse!
+  loginWithFacebook(accessToken: String!, deviceId: String!): LoginWithFacebookResponse!
+  loginWithGoogle(deviceId: String!, idToken: String!): LoginWithGoogleResponse!
+  loginWithOTP(body: LoginWithOTPInput!): LoginResponse!
+  logout: MessageResponse!
+  logoutAll: MessageResponse!
+  makeCardDefault(body: MakePaymentMethodDefaultInput!): MessageResponse!
+  phoneLoginWithOTP(body: PhoneLoginWithOTPInput!): LoginResponse!
+  refresh(refreshToken: String!): Token!
+  registerUser(body: SignupInput!): RegisterResponse!
+  registerWithEmail(body: EmailSignupOTPInput!): OTPResponse!
+  removeContacts(contactIds: [String!]!, deviceId: String!): MessageResponse!
+  requestLoginOTP(body: RequestLoginOTPInput!): OTPResponse!
+  requestPayout: MessageResponse!
+  requestPhoneLoginOTP(body: RequestPhoneLoginOTPInput!): OTPResponse!
+  resendVerifyEmailOtp(body: EmailSignupOTPInput!): OTPResponse!
+  resetPassword(body: ResetPasswordInput!): MessageResponse!
+  saveDeviceInfo(body: DeviceInfoInput!): MessageResponse!
+
+  """Save payment method."""
+  savePaymentMethod(input: SavePaymentMethodDto!): String!
+  setPassword(password: String!): MessageResponse!
+  unlikeComment(commentId: String!): FeedCommentResponse!
+  unlikeFeed(feedId: String!): FeedResponse!
+  unlikeReply(replyId: String!): MessageResponse!
+  updateDefaultBankAccount(bankId: String!): MessageResponse!
+  updateEmail(body: UpdateUserEmailDto!): OTPResponse!
+  updateFeed(body: UpdateFeedInput!, id: String!): FeedResponse!
+  updateFeedComment(body: UpdateFeedCommentInput!, id: String!): FeedCommentResponse!
+  updateFeedReply(body: UpdateFeedReplyInput!, id: String!): MessageResponse!
+  updateMySettings(settings: [UpdateSettingInput!]!): MessageResponse
+  updatePhoneNumber(body: UpdatePhoneNumberInput!): OTPResponse!
+  updateProfile(body: UpdateUserProfile!): ProfileUpdateResponse!
+  updateStripeSubscription(body: UpdateStripeSubscriptionInput!): MessageResponse!
+  verifyAndroidSubscription(body: AndroidReceipt!): Boolean!
+  verifyDriverLicence(body: DriverLicenceVerificationInput!): DocsVerificationResponse!
+  verifyEmail(body: VerifyEmailInput!): VerifyEmailResponse!
+  verifyIosSubscription(receiptData: IosReceipt!): Boolean!
+  verifyMedicare(body: MedicareVerificationInput!): DocsVerificationResponse!
+  verifyNzDriverLicence(body: NzDriverLicenceVerificationInput!): DocsVerificationResponse!
+  verifyNzPassport(body: NzPassportVerificationInput!): DocsVerificationResponse!
+  verifyPassport(body: PassportVerificationInput!): DocsVerificationResponse!
+  verifyPurchaseCoinPackages(androidPayload: AndroidReceiptConsumable, iosPayload: IosReceiptConsumable): Boolean!
+  verifyResetPasswordOTP(body: VerifyResetPasswordOtpInput!): MessageResponse!
+  verifyUpdateEmail(body: VerifyEmailInput!): MessageResponse!
+  verifyUpdatedPhoneNumber(body: VerifyUpdatedPhoneNumberInput!): MessageResponse!
+}
+
+type NotificationResponse {
+  _id: ID!
+  createdAt: DateTime!
+  description: String
+  readAt: DateTime
+  theme: String!
+  themeAttributes: ThemeAttributesEntity
+  updatedAt: DateTime!
+  userId: String!
+  viewedAt: DateTime
+}
+
+input NzDriverLicenceVerificationInput {
+  BirthDate: String!
+  FirstName: String!
+  LastName: String!
+  LicenseNumber: String!
+  LicenseVersion: String!
+  MiddleName: String!
+}
+
+input NzPassportVerificationInput {
+  DateOfBirth: String!
+  FamilyName: String!
+  GivenName: String!
+  TravelDocumentExpiryDate: String!
+  TravelDocumentNumber: String!
+}
+
+type OTPResponse {
+  expiry: VerificationCodeExpiry
+  message: String!
+}
+
+type OfferSignatureResponse {
+  keyIdentifier: String!
+  nonce: String!
+  signature: String!
+  timestamp: Float!
+}
+
+type OptionsResponse {
+  key: String
+  value: String
+}
+
+type Page {
+  _id: String!
+  content: String
+  createdAt: DateTime
+  seoTags: SeoTag
+  slug: String!
+  status: String!
+  title: String!
+  updatedAt: DateTime
+}
+
+type PageResponse {
+  page: Page
+  pages: [Page!]
+}
+
+type PaginatedNotifications {
+  message: String
+  notification: NotificationResponse
+  notifications: [NotificationResponse!]
+  pagination: BasePaginationResponse
+}
+
+type PaginatedPaymentHistoryResponse {
+  data: [PaymentHistoryResponse!]!
+  message: String
+  pagination: BasePaginationResponse!
+}
+
+input PassportVerificationInput {
+  BirthDate: String!
+  ExpiryDate: String!
+  FamilyName: String!
+  Gender: DocsVerificationGenderType!
+  GivenName: String!
+  TravelDocumentNumber: String!
+}
+
+input PaymentHistoryInput {
+  limit: Float! = 5
+  order: String = "desc"
+  orderBy: String = "_id"
+  searchText: String = ""
+  skip: Float! = 0
+  status: PaymentStatus
+}
+
+type PaymentHistoryResponse {
+  _id: ID!
+  amount: Float
+  createdAt: DateTime!
+  paymentStatus: PaymentStatus
+  updatedAt: DateTime!
+  username: String
+}
+
+type PaymentMethod {
+  billing_details: BillingDetail
+  id: String
+  method: PaymentMethodDetails
+}
+
+type PaymentMethodDetails {
+  """Different brands representating card like visa, master, etc."""
+  exp_month: Float
+
+  """Different brands representating card like visa, master, etc."""
+  exp_year: Float
+
+  """Different brands representating card like visa, master, etc."""
+  last4: Float
+
+  """Different brands representating card like visa, master, etc."""
+  paymentMethod: String
+}
+
+enum PaymentStatus {
+  COMPLETED
+  FAILED
+  PENDING
+}
+
+input PhoneLoginWithOTPInput {
+  deviceId: String!
+  dialCode: String!
+  number: String!
+  verificationCode: String!
+}
+
+type PhoneNumberResponse {
+  countryCode: String
+  isPhoneRegistered: Boolean
+  phoneNumber: String
+  phoneNumberId: String
+}
+
+input PreSignedUrlInput {
+  contentType: String
+  method: SignedUrlMethod!
+  path: String
+}
+
+type PreSignedUrlResponse {
+  message: String
+  url: String
+  urls: [String!]
+}
+
+type PriceResponse {
+  name: String
+  price: Float!
+  priceId: String!
+}
+
+type ProfileUpdateResponse {
+  message: String
+  user: UserResponse
+}
+
+enum PurchasePlatform {
+  ANDROID
+  IOS
+}
+
+type Query {
+  LanguageTest: MessageResponse!
+  contact(id: String!): ContactDetailResponse
+  contactFromContactIdAndPhoneNumberId(contactId: String!, deviceId: String!, phoneNumber: String!): ContactDetailsResponse
+  contacts(input: ListContactsDTO!): ContactsListResponse
+  createCometChatGroup(body: CreateCometChatGroupInput!): CometChatGroupResponse!
+  createOnboardingAccountLink(body: CreateOnboardingAccountLinkInput!): CreateCompanyBankAccountLinkResponse!
+  currentStripeSubscription: StripeSubscriptionResponse
+  deleteCometChatGroup(guid: String!): MessageResponse!
+  feedList(input: ListFeedsInput!): FeedResponse!
+  findAllFAQ: FAQsResponse!
+  findFeed(id: String!): FeedResponse!
+  getAllCoinPackages: ListCoinPackageResponse
+  getAllFAQ(input: GetFAQDto!): FAQResponse!
+  getAllThumbnail(input: AllThumbnailInput!): PreSignedUrlResponse!
+  getAnimalsList(input: GetListDTO!): AnimalsListResponse!
+  getAppUserProfile(userId: String!): UserProfileResponse!
+  getBreedList(input: GetListDTO!): BreedListResponse!
+  getCards: [CardListReponse!]!
+  getCloudFrontSignUrl(key: String!): String!
+  getCloudFrontUrl(key: String!): String!
+  getCoinPackage(body: GetCoinPackageInput!): CoinPackageResponse!
+  getCsrfToken: String!
+  getCustomThumbnail(input: ThumbnailInput!): PreSignedUrlResponse!
+  getEphemeralKey: EphemeralKeyResponse!
+  getLocationRange(input: GetListDTO!): LocationRangeResponse!
+  getMeetingInfo(body: MeetingInput!): MeetingResponse!
+
+  """List available payment methods of the user."""
+  getMyPaymentMethods: ListPaymentMethodResponse!
+  getMySetting(key: String!): SiteSettingsResponse
+  getMySettings: [SiteSettingsResponse!]
+  getPageBySlug(slug: String!): PageResponse!
+  getPreSignedUrl(input: PreSignedUrlInput!): PreSignedUrlResponse!
+  getUserStripeAccountDetails: StripeConnectAccountReponse
+  listAvailableSubscriptions: [SubscriptionProductResponse!]!
+  listFeedComments(feedId: String!, input: ListCommentsInFeedInput!): FeedCommentResponse!
+  listFeedReplies(commentId: String!, input: ListRepliesInFeedInput!): FeedReplyResponse!
+  listUserNotifications(input: ListNotificationsInput!): PaginatedNotifications!
+  listUserProfiles(input: ListUseProfilesDTO!): UserProfilesListResponse!
+  me: UserResponse!
+}
+
+type RegisterResponse {
+  expiry: VerificationCodeExpiry
+  message: String!
+  user: UserRespInEmailLogin
+}
+
+input ReplyAssetInput {
+  type: CommentAssetType
+  url: String
+}
+
+type ReplyAssets {
+  type: CommentAssetType
+  url: String
+}
+
+input RequestLoginOTPInput {
+  deviceId: String!
+  email: String!
+}
+
+input RequestPhoneLoginOTPInput {
+  deviceId: String!
+  dialCode: String!
+  number: String!
+}
+
+input ResetPasswordInput {
+  email: String!
+  password: String!
+  verificationCode: String!
+}
+
+input SavePaymentMethodDto {
+  """Your payment method id to save."""
+  paymentMethod: String!
+}
+
+type SectionType {
+  breeds: [Breed!]
+  id: String
+  title: String
+}
+
+type SeoTag {
+  description: String!
+  tags: String!
+  title: String!
+}
+
+type SetupIntentResponse {
+  clientSecret: String!
+}
+
+enum SignedUrlMethod {
+  GET
+  PUT
+}
+
+input SignupInput {
+  deviceId: String!
+  email: String!
+  firstName: String
+  lastName: String
+  loginFlowType: LoginFlowType = otp
+  password: String
+  phoneNumber: UpdatePhoneNumberInput
+}
+
+type SiteSettingsResponse {
+  _id: String
+  description: String
+  fieldType: String
+  key: String
+  options: [OptionsResponse!]
+  title: String
+  userId: String
+  value: [String!]
+}
+
+type SocialLoginResponse {
+  message: String
+  token: Token!
+  user: UserRespInSocialLogin
+}
+
+type StripeConnectAccountReponse {
+  accountId: String!
+  accountStatus: String!
+  accountType: String!
+  businessType: String!
+  externalAccounts: [ExternalAccount!]
+  verificationStatus: String!
+}
+
+type StripeSubscriptionResponse {
+  _id: ID!
+  createdAt: DateTime!
+  priceId: String!
+  productId: String!
+  status: StripeSubscriptionStatus!
+  subscriptionObject: SubscriptionObjectDto
+  updatedAt: DateTime!
+}
+
+enum StripeSubscriptionStatus {
+  ACTIVE
+  CANCELED
+  PENDING
+  REJECTED
+  TRIALING
+}
+
+type SubscriptionObjectDto {
+  isTrial: Boolean
+  latestInvoice: String
+  subscriptionAmount: Float
+  subscriptionCurrency: String
+  subscriptionEnd: DateTime
+  subscriptionId: String!
+  subscriptionStart: DateTime
+}
+
+type SubscriptionProductResponse {
+  _id: ID!
+  createdAt: DateTime!
+  name: String!
+  prices: [PriceResponse!]!
+  productId: String!
+  updatedAt: DateTime!
+}
+
+type ThemeAttributesEntity {
+  attributes: JSON
+}
+
+input ThumbnailInput {
+  height: Float
+  key: String!
+  width: Float
+}
+
+type Token {
+  accessToken: String
+  accessTokenExpiresIn: DateTime
+  refreshToken: String
+  refreshTokenExpiresIn: DateTime
+}
+
+input UpdateFeedCommentInput {
+  assets: CommentAssetInput
+  commentText: String
+}
+
+input UpdateFeedInput {
+  assets: [FeedAssetInput!]
+  caption: String
+  location: LocationInput
+  status: FeedStatus = DRAFT
+  visibilityType: VisibilityType = PUBLIC
+}
+
+input UpdateFeedReplyInput {
+  assets: ReplyAssetInput
+  replyText: String
+}
+
+input UpdatePhoneNumberInput {
+  dialCode: String!
+  number: String!
+}
+
+input UpdateSettingInput {
+  key: String!
+  value: String!
+}
+
+input UpdateStripeSubscriptionInput {
+  couponCode: String
+  isUpgrade: Boolean = false
+  priceId: String
+  productId: String
+}
+
+input UpdateUserEmailDto {
+  deviceId: String!
+  email: String!
+}
+
+input UpdateUserProfile {
+  address: AddressInput
+  bio: String
+  firstName: String
+  lastName: String
+  profileImage: String
+}
+
+type UserDetailsResponse {
+  _id: String!
+  authProvider: String
+  authProviderId: String
+  firstName: String
+  lastName: String
+  profileImage: String
+  profileImageThumbnails: [String!]
+}
+
+type UserProfileResponse {
+  _id: String!
+  firstName: String
+  lastName: String
+  profileImage: String
+  profileImageThumbnails: [String!]
+}
+
+type UserProfilesListResponse {
+  message: String
+  pagination: BasePaginationResponse
+  users: [UserDetailsResponse!]
+}
+
+type UserRespInAppleLogin {
+  _id: String
+  cometAuthToken: String
+  email: String
+  loginType: String
+}
+
+type UserRespInEmailLogin {
+  _id: String
+  cometAuthToken: String
+  email: String
+  loginFlowType: LoginFlowType
+  loginType: String
+  status: UserStatus
+}
+
+type UserRespInFacebookLogin {
+  _id: String
+  cometAuthToken: String
+  email: String
+  loginType: String
+}
+
+type UserRespInGoogleLogin {
+  _id: String
+  cometAuthToken: String
+  email: String
+  loginType: String
+}
+
+type UserRespInLogin {
+  _id: String
+  cometAuthToken: String
+  email: String
+  loginType: String
+}
+
+type UserRespInSocialLogin {
+  _id: String
+  cometAuthToken: String
+  email: String
+  loginType: String
+}
+
+type UserResponse {
+  _id: String!
+  acceptedTermsVersion: String
+  address: AddressResponse
+  authProvider: String
+  authProviderId: String
+  bio: String
+  currentSubscription: CurrentSubscription
+  firstName: String
+  isBiometricEnabled: Boolean
+  isTermsVersionSynced: Boolean
+  lastName: String
+  loginFlowType: LoginFlowType
+  profileImage: String
+  profileImageThumbnails: [String!]
+  status: UserStatus
+}
+
+enum UserStatus {
+  email_verification_pending
+  email_verified
+  password_set
+  password_set_pending
+}
+
+type VerificationCodeExpiry {
+  expiresAt: DateTime!
+  expiresBy: Float
+}
+
+input VerifyEmailInput {
+  email: String!
+  verificationCode: String!
+}
+
+type VerifyEmailResponse {
+  expiry: VerificationCodeExpiry
+  message: String
+  token: Token
+  user: UserRespInEmailLogin
+}
+
+input VerifyResetPasswordOtpInput {
+  email: String!
+  verificationCode: String!
+}
+
+input VerifyUpdatedPhoneNumberInput {
+  verificationCode: String!
+}
+
+enum VisibilityType {
+  FRIEND
+  ONLY_ME
+  PUBLIC
+}

@@ -1,0 +1,11 @@
+#!/bin/bash
+
+set -e
+
+aws ecr get-login-password --region ap-south-1 | docker login --username AWS --password-stdin 896720489482.dkr.ecr.ap-south-1.amazonaws.com
+
+cd /home/ebthemes/stage
+docker-compose pull ebt_api_stage
+docker-compose rm -s -f ebt_api_stage
+docker-compose up -d ebt_api_stage
+docker image prune -f

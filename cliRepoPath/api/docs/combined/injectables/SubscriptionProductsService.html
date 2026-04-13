@@ -1,0 +1,1026 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>nest-ebtheme documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	   <link rel="stylesheet" href="../styles/style.css">
+        <link rel="stylesheet" href="../styles/dark.css">
+    </head>
+    <body>
+          <script>
+               // Blocking script to avoid flickering dark mode
+               // Dark mode toggle button
+               var useDark = window.matchMedia('(prefers-color-scheme: dark)');
+               var darkModeState = useDark.matches;
+               var $darkModeToggleSwitchers = document.querySelectorAll('.dark-mode-switch input');
+               var $darkModeToggles = document.querySelectorAll('.dark-mode-switch');
+               var darkModeStateLocal = localStorage.getItem('compodoc_darkmode-state');
+
+               function checkToggle(check) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].checked = check;
+                    }
+               }
+
+               function toggleDarkMode(state) {
+                    if (window.localStorage) {
+                         localStorage.setItem('compodoc_darkmode-state', state);
+                    }
+
+                    checkToggle(state);
+
+                    const hasClass = document.body.classList.contains('dark');
+
+                    if (state) {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.add('dark');
+                         }
+                         if (!hasClass) {
+                              document.body.classList.add('dark');
+                         }
+                    } else {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.remove('dark');
+                         }
+                         if (hasClass) {
+                              document.body.classList.remove('dark');
+                         }
+                    }
+               }
+
+               useDark.addEventListener('change', function (evt) {
+                    toggleDarkMode(evt.matches);
+               });
+               if (darkModeStateLocal) {
+                    darkModeState = darkModeStateLocal === 'true';
+               }
+               toggleDarkMode(darkModeState);
+          </script>
+
+        <div class="navbar navbar-default navbar-fixed-top d-md-none p-0">
+               <div class="d-flex">
+                    <a href="../" class="navbar-brand">nest-ebtheme documentation</a>
+                    <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+               </div>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="d-none d-md-block menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content injectable">
+                   <div class="content-data">
+
+
+
+
+
+
+
+
+<ol class="breadcrumb">
+  <li class="breadcrumb-item">Injectables</li>
+  <li class="breadcrumb-item" >SubscriptionProductsService</li>
+</ol>
+
+<ul class="nav nav-tabs" role="tablist">
+        <li class="nav-item">
+            <a href="#info" 
+                class="nav-link"
+                class="nav-link active"
+                role="tab" id="info-tab" data-bs-toggle="tab" data-link="info">Info</a>
+        </li>
+        <li class="nav-item">
+            <a href="#source" 
+                class="nav-link"
+                
+                role="tab" id="source-tab" data-bs-toggle="tab" data-link="source">Source</a>
+        </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="info">
+        <p class="comment">
+            <h3>File</h3>
+        </p>
+        <p class="comment">
+            <code>apps/cms-api/src/modules/subscription-products/subscription-products.service.ts</code>
+        </p>
+
+
+            <p class="comment">
+                <h3>Description</h3>
+            </p>
+            <p class="comment">
+                <p>${1:Description placeholder}</p>
+
+            </p>
+
+
+
+            <section data-compodoc="block-index">
+    <h3 id="index">Index</h3>
+    <table class="table table-sm table-bordered index-table">
+        <tbody>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Methods</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                    <span class="modifier">Async</span>
+                                <a href="#create" >create</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Async</span>
+                                <a href="#findAll" >findAll</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Async</span>
+                                <a href="#findOne" >findOne</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Async</span>
+                                <a href="#remove" >remove</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Async</span>
+                                <a href="#update" >update</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+            <section data-compodoc="block-constructor">
+    <h3 id="constructor">Constructor</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+<code>constructor(subscriptionProductRepo: <a href="../injectables/SubscriptionProductRepository.html" target="_self">SubscriptionProductRepository</a>, stripeService: <a href="../injectables/StripeService.html" target="_self">StripeService</a>, subscriptionProductModel: Model<SubscriptionProduct>, i18nService: I18nService)</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="28" class="link-to-prism">apps/cms-api/src/modules/subscription-products/subscription-products.service.ts:28</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                            <div class="io-description"><p>Creates an instance of SubscriptionProductsService.</p>
+</div>
+                            <div>
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>subscriptionProductRepo</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/SubscriptionProductRepository.html" target="_self" >SubscriptionProductRepository</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>stripeService</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/StripeService.html" target="_self" >StripeService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>subscriptionProductModel</td>
+                                                  
+                                                        <td>
+                                                                    <code>Model&lt;SubscriptionProduct&gt;</code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>i18nService</td>
+                                                  
+                                                        <td>
+                                                                    <code>I18nService</code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+</section>
+
+            <section data-compodoc="block-methods">
+    
+    <h3 id="methods">
+        Methods
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="create"></a>
+                    <span class="name">
+                            <span class="modifier">Async</span>
+                        <span ><b>create</b></span>
+                        <a href="#create"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>create(createData: <a href="../classes/CreateSubscriptionProductInput.html" target="_self">CreateSubscriptionProductInput</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="50"
+                                    class="link-to-prism">apps/cms-api/src/modules/subscription-products/subscription-products.service.ts:50</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                                <td>Description</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>createData</td>
+                                            <td>
+                                                            <code><a href="../classes/CreateSubscriptionProductInput.html" target="_self" >CreateSubscriptionProductInput</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                            <td>
+                                                    <p>create subscription product data</p>
+
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>    <code>Promise&lt;SubscriptionProductResponse&gt;</code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="findAll"></a>
+                    <span class="name">
+                            <span class="modifier">Async</span>
+                        <span ><b>findAll</b></span>
+                        <a href="#findAll"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>findAll(params: <a href="../classes/BasePaginationParams.html" target="_self">BasePaginationParams</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="199"
+                                    class="link-to-prism">apps/cms-api/src/modules/subscription-products/subscription-products.service.ts:199</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                                <td>Description</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>params</td>
+                                            <td>
+                                                            <code><a href="../classes/BasePaginationParams.html" target="_self" >BasePaginationParams</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                            <td>
+                                                    <ul>
+<li>pagination params</li>
+</ul>
+
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>    <code>Promise&lt;PaginatedSubscriptionProductResponse&gt;</code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="findOne"></a>
+                    <span class="name">
+                            <span class="modifier">Async</span>
+                        <span ><b>findOne</b></span>
+                        <a href="#findOne"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>findOne(id: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="241"
+                                    class="link-to-prism">apps/cms-api/src/modules/subscription-products/subscription-products.service.ts:241</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                                <td>Description</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>id</td>
+                                            <td>
+                                                            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                            <td>
+                                                    <p>ID of the subscription product</p>
+
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="../classes/SubsProductResponse.html" target="_self" >Promise&lt;SubsProductResponse&gt;</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="remove"></a>
+                    <span class="name">
+                            <span class="modifier">Async</span>
+                        <span ><b>remove</b></span>
+                        <a href="#remove"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>remove(id: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="258"
+                                    class="link-to-prism">apps/cms-api/src/modules/subscription-products/subscription-products.service.ts:258</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                                <td>Description</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>id</td>
+                                            <td>
+                                                            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                            <td>
+                                                    <p>ID of the subscription product</p>
+
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="../classes/MessageResponse.html" target="_self" >Promise&lt;MessageResponse&gt;</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="update"></a>
+                    <span class="name">
+                            <span class="modifier">Async</span>
+                        <span ><b>update</b></span>
+                        <a href="#update"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>update(updateData: <a href="../classes/UpdateSubscriptionProductInput.html" target="_self">UpdateSubscriptionProductInput</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="122"
+                                    class="link-to-prism">apps/cms-api/src/modules/subscription-products/subscription-products.service.ts:122</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                                <td>Description</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>updateData</td>
+                                            <td>
+                                                            <code><a href="../classes/UpdateSubscriptionProductInput.html" target="_self" >UpdateSubscriptionProductInput</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                            <td>
+                                                    <p>update data</p>
+
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>    <code>Promise&lt;SubscriptionProductResponse&gt;</code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+
+    </div>
+
+
+    <div class="tab-pane fade  tab-source-code" id="source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Injectable, NotFoundException } from &#x27;@nestjs/common&#x27;;
+import { CreateSubscriptionProductInput } from &#x27;./dto/input/create-subscription-product.input&#x27;;
+import { UpdateSubscriptionProductInput } from &#x27;./dto/input/update-subscription-product.input&#x27;;
+import { SubscriptionProductRepository } from &#x27;@app/data-access&#x27;;
+import {
+  PaginatedSubscriptionProductResponse,
+  SubsProductResponse,
+  SubscriptionProductResponse,
+} from &#x27;./dto/response/subscription-product.dto&#x27;;
+import { BasePaginationParams } from &#x27;../../common/dto/base-pagination.dto&#x27;;
+import { MessageResponse } from &#x27;@app/common/dto/response/message.response&#x27;;
+import { BillingCycleEnum } from &#x27;./enum/subscription-products.enum&#x27;;
+import { BillingIntervalEnum } from &#x27;@app/common/enum/subscription.enum&#x27;;
+import { InjectModel } from &#x27;@nestjs/mongoose&#x27;;
+import { SubscriptionProduct } from &#x27;@app/data-access&#x27;;
+import { Model } from &#x27;mongoose&#x27;;
+import { I18nService } from &#x27;nestjs-i18n&#x27;;
+import { StripeService } from &#x27;@app/stripe&#x27;;
+
+/**
+ * ${1:Description placeholder}
+ *
+ * @export
+ * @class SubscriptionProductsService
+ * @typedef {SubscriptionProductsService}
+ */
+@Injectable()
+export class SubscriptionProductsService {
+  /**
+   * Creates an instance of SubscriptionProductsService.
+   *
+   * @constructor
+   * @param {SubscriptionProductRepository} subscriptionProductRepo
+   * @param {StripeService} stripeService
+   * @param {Model&lt;SubscriptionProduct&gt;} subscriptionProductModel
+   */
+  constructor(
+    private readonly subscriptionProductRepo: SubscriptionProductRepository,
+    private readonly stripeService: StripeService,
+    @InjectModel(&#x27;SubscriptionProduct&#x27;)
+    private readonly subscriptionProductModel: Model&lt;SubscriptionProduct&gt;,
+    private readonly i18nService: I18nService,
+  ) {}
+
+  /**
+   * @description create subscription product
+   * @param {CreateSubscriptionProductInput} createData create subscription product data
+   * @returns
+   */
+  async create(createData: CreateSubscriptionProductInput): Promise&lt;SubscriptionProductResponse&gt; {
+    const { productName, description, isActive, billingCycle, prices } &#x3D; createData;
+
+    try {
+      const product &#x3D; await this.stripeService.createProduct({
+        name: productName,
+        description,
+        isActive,
+      });
+
+      const interval &#x3D; BillingIntervalEnum.month; // default interval- month, can be changed by sending from client side
+      let intervalCount &#x3D; 1;
+      if (billingCycle &#x3D;&#x3D;&#x3D; BillingCycleEnum.QUARTERLY) {
+        intervalCount &#x3D; 3;
+      } else if (billingCycle &#x3D;&#x3D;&#x3D; BillingCycleEnum.BI_YEARLY) {
+        intervalCount &#x3D; 6;
+      }
+
+      const pricesPromises &#x3D; [];
+      for (const priceData of prices) {
+        pricesPromises.push(
+          this.stripeService.createPrice({
+            price: priceData.price,
+            currency: priceData.currency,
+            productId: product.id,
+            isActive,
+            recurringOptions: {
+              interval,
+              intervalCount,
+            },
+          }),
+        );
+      }
+
+      const stripePrices &#x3D; await Promise.all(pricesPromises);
+
+      for (const sp of stripePrices) {
+        prices.map((price) &#x3D;&gt; {
+          if (price.price &#x3D;&#x3D;&#x3D; sp.unit_amount / 100) {
+            price[&#x27;priceId&#x27;] &#x3D; sp.id;
+          }
+        });
+      }
+
+      const createSubscriptionProductData &#x3D; {
+        name: productName,
+        billingCycle,
+        productId: product.id,
+        description,
+        isActive,
+        prices,
+      };
+      const subscriptionProduct &#x3D; await this.subscriptionProductRepo.create(
+        createSubscriptionProductData,
+      );
+
+      return {
+        message: this.i18nService.t(&#x27;common.create_success&#x27;, {
+          args: { entity: &#x27;Subscription Product&#x27; },
+        }),
+        data: subscriptionProduct,
+      };
+    } catch (error: any) {
+      throw error;
+    }
+  }
+
+  /**
+   * @description update the subscription product
+   * @param {UpdateSubscriptionProductInput} updateData update data
+   * @returns
+   */
+  async update(updateData: UpdateSubscriptionProductInput): Promise&lt;SubscriptionProductResponse&gt; {
+    const { id, description, isActive, productName, prices, billingCycle } &#x3D; updateData;
+    try {
+      const subscriptionProduct &#x3D; await this.subscriptionProductRepo.findById(id);
+      if (!subscriptionProduct) {
+        throw new NotFoundException(
+          this.i18nService.t(&#x27;common.not_exist&#x27;, {
+            args: { entity: &#x27;Subscription product&#x27; },
+          }),
+        );
+      }
+      const stripeSubProduct &#x3D; await this.stripeService.updateProduct(
+        subscriptionProduct.productId,
+        {
+          description,
+          isActive,
+          name: productName,
+        },
+      );
+
+      await this.stripeService.deletePrices(subscriptionProduct.productId);
+
+      // Create updated prices for the product
+      const newPricesPromise &#x3D; [];
+      for (const priceData of prices) {
+        newPricesPromise.push(
+          this.stripeService.createPrice({
+            productId: stripeSubProduct.id,
+            currency: priceData.currency,
+            isActive: priceData.isActive,
+            price: priceData.price,
+          }),
+        );
+      }
+      const newPrices &#x3D; await Promise.all(newPricesPromise);
+
+      for (const np of newPrices) {
+        prices.map((p) &#x3D;&gt; {
+          if (p.price &#x3D;&#x3D;&#x3D; np.unit_amount / 100) {
+            p[&#x27;priceId&#x27;] &#x3D; np.id;
+          }
+        });
+      }
+      const newUpdateData &#x3D; {
+        name: productName,
+        billingCycle,
+        productId: subscriptionProduct.productId,
+        description,
+        isActive,
+        prices,
+      };
+
+      // update in database
+      const updatedSubscriptionProduct &#x3D; await this.subscriptionProductRepo.updateById(
+        id,
+        newUpdateData,
+        {
+          new: true,
+        },
+      );
+
+      return {
+        message: this.i18nService.t(&#x27;common.update_success&#x27;, {
+          args: { entity: &#x27;Subscription product&#x27; },
+        }),
+        data: updatedSubscriptionProduct,
+      };
+    } catch (error: any) {
+      throw error;
+    }
+  }
+
+  /**
+   * @description find all subscription products
+   * @param {BasePaginationParams} params - pagination params
+   * @returns
+   */
+  async findAll(params: BasePaginationParams): Promise&lt;PaginatedSubscriptionProductResponse&gt; {
+    const { searchText, orderBy, order, limit, skip } &#x3D; params;
+    const sort &#x3D; {
+      order,
+      orderBy,
+    };
+
+    const pageMeta &#x3D; {
+      limit,
+      skip,
+    };
+
+    const filter: any[] &#x3D; [
+      {
+        $match: {
+          $and: [{ isDeleted: false }, { $or: [{ name: { $regex: searchText, $options: &#x27;i&#x27; } }] }],
+        },
+      },
+      { $sort: { [sort.orderBy]: sort.order &#x3D;&#x3D;&#x3D; &#x27;asc&#x27; ? 1 : -1 } },
+    ];
+    try {
+      const { data, pagination } &#x3D; await this.subscriptionProductRepo.aggregatePaginate(
+        filter,
+        pageMeta,
+      );
+      return {
+        message: this.i18nService.t(&#x27;common.fetch_list_success&#x27;, {
+          args: { entity: &#x27;Subscription product&#x27; },
+        }),
+        data,
+        pagination,
+      };
+    } catch (e) {
+      throw new BadRequestException(e?.message);
+    }
+  }
+
+  /**
+   * @description find one subscription product
+   * @param {string} id ID of the subscription product
+   * @returns {Promise&lt;SubsProductResponse&gt;}
+   */
+  async findOne(id: string): Promise&lt;SubsProductResponse&gt; {
+    try {
+      const subscriptionProduct &#x3D; await this.subscriptionProductRepo.findOne({
+        _id: id,
+      });
+
+      return subscriptionProduct;
+    } catch (e) {
+      throw new BadRequestException(e?.message);
+    }
+  }
+
+  /**
+   * @description remove subscription product
+   * @param {string} id  ID of the subscription product
+   * @returns
+   */
+  async remove(id: string): Promise&lt;MessageResponse&gt; {
+    const product &#x3D; await this.subscriptionProductRepo.findOne({
+      _id: id,
+    });
+    if (!product) {
+      throw new NotFoundException(
+        this.i18nService.t(&#x27;common.not_exist&#x27;, {
+          args: { entity: &#x27;Subscription product&#x27; },
+        }),
+      );
+    }
+    await this.stripeService.deleteProduct(product.productId);
+
+    const newPrices &#x3D; [];
+    product?.prices?.forEach((price) &#x3D;&gt; {
+      price.isActive &#x3D; false;
+      newPrices.push(price);
+    });
+    product.prices &#x3D; newPrices;
+    await this.subscriptionProductRepo.updateById(
+      id,
+      {
+        isActive: false,
+        prices: newPrices,
+        isDeleted: true,
+      },
+      { new: true },
+    );
+    return {
+      message: this.i18nService.t(&#x27;common.deactivated&#x27;, {
+        args: { entity: &#x27;Subscription product&#x27; },
+      }),
+    };
+  }
+}
+</code></pre>
+    </div>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+          <label class="dark-mode-switch">
+               <input type="checkbox">
+               <span class="slider">
+                    <svg class="slider-icon" viewBox="0 0 24 24" fill="none" height="20" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" width="20" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"></path>
+                    </svg>
+               </span>
+          </label>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'injectable';
+            var COMPODOC_CURRENT_PAGE_URL = 'SubscriptionProductsService.html';
+            var MAX_SEARCH_RESULTS = 15;
+       </script>
+
+       <script>
+               $darkModeToggleSwitchers = document.querySelectorAll('.dark-mode-switch input');
+               checkToggle(darkModeState);
+               if ($darkModeToggleSwitchers.length > 0) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].addEventListener('change', function (event) {
+                              darkModeState = !darkModeState;
+                              toggleDarkMode(darkModeState);
+                         });
+                    }
+               }
+          </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+
+       <script src="../js/menu-wc.js" defer></script>
+       <script nomodule src="../js/menu-wc_es5.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>

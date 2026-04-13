@@ -1,0 +1,59 @@
+definitions:
+  steps: &steps
+    - step: &base
+        runs-on: &base-runs-on
+          - 'self.hosted'
+          - 'linux'
+          - 'ebpearls'
+        script: &base-code-deploy-pipe
+          - pipe: atlassian/aws-code-deploy:0.2.10
+            variables: &base-code-deploy-vars
+              AWS_DEFAULT_REGION: $AWS_DEFAULT_REGION
+              AWS_ACCESS_KEY_ID: $AWS_ACCESS_KEY_ID
+              AWS_SECRET_ACCESS_KEY: $AWS_SECRET_ACCESS_KEY
+              COMMAND: 'upload'
+
+pipelines:
+  branches:
+    dev:
+      - step:
+          name: "(Dev) CMS"
+          runs-on: *base-runs-on
+          script:
+            - apt install zip
+            - mv cicd/dev/buildspec.yml .
+            - zip -r ebthemes-dev-cms.zip .
+            - <<: *base-code-deploy-pipe
+              variables:
+                <<: *base-code-deploy-vars
+                APPLICATION_NAME: 'ebthemes-dev'
+                S3_BUCKET: 'ebthemes-code-src-ap-south-1/dev'
+                ZIP_FILE: 'ebthemes-dev-cms.zip'
+                VERSION_LABEL: 'ebthemes-dev-cms.zip'
+    stage:
+      - step:
+          name: "(Stage) CMS"
+          runs-on: *base-runs-on
+          script:
+            - apt install zip
+            - mv cicd/stage/buildspec.yml .
+            - zip -r ebthemes-stage-cms.zip .
+            - <<: *base-code-deploy-pipe
+              variables:
+                <<: *base-code-deploy-vars
+                APPLICATION_NAME: 'ebthemes-stage'
+                S3_BUCKET: 'ebthemes-code-src-ap-south-1/stage'
+                ZIP_FILE: 'ebthemes-stage-cms.zip'
+                VERSION_LABEL: 'ebthemes-stage-cms.zip'
+
+  tags:
+    "**":
+      - step:
+          name: Call ZOOM API on New Tag
+          runs-on:
+            - 'self.hosted'
+            - 'linux'
+            - 'ebpearls'
+          script:
+            - chmod +x sendmessage
+            - ./sendmessage

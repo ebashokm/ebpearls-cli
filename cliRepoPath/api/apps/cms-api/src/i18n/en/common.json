@@ -1,0 +1,22 @@
+{
+  "create_success": "{entity} created successfully",
+  "update_success": "{entity} updated successfully",
+  "update_status_success": "{entity} status updated successfully",
+  "delete_success": "{entity} deleted successfully",
+  "remove_success": "{entity} removed successfully",
+  "delete_all_success": "All {entity} deleted successfully",
+  "fetch_list_success": "{entity} list fetched successfully",
+  "fetch_detail_success": "{entity} details fetched successfully",
+  "invalid_inputs": "Invalid {entity} inputs",
+  "not_exist": "{entity} does not exist",
+  "already_exists": "{entity} already exists",
+  "email_exists_but_deleted": "{entity} already exists but the user was previously deleted",
+  "exists_but_deleted": "Document with duplicate {entity} already exists but is in deleted state",
+  "already_in_use": "The {entity} you provided already exists in our system",
+  "error_operation": "Error in performing {entity} operation",
+  "extension_not_allowed": "{entity} extension not allowed",
+  "something_went_wrong": "Something went wrong",
+  "deactivated": "{entity} deactivated",
+  "inactive": "{entity} is inactive , please reachout to super admin",
+  "status_updated": "{entity} status updated to {status} successfully"
+}

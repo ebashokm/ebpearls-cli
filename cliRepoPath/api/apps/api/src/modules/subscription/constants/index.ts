@@ -1,0 +1,12 @@
+export const ENVIRONMENT = {
+  SANDBOX: 'sandbox',
+  PRODUCTION: 'production',
+};
+
+export const NOTIFICATION_TYPE = {
+  REVOKE: 'REVOKE',
+  EXPIRED: 'EXPIRED',
+  REFUND: 'REFUND',
+  DID_RENEW: 'DID_RENEW',
+  DID_CHANGE_RENEWAL_PREF: 'DID_CHANGE_RENEWAL_PREF',
+};

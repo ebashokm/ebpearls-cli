@@ -1,0 +1,40 @@
+services:
+  api:
+    hostname: ebtheme-api
+    container_name: ebtheme-api
+    image: 'node:24.12.0-alpine'
+    working_dir: /ebthemes-api
+    command: sh -c "npm install && npm run start:dev"
+    volumes:
+      - .:/ebthemes-api
+      - /ebthemes-api/node_modules
+    ports:
+      - '3001:3000'
+    # networks:
+    #   - ebtheme-shared-net  
+  # cms-api:
+  #   hostname: cms-api
+  #   container_name: cms-api
+  #   image: 'node:24.12.0-alpine'
+  #   working_dir: /ebthemes-api
+  #   command: sh -c "npm install && npm run start:dev cms-api"
+  #   volumes:
+  #     - .:/ebthemes-api
+  #     - /ebthemes-api/node_modules
+  #   ports:
+  #     - '3001:3001'
+  # cron-api:
+  #   hostname: cron-api
+  #   container_name: cron-api
+  #   image: 'node:24.12.0-alpine'
+  #   working_dir: /ebthemes-api
+  #   command: sh -c "npm install && npm run start:dev cron"
+  #   volumes:
+  #     - .:/ebthemes-api
+  #     - /ebthemes-api/node_modules
+  #   ports:
+  #     - '3002:3002'
+
+# networks:
+#   ebtheme-shared-net:
+#     external: true  # This tells Docker not to create it, but look for the manual one

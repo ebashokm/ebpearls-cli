@@ -1,0 +1,124 @@
+defintions:
+  steps:
+    - step: &base
+        runs-on: &runs-on
+          - 'self.hosted'
+          - 'linux'
+          - 'ebpearls'
+        script:
+          - pipe: atlassian/aws-code-deploy:0.2.10
+            variables: &aws-vars
+              AWS_DEFAULT_REGION: $AWS_DEFAULT_REGION
+              AWS_ACCESS_KEY_ID: $AWS_ACCESS_KEY_ID
+              AWS_SECRET_ACCESS_KEY: $AWS_SECRET_ACCESS_KEY
+              COMMAND: 'upload'
+
+    - step: &api
+        runs-on: *runs-on
+        condition: &api-condition
+          changesets:
+            includePaths:
+              - 'apps/api/**'
+              - 'libs/**'
+              - 'views/**'
+              - 'cicd/**'
+              - bitbucket-pipelines.yml
+              - package.json
+              - package-lock.json
+
+    - step: &cms-api
+        runs-on: *runs-on
+        condition: &cms-api-condition
+          changesets:
+            includePaths:
+              - 'apps/cms-api/**'
+              - 'libs/**'
+              - 'views/**'
+              - 'cicd/**'
+              - bitbucket-pipelines.yml
+              - package.json
+              - package-lock.json
+
+pipelines:
+  branches:
+    dev:
+      - parallel:
+          steps:
+            - step:
+                <<: *api
+                name: "(Dev) API"
+                script:
+                  - apt install -y zip
+                  - mv cicd/api/dev/buildspec.yml .
+                  - zip -r ebthemes-dev-api.zip .
+                  - pipe: atlassian/aws-code-deploy:0.2.10
+                    variables:
+                      <<: *aws-vars
+                      APPLICATION_NAME: 'ebthemes-dev'
+                      S3_BUCKET: 'ebthemes-code-src-ap-south-1/dev'
+                      ZIP_FILE: 'ebthemes-dev-api.zip'
+                      VERSION_LABEL: 'ebthemes-dev-api.zip'
+                condition: *api-condition
+
+            - step:
+                <<: *cms-api
+                name: "(Dev) CMS-API"
+                script:
+                  - apt install -y zip
+                  - mv cicd/cms-api/dev/buildspec.yml .
+                  - zip -r ebthemes-dev-cms-api.zip .
+                  - pipe: atlassian/aws-code-deploy:0.2.10
+                    variables:
+                      <<: *aws-vars
+                      APPLICATION_NAME: 'ebthemes-dev'
+                      S3_BUCKET: 'ebthemes-code-src-ap-south-1/dev'
+                      ZIP_FILE: 'ebthemes-dev-cms-api.zip'
+                      VERSION_LABEL: 'ebthemes-dev-cms-api.zip'
+                condition: *cms-api-condition
+
+    stage:
+      - parallel:
+          steps:
+            - step:
+                <<: *api
+                name: "(Stage) API"
+                script:
+                  - apt install -y zip
+                  - mv cicd/api/stage/buildspec.yml .
+                  - zip -r ebthemes-stage-api.zip .
+                  - pipe: atlassian/aws-code-deploy:0.2.10
+                    variables:
+                      <<: *aws-vars
+                      APPLICATION_NAME: 'ebthemes-stage'
+                      S3_BUCKET: 'ebthemes-code-src-ap-south-1/stage'
+                      ZIP_FILE: 'ebthemes-stage-api.zip'
+                      VERSION_LABEL: 'ebthemes-stage-api.zip'
+                condition: *api-condition
+
+            - step:
+                <<: *cms-api
+                name: "(Stage) CMS-API"
+                script:
+                  - apt install -y zip
+                  - mv cicd/cms-api/stage/buildspec.yml .
+                  - zip -r ebthemes-stage-cms-api.zip .
+                  - pipe: atlassian/aws-code-deploy:0.2.10
+                    variables:
+                      <<: *aws-vars
+                      APPLICATION_NAME: 'ebthemes-stage'
+                      S3_BUCKET: 'ebthemes-code-src-ap-south-1/stage'
+                      ZIP_FILE: 'ebthemes-stage-cms-api.zip'
+                      VERSION_LABEL: 'ebthemes-stage-cms-api.zip'
+                condition: *cms-api-condition
+
+  tags:
+    "**":
+      - step:
+          name: Call ZOOM API on New Tag
+          runs-on:
+            - 'self.hosted'
+            - 'linux'
+            - 'ebpearls'
+          script:
+            - chmod +x sendmessage
+            - ./sendmessage

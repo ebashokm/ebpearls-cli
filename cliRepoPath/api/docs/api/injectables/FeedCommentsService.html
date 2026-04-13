@@ -1,0 +1,1497 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>nest-ebtheme documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	   <link rel="stylesheet" href="../styles/style.css">
+        <link rel="stylesheet" href="../styles/dark.css">
+    </head>
+    <body>
+          <script>
+               // Blocking script to avoid flickering dark mode
+               // Dark mode toggle button
+               var useDark = window.matchMedia('(prefers-color-scheme: dark)');
+               var darkModeState = useDark.matches;
+               var $darkModeToggleSwitchers = document.querySelectorAll('.dark-mode-switch input');
+               var $darkModeToggles = document.querySelectorAll('.dark-mode-switch');
+               var darkModeStateLocal = localStorage.getItem('compodoc_darkmode-state');
+
+               function checkToggle(check) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].checked = check;
+                    }
+               }
+
+               function toggleDarkMode(state) {
+                    if (window.localStorage) {
+                         localStorage.setItem('compodoc_darkmode-state', state);
+                    }
+
+                    checkToggle(state);
+
+                    const hasClass = document.body.classList.contains('dark');
+
+                    if (state) {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.add('dark');
+                         }
+                         if (!hasClass) {
+                              document.body.classList.add('dark');
+                         }
+                    } else {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.remove('dark');
+                         }
+                         if (hasClass) {
+                              document.body.classList.remove('dark');
+                         }
+                    }
+               }
+
+               useDark.addEventListener('change', function (evt) {
+                    toggleDarkMode(evt.matches);
+               });
+               if (darkModeStateLocal) {
+                    darkModeState = darkModeStateLocal === 'true';
+               }
+               toggleDarkMode(darkModeState);
+          </script>
+
+        <div class="navbar navbar-default navbar-fixed-top d-md-none p-0">
+               <div class="d-flex">
+                    <a href="../" class="navbar-brand">nest-ebtheme documentation</a>
+                    <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+               </div>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="d-none d-md-block menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content injectable">
+                   <div class="content-data">
+
+
+
+
+
+
+
+
+<ol class="breadcrumb">
+  <li class="breadcrumb-item">Injectables</li>
+  <li class="breadcrumb-item" >FeedCommentsService</li>
+</ol>
+
+<ul class="nav nav-tabs" role="tablist">
+        <li class="nav-item">
+            <a href="#info" 
+                class="nav-link"
+                class="nav-link active"
+                role="tab" id="info-tab" data-bs-toggle="tab" data-link="info">Info</a>
+        </li>
+        <li class="nav-item">
+            <a href="#source" 
+                class="nav-link"
+                
+                role="tab" id="source-tab" data-bs-toggle="tab" data-link="source">Source</a>
+        </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="info">
+        <p class="comment">
+            <h3>File</h3>
+        </p>
+        <p class="comment">
+            <code>apps/api/src/modules/feed-comments/feed-comments.service.ts</code>
+        </p>
+
+
+            <p class="comment">
+                <h3>Description</h3>
+            </p>
+            <p class="comment">
+                <p>${1:Description placeholder}</p>
+
+            </p>
+
+
+
+            <section data-compodoc="block-index">
+    <h3 id="index">Index</h3>
+    <table class="table table-sm table-bordered index-table">
+        <tbody>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Methods</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                    <span class="modifier">Async</span>
+                                <a href="#addLike" >addLike</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Async</span>
+                                <a href="#create" >create</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Async</span>
+                                <a href="#deleteFeedComment" >deleteFeedComment</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Async</span>
+                                <a href="#findAllByFeedId" >findAllByFeedId</a>
+                            </li>
+                            <li>
+                                <a href="#findOne" >findOne</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Async</span>
+                                <a href="#getLikeStatus" >getLikeStatus</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Async</span>
+                                <a href="#removeLike" >removeLike</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Async</span>
+                                <a href="#update" >update</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+            <section data-compodoc="block-constructor">
+    <h3 id="constructor">Constructor</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+<code>constructor(usersService: <a href="../injectables/UsersService.html" target="_self">UsersService</a>, feedCommentRepository: FeedCommentRepository, feedRepository: FeedRepository, postLikeRepository: PostLikeRepository, feedReplyRepository: FeedReplyRepository, s3Service: S3Service, notificationHandler: <a href="../injectables/FeedCommentNotificationHandler.html" target="_self">FeedCommentNotificationHandler</a>, i18nService: I18nService)</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="31" class="link-to-prism">apps/api/src/modules/feed-comments/feed-comments.service.ts:31</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                            <div class="io-description"><p>Creates an instance of FeedCommentsService.</p>
+</div>
+                            <div>
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>usersService</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/UsersService.html" target="_self" >UsersService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>feedCommentRepository</td>
+                                                  
+                                                        <td>
+                                                                    <code>FeedCommentRepository</code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>feedRepository</td>
+                                                  
+                                                        <td>
+                                                                    <code>FeedRepository</code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>postLikeRepository</td>
+                                                  
+                                                        <td>
+                                                                    <code>PostLikeRepository</code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>feedReplyRepository</td>
+                                                  
+                                                        <td>
+                                                                    <code>FeedReplyRepository</code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>s3Service</td>
+                                                  
+                                                        <td>
+                                                                    <code>S3Service</code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>notificationHandler</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/FeedCommentNotificationHandler.html" target="_self" >FeedCommentNotificationHandler</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>i18nService</td>
+                                                  
+                                                        <td>
+                                                                    <code>I18nService</code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+</section>
+
+            <section data-compodoc="block-methods">
+    
+    <h3 id="methods">
+        Methods
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="addLike"></a>
+                    <span class="name">
+                            <span class="modifier">Async</span>
+                        <span ><b>addLike</b></span>
+                        <a href="#addLike"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>addLike(userId: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>, commentId: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="290"
+                                    class="link-to-prism">apps/api/src/modules/feed-comments/feed-comments.service.ts:290</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                                <td>Description</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>userId</td>
+                                            <td>
+                                                            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                            <td>
+                                                    <p>user id</p>
+
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                                <td>commentId</td>
+                                            <td>
+                                                            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                            <td>
+                                                    <p>comment id</p>
+
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="../classes/FeedCommentResponse.html" target="_self" >Promise&lt;FeedCommentResponse&gt;</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="create"></a>
+                    <span class="name">
+                            <span class="modifier">Async</span>
+                        <span ><b>create</b></span>
+                        <a href="#create"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>create(userId: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>, feedId: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>, createInput: <a href="../classes/CreateFeedCommentInput.html" target="_self">CreateFeedCommentInput</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="61"
+                                    class="link-to-prism">apps/api/src/modules/feed-comments/feed-comments.service.ts:61</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                                <td>Description</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>userId</td>
+                                            <td>
+                                                            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                            <td>
+                                                    <p>user id</p>
+
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                                <td>feedId</td>
+                                            <td>
+                                                            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                            <td>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                                <td>createInput</td>
+                                            <td>
+                                                            <code><a href="../classes/CreateFeedCommentInput.html" target="_self" >CreateFeedCommentInput</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                            <td>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="../classes/FeedCommentResponse.html" target="_self" >Promise&lt;FeedCommentResponse&gt;</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="deleteFeedComment"></a>
+                    <span class="name">
+                            <span class="modifier">Async</span>
+                        <span ><b>deleteFeedComment</b></span>
+                        <a href="#deleteFeedComment"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>deleteFeedComment(userId: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>, commentId: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="248"
+                                    class="link-to-prism">apps/api/src/modules/feed-comments/feed-comments.service.ts:248</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                                <td>Description</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>userId</td>
+                                            <td>
+                                                            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                            <td>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                                <td>commentId</td>
+                                            <td>
+                                                            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                            <td>
+                                                    <p>feed comment id</p>
+
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="../classes/FeedCommentResponse.html" target="_self" >Promise&lt;FeedCommentResponse&gt;</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="findAllByFeedId"></a>
+                    <span class="name">
+                            <span class="modifier">Async</span>
+                        <span ><b>findAllByFeedId</b></span>
+                        <a href="#findAllByFeedId"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>findAllByFeedId(feedId: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>, input: <a href="../classes/ListCommentsInFeedInput.html" target="_self">ListCommentsInFeedInput</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="176"
+                                    class="link-to-prism">apps/api/src/modules/feed-comments/feed-comments.service.ts:176</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                                <td>Description</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>feedId</td>
+                                            <td>
+                                                            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                            <td>
+                                                    <p>feed id</p>
+
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                                <td>input</td>
+                                            <td>
+                                                            <code><a href="../classes/ListCommentsInFeedInput.html" target="_self" >ListCommentsInFeedInput</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                            <td>
+                                                    <p>comment list input</p>
+
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="../classes/FeedCommentResponse.html" target="_self" >Promise&lt;FeedCommentResponse&gt;</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="findOne"></a>
+                    <span class="name">
+                        <span ><b>findOne</b></span>
+                        <a href="#findOne"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>findOne(id: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="220"
+                                    class="link-to-prism">apps/api/src/modules/feed-comments/feed-comments.service.ts:220</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>${1:Description placeholder}</p>
+</div>
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>id</td>
+                                            <td>
+                                                            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getLikeStatus"></a>
+                    <span class="name">
+                            <span class="modifier">Async</span>
+                        <span ><b>getLikeStatus</b></span>
+                        <a href="#getLikeStatus"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>getLikeStatus(userId: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>, commentId: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="230"
+                                    class="link-to-prism">apps/api/src/modules/feed-comments/feed-comments.service.ts:230</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                                <td>Description</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>userId</td>
+                                            <td>
+                                                            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                            <td>
+                                                    <p>user id</p>
+
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                                <td>commentId</td>
+                                            <td>
+                                                            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                            <td>
+                                                    <p>comment id</p>
+
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>    <code>Promise&lt;boolean&gt;</code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="removeLike"></a>
+                    <span class="name">
+                            <span class="modifier">Async</span>
+                        <span ><b>removeLike</b></span>
+                        <a href="#removeLike"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>removeLike(userId: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>, commentId: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="325"
+                                    class="link-to-prism">apps/api/src/modules/feed-comments/feed-comments.service.ts:325</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                                <td>Description</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>userId</td>
+                                            <td>
+                                                            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                            <td>
+                                                    <p>user id</p>
+
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                                <td>commentId</td>
+                                            <td>
+                                                            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                            <td>
+                                                    <p>comment id</p>
+
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="../classes/FeedCommentResponse.html" target="_self" >Promise&lt;FeedCommentResponse&gt;</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="update"></a>
+                    <span class="name">
+                            <span class="modifier">Async</span>
+                        <span ><b>update</b></span>
+                        <a href="#update"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>update(userId: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>, commentId: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>, updateInput: <a href="../classes/UpdateFeedCommentInput.html" target="_self">UpdateFeedCommentInput</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="140"
+                                    class="link-to-prism">apps/api/src/modules/feed-comments/feed-comments.service.ts:140</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                                <td>Description</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>userId</td>
+                                            <td>
+                                                            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                            <td>
+                                                    <p>user id</p>
+
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                                <td>commentId</td>
+                                            <td>
+                                                            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                            <td>
+                                                    <p>comment id</p>
+
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                                <td>updateInput</td>
+                                            <td>
+                                                            <code><a href="../classes/UpdateFeedCommentInput.html" target="_self" >UpdateFeedCommentInput</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                            <td>
+                                                    <p>update comment input</p>
+
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="../classes/FeedCommentResponse.html" target="_self" >Promise&lt;FeedCommentResponse&gt;</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+
+    </div>
+
+
+    <div class="tab-pane fade  tab-source-code" id="source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import {
+  BadRequestException,
+  ForbiddenException,
+  Injectable,
+  NotFoundException,
+} from &#x27;@nestjs/common&#x27;;
+import { CreateFeedCommentInput } from &#x27;./dto/input/create-feed-comment.input&#x27;;
+import { UpdateFeedCommentInput } from &#x27;./dto/input/update-feed-comment.input&#x27;;
+import { FeedCommentRepository } from &#x27;@app/data-access&#x27;;
+import { FeedCommentResponse } from &#x27;./dto/response/feed-comment.response&#x27;;
+import { FeedRepository } from &#x27;@app/data-access&#x27;;
+import { ListCommentsInFeedInput } from &#x27;../feeds/dto/input/list-feeds.input&#x27;;
+import { PostLikeRepository } from &#x27;@app/data-access&#x27;;
+import { FeedReplyRepository } from &#x27;@app/data-access&#x27;;
+import { UsersService } from &#x27;../users/users.service&#x27;;
+import { S3Service, S3_TEMP_FOLDER_NAME } from &#x27;@app/common/services/aws&#x27;;
+import { SignedUrlMethod } from &#x27;@app/common/enum/signed-url.enum&#x27;;
+import { FeedCommentNotificationHandler } from &#x27;./handler/notification.handler&#x27;;
+import { FeedStatus } from &#x27;@app/data-access/feed/enum/feed-status.enum&#x27;;
+import { FeedCommentNotificationType } from &#x27;@app/data-access/feed/enum/notification.enum&#x27;;
+import { I18nService } from &#x27;nestjs-i18n&#x27;;
+
+/**
+ * ${1:Description placeholder}
+ *
+ * @export
+ * @class FeedCommentsService
+ * @typedef {FeedCommentsService}
+ */
+@Injectable()
+export class FeedCommentsService {
+  /**
+   * Creates an instance of FeedCommentsService.
+   *
+   * @constructor
+   * @param {UsersService} usersService
+   * @param {FeedCommentRepository} feedCommentRepository
+   * @param {FeedRepository} feedRepository
+   * @param {PostLikeRepository} postLikeRepository
+   * @param {FeedReplyRepository} feedReplyRepository
+   * @param {S3Service} s3Service
+   * @param {FeedCommentNotificationHandler} notificationHandler
+   */
+  constructor(
+    private readonly usersService: UsersService,
+    private readonly feedCommentRepository: FeedCommentRepository,
+    private readonly feedRepository: FeedRepository,
+    private readonly postLikeRepository: PostLikeRepository,
+    private readonly feedReplyRepository: FeedReplyRepository,
+    private readonly s3Service: S3Service,
+    private readonly notificationHandler: FeedCommentNotificationHandler,
+    private readonly i18nService: I18nService,
+  ) {}
+
+  /**
+   * @description create feed comment
+   * @param {string} userId user id
+   * @param {CreateFeedCommentInput} createData feed comment input data
+   * @returns
+   */
+  async create(
+    userId: string,
+    feedId: string,
+    createInput: CreateFeedCommentInput,
+  ): Promise&lt;FeedCommentResponse&gt; {
+    const { commentText, assets } &#x3D; createInput;
+    try {
+      if (!commentText &amp;&amp; !assets?.url) {
+        throw new BadRequestException(this.i18nService.t(&#x27;feed_comments.comment_content_required&#x27;));
+      }
+      const feed &#x3D; await this.feedRepository.findFeedById(feedId, {
+        _id: 1,
+        status: 1,
+        commentCount: 1,
+        userId: 1,
+      });
+      if (!feed || feed?.status !&#x3D;&#x3D; FeedStatus.PUBLISHED) {
+        throw new BadRequestException(this.i18nService.t(&#x27;feed_comments.feed_not_found&#x27;));
+      }
+      const createData &#x3D; {
+        feedId,
+        postedBy: userId,
+        ...createInput,
+      };
+      const comment &#x3D; await this.feedCommentRepository.create(createData);
+      feed.commentCount &#x3D; (feed?.commentCount || 0) + 1;
+      await feed.save();
+
+      if (assets?.url) {
+        const commentAssetKey &#x3D; &#x60;feeds/${feedId}/comments/${comment._id}/${assets.url}&#x60;;
+        this.s3Service
+          .copyObject(&#x60;${S3_TEMP_FOLDER_NAME}/${assets.url}&#x60;, commentAssetKey)
+          .then((data) &#x3D;&gt; {
+            console.log(&#x27;file copied&#x27;);
+          })
+          .catch((error) &#x3D;&gt; {
+            console.error(error);
+          });
+      }
+      if (String(feed.userId) !&#x3D;&#x3D; String(userId)) {
+        // send push notification to the feed owner
+        const commentor &#x3D; await this.usersService.findById(userId, {
+          firstName: 1,
+          lastName: 1,
+        });
+        this.notificationHandler.addPushOnCommentedOnFeed(
+          feed.userId,
+          &#x60;${commentor.firstName} ${commentor.lastName || &#x27;&#x27;}&#x60;,
+          {
+            type: FeedCommentNotificationType.COMMENT_ON_FEED,
+            commentorId: String(userId),
+            feedId: String(feedId),
+          },
+        );
+        this.notificationHandler.commentedOnFeed(
+          feed.userId,
+          &#x60;${commentor.firstName} ${commentor.lastName || &#x27;&#x27;}&#x60;,
+          {
+            commentorId: commentor._id,
+            feedId,
+          },
+        );
+      }
+      return {
+        message: this.i18nService.t(&#x27;feed_comments.feed_comment_posted&#x27;),
+        feedComment: comment,
+      };
+    } catch (e) {
+      throw new BadRequestException(e?.message);
+    }
+  }
+
+  /**
+   * @description update comment on feed
+   * @param {string} userId user id
+   * @param {string } commentId comment id
+   * @param {UpdateFeedCommentInput} updateInput update comment input
+   * @returns
+   */
+  async update(
+    userId: string,
+    commentId: string,
+    updateInput: UpdateFeedCommentInput,
+  ): Promise&lt;FeedCommentResponse&gt; {
+    const { commentText, assets } &#x3D; updateInput;
+    try {
+      if (!commentText &amp;&amp; !assets?.url) {
+        throw new BadRequestException(this.i18nService.t(&#x27;feed_comments.comment_content_required&#x27;));
+      }
+      const comment &#x3D; await this.feedCommentRepository.findCommentById(commentId);
+      if (!comment) {
+        throw new NotFoundException(this.i18nService.t(&#x27;feed_comments.comment_not_found&#x27;));
+      }
+
+      if (comment.postedBy?.toString() !&#x3D;&#x3D; userId.toString())
+        throw new ForbiddenException(this.i18nService.t(&#x27;feed_comments.no_permission_to_update&#x27;));
+
+      const updatedComment &#x3D; await this.feedCommentRepository.updateById(commentId, updateInput, {
+        new: true,
+      });
+      return {
+        message: this.i18nService.t(&#x27;feed_comments.comment_updated_successfully&#x27;),
+        feedComment: updatedComment,
+      };
+    } catch (e) {
+      throw new BadRequestException(e?.message);
+    }
+  }
+
+  /**
+   * @description find all comments of a feed
+   * @param {string} feedId feed id
+   * @param {ListCommentsInFeedInput} input comment list input
+   * @returns {Promise&lt;FeedCommentResponse&gt;}
+   */
+  async findAllByFeedId(
+    feedId: string,
+    input: ListCommentsInFeedInput,
+  ): Promise&lt;FeedCommentResponse&gt; {
+    const { limit, skip, order, orderBy } &#x3D; input;
+    const selectQuery &#x3D;
+      &#x27;feedId commentText assets postedBy likeCount replyCount createdAt updatedAt&#x27;;
+    const sortQuery &#x3D; { [orderBy]: order &#x3D;&#x3D;&#x3D; &#x27;asc&#x27; ? 1 : -1 };
+    try {
+      const { data, pagination } &#x3D; await this.feedCommentRepository.findAllByFeedId(
+        feedId,
+        selectQuery,
+        {
+          limit,
+          skip,
+        },
+        sortQuery,
+      );
+
+      for (const comment of data) {
+        if (comment.assets?.url) {
+          comment.assets.url &#x3D; await this.s3Service.getPreSignedUrl(
+            &#x60;feeds/${feedId}/comments/${comment._id}/${comment.assets.url}&#x60;,
+            SignedUrlMethod.GET,
+          );
+        }
+      }
+
+      return {
+        message: this.i18nService.t(&#x27;feed_comments.feed_comment_listed&#x27;),
+        feedComments: data,
+        pagination,
+      };
+    } catch (e) {
+      throw new BadRequestException(e?.message);
+    }
+  }
+
+  /**
+   * ${1:Description placeholder}
+   *
+   * @param {number} id
+   * @returns {string}
+   */
+  findOne(id: number) {
+    return &#x60;This action returns a #${id} feedComment&#x60;;
+  }
+
+  /**
+   * @description finds if user has liked the given comment
+   * @param {string} userId user id
+   * @param {string} commentId comment id
+   * @returns {Promise&lt;boolean&gt;}
+   */
+  async getLikeStatus(userId: string, commentId: string): Promise&lt;boolean&gt; {
+    try {
+      const commentLike &#x3D; await this.postLikeRepository.findOne({
+        postId: commentId,
+        postType: &#x27;comment&#x27;,
+        likedBy: userId,
+      });
+      return !!commentLike;
+    } catch (e) {
+      throw new BadRequestException(e?.message);
+    }
+  }
+
+  /**
+   * @description delete feed comment
+   * @param {string} commentId feed comment id
+   * @returns
+   */
+  async deleteFeedComment(userId: string, commentId: string): Promise&lt;FeedCommentResponse&gt; {
+    try {
+      const comment &#x3D; await this.feedCommentRepository.findCommentById(commentId);
+      if (!comment) {
+        throw new NotFoundException(this.i18nService.t(&#x27;feed_comments.comment_not_found&#x27;));
+      }
+      if (comment.postedBy?.toString() !&#x3D;&#x3D; userId.toString()) {
+        // TODO: add functionality to delete for owner of feed
+        throw new ForbiddenException(this.i18nService.t(&#x27;feed_comments.no_permission_to_delete&#x27;));
+      }
+      await this.feedCommentRepository.updateById(commentId, {
+        deletedAt: new Date(),
+      });
+
+      const decreaseCount &#x3D; comment.replyCount ? comment.replyCount + 1 : 1;
+
+      await Promise.all([
+        this.feedReplyRepository.updateMany({ commentId }, { deletedAt: new Date() }),
+        this.feedRepository.updateOne(
+          { _id: comment.feedId, commentCount: { $gte: 1 } },
+          {
+            $inc: {
+              commentCount: -decreaseCount,
+            },
+          },
+        ),
+      ]);
+
+      return {
+        message: this.i18nService.t(&#x27;feed_comments.comment_deleted&#x27;),
+      };
+    } catch (e) {
+      throw new BadRequestException(e?.message);
+    }
+  }
+
+  /**
+   * @description add a like in the comment
+   * @param {string} userId user id
+   * @param {string} commentId comment id
+   * @returns {Promise&lt;FeedResponse&gt;}
+   */
+  async addLike(userId: string, commentId: string): Promise&lt;FeedCommentResponse&gt; {
+    try {
+      const comment &#x3D; await this.feedCommentRepository.findCommentById(commentId);
+      if (!comment) {
+        throw new NotFoundException(this.i18nService.t(&#x27;feed_comments.comment_not_found&#x27;));
+      }
+      const commentLike &#x3D; await this.postLikeRepository.findOne({
+        postId: commentId,
+        postType: &#x27;comment&#x27;,
+      });
+      if (commentLike?.likedBy?.includes(userId)) {
+        return {
+          message: this.i18nService.t(&#x27;feed_comments.already_liked&#x27;),
+        };
+      }
+      await this.postLikeRepository.updateOne(
+        { postId: commentId, postType: &#x27;comment&#x27; },
+        { $push: { likedBy: userId } },
+        { upsert: true },
+      );
+      comment.likeCount &#x3D; (comment?.likeCount || 0) + 1;
+      await comment.save();
+      return {
+        message: this.i18nService.t(&#x27;feed_comments.like_a_comment&#x27;),
+      };
+    } catch (e) {
+      throw new BadRequestException(e?.message);
+    }
+  }
+
+  /**
+   * @description remove a like in the comment
+   * @param {string} userId user id
+   * @param {string} commentId comment id
+   */
+  async removeLike(userId: string, commentId: string): Promise&lt;FeedCommentResponse&gt; {
+    try {
+      const comment &#x3D; await this.feedCommentRepository.findCommentById(commentId);
+      if (!comment) {
+        throw new NotFoundException(this.i18nService.t(&#x27;feed_comments.comment_not_found&#x27;));
+      }
+      const commentLike &#x3D; await this.postLikeRepository.findOne({
+        postId: commentId,
+        postType: &#x27;comment&#x27;,
+      });
+      if (!commentLike?.likedBy?.includes(userId)) {
+        throw new BadRequestException(this.i18nService.t(&#x27;feed_comments.cannot_unlike_comment&#x27;));
+      }
+      await this.postLikeRepository.updateOne(
+        { postId: commentId },
+        { $pull: { likedBy: userId } },
+      );
+      comment.likeCount &#x3D; comment?.likeCount ? comment.likeCount - 1 : 0;
+      await comment.save();
+      return {
+        message: this.i18nService.t(&#x27;feed_comments.unliked_comment&#x27;),
+      };
+    } catch (e) {
+      throw new BadRequestException(e?.message);
+    }
+  }
+}
+</code></pre>
+    </div>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+          <label class="dark-mode-switch">
+               <input type="checkbox">
+               <span class="slider">
+                    <svg class="slider-icon" viewBox="0 0 24 24" fill="none" height="20" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" width="20" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"></path>
+                    </svg>
+               </span>
+          </label>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'injectable';
+            var COMPODOC_CURRENT_PAGE_URL = 'FeedCommentsService.html';
+            var MAX_SEARCH_RESULTS = 15;
+       </script>
+
+       <script>
+               $darkModeToggleSwitchers = document.querySelectorAll('.dark-mode-switch input');
+               checkToggle(darkModeState);
+               if ($darkModeToggleSwitchers.length > 0) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].addEventListener('change', function (event) {
+                              darkModeState = !darkModeState;
+                              toggleDarkMode(darkModeState);
+                         });
+                    }
+               }
+          </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+
+       <script src="../js/menu-wc.js" defer></script>
+       <script nomodule src="../js/menu-wc_es5.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>

@@ -1,0 +1,2750 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>nest-ebtheme documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	   <link rel="stylesheet" href="../styles/style.css">
+        <link rel="stylesheet" href="../styles/dark.css">
+    </head>
+    <body>
+          <script>
+               // Blocking script to avoid flickering dark mode
+               // Dark mode toggle button
+               var useDark = window.matchMedia('(prefers-color-scheme: dark)');
+               var darkModeState = useDark.matches;
+               var $darkModeToggleSwitchers = document.querySelectorAll('.dark-mode-switch input');
+               var $darkModeToggles = document.querySelectorAll('.dark-mode-switch');
+               var darkModeStateLocal = localStorage.getItem('compodoc_darkmode-state');
+
+               function checkToggle(check) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].checked = check;
+                    }
+               }
+
+               function toggleDarkMode(state) {
+                    if (window.localStorage) {
+                         localStorage.setItem('compodoc_darkmode-state', state);
+                    }
+
+                    checkToggle(state);
+
+                    const hasClass = document.body.classList.contains('dark');
+
+                    if (state) {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.add('dark');
+                         }
+                         if (!hasClass) {
+                              document.body.classList.add('dark');
+                         }
+                    } else {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.remove('dark');
+                         }
+                         if (hasClass) {
+                              document.body.classList.remove('dark');
+                         }
+                    }
+               }
+
+               useDark.addEventListener('change', function (evt) {
+                    toggleDarkMode(evt.matches);
+               });
+               if (darkModeStateLocal) {
+                    darkModeState = darkModeStateLocal === 'true';
+               }
+               toggleDarkMode(darkModeState);
+          </script>
+
+        <div class="navbar navbar-default navbar-fixed-top d-md-none p-0">
+               <div class="d-flex">
+                    <a href="../" class="navbar-brand">nest-ebtheme documentation</a>
+                    <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+               </div>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="d-none d-md-block menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content injectable">
+                   <div class="content-data">
+
+
+
+
+
+
+
+
+<ol class="breadcrumb">
+  <li class="breadcrumb-item">Injectables</li>
+  <li class="breadcrumb-item" >StripePaymentService</li>
+</ol>
+
+<ul class="nav nav-tabs" role="tablist">
+        <li class="nav-item">
+            <a href="#info" 
+                class="nav-link"
+                class="nav-link active"
+                role="tab" id="info-tab" data-bs-toggle="tab" data-link="info">Info</a>
+        </li>
+        <li class="nav-item">
+            <a href="#source" 
+                class="nav-link"
+                
+                role="tab" id="source-tab" data-bs-toggle="tab" data-link="source">Source</a>
+        </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="info">
+        <p class="comment">
+            <h3>File</h3>
+        </p>
+        <p class="comment">
+            <code>apps/api/src/modules/stripe/stripe-payment/services/stripe-payment.service.ts</code>
+        </p>
+
+
+            <p class="comment">
+                <h3>Description</h3>
+            </p>
+            <p class="comment">
+                <p>Description placeholder</p>
+
+            </p>
+
+
+
+            <section data-compodoc="block-index">
+    <h3 id="index">Index</h3>
+    <table class="table table-sm table-bordered index-table">
+        <tbody>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Methods</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                    <span class="modifier">Async</span>
+                                <a href="#createAndMakeDefaultPaymentMethod" >createAndMakeDefaultPaymentMethod</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Async</span>
+                                <a href="#createCardOnStripe" >createCardOnStripe</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Async</span>
+                                <a href="#createPayment" >createPayment</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Private</span>
+                                    <span class="modifier">Async</span>
+                                <a href="#createPaymentIntent" >createPaymentIntent</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Async</span>
+                                <a href="#createSetupIntent" >createSetupIntent</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Async</span>
+                                <a href="#deleteCard" >deleteCard</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Async</span>
+                                <a href="#deleteCardOnStripe" >deleteCardOnStripe</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Async</span>
+                                <a href="#deleteCustomer" >deleteCustomer</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Async</span>
+                                <a href="#getEphemeralKey" >getEphemeralKey</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Async</span>
+                                <a href="#getMyPaymentMethods" >getMyPaymentMethods</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Async</span>
+                                <a href="#getPaymentDetail" >getPaymentDetail</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Async</span>
+                                <a href="#getPaymentHistoryOfUser" >getPaymentHistoryOfUser</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Async</span>
+                                <a href="#getStripeCardsByUser" >getStripeCardsByUser</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Async</span>
+                                <a href="#makeCardDefault" >makeCardDefault</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Private</span>
+                                    <span class="modifier">Async</span>
+                                <a href="#paymentMethodsFormStripe" >paymentMethodsFormStripe</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Async</span>
+                                <a href="#proceedStripePayout" >proceedStripePayout</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Async</span>
+                                <a href="#savePaymentMethod" >savePaymentMethod</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Async</span>
+                                <a href="#updateCustomer" >updateCustomer</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+            <section data-compodoc="block-constructor">
+    <h3 id="constructor">Constructor</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+<code>constructor(stripeService: StripeService, usersService: <a href="../injectables/UsersService.html" target="_self">UsersService</a>, usersRepo: <a href="../classes/User.html" target="_self">UsersRepository</a>, stripeCustomerRepo: StripeCustomerRepository, paymentMethodRepository: PaymentMethodRepository, stripePaymentRepo: <a href="../injectables/StripePaymentRepository.html" target="_self">StripePaymentRepository</a>, stripePaymentLogRepo: <a href="../injectables/StripePaymentLogRepository.html" target="_self">StripePaymentLogRepository</a>, i18nService: I18nService)</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="45" class="link-to-prism">apps/api/src/modules/stripe/stripe-payment/services/stripe-payment.service.ts:45</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                            <div class="io-description"><p>Creates an instance of StripePaymentService.</p>
+</div>
+                            <div>
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>stripeService</td>
+                                                  
+                                                        <td>
+                                                                    <code>StripeService</code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>usersService</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/UsersService.html" target="_self" >UsersService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>usersRepo</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../classes/User.html" target="_self" >UsersRepository</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>stripeCustomerRepo</td>
+                                                  
+                                                        <td>
+                                                                    <code>StripeCustomerRepository</code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>paymentMethodRepository</td>
+                                                  
+                                                        <td>
+                                                                    <code>PaymentMethodRepository</code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>stripePaymentRepo</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/StripePaymentRepository.html" target="_self" >StripePaymentRepository</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>stripePaymentLogRepo</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/StripePaymentLogRepository.html" target="_self" >StripePaymentLogRepository</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>i18nService</td>
+                                                  
+                                                        <td>
+                                                                    <code>I18nService</code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+</section>
+
+            <section data-compodoc="block-methods">
+    
+    <h3 id="methods">
+        Methods
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="createAndMakeDefaultPaymentMethod"></a>
+                    <span class="name">
+                            <span class="modifier">Async</span>
+                        <span ><b>createAndMakeDefaultPaymentMethod</b></span>
+                        <a href="#createAndMakeDefaultPaymentMethod"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>createAndMakeDefaultPaymentMethod(paymentMethodId: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>, user: <a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank">any</a>, option?: Stripe.RequestOptions)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="144"
+                                    class="link-to-prism">apps/api/src/modules/stripe/stripe-payment/services/stripe-payment.service.ts:144</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Description placeholder</p>
+</div>
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>paymentMethodId</td>
+                                            <td>
+                                                            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                        <tr>
+                                                <td>user</td>
+                                            <td>
+                                                            <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                        <tr>
+                                                <td>option</td>
+                                            <td>
+                                                        <code>Stripe.RequestOptions</code>
+                                            </td>
+
+                                            <td>
+                                                    Yes
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>    <code>unknown</code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="createCardOnStripe"></a>
+                    <span class="name">
+                            <span class="modifier">Async</span>
+                        <span ><b>createCardOnStripe</b></span>
+                        <a href="#createCardOnStripe"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>createCardOnStripe(data: <a href="../undefineds/CreateCardOnStripe.html" target="_self">CreateCardOnStripe</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="325"
+                                    class="link-to-prism">apps/api/src/modules/stripe/stripe-payment/services/stripe-payment.service.ts:325</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Description placeholder</p>
+</div>
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>data</td>
+                                            <td>
+                                                            <code><a href="../miscellaneous/typealiases.html#CreateCardOnStripe" target="_self" >CreateCardOnStripe</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>    <code>Promise&lt;any&gt;</code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="createPayment"></a>
+                    <span class="name">
+                            <span class="modifier">Async</span>
+                        <span ><b>createPayment</b></span>
+                        <a href="#createPayment"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>createPayment(userId: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>, data: <a href="../classes/CreatePaymentInput.html" target="_self">CreatePaymentInput</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="558"
+                                    class="link-to-prism">apps/api/src/modules/stripe/stripe-payment/services/stripe-payment.service.ts:558</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                                <td>Description</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>userId</td>
+                                            <td>
+                                                            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                            <td>
+                                                    <p>user id</p>
+
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                                <td>data</td>
+                                            <td>
+                                                            <code><a href="../classes/CreatePaymentInput.html" target="_self" >CreatePaymentInput</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                            <td>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>    <code>Promise&lt;MessageResponse&gt;</code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="createPaymentIntent"></a>
+                    <span class="name">
+                            <span class="modifier">Private</span>
+                            <span class="modifier">Async</span>
+                        <span ><b>createPaymentIntent</b></span>
+                        <a href="#createPaymentIntent"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>createPaymentIntent(intentData: <a href="../interfaces/IPaymentIntentData.html" target="_self">IPaymentIntentData</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="612"
+                                    class="link-to-prism">apps/api/src/modules/stripe/stripe-payment/services/stripe-payment.service.ts:612</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Create a payment intent</p>
+</div>
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                                <td>Description</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>intentData</td>
+                                            <td>
+                                                            <code><a href="../interfaces/IPaymentIntentData.html" target="_self" >IPaymentIntentData</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                            <td>
+                                                    <p>payment intent data</p>
+
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>    <code>unknown</code>
+
+                        </div>
+                            <div class="io-description">
+                                <p>payment intent response object</p>
+
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="createSetupIntent"></a>
+                    <span class="name">
+                            <span class="modifier">Async</span>
+                        <span ><b>createSetupIntent</b></span>
+                        <a href="#createSetupIntent"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>createSetupIntent(user, kind: "card" | "au_bank")</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="78"
+                                    class="link-to-prism">apps/api/src/modules/stripe/stripe-payment/services/stripe-payment.service.ts:78</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Description placeholder</p>
+</div>
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>user</td>
+                                            <td>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                        <tr>
+                                                <td>kind</td>
+                                            <td>
+                                                        <code>&quot;card&quot; | &quot;au_bank&quot;</code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>    <code>unknown</code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="deleteCard"></a>
+                    <span class="name">
+                            <span class="modifier">Async</span>
+                        <span ><b>deleteCard</b></span>
+                        <a href="#deleteCard"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>deleteCard(data: <a href="../undefineds/DeletePaymentMethod.html" target="_self">DeletePaymentMethod</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="475"
+                                    class="link-to-prism">apps/api/src/modules/stripe/stripe-payment/services/stripe-payment.service.ts:475</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Delete card from stripe and remove from local</p>
+</div>
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>data</td>
+                                            <td>
+                                                            <code><a href="../miscellaneous/typealiases.html#DeletePaymentMethod" target="_self" >DeletePaymentMethod</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="deleteCardOnStripe"></a>
+                    <span class="name">
+                            <span class="modifier">Async</span>
+                        <span ><b>deleteCardOnStripe</b></span>
+                        <a href="#deleteCardOnStripe"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>deleteCardOnStripe(data: <a href="../undefineds/DeletePaymentMethodFromStripe.html" target="_self">DeletePaymentMethodFromStripe</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="351"
+                                    class="link-to-prism">apps/api/src/modules/stripe/stripe-payment/services/stripe-payment.service.ts:351</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Description placeholder</p>
+</div>
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>data</td>
+                                            <td>
+                                                            <code><a href="../miscellaneous/typealiases.html#DeletePaymentMethodFromStripe" target="_self" >DeletePaymentMethodFromStripe</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>    <code>Promise&lt;any&gt;</code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="deleteCustomer"></a>
+                    <span class="name">
+                            <span class="modifier">Async</span>
+                        <span ><b>deleteCustomer</b></span>
+                        <a href="#deleteCustomer"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>deleteCustomer(customerId: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="310"
+                                    class="link-to-prism">apps/api/src/modules/stripe/stripe-payment/services/stripe-payment.service.ts:310</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Description placeholder</p>
+</div>
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>customerId</td>
+                                            <td>
+                                                            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>    <code>unknown</code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getEphemeralKey"></a>
+                    <span class="name">
+                            <span class="modifier">Async</span>
+                        <span ><b>getEphemeralKey</b></span>
+                        <a href="#getEphemeralKey"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>getEphemeralKey(userId: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>, data: <a href="../classes/GetEphemeralKeyInput.html" target="_self">GetEphemeralKeyInput</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="643"
+                                    class="link-to-prism">apps/api/src/modules/stripe/stripe-payment/services/stripe-payment.service.ts:643</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>return {string}</p>
+</div>
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                                <td>Default value</td>
+                                                <td>Description</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>userId</td>
+                                            <td>
+                                                            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+                                            <td>
+                                            </td>
+
+                                            <td>
+                                                    <p>user id
+return {string}</p>
+
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                                <td>data</td>
+                                            <td>
+                                                            <code><a href="../classes/GetEphemeralKeyInput.html" target="_self" >GetEphemeralKeyInput</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+                                            <td>
+                                                    <code>{
+      apiVersion: STRIPE_API_VERSION,
+    }</code>
+                                            </td>
+
+                                            <td>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>    <code>Promise&lt;EphemeralKeyResponse&gt;</code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getMyPaymentMethods"></a>
+                    <span class="name">
+                            <span class="modifier">Async</span>
+                        <span ><b>getMyPaymentMethods</b></span>
+                        <a href="#getMyPaymentMethods"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>getMyPaymentMethods(user)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="242"
+                                    class="link-to-prism">apps/api/src/modules/stripe/stripe-payment/services/stripe-payment.service.ts:242</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Description placeholder</p>
+</div>
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>user</td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>    <code>unknown</code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getPaymentDetail"></a>
+                    <span class="name">
+                            <span class="modifier">Async</span>
+                        <span ><b>getPaymentDetail</b></span>
+                        <a href="#getPaymentDetail"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>getPaymentDetail(paymentId: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>, userId: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="728"
+                                    class="link-to-prism">apps/api/src/modules/stripe/stripe-payment/services/stripe-payment.service.ts:728</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                                <td>Description</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>paymentId</td>
+                                            <td>
+                                                            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                            <td>
+                                                    <p>the id of the payment</p>
+
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                                <td>userId</td>
+                                            <td>
+                                                            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                            <td>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>    <code>unknown</code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getPaymentHistoryOfUser"></a>
+                    <span class="name">
+                            <span class="modifier">Async</span>
+                        <span ><b>getPaymentHistoryOfUser</b></span>
+                        <a href="#getPaymentHistoryOfUser"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>getPaymentHistoryOfUser(userId: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>, listInput: <a href="../classes/PaymentHistoryInput.html" target="_self">PaymentHistoryInput</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="691"
+                                    class="link-to-prism">apps/api/src/modules/stripe/stripe-payment/services/stripe-payment.service.ts:691</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                                <td>Description</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>userId</td>
+                                            <td>
+                                                            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                            <td>
+                                                    <p>user id</p>
+
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                                <td>listInput</td>
+                                            <td>
+                                                            <code><a href="../classes/PaymentHistoryInput.html" target="_self" >PaymentHistoryInput</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                            <td>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>    <code>unknown</code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getStripeCardsByUser"></a>
+                    <span class="name">
+                            <span class="modifier">Async</span>
+                        <span ><b>getStripeCardsByUser</b></span>
+                        <a href="#getStripeCardsByUser"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>getStripeCardsByUser(userId)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="371"
+                                    class="link-to-prism">apps/api/src/modules/stripe/stripe-payment/services/stripe-payment.service.ts:371</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Description placeholder</p>
+</div>
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>userId</td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>    <code>unknown</code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="makeCardDefault"></a>
+                    <span class="name">
+                            <span class="modifier">Async</span>
+                        <span ><b>makeCardDefault</b></span>
+                        <a href="#makeCardDefault"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>makeCardDefault(userId: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>, paymentMethodId: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="526"
+                                    class="link-to-prism">apps/api/src/modules/stripe/stripe-payment/services/stripe-payment.service.ts:526</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>make card default</p>
+</div>
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>userId</td>
+                                            <td>
+                                                            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                        <tr>
+                                                <td>paymentMethodId</td>
+                                            <td>
+                                                            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="paymentMethodsFormStripe"></a>
+                    <span class="name">
+                            <span class="modifier">Private</span>
+                            <span class="modifier">Async</span>
+                        <span ><b>paymentMethodsFormStripe</b></span>
+                        <a href="#paymentMethodsFormStripe"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>paymentMethodsFormStripe(stripeCustomerId: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>, option)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="198"
+                                    class="link-to-prism">apps/api/src/modules/stripe/stripe-payment/services/stripe-payment.service.ts:198</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Description placeholder</p>
+</div>
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>stripeCustomerId</td>
+                                            <td>
+                                                            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                        <tr>
+                                                <td>option</td>
+                                            <td>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>    <code>unknown</code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="proceedStripePayout"></a>
+                    <span class="name">
+                            <span class="modifier">Async</span>
+                        <span ><b>proceedStripePayout</b></span>
+                        <a href="#proceedStripePayout"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>proceedStripePayout(userId?: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="744"
+                                    class="link-to-prism">apps/api/src/modules/stripe/stripe-payment/services/stripe-payment.service.ts:744</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>userId</td>
+                                            <td>
+                                                            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                            </td>
+
+                                            <td>
+                                                    Yes
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>    <code>unknown</code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="savePaymentMethod"></a>
+                    <span class="name">
+                            <span class="modifier">Async</span>
+                        <span ><b>savePaymentMethod</b></span>
+                        <a href="#savePaymentMethod"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>savePaymentMethod(input: SavePaymentMethodDto, user: <a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank">any</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="121"
+                                    class="link-to-prism">apps/api/src/modules/stripe/stripe-payment/services/stripe-payment.service.ts:121</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Description placeholder</p>
+</div>
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>input</td>
+                                            <td>
+                                                        <code>SavePaymentMethodDto</code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                        <tr>
+                                                <td>user</td>
+                                            <td>
+                                                            <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>    <code>unknown</code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="updateCustomer"></a>
+                    <span class="name">
+                            <span class="modifier">Async</span>
+                        <span ><b>updateCustomer</b></span>
+                        <a href="#updateCustomer"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>updateCustomer(customerId: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>, data: Stripe.CustomerUpdateParams)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="295"
+                                    class="link-to-prism">apps/api/src/modules/stripe/stripe-payment/services/stripe-payment.service.ts:295</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Description placeholder</p>
+</div>
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>customerId</td>
+                                            <td>
+                                                            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                        <tr>
+                                                <td>data</td>
+                                            <td>
+                                                        <code>Stripe.CustomerUpdateParams</code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>    <code>unknown</code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+
+    </div>
+
+
+    <div class="tab-pane fade  tab-source-code" id="source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import Stripe from &#x27;stripe&#x27;;
+import { BadRequestException, HttpException, HttpStatus, Injectable } from &#x27;@nestjs/common&#x27;;
+import {
+  PaymentMethodRepository,
+  StripeCustomerRepository,
+  UsersRepository,
+} from &#x27;@app/data-access&#x27;;
+
+import { CreateCardOnStripe } from &#x27;../types/create-card-on-stripe.type&#x27;;
+import { IPaymentIntentData } from &#x27;../types/payment-intent.type&#x27;;
+import { CreatePaymentInput } from &#x27;../dto/input/create-payment.input&#x27;;
+import { GetEphemeralKeyInput } from &#x27;../dto/input/get-ephemeral-key.input&#x27;;
+import { STRIPE_API_VERSION, STRIPE_PAYOUT_INTERVAL } from &#x27;@api/constants&#x27;;
+import { EphemeralKeyResponse } from &#x27;../dto/response/get-ephemeral-key.response&#x27;;
+import { StripeService } from &#x27;@app/stripe&#x27;;
+import { MessageResponse } from &#x27;@app/common/dto/response/message.response&#x27;;
+import { UsersService } from &#x27;@api/modules/users/users.service&#x27;;
+import { PaymentHistoryInput } from &#x27;../dto/input/payment-history.input&#x27;;
+import { PaymentStatus } from &#x27;../enum/payment-status.enum&#x27;;
+import { StripePaymentRepository } from &#x27;../repository/stripe-payment.repository&#x27;;
+import { StripePaymentLogRepository } from &#x27;../repository/stripe-payment-log.repository&#x27;;
+import { getDynamicDate } from &#x27;@app/common/helpers/genericFunction&#x27;;
+import { I18nService } from &#x27;nestjs-i18n&#x27;;
+import { SavePaymentMethodDto } from &#x27;@app/common/dto/input/save-payment-method.input&#x27;;
+import { toMongoId } from &#x27;@app/common/helpers/mongo-helper&#x27;;
+import {
+  DeletePaymentMethod,
+  DeletePaymentMethodFromStripe,
+} from &#x27;../types/payment-method.stripe.type&#x27;;
+
+/**
+ * Description placeholder
+ *
+ * @type {&quot;AUD&quot;}
+ */
+const defaultCurrency &#x3D; &#x27;AUD&#x27;;
+/**
+ * Description placeholder
+ *
+ * @export
+ * @class StripePaymentService
+ * @typedef {StripePaymentService}
+ */
+@Injectable()
+export class StripePaymentService {
+  /**
+   * Creates an instance of StripePaymentService.
+   *
+   * @constructor
+   * @param {StripeService} stripeService
+   * @param {UsersService} usersService
+   * @param {UsersRepository} usersRepo
+   * @param {StripeCustomerRepository} stripeCustomerRepo
+   * @param {PaymentMethodRepository} paymentMethodRepository
+   * @param {StripePaymentRepository} stripePaymentRepo
+   * @param {StripePaymentLogRepository} stripePaymentLogRepo
+   * @param {I18nService} i18nService
+   */
+  constructor(
+    private readonly stripeService: StripeService,
+    private readonly usersService: UsersService,
+    private readonly usersRepo: UsersRepository,
+    private readonly stripeCustomerRepo: StripeCustomerRepository,
+    private readonly paymentMethodRepository: PaymentMethodRepository,
+    private readonly stripePaymentRepo: StripePaymentRepository,
+    private readonly stripePaymentLogRepo: StripePaymentLogRepository,
+    private readonly i18nService: I18nService,
+  ) {}
+
+  /**
+   * Description placeholder
+   *
+   * @async
+   * @param {*} user
+   * @param {(&#x27;card&#x27; | &#x27;au_bank&#x27;)} kind
+   * @returns {unknown}
+   */
+  async createSetupIntent(user, kind: &#x27;card&#x27; | &#x27;au_bank&#x27;) {
+    const stripeCustomer &#x3D; await this.stripeCustomerRepo.findOne({
+      userId: user?.userId,
+    });
+    let stripeCustomerId &#x3D; null;
+    if (!stripeCustomer) {
+      const stripeCustomerResponse &#x3D; await this.stripeService.createCustomer({
+        description: &#x60;cus-${user?.userId}&#x60;,
+      });
+      stripeCustomerId &#x3D; stripeCustomerResponse?.id;
+      await this.stripeCustomerRepo.create({
+        userId: user?.userId,
+        customerId: stripeCustomerId,
+      });
+      await this.usersRepo.updateOne(
+        { _id: user?.userId },
+        {
+          $set: {
+            stripeCustomerId,
+          },
+        },
+      );
+    } else {
+      stripeCustomerId &#x3D; stripeCustomer?.customerId;
+    }
+    const intentResponse &#x3D; await this.stripeService.createSetupIntent({
+      customer: stripeCustomerId,
+      ...(kind &#x3D;&#x3D;&#x3D; &#x27;au_bank&#x27; ? { payment_method_types: [&#x27;au_becs_debit&#x27;] } : {}),
+    });
+
+    return {
+      clientSecret: intentResponse.client_secret,
+    };
+  }
+
+  /**
+   * Description placeholder
+   *
+   * @async
+   * @param {SavePaymentMethodDto} input
+   * @param {*} user
+   * @returns {unknown}
+   */
+  async savePaymentMethod(input: SavePaymentMethodDto, user: any) {
+    const userId &#x3D; user?.userId;
+    const clientDetail &#x3D; await this.usersRepo.findOne({
+      _id: toMongoId(userId),
+    });
+
+    if (!clientDetail) {
+      throw new BadRequestException(this.i18nService.t(&#x27;stripe_payment.user_not_found&#x27;));
+    }
+
+    await this.createAndMakeDefaultPaymentMethod(input.paymentMethod, clientDetail);
+    return this.i18nService.t(&#x27;stripe_payment.payment_method_created&#x27;);
+  }
+
+  /**
+   * Description placeholder
+   *
+   * @async
+   * @param {string} paymentMethodId
+   * @param {*} user
+   * @param {?Stripe.RequestOptions} [option]
+   * @returns {unknown}
+   */
+  async createAndMakeDefaultPaymentMethod(
+    paymentMethodId: string,
+    user: any,
+    option?: Stripe.RequestOptions,
+  ) {
+    if (!user?.stripeCustomerId) {
+      const customer &#x3D; await this.stripeService.createCustomer({
+        description: &#x60;cus-${user._id.toString()}&#x60;,
+      });
+      user.stripeCustomerId &#x3D; customer.id;
+    }
+
+    const existingCard &#x3D; await this.paymentMethodRepository.findOne({
+      userId: user._id,
+      paymentMethodId: paymentMethodId,
+    });
+
+    if (existingCard) {
+      throw new BadRequestException(this.i18nService.t(&#x27;stripe_payment.card_already_exist&#x27;));
+    }
+
+    const userHaveCard &#x3D; await this.paymentMethodRepository.findOne({
+      userId: user._id,
+    });
+
+    const paymentMethod &#x3D; await this.stripeService.retrievePaymentMethod(paymentMethodId, option);
+
+    await this.stripeService.attachPaymentMethod(user?.stripeCustomerId, paymentMethodId);
+
+    return await this.paymentMethodRepository.create({
+      userId: user._id,
+      paymentMethodId: paymentMethod?.id,
+      paymentMethod: paymentMethod?.card?.brand ?? &#x27;bank&#x27;,
+      country: paymentMethod?.card?.country,
+      exp_month: paymentMethod?.card?.exp_month,
+      exp_year: paymentMethod?.card?.exp_year,
+      fingerprint: paymentMethod?.card?.fingerprint,
+      funding: paymentMethod?.card?.funding,
+      last4: paymentMethod?.card?.last4,
+      metadata: paymentMethod?.metadata,
+      name: paymentMethod?.billing_details?.name,
+      is_default_source: !!!userHaveCard,
+    });
+  }
+
+  /**
+   * Description placeholder
+   *
+   * @private
+   * @async
+   * @param {string} stripeCustomerId
+   * @param {*} option
+   * @returns {unknown}
+   */
+  private async paymentMethodsFormStripe(stripeCustomerId: string, option) {
+    const cardList &#x3D; await this.stripeService.listPaymentMethod(
+      {
+        customer: stripeCustomerId,
+        limit: 100,
+        type: &#x27;card&#x27;,
+      },
+      option,
+    );
+
+    const bankList &#x3D; await this.stripeService.listPaymentMethod(
+      {
+        customer: stripeCustomerId,
+        limit: 100,
+        type: &#x27;au_becs_debit&#x27;,
+      },
+      option,
+    );
+
+    return [
+      ...cardList.data.map((card) &#x3D;&gt; ({
+        ...card,
+        method: {
+          paymentMethod: card?.card?.brand,
+          ...card?.card,
+        },
+      })),
+      ...bankList.data?.map((bank) &#x3D;&gt; ({
+        ...bank,
+        method: {
+          ...bank.au_becs_debit,
+          paymentMethod: bank.type,
+        },
+      })),
+    ];
+  }
+
+  /**
+   * Description placeholder
+   *
+   * @async
+   * @param {*} user
+   * @returns {unknown}
+   */
+  async getMyPaymentMethods(user) {
+    const userDetails &#x3D; await this.usersRepo.findOne({ _id: user?.userId });
+    let paymentMethods &#x3D; [];
+    // if (user.sharedPaymentsOf &amp;&amp; user.sharedPaymentsOf.length &gt; 0) {
+    //   const sharedUsers &#x3D; await this.usersRepo.find({
+    //     _id: { $in: user.sharedPaymentsOf },
+    //   });
+    //   for (const sharedUser of sharedUsers) {
+    //     const sharedPaymentMethods &#x3D; await this.paymentMethodsFormStripe(
+    //       sharedUser.stripeCustomerId,
+    //       sharedUser,
+    //     );
+    //     paymentMethods &#x3D; [...paymentMethods, ...sharedPaymentMethods];
+    //   }
+    // }
+    if (!userDetails?.stripeCustomerId) {
+      return {
+        message: this.i18nService.t(&#x27;stripe_payment.no_any_payment_method&#x27;),
+        paymentMethods: null,
+        defaultMethod: null,
+      };
+    }
+    const userPaymentMethods &#x3D; await this.paymentMethodsFormStripe(
+      userDetails.stripeCustomerId,
+      null,
+    );
+
+    paymentMethods &#x3D; [...userPaymentMethods, ...paymentMethods];
+
+    let defaultMethod &#x3D; null;
+    if (!user.defaultPaymentMethod) {
+      const customer: any &#x3D; await this.stripeService.retrieveCustomerDetail(
+        userDetails.stripeCustomerId,
+      );
+      defaultMethod &#x3D; customer.invoice_settings?.default_payment_method;
+    } else {
+      defaultMethod &#x3D; userDetails.defaultPaymentMethod;
+    }
+
+    return {
+      paymentMethods: paymentMethods,
+      defaultMethod,
+    };
+  }
+
+  /**
+   * Description placeholder
+   *
+   * @async
+   * @param {string} customerId
+   * @param {Stripe.CustomerUpdateParams} data
+   * @returns {unknown}
+   */
+  async updateCustomer(customerId: string, data: Stripe.CustomerUpdateParams) {
+    try {
+      return this.stripeService.updateCustomer(customerId, data);
+    } catch (error) {
+      throw new HttpException(error.message, HttpStatus.INTERNAL_SERVER_ERROR);
+    }
+  }
+
+  /**
+   * Description placeholder
+   *
+   * @async
+   * @param {string} customerId
+   * @returns {unknown}
+   */
+  async deleteCustomer(customerId: string) {
+    try {
+      return this.stripeService.deleteCustomer(customerId);
+    } catch (error) {
+      throw new HttpException(error.message, HttpStatus.INTERNAL_SERVER_ERROR);
+    }
+  }
+
+  /**
+   * Description placeholder
+   *
+   * @async
+   * @param {CreateCardOnStripe} data
+   * @returns {Promise&lt;any&gt;}
+   */
+  async createCardOnStripe(data: CreateCardOnStripe): Promise&lt;any&gt; {
+    try {
+      const { customerId, cardToken } &#x3D; data;
+      await this.stripeService.attachPaymentMethod(customerId, cardToken);
+
+      const attached &#x3D; await this.stripeService.retrievePaymentMethod(cardToken);
+      return {
+        id: attached?.id,
+        name: attached?.billing_details?.name,
+        metadata: attached?.metadata,
+        ...attached?.card,
+      };
+    } catch (error: any) {
+      throw new HttpException(error.message, HttpStatus.INTERNAL_SERVER_ERROR);
+    }
+
+    // return this.stripeService.createSource(customerId, cardToken);
+  }
+
+  /**
+   * Description placeholder
+   *
+   * @async
+   * @param {DeletePaymentMethodFromStripe} data
+   * @returns {Promise&lt;any&gt;}
+   */
+  async deleteCardOnStripe(data: DeletePaymentMethodFromStripe): Promise&lt;any&gt; {
+    const { customerId, paymentMethodId } &#x3D; data;
+    try {
+      const existingCard &#x3D; await this.stripeService.retrievePaymentMethod(paymentMethodId);
+      if (existingCard?.customer !&#x3D;&#x3D; customerId) {
+        throw new BadRequestException(this.i18nService.t(&#x27;stripe_payment.cannot_delete_card&#x27;));
+      }
+      return this.stripeService.detachPaymentMethod(paymentMethodId);
+    } catch (error) {
+      throw new HttpException(error.message, HttpStatus.INTERNAL_SERVER_ERROR);
+    }
+  }
+
+  /**
+   * Description placeholder
+   *
+   * @async
+   * @param {*} userId
+   * @returns {unknown}
+   */
+  async getStripeCardsByUser(userId) {
+    try {
+      const card &#x3D; await this.paymentMethodRepository.find(
+        { userId },
+        {
+          _id: 1,
+          userId: 1,
+          paymentMethodId: 1,
+          paymentMethod: 1,
+          country: 1,
+          exp_month: 1,
+          exp_year: 1,
+          fingerprint: 1,
+          funding: 1,
+          last4: 1,
+          name: 1,
+          is_default_source: 1,
+        },
+      );
+      return card;
+    } catch (e) {
+      throw new BadRequestException(e?.message);
+    }
+  }
+
+  // /**
+  //  * Add new card in stripe and save in database
+  //  * @param data
+  //  * @returns
+  //  */
+  // async addCardFromToken(data: CreateCardType) {
+  //   const { userId, cardToken } &#x3D; data;
+  //   try {
+  //     let customerId &#x3D; null;
+  //     const stripeCustomer &#x3D; await await this.stripeCustomerRepo.findOne({
+  //       userId,
+  //     });
+  //     if (!stripeCustomer) {
+  //       //create customer
+  //       const customer &#x3D; await this.stripeService.createCustomer({
+  //         description: &#x60;cus-${userId}&#x60;,
+  //       });
+  //       customerId &#x3D; customer.id;
+  //       await this.stripeCustomerRepo.create({ userId, customerId });
+  //     } else {
+  //       customerId &#x3D; stripeCustomer.customerId;
+  //     }
+  //     const createCard &#x3D; await this.createCardOnStripe({
+  //       customerId,
+  //       cardToken,
+  //     });
+  //     const {
+  //       id,
+  //       brand,
+  //       country,
+  //       exp_month,
+  //       exp_year,
+  //       fingerprint,
+  //       funding,
+  //       last4,
+  //       metadata,
+  //       name,
+  //     } &#x3D; createCard;
+  //     /**
+  //      * Check if card is default
+  //      */
+  //     const userCard &#x3D; await this.paymentMethodRepository.findOne({ userId });
+  //     const isDefaultCard &#x3D; !userCard;
+  //     const existingCard &#x3D; await this.paymentMethodRepository.findOne({
+  //       cardId: cardToken,
+  //     });
+  //     const createCardData &#x3D; {
+  //       userId,
+  //       cardId: id,
+  //       brand,
+  //       country,
+  //       exp_month,
+  //       exp_year,
+  //       fingerprint,
+  //       funding,
+  //       last4,
+  //       metadata,
+  //       name,
+  //     };
+  //     if (existingCard) {
+  //       const updatedCard &#x3D; await this.paymentMethodRepository.updateById(existingCard?._id, createCardData, {
+  //         new: true,
+  //       });
+  //       return updatedCard;
+  //     }
+  //     const createdCard &#x3D; await this.paymentMethodRepository.create({
+  //       ...createCardData,
+  //       is_default_source: isDefaultCard,
+  //     });
+  //     return createdCard;
+  //   } catch (error: any) {
+  //     throw new HttpException(error.message, HttpStatus.INTERNAL_SERVER_ERROR);
+  //   }
+  // }
+  /**
+   * Delete card from stripe and remove from local
+   * @param userId
+   * @param auth_token
+   */
+  async deleteCard(data: DeletePaymentMethod) {
+    const { userId, paymentMethodId } &#x3D; data;
+    /**
+     * Check if it is default card
+     */
+    try {
+      const getCardDetail &#x3D; await this.paymentMethodRepository.findOne({ userId, paymentMethodId });
+      if (getCardDetail?.is_default_source) {
+        //check if other card exist other than default source
+        const getOtherCardExceptDefault &#x3D; await this.paymentMethodRepository.findOne({
+          _id: { $ne: getCardDetail._id },
+          userId,
+        });
+        if (getOtherCardExceptDefault) {
+          throw new BadRequestException(
+            this.i18nService.t(&#x27;stripe_payment.atlease_one_default_source&#x27;),
+          );
+        }
+      }
+
+      const customer &#x3D; await this.usersRepo.findOne({
+        _id: toMongoId(userId),
+      });
+
+      if (!customer) {
+        this.i18nService.t(&#x27;stripe_payment.error_making_default_card&#x27;);
+      }
+
+      // const stripeCustomer &#x3D; await this.stripeCustomerRepo.findOne({ userId });
+      // if (!stripeCustomer || !stripeCustomer.customerId) {
+      //   throw new BadRequestException(this.i18nService.t(&#x27;stripe_payment.error_deleting_card&#x27;));
+      // }
+      await this.paymentMethodRepository.updateOne(
+        { paymentMethodId },
+        { status: &#x27;ready_to_delete&#x27; },
+      );
+      await this.deleteCardOnStripe({
+        customerId: customer.stripeCustomerId,
+        paymentMethodId,
+      });
+      await this.paymentMethodRepository.deleteOne({ paymentMethodId, userId });
+      return;
+    } catch (error: any) {
+      throw error;
+    }
+  }
+
+  /**
+   * make card default
+   */
+
+  async makeCardDefault(userId: string, paymentMethodId: string) {
+    try {
+      const customer &#x3D; await this.usersRepo.findOne({
+        _id: toMongoId(userId),
+      });
+
+      if (!customer) {
+        this.i18nService.t(&#x27;stripe_payment.error_making_default_card&#x27;);
+      }
+
+      await this.stripeService.makeSourceDefaultOnStripe(
+        customer?.stripeCustomerId,
+        paymentMethodId,
+      );
+      const makeCardDefault &#x3D; this.paymentMethodRepository.updateOne(
+        { paymentMethodId, userId },
+        { is_default_source: true, $unset: { status: 1 } },
+      );
+      const removeOtherFromDefault &#x3D; this.paymentMethodRepository.updateMany(
+        { paymentMethodId: { $ne: paymentMethodId }, userId },
+        { is_default_source: false },
+      );
+      await Promise.all([makeCardDefault, removeOtherFromDefault]);
+    } catch (error: any) {
+      throw new HttpException(error.message, HttpStatus.INTERNAL_SERVER_ERROR);
+    }
+  }
+  /**
+   * @description create a payment from a payment method(eg: card)
+   * @param {string} userId user id
+   * @param {string} paymentMethodId payment method id: cardID in this case
+   */
+  async createPayment(userId: string, data: CreatePaymentInput): Promise&lt;MessageResponse&gt; {
+    const { amount, paymentMethodId } &#x3D; data;
+    try {
+      const stripeCustomer &#x3D; await this.stripeCustomerRepo.findOne({
+        userId,
+      });
+      if (!stripeCustomer) {
+        throw new BadRequestException(this.i18nService.t(&#x27;stripe_payment.error_stripe_customer&#x27;));
+      }
+
+      const user &#x3D; await this.usersService.findById(userId, {
+        firstName: 1,
+        lastName: 1,
+      });
+      // pay using payment intent in this case. note: we can use multiple payment approaches
+      const paymentIntent &#x3D; await this.createPaymentIntent({
+        amount,
+        customer: stripeCustomer?.customerId,
+        paymentMethod: paymentMethodId,
+      });
+
+      if (!paymentIntent || paymentIntent?.status &#x3D;&#x3D;&#x3D; &#x27;canceled&#x27;)
+        throw new BadRequestException(this.i18nService.t(&#x27;stripe_payment.payment_intent_fail&#x27;));
+
+      if (paymentIntent?.status &#x3D;&#x3D;&#x3D; &#x27;succeeded&#x27;) {
+        await this.stripePaymentRepo.create({
+          userId,
+          stripeResponse: paymentIntent,
+        });
+
+        await this.stripePaymentLogRepo.create({
+          userId,
+          username: &#x60;${user.firstName} ${user.lastName || &#x27;&#x27;}&#x60;,
+          amount: paymentIntent.amount || 0,
+          currency: paymentIntent.currency || &#x27;aud&#x27;,
+          paymentMethodTypes: paymentIntent.payment_method_types,
+          paymentMethodId: paymentIntent.payment_method,
+          paymentIntentId: paymentIntent.id,
+          paymentStatus: PaymentStatus.COMPLETED,
+        });
+      }
+      return {
+        message: this.i18nService.t(&#x27;stripe_payment.payment_made_successfully&#x27;),
+      };
+    } catch (error: any) {
+      throw error;
+    }
+  }
+
+  /**
+   * Create a payment intent
+   * @param {IPaymentIntentData} intentData payment intent data
+   * @return payment intent response object
+   */
+  private async createPaymentIntent(intentData: IPaymentIntentData) {
+    const {
+      amount,
+      customer,
+      currency &#x3D; defaultCurrency,
+      paymentMethod,
+      paymentMethodType &#x3D; [&#x27;card&#x27;],
+      description,
+      metadata,
+    } &#x3D; intentData;
+    try {
+      return await this.stripeService.createPaymentIntent({
+        amount: Math.round(amount * 100), //In cent
+        customer,
+        currency,
+        confirm: true, // immediately confirms if true. Note: if false, client_secret will be used instead
+        payment_method_types: paymentMethodType,
+        payment_method: paymentMethod,
+        description,
+        metadata,
+      });
+    } catch (error) {
+      throw new HttpException(error.message, HttpStatus.INTERNAL_SERVER_ERROR);
+    }
+  }
+
+  /**
+   * @description get ephimeral key for processing payment in client side
+   * @param {string} userId user id
+   * return {string}
+   */
+  async getEphemeralKey(
+    userId: string,
+    data: GetEphemeralKeyInput &#x3D; {
+      apiVersion: STRIPE_API_VERSION,
+    },
+  ): Promise&lt;EphemeralKeyResponse&gt; {
+    const { apiVersion } &#x3D; data;
+    try {
+      let customerId &#x3D; null;
+      const stripeCustomer &#x3D; await await this.stripeCustomerRepo.findOne({
+        userId,
+      });
+
+      if (!stripeCustomer) {
+        //create customer
+        const customer &#x3D; await this.stripeService.createCustomer({
+          description: &#x60;cus-${userId}&#x60;,
+        });
+        customerId &#x3D; customer.id;
+        await this.stripeCustomerRepo.create({ userId, customerId });
+      } else {
+        customerId &#x3D; stripeCustomer.customerId;
+      }
+
+      if (!stripeCustomer) {
+        throw new BadRequestException(this.i18nService.t(&#x27;stripe_payment.error_stripe_customer&#x27;));
+      }
+
+      const ephemeralKey &#x3D; await this.stripeService.createEphemeralKey(customerId, apiVersion);
+
+      return {
+        message: this.i18nService.t(&#x27;stripe_payment.ephemeral_key_created&#x27;),
+        data: {
+          keyId: ephemeralKey?.id,
+          keySecret: ephemeralKey?.secret,
+          createdAt: ephemeralKey?.created,
+          expiresAt: ephemeralKey?.expires,
+        },
+      };
+    } catch (error) {
+      throw new HttpException(error.message, HttpStatus.INTERNAL_SERVER_ERROR);
+    }
+  }
+
+  /**
+   * @description get payment history of user
+   * @param userId user id
+   */
+  async getPaymentHistoryOfUser(userId: string, listInput: PaymentHistoryInput) {
+    const { skip, limit, order, orderBy } &#x3D; listInput;
+    try {
+      const sort &#x3D; {
+        order,
+        orderBy,
+      };
+      const pageMeta &#x3D; {
+        limit,
+        skip,
+      };
+      const filter: any &#x3D; [
+        {
+          $match: {
+            userId,
+          },
+        },
+      ];
+      const { data, pagination } &#x3D; await this.stripePaymentLogRepo.findAllPaymentsOfUser(
+        filter,
+        sort,
+        pageMeta,
+      );
+      return {
+        message: this.i18nService.t(&#x27;stripe_payment.payment_history_listed&#x27;),
+        data: data,
+        pagination: pagination,
+      };
+    } catch (e) {
+      throw new BadRequestException(e?.message);
+    }
+  }
+
+  /**
+   * @description gte the detail of stripe payment
+   * @param {string} paymentId the id of the payment
+   */
+  async getPaymentDetail(paymentId: string, userId: string) {
+    try {
+      const payment &#x3D; await this.stripePaymentLogRepo.findOne({
+        _id: paymentId,
+        userId,
+      });
+      return payment;
+    } catch (e) {
+      throw new BadRequestException(e?.message);
+    }
+  }
+
+  /**
+   * @description proceed the payment to the stripe business account
+   * @param {string} paymentId the id of the payment
+   */
+  async proceedStripePayout(userId?: string) {
+    try {
+      let users &#x3D; [];
+
+      if (userId) {
+        // generally for individual user testing purpose
+        const dueInterval &#x3D; getDynamicDate(new Date(), STRIPE_PAYOUT_INTERVAL, &#x27;before&#x27;);
+        const user &#x3D; await this.usersRepo.findOne(
+          {
+            _id: userId,
+          },
+          {
+            _id: 1,
+            authProviderId: 1,
+          },
+        );
+
+        if (user?.lastPayoutAt &gt; dueInterval) {
+          throw new BadRequestException(
+            this.i18nService.t(
+              &#x27;stripe_payment.cannot_request_payout_before_one_week_of_last_payout&#x27;,
+            ),
+          );
+        }
+        const stripeCustomer &#x3D; await this.stripeCustomerRepo.findOne({
+          userId,
+        });
+        if (!stripeCustomer) {
+          throw new BadRequestException(this.i18nService.t(&#x27;stripe_payment.error_stripe_customer&#x27;));
+        }
+
+        users.push({
+          ...user.toObject(),
+          stripeCustomerId: stripeCustomer?._id,
+          connectedAccountId: stripeCustomer?.paymentDetail?.accountId,
+        });
+      } else {
+        users &#x3D; await this.usersService.getUsersWithDuePayout();
+      }
+
+      //TODO: calculate the amount to be paid out for every stripe customers
+
+      for (const user of users) {
+        const connectedAccountId &#x3D; user?.connectedAccountId;
+
+        if (!connectedAccountId) continue;
+
+        const paymentAmount &#x3D; 1000; // amount after calculation
+
+        const description &#x3D; &#x60;${this.i18nService.t(&#x27;stripe_payment.amount_payout_to_user&#x27;)}: ${user.authProviderId}&#x60;;
+
+        const paymentData &#x3D; {
+          amount: Math.round(paymentAmount),
+          accountId: connectedAccountId,
+          stripeCustomerId: user?.stripeCustomerId,
+          userId: user?._id,
+          description: &#x27;just a payout&#x27;,
+          currency: &#x27;aud&#x27;,
+          status: &#x27;pending&#x27;,
+        };
+        // add source transcation if needed according to requirement
+        const accountTransfer: any &#x3D; await this.stripeService.createAccumulatedTransfer(
+          Math.round(paymentAmount),
+          connectedAccountId,
+          &#x27;Amount transfer to user&#x27;,
+          &#x27;aud&#x27;,
+        );
+        if (!accountTransfer || accountTransfer?.exception) {
+          throw new BadRequestException(
+            accountTransfer?.exception?.message ||
+              &#x60;${this.i18nService.t(&#x27;stripe_payment.error_during_transferring&#x27;)} - ${connectedAccountId}&#x60;,
+          );
+        }
+
+        const userPayout: any &#x3D; await this.stripeService.createPayout(
+          Math.round(paymentAmount),
+          connectedAccountId,
+          description,
+          &#x27;aud&#x27;,
+        );
+
+        if (!userPayout || userPayout?.exception) {
+          throw new BadRequestException(
+            userPayout?.exception?.message ||
+              &#x60;${this.i18nService.t(&#x27;stripe_payment.error_during_transferring&#x27;)} - ${connectedAccountId}&#x60;,
+          );
+        }
+
+        paymentData.status &#x3D; userPayout?.status;
+        // paymentData.sourceTransactionId &#x3D; userPayout?.id;
+        if (userPayout?.status &#x3D;&#x3D;&#x3D; &#x27;failed&#x27; || userPayout?.status &#x3D;&#x3D;&#x3D; &#x27;canceled&#x27;) {
+          // paymentData.failureMessage &#x3D; userPayout?.failure_message;
+          // paymentData.failureCode &#x3D; userPayout?.failure_code;
+        }
+        // await this.userPaymentInvoiceRepositorty.create(paymentData);
+
+        if (userPayout?.status &#x3D;&#x3D;&#x3D; &#x27;paid&#x27;) {
+          // update product payment status
+        }
+      }
+      return &#x27;Payout success&#x27;;
+    } catch (e) {
+      throw new BadRequestException(e?.message);
+    }
+  }
+}
+</code></pre>
+    </div>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+          <label class="dark-mode-switch">
+               <input type="checkbox">
+               <span class="slider">
+                    <svg class="slider-icon" viewBox="0 0 24 24" fill="none" height="20" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" width="20" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"></path>
+                    </svg>
+               </span>
+          </label>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'injectable';
+            var COMPODOC_CURRENT_PAGE_URL = 'StripePaymentService.html';
+            var MAX_SEARCH_RESULTS = 15;
+       </script>
+
+       <script>
+               $darkModeToggleSwitchers = document.querySelectorAll('.dark-mode-switch input');
+               checkToggle(darkModeState);
+               if ($darkModeToggleSwitchers.length > 0) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].addEventListener('change', function (event) {
+                              darkModeState = !darkModeState;
+                              toggleDarkMode(darkModeState);
+                         });
+                    }
+               }
+          </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+
+       <script src="../js/menu-wc.js" defer></script>
+       <script nomodule src="../js/menu-wc_es5.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>

@@ -1,0 +1,13 @@
+#!/bin/bash
+
+set -e
+
+SERVICE="api"
+
+echo "Build ${SERVICE}:dev"
+docker build --force-rm -f apps/api/Dockerfile -t "${SERVICE}:dev" .
+
+cd ../
+echo "Deploy ${SERVICE}:dev"
+docker-compose rm -s -f $SERVICE
+docker-compose up -d $SERVICE

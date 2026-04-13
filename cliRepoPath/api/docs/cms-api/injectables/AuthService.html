@@ -1,0 +1,2764 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>nest-ebtheme documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	   <link rel="stylesheet" href="../styles/style.css">
+        <link rel="stylesheet" href="../styles/dark.css">
+    </head>
+    <body>
+          <script>
+               // Blocking script to avoid flickering dark mode
+               // Dark mode toggle button
+               var useDark = window.matchMedia('(prefers-color-scheme: dark)');
+               var darkModeState = useDark.matches;
+               var $darkModeToggleSwitchers = document.querySelectorAll('.dark-mode-switch input');
+               var $darkModeToggles = document.querySelectorAll('.dark-mode-switch');
+               var darkModeStateLocal = localStorage.getItem('compodoc_darkmode-state');
+
+               function checkToggle(check) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].checked = check;
+                    }
+               }
+
+               function toggleDarkMode(state) {
+                    if (window.localStorage) {
+                         localStorage.setItem('compodoc_darkmode-state', state);
+                    }
+
+                    checkToggle(state);
+
+                    const hasClass = document.body.classList.contains('dark');
+
+                    if (state) {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.add('dark');
+                         }
+                         if (!hasClass) {
+                              document.body.classList.add('dark');
+                         }
+                    } else {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.remove('dark');
+                         }
+                         if (hasClass) {
+                              document.body.classList.remove('dark');
+                         }
+                    }
+               }
+
+               useDark.addEventListener('change', function (evt) {
+                    toggleDarkMode(evt.matches);
+               });
+               if (darkModeStateLocal) {
+                    darkModeState = darkModeStateLocal === 'true';
+               }
+               toggleDarkMode(darkModeState);
+          </script>
+
+        <div class="navbar navbar-default navbar-fixed-top d-md-none p-0">
+               <div class="d-flex">
+                    <a href="../" class="navbar-brand">nest-ebtheme documentation</a>
+                    <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+               </div>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="d-none d-md-block menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content injectable">
+                   <div class="content-data">
+
+
+
+
+
+
+
+
+<ol class="breadcrumb">
+  <li class="breadcrumb-item">Injectables</li>
+  <li class="breadcrumb-item" >AuthService</li>
+</ol>
+
+<ul class="nav nav-tabs" role="tablist">
+        <li class="nav-item">
+            <a href="#info" 
+                class="nav-link"
+                class="nav-link active"
+                role="tab" id="info-tab" data-bs-toggle="tab" data-link="info">Info</a>
+        </li>
+        <li class="nav-item">
+            <a href="#source" 
+                class="nav-link"
+                
+                role="tab" id="source-tab" data-bs-toggle="tab" data-link="source">Source</a>
+        </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="info">
+        <p class="comment">
+            <h3>File</h3>
+        </p>
+        <p class="comment">
+            <code>apps/cms-api/src/modules/auth/service/auth.service.ts</code>
+        </p>
+
+
+            <p class="comment">
+                <h3>Description</h3>
+            </p>
+            <p class="comment">
+                <p>${1:Description placeholder}</p>
+
+            </p>
+
+
+
+            <section data-compodoc="block-index">
+    <h3 id="index">Index</h3>
+    <table class="table table-sm table-bordered index-table">
+        <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Properties</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#generateRandomBase32" >generateRandomBase32</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Methods</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                    <span class="modifier">Async</span>
+                                <a href="#changePassword" >changePassword</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Async</span>
+                                <a href="#createAdmin" >createAdmin</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Private</span>
+                                    <span class="modifier">Async</span>
+                                <a href="#decodeRefreshToken" >decodeRefreshToken</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Async</span>
+                                <a href="#disableAuthOTP" >disableAuthOTP</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Async</span>
+                                <a href="#forgotPassword" >forgotPassword</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Async</span>
+                                <a href="#generateOtpAuthUrl" >generateOtpAuthUrl</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Async</span>
+                                <a href="#getProfile" >getProfile</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Async</span>
+                                <a href="#login" >login</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Async</span>
+                                <a href="#loginBusinessUser" >loginBusinessUser</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Async</span>
+                                <a href="#otpVerificationFor2FA" >otpVerificationFor2FA</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Async</span>
+                                <a href="#refresh" >refresh</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Async</span>
+                                <a href="#resend2FAOtpCode" >resend2FAOtpCode</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Async</span>
+                                <a href="#resetPassword" >resetPassword</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Async</span>
+                                <a href="#resetPasswordOtpVerification" >resetPasswordOtpVerification</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Async</span>
+                                <a href="#validate" >validate</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Async</span>
+                                <a href="#validateAdminStatus" >validateAdminStatus</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Async</span>
+                                <a href="#validateAuthOTP" >validateAuthOTP</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Async</span>
+                                <a href="#verifyAuthOTP" >verifyAuthOTP</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+            <section data-compodoc="block-constructor">
+    <h3 id="constructor">Constructor</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+<code>constructor(adminRepository: AdminRepository, jwtService: <a href="../injectables/JwtService.html" target="_self">JwtService</a>, tokenService: <a href="../classes/TokenService.html" target="_self">TokenService</a>, emailService: EmailService, hashService: <a href="../injectables/HashService.html" target="_self">HashService</a>, configService: ConfigService, jwt: Jwt, otpService: <a href="../injectables/OtpService.html" target="_self">OtpService</a>, deviceInfoRepository: DeviceInfoRepository, otpRequestRepository: OTPRequestRepository, businessUserRepository: BusinessRepository, settingService: <a href="../injectables/SettingService.html" target="_self">SettingService</a>, i18nService: I18nService)</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="63" class="link-to-prism">apps/cms-api/src/modules/auth/service/auth.service.ts:63</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                            <div class="io-description"><p>Creates an instance of AuthService.</p>
+</div>
+                            <div>
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>adminRepository</td>
+                                                  
+                                                        <td>
+                                                                    <code>AdminRepository</code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>jwtService</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/JwtService.html" target="_self" >JwtService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>tokenService</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../classes/TokenService.html" target="_self" >TokenService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>emailService</td>
+                                                  
+                                                        <td>
+                                                                    <code>EmailService</code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>hashService</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/HashService.html" target="_self" >HashService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>configService</td>
+                                                  
+                                                        <td>
+                                                                    <code>ConfigService</code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>jwt</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/JwtService.html" target="_self" >Jwt</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>otpService</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/OtpService.html" target="_self" >OtpService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>deviceInfoRepository</td>
+                                                  
+                                                        <td>
+                                                                    <code>DeviceInfoRepository</code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>otpRequestRepository</td>
+                                                  
+                                                        <td>
+                                                                    <code>OTPRequestRepository</code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>businessUserRepository</td>
+                                                  
+                                                        <td>
+                                                                    <code>BusinessRepository</code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>settingService</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/SettingService.html" target="_self" >SettingService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>i18nService</td>
+                                                  
+                                                        <td>
+                                                                    <code>I18nService</code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+</section>
+
+            <section data-compodoc="block-methods">
+    
+    <h3 id="methods">
+        Methods
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="changePassword"></a>
+                    <span class="name">
+                            <span class="modifier">Async</span>
+                        <span ><b>changePassword</b></span>
+                        <a href="#changePassword"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>changePassword(input: <a href="../classes/ChangePasswordDTO.html" target="_self">ChangePasswordDTO</a>, userId: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="457"
+                                    class="link-to-prism">apps/cms-api/src/modules/auth/service/auth.service.ts:457</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                                <td>Description</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>input</td>
+                                            <td>
+                                                            <code><a href="../classes/ChangePasswordDTO.html" target="_self" >ChangePasswordDTO</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                            <td>
+                                                    <p>change password data</p>
+
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                                <td>userId</td>
+                                            <td>
+                                                            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                            <td>
+                                                    <p>user id</p>
+
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>    <code>unknown</code>
+
+                        </div>
+                            <div class="io-description">
+                                <p>true if successful</p>
+
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="createAdmin"></a>
+                    <span class="name">
+                            <span class="modifier">Async</span>
+                        <span ><b>createAdmin</b></span>
+                        <a href="#createAdmin"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>createAdmin(input: <a href="../classes/CreateAdminDTO.html" target="_self">CreateAdminDTO</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="258"
+                                    class="link-to-prism">apps/cms-api/src/modules/auth/service/auth.service.ts:258</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>${1:Description placeholder}</p>
+</div>
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>input</td>
+                                            <td>
+                                                            <code><a href="../classes/CreateAdminDTO.html" target="_self" >CreateAdminDTO</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>    <code>Promise&lt;AdminDocument&gt;</code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="decodeRefreshToken"></a>
+                    <span class="name">
+                            <span class="modifier">Private</span>
+                            <span class="modifier">Async</span>
+                        <span ><b>decodeRefreshToken</b></span>
+                        <a href="#decodeRefreshToken"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>decodeRefreshToken(token: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="569"
+                                    class="link-to-prism">apps/cms-api/src/modules/auth/service/auth.service.ts:569</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>${1:Description placeholder}</p>
+</div>
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>token</td>
+                                            <td>
+                                                            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>    <code>Promise&lt;any&gt;</code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="disableAuthOTP"></a>
+                    <span class="name">
+                            <span class="modifier">Async</span>
+                        <span ><b>disableAuthOTP</b></span>
+                        <a href="#disableAuthOTP"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>disableAuthOTP(token, userId: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="805"
+                                    class="link-to-prism">apps/cms-api/src/modules/auth/service/auth.service.ts:805</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>${1:Description placeholder}</p>
+</div>
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>token</td>
+                                            <td>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                        <tr>
+                                                <td>userId</td>
+                                            <td>
+                                                            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>    <code>Promise&lt;any&gt;</code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="forgotPassword"></a>
+                    <span class="name">
+                            <span class="modifier">Async</span>
+                        <span ><b>forgotPassword</b></span>
+                        <a href="#forgotPassword"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>forgotPassword(input: <a href="../classes/ForgotPasswordDTO.html" target="_self">ForgotPasswordDTO</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="322"
+                                    class="link-to-prism">apps/cms-api/src/modules/auth/service/auth.service.ts:322</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>${1:Description placeholder}</p>
+</div>
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>input</td>
+                                            <td>
+                                                            <code><a href="../classes/ForgotPasswordDTO.html" target="_self" >ForgotPasswordDTO</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="../classes/ForgotPasswordResponse.html" target="_self" >Promise&lt;ForgotPasswordResponse&gt;</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="generateOtpAuthUrl"></a>
+                    <span class="name">
+                            <span class="modifier">Async</span>
+                        <span ><b>generateOtpAuthUrl</b></span>
+                        <a href="#generateOtpAuthUrl"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>generateOtpAuthUrl(userId: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="672"
+                                    class="link-to-prism">apps/cms-api/src/modules/auth/service/auth.service.ts:672</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>${1:Description placeholder}</p>
+</div>
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>userId</td>
+                                            <td>
+                                                            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="../classes/AuthUrlResponse.html" target="_self" >Promise&lt;AuthUrlResponse&gt;</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getProfile"></a>
+                    <span class="name">
+                            <span class="modifier">Async</span>
+                        <span ><b>getProfile</b></span>
+                        <a href="#getProfile"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>getProfile(userId: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="513"
+                                    class="link-to-prism">apps/cms-api/src/modules/auth/service/auth.service.ts:513</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>${1:Description placeholder}</p>
+</div>
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>userId</td>
+                                            <td>
+                                                            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>    <code>unknown</code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="login"></a>
+                    <span class="name">
+                            <span class="modifier">Async</span>
+                        <span ><b>login</b></span>
+                        <a href="#login"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>login(admin: <a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank">any</a>, browserDetail: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="158"
+                                    class="link-to-prism">apps/cms-api/src/modules/auth/service/auth.service.ts:158</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>${1:Description placeholder}</p>
+</div>
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>admin</td>
+                                            <td>
+                                                            <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                        <tr>
+                                                <td>browserDetail</td>
+                                            <td>
+                                                            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="../classes/AdminLoginResponse.html" target="_self" >Promise&lt;AdminLoginResponse&gt;</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="loginBusinessUser"></a>
+                    <span class="name">
+                            <span class="modifier">Async</span>
+                        <span ><b>loginBusinessUser</b></span>
+                        <a href="#loginBusinessUser"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>loginBusinessUser(user)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="240"
+                                    class="link-to-prism">apps/cms-api/src/modules/auth/service/auth.service.ts:240</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>${1:Description placeholder}</p>
+</div>
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>user</td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>    <code>unknown</code>
+
+                        </div>
+                            <div class="io-description">
+                                <p>}</p>
+
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="otpVerificationFor2FA"></a>
+                    <span class="name">
+                            <span class="modifier">Async</span>
+                        <span ><b>otpVerificationFor2FA</b></span>
+                        <a href="#otpVerificationFor2FA"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>otpVerificationFor2FA(input: <a href="../classes/OtpVerificationFor2FADTO.html" target="_self">OtpVerificationFor2FADTO</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="587"
+                                    class="link-to-prism">apps/cms-api/src/modules/auth/service/auth.service.ts:587</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                                <td>Description</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>input</td>
+                                            <td>
+                                                            <code><a href="../classes/OtpVerificationFor2FADTO.html" target="_self" >OtpVerificationFor2FADTO</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                            <td>
+                                                    <p>deviceId and otp</p>
+
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="../classes/AdminLoginResponse.html" target="_self" >Promise&lt;AdminLoginResponse&gt;</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="refresh"></a>
+                    <span class="name">
+                            <span class="modifier">Async</span>
+                        <span ><b>refresh</b></span>
+                        <a href="#refresh"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>refresh(refreshToken: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="526"
+                                    class="link-to-prism">apps/cms-api/src/modules/auth/service/auth.service.ts:526</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                                <td>Description</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>refreshToken</td>
+                                            <td>
+                                                            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                            <td>
+                                                    <p>old refresh token</p>
+
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>    <code>Promise&lt;RefreshTokenResponse&gt;</code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="resend2FAOtpCode"></a>
+                    <span class="name">
+                            <span class="modifier">Async</span>
+                        <span ><b>resend2FAOtpCode</b></span>
+                        <a href="#resend2FAOtpCode"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>resend2FAOtpCode(input: <a href="../classes/Resend2FAOtpCodeDTO.html" target="_self">Resend2FAOtpCodeDTO</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="634"
+                                    class="link-to-prism">apps/cms-api/src/modules/auth/service/auth.service.ts:634</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                                <td>Description</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>input</td>
+                                            <td>
+                                                            <code><a href="../classes/Resend2FAOtpCodeDTO.html" target="_self" >Resend2FAOtpCodeDTO</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                            <td>
+                                                    <p>device details</p>
+
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="../classes/ResendOtpCodeResponse.html" target="_self" >Promise&lt;ResendOtpCodeResponse&gt;</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                <p>expireAt and expiresBy</p>
+
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="resetPassword"></a>
+                    <span class="name">
+                            <span class="modifier">Async</span>
+                        <span ><b>resetPassword</b></span>
+                        <a href="#resetPassword"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>resetPassword(userId: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>, token: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>, password: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="424"
+                                    class="link-to-prism">apps/cms-api/src/modules/auth/service/auth.service.ts:424</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>${1:Description placeholder}</p>
+</div>
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>userId</td>
+                                            <td>
+                                                            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                        <tr>
+                                                <td>token</td>
+                                            <td>
+                                                            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                        <tr>
+                                                <td>password</td>
+                                            <td>
+                                                            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>    <code>Promise&lt;boolean&gt;</code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="resetPasswordOtpVerification"></a>
+                    <span class="name">
+                            <span class="modifier">Async</span>
+                        <span ><b>resetPasswordOtpVerification</b></span>
+                        <a href="#resetPasswordOtpVerification"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>resetPasswordOtpVerification(input: <a href="../classes/ResetPasswordOtpVerificationDTO.html" target="_self">ResetPasswordOtpVerificationDTO</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="384"
+                                    class="link-to-prism">apps/cms-api/src/modules/auth/service/auth.service.ts:384</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>${1:Description placeholder}</p>
+</div>
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>input</td>
+                                            <td>
+                                                            <code><a href="../classes/ResetPasswordOtpVerificationDTO.html" target="_self" >ResetPasswordOtpVerificationDTO</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="../classes/ResetPWOtpVerificationResponse.html" target="_self" >Promise&lt;ResetPWOtpVerificationResponse&gt;</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="validate"></a>
+                    <span class="name">
+                            <span class="modifier">Async</span>
+                        <span ><b>validate</b></span>
+                        <a href="#validate"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>validate(email: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>, password: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="122"
+                                    class="link-to-prism">apps/cms-api/src/modules/auth/service/auth.service.ts:122</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>${1:Description placeholder}</p>
+</div>
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>email</td>
+                                            <td>
+                                                            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                        <tr>
+                                                <td>password</td>
+                                            <td>
+                                                            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>    <code>unknown</code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="validateAdminStatus"></a>
+                    <span class="name">
+                            <span class="modifier">Async</span>
+                        <span ><b>validateAdminStatus</b></span>
+                        <a href="#validateAdminStatus"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>validateAdminStatus(userId: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="105"
+                                    class="link-to-prism">apps/cms-api/src/modules/auth/service/auth.service.ts:105</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>${1:Description placeholder}</p>
+</div>
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>userId</td>
+                                            <td>
+                                                            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>    <code>unknown</code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="validateAuthOTP"></a>
+                    <span class="name">
+                            <span class="modifier">Async</span>
+                        <span ><b>validateAuthOTP</b></span>
+                        <a href="#validateAuthOTP"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>validateAuthOTP(undefined)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="760"
+                                    class="link-to-prism">apps/cms-api/src/modules/auth/service/auth.service.ts:760</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>${1:Description placeholder}</p>
+</div>
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>[object Object]</td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="../classes/AdminLoginResponse.html" target="_self" >Promise&lt;AdminLoginResponse&gt;</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                <p>}</p>
+
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="verifyAuthOTP"></a>
+                    <span class="name">
+                            <span class="modifier">Async</span>
+                        <span ><b>verifyAuthOTP</b></span>
+                        <a href="#verifyAuthOTP"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>verifyAuthOTP(undefined)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="712"
+                                    class="link-to-prism">apps/cms-api/src/modules/auth/service/auth.service.ts:712</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>${1:Description placeholder}</p>
+</div>
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>[object Object]</td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="../classes/VerifyAuthOtpResponse.html" target="_self" >Promise&lt;VerifyAuthOtpResponse&gt;</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                <p>}</p>
+
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+            <section data-compodoc="block-properties">
+    
+    <h3 id="inputs">
+        Properties
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="generateRandomBase32"></a>
+                    <span class="name">
+                        <span ><b>generateRandomBase32</b></span>
+                        <a href="#generateRandomBase32"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>() &#x3D;&gt; {...}</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="659" class="link-to-prism">apps/cms-api/src/modules/auth/service/auth.service.ts:659</a></div>
+                        </td>
+                    </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>${1:Description placeholder}</p>
+</div>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+</section>
+
+    </div>
+
+
+    <div class="tab-pane fade  tab-source-code" id="source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import {
+  BadRequestException,
+  ForbiddenException,
+  HttpException,
+  HttpStatus,
+  Injectable,
+  NotFoundException,
+  UnauthorizedException,
+} from &#x27;@nestjs/common&#x27;;
+import * as bcrypt from &#x27;bcrypt&#x27;;
+import * as crypto from &#x27;crypto&#x27;;
+import { JwtService as Jwt } from &#x27;@nestjs/jwt&#x27;;
+
+import { AdminLoginResponse, RefreshTokenResponse } from &#x27;../dto/response/auth-response&#x27;;
+import { CreateAdminDTO } from &#x27;../dto/input/create-admin.dto&#x27;;
+
+import { JwtService } from &#x27;./jwt.service&#x27;;
+import {
+  AdminRepository,
+  AdminDocument,
+  DeviceInfoRepository,
+  OTPRequestRepository,
+} from &#x27;@app/data-access&#x27;;
+import { TokenService } from &#x27;../../admin/service/token.service&#x27;;
+import { HashService } from &#x27;./hash.service&#x27;;
+
+import { ConfigService } from &#x27;@nestjs/config&#x27;;
+import lang from &#x27;../../../constants/language&#x27;;
+import { ChangePasswordDTO } from &#x27;../dto/input/change-password.dto&#x27;;
+import { TokenExpiredError } from &#x27;jsonwebtoken&#x27;;
+import {
+  ForgotPasswordDTO,
+  ResetPasswordOtpVerificationDTO,
+} from &#x27;../dto/input/reset-password.dto&#x27;;
+import { OtpService } from &#x27;./otp.service&#x27;;
+import { ResetPWOtpVerificationResponse } from &#x27;../dto/response/reset-password.dto&#x27;;
+
+import { OtpVerificationFor2FADTO, Resend2FAOtpCodeDTO } from &#x27;../dto/input/2fa-otp.dto&#x27;;
+import {
+  AuthUrlResponse,
+  ResendOtpCodeResponse,
+  VerifyAuthOtpResponse,
+} from &#x27;../dto/response/2fa-response&#x27;;
+import { SettingService } from &#x27;../../settings/settings.service&#x27;;
+import * as OTPAuth from &#x27;otpauth&#x27;;
+import { encode } from &#x27;hi-base32&#x27;;
+import { ForgotPasswordResponse } from &#x27;../dto/response/forgort-password-response&#x27;;
+import { BusinessRepository } from &#x27;@app/data-access&#x27;;
+import { EmailService } from &#x27;@app/email/email.service&#x27;;
+import { I18nService } from &#x27;nestjs-i18n&#x27;;
+import { RequestedFor } from &#x27;@app/common/enum/otp-request.enum&#x27;;
+import { AdminRoles } from &#x27;@app/data-access/admin/admin-roles.enum&#x27;;
+import { AdminStatus } from &#x27;@app/data-access/admin/admin-status.enum&#x27;;
+
+/**
+ * ${1:Description placeholder}
+ *
+ * @export
+ * @class AuthService
+ * @typedef {AuthService}
+ */
+@Injectable()
+export class AuthService {
+  /**
+   * Creates an instance of AuthService.
+   *
+   * @constructor
+   * @param {AdminRepository} adminRepository
+   * @param {JwtService} jwtService
+   * @param {TokenService} tokenService
+   * @param {EmailService} emailService
+   * @param {HashService} hashService
+   * @param {ConfigService} configService
+   * @param {Jwt} jwt
+   * @param {OtpService} otpService
+   * @param {DeviceInfoRepository} deviceInfoRepository
+   * @param {OTPRequestRepository} otpRequestRepository
+   * @param {BusinessRepository} businessUserRepository
+   * @param {SettingService} settingService
+   */
+  constructor(
+    private adminRepository: AdminRepository,
+    private jwtService: JwtService,
+    private tokenService: TokenService,
+    private emailService: EmailService,
+    private hashService: HashService,
+    private configService: ConfigService,
+    private readonly jwt: Jwt,
+    private readonly otpService: OtpService,
+    private readonly deviceInfoRepository: DeviceInfoRepository,
+    private readonly otpRequestRepository: OTPRequestRepository,
+    private readonly businessUserRepository: BusinessRepository,
+    private readonly settingService: SettingService,
+    private readonly i18nService: I18nService,
+  ) {}
+
+  /**
+   * ${1:Description placeholder}
+   *
+   * @async
+   * @param {string} email
+   * @param {string} password
+   * @returns {Promise&lt;any&gt;}
+   */
+  async validateAdminStatus(userId: string) {
+    let user: any &#x3D; await this.adminRepository.findOne({ _id: userId });
+    if (user?.status &#x3D;&#x3D;&#x3D; AdminStatus.PENDING) {
+      throw new ForbiddenException(
+        this.i18nService.t(&#x27;common.inactive&#x27;, { args: { entity: &#x27;Admin&#x27; } }),
+      );
+    }
+    return user;
+  }
+  /**
+   * ${1:Description placeholder}
+   *
+   * @async
+   * @param {string} email
+   * @param {string} password
+   * @returns {Promise&lt;any&gt;}
+   */
+  async validate(email: string, password: string) {
+    let user: any &#x3D; await this.adminRepository.findOne({ email, status: &#x27;active&#x27; });
+    // let isBusiness;
+    // if (!user) {
+    //   isBusiness &#x3D; true;
+    //   user &#x3D; await this.businessUserRepository.findOne({ email });
+    // }
+
+    if (!user || !user?.password) return null;
+    // const candidatePassword &#x3D; isBusiness
+    //   ? user.password
+    //   : user.password.slice(1, user.password.length - 1);
+
+    const candidatePassword &#x3D; user.password.slice(1, user.password.length - 1);
+
+    const isValidPass &#x3D; await this.hashService.comparePassword(password, candidatePassword);
+    if (!isValidPass) {
+      throw new BadRequestException(&quot;Username or Password doesn&#x27;t match&quot;);
+    }
+    if (user?.status &#x3D;&#x3D;&#x3D; AdminStatus.PENDING) {
+      throw new ForbiddenException(
+        this.i18nService.t(&#x27;common.inactive&#x27;, { args: { entity: &#x27;Admin&#x27; } }),
+      );
+    }
+
+    return user;
+  }
+
+  /**
+   * ${1:Description placeholder}
+   *
+   * @async
+   * @param {*} admin
+   * @param {string} browserDetail
+   * @returns {Promise&lt;AdminLoginResponse&gt;}
+   */
+  async login(admin: any, browserDetail: string): Promise&lt;AdminLoginResponse&gt; {
+    try {
+      const payload &#x3D; { id: admin._id, role: admin.role, roles: admin.roles };
+      const accessToken &#x3D; await this.jwtService.signAccessToken(payload);
+      const refreshToken &#x3D; await this.jwtService.signRefreshToken(payload);
+      const is2FAEnable &#x3D; await this.settingService.getSettingBySlug(&#x27;enable-2fa&#x27;);
+      if (is2FAEnable.value &#x3D;&#x3D;&#x3D; &#x27;true&#x27;) {
+        if (
+          this.configService.get(&#x27;2FA_METHOD&#x27;) &#x3D;&#x3D;&#x3D; &#x27;authenticator-based-otp&#x27; &amp;&amp;
+          admin.enabled2FA
+        ) {
+          return { admin };
+        }
+        const browserDetails &#x3D; await this.deviceInfoRepository.findOne({
+          userId: admin._id,
+          deviceId: browserDetail,
+        });
+        if (browserDetails) {
+          const verifiedDate &#x3D; new Date(browserDetails.verifiedAt);
+          const expire2FADays &#x3D; await this.settingService.getSettingBySlug(&#x27;2fa-expire-days&#x27;);
+          //For testing purpose set browser verification expire time to 10 minutes.
+          const expiredDate &#x3D; new Date(verifiedDate.setMinutes(verifiedDate.getMinutes() + 10));
+          // const expiredDate &#x3D; new Date(
+          //   verifiedDate.setDate(
+          //     verifiedDate.getDate() + parseInt(expire2FADays?.value),
+          //   ),
+          // );
+          if (verifiedDate) {
+            if (new Date() &lt;&#x3D; expiredDate) {
+              return {
+                admin,
+                accessToken,
+                refreshToken,
+              };
+            }
+            if (expiredDate &lt; new Date()) {
+              await this.deviceInfoRepository.updateOne(
+                { userId: admin._id, deviceId: browserDetail },
+                {
+                  verifiedAt: null,
+                },
+              );
+            }
+          }
+        } else {
+          await this.deviceInfoRepository.create({
+            userId: admin._id,
+            deviceId: browserDetail,
+            deviceType: &#x27;web&#x27;,
+            deviceName: &#x27;browser&#x27;,
+          });
+        }
+        // create deviceInfo
+        const dataPayload &#x3D; {
+          email: admin.email,
+          deviceId: browserDetail,
+        };
+        const response &#x3D; await this.otpService.sendEmailOTP(dataPayload, RequestedFor.cms_login);
+        return {
+          admin,
+          expiresAt: response.expiresAt,
+          expiresBy: response.expiresBy,
+        };
+      }
+      return {
+        admin,
+        accessToken,
+        refreshToken,
+      };
+    } catch (error: any) {
+      console.log(error, &#x27;error&#x27;);
+      throw error;
+    }
+  }
+
+  /**
+   * ${1:Description placeholder}
+   *
+   * @async
+   * @param {*} user
+   * @returns {Promise&lt;{ user: any; accessToken: any; refreshToken: any; }&gt;\}
+   */
+  async loginBusinessUser(user) {
+    const payload &#x3D; { id: user._id, email: user.email, role: user.role };
+    const accessToken &#x3D; await this.jwtService.signAccessToken(payload);
+    const refreshToken &#x3D; await this.jwtService.signRefreshToken(payload);
+    return {
+      user,
+      accessToken,
+      refreshToken,
+    };
+  }
+
+  /**
+   * ${1:Description placeholder}
+   *
+   * @async
+   * @param {CreateAdminDTO} input
+   * @returns {Promise&lt;AdminDocument&gt;}
+   */
+  async createAdmin(input: CreateAdminDTO): Promise&lt;AdminDocument&gt; {
+    const { firstName, lastName, email, role, phone, status } &#x3D; input;
+    const randomPass &#x3D; crypto.randomBytes(32).toString(&#x27;hex&#x27;);
+    const validRoles &#x3D; [AdminRoles.ADMIN, AdminRoles.EDITOR];
+    try {
+      if (!validRoles.includes(role)) {
+        throw new BadRequestException(this.i18nService.t(&#x27;auth.invalid_role_error&#x27;));
+      }
+
+      const existingAdmin &#x3D; await this.adminRepository.findOne({
+        email,
+      });
+      if (existingAdmin) {
+        throw new BadRequestException(
+          this.i18nService.t(&#x27;common.already_exists&#x27;, { args: { entity: &#x27;Email&#x27; } }),
+        );
+      }
+      const phoneExists &#x3D; await this.adminRepository.findOne({ phone });
+      if (phoneExists)
+        throw new BadRequestException(
+          this.i18nService.t(&#x27;common.already_exists&#x27;, { args: { entity: &#x27;Phone&#x27; } }),
+        );
+
+      const admin &#x3D; await this.adminRepository.create({
+        firstName,
+        lastName,
+        email,
+        password: await this.hashService.hashPassword(randomPass),
+        role,
+        status,
+        phone,
+      });
+
+      const token &#x3D; await this.tokenService.generateToken(admin._id);
+
+      /* build the reset link */
+      const link &#x3D; &#x60;${this.configService.get(&#x27;CDN&#x27;)}/reset-password?userId&#x3D;${
+        admin._id
+      }&amp;token&#x3D;${token.token}&#x60;;
+
+      const values &#x3D; {
+        link,
+        name: &#x60;${firstName} ${lastName}&#x60;,
+      };
+
+      this.emailService.sendEmail({
+        to: email,
+        values,
+        slug: RequestedFor.verify_email_set_password,
+      });
+
+      return admin;
+    } catch (e) {
+      throw new BadRequestException(e?.message);
+    }
+  }
+
+  /**
+   * ${1:Description placeholder}
+   *
+   * @async
+   * @param {ForgotPasswordDTO} input
+   * @returns {Promise&lt;ForgotPasswordResponse&gt;}
+   */
+  async forgotPassword(input: ForgotPasswordDTO): Promise&lt;ForgotPasswordResponse&gt; {
+    const { email, deviceId } &#x3D; input;
+    try {
+      const user &#x3D; await this.adminRepository.findOne({ email });
+
+      if (!user) {
+        throw new BadRequestException(
+          this.i18nService.t(&#x27;common.not_exist&#x27;, { args: { entity: &#x27;Email&#x27; } }),
+        );
+      }
+
+      if (user.status &#x3D;&#x3D; &#x27;pending&#x27;) {
+        throw new BadRequestException(this.i18nService.t(&#x27;auth.not_verified&#x27;));
+      }
+      let token &#x3D; await this.tokenService.getToken(user._id);
+      if (!token) {
+        token &#x3D; await this.tokenService.generateToken(user._id);
+      }
+
+      let result: {
+        expiresAt: Date;
+        expiresBy: number;
+        verificationCode?: unknown;
+      } &#x3D; {
+        expiresAt: new Date(),
+        expiresBy: 0,
+        verificationCode: &#x27;&#x27;,
+      };
+
+      if (deviceId) {
+        result &#x3D; await this.otpService.sendForgotPasswordOTP(input, &#x27;forgot-password&#x27;);
+      } else {
+        /* build the reset link */
+
+        const link &#x3D; &#x60;${this.configService.get(&#x27;CDN&#x27;)}/reset-password?userId&#x3D;${
+          user._id
+        }&amp;token&#x3D;${token.token}&#x60;;
+
+        const values &#x3D; {
+          link,
+          name: user.firstName + &#x27;&#x27; + user.lastName,
+        };
+
+        this.emailService.sendEmail({
+          to: email,
+          values,
+          slug: RequestedFor.forgot_password,
+        });
+      }
+      return { message: this.i18nService.t(&#x27;auth.password_reset_mail_send&#x27;) };
+    } catch (e) {
+      throw new BadRequestException(e?.message);
+    }
+  }
+
+  /**
+   * ${1:Description placeholder}
+   *
+   * @async
+   * @param {ResetPasswordOtpVerificationDTO} input
+   * @returns {Promise&lt;ResetPWOtpVerificationResponse&gt;}
+   */
+  async resetPasswordOtpVerification(
+    input: ResetPasswordOtpVerificationDTO,
+  ): Promise&lt;ResetPWOtpVerificationResponse&gt; {
+    const { email, otp } &#x3D; input;
+    try {
+      const user &#x3D; await this.adminRepository.findOne({ email });
+      if (!user) {
+        throw new NotFoundException(
+          this.i18nService.t(&#x27;common.not_exist&#x27;, { args: { entity: &#x27;Email&#x27; } }),
+        );
+      }
+      const otpVerified: boolean &#x3D; await this.otpService.verifyResetPasswordCode(email, otp);
+
+      if (!otpVerified) {
+        throw new BadRequestException(this.i18nService.t(&#x27;auth.invalid_otp&#x27;));
+      }
+      let token &#x3D; await this.tokenService.getToken(user._id);
+      if (!token) {
+        token &#x3D; await this.tokenService.generateToken(user._id);
+      }
+      /* build the reset link */
+      const link &#x3D; &#x60;/reset-password?userId&#x3D;${user._id}&amp;token&#x3D;${token.token}&#x60;;
+      return {
+        userId: user._id,
+        token: link,
+      };
+    } catch (error) {
+      throw new HttpException(error?.message, HttpStatus.INTERNAL_SERVER_ERROR);
+    }
+  }
+
+  /**
+   * ${1:Description placeholder}
+   *
+   * @async
+   * @param {string} userId
+   * @param {string} token
+   * @param {string} password
+   * @returns {Promise&lt;boolean&gt;}
+   */
+  async resetPassword(userId: string, token: string, password: string): Promise&lt;boolean&gt; {
+    const validToken &#x3D; await this.tokenService.validate(userId, token);
+    if (!validToken) {
+      throw new UnauthorizedException(
+        this.i18nService.t(&#x27;common.not_exist&#x27;, { args: { entity: &#x27;Email&#x27; } }),
+      );
+    }
+    const hash &#x3D; await bcrypt.hash(password, Number(10));
+    //const userExits &#x3D; await this.adminRepository.findById(userId);
+
+    /* update user password &amp; delete token */
+    await this.adminRepository.updateById(userId, {
+      $set: {
+        password: JSON.stringify(hash),
+        //name: userExits.name,
+        status: AdminStatus.ACTIVE,
+        // status: {
+        //   $cond: [{ $eq: [&#x27;$status&#x27;, &#x27;pending&#x27;] }, &#x27;active&#x27;, &#x27;$status&#x27;],
+        // },
+      },
+    });
+
+    await this.tokenService.removeToken(token);
+
+    return true;
+  }
+
+  /**
+   * @description change admin password
+   * @param {ChangePasswordDTO} input change password data
+   * @param {string} userId user id
+   * @returns {Boolean} true if successful
+   */
+  async changePassword(input: ChangePasswordDTO, userId: string) {
+    const { password, oldPassword } &#x3D; input;
+    try {
+      const user &#x3D; await this.adminRepository.findById(userId);
+      if (!user) {
+        throw new NotFoundException(
+          this.i18nService.t(&#x27;common.not_exist&#x27;, { args: { entity: &#x27;User&#x27; } }),
+        );
+      }
+      const candidatePassword &#x3D; user.password.slice(1, user.password.length - 1);
+
+      /* validate password */
+      const isValidPass &#x3D; await this.hashService.comparePassword(oldPassword, candidatePassword);
+
+      if (!isValidPass) {
+        throw new BadRequestException(this.i18nService.t(&#x27;auth.password_invalid&#x27;));
+      }
+
+      /* update user password*/
+      const hash &#x3D; await this.hashService.hashPassword(password);
+      await this.adminRepository.updateById(userId, {
+        password: JSON.stringify(hash),
+      });
+
+      return true;
+    } catch (e) {
+      throw new BadRequestException(e?.message);
+    }
+  }
+
+  /**
+   * ${1:Description placeholder}
+   *
+   * @async
+   * @param {string} userId
+   * @param {boolean} [isBusiness&#x3D;false]
+   * @returns {Promise&lt;any&gt;}
+   */
+  // async whoAmI55(userId: string, isBusiness &#x3D; false) {
+  //   try {
+  //     const user &#x3D; isBusiness
+  //       ? await this.businessUserRepository.findById(userId, { password: 0 })
+  //       : await this.adminRepository.findById(userId, { password: 0 });
+
+  //     if (!user) {
+  //       throw new NotFoundException(
+  //         this.i18nService.t(&#x27;common.not_exist&#x27;, { args: { entity: &#x27;User&#x27; } }),
+  //       );
+  //     }
+
+  //     return user;
+  //   } catch (error) {
+  //     throw error;
+  //   }
+  // }
+
+  async getProfile(userId: string) {
+    try {
+      const user &#x3D; this.adminRepository.findById(userId, { password: 0 });
+      return user;
+    } catch (e) {
+      throw new BadRequestException(e?.message);
+    }
+  }
+
+  /**
+   * @description generates new refresh token from old refresh token
+   * @param refreshToken old refresh token
+   */
+  async refresh(refreshToken: string): Promise&lt;RefreshTokenResponse&gt; {
+    try {
+      if (!refreshToken) {
+        throw new BadRequestException(this.i18nService.t(&#x27;auth.refresh_token_required&#x27;));
+      }
+      const decoded &#x3D; await this.decodeRefreshToken(refreshToken);
+      if (!decoded || !decoded.id) {
+        throw new UnauthorizedException(this.i18nService.t(&#x27;auth.unauthorized_user&#x27;));
+      }
+
+      // Remove access token and refresh token
+      const admin &#x3D; await this.adminRepository.findOne({
+        _id: decoded.id,
+      });
+      if (!admin) {
+        throw new ForbiddenException(this.i18nService.t(&#x27;auth.unauthorized_user&#x27;));
+      }
+
+      const refreshTokenPayload &#x3D; {
+        id: admin._id,
+        role: admin.role,
+      };
+      const accessToken &#x3D; await this.jwtService.signAccessToken(refreshTokenPayload);
+      const newRefreshToken &#x3D; await this.jwtService.signRefreshToken(refreshTokenPayload);
+
+      return {
+        message: this.i18nService.t(&#x27;auth.refresh_token_generation_success&#x27;),
+        accessToken,
+        refreshToken: newRefreshToken,
+      };
+    } catch (error: any) {
+      throw error;
+    }
+  }
+
+  /**
+   * ${1:Description placeholder}
+   *
+   * @private
+   * @async
+   * @param {string} token
+   * @returns {Promise&lt;any&gt;}
+   */
+  private async decodeRefreshToken(token: string): Promise&lt;any&gt; {
+    try {
+      return await this.jwt.verifyAsync(token, {
+        secret: this.configService.get(&#x27;REFRESH_TOKEN_SECRET&#x27;),
+      });
+    } catch (e) {
+      if (e instanceof TokenExpiredError) {
+        throw new UnauthorizedException(this.i18nService.t(&#x27;auth.refresh_token_expired&#x27;));
+      } else {
+        throw new UnauthorizedException(this.i18nService.t(&#x27;auth.refresh_token_malformed&#x27;));
+      }
+    }
+  }
+  /**
+   * @description Verify otp code
+   * @param {OtpVerificationFor2FADTO} input deviceId and otp
+   * @returns {AdminLoginResponse}
+   */
+  async otpVerificationFor2FA(input: OtpVerificationFor2FADTO): Promise&lt;AdminLoginResponse&gt; {
+    const { email, otp, deviceId } &#x3D; input;
+    try {
+      const user &#x3D; await this.adminRepository.findOne({ email });
+      if (!user) {
+        throw new NotFoundException(
+          this.i18nService.t(&#x27;common.not_exist&#x27;, { args: { entity: &#x27;User&#x27; } }),
+        );
+      }
+      const otpVerified: boolean &#x3D; await this.otpService.verify2FAOtpCode(
+        email,
+        otp,
+        deviceId,
+        user._id,
+      );
+
+      if (!otpVerified) {
+        throw new BadRequestException(this.i18nService.t(&#x27;auth.invalid_otp&#x27;));
+      }
+      await this.otpRequestRepository.deleteMany({
+        email,
+        deviceId,
+      });
+      const payload &#x3D; { id: user._id, role: user.role };
+      const accessToken &#x3D; await this.jwtService.signAccessToken(payload);
+      const refreshToken &#x3D; await this.jwtService.signRefreshToken(payload);
+
+      return {
+        admin: user,
+        accessToken,
+        refreshToken,
+      };
+    } catch (error) {
+      if (error.response.message &#x3D;&#x3D;&#x3D; this.i18nService.t(&#x27;auth.invalid_otp&#x27;)) {
+        throw new HttpException(
+          this.i18nService.t(&#x27;auth.invalid_otp&#x27;),
+          HttpStatus.INTERNAL_SERVER_ERROR,
+        );
+      }
+      throw new HttpException(error?.message, HttpStatus.INTERNAL_SERVER_ERROR);
+    }
+  }
+  /**
+   * @description resend otp for 2FA
+   * @param {Resend2FAOtpCodeDTO} input device details
+   * @returns {ResendOtpCodeResponse} expireAt and expiresBy
+   */
+  async resend2FAOtpCode(input: Resend2FAOtpCodeDTO): Promise&lt;ResendOtpCodeResponse&gt; {
+    const { email } &#x3D; input;
+    try {
+      const user &#x3D; await this.adminRepository.findOne({ email });
+      if (!user) {
+        throw new NotFoundException(
+          this.i18nService.t(&#x27;common.not_exist&#x27;, { args: { entity: &#x27;User&#x27; } }),
+        );
+      }
+      const result &#x3D; await this.otpService.sendEmailOTP({ ...input }, RequestedFor.cms_login);
+
+      return {
+        expiresAt: result.expiresAt,
+        expiresBy: result.expiresBy,
+      };
+    } catch (error) {
+      throw new HttpException(error?.message, HttpStatus.INTERNAL_SERVER_ERROR);
+    }
+  }
+
+  /**
+   * ${1:Description placeholder}
+   *
+   * @returns {*}
+   */
+  generateRandomBase32 &#x3D; () &#x3D;&gt; {
+    const buffer &#x3D; crypto.randomBytes(15);
+    const base32 &#x3D; encode(buffer).replace(/&#x3D;/g, &#x27;&#x27;).substring(0, 24);
+    return base32;
+  };
+
+  /**
+   * ${1:Description placeholder}
+   *
+   * @async
+   * @param {string} userId
+   * @returns {Promise&lt;AuthUrlResponse&gt;}
+   */
+  async generateOtpAuthUrl(userId: string): Promise&lt;AuthUrlResponse&gt; {
+    const user &#x3D; await this.adminRepository.findById(userId);
+
+    if (!user) {
+      throw new NotFoundException(
+        this.i18nService.t(&#x27;common.not_exist&#x27;, { args: { entity: &#x27;User&#x27; } }),
+      );
+    }
+
+    const base32_secret &#x3D; this.generateRandomBase32();
+
+    const totp &#x3D; new OTPAuth.TOTP({
+      issuer: &#x27;ebtheme.com&#x27;,
+      label: &#x27;Ebtheme&#x27;,
+      algorithm: &#x27;SHA1&#x27;,
+      digits: 6,
+      period: 30,
+      secret: base32_secret,
+    });
+
+    const otpAuthUrl &#x3D; totp.toString();
+    await this.adminRepository.updateById(userId, {
+      otpBase32: base32_secret,
+      otpAuthUrl,
+    });
+    return {
+      base32: base32_secret,
+      otpAuthUrl,
+    };
+  }
+
+  /**
+   * ${1:Description placeholder}
+   *
+   * @async
+   * @param {{ token: any; userId: any; }} param0
+   * @param {*} param0.token
+   * @param {*} param0.userId
+   * @returns {Promise&lt;VerifyAuthOtpResponse&gt;\}
+   */
+  async verifyAuthOTP({ token, userId }): Promise&lt;VerifyAuthOtpResponse&gt; {
+    try {
+      const user &#x3D; await this.adminRepository.findById(userId);
+
+      if (!user) {
+        throw new NotFoundException(
+          this.i18nService.t(&#x27;common.not_exist&#x27;, { args: { entity: &#x27;User&#x27; } }),
+        );
+      }
+      const totp &#x3D; new OTPAuth.TOTP({
+        issuer: &#x27;ebtheme.com&#x27;,
+        label: &#x27;Ebtheme&#x27;,
+        algorithm: &#x27;SHA1&#x27;,
+        digits: 6,
+        period: 30,
+        secret: user.otpBase32,
+      });
+      const delta &#x3D; totp.validate({ token });
+
+      if (delta &#x3D;&#x3D;&#x3D; null) {
+        throw new BadRequestException(this.i18nService.t(&#x27;auth.invalid_otp&#x27;));
+      }
+      await this.adminRepository.updateById(userId, {
+        enabled2FA: true,
+        verified2FA: true,
+      });
+      return {
+        message: this.i18nService.t(&#x27;auth.two_factor_auth_enable_success&#x27;),
+      };
+    } catch (error) {
+      if (error.response.message &#x3D;&#x3D;&#x3D; this.i18nService.t(&#x27;auth.invalid_otp&#x27;)) {
+        throw new HttpException(
+          this.i18nService.t(&#x27;auth.invalid_otp&#x27;),
+          HttpStatus.INTERNAL_SERVER_ERROR,
+        );
+      }
+      throw new HttpException(error?.message, HttpStatus.INTERNAL_SERVER_ERROR);
+    }
+  }
+  /**
+   * ${1:Description placeholder}
+   *
+   * @async
+   * @param {{ token: any; email: any; }} param0
+   * @param {*} param0.token
+   * @param {*} param0.email
+   * @returns {Promise&lt;AdminLoginResponse&gt;\}
+   */
+  async validateAuthOTP({ token, email }): Promise&lt;AdminLoginResponse&gt; {
+    try {
+      const user &#x3D; await this.adminRepository.findOne({ email });
+
+      if (!user) {
+        throw new NotFoundException(
+          this.i18nService.t(&#x27;common.not_exist&#x27;, { args: { entity: &#x27;User&#x27; } }),
+        );
+      }
+      const totp &#x3D; new OTPAuth.TOTP({
+        issuer: &#x27;ebtheme.com&#x27;,
+        label: &#x27;Ebtheme&#x27;,
+        algorithm: &#x27;SHA1&#x27;,
+        digits: 6,
+        period: 30,
+        secret: user.otpBase32,
+      });
+      const delta &#x3D; totp.validate({ token });
+
+      if (delta &#x3D;&#x3D;&#x3D; null) {
+        throw new BadRequestException(this.i18nService.t(&#x27;auth.invalid_otp&#x27;));
+      }
+
+      const payload &#x3D; { id: user._id, role: user.role };
+      const accessToken &#x3D; await this.jwtService.signAccessToken(payload);
+      const refreshToken &#x3D; await this.jwtService.signRefreshToken(payload);
+      return {
+        message: this.i18nService.t(&#x27;auth.two_factor_auth_enable_success&#x27;),
+        admin: user,
+        accessToken,
+        refreshToken,
+      };
+    } catch (error) {
+      throw new HttpException(error?.message, HttpStatus.INTERNAL_SERVER_ERROR);
+    }
+  }
+
+  /**
+   * ${1:Description placeholder}
+   *
+   * @async
+   * @param {*} token
+   * @param {string} userId
+   * @returns {Promise&lt;any&gt;}
+   */
+  async disableAuthOTP(token, userId: string): Promise&lt;any&gt; {
+    const user &#x3D; await this.adminRepository.findById(userId);
+
+    if (!user) {
+      throw new NotFoundException(
+        this.i18nService.t(&#x27;common.not_exist&#x27;, { args: { entity: &#x27;User&#x27; } }),
+      );
+    }
+    const totp &#x3D; new OTPAuth.TOTP({
+      issuer: &#x27;ebtheme.com&#x27;,
+      label: &#x27;Ebtheme&#x27;,
+      algorithm: &#x27;SHA1&#x27;,
+      digits: 6,
+      period: 30,
+      secret: user.otpBase32,
+    });
+    const delta &#x3D; totp.validate({ token });
+
+    if (delta &#x3D;&#x3D;&#x3D; null) {
+      throw new BadRequestException(this.i18nService.t(&#x27;auth.invalid_otp&#x27;));
+    }
+    await this.adminRepository.updateById(userId, {
+      enabled2FA: false,
+    });
+    return true;
+  }
+}
+</code></pre>
+    </div>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+          <label class="dark-mode-switch">
+               <input type="checkbox">
+               <span class="slider">
+                    <svg class="slider-icon" viewBox="0 0 24 24" fill="none" height="20" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" width="20" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"></path>
+                    </svg>
+               </span>
+          </label>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'injectable';
+            var COMPODOC_CURRENT_PAGE_URL = 'AuthService.html';
+            var MAX_SEARCH_RESULTS = 15;
+       </script>
+
+       <script>
+               $darkModeToggleSwitchers = document.querySelectorAll('.dark-mode-switch input');
+               checkToggle(darkModeState);
+               if ($darkModeToggleSwitchers.length > 0) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].addEventListener('change', function (event) {
+                              darkModeState = !darkModeState;
+                              toggleDarkMode(darkModeState);
+                         });
+                    }
+               }
+          </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+
+       <script src="../js/menu-wc.js" defer></script>
+       <script nomodule src="../js/menu-wc_es5.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>

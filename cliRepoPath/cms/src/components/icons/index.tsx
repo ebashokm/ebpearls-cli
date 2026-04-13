@@ -1,0 +1,13 @@
+export { default as AdminUserIcon } from './AdminUsers';
+export { default as PlusIcon } from './Plus'; 
+export { default as SearchIcon } from './Search';
+export { default as BreadCrumbArrowIcon } from './BreadCrumbArrow';
+export { default as PeopleIcon } from './People';
+export { default as SettingIcon } from './Setting';
+export { default as CustomersIcon } from './Customers';
+export { default as DashboardIcon } from './Dashboard';
+export { default as CalendarIcon } from './Calendar';
+export { default as MoneyIcon } from './Money';
+export { default as ScissorIcon } from './Scissor';
+export { default as MoreIcon } from './More';
+export { default as HomeIcon } from './Home';

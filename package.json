@@ -1,0 +1,37 @@
+{
+  "name": "@ebpearls/cli",
+  "version": "1.0.0",
+  "description": "EB Pearls CLI — scaffold NestJS API and React CMS projects",
+  "license": "ISC",
+  "author": "",
+  "type": "commonjs",
+  "main": "index.js",
+  "files": [
+    "index.js",
+    "constants.js",
+    "module-registry.js",
+    "cliRepoPath/"
+  ],
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "scripts": {
+    "test": "node --test tests/checkNodeVersion.test.js",
+    "prepublishOnly": "npm pack --dry-run"
+  },
+  "dependencies": {
+    "commander": "^14.0.3",
+    "inquirer": "^13.4.1",
+    "readline": "^1.3.0",
+    "shelljs": "^0.10.0"
+  },
+  "bin": {
+    "ebp": "./index.js"
+  },
+  "devDependencies": {
+    "fast-check": "^4.6.0"
+  }
+}

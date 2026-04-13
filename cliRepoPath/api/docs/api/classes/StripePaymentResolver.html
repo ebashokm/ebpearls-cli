@@ -1,0 +1,1614 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>nest-ebtheme documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	   <link rel="stylesheet" href="../styles/style.css">
+        <link rel="stylesheet" href="../styles/dark.css">
+    </head>
+    <body>
+          <script>
+               // Blocking script to avoid flickering dark mode
+               // Dark mode toggle button
+               var useDark = window.matchMedia('(prefers-color-scheme: dark)');
+               var darkModeState = useDark.matches;
+               var $darkModeToggleSwitchers = document.querySelectorAll('.dark-mode-switch input');
+               var $darkModeToggles = document.querySelectorAll('.dark-mode-switch');
+               var darkModeStateLocal = localStorage.getItem('compodoc_darkmode-state');
+
+               function checkToggle(check) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].checked = check;
+                    }
+               }
+
+               function toggleDarkMode(state) {
+                    if (window.localStorage) {
+                         localStorage.setItem('compodoc_darkmode-state', state);
+                    }
+
+                    checkToggle(state);
+
+                    const hasClass = document.body.classList.contains('dark');
+
+                    if (state) {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.add('dark');
+                         }
+                         if (!hasClass) {
+                              document.body.classList.add('dark');
+                         }
+                    } else {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.remove('dark');
+                         }
+                         if (hasClass) {
+                              document.body.classList.remove('dark');
+                         }
+                    }
+               }
+
+               useDark.addEventListener('change', function (evt) {
+                    toggleDarkMode(evt.matches);
+               });
+               if (darkModeStateLocal) {
+                    darkModeState = darkModeStateLocal === 'true';
+               }
+               toggleDarkMode(darkModeState);
+          </script>
+
+        <div class="navbar navbar-default navbar-fixed-top d-md-none p-0">
+               <div class="d-flex">
+                    <a href="../" class="navbar-brand">nest-ebtheme documentation</a>
+                    <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+               </div>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="d-none d-md-block menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content class">
+                   <div class="content-data">
+
+
+
+
+
+
+
+
+
+
+
+
+<ol class="breadcrumb">
+  <li class="breadcrumb-item">Classes</li>
+  <li class="breadcrumb-item" >StripePaymentResolver</li>
+</ol>
+
+<ul class="nav nav-tabs" role="tablist">
+        <li class="nav-item">
+            <a href="#info" 
+                class="nav-link"
+                class="nav-link active"
+                role="tab" id="info-tab" data-bs-toggle="tab" data-link="info">Info</a>
+        </li>
+        <li class="nav-item">
+            <a href="#source" 
+                class="nav-link"
+                
+                role="tab" id="source-tab" data-bs-toggle="tab" data-link="source">Source</a>
+        </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="info">
+        <p class="comment">
+            <h3>File</h3>
+        </p>
+        <p class="comment">
+            <code>apps/api/src/modules/stripe/stripe-payment/stripe-payment.resolver.ts</code>
+        </p>
+
+
+            <p class="comment">
+                <h3>Description</h3>
+            </p>
+            <p class="comment">
+                <p>Description placeholder</p>
+
+            </p>
+
+
+
+
+            <section data-compodoc="block-index">
+    <h3 id="index">Index</h3>
+    <table class="table table-sm table-bordered index-table">
+        <tbody>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Methods</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                    <span class="modifier"></span>
+                                    <span class="modifier"></span>
+                                    <span class="modifier">Async</span>
+                                <a href="#createIntentForCustomer" >createIntentForCustomer</a>
+                            </li>
+                            <li>
+                                    <span class="modifier"></span>
+                                    <span class="modifier">Async</span>
+                                <a href="#createPayment" >createPayment</a>
+                            </li>
+                            <li>
+                                    <span class="modifier"></span>
+                                    <span class="modifier">Async</span>
+                                <a href="#deleteCard" >deleteCard</a>
+                            </li>
+                            <li>
+                                    <span class="modifier"></span>
+                                    <span class="modifier">Async</span>
+                                <a href="#getCards" >getCards</a>
+                            </li>
+                            <li>
+                                    <span class="modifier"></span>
+                                    <span class="modifier">Async</span>
+                                <a href="#getEphemeralKey" >getEphemeralKey</a>
+                            </li>
+                            <li>
+                                    <span class="modifier"></span>
+                                    <span class="modifier">Async</span>
+                                <a href="#getMyPaymentHistory" >getMyPaymentHistory</a>
+                            </li>
+                            <li>
+                                    <span class="modifier"></span>
+                                    <span class="modifier"></span>
+                                    <span class="modifier">Async</span>
+                                <a href="#getMyPaymentMethods" >getMyPaymentMethods</a>
+                            </li>
+                            <li>
+                                    <span class="modifier"></span>
+                                    <span class="modifier">Async</span>
+                                <a href="#getPaymentDetail" >getPaymentDetail</a>
+                            </li>
+                            <li>
+                                    <span class="modifier"></span>
+                                    <span class="modifier">Async</span>
+                                <a href="#makeCardDefault" >makeCardDefault</a>
+                            </li>
+                            <li>
+                                    <span class="modifier"></span>
+                                    <span class="modifier">Async</span>
+                                <a href="#requestPayout" >requestPayout</a>
+                            </li>
+                            <li>
+                                    <span class="modifier"></span>
+                                    <span class="modifier"></span>
+                                    <span class="modifier">Async</span>
+                                <a href="#savePaymentMethod" >savePaymentMethod</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+            <section data-compodoc="block-constructor">
+    <h3 id="constructor">Constructor</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+<code>constructor(stripePaymentService: <a href="../injectables/StripePaymentService.html" target="_self">StripePaymentService</a>)</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="46" class="link-to-prism">apps/api/src/modules/stripe/stripe-payment/stripe-payment.resolver.ts:46</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                            <div class="io-description"><p>Creates an instance of StripePaymentResolver.</p>
+</div>
+                            <div>
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>stripePaymentService</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/StripePaymentService.html" target="_self" >StripePaymentService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+</section>
+
+
+            <section data-compodoc="block-methods">
+    
+    <h3 id="methods">
+        Methods
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="createIntentForCustomer"></a>
+                    <span class="name">
+                            <span class="modifier"></span>
+                            <span class="modifier"></span>
+                            <span class="modifier">Async</span>
+                        <span ><b>createIntentForCustomer</b></span>
+                        <a href="#createIntentForCustomer"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>createIntentForCustomer(kind: "card" | "au_bank", user)</code>
+                </td>
+            </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <b>Decorators : </b>
+                    <br />
+                    <code>@UseGuards(AuthUserGuard)<br />@Mutation(undefined, {name: &#x27;createIntentForCustomer&#x27;, description: &#x27;Setup intent for adding payment method.&#x27;})<br /></code>
+                </td>
+            </tr>
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="67"
+                                    class="link-to-prism">apps/api/src/modules/stripe/stripe-payment/stripe-payment.resolver.ts:67</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Create setup intent for customer so that they can add payment methods later on
+input is  card or au_bank</p>
+</div>
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>kind</td>
+                                            <td>
+                                                        <code>&quot;card&quot; | &quot;au_bank&quot;</code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                        <tr>
+                                                <td>user</td>
+                                            <td>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>    <code>unknown</code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="createPayment"></a>
+                    <span class="name">
+                            <span class="modifier"></span>
+                            <span class="modifier">Async</span>
+                        <span ><b>createPayment</b></span>
+                        <a href="#createPayment"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>createPayment(body: <a href="../classes/CreatePaymentInput.html" target="_self">CreatePaymentInput</a>, loginDetail: <a href="../undefineds/LoginDetailType.html" target="_self">LoginDetailType</a>)</code>
+                </td>
+            </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <b>Decorators : </b>
+                    <br />
+                    <code>@Mutation(undefined)<br /></code>
+                </td>
+            </tr>
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="204"
+                                    class="link-to-prism">apps/api/src/modules/stripe/stripe-payment/stripe-payment.resolver.ts:204</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Description placeholder</p>
+</div>
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>body</td>
+                                            <td>
+                                                            <code><a href="../classes/CreatePaymentInput.html" target="_self" >CreatePaymentInput</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                        <tr>
+                                                <td>loginDetail</td>
+                                            <td>
+                                                            <code><a href="../miscellaneous/typealiases.html#LoginDetailType" target="_self" >LoginDetailType</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>    <code>unknown</code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="deleteCard"></a>
+                    <span class="name">
+                            <span class="modifier"></span>
+                            <span class="modifier">Async</span>
+                        <span ><b>deleteCard</b></span>
+                        <a href="#deleteCard"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>deleteCard(body: <a href="../classes/DeletePaymentMethodInput.html" target="_self">DeletePaymentMethodInput</a>, loginDetail: <a href="../undefineds/LoginDetailType.html" target="_self">LoginDetailType</a>, i18n: I18nContext)</code>
+                </td>
+            </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <b>Decorators : </b>
+                    <br />
+                    <code>@Mutation(undefined)<br /></code>
+                </td>
+            </tr>
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="154"
+                                    class="link-to-prism">apps/api/src/modules/stripe/stripe-payment/stripe-payment.resolver.ts:154</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>List available cards</p>
+</div>
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>body</td>
+                                            <td>
+                                                            <code><a href="../classes/DeletePaymentMethodInput.html" target="_self" >DeletePaymentMethodInput</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                        <tr>
+                                                <td>loginDetail</td>
+                                            <td>
+                                                            <code><a href="../miscellaneous/typealiases.html#LoginDetailType" target="_self" >LoginDetailType</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                        <tr>
+                                                <td>i18n</td>
+                                            <td>
+                                                        <code>I18nContext</code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>    <code>unknown</code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getCards"></a>
+                    <span class="name">
+                            <span class="modifier"></span>
+                            <span class="modifier">Async</span>
+                        <span ><b>getCards</b></span>
+                        <a href="#getCards"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>getCards(loginDetail: <a href="../undefineds/LoginDetailType.html" target="_self">LoginDetailType</a>)</code>
+                </td>
+            </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <b>Decorators : </b>
+                    <br />
+                    <code>@Query(undefined)<br /></code>
+                </td>
+            </tr>
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="139"
+                                    class="link-to-prism">apps/api/src/modules/stripe/stripe-payment/stripe-payment.resolver.ts:139</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>List available cards</p>
+</div>
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>loginDetail</td>
+                                            <td>
+                                                            <code><a href="../miscellaneous/typealiases.html#LoginDetailType" target="_self" >LoginDetailType</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>    <code>unknown</code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getEphemeralKey"></a>
+                    <span class="name">
+                            <span class="modifier"></span>
+                            <span class="modifier">Async</span>
+                        <span ><b>getEphemeralKey</b></span>
+                        <a href="#getEphemeralKey"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>getEphemeralKey(loginDetail: <a href="../undefineds/LoginDetailType.html" target="_self">LoginDetailType</a>)</code>
+                </td>
+            </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <b>Decorators : </b>
+                    <br />
+                    <code>@Query(undefined)<br /></code>
+                </td>
+            </tr>
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="223"
+                                    class="link-to-prism">apps/api/src/modules/stripe/stripe-payment/stripe-payment.resolver.ts:223</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Description placeholder</p>
+</div>
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>loginDetail</td>
+                                            <td>
+                                                            <code><a href="../miscellaneous/typealiases.html#LoginDetailType" target="_self" >LoginDetailType</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>    <code>unknown</code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getMyPaymentHistory"></a>
+                    <span class="name">
+                            <span class="modifier"></span>
+                            <span class="modifier">Async</span>
+                        <span ><b>getMyPaymentHistory</b></span>
+                        <a href="#getMyPaymentHistory"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>getMyPaymentHistory(input: <a href="../classes/PaymentHistoryInput.html" target="_self">PaymentHistoryInput</a>, loginDetail: <a href="../undefineds/LoginDetailType.html" target="_self">LoginDetailType</a>)</code>
+                </td>
+            </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <b>Decorators : </b>
+                    <br />
+                    <code>@Mutation(undefined)<br /></code>
+                </td>
+            </tr>
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="240"
+                                    class="link-to-prism">apps/api/src/modules/stripe/stripe-payment/stripe-payment.resolver.ts:240</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Description placeholder</p>
+</div>
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>input</td>
+                                            <td>
+                                                            <code><a href="../classes/PaymentHistoryInput.html" target="_self" >PaymentHistoryInput</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                        <tr>
+                                                <td>loginDetail</td>
+                                            <td>
+                                                            <code><a href="../miscellaneous/typealiases.html#LoginDetailType" target="_self" >LoginDetailType</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>    <code>unknown</code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getMyPaymentMethods"></a>
+                    <span class="name">
+                            <span class="modifier"></span>
+                            <span class="modifier"></span>
+                            <span class="modifier">Async</span>
+                        <span ><b>getMyPaymentMethods</b></span>
+                        <a href="#getMyPaymentMethods"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>getMyPaymentMethods(user)</code>
+                </td>
+            </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <b>Decorators : </b>
+                    <br />
+                    <code>@UseGuards(AuthUserGuard)<br />@Query(undefined, {name: &#x27;getMyPaymentMethods&#x27;, description: &#x27;List available payment methods of the user.&#x27;})<br /></code>
+                </td>
+            </tr>
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="103"
+                                    class="link-to-prism">apps/api/src/modules/stripe/stripe-payment/stripe-payment.resolver.ts:103</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Description placeholder</p>
+</div>
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>user</td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>    <code>unknown</code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getPaymentDetail"></a>
+                    <span class="name">
+                            <span class="modifier"></span>
+                            <span class="modifier">Async</span>
+                        <span ><b>getPaymentDetail</b></span>
+                        <a href="#getPaymentDetail"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>getPaymentDetail(id: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>, user)</code>
+                </td>
+            </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <b>Decorators : </b>
+                    <br />
+                    <code>@Mutation(undefined, {nullable: true})<br /></code>
+                </td>
+            </tr>
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="256"
+                                    class="link-to-prism">apps/api/src/modules/stripe/stripe-payment/stripe-payment.resolver.ts:256</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Description placeholder</p>
+</div>
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>id</td>
+                                            <td>
+                                                            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                        <tr>
+                                                <td>user</td>
+                                            <td>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>    <code>unknown</code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="makeCardDefault"></a>
+                    <span class="name">
+                            <span class="modifier"></span>
+                            <span class="modifier">Async</span>
+                        <span ><b>makeCardDefault</b></span>
+                        <a href="#makeCardDefault"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>makeCardDefault(body: <a href="../classes/MakePaymentMethodDefaultInput.html" target="_self">MakePaymentMethodDefaultInput</a>, loginDetail: <a href="../undefineds/LoginDetailType.html" target="_self">LoginDetailType</a>, i18n: I18nContext)</code>
+                </td>
+            </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <b>Decorators : </b>
+                    <br />
+                    <code>@Mutation(undefined)<br /></code>
+                </td>
+            </tr>
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="180"
+                                    class="link-to-prism">apps/api/src/modules/stripe/stripe-payment/stripe-payment.resolver.ts:180</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Make card default</p>
+</div>
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>body</td>
+                                            <td>
+                                                            <code><a href="../classes/MakePaymentMethodDefaultInput.html" target="_self" >MakePaymentMethodDefaultInput</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                        <tr>
+                                                <td>loginDetail</td>
+                                            <td>
+                                                            <code><a href="../miscellaneous/typealiases.html#LoginDetailType" target="_self" >LoginDetailType</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                        <tr>
+                                                <td>i18n</td>
+                                            <td>
+                                                        <code>I18nContext</code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>    <code>unknown</code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="requestPayout"></a>
+                    <span class="name">
+                            <span class="modifier"></span>
+                            <span class="modifier">Async</span>
+                        <span ><b>requestPayout</b></span>
+                        <a href="#requestPayout"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>requestPayout(loginDetail: <a href="../undefineds/LoginDetailType.html" target="_self">LoginDetailType</a>)</code>
+                </td>
+            </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <b>Decorators : </b>
+                    <br />
+                    <code>@Mutation(undefined)<br /></code>
+                </td>
+            </tr>
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="268"
+                                    class="link-to-prism">apps/api/src/modules/stripe/stripe-payment/stripe-payment.resolver.ts:268</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Description placeholder</p>
+</div>
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>loginDetail</td>
+                                            <td>
+                                                            <code><a href="../miscellaneous/typealiases.html#LoginDetailType" target="_self" >LoginDetailType</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>    <code>unknown</code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="savePaymentMethod"></a>
+                    <span class="name">
+                            <span class="modifier"></span>
+                            <span class="modifier"></span>
+                            <span class="modifier">Async</span>
+                        <span ><b>savePaymentMethod</b></span>
+                        <a href="#savePaymentMethod"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>savePaymentMethod(input: SavePaymentMethodDto, user)</code>
+                </td>
+            </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <b>Decorators : </b>
+                    <br />
+                    <code>@UseGuards(AuthUserGuard)<br />@Mutation(undefined, {name: &#x27;savePaymentMethod&#x27;, description: &#x27;Save payment method.&#x27;})<br /></code>
+                </td>
+            </tr>
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="87"
+                                    class="link-to-prism">apps/api/src/modules/stripe/stripe-payment/stripe-payment.resolver.ts:87</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Description placeholder</p>
+</div>
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>input</td>
+                                            <td>
+                                                        <code>SavePaymentMethodDto</code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                        <tr>
+                                                <td>user</td>
+                                            <td>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>    <code>unknown</code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+
+
+
+
+
+    </div>
+
+
+    <div class="tab-pane fade  tab-source-code" id="source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { HttpException, HttpStatus, UseGuards } from &#x27;@nestjs/common&#x27;;
+import { Args, Query, Mutation, Resolver } from &#x27;@nestjs/graphql&#x27;;
+import { AuthUserGuard } from &#x27;@api/guards/auth.user.guard&#x27;;
+
+/**
+ * Response
+ */
+import { CreateCardInput } from &#x27;./dto/input/create-card.input&#x27;;
+import { DeleteCardInput } from &#x27;./dto/input/delete-card.input&#x27;;
+/**
+ * Respnse
+ */
+import { CardListReponse } from &#x27;./dto/response/card-list.response&#x27;;
+import { CreatePaymentInput } from &#x27;./dto/input/create-payment.input&#x27;;
+import { GetEphemeralKeyInput } from &#x27;./dto/input/get-ephemeral-key.input&#x27;;
+import { EphemeralKeyResponse } from &#x27;./dto/response/get-ephemeral-key.response&#x27;;
+import { CreateBankDetailInput } from &#x27;./dto/input/create-bank.input&#x27;;
+import { UpdateBankDetailInput } from &#x27;./dto/input/update-bank-input&#x27;;
+import { StripePaymentService } from &#x27;./services/stripe-payment.service&#x27;;
+import { MessageResponse } from &#x27;@app/common/dto/response/message.response&#x27;;
+import {
+  PaginatedPaymentHistoryResponse,
+  PaymentHistoryResponse,
+} from &#x27;./dto/response/payment-history.response&#x27;;
+import { ParseObjectIdPipe } from &#x27;@app/common/pipe/parse-mongoid.pipe&#x27;;
+import { PaymentHistoryInput } from &#x27;./dto/input/payment-history.input&#x27;;
+import { LoginDetail } from &#x27;@api/modules/auth/decorator/login.decorator&#x27;;
+import { LoginDetailType } from &#x27;@api/modules/auth/types/login-detail.type&#x27;;
+import { TermsGuard } from &#x27;@api/guards/terms.guard&#x27;;
+import { I18n, I18nContext } from &#x27;nestjs-i18n&#x27;;
+import { SetupIntentResponse } from &#x27;./dto/response/setup-intent.response&#x27;;
+import { SavePaymentMethodDto } from &#x27;@app/common/dto/input/save-payment-method.input&#x27;;
+import { ListPaymentMethodResponse } from &#x27;@app/common/dto/response/list-payment-methods.response&#x27;;
+import { DeletePaymentMethodInput } from &#x27;./dto/input/delete-paymentMethod.input&#x27;;
+import { MakePaymentMethodDefaultInput } from &#x27;./dto/input/make-card-default.input&#x27;;
+
+/**
+ * Description placeholder
+ *
+ * @export
+ * @class StripePaymentResolver
+ * @typedef {StripePaymentResolver}
+ */
+@Resolver()
+@UseGuards(AuthUserGuard, TermsGuard)
+export class StripePaymentResolver {
+  /**
+   * Creates an instance of StripePaymentResolver.
+   *
+   * @constructor
+   * @param {StripePaymentService} stripePaymentService
+   */
+  constructor(private readonly stripePaymentService: StripePaymentService) {}
+
+  /**
+   * Create setup intent for customer so that they can add payment methods later on
+   * input is  card or au_bank
+   * @param kind
+   * @param loginDetail
+   * @returns
+   */
+  @UseGuards(AuthUserGuard)
+  @Mutation(() &#x3D;&gt; SetupIntentResponse, {
+    name: &#x27;createIntentForCustomer&#x27;,
+    description: &#x27;Setup intent for adding payment method.&#x27;,
+  })
+  async createIntentForCustomer(
+    @Args(&#x27;kind&#x27;, { nullable: true }) kind: &#x27;card&#x27; | &#x27;au_bank&#x27;,
+    @LoginDetail() user,
+  ) {
+    return this.stripePaymentService.createSetupIntent(user, kind);
+  }
+
+  /**
+   * Description placeholder
+   *
+   * @async
+   * @param {SavePaymentMethodDto} input
+   * @param {*} user
+   * @returns {unknown}
+   */
+  @UseGuards(AuthUserGuard)
+  @Mutation(() &#x3D;&gt; String, {
+    name: &#x27;savePaymentMethod&#x27;,
+    description: &#x27;Save payment method.&#x27;,
+  })
+  async savePaymentMethod(@Args(&#x27;input&#x27;) input: SavePaymentMethodDto, @LoginDetail() user) {
+    return this.stripePaymentService.savePaymentMethod(input, user);
+  }
+
+  /**
+   * Description placeholder
+   *
+   * @async
+   * @param {*} user
+   * @returns {unknown}
+   */
+  @UseGuards(AuthUserGuard)
+  @Query(() &#x3D;&gt; ListPaymentMethodResponse, {
+    name: &#x27;getMyPaymentMethods&#x27;,
+    description: &#x27;List available payment methods of the user.&#x27;,
+  })
+  async getMyPaymentMethods(@LoginDetail() user) {
+    return await this.stripePaymentService.getMyPaymentMethods(user);
+  }
+
+  /**
+   * Add credit card for user
+   * input is card token
+   * @param body
+   * @param loginDetail
+   * @returns
+   */
+  // @Mutation(() &#x3D;&gt; MessageResponse)
+  // async addCardFromToken(
+  //   @Args(&#x27;body&#x27;) body: CreateCardInput,
+  //   @LoginDetail() loginDetail: LoginDetailType,
+  //   @I18n() i18n: I18nContext,
+  // ) {
+  //   try {
+  //     const { card_token } &#x3D; body;
+  //     await this.stripePaymentService.addCardFromToken({
+  //       cardToken: card_token,
+  //       userId: loginDetail.userId,
+  //     });
+  //     return { message: i18n.t(&#x27;stripe_payment.card_added_successfully&#x27;) };
+  //   } catch (e) {
+  //     throw new HttpException(e.message, HttpStatus.BAD_REQUEST);
+  //   }
+  // }
+
+  /**
+   * List available cards
+   * @param loginDetail
+   * @returns
+   */
+
+  @Query(() &#x3D;&gt; [CardListReponse])
+  async getCards(@LoginDetail() loginDetail: LoginDetailType) {
+    try {
+      return this.stripePaymentService.getStripeCardsByUser(loginDetail.userId);
+    } catch (e) {
+      throw new HttpException(e.message, HttpStatus.BAD_REQUEST);
+    }
+  }
+
+  /**
+   * List available cards
+   * @param loginDetail
+   * @returns
+   */
+
+  @Mutation(() &#x3D;&gt; MessageResponse)
+  async deleteCard(
+    @Args(&#x27;body&#x27;) body: DeletePaymentMethodInput,
+    @LoginDetail() loginDetail: LoginDetailType,
+    @I18n() i18n: I18nContext,
+  ) {
+    try {
+      const { paymentMethodId } &#x3D; body;
+
+      await this.stripePaymentService.deleteCard({
+        userId: loginDetail.userId,
+        paymentMethodId,
+      });
+      return { message: i18n.t(&#x27;stripe_payment.card_removed_successfully&#x27;) };
+    } catch (e) {
+      throw new HttpException(e.message, HttpStatus.BAD_REQUEST);
+    }
+  }
+
+  /**
+   * Make card default
+   * @param body
+   * @param loginDetail
+   * @returns
+   */
+
+  @Mutation(() &#x3D;&gt; MessageResponse)
+  async makeCardDefault(
+    @Args(&#x27;body&#x27;) body: MakePaymentMethodDefaultInput,
+    @LoginDetail() loginDetail: LoginDetailType,
+    @I18n() i18n: I18nContext,
+  ) {
+    try {
+      const { paymentMethodId } &#x3D; body;
+
+      await this.stripePaymentService.makeCardDefault(loginDetail.userId, paymentMethodId);
+      return { message: i18n.t(&#x27;stripe_payment.card_made_default&#x27;) };
+    } catch (e) {
+      throw new HttpException(e.message, HttpStatus.BAD_REQUEST);
+    }
+  }
+
+  /**
+   * Description placeholder
+   *
+   * @async
+   * @param {CreatePaymentInput} body
+   * @param {LoginDetailType} loginDetail
+   * @returns {unknown}
+   */
+  @Mutation(() &#x3D;&gt; MessageResponse)
+  async createPayment(
+    @Args(&#x27;body&#x27;) body: CreatePaymentInput,
+    @LoginDetail() loginDetail: LoginDetailType,
+  ) {
+    try {
+      return this.stripePaymentService.createPayment(loginDetail?.userId, body);
+    } catch (e) {
+      throw new HttpException(e.message, HttpStatus.BAD_REQUEST);
+    }
+  }
+
+  /**
+   * Description placeholder
+   *
+   * @async
+   * @param {LoginDetailType} loginDetail
+   * @returns {unknown}
+   */
+  @Query(() &#x3D;&gt; EphemeralKeyResponse)
+  async getEphemeralKey(@LoginDetail() loginDetail: LoginDetailType) {
+    try {
+      return this.stripePaymentService.getEphemeralKey(loginDetail.userId);
+    } catch (e) {
+      throw new HttpException(e.message, HttpStatus.BAD_REQUEST);
+    }
+  }
+
+  /**
+   * Description placeholder
+   *
+   * @async
+   * @param {PaymentHistoryInput} input
+   * @param {LoginDetailType} loginDetail
+   * @returns {unknown}
+   */
+  @Mutation(() &#x3D;&gt; PaginatedPaymentHistoryResponse)
+  async getMyPaymentHistory(
+    @Args(&#x27;input&#x27;) input: PaymentHistoryInput,
+    @LoginDetail() loginDetail: LoginDetailType,
+  ) {
+    return this.stripePaymentService.getPaymentHistoryOfUser(loginDetail.userId, input);
+  }
+
+  /**
+   * Description placeholder
+   *
+   * @async
+   * @param {string} id
+   * @param {*} user
+   * @returns {unknown}
+   */
+  @Mutation(() &#x3D;&gt; PaymentHistoryResponse, { nullable: true })
+  async getPaymentDetail(@Args(&#x27;id&#x27;, new ParseObjectIdPipe()) id: string, @LoginDetail() user) {
+    return this.stripePaymentService.getPaymentDetail(id, user.userId);
+  }
+
+  /**
+   * Description placeholder
+   *
+   * @async
+   * @param {LoginDetailType} loginDetail
+   * @returns {unknown}
+   */
+  @Mutation(() &#x3D;&gt; MessageResponse)
+  async requestPayout(@LoginDetail() loginDetail: LoginDetailType) {
+    return this.stripePaymentService.proceedStripePayout(loginDetail.userId);
+  }
+}
+</code></pre>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+          <label class="dark-mode-switch">
+               <input type="checkbox">
+               <span class="slider">
+                    <svg class="slider-icon" viewBox="0 0 24 24" fill="none" height="20" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" width="20" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"></path>
+                    </svg>
+               </span>
+          </label>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'class';
+            var COMPODOC_CURRENT_PAGE_URL = 'StripePaymentResolver.html';
+            var MAX_SEARCH_RESULTS = 15;
+       </script>
+
+       <script>
+               $darkModeToggleSwitchers = document.querySelectorAll('.dark-mode-switch input');
+               checkToggle(darkModeState);
+               if ($darkModeToggleSwitchers.length > 0) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].addEventListener('change', function (event) {
+                              darkModeState = !darkModeState;
+                              toggleDarkMode(darkModeState);
+                         });
+                    }
+               }
+          </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+
+       <script src="../js/menu-wc.js" defer></script>
+       <script nomodule src="../js/menu-wc_es5.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>

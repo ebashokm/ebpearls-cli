@@ -1,0 +1,10 @@
+{
+  "not_found": "{field} not found", 
+  "s_cancelled": "{entity} cancelled",
+  "not_exist": "{entity} does not exist",
+  "something_went_wrong": "Something went wrong",
+  "update_success": "{entity} updated successfully",
+  "at_least_one_instance_required": "At least one instance is required",
+  "saved_success": "{entity} saved successfully",
+  "message_sent_to_sqs": "Message sent to SQS queue"
+}

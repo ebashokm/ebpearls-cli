@@ -1,0 +1,2055 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>nest-ebtheme documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	   <link rel="stylesheet" href="../styles/style.css">
+        <link rel="stylesheet" href="../styles/dark.css">
+    </head>
+    <body>
+          <script>
+               // Blocking script to avoid flickering dark mode
+               // Dark mode toggle button
+               var useDark = window.matchMedia('(prefers-color-scheme: dark)');
+               var darkModeState = useDark.matches;
+               var $darkModeToggleSwitchers = document.querySelectorAll('.dark-mode-switch input');
+               var $darkModeToggles = document.querySelectorAll('.dark-mode-switch');
+               var darkModeStateLocal = localStorage.getItem('compodoc_darkmode-state');
+
+               function checkToggle(check) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].checked = check;
+                    }
+               }
+
+               function toggleDarkMode(state) {
+                    if (window.localStorage) {
+                         localStorage.setItem('compodoc_darkmode-state', state);
+                    }
+
+                    checkToggle(state);
+
+                    const hasClass = document.body.classList.contains('dark');
+
+                    if (state) {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.add('dark');
+                         }
+                         if (!hasClass) {
+                              document.body.classList.add('dark');
+                         }
+                    } else {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.remove('dark');
+                         }
+                         if (hasClass) {
+                              document.body.classList.remove('dark');
+                         }
+                    }
+               }
+
+               useDark.addEventListener('change', function (evt) {
+                    toggleDarkMode(evt.matches);
+               });
+               if (darkModeStateLocal) {
+                    darkModeState = darkModeStateLocal === 'true';
+               }
+               toggleDarkMode(darkModeState);
+          </script>
+
+        <div class="navbar navbar-default navbar-fixed-top d-md-none p-0">
+               <div class="d-flex">
+                    <a href="../" class="navbar-brand">nest-ebtheme documentation</a>
+                    <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+               </div>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="d-none d-md-block menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content class">
+                   <div class="content-data">
+
+
+
+
+
+
+
+
+
+
+
+
+<ol class="breadcrumb">
+  <li class="breadcrumb-item">Classes</li>
+  <li class="breadcrumb-item" >AuthResolver</li>
+</ol>
+
+<ul class="nav nav-tabs" role="tablist">
+        <li class="nav-item">
+            <a href="#info" 
+                class="nav-link"
+                class="nav-link active"
+                role="tab" id="info-tab" data-bs-toggle="tab" data-link="info">Info</a>
+        </li>
+        <li class="nav-item">
+            <a href="#source" 
+                class="nav-link"
+                
+                role="tab" id="source-tab" data-bs-toggle="tab" data-link="source">Source</a>
+        </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="info">
+        <p class="comment">
+            <h3>File</h3>
+        </p>
+        <p class="comment">
+            <code>apps/cms-api/src/modules/auth/auth.resolver.ts</code>
+        </p>
+
+
+            <p class="comment">
+                <h3>Description</h3>
+            </p>
+            <p class="comment">
+                <p>${1:Description placeholder}</p>
+
+            </p>
+
+
+
+
+            <section data-compodoc="block-index">
+    <h3 id="index">Index</h3>
+    <table class="table table-sm table-bordered index-table">
+        <tbody>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Methods</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                    <span class="modifier"></span>
+                                    <span class="modifier"></span>
+                                    <span class="modifier">Async</span>
+                                <a href="#changePassword" >changePassword</a>
+                            </li>
+                            <li>
+                                    <span class="modifier"></span>
+                                    <span class="modifier"></span>
+                                    <span class="modifier">Async</span>
+                                <a href="#disableAuthOTP" >disableAuthOTP</a>
+                            </li>
+                            <li>
+                                    <span class="modifier"></span>
+                                    <span class="modifier">Async</span>
+                                <a href="#forgotPassword" >forgotPassword</a>
+                            </li>
+                            <li>
+                                    <span class="modifier"></span>
+                                    <span class="modifier"></span>
+                                    <span class="modifier">Async</span>
+                                <a href="#generateOtpAuthUrl" >generateOtpAuthUrl</a>
+                            </li>
+                            <li>
+                                    <span class="modifier"></span>
+                                    <span class="modifier"></span>
+                                    <span class="modifier">Async</span>
+                                <a href="#getUserProfile" >getUserProfile</a>
+                            </li>
+                            <li>
+                                    <span class="modifier"></span>
+                                    <span class="modifier"></span>
+                                    <span class="modifier">Async</span>
+                                <a href="#login" >login</a>
+                            </li>
+                            <li>
+                                    <span class="modifier"></span>
+                                    <span class="modifier">Async</span>
+                                <a href="#otpVerificationFor2FA" >otpVerificationFor2FA</a>
+                            </li>
+                            <li>
+                                    <span class="modifier"></span>
+                                    <span class="modifier">Async</span>
+                                <a href="#refreshToken" >refreshToken</a>
+                            </li>
+                            <li>
+                                    <span class="modifier"></span>
+                                    <span class="modifier">Async</span>
+                                <a href="#resend2FAOtpCode" >resend2FAOtpCode</a>
+                            </li>
+                            <li>
+                                    <span class="modifier"></span>
+                                    <span class="modifier">Async</span>
+                                <a href="#resetPassword" >resetPassword</a>
+                            </li>
+                            <li>
+                                    <span class="modifier"></span>
+                                    <span class="modifier">Async</span>
+                                <a href="#resetPasswordOtpVerification" >resetPasswordOtpVerification</a>
+                            </li>
+                            <li>
+                                    <span class="modifier"></span>
+                                    <span class="modifier">Async</span>
+                                <a href="#signup" >signup</a>
+                            </li>
+                            <li>
+                                    <span class="modifier"></span>
+                                    <span class="modifier">Async</span>
+                                <a href="#validateAuthOTP" >validateAuthOTP</a>
+                            </li>
+                            <li>
+                                    <span class="modifier"></span>
+                                    <span class="modifier"></span>
+                                    <span class="modifier">Async</span>
+                                <a href="#verifyAuthOTP" >verifyAuthOTP</a>
+                            </li>
+                            <li>
+                                    <span class="modifier"></span>
+                                    <span class="modifier">Async</span>
+                                <a href="#verifyToken" >verifyToken</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+            <section data-compodoc="block-constructor">
+    <h3 id="constructor">Constructor</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+<code>constructor(authService: <a href="../injectables/AuthService.html" target="_self">AuthService</a>, s3Service: S3Service, tokenService: <a href="../classes/TokenService.html" target="_self">TokenService</a>, adminRepository: AdminRepository, settingService: <a href="../injectables/SettingService.html" target="_self">SettingService</a>)</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="55" class="link-to-prism">apps/cms-api/src/modules/auth/auth.resolver.ts:55</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                            <div class="io-description"><p>Creates an instance of AuthResolver.</p>
+</div>
+                            <div>
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>authService</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/AuthService.html" target="_self" >AuthService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>s3Service</td>
+                                                  
+                                                        <td>
+                                                                    <code>S3Service</code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>tokenService</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../classes/TokenService.html" target="_self" >TokenService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>adminRepository</td>
+                                                  
+                                                        <td>
+                                                                    <code>AdminRepository</code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>settingService</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/SettingService.html" target="_self" >SettingService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+</section>
+
+
+            <section data-compodoc="block-methods">
+    
+    <h3 id="methods">
+        Methods
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="changePassword"></a>
+                    <span class="name">
+                            <span class="modifier"></span>
+                            <span class="modifier"></span>
+                            <span class="modifier">Async</span>
+                        <span ><b>changePassword</b></span>
+                        <a href="#changePassword"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>changePassword(input: <a href="../classes/ChangePasswordDTO.html" target="_self">ChangePasswordDTO</a>, context)</code>
+                </td>
+            </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <b>Decorators : </b>
+                    <br />
+                    <code>@Mutation(undefined, {name: &#x27;changePassword&#x27;})<br />@UseGuards(JwtAuthGuard)<br /></code>
+                </td>
+            </tr>
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="249"
+                                    class="link-to-prism">apps/cms-api/src/modules/auth/auth.resolver.ts:249</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>${1:Description placeholder}</p>
+</div>
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>input</td>
+                                            <td>
+                                                            <code><a href="../classes/ChangePasswordDTO.html" target="_self" >ChangePasswordDTO</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                        <tr>
+                                                <td>context</td>
+                                            <td>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>    <code>unknown</code>
+
+                        </div>
+                            <div class="io-description">
+                                <p>}</p>
+
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="disableAuthOTP"></a>
+                    <span class="name">
+                            <span class="modifier"></span>
+                            <span class="modifier"></span>
+                            <span class="modifier">Async</span>
+                        <span ><b>disableAuthOTP</b></span>
+                        <a href="#disableAuthOTP"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>disableAuthOTP(token: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>, context)</code>
+                </td>
+            </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <b>Decorators : </b>
+                    <br />
+                    <code>@Mutation(undefined, {name: &#x27;disableAuthOTP&#x27;})<br />@UseGuards(JwtAuthGuard)<br /></code>
+                </td>
+            </tr>
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="381"
+                                    class="link-to-prism">apps/cms-api/src/modules/auth/auth.resolver.ts:381</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>disable otp authenticator</p>
+</div>
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>token</td>
+                                            <td>
+                                                            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                        <tr>
+                                                <td>context</td>
+                                            <td>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>    <code>unknown</code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="forgotPassword"></a>
+                    <span class="name">
+                            <span class="modifier"></span>
+                            <span class="modifier">Async</span>
+                        <span ><b>forgotPassword</b></span>
+                        <a href="#forgotPassword"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>forgotPassword(input: <a href="../classes/ForgotPasswordDTO.html" target="_self">ForgotPasswordDTO</a>)</code>
+                </td>
+            </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <b>Decorators : </b>
+                    <br />
+                    <code>@Mutation(undefined, {name: &#x27;forgotPassword&#x27;})<br /></code>
+                </td>
+            </tr>
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="167"
+                                    class="link-to-prism">apps/cms-api/src/modules/auth/auth.resolver.ts:167</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>${1:Description placeholder}</p>
+</div>
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>input</td>
+                                            <td>
+                                                            <code><a href="../classes/ForgotPasswordDTO.html" target="_self" >ForgotPasswordDTO</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>    <code>unknown</code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="generateOtpAuthUrl"></a>
+                    <span class="name">
+                            <span class="modifier"></span>
+                            <span class="modifier"></span>
+                            <span class="modifier">Async</span>
+                        <span ><b>generateOtpAuthUrl</b></span>
+                        <a href="#generateOtpAuthUrl"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>generateOtpAuthUrl(user)</code>
+                </td>
+            </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <b>Decorators : </b>
+                    <br />
+                    <code>@Query(undefined, {name: &#x27;generateOtpAuthUrl&#x27;})<br />@UseGuards(JwtAuthGuard)<br /></code>
+                </td>
+            </tr>
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="347"
+                                    class="link-to-prism">apps/cms-api/src/modules/auth/auth.resolver.ts:347</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>${1:Description placeholder}</p>
+</div>
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>user</td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>    <code>unknown</code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getUserProfile"></a>
+                    <span class="name">
+                            <span class="modifier"></span>
+                            <span class="modifier"></span>
+                            <span class="modifier">Async</span>
+                        <span ><b>getUserProfile</b></span>
+                        <a href="#getUserProfile"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>getUserProfile(user)</code>
+                </td>
+            </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <b>Decorators : </b>
+                    <br />
+                    <code>@Query(undefined, {name: &#x27;getUserProfile&#x27;})<br />@Auth(&#x27;all&#x27;)<br /></code>
+                </td>
+            </tr>
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="88"
+                                    class="link-to-prism">apps/cms-api/src/modules/auth/auth.resolver.ts:88</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>${1:Description placeholder}</p>
+</div>
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>user</td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>    <code>unknown</code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="login"></a>
+                    <span class="name">
+                            <span class="modifier"></span>
+                            <span class="modifier"></span>
+                            <span class="modifier">Async</span>
+                        <span ><b>login</b></span>
+                        <a href="#login"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>login(input: <a href="../classes/LoginAdminDTO.html" target="_self">LoginAdminDTO</a>, context)</code>
+                </td>
+            </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <b>Decorators : </b>
+                    <br />
+                    <code>@Mutation(undefined, {name: &#x27;login&#x27;})<br />@UseGuards(GqlAuthGuard)<br /></code>
+                </td>
+            </tr>
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="123"
+                                    class="link-to-prism">apps/cms-api/src/modules/auth/auth.resolver.ts:123</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>${1:Description placeholder}</p>
+</div>
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>input</td>
+                                            <td>
+                                                            <code><a href="../classes/LoginAdminDTO.html" target="_self" >LoginAdminDTO</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                        <tr>
+                                                <td>context</td>
+                                            <td>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>    <code>unknown</code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="otpVerificationFor2FA"></a>
+                    <span class="name">
+                            <span class="modifier"></span>
+                            <span class="modifier">Async</span>
+                        <span ><b>otpVerificationFor2FA</b></span>
+                        <a href="#otpVerificationFor2FA"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>otpVerificationFor2FA(input: <a href="../classes/OtpVerificationFor2FADTO.html" target="_self">OtpVerificationFor2FADTO</a>)</code>
+                </td>
+            </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <b>Decorators : </b>
+                    <br />
+                    <code>@Mutation(undefined, {name: &#x27;otpVerificationFor2FA&#x27;})<br /></code>
+                </td>
+            </tr>
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="281"
+                                    class="link-to-prism">apps/cms-api/src/modules/auth/auth.resolver.ts:281</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>${1:Description placeholder}</p>
+</div>
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>input</td>
+                                            <td>
+                                                            <code><a href="../classes/OtpVerificationFor2FADTO.html" target="_self" >OtpVerificationFor2FADTO</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>    <code>unknown</code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="refreshToken"></a>
+                    <span class="name">
+                            <span class="modifier"></span>
+                            <span class="modifier">Async</span>
+                        <span ><b>refreshToken</b></span>
+                        <a href="#refreshToken"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>refreshToken(refreshToken: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
+                </td>
+            </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <b>Decorators : </b>
+                    <br />
+                    <code>@Mutation(undefined, {name: &#x27;refresh&#x27;})<br /></code>
+                </td>
+            </tr>
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="262"
+                                    class="link-to-prism">apps/cms-api/src/modules/auth/auth.resolver.ts:262</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Get new refresh tokens</p>
+</div>
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>refreshToken</td>
+                                            <td>
+                                                            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>    <code>unknown</code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="resend2FAOtpCode"></a>
+                    <span class="name">
+                            <span class="modifier"></span>
+                            <span class="modifier">Async</span>
+                        <span ><b>resend2FAOtpCode</b></span>
+                        <a href="#resend2FAOtpCode"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>resend2FAOtpCode(input: <a href="../classes/Resend2FAOtpCodeDTO.html" target="_self">Resend2FAOtpCodeDTO</a>)</code>
+                </td>
+            </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <b>Decorators : </b>
+                    <br />
+                    <code>@Mutation(undefined, {name: &#x27;resendOtpCode&#x27;})<br /></code>
+                </td>
+            </tr>
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="302"
+                                    class="link-to-prism">apps/cms-api/src/modules/auth/auth.resolver.ts:302</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>${1:Description placeholder}</p>
+</div>
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>input</td>
+                                            <td>
+                                                            <code><a href="../classes/Resend2FAOtpCodeDTO.html" target="_self" >Resend2FAOtpCodeDTO</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>    <code>unknown</code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="resetPassword"></a>
+                    <span class="name">
+                            <span class="modifier"></span>
+                            <span class="modifier">Async</span>
+                        <span ><b>resetPassword</b></span>
+                        <a href="#resetPassword"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>resetPassword(input: <a href="../classes/ResetPasswordDTO.html" target="_self">ResetPasswordDTO</a>)</code>
+                </td>
+            </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <b>Decorators : </b>
+                    <br />
+                    <code>@Mutation(undefined, {name: &#x27;resetPassword&#x27;})<br /></code>
+                </td>
+            </tr>
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="211"
+                                    class="link-to-prism">apps/cms-api/src/modules/auth/auth.resolver.ts:211</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>${1:Description placeholder}</p>
+</div>
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>input</td>
+                                            <td>
+                                                            <code><a href="../classes/ResetPasswordDTO.html" target="_self" >ResetPasswordDTO</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>    <code>unknown</code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="resetPasswordOtpVerification"></a>
+                    <span class="name">
+                            <span class="modifier"></span>
+                            <span class="modifier">Async</span>
+                        <span ><b>resetPasswordOtpVerification</b></span>
+                        <a href="#resetPasswordOtpVerification"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>resetPasswordOtpVerification(input: <a href="../classes/ResetPasswordOtpVerificationDTO.html" target="_self">ResetPasswordOtpVerificationDTO</a>)</code>
+                </td>
+            </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <b>Decorators : </b>
+                    <br />
+                    <code>@Mutation(undefined, {name: &#x27;resetPasswordOtpVerification&#x27;})<br /></code>
+                </td>
+            </tr>
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="192"
+                                    class="link-to-prism">apps/cms-api/src/modules/auth/auth.resolver.ts:192</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>${1:Description placeholder}</p>
+</div>
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>input</td>
+                                            <td>
+                                                            <code><a href="../classes/ResetPasswordOtpVerificationDTO.html" target="_self" >ResetPasswordOtpVerificationDTO</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>    <code>unknown</code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="signup"></a>
+                    <span class="name">
+                            <span class="modifier"></span>
+                            <span class="modifier">Async</span>
+                        <span ><b>signup</b></span>
+                        <a href="#signup"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>signup(input: <a href="../classes/CreateAdminDTO.html" target="_self">CreateAdminDTO</a>)</code>
+                </td>
+            </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <b>Decorators : </b>
+                    <br />
+                    <code>@Mutation(undefined, {name: &#x27;register&#x27;})<br /></code>
+                </td>
+            </tr>
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="144"
+                                    class="link-to-prism">apps/cms-api/src/modules/auth/auth.resolver.ts:144</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>${1:Description placeholder}</p>
+</div>
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>input</td>
+                                            <td>
+                                                            <code><a href="../classes/CreateAdminDTO.html" target="_self" >CreateAdminDTO</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>    <code>unknown</code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="validateAuthOTP"></a>
+                    <span class="name">
+                            <span class="modifier"></span>
+                            <span class="modifier">Async</span>
+                        <span ><b>validateAuthOTP</b></span>
+                        <a href="#validateAuthOTP"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>validateAuthOTP(input: <a href="../classes/validateAuthOTPInput.html" target="_self">validateAuthOTPInput</a>)</code>
+                </td>
+            </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <b>Decorators : </b>
+                    <br />
+                    <code>@Mutation(undefined, {name: &#x27;validateAuthOTP&#x27;})<br /></code>
+                </td>
+            </tr>
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="370"
+                                    class="link-to-prism">apps/cms-api/src/modules/auth/auth.resolver.ts:370</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>verify auth otp</p>
+</div>
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>input</td>
+                                            <td>
+                                                            <code><a href="../classes/validateAuthOTPInput.html" target="_self" >validateAuthOTPInput</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>    <code>unknown</code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="verifyAuthOTP"></a>
+                    <span class="name">
+                            <span class="modifier"></span>
+                            <span class="modifier"></span>
+                            <span class="modifier">Async</span>
+                        <span ><b>verifyAuthOTP</b></span>
+                        <a href="#verifyAuthOTP"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>verifyAuthOTP(token: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>, context)</code>
+                </td>
+            </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <b>Decorators : </b>
+                    <br />
+                    <code>@Mutation(undefined, {name: &#x27;verifyAuthOTP&#x27;})<br />@UseGuards(JwtAuthGuard)<br /></code>
+                </td>
+            </tr>
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="359"
+                                    class="link-to-prism">apps/cms-api/src/modules/auth/auth.resolver.ts:359</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>verify auth otp</p>
+</div>
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>token</td>
+                                            <td>
+                                                            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                        <tr>
+                                                <td>context</td>
+                                            <td>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>    <code>unknown</code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="verifyToken"></a>
+                    <span class="name">
+                            <span class="modifier"></span>
+                            <span class="modifier">Async</span>
+                        <span ><b>verifyToken</b></span>
+                        <a href="#verifyToken"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>verifyToken(input: <a href="../classes/ResetPasswordDTO.html" target="_self">ResetPasswordDTO</a>)</code>
+                </td>
+            </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <b>Decorators : </b>
+                    <br />
+                    <code>@Mutation(undefined, {name: &#x27;verifyToken&#x27;})<br /></code>
+                </td>
+            </tr>
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="224"
+                                    class="link-to-prism">apps/cms-api/src/modules/auth/auth.resolver.ts:224</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>${1:Description placeholder}</p>
+</div>
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>input</td>
+                                            <td>
+                                                            <code><a href="../classes/ResetPasswordDTO.html" target="_self" >ResetPasswordDTO</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>    <code>unknown</code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+
+
+
+
+
+    </div>
+
+
+    <div class="tab-pane fade  tab-source-code" id="source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { UseGuards, BadRequestException, UnauthorizedException } from &#x27;@nestjs/common&#x27;;
+import { Args, Context, Mutation, Query, Resolver } from &#x27;@nestjs/graphql&#x27;;
+import { AdminType } from &#x27;../admin/dto/response/admin.response&#x27;;
+
+import { CurrentUser } from &#x27;./decorator/get-user.decorator&#x27;;
+import { ChangePasswordDTO } from &#x27;./dto/input/change-password.dto&#x27;;
+import { CreateAdminDTO } from &#x27;./dto/input/create-admin.dto&#x27;;
+import { LoginAdminDTO } from &#x27;./dto/input/login-admin.dto&#x27;;
+import {
+  ForgotPasswordDTO,
+  ResetPasswordDTO,
+  ResetPasswordOtpVerificationDTO,
+} from &#x27;./dto/input/reset-password.dto&#x27;;
+import {
+  AdminLoginResponse,
+  ChangePasswordResponse,
+  RefreshTokenResponse,
+} from &#x27;./dto/response/auth-response&#x27;;
+import { JwtAuthGuard } from &#x27;./guard/jwt.authguard&#x27;;
+
+import { GqlAuthGuard } from &#x27;./guard/local.authguard&#x27;;
+import { AuthService } from &#x27;./service/auth.service&#x27;;
+import lang from &#x27;../../constants/language&#x27;;
+import { Auth } from &#x27;./decorator/auth.decorator&#x27;;
+import { ResetPWOtpVerificationResponse } from &#x27;./dto/response/reset-password.dto&#x27;;
+import {
+  AuthUrlResponse,
+  ResendOtpCodeResponse,
+  VerifyAuthOtpResponse,
+} from &#x27;./dto/response/2fa-response&#x27;;
+import {
+  OtpVerificationFor2FADTO,
+  Resend2FAOtpCodeDTO,
+  validateAuthOTPInput,
+} from &#x27;./dto/input/2fa-otp.dto&#x27;;
+// import { PreSignedUrlInput } from &#x27;./dto/input/upload-profile-image.dto&#x27;;
+// import { PreSignedUrlResponse } from &#x27;@api/modules/users/dto/response/signed-url.response&#x27;;
+import { SignedUrlMethod } from &#x27;@app/common/enum/signed-url.enum&#x27;;
+import { ForgotPasswordResponse } from &#x27;./dto/response/forgort-password-response&#x27;;
+import { TokenService } from &#x27;../admin/service/token.service&#x27;;
+import { AdminRepository } from &#x27;@app/data-access&#x27;;
+import { S3Service } from &#x27;@app/common/services/aws&#x27;;
+import { SettingService } from &#x27;../settings/settings.service&#x27;;
+// import { MessageResponse } from &#x27;@app/common/dto/response/message.response&#x27;;
+//import { CloudFrontService } from &#x27;@app/common/services/aws/cloudfront.service&#x27;;
+
+/**
+ * ${1:Description placeholder}
+ *
+ * @export
+ * @class AuthResolver
+ * @typedef {AuthResolver}
+ */
+@Resolver()
+export class AuthResolver {
+  /**
+   * Creates an instance of AuthResolver.
+   *
+   * @constructor
+   * @param {AuthService} authService
+   * @param {S3Service} s3Service
+   * @param {TokenService} tokenService
+   * @param {AdminRepository} adminRepository
+   */
+  constructor(
+    private authService: AuthService,
+    private s3Service: S3Service,
+    //private cloudFrontService: CloudFrontService,
+    private tokenService: TokenService,
+    private adminRepository: AdminRepository,
+    private readonly settingService: SettingService,
+  ) {}
+
+  /*
+  @desc     Get user details
+  @access   Private
+  @res      getUserProfile 
+   */
+  /**
+   * ${1:Description placeholder}
+   *
+   * @async
+   * @param {*} user
+   * @returns {Promise&lt;any&gt;}
+   */
+  @Query(() &#x3D;&gt; AdminType, { name: &#x27;getUserProfile&#x27; })
+  @Auth(&#x27;all&#x27;)
+  async getUserProfile(@CurrentUser() user) {
+    try {
+      const userProfile: any &#x3D; await this.authService.getProfile(user.id);
+      if (userProfile?.profileImage) {
+        const objectKey &#x3D; &#x60;cms/profiles/${userProfile.profileImage}&#x60;;
+        const contentType &#x3D; &#x27;image/*&#x27;;
+        userProfile.profileImageUrl &#x3D; await this.s3Service.getPreSignedUrl(
+          objectKey,
+          SignedUrlMethod.GET,
+          contentType,
+        );
+      }
+
+      return userProfile;
+    } catch (e) {
+      throw new BadRequestException(e?.message);
+    }
+  }
+
+  /*
+  @desc     User login
+  @access   Public
+  @res      login 
+  @params   {email: string, password: string}
+   */
+  /**
+   * ${1:Description placeholder}
+   *
+   * @async
+   * @param {LoginAdminDTO} input
+   * @param {*} context
+   * @returns {Promise&lt;any&gt;}
+   */
+  @Mutation(() &#x3D;&gt; AdminLoginResponse, { name: &#x27;login&#x27; })
+  @UseGuards(GqlAuthGuard)
+  async login(@Args(&#x27;input&#x27;) input: LoginAdminDTO, @Context() context) {
+    const { browser } &#x3D; context.body;
+    const response &#x3D; await this.authService.login(context.user, browser);
+    const settings &#x3D; await this.settingService.getAllSettings();
+    return { ...response, settings };
+  }
+
+  /*
+  @desc     Register Admin
+  @access   Public
+  @res      register 
+  @params    {name: string, email: string, password: string, role: string, phone: string}
+   */
+  /**
+   * ${1:Description placeholder}
+   *
+   * @async
+   * @param {CreateAdminDTO} input
+   * @returns {Promise&lt;any&gt;}
+   */
+  @Mutation(() &#x3D;&gt; AdminType, { name: &#x27;register&#x27; })
+  async signup(@Args(&#x27;input&#x27;) input: CreateAdminDTO) {
+    const newAdmin &#x3D; await this.authService.createAdmin(input);
+    if (!newAdmin) {
+      throw new BadRequestException();
+    }
+
+    return newAdmin;
+  }
+
+  /*
+  @desc     Change user password
+  @access   Public
+  @res      changePassword 
+  @params   {userId: string, password: string}
+   */
+  /**
+   * ${1:Description placeholder}
+   *
+   * @async
+   * @param {ForgotPasswordDTO} input
+   * @returns {Promise&lt;any&gt;}
+   */
+  @Mutation(() &#x3D;&gt; ForgotPasswordResponse, { name: &#x27;forgotPassword&#x27; })
+  async forgotPassword(@Args(&#x27;input&#x27;) input: ForgotPasswordDTO) {
+    const result &#x3D; await this.authService.forgotPassword(input);
+    if (!result) {
+      throw new BadRequestException();
+    }
+
+    return result;
+  }
+
+  /*
+  @desc     Verify otp for reset password
+  @access   Public
+  @res      resetPasswordOtpVerification
+  @params   {userId: string, password: string}
+   */
+  /**
+   * ${1:Description placeholder}
+   *
+   * @async
+   * @param {ResetPasswordOtpVerificationDTO} input
+   * @returns {Promise&lt;any&gt;}
+   */
+  @Mutation(() &#x3D;&gt; ResetPWOtpVerificationResponse, {
+    name: &#x27;resetPasswordOtpVerification&#x27;,
+  })
+  async resetPasswordOtpVerification(@Args(&#x27;input&#x27;) input: ResetPasswordOtpVerificationDTO) {
+    const result &#x3D; await this.authService.resetPasswordOtpVerification(input);
+    return { ...result };
+  }
+
+  /*
+  @desc     Change user password
+  @access   Private
+  @res      changePassword 
+  @params   {userId: string, password: string}
+   */
+  /**
+   * ${1:Description placeholder}
+   *
+   * @async
+   * @param {ResetPasswordDTO} input
+   * @returns {Promise&lt;any&gt;}
+   */
+  @Mutation(() &#x3D;&gt; Boolean, { name: &#x27;resetPassword&#x27; })
+  async resetPassword(@Args(&#x27;input&#x27;) input: ResetPasswordDTO) {
+    const { userId, token, password } &#x3D; input;
+    return this.authService.resetPassword(userId, token, password);
+  }
+
+  /**
+   * ${1:Description placeholder}
+   *
+   * @async
+   * @param {ResetPasswordDTO} input
+   * @returns {Promise&lt;boolean&gt;}
+   */
+  @Mutation(() &#x3D;&gt; Boolean, { name: &#x27;verifyToken&#x27; })
+  async verifyToken(@Args(&#x27;input&#x27;) input: ResetPasswordDTO) {
+    const { userId, token } &#x3D; input;
+    const validToken &#x3D; await this.tokenService.validate(userId, token);
+    if (!validToken) {
+      throw new UnauthorizedException(&#x27;Invalid link&#x27;);
+    }
+    return true;
+  }
+
+  /*
+  @desc     Change user password
+  @access   Private
+  @res      changePassword 
+  @params   {userId: string, password: string}
+   */
+  /**
+   * ${1:Description placeholder}
+   *
+   * @async
+   * @param {ChangePasswordDTO} input
+   * @param {*} context
+   * @returns {Promise&lt;{ message: any; status: any; }&gt;\}
+   */
+  @Mutation(() &#x3D;&gt; ChangePasswordResponse, { name: &#x27;changePassword&#x27; })
+  @UseGuards(JwtAuthGuard)
+  async changePassword(@Args(&#x27;input&#x27;) input: ChangePasswordDTO, @Context() context) {
+    const body &#x3D; { ...input };
+    const userId &#x3D; context?.req?.user?.id;
+    const status &#x3D; await this.authService.changePassword(body, userId);
+    return { message: lang.PASSWORD_CHANGED_SUCCESSFULLY, status };
+  }
+
+  /**
+   * Get new refresh tokens
+   * @param refreshToken
+   * @returns
+   */
+  @Mutation(() &#x3D;&gt; RefreshTokenResponse, { name: &#x27;refresh&#x27; })
+  async refreshToken(@Args(&#x27;refreshToken&#x27;) refreshToken: string) {
+    return this.authService.refresh(refreshToken);
+  }
+  /*
+  @desc     Verify otp for 2FA
+  @access   Public
+  @res      OtpVerificationFor2FA
+  @params   {email: string, otp: string}
+   */
+  /**
+   * ${1:Description placeholder}
+   *
+   * @async
+   * @param {OtpVerificationFor2FADTO} input
+   * @returns {Promise&lt;any&gt;}
+   */
+  @Mutation(() &#x3D;&gt; AdminLoginResponse, {
+    name: &#x27;otpVerificationFor2FA&#x27;,
+  })
+  async otpVerificationFor2FA(@Args(&#x27;input&#x27;) input: OtpVerificationFor2FADTO) {
+    const result &#x3D; await this.authService.otpVerificationFor2FA(input);
+    return { ...result };
+  }
+
+  /*
+  @desc     Verify otp for 2FA
+  @access   Public
+  @res      OtpVerificationFor2FA
+  @params   {email: string, otp: string}
+   */
+  /**
+   * ${1:Description placeholder}
+   *
+   * @async
+   * @param {Resend2FAOtpCodeDTO} input
+   * @returns {Promise&lt;any&gt;}
+   */
+  @Mutation(() &#x3D;&gt; ResendOtpCodeResponse, {
+    name: &#x27;resendOtpCode&#x27;,
+  })
+  async resend2FAOtpCode(@Args(&#x27;input&#x27;) input: Resend2FAOtpCodeDTO) {
+    const result &#x3D; await this.authService.resend2FAOtpCode({
+      ...input,
+    });
+    return { ...result };
+  }
+
+  // @Mutation(() &#x3D;&gt; PreSignedUrlResponse, { name: &#x27;getPreSignedUrl&#x27; })
+  // @Auth(&#x27;all&#x27;)
+  // async getPreSignedUrl(@Args(&#x27;input&#x27;) input: PreSignedUrlInput) {
+  //   const { method, path, contentType } &#x3D; input;
+  //   try {
+  //     if (method &#x3D;&#x3D;&#x3D; &#x27;PUT&#x27; &amp;&amp; !contentType) {
+  //       throw new BadRequestException(
+  //         &#x27;Content type is required for PUT request&#x27;,
+  //       );
+  //     }
+  //     const url &#x3D; await this.s3Service.getPreSignedUrl(
+  //       path,
+  //       method,
+  //       contentType,
+  //     );
+  //     return {
+  //       message: &#x27;PreSigned url get successful&#x27;,
+  //       url,
+  //     };
+  //   } catch (error) {
+  //     throw error;
+  //   }
+  // }
+
+  /*
+  @desc     generate otp auth url
+  @access   Private
+  @res      generateOtpAuthUrl 
+   */
+  /**
+   * ${1:Description placeholder}
+   *
+   * @async
+   * @param {*} user
+   * @returns {Promise&lt;any&gt;}
+   */
+  @Query(() &#x3D;&gt; AuthUrlResponse, { name: &#x27;generateOtpAuthUrl&#x27; })
+  @UseGuards(JwtAuthGuard)
+  async generateOtpAuthUrl(@CurrentUser() user) {
+    const otpAuthUrl &#x3D; await this.authService.generateOtpAuthUrl(user.id);
+    return otpAuthUrl;
+  }
+
+  /**
+   * verify auth otp
+   * @param token
+   * @returns
+   */
+  @Mutation(() &#x3D;&gt; VerifyAuthOtpResponse, { name: &#x27;verifyAuthOTP&#x27; })
+  @UseGuards(JwtAuthGuard)
+  async verifyAuthOTP(@Args(&#x27;token&#x27;) token: string, @Context() context) {
+    const userId &#x3D; context?.req?.user?.id;
+    return this.authService.verifyAuthOTP({ token, userId });
+  }
+
+  /**
+   * verify auth otp
+   * @param validateAuthOTPInput
+   * @returns
+   */
+  @Mutation(() &#x3D;&gt; AdminLoginResponse, { name: &#x27;validateAuthOTP&#x27; })
+  async validateAuthOTP(@Args(&#x27;input&#x27;) input: validateAuthOTPInput) {
+    const { email, otp } &#x3D; input;
+    return this.authService.validateAuthOTP({ token: otp, email });
+  }
+
+  /**
+   * disable otp authenticator
+   * @returns
+   */
+  @Mutation(() &#x3D;&gt; Boolean, { name: &#x27;disableAuthOTP&#x27; })
+  @UseGuards(JwtAuthGuard)
+  async disableAuthOTP(@Args(&#x27;token&#x27;) token: string, @Context() context) {
+    const userId &#x3D; context?.req?.user?.id;
+    if (userId) {
+      return this.authService.disableAuthOTP(token, userId);
+    }
+  }
+}
+</code></pre>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+          <label class="dark-mode-switch">
+               <input type="checkbox">
+               <span class="slider">
+                    <svg class="slider-icon" viewBox="0 0 24 24" fill="none" height="20" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" width="20" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"></path>
+                    </svg>
+               </span>
+          </label>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'class';
+            var COMPODOC_CURRENT_PAGE_URL = 'AuthResolver.html';
+            var MAX_SEARCH_RESULTS = 15;
+       </script>
+
+       <script>
+               $darkModeToggleSwitchers = document.querySelectorAll('.dark-mode-switch input');
+               checkToggle(darkModeState);
+               if ($darkModeToggleSwitchers.length > 0) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].addEventListener('change', function (event) {
+                              darkModeState = !darkModeState;
+                              toggleDarkMode(darkModeState);
+                         });
+                    }
+               }
+          </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+
+       <script src="../js/menu-wc.js" defer></script>
+       <script nomodule src="../js/menu-wc_es5.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>

@@ -1,0 +1,37 @@
+services:
+  cms-api:
+    hostname: cms-api
+    container_name: cms-api
+    build:
+      context: .  # Use the Dockerfile in the current directory
+      dockerfile: docker/Dockerfile.cmsapi
+    command: sh -c "npm install && npm run start:dev cms-api"
+    volumes:
+      - .:/app
+      - /app/node_modules  # Prevents overwriting node_modules
+    ports:
+      - "3001:3001"
+  api:
+    hostname: api
+    container_name: api
+    build:
+      context: .  # Use the Dockerfile in the current directory
+      dockerfile: docker/Dockerfile.api
+    command: sh -c "npm install && npm run start:dev"
+    volumes:
+      - .:/app
+      - /app/node_modules  # Prevents overwriting node_modules
+    ports:
+      - "3000:3000"
+  cron:
+    hostname: cron-api
+    container_name: cron-api
+    build:
+      context: .  # Use the Dockerfile in the current directory
+      dockerfile: docker/Dockerfile.cronapi
+    command: sh -c "npm install && npm run start:dev cron"
+    volumes:
+      - .:/app
+      - /app/node_modules  # Prevents overwriting node_modules
+    ports:
+      - "3002:3002"

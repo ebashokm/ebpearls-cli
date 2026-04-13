@@ -1,0 +1,1809 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>nest-ebtheme documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	   <link rel="stylesheet" href="../styles/style.css">
+        <link rel="stylesheet" href="../styles/dark.css">
+    </head>
+    <body>
+          <script>
+               // Blocking script to avoid flickering dark mode
+               // Dark mode toggle button
+               var useDark = window.matchMedia('(prefers-color-scheme: dark)');
+               var darkModeState = useDark.matches;
+               var $darkModeToggleSwitchers = document.querySelectorAll('.dark-mode-switch input');
+               var $darkModeToggles = document.querySelectorAll('.dark-mode-switch');
+               var darkModeStateLocal = localStorage.getItem('compodoc_darkmode-state');
+
+               function checkToggle(check) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].checked = check;
+                    }
+               }
+
+               function toggleDarkMode(state) {
+                    if (window.localStorage) {
+                         localStorage.setItem('compodoc_darkmode-state', state);
+                    }
+
+                    checkToggle(state);
+
+                    const hasClass = document.body.classList.contains('dark');
+
+                    if (state) {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.add('dark');
+                         }
+                         if (!hasClass) {
+                              document.body.classList.add('dark');
+                         }
+                    } else {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.remove('dark');
+                         }
+                         if (hasClass) {
+                              document.body.classList.remove('dark');
+                         }
+                    }
+               }
+
+               useDark.addEventListener('change', function (evt) {
+                    toggleDarkMode(evt.matches);
+               });
+               if (darkModeStateLocal) {
+                    darkModeState = darkModeStateLocal === 'true';
+               }
+               toggleDarkMode(darkModeState);
+          </script>
+
+        <div class="navbar navbar-default navbar-fixed-top d-md-none p-0">
+               <div class="d-flex">
+                    <a href="../" class="navbar-brand">nest-ebtheme documentation</a>
+                    <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+               </div>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="d-none d-md-block menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content injectable">
+                   <div class="content-data">
+
+
+
+
+
+
+
+
+<ol class="breadcrumb">
+  <li class="breadcrumb-item">Injectables</li>
+  <li class="breadcrumb-item" >AppUserService</li>
+</ol>
+
+<ul class="nav nav-tabs" role="tablist">
+        <li class="nav-item">
+            <a href="#info" 
+                class="nav-link"
+                class="nav-link active"
+                role="tab" id="info-tab" data-bs-toggle="tab" data-link="info">Info</a>
+        </li>
+        <li class="nav-item">
+            <a href="#source" 
+                class="nav-link"
+                
+                role="tab" id="source-tab" data-bs-toggle="tab" data-link="source">Source</a>
+        </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="info">
+        <p class="comment">
+            <h3>File</h3>
+        </p>
+        <p class="comment">
+            <code>apps/cms-api/src/modules/app-user/app-user.service.ts</code>
+        </p>
+
+
+            <p class="comment">
+                <h3>Description</h3>
+            </p>
+            <p class="comment">
+                <p>${1:Description placeholder}</p>
+
+            </p>
+
+
+
+            <section data-compodoc="block-index">
+    <h3 id="index">Index</h3>
+    <table class="table table-sm table-bordered index-table">
+        <tbody>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Methods</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                    <span class="modifier">Async</span>
+                                <a href="#changePassword" >changePassword</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Async</span>
+                                <a href="#createUser" >createUser</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Async</span>
+                                <a href="#deleteUser" >deleteUser</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Async</span>
+                                <a href="#getAllUsers" >getAllUsers</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Async</span>
+                                <a href="#getUser" >getUser</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Async</span>
+                                <a href="#getUserById" >getUserById</a>
+                            </li>
+                            <li>
+                                    <span class="modifier"></span>
+                                    <span class="modifier">Async</span>
+                                <a href="#handleTermsVersionUpdate" >handleTermsVersionUpdate</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Async</span>
+                                <a href="#resetPassword" >resetPassword</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Async</span>
+                                <a href="#sendResetPasswordMail" >sendResetPasswordMail</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Async</span>
+                                <a href="#updateUser" >updateUser</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+            <section data-compodoc="block-constructor">
+    <h3 id="constructor">Constructor</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                                <span class="modifier">Public</span>
+                        <code>constructor(userRepository: <a href="../injectables/UsersRepository.html" target="_self">UsersRepository</a>, locationService: <a href="../injectables/LocationService.html" target="_self">LocationService</a>, hashService: <a href="../injectables/HashService.html" target="_self">HashService</a>, emailService: <a href="../injectables/EmailService.html" target="_self">EmailService</a>, cometChatHelperService: <a href="../injectables/CometChatHelperService.html" target="_self">CometChatHelperService</a>, s3Service: <a href="../injectables/S3Service.html" target="_self">S3Service</a>, tokenService: <a href="../classes/TokenService.html" target="_self">TokenService</a>, configService: ConfigService, i18nService: I18nService, eventsService: <a href="../injectables/EventsService.html" target="_self">EventsService</a>, userEventsService: <a href="../injectables/UserEventsService.html" target="_self">UserEventsService</a>)</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="46" class="link-to-prism">apps/cms-api/src/modules/app-user/app-user.service.ts:46</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                            <div class="io-description"><p>Creates an instance of AppUserService.</p>
+</div>
+                            <div>
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>userRepository</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/UsersRepository.html" target="_self" >UsersRepository</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>locationService</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/LocationService.html" target="_self" >LocationService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>hashService</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/HashService.html" target="_self" >HashService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>emailService</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/EmailService.html" target="_self" >EmailService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>cometChatHelperService</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/CometChatHelperService.html" target="_self" >CometChatHelperService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>s3Service</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/S3Service.html" target="_self" >S3Service</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>tokenService</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../classes/TokenService.html" target="_self" >TokenService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>configService</td>
+                                                  
+                                                        <td>
+                                                                    <code>ConfigService</code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>i18nService</td>
+                                                  
+                                                        <td>
+                                                                    <code>I18nService</code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>eventsService</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/EventsService.html" target="_self" >EventsService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>userEventsService</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/UserEventsService.html" target="_self" >UserEventsService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+</section>
+
+            <section data-compodoc="block-methods">
+    
+    <h3 id="methods">
+        Methods
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="changePassword"></a>
+                    <span class="name">
+                            <span class="modifier">Async</span>
+                        <span ><b>changePassword</b></span>
+                        <a href="#changePassword"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>changePassword(input: <a href="../classes/AppUserChangePasswordDTO.html" target="_self">AppUserChangePasswordDTO</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="266"
+                                    class="link-to-prism">apps/cms-api/src/modules/app-user/app-user.service.ts:266</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                                <td>Description</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>input</td>
+                                            <td>
+                                                            <code><a href="../classes/AppUserChangePasswordDTO.html" target="_self" >AppUserChangePasswordDTO</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                            <td>
+                                                    <p>change password data</p>
+
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>    <code>unknown</code>
+
+                        </div>
+                            <div class="io-description">
+                                <p>true if successful</p>
+
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="createUser"></a>
+                    <span class="name">
+                            <span class="modifier">Async</span>
+                        <span ><b>createUser</b></span>
+                        <a href="#createUser"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>createUser(input: <a href="../classes/CreateAppUserDTO.html" target="_self">CreateAppUserDTO</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="101"
+                                    class="link-to-prism">apps/cms-api/src/modules/app-user/app-user.service.ts:101</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>${1:Description placeholder}</p>
+</div>
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>input</td>
+                                            <td>
+                                                            <code><a href="../classes/CreateAppUserDTO.html" target="_self" >CreateAppUserDTO</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>    <code>unknown</code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="deleteUser"></a>
+                    <span class="name">
+                            <span class="modifier">Async</span>
+                        <span ><b>deleteUser</b></span>
+                        <a href="#deleteUser"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>deleteUser(id: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="429"
+                                    class="link-to-prism">apps/cms-api/src/modules/app-user/app-user.service.ts:429</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>${1:Description placeholder}</p>
+</div>
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>id</td>
+                                            <td>
+                                                            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>    <code>unknown</code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getAllUsers"></a>
+                    <span class="name">
+                            <span class="modifier">Async</span>
+                        <span ><b>getAllUsers</b></span>
+                        <a href="#getAllUsers"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>getAllUsers(input: <a href="../classes/GetAppUsersDTO.html" target="_self">GetAppUsersDTO</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="455"
+                                    class="link-to-prism">apps/cms-api/src/modules/app-user/app-user.service.ts:455</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>${1:Description placeholder}</p>
+</div>
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>input</td>
+                                            <td>
+                                                            <code><a href="../classes/GetAppUsersDTO.html" target="_self" >GetAppUsersDTO</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>    <code>unknown</code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getUser"></a>
+                    <span class="name">
+                            <span class="modifier">Async</span>
+                        <span ><b>getUser</b></span>
+                        <a href="#getUser"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>getUser(id: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="496"
+                                    class="link-to-prism">apps/cms-api/src/modules/app-user/app-user.service.ts:496</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>${1:Description placeholder}</p>
+</div>
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>id</td>
+                                            <td>
+                                                            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>    <code>unknown</code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getUserById"></a>
+                    <span class="name">
+                            <span class="modifier">Async</span>
+                        <span ><b>getUserById</b></span>
+                        <a href="#getUserById"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>getUserById(id: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="510"
+                                    class="link-to-prism">apps/cms-api/src/modules/app-user/app-user.service.ts:510</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>${1:Description placeholder}</p>
+</div>
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>id</td>
+                                            <td>
+                                                            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>    <code>unknown</code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="handleTermsVersionUpdate"></a>
+                    <span class="name">
+                            <span class="modifier"></span>
+                            <span class="modifier">Async</span>
+                        <span ><b>handleTermsVersionUpdate</b></span>
+                        <a href="#handleTermsVersionUpdate"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>handleTermsVersionUpdate(payload: <a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank">any</a>)</code>
+                </td>
+            </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <b>Decorators : </b>
+                    <br />
+                    <code>@OnEvent(&#x27;user.termsVersionUpdated&#x27;)<br /></code>
+                </td>
+            </tr>
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="82"
+                                    class="link-to-prism">apps/cms-api/src/modules/app-user/app-user.service.ts:82</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>payload</td>
+                                            <td>
+                                                            <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="resetPassword"></a>
+                    <span class="name">
+                            <span class="modifier">Async</span>
+                        <span ><b>resetPassword</b></span>
+                        <a href="#resetPassword"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>resetPassword(userId: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>, token: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>, password: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="300"
+                                    class="link-to-prism">apps/cms-api/src/modules/app-user/app-user.service.ts:300</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>${1:Description placeholder}</p>
+</div>
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>userId</td>
+                                            <td>
+                                                            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                        <tr>
+                                                <td>token</td>
+                                            <td>
+                                                            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                        <tr>
+                                                <td>password</td>
+                                            <td>
+                                                            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>    <code>Promise&lt;boolean&gt;</code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="sendResetPasswordMail"></a>
+                    <span class="name">
+                            <span class="modifier">Async</span>
+                        <span ><b>sendResetPasswordMail</b></span>
+                        <a href="#sendResetPasswordMail"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>sendResetPasswordMail(email: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>, userId: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>, name: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="217"
+                                    class="link-to-prism">apps/cms-api/src/modules/app-user/app-user.service.ts:217</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Sends a reset password mail to the user with the given email.</p>
+</div>
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                                <td>Description</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>email</td>
+                                            <td>
+                                                            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                            <td>
+                                                    <ul>
+<li>The email of the user.</li>
+</ul>
+
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                                <td>userId</td>
+                                            <td>
+                                                            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                            <td>
+                                                    <ul>
+<li>The ID of the user.</li>
+</ul>
+
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                                <td>name</td>
+                                            <td>
+                                                            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                            <td>
+                                                    <ul>
+<li>The name of the user.</li>
+</ul>
+
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>    <code>Promise&lt;boolean&gt;</code>
+
+                        </div>
+                            <div class="io-description">
+                                <ul>
+<li>A promise that resolves to true if the reset password mail is sent successfully.</li>
+</ul>
+
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="updateUser"></a>
+                    <span class="name">
+                            <span class="modifier">Async</span>
+                        <span ><b>updateUser</b></span>
+                        <a href="#updateUser"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>updateUser(id: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>, input: <a href="../classes/UpdateAppUserDTO.html" target="_self">UpdateAppUserDTO</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="334"
+                                    class="link-to-prism">apps/cms-api/src/modules/app-user/app-user.service.ts:334</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Updates a user with the given ID using the provided input.</p>
+</div>
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                                <td>Description</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>id</td>
+                                            <td>
+                                                            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                            <td>
+                                                    <ul>
+<li>The ID of the user to update.</li>
+</ul>
+
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                                <td>input</td>
+                                            <td>
+                                                            <code><a href="../classes/UpdateAppUserDTO.html" target="_self" >UpdateAppUserDTO</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                            <td>
+                                                    <ul>
+<li>The input containing the updated user information.</li>
+</ul>
+
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>    <code>Promise&lt;AppUserResponse&gt;</code>
+
+                        </div>
+                            <div class="io-description">
+                                <p>The updated user.</p>
+
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+
+    </div>
+
+
+    <div class="tab-pane fade  tab-source-code" id="source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { UsersRepository } from &#x27;@app/data-access&#x27;;
+import {
+  BadRequestException,
+  HttpException,
+  HttpStatus,
+  Injectable,
+  NotFoundException,
+  Req,
+  UnauthorizedException,
+} from &#x27;@nestjs/common&#x27;;
+import * as mongoose from &#x27;mongoose&#x27;;
+
+import { ConfigService } from &#x27;@nestjs/config&#x27;;
+import { TokenService } from &#x27;../admin/service/token.service&#x27;;
+import { HashService } from &#x27;../auth/service/hash.service&#x27;;
+import * as crypto from &#x27;crypto&#x27;;
+import { CreateAppUserDTO } from &#x27;./dto/input/create-app-user.dto&#x27;;
+import { UpdateAppUserDTO } from &#x27;./dto/input/update-app-user.dto&#x27;;
+
+import lang from &#x27;../../constants/language&#x27;;
+import { GetAppUsersDTO } from &#x27;./dto/input/get-app-users.dto&#x27;;
+import { UserStatus } from &#x27;./dto/entity/app-user.entity&#x27;;
+import { Order } from &#x27;../../common/enum/pagination.enum&#x27;;
+import { AppUserChangePasswordDTO } from &#x27;./dto/input/appUser-change-password.dto&#x27;;
+import { CometChatHelperService } from &#x27;@app/common/helpers/comet-chat.helper&#x27;;
+import { isAllowedExt } from &#x27;@app/common/helpers/genericFunction&#x27;;
+import { S3Service, S3_TEMP_FOLDER_NAME } from &#x27;@app/common/services/aws&#x27;;
+import { SignedUrlMethod } from &#x27;@app/common/enum/signed-url.enum&#x27;;
+import { AppUserResponse } from &#x27;./dto/response/app-user.response&#x27;;
+import { EmailService } from &#x27;@app/email/email.service&#x27;;
+import { RequestedFor } from &#x27;@app/common/enum/otp-request.enum&#x27;;
+import { I18nService } from &#x27;nestjs-i18n&#x27;;
+import { LocationService } from &#x27;@app/common/services/google/location.service&#x27;;
+import { OnEvent } from &#x27;@nestjs/event-emitter&#x27;;
+import { EventsService } from &#x27;@app/common/services/sse/events.service&#x27;;
+import { UserEventsService } from &#x27;@app/common/services/sse/user.events.service&#x27;;
+
+/**
+ * ${1:Description placeholder}
+ *
+ * @export
+ * @class AppUserService
+ * @typedef {AppUserService}
+ */
+@Injectable()
+export class AppUserService {
+  /**
+   * Creates an instance of AppUserService.
+   *
+   * @constructor
+   * @public
+   * @param {UsersRepository} userRepository
+   * @param {LocationService} locationService
+   * @param {HashService} hashService
+   * @param {EmailService} emailService
+   * @param {CometChatHelperService} cometChatHelperService
+   * @param {S3Service} s3Service
+   * @param {TokenService} tokenService
+   * @param {ConfigService} configService
+   * @param { i18nService } i18nService
+   */
+  public constructor(
+    private userRepository: UsersRepository,
+    private locationService: LocationService,
+    private hashService: HashService,
+    private emailService: EmailService,
+    private readonly cometChatHelperService: CometChatHelperService,
+    private readonly s3Service: S3Service,
+    private tokenService: TokenService,
+    private configService: ConfigService,
+    private readonly i18nService: I18nService,
+    private readonly eventsService: EventsService,
+    private readonly userEventsService: UserEventsService,
+  ) {}
+
+  /**
+   * @description event listening to update termsVersionSynced which is emitted while creating page
+   * @param {string} payload
+   * @returns
+   */
+  @OnEvent(&#x27;user.termsVersionUpdated&#x27;)
+  async handleTermsVersionUpdate(payload: any) {
+    await this.userRepository.updateMany(
+      { isTermsVersionSynced: true },
+      { isTermsVersionSynced: payload.isTermsVersionSynced },
+    );
+
+    this.eventsService.sendEvent({
+      type: &#x27;terms-and-condition-version-updated&#x27;,
+      data: { version: &#x27;v1&#x27; },
+    });
+  }
+
+  /**
+   * ${1:Description placeholder}
+   *
+   * @async
+   * @param {CreateAppUserDTO} input
+   * @returns {Promise&lt;any&gt;}
+   */
+  async createUser(input: CreateAppUserDTO) {
+    try {
+      const { authProvider, authProviderId, firstName, lastName, address, profileImage, bio } &#x3D;
+        input;
+
+      // Note: uncomment this if coordinates should be added
+      // const {
+      //   data: { data: locData },
+      // } &#x3D; await this.locationService.getCoordinates(address);
+
+      // /* build location */
+      // if (locData.length &lt; 1) {
+      //   throw new BadRequestException(lang.BAD_LOCATION);
+      // }
+
+      // const loc &#x3D; {
+      //   displayAddress: locData[0].name,
+      //   location: {
+      //     type: &#x27;Point&#x27;,
+      //     coordinates: [locData[0].longitude, locData[0].latitude],
+      //   },
+      // };
+      const loc &#x3D; {
+        displayAddress: address,
+        location: {
+          type: &#x27;Address&#x27;,
+        },
+      };
+
+      const genPass &#x3D; crypto.randomBytes(32).toString(&#x27;hex&#x27;);
+
+      if (profileImage !&#x3D;&#x3D; undefined) {
+        const allowedExtensions &#x3D; [&#x27;jpg&#x27;, &#x27;png&#x27;, &#x27;jpeg&#x27;];
+        if (profileImage &amp;&amp; !isAllowedExt(profileImage, allowedExtensions)) {
+          throw new BadRequestException(
+            this.i18nService.t(&#x27;common.extension_not_allowed&#x27;, { args: { entity: &#x27;Image&#x27; } }),
+          );
+        }
+      }
+
+      const appUSer &#x3D; await this.userRepository.findOne({
+        authProvider,
+        authProviderId,
+      });
+
+      if (appUSer) {
+        throw new BadRequestException(
+          this.i18nService.t(&#x27;common.already_exists&#x27;, { args: { entity: &#x27;User&#x27; } }),
+        );
+      }
+
+      const createdAppUser: any &#x3D; await this.userRepository.create({
+        authProvider,
+        authProviderId,
+        firstName,
+        lastName,
+        profileImage,
+        password: await this.hashService.hashPassword(genPass),
+        address: loc,
+        status: UserStatus.password_set_pending,
+        bio,
+      });
+
+      if (createdAppUser?.profileImage) {
+        const profileImageKey &#x3D; &#x60;profiles/${createdAppUser._id}/${createdAppUser.profileImage}&#x60;;
+        await this.s3Service.copyObject(
+          &#x60;${S3_TEMP_FOLDER_NAME}/${createdAppUser.profileImage}&#x60;,
+          profileImageKey,
+        );
+        createdAppUser.profileImageUrl &#x3D; await this.s3Service.getPreSignedUrl(
+          profileImageKey,
+          SignedUrlMethod.GET,
+        );
+      }
+
+      //   /* send reset password link */
+      const token &#x3D; await this.tokenService.generateToken(createdAppUser._id);
+
+      /* build the reset link */
+      const link &#x3D; &#x60;${this.configService.get(
+        &#x27;CDN&#x27;,
+      )}/app-user-reset-password?userId&#x3D;${createdAppUser._id}&amp;token&#x3D;${token.token}&#x60;;
+
+      const values &#x3D; {
+        link,
+        name: &#x60;${createdAppUser.firstName} ${createdAppUser.lastName}&#x60;,
+      };
+
+      this.emailService.sendEmail({
+        to: authProviderId,
+        values,
+        slug: RequestedFor.verify_email_set_password,
+      });
+
+      return createdAppUser;
+    } catch (error) {
+      if (error.message.includes(&#x27;E11000&#x27;)) {
+        throw new HttpException(
+          this.i18nService.t(&#x27;common.error_operation&#x27;, { args: { entity: &#x27;database&#x27; } }),
+          HttpStatus.BAD_REQUEST,
+        );
+      }
+      throw error;
+    }
+  }
+
+  /**
+   * Sends a reset password mail to the user with the given email.
+   *
+   * @param {string} email - The email of the user.
+   * @param {string} userId - The ID of the user.
+   * @param {string} name - The name of the user.
+   * @return {Promise&lt;boolean&gt;} - A promise that resolves to true if the reset password mail is sent successfully.
+   * @throws {NotFoundException} - If the user with the given email is not found.
+   * @throws {HttpException} - If there is an error in performing the database operation.
+   */
+  async sendResetPasswordMail(email: string, userId: string, name: string): Promise&lt;boolean&gt; {
+    try {
+      const user &#x3D; await this.userRepository.findOne({ authProviderId: email });
+      if (!user) {
+        throw new NotFoundException(
+          this.i18nService.t(&#x27;common.not_exist&#x27;, { args: { entity: &#x27;User&#x27; } }),
+        );
+      }
+
+      //   /* send reset password link */
+      let token &#x3D; await this.tokenService.getToken(userId);
+      if (!token) {
+        token &#x3D; await this.tokenService.generateToken(userId);
+      }
+
+      /* build the reset link */
+      const link &#x3D; &#x60;${this.configService.get(
+        &#x27;CDN&#x27;,
+      )}/app-user-reset-password?userId&#x3D;${userId}&amp;token&#x3D;${token.token}&#x60;;
+
+      const values &#x3D; {
+        link,
+        name,
+      };
+
+      this.emailService.sendEmail({
+        to: email,
+        values,
+        slug: RequestedFor.reset_password,
+      });
+
+      return true;
+    } catch (error) {
+      if (error.message.includes(&#x27;E11000&#x27;)) {
+        throw new HttpException(
+          this.i18nService.t(&#x27;common.error_operation&#x27;, { args: { entity: &#x27;database&#x27; } }),
+          HttpStatus.INTERNAL_SERVER_ERROR,
+        );
+      }
+      throw error;
+    }
+  }
+
+  /**
+   * @description change appuser password
+   * @param {ChangePasswordDTO} input change password data
+   * @param {string} userId user id
+   * @returns {Boolean} true if successful
+   */
+  async changePassword(input: AppUserChangePasswordDTO) {
+    const { password, id } &#x3D; input;
+
+    try {
+      const user &#x3D; await this.userRepository.findById(id);
+
+      if (!user) {
+        throw new NotFoundException(
+          this.i18nService.t(&#x27;common.not_exist&#x27;, { args: { entity: &#x27;UserId&#x27; } }),
+        );
+      }
+
+      /* update user password*/
+      const hash &#x3D; await this.hashService.apphashPassword(password);
+
+      await this.userRepository.updateById(id, {
+        password: hash,
+      });
+
+      return true;
+    } catch (e) {
+      throw new BadRequestException(e?.message);
+    }
+  }
+
+  /**
+   * ${1:Description placeholder}
+   *
+   * @async
+   * @param {string} userId
+   * @param {string} token
+   * @param {string} password
+   * @returns {Promise&lt;boolean&gt;}
+   */
+  async resetPassword(userId: string, token: string, password: string): Promise&lt;boolean&gt; {
+    const validToken &#x3D; await this.tokenService.validate(userId, token);
+    if (!validToken) {
+      throw new UnauthorizedException(lang.INVALID_TOKEN);
+    }
+    const hash &#x3D; await this.hashService.apphashPassword(password);
+
+    /* update user password &amp; delete token */
+    const user &#x3D; await this.userRepository.updateById(
+      userId,
+      {
+        $set: {
+          password: hash,
+          status: &#x27;email_verified&#x27;,
+        },
+      },
+      { new: true },
+    );
+
+    await this.tokenService.removeToken(token);
+
+    return true;
+  }
+
+  /**
+   * Updates a user with the given ID using the provided input.
+   *
+   * @param {string} id - The ID of the user to update.
+   * @param {UpdateAppUserDTO} input - The input containing the updated user information.
+   * @return {Promise&lt;AppUserResponse&gt;} The updated user.
+   * @throws {NotFoundException} If the user with the given ID is not found.
+   * @throws {BadRequestException} If the provided address is invalid.
+   * @throws {HttpException} If an error occurs during the update process.
+   */
+  async updateUser(id: string, input: UpdateAppUserDTO): Promise&lt;AppUserResponse&gt; {
+    const { authProvider, authProviderId, firstName, lastName, profileImage, address, bio } &#x3D; input;
+    let loc &#x3D; {};
+
+    try {
+      const appUser &#x3D; await this.userRepository.findById(id);
+
+      if (!appUser) {
+        throw new NotFoundException(
+          this.i18nService.t(&#x27;common.not_exist&#x27;, { args: { entity: &#x27;UserId&#x27; } }),
+        );
+      }
+
+      /* default loc */
+      loc &#x3D; appUser?.address &amp;&amp; { ...appUser.address };
+
+      /* build location */
+      if (appUser.address?.displayAddress !&#x3D;&#x3D; address) {
+        const {
+          data: { data: locData },
+        } &#x3D; await this.locationService.getCoordinates(address);
+
+        if (locData.length &lt; 1) {
+          throw new BadRequestException(this.i18nService.t(&#x27;appUser.invalid_location&#x27;));
+        }
+
+        loc &#x3D; {
+          displayAddress: locData[0].name,
+          location: {
+            type: &#x27;Point&#x27;,
+            coordinates: [locData[0].longitude, locData[0].latitude],
+          },
+        };
+      }
+
+      let isProfileUpdated: boolean;
+      const prevImageKey &#x3D; appUser?.profileImage;
+      if (profileImage !&#x3D;&#x3D; undefined) {
+        const allowedExtensions &#x3D; [&#x27;jpg&#x27;, &#x27;png&#x27;, &#x27;jpeg&#x27;];
+        if (profileImage &amp;&amp; !isAllowedExt(profileImage, allowedExtensions)) {
+          throw new BadRequestException(
+            this.i18nService.t(&#x27;common.extension_not_allowed&#x27;, { args: { entity: &#x27;Image&#x27; } }),
+          );
+        }
+
+        if (profileImage !&#x3D;&#x3D; prevImageKey) {
+          isProfileUpdated &#x3D; true;
+        }
+      }
+
+      const updatedAppUser: any &#x3D; await this.userRepository.updateById(
+        id,
+        {
+          authProvider,
+          authProviderId,
+          firstName,
+          lastName,
+          address: loc,
+          bio,
+          ...(profileImage !&#x3D;&#x3D; undefined &amp;&amp; { profileImage }),
+        },
+        { new: true },
+      );
+      if (updatedAppUser?.profileImage) {
+        const profileImageKey &#x3D; &#x60;profiles/${updatedAppUser._id}/${updatedAppUser.profileImage}&#x60;;
+        if (isProfileUpdated) {
+          await this.s3Service.copyObject(
+            &#x60;${S3_TEMP_FOLDER_NAME}/${updatedAppUser.profileImage}&#x60;,
+            profileImageKey,
+          );
+        }
+        updatedAppUser.profileImageUrl &#x3D; await this.s3Service.getPreSignedUrl(
+          profileImageKey,
+          SignedUrlMethod.GET,
+        );
+      }
+      return updatedAppUser;
+    } catch (error) {
+      if (error.message.includes(&#x27;E11000&#x27;)) {
+        throw new HttpException(
+          this.i18nService.t(&#x27;common.error_operation&#x27;, { args: { entity: &#x27;database&#x27; } }),
+          HttpStatus.BAD_REQUEST,
+        );
+      }
+      throw error;
+    }
+  }
+
+  /**
+   * ${1:Description placeholder}
+   *
+   * @async
+   * @param {string} id
+   * @returns {Promise&lt;boolean&gt;}
+   */
+  async deleteUser(id: string) {
+    const appUser &#x3D; await this.userRepository.findById(id);
+    if (!appUser) {
+      throw new NotFoundException(lang.INVALID_USER_ID);
+    }
+
+    await this.userRepository.deleteById(id);
+    await this.cometChatHelperService.deleteCometChatUser(String(id));
+
+    this.eventsService.sendEvent({ type: &#x27;user-deleted&#x27;, data: { userId: String(id) } });
+    this.userEventsService.sendEventToUser(id.toString(), {
+      type: &#x27;delete-user&#x27;,
+      data: { userId: id.toString() },
+    });
+    // this.userEventsService.sendEventToUser(&quot;65c9a200cb6d9f857cf3b8cb&quot;, { type: &#x27;delete-user&#x27;, data: { userId: &quot;65c9a200cb6d9f857cf3b8cb&quot; } });
+
+    return true;
+  }
+
+  /**
+   * ${1:Description placeholder}
+   *
+   * @async
+   * @param {GetAppUsersDTO} input
+   * @returns {Promise&lt;any&gt;}
+   */
+  async getAllUsers(input: GetAppUsersDTO) {
+    const { searchText, orderBy, order, limit, skip } &#x3D; input;
+
+    const sort &#x3D; {
+      order,
+      orderBy,
+    };
+
+    const pageMeta &#x3D; {
+      limit,
+      skip,
+    };
+
+    if (orderBy &#x3D;&#x3D;&#x3D; &#x27;name&#x27;) {
+      sort.orderBy &#x3D; &#x27;firstName&#x27;;
+    }
+
+    /* create filter pipeline */
+    const filter &#x3D; [
+      {
+        $match: {
+          $or: [
+            { firstName: { $regex: searchText, $options: &#x27;i&#x27; } },
+            { lastName: { $regex: searchText, $options: &#x27;i&#x27; } },
+            { authProviderId: { $regex: searchText, $options: &#x27;i&#x27; } },
+          ],
+        },
+      },
+      { $sort: { [sort.orderBy]: sort.order &#x3D;&#x3D;&#x3D; Order.ASC ? 1 : -1 } },
+    ];
+
+    return this.userRepository.getAllUsers(filter, pageMeta);
+  }
+
+  /**
+   * ${1:Description placeholder}
+   *
+   * @async
+   * @param {string} id
+   * @returns {Promise&lt;any&gt;}
+   */
+  async getUser(id: string) {
+    /* create pipeline */
+    const Oid &#x3D; new mongoose.Types.ObjectId(id);
+    const filter &#x3D; [{ $match: { _id: { $eq: Oid } } }];
+    return this.userRepository.getUsers(filter);
+  }
+
+  /**
+   * ${1:Description placeholder}
+   *
+   * @async
+   * @param {string} id
+   * @returns {Promise&lt;any&gt;}
+   */
+  async getUserById(id: string) {
+    try {
+      const user: any &#x3D; await this.userRepository.findById(id);
+      if (user?.profileImage) {
+        const profileImageKey &#x3D; &#x60;profiles/${user._id}/${user.profileImage}&#x60;;
+        user.profileImageUrl &#x3D; await this.s3Service.getPreSignedUrl(
+          profileImageKey,
+          SignedUrlMethod.GET,
+        );
+      }
+      return user;
+    } catch (error: any) {
+      throw error;
+    }
+  }
+}
+</code></pre>
+    </div>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+          <label class="dark-mode-switch">
+               <input type="checkbox">
+               <span class="slider">
+                    <svg class="slider-icon" viewBox="0 0 24 24" fill="none" height="20" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" width="20" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"></path>
+                    </svg>
+               </span>
+          </label>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'injectable';
+            var COMPODOC_CURRENT_PAGE_URL = 'AppUserService.html';
+            var MAX_SEARCH_RESULTS = 15;
+       </script>
+
+       <script>
+               $darkModeToggleSwitchers = document.querySelectorAll('.dark-mode-switch input');
+               checkToggle(darkModeState);
+               if ($darkModeToggleSwitchers.length > 0) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].addEventListener('change', function (event) {
+                              darkModeState = !darkModeState;
+                              toggleDarkMode(darkModeState);
+                         });
+                    }
+               }
+          </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+
+       <script src="../js/menu-wc.js" defer></script>
+       <script nomodule src="../js/menu-wc_es5.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>

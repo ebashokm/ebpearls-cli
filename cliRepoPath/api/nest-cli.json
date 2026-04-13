@@ -1,0 +1,194 @@
+{
+  "$schema": "https://json.schemastore.org/nest-cli",
+  "collection": "@nestjs/schematics",
+  "sourceRoot": "apps/api/src",
+  "monorepo": true,
+  "root": "apps/api",
+  "compilerOptions": {
+    "webpack": true,
+    "tsConfigPath": "apps/api/tsconfig.app.json",
+    "assets": [
+      {
+        "include": "i18n/**/*",
+        "watchAssets": true,
+        "outDir": "dist/apps/api"
+      }
+    ]
+  },
+  "projects": {
+    "api": {
+      "type": "application",
+      "root": "apps/api",
+      "entryFile": "main",
+      "sourceRoot": "apps/api/src",
+      "compilerOptions": {
+        "tsConfigPath": "apps/api/tsconfig.app.json",
+        "assets": [
+          {
+            "include": "i18n/**/*",
+            "watchAssets": true,
+            "outDir": "dist/apps/api"
+          }
+        ]
+      }
+    },
+    "cron": {
+      "type": "application",
+      "root": "apps/cron",
+      "entryFile": "main",
+      "sourceRoot": "apps/cron/src",
+      "compilerOptions": {
+        "tsConfigPath": "apps/cron/tsconfig.app.json",
+        "assets": [
+          {
+            "include": "i18n/**/*",
+            "watchAssets": true,
+            "outDir": "dist/apps/cron"
+          }
+        ]
+      }
+    },
+    "cms-api": {
+      "type": "application",
+      "root": "apps/cms-api",
+      "entryFile": "main",
+      "sourceRoot": "apps/cms-api/src",
+      "compilerOptions": {
+        "tsConfigPath": "apps/cms-api/tsconfig.app.json",
+        "assets": [
+          {
+            "include": "i18n/**/*",
+            "watchAssets": true,
+            "outDir": "dist/apps/cms-api"
+          }
+        ]
+      }
+    },
+    "authentication": {
+      "type": "library",
+      "root": "libs/authentication",
+      "entryFile": "index",
+      "sourceRoot": "libs/authentication/src",
+      "compilerOptions": {
+        "tsConfigPath": "libs/authentication/tsconfig.lib.json"
+      }
+    },
+    "data-access": {
+      "type": "library",
+      "root": "libs/data-access",
+      "entryFile": "index",
+      "sourceRoot": "libs/data-access/src",
+      "compilerOptions": {
+        "tsConfigPath": "libs/data-access/tsconfig.lib.json"
+      }
+    },
+    "facebook-auth": {
+      "type": "library",
+      "root": "libs/facebook-auth",
+      "entryFile": "index",
+      "sourceRoot": "libs/facebook-auth/src",
+      "compilerOptions": {
+        "tsConfigPath": "libs/facebook-auth/tsconfig.lib.json"
+      }
+    },
+    "google-auth": {
+      "type": "library",
+      "root": "libs/google-auth",
+      "entryFile": "index",
+      "sourceRoot": "libs/google-auth/src",
+      "compilerOptions": {
+        "tsConfigPath": "libs/google-auth/tsconfig.lib.json"
+      }
+    },
+    "apple-auth": {
+      "type": "library",
+      "root": "libs/apple-auth",
+      "entryFile": "index",
+      "sourceRoot": "libs/apple-auth/src",
+      "compilerOptions": {
+        "tsConfigPath": "libs/apple-auth/tsconfig.lib.json"
+      }
+    },
+    "social-auth": {
+      "type": "library",
+      "root": "libs/social-auth",
+      "entryFile": "index",
+      "sourceRoot": "libs/social-auth/src",
+      "compilerOptions": {
+        "tsConfigPath": "libs/social-auth/tsconfig.lib.json"
+      }
+    },
+    "inapp-subscription": {
+      "type": "library",
+      "root": "libs/inapp-subscription",
+      "entryFile": "index",
+      "sourceRoot": "libs/inapp-subscription/src",
+      "compilerOptions": {
+        "tsConfigPath": "libs/inapp-subscription/tsconfig.lib.json"
+      }
+    },
+    "otp": {
+      "type": "library",
+      "root": "libs/otp",
+      "entryFile": "index",
+      "sourceRoot": "libs/otp/src",
+      "compilerOptions": {
+        "tsConfigPath": "libs/otp/tsconfig.lib.json"
+      }
+    },
+    "tiktok-auth": {
+      "type": "library",
+      "root": "libs/tiktok-auth",
+      "entryFile": "index",
+      "sourceRoot": "libs/tiktok-auth/src",
+      "compilerOptions": {
+        "tsConfigPath": "libs/tiktok-auth/tsconfig.lib.json"
+      }
+    },
+    "email": {
+      "type": "library",
+      "root": "libs/email",
+      "entryFile": "index",
+      "sourceRoot": "libs/email/src",
+      "compilerOptions": {
+        "tsConfigPath": "libs/email/tsconfig.lib.json"
+      }
+    },
+    "winston-logger": {
+      "type": "library",
+      "root": "libs/winston-logger",
+      "entryFile": "index",
+      "sourceRoot": "libs/winston-logger/src",
+      "compilerOptions": {
+        "tsConfigPath": "libs/winston-logger/tsconfig.lib.json"
+      }
+    },
+    "graphql-redis-cache": {
+      "type": "library",
+      "root": "libs/graphql-redis-cache",
+      "entryFile": "index",
+      "sourceRoot": "libs/graphql-redis-cache/src",
+      "compilerOptions": {
+        "tsConfigPath": "libsgraphql-redis-cache/tsconfig.lib.json"
+      }
+    },
+    "elastic-search": {
+      "type": "library",
+      "root": "libs/elastic-search",
+      "entryFile": "index",
+      "sourceRoot": "libs/elastic-search/src",
+      "compilerOptions": {
+        "tsConfigPath": "libs/elastic-search/tsconfig.lib.json"
+      }
+    },
+    "paypal-core": {
+      "type": "library",
+      "root": "libs/paypal-core",
+      "entryFile": "index",
+      "sourceRoot": "libs/paypal-core/src",
+      "compilerOptions": {
+        "tsConfigPath": "libs/paypal-core/tsconfig.lib.json"
+      }
+    }
+  }
+}
