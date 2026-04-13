@@ -13,15 +13,24 @@ else
   git clone --quiet "$REPO_URL" "$INSTALL_DIR"
 fi
 
-# Detect package manager and install globally from local path
+# Ensure the entry point is executable
+chmod +x "$INSTALL_DIR/index.js"
+
+# Install dependencies and link the ebp command globally
+cd "$INSTALL_DIR"
+
 if command -v bun > /dev/null 2>&1; then
-  bun add -g "$INSTALL_DIR"
+  bun install
+  bun link
 elif command -v pnpm > /dev/null 2>&1; then
-  pnpm add -g "$INSTALL_DIR"
+  pnpm install
+  pnpm link --global
 elif command -v yarn > /dev/null 2>&1; then
-  yarn global add "$INSTALL_DIR"
+  yarn install
+  yarn link
 elif command -v npm > /dev/null 2>&1; then
-  npm install -g "$INSTALL_DIR"
+  npm install
+  npm link
 else
   echo "Error: no supported package manager found. Please install one of: bun, pnpm, yarn, npm" >&2
   exit 1

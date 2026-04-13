@@ -164,13 +164,13 @@ const CMS_MODULE_REGISTRY = {
   'page-with-version': { className: 'PageWithVersionModule', importPath: './modules/page-with-version/pageWithVersion.module' },
   permission: { className: 'PermissionModule', importPath: './modules/permission/permission.module' },
   role: { className: 'RoleModule', importPath: './modules/role/role.module' },
-  settings: { className: 'SettingModule', importPath: './modules/settings/settings.module' },
   'site-settings': { className: 'SiteSettingsModule', importPath: './modules/site-settings/site-settings.module' },
   'subscription-plan': { className: 'SubscriptionPlanModule', importPath: './modules/subscription-plan/subscription-plan.module' },
   'subscription-products': { className: 'SubscriptionProductsModule', importPath: './modules/subscription-products/subscription-products.module' },
   'surveyjs-page': { className: 'SurveyJsPageModule', importPath: './modules/surveyjs-page/surveyjs-page.module' },
   taxonomy: { className: 'TaxonomyModule', importPath: './modules/taxonomy/taxonomy.module' },
   testimonials: { className: 'TestimonialsModule', importPath: './modules/testimonials/testimonials.module' },
+  settings: { className: 'SettingModule', importPath: './modules/settings/settings.module' },
 };
 
 // CMS Frontend registry: maps CLI selection names to view dirs, route files, and menu files.
@@ -188,10 +188,20 @@ const CMS_MODULE_REGISTRY = {
 //   Views:     profile/, user-management/ (admins portion), pages/ (auth/error pages)
 
 const CMS_FRONTEND_REGISTRY = {
+  dashboard: {
+    viewDirs: ['dashboard'],
+    route: { file: 'DashboardRoutes.tsx', exportName: 'DashboardRoutes' },
+    menuItem: { file: 'dashboard.tsx', exportName: 'dashboard' },
+  },
   'app-user': {
     viewDirs: ['user-management'],
     route: { file: 'AppUserRoutes.tsx', exportName: 'AppUserRoutes' },
     menuItem: null, // app-users item is inside core userManagement menu
+  },
+  'business-user': {
+    viewDirs: ['business-user'],
+    route: { file: 'BusinessUsersRoutes.tsx', exportName: 'BusinessUsersRoutes' },
+    menuItem: { file: 'businessUser.tsx', exportName: 'businessUser' },
   },
   menu: {
     viewDirs: ['menu'],
@@ -219,20 +229,11 @@ const CMS_FRONTEND_REGISTRY = {
     route: { file: 'TestimonialRoutes.tsx', exportName: 'TestimonialRoutes' },
     menuItem: { file: 'testimonial.tsx', exportName: 'testimonial' },
   },
-  settings: {
-    viewDirs: ['settings'],
-    route: { file: 'SettingRoutes.tsx', exportName: 'SettingRoutes' },
-    menuItem: { file: 'setting.tsx', exportName: 'setting' },
-  },
+  
   'advance-page-management': {
     viewDirs: ['advance-page-management'],
     route: { file: 'AdvancePageManagementRoutes.tsx', exportName: 'AdvancePageManagementRoutes' },
     menuItem: { file: 'advancePageManagement.tsx', exportName: 'advancePageManagement' },
-  },
-  dashboard: {
-    viewDirs: ['dashboard'],
-    route: { file: 'DashboardRoutes.tsx', exportName: 'DashboardRoutes' },
-    menuItem: { file: 'dashboard.tsx', exportName: 'dashboard' },
   },
   'subscription-products': {
     viewDirs: ['subscription-products'],
@@ -259,10 +260,11 @@ const CMS_FRONTEND_REGISTRY = {
     route: { file: 'PageManagementWithVersionsRoutes.tsx', exportName: 'PageManagementWithVersionsRoutes' },
     menuItem: { file: 'pageManagementVersion.tsx', exportName: 'pageManagementVersion' },
   },
-  'business-user': {
-    viewDirs: ['business-user'],
-    route: { file: 'BusinessUsersRoutes.tsx', exportName: 'BusinessUsersRoutes' },
-    menuItem: { file: 'businessUser.tsx', exportName: 'businessUser' },
+  
+  settings: {
+    viewDirs: ['settings'],
+    route: { file: 'SettingRoutes.tsx', exportName: 'SettingRoutes' },
+    menuItem: { file: 'setting.tsx', exportName: 'setting' },
   },
 };
 
