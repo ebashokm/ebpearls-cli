@@ -53,8 +53,9 @@ elif command -v yarn > /dev/null 2>&1; then
   YARN_MAJOR="$(yarn --version 2>/dev/null | cut -d. -f1)"
   yarn install
   if [ "$YARN_MAJOR" = "1" ]; then
-    yarn link
     YARN_BIN="$(yarn global bin 2>/dev/null)"
+    mkdir -p "$YARN_BIN"
+    yarn link
     warn_path "$YARN_BIN"
   else
     # Yarn Berry (v2+/v4) has no global link — fall back to npm link
