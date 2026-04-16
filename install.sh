@@ -37,7 +37,7 @@ warn_path() {
 # Install dependencies and link globally
 if command -v bun > /dev/null 2>&1; then
   bun install
-  bun install --global .
+  bun link
   warn_path "$HOME/.bun/bin"
 elif command -v pnpm > /dev/null 2>&1; then
   pnpm install
